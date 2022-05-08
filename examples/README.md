@@ -23,8 +23,6 @@ stored in the folder `locale`.
 
 * [printer](./features/printer)
   * Example how to use your own printer
-  * 
 
-```
-xspreak -e -D dayinfo/ -p locale/ -d dayinfo
-```
+* [decoder](./features/decoder)
+  * Example of implementation of a decoder and a catalog for importing JSON files for translation.

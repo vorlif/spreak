@@ -1,0 +1,5 @@
+{
+  "hello.world": "Hola Mundo",
+  "dog": "Tengo %d perro",
+  "dog_plural": "Tengo %d perros"
+}
