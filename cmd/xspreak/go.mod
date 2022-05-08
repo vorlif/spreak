@@ -7,7 +7,7 @@ require (
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.1
-	github.com/vorlif/spreak v0.0.0
+	github.com/vorlif/spreak v0.1.0
 	golang.org/x/tools v0.1.10
 )
 
@@ -22,5 +22,3 @@ require (
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
-
-replace github.com/vorlif/spreak v0.0.0 => ../../
