@@ -1,4 +1,4 @@
-# Spreak
+# Spreak ![Tets status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak)
 
 Flexible translation library for Go based on the concepts of gettext.
 
@@ -38,7 +38,7 @@ func main() {
 	t := spreak.NewLocalizer(bundle, language.Spanish)
 
 	fmt.Println(t.Get("Hello world"))
-	fmt.Println(t.NGet("I have %d dog", "I have %d dogs", 2))
+	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
 
 	// Output:
 	//  Hola Mundo

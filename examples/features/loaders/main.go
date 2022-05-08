@@ -31,7 +31,7 @@ func main() {
 	// Output: Hola Mundo
 }
 
-type myLoader struct {}
+type myLoader struct{}
 
 func (myLoader) Load(lang language.Tag, domain string) (spreak.Catalog, error) {
 	if lang == language.Spanish && domain == Domain {
