@@ -108,7 +108,7 @@ package main
 import "github.com/vorlif/spreak/localize"
 
 // Extracted because the type is localize.Singular
-var applicationName = "app"
+var ApplicationName localize.Singular = "app"
 ```
 
 Global variables and constants are extracted if the type is localize.Singular or localize.MsgID.
@@ -121,7 +121,7 @@ import "github.com/vorlif/spreak/localize"
 
 const Weekday localize.Singular = "weekday"
 
-var ApplicationName = "app"
+var ApplicationName localize.Singular = "app"
 ```
 
 Local variables are extracted if the type is localize.Singular or localize.MsgID.
@@ -215,7 +215,7 @@ type MyMessage struct {
 }
 
 func main() {
-	var animals := []MyMessage{
+	animals := []MyMessage{
 		{Text: "%d dog", Plural: "%d dogs"},
 		{Text: "%d cat", Plural: "%d cat"},
 		{Text: "%d horse", Plural: "%d horses"},
