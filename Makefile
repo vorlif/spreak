@@ -1,5 +1,5 @@
 
-XSPREAK_PATH=cmd/xspreak
+XSPREAK_PATH=xspreak
 
 gofmt:
 	gofmt -s -w .

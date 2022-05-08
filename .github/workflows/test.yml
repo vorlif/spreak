@@ -20,7 +20,7 @@ jobs:
       - name: ling xspreak
         uses: golangci/golangci-lint-action@v3.1.0
         with:
-          working-directory: cmd/xspreak
+          working-directory: xspreak
           version: latest
 
   test:
@@ -38,9 +38,9 @@ jobs:
       run: go test -v ./...
       
     - name: Build xspreak
-      working-directory: cmd/xspreak
+      working-directory: xspreak
       run: go build -v ./...
       
     - name: Test xspreak
-      working-directory: cmd/xspreak
+      working-directory: xspreak
       run: go test -v ./...

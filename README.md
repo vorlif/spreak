@@ -51,7 +51,7 @@ func main() {
 Strings for the translations can be extracted via the command line program xspreak.
 
 ```
-go install github.com/vorlif/spreak/cmd/xspreak
+go install github.com/vorlif/spreak/xspreak@main
 xspreak -help
 ```
 

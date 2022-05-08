@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	testdataDir = "../../../../testdata/xspreak/project"
+	testdataDir = "../../../testdata/xspreak/project"
 )
 
 func TestPrintAst(t *testing.T) {
