@@ -28,7 +28,6 @@ var loadMode = packages.NeedName |
 type ContextLoader struct {
 	config *config.Config
 	log    *logrus.Entry
-	dir    string
 }
 
 func NewContextLoader(cfg *config.Config) *ContextLoader {

@@ -21,7 +21,9 @@ type potEncoder struct {
 }
 
 func NewPotEncoder(cfg *config.Config, w io.Writer) Encoder {
-	return &potEncoder{cfg: cfg, w: po.NewEncoder(w)}
+	enc := po.NewEncoder(w)
+	enc.SetWrapWidth(cfg.WrapWidth)
+	return &potEncoder{cfg: cfg, w: enc}
 }
 
 func (e *potEncoder) Encode(issues []result.Issue) error {

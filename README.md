@@ -2,13 +2,12 @@
 
 Flexible translation library for Go based on the concepts of gettext.
 
-> This project is currently under development
-
 ## Features
 
 * Support for `fs.FS` and `embed`
-* Goroutine Safe through immutability
+* Goroutine Safe and lock free through immutability
 * Easily extendable
+* [Powerful extractor](xspreak/README.md) for strings to simplify the localization process
 
 ## Usage
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-08 21:38+0200\n"
+"POT-Creation-Date: 2022-05-09 22:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #. TRANSLATORS: This comment is automatically extracted by xspreak
 #. and can be used to leave useful hints for the translators.
-#: ../helloworld/main.go:26 ../helloworld/main.go:29
+#: ../helloworld/main.go:27 ../helloworld/main.go:30
 msgid "Hello world"
 msgstr ""
 
