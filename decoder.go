@@ -6,9 +6,9 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/internal/plural"
+	"github.com/vorlif/spreak/po"
 
 	"github.com/vorlif/spreak/internal/mo"
-	"github.com/vorlif/spreak/internal/po"
 )
 
 // A Decoder reads and decodes catalogs for a language and a domain from a byte array.
@@ -41,10 +41,26 @@ func (poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog,
 	// We could check here if the language of the file matches the target language,
 	// but leave it off to make loading more flexible.
 
-	messages := make(messageLookupMap, len(poFile.Messages))
+	return buildGettextCatalog(poFile, lang, domain)
+}
 
-	for ctx := range poFile.Messages {
-		if len(poFile.Messages[ctx]) == 0 {
+func (moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
+	moFile, errParse := mo.ParseBytes(data)
+	if errParse != nil {
+		return nil, errParse
+	}
+
+	// We could check here if the language of the file matches the target language,
+	// but leave it off to make loading more flexible.
+
+	return buildGettextCatalog(moFile, lang, domain)
+}
+
+func buildGettextCatalog(file *po.File, lang language.Tag, domain string) (Catalog, error) {
+	messages := make(messageLookupMap, len(file.Messages))
+
+	for ctx := range file.Messages {
+		if len(file.Messages[ctx]) == 0 {
 			continue
 		}
 
@@ -52,7 +68,7 @@ func (poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog,
 			messages[ctx] = make(map[string]*gettextMessage)
 		}
 
-		for msgID, poMsg := range poFile.Messages[ctx] {
+		for msgID, poMsg := range file.Messages[ctx] {
 			if msgID == "" {
 				continue
 			}
@@ -73,66 +89,10 @@ func (poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog,
 		translations: messages,
 	}
 
-	if poFile.Header != nil && poFile.Header.PluralForms != "" {
-		forms, err := plural.Parse(poFile.Header.PluralForms)
+	if file.Header != nil && file.Header.PluralForms != "" {
+		forms, err := plural.Parse(file.Header.PluralForms)
 		if err != nil {
 			return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
-		}
-		catl.pluralFunc = forms.IndexForN
-	} else {
-		forms, _ := plural.ForLanguage(lang)
-		catl.pluralFunc = forms
-	}
-
-	return catl, nil
-}
-
-func (moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	moFile, errParse := mo.ParseBytes(data)
-	if errParse != nil {
-		return nil, errParse
-	}
-
-	// We could check here if the language of the file matches the target language,
-	// but leave it off to make loading more flexible.
-
-	messages := make([]*gettextMessage, 0, len(moFile.Messages))
-	for _, moMsg := range moFile.Messages {
-		if moMsg.ID == "" {
-			continue
-		}
-
-		d := &gettextMessage{
-			Context:      moMsg.Context,
-			ID:           moMsg.ID,
-			IDPlural:     moMsg.IDPlural,
-			Translations: make(map[int]string, len(moMsg.StrPlural)),
-		}
-
-		// singular translation
-		if moMsg.IDPlural == "" {
-			d.Translations[0] = moMsg.Str
-			continue
-		}
-
-		// plural translation
-		for idx, t := range moMsg.StrPlural {
-			d.Translations[idx] = t
-		}
-
-		messages = append(messages, d)
-	}
-
-	catl := &gettextCatalog{
-		language:     lang,
-		translations: transformMessageArray(messages),
-		domain:       domain,
-	}
-
-	if moFile.Header.PluralForms != "" {
-		forms, err := plural.Parse(moFile.Header.PluralForms)
-		if err != nil {
-			return nil, fmt.Errorf("spreak.Decoder: plural forms for mo file %v#%v could not be parsed: %w", lang, domain, err)
 		}
 		catl.pluralFunc = forms.IndexForN
 	} else {

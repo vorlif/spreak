@@ -7,7 +7,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/po"
 )
 
 const (
@@ -40,11 +40,11 @@ type msgData struct {
 	translationLength uint32
 }
 
-func ParseBytes(data []byte) (*File, error) {
+func ParseBytes(data []byte) (*po.File, error) {
 	return newParser(bytes.NewReader(data)).parse()
 }
 
-func ParseReader(r io.ReadSeeker) (*File, error) {
+func ParseReader(r io.ReadSeeker) (*po.File, error) {
 	return newParser(r).parse()
 }
 
@@ -55,7 +55,7 @@ func newParser(r io.ReadSeeker) *parser {
 	}
 }
 
-func (p *parser) parse() (*File, error) {
+func (p *parser) parse() (*po.File, error) {
 	if err := p.parseByteOrder(); err != nil {
 		return nil, err
 	}
@@ -163,11 +163,8 @@ func (p *parser) parseMessageData() error {
 	return nil
 }
 
-func (p *parser) parseMessages() (*File, error) {
-	file := &File{
-		Header:   Header{},
-		Messages: make([]Message, 0, len(p.messageData)),
-	}
+func (p *parser) parseMessages() (*po.File, error) {
+	file := po.NewFile()
 
 	for _, d := range p.messageData {
 		id, localized, err := p.parseMessage(d)
@@ -175,30 +172,32 @@ func (p *parser) parseMessages() (*File, error) {
 			return nil, err
 		}
 
-		var msg = Message{
-			ID:  id,
-			Str: localized,
-		}
+		msg := po.NewMessage()
+		msg.ID = id
+		msg.Str[0] = localized
 
 		// Header
 		if id == "" {
-			file.Header = p.parseMessageHeader(&msg)
+			file.Header = p.parseMessageHeader(msg)
 			continue
 		}
 
 		// Context
 		if idx := strings.Index(msg.ID, eotSeparator); idx != -1 {
-			msg.Context, msg.ID = msg.ID[:idx], msg.ID[idx+1:]
+			msg.Context = msg.ID[:idx]
+			msg.ID = msg.ID[idx+1:]
 		}
 
 		// Plural
 		if idx := strings.Index(msg.ID, nulSeparator); idx != -1 {
-			msg.ID, msg.IDPlural = msg.ID[:idx], msg.ID[idx+1:]
-			msg.StrPlural = strings.Split(msg.Str, nulSeparator)
-			msg.Str = ""
+			msg.IDPlural = msg.ID[idx+1:]
+			msg.ID = msg.ID[:idx]
+			for i, translation := range strings.Split(msg.Str[0], nulSeparator) {
+				msg.Str[i] = translation
+			}
 		}
 
-		file.Messages = append(file.Messages, msg)
+		file.AddMessage(msg)
 	}
 
 	return file, nil
@@ -226,49 +225,20 @@ func (p *parser) parseMessage(data *msgData) (id string, localized string, err e
 	return
 }
 
-func (p *parser) parseMessageHeader(msg *Message) (header Header) {
-	if msg.Str == "" {
+func (p *parser) parseMessageHeader(msg *po.Message) (header *po.Header) {
+	if _, ok := msg.Str[0]; !ok {
 		return
 	}
 
-	for _, line := range strings.Split(msg.Str, "\n") {
+	header = &po.Header{}
+	for _, line := range strings.Split(msg.Str[0], "\n") {
 		idx := strings.Index(line, ":")
 		if idx < 0 {
 			continue
 		}
 		key := strings.TrimSpace(line[:idx])
 		val := strings.TrimSpace(line[idx+1:])
-		switch strings.ToUpper(key) {
-		case strings.ToUpper(util.HeaderProjectIDVersion):
-			header.ProjectIDVersion = val
-		case strings.ToUpper(util.HeaderReportMsgIDBugsTo):
-			header.ReportMsgidBugsTo = val
-		case strings.ToUpper(util.HeaderPOTCreationDate):
-			header.POTCreationDate = val
-		case strings.ToUpper(util.HeaderPORevisionDate):
-			header.PORevisionDate = val
-		case strings.ToUpper(util.HeaderLastTranslator):
-			header.LastTranslator = val
-		case strings.ToUpper(util.HeaderLanguageTeam):
-			header.LanguageTeam = val
-		case strings.ToUpper(util.HeaderLanguage):
-			header.Language = val
-		case strings.ToUpper(util.HeaderMIMEVersion):
-			header.MimeVersion = val
-		case strings.ToUpper(util.HeaderContentType):
-			header.ContentType = val
-		case strings.ToUpper(util.HeaderContentTransferEncoding):
-			header.ContentTransferEncoding = val
-		case strings.ToUpper(util.HeaderPluralForms):
-			header.PluralForms = val
-		case strings.ToUpper(util.HeaderXGenerator):
-			header.XGenerator = val
-		default:
-			if header.UnknownFields == nil {
-				header.UnknownFields = make(map[string]string)
-			}
-			header.UnknownFields[key] = val
-		}
+		header.SetField(key, val)
 	}
 
 	return

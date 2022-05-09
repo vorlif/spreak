@@ -96,7 +96,7 @@ func WithFilesystemLoader(domain string, fsOpts ...FsOption) BundleOption {
 
 // WithDomainPath loads a domain from a specified path.
 func WithDomainPath(domain string, path string) BundleOption {
-	return WithFilesystemLoader(domain, WithLoadPath(path))
+	return WithFilesystemLoader(domain, WithPath(path))
 }
 
 // WithDomainFs loads a domain from a fs.FS.
@@ -107,7 +107,7 @@ func WithDomainFs(domain string, fsys fs.FS) BundleOption {
 		}
 	}
 
-	return WithFilesystemLoader(domain, WithLoaderFs(fsys))
+	return WithFilesystemLoader(domain, WithFs(fsys))
 }
 
 // WithLanguage loads the catalogs of the domains for one or more languages.

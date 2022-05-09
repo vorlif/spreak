@@ -1,9 +1,4 @@
-package util
-
-import (
-	"fmt"
-	"io"
-)
+package po
 
 type Message struct {
 	Comment  *Comment
@@ -12,6 +7,8 @@ type Message struct {
 	IDPlural string
 	Str      map[int]string
 }
+
+type Messages map[string]map[string]*Message
 
 func NewMessage() *Message {
 	return &Message{
@@ -22,7 +19,7 @@ func NewMessage() *Message {
 		Context:  "",
 		ID:       "",
 		IDPlural: "",
-		Str:      nil,
+		Str:      make(map[int]string),
 	}
 }
 
@@ -32,45 +29,6 @@ func (p *Message) AddReference(ref *Reference) {
 	}
 
 	p.Comment.AddReference(ref)
-}
-
-func (p *Message) WriteTo(w io.StringWriter, wrapWidth int) error {
-
-	if err := p.Comment.WriteTo(w, wrapWidth); err != nil {
-		return err
-	}
-
-	if p.Context != "" {
-		ctx := fmt.Sprintf("msgctxt %s\n", EncodePoString(p.Context, wrapWidth))
-		if _, err := w.WriteString(ctx); err != nil {
-			return err
-		}
-	}
-
-	msgID := fmt.Sprintf("msgid %s\n", EncodePoString(p.ID, wrapWidth))
-	if _, err := w.WriteString(msgID); err != nil {
-		return err
-	}
-
-	if p.IDPlural != "" {
-		pluralID := fmt.Sprintf("msgid_plural %s\n", EncodePoString(p.IDPlural, wrapWidth))
-		if _, err := w.WriteString(pluralID); err != nil {
-			return err
-		}
-
-		if _, err := w.WriteString(`msgstr[0] ""` + "\n"); err != nil {
-			return err
-		}
-		if _, err := w.WriteString(`msgstr[1] ""` + "\n"); err != nil {
-			return err
-		}
-	} else {
-		if _, err := w.WriteString(`msgstr ""` + "\n"); err != nil {
-			return err
-		}
-	}
-
-	return nil
 }
 
 func (p *Message) Less(q *Message) bool {
@@ -117,5 +75,17 @@ func (p *Message) Merge(other *Message) {
 
 	if p.IDPlural == "" && other.IDPlural != "" {
 		p.IDPlural = other.IDPlural
+	}
+}
+
+func (m Messages) Add(msg *Message) {
+	if _, ok := m[msg.Context]; !ok {
+		m[msg.Context] = make(map[string]*Message)
+	}
+
+	if _, ok := m[msg.Context][msg.ID]; ok {
+		m[msg.Context][msg.ID].Merge(msg)
+	} else {
+		m[msg.Context][msg.ID] = msg
 	}
 }

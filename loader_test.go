@@ -14,7 +14,7 @@ import (
 
 func TestNewFilesystemLoader(t *testing.T) {
 	t.Run("error is returned when a nil option is passed", func(t *testing.T) {
-		fsLoader, err := NewFilesystemLoader(WithLoadPath(testdataStructureDir), nil)
+		fsLoader, err := NewFilesystemLoader(WithPath(testdataStructureDir), nil)
 		require.Error(t, err)
 		require.Nil(t, fsLoader)
 	})
@@ -37,7 +37,7 @@ func TestFilesystemLoader_Load(t *testing.T) {
 			return nil, os.ErrPermission
 		}}
 		fsLoader, err := NewFilesystemLoader(
-			WithLoaderFs(fsys),
+			WithFs(fsys),
 			WithReducer(reducer),
 		)
 		require.NoError(t, err)
@@ -59,7 +59,7 @@ func TestWithCategory(t *testing.T) {
 		require.NoError(t, errReducer)
 
 		fsLoader, err := NewFilesystemLoader(
-			WithLoaderFs(util.DirFS(testdataStructureDir)),
+			WithFs(util.DirFS(testdataStructureDir)),
 			WithReducer(reducer),
 		)
 		require.NoError(t, err)

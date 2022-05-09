@@ -127,9 +127,9 @@ func (l *FilesystemLoader) addDecoder(ext string, decoder Decoder) {
 	l.decoder = append(l.decoder, decoder)
 }
 
-// WithLoaderFs stores a fs.FS as filesystem.
+// WithFs stores a fs.FS as filesystem.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
-func WithLoaderFs(fsys fs.FS) FsOption {
+func WithFs(fsys fs.FS) FsOption {
 	return func(l *FilesystemLoader) error {
 		if l.fsys != nil {
 			return errors.New("spreak.Loader: filesystem for FilesystemLoader already set")
@@ -139,9 +139,9 @@ func WithLoaderFs(fsys fs.FS) FsOption {
 	}
 }
 
-// WithLoadPath stores a path as filesystem.
+// WithPath stores a path as filesystem.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
-func WithLoadPath(path string) FsOption {
+func WithPath(path string) FsOption {
 	return func(l *FilesystemLoader) error {
 		if l.fsys != nil {
 			return errors.New("spreak.Loader: filesystem for FilesystemLoader already set")
@@ -153,7 +153,7 @@ func WithLoadPath(path string) FsOption {
 
 // WithSystemFs stores the root path as filesystem.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
-func WithSystemFs() FsOption { return WithLoadPath("") }
+func WithSystemFs() FsOption { return WithPath("") }
 
 // WithReducer stores the reducer of a FilesystemLoader.
 // Lets the creation of the FilesystemLoader fail, if a Reducer was already deposited.

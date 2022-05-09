@@ -1,4 +1,4 @@
-package util
+package po
 
 import (
 	"strings"
@@ -187,98 +187,72 @@ func TestEncodePoStringWrap(t *testing.T) {
 
 }
 
-func TestDecodeMoString(t *testing.T) {
-	if s := DecodePoString(moStrEncode); s != moStrDecode {
-		t.Fatalf(`expect = %s got = %s`, moStrDecode, s)
-	}
-}
-
 func TestDecodePoString(t *testing.T) {
-	if s := DecodePoString(poStrEncode); s != poStrDecode {
-		t.Fatalf(`expect = %s got = %s`, poStrDecode, s)
-	}
+	assert.Equal(t, poStrDecode, DecodePoString(poStrEncode))
 }
 
 func TestEncodePoString(t *testing.T) {
 	assert.Equal(t, poStrEncodeStd, EncodePoString(poStrDecode, 60))
 }
 
-const moStrEncode = `# noise
+const poStrEncode = `# noise
 123456789
-"Project-Id-Version: Poedit 1.5\n"
-"Report-Msgid-Bugs-To: poedit@googlegroups.com\n"
-"POT-Creation-Date: 2012-07-30 10:34+0200\n"
-"PO-Revision-Date: 2013-02-24 21:00+0800\n"
-"Last-Translator: Christopher Meng <trans@cicku.me>\n"
-"Language-Team: \n"
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2021-06-03 11:36+0200\n"
+"PO-Revision-Date: 2022-05-01 15:22+0200\n"
+"Last-Translator: Florian Vogt\n"
+"Language-Team: English, United Kingdom\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
-"TestPoString: abc"
-"123\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Project-ID: 53425\n"
+"X-Crowdin-Language: en-GB\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+"X-Crowdin-File-ID: 3\n"
+"X-Generator: Poedit 3."
+"0.1\n"
 >>
 123456???
 `
 
-const moStrDecode = `Project-Id-Version: Poedit 1.5
-Report-Msgid-Bugs-To: poedit@googlegroups.com
-POT-Creation-Date: 2012-07-30 10:34+0200
-PO-Revision-Date: 2013-02-24 21:00+0800
-Last-Translator: Christopher Meng <trans@cicku.me>
-Language-Team: 
+const poStrDecode = `Project-Id-Version: poedit
+Report-Msgid-Bugs-To: help@poedit.net
+POT-Creation-Date: 2021-06-03 11:36+0200
+PO-Revision-Date: 2022-05-01 15:22+0200
+Last-Translator: Florian Vogt
+Language-Team: English, United Kingdom
+Language: en_GB
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=1; plural=0;
-X-Generator: Poedit 1.5.5
-TestPoString: abc123
-`
-
-const poStrEncode = `# noise
-123456789
-"Project-Id-Version: Poedit 1.5\n"
-"Report-Msgid-Bugs-To: poedit@googlegroups.com\n"
-"POT-Creation-Date: 2012-07-30 10:34+0200\n"
-"PO-Revision-Date: 2013-02-24 21:00+0800\n"
-"Last-Translator: Christopher Meng <trans@cicku.me>\n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
-"TestPoString: abc"
-"123\n"
->>
-123456???
+Plural-Forms: nplurals=2; plural=(n != 1);
+X-Crowdin-Project: poedit
+X-Crowdin-Project-ID: 53425
+X-Crowdin-Language: en-GB
+X-Crowdin-File: /locales/poedit.pot
+X-Crowdin-File-ID: 3
+X-Generator: Poedit 3.0.1
 `
 
 const poStrEncodeStd = `""
-"Project-Id-Version: Poedit 1.5\n"
-"Report-Msgid-Bugs-To: poedit@googlegroups.com\n"
-"POT-Creation-Date: 2012-07-30 10:34+0200\n"
-"PO-Revision-Date: 2013-02-24 21:00+0800\n"
-"Last-Translator: Christopher Meng <trans@cicku.me>\n"
-"Language-Team: \n"
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2021-06-03 11:36+0200\n"
+"PO-Revision-Date: 2022-05-01 15:22+0200\n"
+"Last-Translator: Florian Vogt\n"
+"Language-Team: English, United Kingdom\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
-"TestPoString: abc123\n"`
-
-const poStrDecode = `Project-Id-Version: Poedit 1.5
-Report-Msgid-Bugs-To: poedit@googlegroups.com
-POT-Creation-Date: 2012-07-30 10:34+0200
-PO-Revision-Date: 2013-02-24 21:00+0800
-Last-Translator: Christopher Meng <trans@cicku.me>
-Language-Team: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=1; plural=0;
-X-Generator: Poedit 1.5.5
-TestPoString: abc123
-`
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Project-ID: 53425\n"
+"X-Crowdin-Language: en-GB\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+"X-Crowdin-File-ID: 3\n"
+"X-Generator: Poedit 3.0.1\n"`

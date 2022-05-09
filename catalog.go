@@ -94,16 +94,3 @@ func (c *gettextCatalog) getMessage(ctx, msgID string, idx int) (*gettextMessage
 
 	return msg, nil
 }
-
-func transformMessageArray(rawMessages []*gettextMessage) messageLookupMap {
-	result := make(messageLookupMap, len(rawMessages))
-
-	for _, msg := range rawMessages {
-		if _, hasContext := result[msg.Context]; !hasContext {
-			result[msg.Context] = make(map[string]*gettextMessage)
-		}
-
-		result[msg.Context][msg.ID] = msg
-	}
-	return result
-}

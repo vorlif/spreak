@@ -6,8 +6,6 @@ import (
 	"io"
 	"strconv"
 	"strings"
-
-	"github.com/vorlif/spreak/internal/util"
 )
 
 type parser struct {
@@ -17,7 +15,7 @@ type parser struct {
 	n           int
 
 	header   *Header
-	messages map[string]map[string]*util.Message // ctx -> msgID -> Message
+	messages map[string]map[string]*Message // ctx -> msgID -> Message
 }
 
 func MustParse(content []byte) *File {
@@ -36,7 +34,7 @@ func Parse(content []byte) (*File, error) {
 func ParseString(content string) (*File, error) {
 	p := &parser{
 		s:        newScanner(content),
-		messages: make(map[string]map[string]*util.Message),
+		messages: make(map[string]map[string]*Message),
 	}
 	return p.Parse()
 }
@@ -78,7 +76,7 @@ func (p *parser) Parse() (*File, error) {
 
 		// save message
 		if _, ok := p.messages[msg.Context]; !ok {
-			p.messages[msg.Context] = make(map[string]*util.Message)
+			p.messages[msg.Context] = make(map[string]*Message)
 		}
 
 		if _, ok := p.messages[msg.Context][msg.ID]; ok {
@@ -96,23 +94,21 @@ func (p *parser) Parse() (*File, error) {
 		return nil, errors.New("po file cannot not be empty")
 	}
 
-	file := &File{Messages: p.messages}
+	file := &File{Header: &Header{}, Messages: p.messages}
 	if p.header != nil {
 		file.Header = p.header
-	} else {
-		file.Header = &Header{}
 	}
 	return file, nil
 }
 
-func (p *parser) parseMessage() (*util.Message, error) {
+func (p *parser) parseMessage() (*Message, error) {
 	if tok, _ := p.scan(); tok == eof {
 		return nil, io.EOF
 	}
 
 	p.unscan()
 
-	msg := util.Message{Str: make(map[int]string)}
+	msg := NewMessage()
 loop:
 	for {
 		tok, _ := p.scan()
@@ -139,15 +135,15 @@ loop:
 			return nil, p.buildPosError()
 		case eof, whitespace, commentTranslator, commentExtracted, commentReference, commentFlags,
 			commentPrevContext, commentPrevMsgID, commentPrevMsgIDLine, commentPrevContextLine:
-			return &msg, nil
+			return msg, nil
 		case msgContext, msgContextLine:
-			msg.Context += util.DecodePoString(lit)
+			msg.Context += DecodePoString(lit)
 		case msgID, msgIDLine:
-			msg.ID += util.DecodePoString(lit)
+			msg.ID += DecodePoString(lit)
 		case msgIDPlural, msgIDPluralLine:
-			msg.IDPlural += util.DecodePoString(lit)
+			msg.IDPlural += DecodePoString(lit)
 		case msgStr, msgStrLine:
-			msg.Str[0] += util.DecodePoString(lit)
+			msg.Str[0] += DecodePoString(lit)
 		case msgStrPlural:
 			left := strings.Index(lit, `[`)
 			right := strings.LastIndex(lit, `]`)
@@ -156,21 +152,21 @@ loop:
 				return nil, fmt.Errorf("po file contains an invalid entry for a plural translation (line %d)", p.s.pos)
 			}
 
-			msg.Str[idx] = util.DecodePoString(lit)
+			msg.Str[idx] = DecodePoString(lit)
 		case msgStrPluralLine:
 			lastIdx := len(msg.Str) - 1
 			if lastIdx < 0 {
 				return nil, p.buildPosError()
 			}
-			msg.Str[lastIdx] += util.DecodePoString(lit)
+			msg.Str[lastIdx] += DecodePoString(lit)
 		default:
 			return nil, p.buildPosError()
 		}
 	}
 }
 
-func (p *parser) parseComment() (*util.Comment, error) {
-	var comment util.Comment
+func (p *parser) parseComment() (*Comment, error) {
+	comment := NewComment()
 	for {
 		tok, line := p.scan()
 
@@ -202,19 +198,19 @@ func (p *parser) parseComment() (*util.Comment, error) {
 			if line == "" {
 				continue
 			}
-			comment.PrevMsgContext += util.DecodePoString(line)
+			comment.PrevMsgContext += DecodePoString(line)
 		case commentPrevContextLine:
 			line = strings.TrimSpace(line[2:]) // #| "..."
-			comment.PrevMsgContext += util.DecodePoString(line)
+			comment.PrevMsgContext += DecodePoString(line)
 		case commentPrevMsgID:
 			line = strings.TrimSpace(line[8:]) // #| msgid
 			if line == "" {
 				continue
 			}
-			comment.PrevMsgID += util.DecodePoString(line)
+			comment.PrevMsgID += DecodePoString(line)
 		case commentPrevMsgIDLine:
 			line = strings.TrimSpace(line[2:]) // #| "..."
-			comment.PrevMsgID += util.DecodePoString(line)
+			comment.PrevMsgID += DecodePoString(line)
 		case commentReference:
 			line = strings.TrimSpace(line[2:]) // #:
 
@@ -224,7 +220,7 @@ func (p *parser) parseComment() (*util.Comment, error) {
 				colonIdx := strings.Index(rawRef, ":")
 				if colonIdx <= 0 {
 					// no line number
-					ref := &util.Reference{
+					ref := &Reference{
 						Path: rawRef,
 						Line: -1,
 					}
@@ -236,7 +232,7 @@ func (p *parser) parseComment() (*util.Comment, error) {
 				if err != nil {
 					lineNumber = -1
 				}
-				ref := &util.Reference{
+				ref := &Reference{
 					Path: rawRef[:colonIdx],
 					Line: lineNumber,
 				}
@@ -244,12 +240,12 @@ func (p *parser) parseComment() (*util.Comment, error) {
 			}
 		default:
 			p.unscan()
-			return &comment, nil
+			return comment, nil
 		}
 	}
 }
 
-func (p *parser) parseHeader(msg *util.Message) (*Header, error) {
+func (p *parser) parseHeader(msg *Message) (*Header, error) {
 	header := &Header{}
 	lines := strings.Split(msg.Str[0], "\n")
 	for _, line := range lines {
@@ -264,37 +260,7 @@ func (p *parser) parseHeader(msg *util.Message) (*Header, error) {
 
 		key := strings.TrimSpace(line[:colonIdx])
 		val := strings.TrimSpace(line[colonIdx+1:])
-		switch strings.ToUpper(key) {
-		case strings.ToUpper(util.HeaderProjectIDVersion):
-			header.ProjectIDVersion = val
-		case strings.ToUpper(util.HeaderReportMsgIDBugsTo):
-			header.ReportMsgidBugsTo = val
-		case strings.ToUpper(util.HeaderPOTCreationDate):
-			header.POTCreationDate = val
-		case strings.ToUpper(util.HeaderPORevisionDate):
-			header.PORevisionDate = val
-		case strings.ToUpper(util.HeaderLastTranslator):
-			header.LastTranslator = val
-		case strings.ToUpper(util.HeaderLanguageTeam):
-			header.LanguageTeam = val
-		case strings.ToUpper(util.HeaderLanguage):
-			header.Language = val
-		case strings.ToUpper(util.HeaderMIMEVersion):
-			header.MimeVersion = val
-		case strings.ToUpper(util.HeaderContentType):
-			header.ContentType = val
-		case strings.ToUpper(util.HeaderContentTransferEncoding):
-			header.ContentTransferEncoding = val
-		case strings.ToUpper(util.HeaderPluralForms):
-			header.PluralForms = val
-		case strings.ToUpper(util.HeaderXGenerator):
-			header.XGenerator = val
-		default:
-			if header.UnknownFields == nil {
-				header.UnknownFields = make(map[string]string)
-			}
-			header.UnknownFields[key] = val
-		}
+		header.SetField(key, val)
 	}
 	header.Comment = msg.Comment
 

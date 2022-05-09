@@ -49,7 +49,7 @@ func parseLanguageName(lang string) (language.Tag, error) {
 func languageInterfaceToTag(i interface{}) (language.Tag, error) {
 	switch v := i.(type) {
 	case string:
-		tag, err := language.Parse(v)
+		tag, err := parseLanguageName(v)
 		if err != nil {
 			return language.Und, err
 		}

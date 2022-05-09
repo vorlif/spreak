@@ -1,11 +1,8 @@
-package util
+package po
 
 import (
-	"bytes"
 	"fmt"
-	"io"
 	"sort"
-	"strings"
 )
 
 type Reference struct {
@@ -29,6 +26,13 @@ type Comment struct {
 	Flags          []string     // #, fuzzy,go-format,range:0..10
 	PrevMsgContext string       // #| msgctxt previous-context
 	PrevMsgID      string       // #| msgid previous-untranslated-string
+}
+
+func NewComment() *Comment {
+	return &Comment{
+		References: []*Reference{},
+		Flags:      []string{},
+	}
 }
 
 func (p *Comment) AddReference(ref *Reference) {
@@ -74,43 +78,4 @@ func (p *Comment) HasFlag(flag string) bool {
 		}
 	}
 	return false
-}
-
-func (p Comment) WriteTo(w io.StringWriter, wrapWidth int) error {
-	if p.Translator != "" {
-		for _, comment := range WrapString(p.Translator, wrapWidth) {
-			if _, err := w.WriteString(fmt.Sprintf("# %s\n", comment)); err != nil {
-				return err
-			}
-		}
-	}
-
-	if p.Extracted != "" {
-		for _, comment := range WrapString(p.Extracted, wrapWidth) {
-			if _, err := w.WriteString(fmt.Sprintf("#. %s\n", comment)); err != nil {
-				return err
-			}
-		}
-	}
-
-	if len(p.References) > 0 {
-		var buff bytes.Buffer
-		for _, ref := range p.References {
-			buff.WriteString(fmt.Sprintf("%s:%d ", ref.Path, ref.Line))
-		}
-
-		for _, comment := range WrapString(buff.String(), wrapWidth) {
-			if _, err := w.WriteString(fmt.Sprintf("#: %s\n", comment)); err != nil {
-				return err
-			}
-		}
-	}
-
-	if len(p.Flags) != 0 {
-		if _, err := w.WriteString(fmt.Sprintf("#, %s\n", strings.Join(p.Flags, ", "))); err != nil {
-			return err
-		}
-	}
-
-	return nil
 }

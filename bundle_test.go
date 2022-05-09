@@ -45,7 +45,7 @@ func TestBundle_SupportedLanguages(t *testing.T) {
 func TestBundle_GetLocaleWithDomain(t *testing.T) {
 	reducer, errRed := NewDefaultReducer(WithCategory("my_category"))
 	require.NoError(t, errRed)
-	loader, errL := NewFilesystemLoader(WithReducer(reducer), WithLoadPath(testdataStructureDir))
+	loader, errL := NewFilesystemLoader(WithReducer(reducer), WithPath(testdataStructureDir))
 	require.NoError(t, errL)
 	require.NotNil(t, loader)
 

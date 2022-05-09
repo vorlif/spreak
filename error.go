@@ -33,8 +33,6 @@ func NewErrNotFound(lang language.Tag, source string, format string, vars ...int
 
 func (e *ErrNotFound) Error() string { return e.String() }
 
-func (e *ErrNotFound) Unwrap() error { return errSpreak }
-
 func (e *ErrNotFound) String() string {
 	return fmt.Sprintf("spreak: item of type %q for lang=%q could not be found: %s ", e.Type, e.Language, e.Identifier)
 }
@@ -51,8 +49,6 @@ func newMissingLanguageError(lang language.Tag) *ErrMissingLanguage {
 
 func (e *ErrMissingLanguage) Error() string { return e.String() }
 
-func (e *ErrMissingLanguage) Unwrap() error { return errSpreak }
-
 func (e *ErrMissingLanguage) String() string {
 	return fmt.Sprintf("spreak: language not found: lang=%q ", e.Language)
 }
@@ -64,8 +60,6 @@ type ErrMissingDomain struct {
 }
 
 func (e *ErrMissingDomain) Error() string { return e.String() }
-
-func (e *ErrMissingDomain) Unwrap() error { return errSpreak }
 
 func (e *ErrMissingDomain) String() string {
 	var b strings.Builder
@@ -86,8 +80,6 @@ type ErrMissingContext struct {
 }
 
 func (e *ErrMissingContext) Error() string { return e.String() }
-
-func (e *ErrMissingContext) Unwrap() error { return errSpreak }
 
 func (e *ErrMissingContext) String() string {
 	var b strings.Builder
@@ -113,8 +105,6 @@ type ErrMissingMessageID struct {
 
 func (e *ErrMissingMessageID) Error() string { return e.String() }
 
-func (e *ErrMissingMessageID) Unwrap() error { return errSpreak }
-
 func (e *ErrMissingMessageID) String() string {
 	var b strings.Builder
 	b.WriteString(fmt.Sprintf("spreak: msgID not found: lang=%q ", e.Language))
@@ -138,8 +128,6 @@ type ErrMissingTranslation struct {
 }
 
 func (e *ErrMissingTranslation) Error() string { return e.String() }
-
-func (e *ErrMissingTranslation) Unwrap() error { return errSpreak }
 
 func (e *ErrMissingTranslation) String() string {
 	var b strings.Builder

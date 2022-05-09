@@ -1,18 +1,22 @@
 package util
 
 import (
-	"bytes"
+	"strings"
 	"unicode"
 )
 
 const nbsp = 0xA0
 
 func WrapString(s string, pageWidth int) []string {
+	if pageWidth <= 0 {
+		return strings.Split(s, "\n")
+	}
+
 	lines := make([]string, 0, 10)
 
-	currentLine := &stringBuffer{}
-	var currentWordBuf stringBuffer
-	var lastSpaceBuf stringBuffer
+	currentLine := &StringBuffer{}
+	var currentWordBuf StringBuffer
+	var lastSpaceBuf StringBuffer
 
 	for _, char := range s {
 		if char == '\n' {
@@ -55,38 +59,4 @@ func WrapString(s string, pageWidth int) []string {
 
 	lines = append(lines, currentLine.String())
 	return lines
-}
-
-type stringBuffer struct {
-	buff bytes.Buffer
-	len  int
-}
-
-func (b *stringBuffer) Len() int {
-	return b.len
-}
-
-func (b *stringBuffer) Reset() {
-	b.buff.Reset()
-	b.len = 0
-}
-
-func (b *stringBuffer) WriteInto(w *stringBuffer) {
-	_, _ = b.buff.WriteTo(&w.buff)
-	w.len += b.len
-	b.len = 0
-}
-
-func (b *stringBuffer) String() string {
-	return b.buff.String()
-}
-
-func (b *stringBuffer) WriteRune(r rune) {
-	b.buff.WriteRune(r)
-	b.len++
-}
-
-func (b *stringBuffer) WriteString(s string) {
-	_, _ = b.buff.WriteString(s)
-	b.len += len(s)
 }

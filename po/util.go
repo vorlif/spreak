@@ -1,10 +1,14 @@
-package util
+package po
 
 import (
 	"bytes"
 	"strings"
 	"unicode"
+
+	"github.com/vorlif/spreak/internal/util"
 )
+
+const nbsp = 0xA0
 
 func DecodePoString(text string) string {
 	lines := strings.Split(text, "\n")
@@ -76,9 +80,9 @@ func EncodePoString(s string, lim int) string {
 func encodePoStringWithWrap(s string, pageWidth int) []string {
 	lines := make([]string, 0, 2) // The average message is two lines long
 
-	currentLine := &stringBuffer{}
-	var lastWordBuf stringBuffer
-	var currentSpaceBuf stringBuffer
+	currentLine := &util.StringBuffer{}
+	var lastWordBuf util.StringBuffer
+	var currentSpaceBuf util.StringBuffer
 
 	currentLine.WriteRune('"')
 	var currentLen int
