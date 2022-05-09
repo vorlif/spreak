@@ -22,8 +22,8 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.7.1 h1:5TQK59W5E3v0r2duFAb7P95B6hEeOyEnHRa8MjYSMTY=
 github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
-github.com/vorlif/spreak v0.1.1-0.20220509113455-c38efce160fd h1:QuXeZR/wc2RP04DKVSI+Bf2iZAAHdJh2q+qKOM3bDno=
-github.com/vorlif/spreak v0.1.1-0.20220509113455-c38efce160fd/go.mod h1:/mYnzorAXrvSyN5a81dWy/e1Xhm+0vGOUHIcq8Wif2w=
+github.com/vorlif/spreak v0.1.1-0.20220509201803-2403875b2129 h1:45XeRDiwCcZny9RmL5/dSh/0RH1JXn9o0pEKCkxzl1o=
+github.com/vorlif/spreak v0.1.1-0.20220509201803-2403875b2129/go.mod h1:/mYnzorAXrvSyN5a81dWy/e1Xhm+0vGOUHIcq8Wif2w=
 golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 h1:kQgndtyPBW/JIYERgdxfwMYh3AVStj88WQTlNDi2a+o=
 golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3/go.mod h1:3p9vT2HGsQu2K1YbXdKPJLVgG5VJdoTa1poYQBtP1AY=
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=

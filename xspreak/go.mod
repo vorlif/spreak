@@ -7,7 +7,7 @@ require (
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.1
-	github.com/vorlif/spreak v0.1.1-0.20220509113455-c38efce160fd
+	github.com/vorlif/spreak v0.1.1-0.20220509201803-2403875b2129
 	golang.org/x/tools v0.1.10
 )
 
