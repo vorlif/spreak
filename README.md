@@ -1,4 +1,4 @@
-# Spreak ![Tets status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak)
+# Spreak ![Build status](https://github.com/vorlif/spreak/workflows/Build/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak)
 
 Flexible translation library for Go based on the concepts of gettext.
 
@@ -26,17 +26,23 @@ import (
 )
 
 func main() {
+	// Create a bundle that loads the translations for the required languages.
+	// Typically, you only need one bundle in an application.
 	bundle, err := spreak.NewBundle(
 		spreak.WithSourceLanguage(language.English),
+		// Set the path from which the translations should be loaded
 		spreak.WithDomainPath(spreak.NoDomain, "../locale"),
+		// Specify the languages you want to load
 		spreak.WithLanguage(language.German, language.Spanish, language.Chinese),
 	)
 	if err != nil {
 		panic(err)
 	}
 
+	// Create a Localiser to select the language to translate.
 	t := spreak.NewLocalizer(bundle, language.Spanish)
 
+	// Translate
 	fmt.Println(t.Get("Hello world"))
 	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
 
@@ -66,10 +72,10 @@ How you structure the files with the translations is up to you.
 Common structures are:
 
 ```text
-{path}/locale/{language}/{domain}.po
-{path}/locale/{language}.po
-{path}/locale/{domain}/{language}po
-{path}/locale/{language}/{category}/{domain}.po
+{path}/{language}/{domain}.po
+{path}/{language}.po
+{path}/{domain}/{language}po
+{path}/{language}/{category}/{domain}.po
 
 Example:
 .../locale/es/helloworld.po
@@ -89,180 +95,13 @@ Most tools also have the ability to update existing translation via the pot file
 If you are dealing with Po files for the first time,
 I recommend the application [poedit](https://poedit.net/) for a quick start.
 
+After translation `.po` or `.mo` files are generated, which are used by spreak for looking up translations.
 Attention, do not translate the `.pot` file directly, as this is only a template.
-
-After translation `.po` or `.mo` files are generated, which spreak loads.
-
-## xspreak extraction
-
-xspreak automatically extracts strings that use a string alias from the localize package.
-The extracted strings are stored in a `.pot` file and can then be easily translated.
-After translation, the extracted strings can be easily passed to a localizer or a locale and will be
-will be replaced by the translations.
-
-Example:
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-// Extracted because the type is localize.Singular
-var ApplicationName localize.Singular = "app"
-```
-
-Global variables and constants are extracted if the type is localize.Singular or localize.MsgID.
-Thereby localize.Singular and localize.MsgID are always equivalent and can be used synonymously.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-const Weekday localize.Singular = "weekday"
-
-var ApplicationName localize.Singular = "app"
-```
-
-Local variables are extracted if the type is localize.Singular or localize.MsgID.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-func init() {
-	holiday := localize.Singular("Christmas")
-}
-```
-
-Assignments to variables are extracted if the type is localize.Singular or localize.MsgID.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-var ApplicationName = "app"
-
-func init() {
-	var holiday localize.Singular
-
-	holiday = "Mother's Day"
-
-	ApplicationName = "App for you"
-}
-```
-
-Function calls to **global functions** are extracted if the parameter type is from the localize package.
-The parameters of a function are grouped together to form a message.
-Thus a message can be created with singular, plural, a context and a domain.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-func noop(name localize.Singular, plural localize.Plural, ctx localize.Context) {}
-
-func init() {
-	noop("I have %d car", "I have %d cars", "cars")
-}
-```
-
-Struct initializations are extracted if the struct was defined globally and
-the attribute type comes from the localize package.
-The attributes of a struct are grouped together to create a message.
-Thus a message can be created with singular, plural, a context and a domain.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-type MyMessage struct {
-	Text   localize.Singular
-	Plural localize.Plural
-	Tmp    string
-}
-
-func main() {
-	msg := &MyMessage{
-		// Extracted
-		Text:   "Hello planet",
-		Plural: "Hello planets",
-
-		// not extracted - type string
-		Tmp: "tmp",
-	}
-}
-```
-
-Arrays are extracted if the type is localize.Singular or a struct that contains parameter
-types from the localize package.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-var weekdays = []localize.MsgID{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
-
-type MyMessage struct {
-	Text   localize.Singular
-	Plural localize.Plural
-	Tmp    string
-}
-
-func main() {
-	animals := []MyMessage{
-		{Text: "%d dog", Plural: "%d dogs"},
-		{Text: "%d cat", Plural: "%d cat"},
-		{Text: "%d horse", Plural: "%d horses"},
-	}
-}
-```
-
-Strings can be extracted from `errors.New` if xspreak is called with the `-e` option.
-
-```go
-package main
-
-import "errors"
-
-var ErrInvalidAnimal = errors.New("this is not a valid animal")
-
-```
-
-Comments can be left for translators.
-These are extracted, stored in the `.pot` file and displayed to the translator.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-// TRANSLATORS: This comment is automatically extracted by xspreak
-// and can be used to leave useful hints for the translators.
-//
-// This comment is not extracted because a blank line was inserted above it.
-const InvalidName localize.Singular = "The name has an invalid format"
-```
-
-Strings can be ignored.
-
-```go
-package main
-
-import "github.com/vorlif/spreak/localize"
-
-// xspreak: ignore
-const MagicName localize.Singular = ".%$($§($(%"
-```
 
 ## What's next
 
-Take a look in the [examples folder](./examples) for more examples of using spreak.
+* Read what you can extract with [xspreak](xspreak/README.md)
+* Take a look in the [examples folder](./examples) for more examples of using spreak.
 
 ## License
 
