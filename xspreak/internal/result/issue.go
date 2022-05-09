@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/tools/go/packages"
 
-	"github.com/vorlif/spreak/po"
+	"github.com/vorlif/spreak/internal/po"
 )
 
 type Issue struct {

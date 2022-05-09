@@ -6,7 +6,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/vorlif/spreak/po"
+	"github.com/vorlif/spreak/internal/po"
 
 	"github.com/vorlif/spreak/xspreak/internal/config"
 	"github.com/vorlif/spreak/xspreak/internal/result"

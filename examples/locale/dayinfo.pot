@@ -1,7 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the
-# PACKAGE VERSION package.
+# This file is distributed under the same license as the PACKAGE VERSION package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 #, fuzzy
@@ -9,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-08 00:07+0200\n"
+"POT-Creation-Date: 2022-05-09 13:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,19 +27,11 @@ msgid "System language detected: %v"
 msgstr ""
 
 #: ../dayinfo/main.go:63 
-msgid "Friday"
-msgstr ""
-
-#: ../dayinfo/main.go:63 
-msgid "Saturday"
-msgstr ""
-
-#: ../dayinfo/main.go:63 
 msgid "Monday"
 msgstr ""
 
 #: ../dayinfo/main.go:63 
-msgid "Thursday"
+msgid "Tuesday"
 msgstr ""
 
 #: ../dayinfo/main.go:63 
@@ -48,7 +39,15 @@ msgid "Wednesday"
 msgstr ""
 
 #: ../dayinfo/main.go:63 
-msgid "Tuesday"
+msgid "Thursday"
+msgstr ""
+
+#: ../dayinfo/main.go:63 
+msgid "Friday"
+msgstr ""
+
+#: ../dayinfo/main.go:63 
+msgid "Saturday"
 msgstr ""
 
 #: ../dayinfo/main.go:63 
