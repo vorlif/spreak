@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/tools/go/packages"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/po"
 )
 
 type Issue struct {
@@ -26,7 +26,7 @@ type Issue struct {
 
 	Pos token.Position
 
-	Translation *util.Message
+	Message *po.Message
 }
 
 func (i *Issue) FilePath() string {

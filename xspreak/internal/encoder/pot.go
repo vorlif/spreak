@@ -5,11 +5,10 @@ import (
 	"io"
 	"time"
 
-	"github.com/vorlif/spreak/xspreak/internal/result"
+	"github.com/vorlif/spreak/po"
 
-	"github.com/vorlif/spreak/internal/po"
-	"github.com/vorlif/spreak/internal/util"
 	"github.com/vorlif/spreak/xspreak/internal/config"
+	"github.com/vorlif/spreak/xspreak/internal/result"
 )
 
 type Encoder interface {
@@ -18,11 +17,11 @@ type Encoder interface {
 
 type potEncoder struct {
 	cfg *config.Config
-	w   io.StringWriter
+	w   *po.Encoder
 }
 
-func NewPotEncoder(cfg *config.Config, w io.StringWriter) Encoder {
-	return &potEncoder{cfg: cfg, w: w}
+func NewPotEncoder(cfg *config.Config, w io.Writer) Encoder {
+	return &potEncoder{cfg: cfg, w: po.NewEncoder(w)}
 }
 
 func (e *potEncoder) Encode(issues []result.Issue) error {
@@ -34,14 +33,14 @@ func (e *potEncoder) Encode(issues []result.Issue) error {
 
 	file := &po.File{
 		Header:   header,
-		Messages: make(map[string]map[string]*util.Message),
+		Messages: make(map[string]map[string]*po.Message),
 	}
 
 	for _, iss := range issues {
-		file.AddMessage(iss.Translation)
+		file.AddMessage(iss.Message)
 	}
 
-	return file.WriteTo(e.w, e.cfg.WrapWidth)
+	return e.w.Encode(file)
 }
 
 func (e *potEncoder) buildHeader() *po.Header {
@@ -51,7 +50,7 @@ This file is distributed under the same license as the %s package.
 FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 `, e.cfg.CopyrightHolder, e.cfg.PackageName)
 	return &po.Header{
-		Comment: &util.Comment{
+		Comment: &po.Comment{
 			Translator:     headerComment,
 			Extracted:      "",
 			References:     nil,

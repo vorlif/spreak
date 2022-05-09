@@ -6,7 +6,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/po"
+
 	"github.com/vorlif/spreak/xspreak/internal/config"
 	"github.com/vorlif/spreak/xspreak/internal/result"
 )
@@ -30,7 +31,7 @@ func (s translationBuilder) Process(inIssues []result.Issue) ([]result.Issue, er
 	}
 
 	for _, iss := range inIssues {
-		var codeReferences []*util.Reference
+		var codeReferences []*po.Reference
 		if !s.cfg.WriteNoLocation {
 			path, errP := filepath.Rel(absOut, iss.Pos.Filename)
 			if errP != nil {
@@ -38,7 +39,7 @@ func (s translationBuilder) Process(inIssues []result.Issue) ([]result.Issue, er
 				path = iss.Pos.Filename
 			}
 
-			ref := &util.Reference{
+			ref := &po.Reference{
 				Path:   path,
 				Line:   iss.Pos.Line,
 				Column: iss.Pos.Column,
@@ -46,8 +47,8 @@ func (s translationBuilder) Process(inIssues []result.Issue) ([]result.Issue, er
 			codeReferences = append(codeReferences, ref)
 		}
 
-		iss.Translation = &util.Message{
-			Comment: &util.Comment{
+		iss.Message = &po.Message{
+			Comment: &po.Comment{
 				Extracted:  strings.Join(iss.Comment, "\n"),
 				References: codeReferences,
 				Flags:      iss.Flags,
