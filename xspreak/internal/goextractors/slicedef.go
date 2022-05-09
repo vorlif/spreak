@@ -88,7 +88,7 @@ func (v sliceDefExtractor) Run(_ context.Context, extractCtx *extractors.Context
 					MsgID:         msgID,
 					Pkg:           pkg,
 					CommentGroups: extractCtx.GetComments(pkg, stringNode, stack),
-					Pos:           extractCtx.GetPosition(node.Pos()),
+					Pos:           extractCtx.GetPosition(stringNode.Pos()),
 				}
 
 				issues = append(issues, issue)

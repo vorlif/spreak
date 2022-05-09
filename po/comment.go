@@ -3,6 +3,7 @@ package po
 import (
 	"fmt"
 	"sort"
+	"strings"
 )
 
 type Reference struct {
@@ -13,7 +14,7 @@ type Reference struct {
 
 func (r Reference) String() string {
 	if r.Line >= 0 {
-		return fmt.Sprintf("%s:%d", r.Path, r.Line)
+		return fmt.Sprintf("%s:%d:%d", r.Path, r.Line, r.Column)
 	}
 
 	return r.Path
@@ -58,8 +59,8 @@ func (p *Comment) Less(q *Comment) bool {
 		if i >= len(q.References) {
 			break
 		}
-		if a, b := p.References[i].Path, q.References[i].Path; a != b {
-			return a < b
+		if c := strings.Compare(p.References[i].Path, q.References[i].Path); c != 0 {
+			return c == -1
 		}
 		if a, b := p.References[i].Line, q.References[i].Line; a != b {
 			return a < b
