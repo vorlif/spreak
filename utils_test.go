@@ -63,4 +63,12 @@ func TestExpandLanguage(t *testing.T) {
 	got = ExpandLanguage(language.MustParse("sr_LATN"))
 	want = []string{"sr-Latn", "sr_Latn", "sr-RS", "sr_RS", "srp", "sr"}
 	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.MustParse("art-x-a2"))
+	want = []string{"art-x-a2", "art"}
+	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.MustParse("en-US-x-twain"))
+	want = []string{"en-US-x-twain", "en-Latn", "en_Latn", "en-US", "en_US", "eng", "en"}
+	assert.Equal(t, want, got)
 }

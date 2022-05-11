@@ -26,7 +26,6 @@ func getLocaleForDomain(t *testing.T) *Locale {
 	require.NotNil(t, locale)
 
 	require.Equal(t, "a", locale.defaultDomain)
-	locale.Domains()
 
 	return locale
 }
@@ -47,14 +46,18 @@ func TestLocale_SimplePublicFunctions(t *testing.T) {
 	locale := getLocaleForDomain(t)
 	assert.Equal(t, "ID", locale.Get("id"))
 	assert.Equal(t, "en_id", locale.Get("en_id"))
+	assert.Equal(t, "en_id", locale.Getf("en_id"))
 
 	assert.Equal(t, "ID", locale.DGet("a", "id"))
 	assert.Equal(t, "en_id", locale.DGet("a", "en_id"))
 	assert.Equal(t, "id", locale.DGet("unknown", "id"))
+	assert.Equal(t, "id", locale.DGetf("unknown", "id"))
 
+	assert.Equal(t, "%d Tag", locale.NGet("%d day", "%d days", 1))
 	assert.Equal(t, "1 Tag", locale.NGetf("%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", locale.NGetf("%d car", "%d cars", 10, 10))
 
+	assert.Equal(t, "%d Tag", locale.DNGet("a", "%d day", "%d days", 1))
 	assert.Equal(t, "1 Tag", locale.DNGetf("a", "%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", locale.DNGetf("a", "%d car", "%d cars", 10, 10))
 	assert.Equal(t, "1 day", locale.DNGetf("unknown", "%d day", "%d days", 1, 1))
@@ -63,6 +66,7 @@ func TestLocale_SimplePublicFunctions(t *testing.T) {
 	assert.Equal(t, "Test mit Context", locale.PGet("context", "Test with context"))
 	assert.Equal(t, "Test with context", locale.PGetf("other", "Test with context", 5))
 
+	assert.Equal(t, "Test mit Context", locale.DPGet("a", "context", "Test with context"))
 	assert.Equal(t, "Test mit Context", locale.DPGetf("a", "context", "Test with context"))
 	assert.Equal(t, "Test with context", locale.DPGetf("a", "other", "Test with context", 5))
 	assert.Equal(t, "Test with context", locale.DPGetf("unknown", "context", "Test with context"))
@@ -151,4 +155,22 @@ func TestLocale_MainFunctions(t *testing.T) {
 		assert.Error(t, err)
 		assert.Equal(t, "1 day", tr)
 	})
+}
+
+func TestNewLocale_UseSourceLanguage(t *testing.T) {
+	bundle, errB := NewBundle(
+		WithSourceLanguage(language.Italian),
+		WithDefaultDomain("a"),
+		WithDomainPath("a", testTranslationDir),
+		WithDomainPath("z", testTranslationDir),
+		WithLanguage(language.German),
+	)
+	require.NoError(t, errB)
+	require.NotNil(t, bundle)
+
+	locale, errL := NewLocale(bundle, language.Italian)
+	require.NoError(t, errL)
+	require.NotNil(t, locale)
+	assert.Equal(t, language.Italian, locale.language)
+	assert.True(t, locale.isSourceLanguage)
 }
