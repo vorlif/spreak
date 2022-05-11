@@ -7,9 +7,9 @@ Flexible translation library for Go based on the concepts of gettext.
 ## Features
 
 * Support for `fs.FS` and `embed`
-* Goroutine Safe and lock free through immutability
+* Goroutine-safe and lock free through immutability
 * Easily extendable
-* [Powerful extractor](xspreak/README.md) for strings to simplify the localization process
+* [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
 
 ## Usage
 
@@ -58,7 +58,7 @@ func main() {
 Strings for the translations can be extracted via the command line program xspreak.
 
 ```
-go install github.com/vorlif/spreak/xspreak@main
+go install github.com/vorlif/xspreak@v0.2.1
 xspreak -help
 ```
 
@@ -101,7 +101,7 @@ Attention, do not translate the `.pot` file directly, as this is only a template
 
 ## What's next
 
-* Read what you can extract with [xspreak](xspreak/README.md)
+* Read what you can extract with [xspreak](https://github.com/vorlif/xspreak#xspreak)
 * Take a look in the [examples folder](./examples) for more examples of using spreak.
 
 ## License

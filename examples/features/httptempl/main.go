@@ -18,6 +18,7 @@ const (
 	Title localize.Singular = "Welcome to the Spreak Tour"
 )
 
+// xspreak: template
 var page = template.Must(template.New("").Parse(`
 <!DOCTYPE html>
 <html>
