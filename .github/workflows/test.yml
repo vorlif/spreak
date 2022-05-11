@@ -1,0 +1,53 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  golangci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.17'
+          
+      - uses: actions/checkout@v3
+      
+      - name: lint
+        uses: golangci/golangci-lint-action@v3.1.0
+        with:
+          version: latest
+
+  test:
+    strategy:
+      matrix:
+        platform:
+        - ubuntu
+        - macOS
+        go:
+        - 16
+        - 17
+        - 18
+    name: '${{ matrix.platform }} | 1.${{ matrix.go }}.x'
+    runs-on: ${{ matrix.platform }}-latest
+    steps:
+    
+    - uses: actions/checkout@v3
+    
+    - uses: actions/setup-go@v3
+      with:
+        go-version: 1.${{ matrix.go }}.x
+        
+    - uses: actions/cache@v3
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-1.${{ matrix.go }}.x-${{ hashFiles('**/go.sum') }}
+        restore-keys: ${{ runner.os }}-1.${{ matrix.go }}.x-
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
