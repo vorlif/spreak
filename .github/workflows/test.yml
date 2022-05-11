@@ -26,6 +26,7 @@ jobs:
         platform:
         - ubuntu
         - macOS
+        - windows
         go:
         - 16
         - 17
