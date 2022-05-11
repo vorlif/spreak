@@ -23,7 +23,7 @@ msgid "Welcome to the Spreak Tour"
 msgstr ""
 
 #: ../features/httptempl/main.go:22
-#, gotemplate
+#, go-template, go-format
 msgid "Nice to see you %s"
 msgstr ""
 

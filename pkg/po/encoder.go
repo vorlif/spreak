@@ -13,21 +13,36 @@ import (
 
 // An Encoder writes a po file to an output stream.
 type Encoder struct {
-	w         *bufio.Writer
-	wrapWidth int
+	w               *bufio.Writer
+	wrapWidth       int
+	writeHeader     bool
+	writeReferences bool
 }
 
 // NewEncoder returns a new encoder that writes to w.
 func NewEncoder(w io.Writer) *Encoder {
-	return &Encoder{w: bufio.NewWriter(w), wrapWidth: -1}
+	return &Encoder{
+		w:               bufio.NewWriter(w),
+		wrapWidth:       -1,
+		writeHeader:     true,
+		writeReferences: true,
+	}
 }
 
 func (e *Encoder) SetWrapWidth(wrapWidth int) {
 	e.wrapWidth = wrapWidth
 }
 
+func (e *Encoder) SetWriteHeader(write bool) {
+	e.writeHeader = write
+}
+
+func (e *Encoder) SetWriteReferences(write bool) {
+	e.writeReferences = write
+}
+
 func (e *Encoder) Encode(f *File) error {
-	if f.Header != nil {
+	if f.Header != nil && e.writeHeader {
 		if err := e.encodeHeader(f.Header); err != nil {
 			return err
 		}
@@ -127,7 +142,7 @@ func (e *Encoder) encodeComment(c *Comment) error {
 		}
 	}
 
-	if len(c.References) > 0 {
+	if len(c.References) > 0 && e.writeReferences {
 		var buff bytes.Buffer
 		for _, ref := range c.References {
 			buff.WriteString(fmt.Sprintf("%s:%d ", ref.Path, ref.Line))
@@ -187,12 +202,14 @@ func (e *Encoder) encodeTranslations(plural bool, orig map[int]string) error {
 		m[k] = v
 	}
 
+	// We need at least one entry
 	if len(m) == 0 {
 		m[0] = ""
 	}
 
 	if plural {
 		if len(m) == 1 {
+			// Plural needs at least two entries
 			m[1] = ""
 		}
 

@@ -3,6 +3,7 @@ package spreak
 import (
 	"io/fs"
 	"os"
+	"path/filepath"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -87,11 +88,11 @@ func TestLoadPo(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			false, "de/my_category/b.po", PoFile,
+			false, filepath.FromSlash("de/my_category/b.po"), PoFile,
 		},
 		{
 			language.German, "a", "",
-			false, "de/LC_MESSAGES/a.po", PoFile,
+			false, filepath.FromSlash("de/LC_MESSAGES/a.po"), PoFile,
 		},
 		{
 			language.French, "a", "",
