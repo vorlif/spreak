@@ -9,7 +9,7 @@ import (
 	"golang.org/x/text/language"
 )
 
-func Test_parseLanguageName(t *testing.T) {
+func TestParseLanguageName(t *testing.T) {
 
 	tests := []struct {
 		langStr string
@@ -30,7 +30,7 @@ func Test_parseLanguageName(t *testing.T) {
 	}
 }
 
-func Test_defaultPrintFuncGenerator(t *testing.T) {
+func TestDefaultPrintFuncGenerator(t *testing.T) {
 	engP := NewDefaultPrinter().GetPrintFunc(language.English)
 	require.NotNil(t, engP)
 
@@ -41,4 +41,26 @@ func Test_defaultPrintFuncGenerator(t *testing.T) {
 	assert.Equal(t, "test for number 12,345,678", engP(test, 12345678))
 	assert.Equal(t, "test for number 12.345.678", deP(test, 12345678))
 	assert.Equal(t, test, deP(test))
+}
+
+func TestExpandLanguage(t *testing.T) {
+	got := ExpandLanguage(language.MustParse("de-AT"))
+	want := []string{"de-Latn", "de_Latn", "de-AT", "de_AT", "deu", "de"}
+	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.Chinese)
+	want = []string{"zh-Hans", "zh_Hans", "zh-CN", "zh_CN", "zho", "zh"}
+	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.TraditionalChinese)
+	want = []string{"zh-Hant", "zh_Hant", "zh-TW", "zh_TW", "zho", "zh"}
+	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.SimplifiedChinese)
+	want = []string{"zh-Hans", "zh_Hans", "zh-CN", "zh_CN", "zho", "zh"}
+	assert.Equal(t, want, got)
+
+	got = ExpandLanguage(language.MustParse("sr_LATN"))
+	want = []string{"sr-Latn", "sr_Latn", "sr-RS", "sr_RS", "srp", "sr"}
+	assert.Equal(t, want, got)
 }

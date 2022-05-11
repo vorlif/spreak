@@ -12,7 +12,6 @@ var (
 	ErrRequireStringTag = errors.New("spreak: unsupported type, expecting string or language.Tag")
 
 	errMissingLocale = errors.New("spreak: locale missing")
-	errSpreak        = errors.New("spreak")
 )
 
 // ErrNotFound is the error returned by a loader if no matching context was found.

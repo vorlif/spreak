@@ -7,7 +7,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/vorlif/spreak/internal/po"
+	"github.com/vorlif/spreak/po"
 )
 
 const (

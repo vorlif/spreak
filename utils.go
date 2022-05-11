@@ -2,6 +2,7 @@ package spreak
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 
 	"golang.org/x/text/language"
@@ -9,27 +10,34 @@ import (
 
 // ExpandLanguage returns possible filenames for a language tag without extension.
 func ExpandLanguage(lang language.Tag) []string {
-	expansions := []string{lang.String()}
+	expansions := make(map[string]bool, 4)
+	expansions[lang.String()] = true
 
 	base, baseConf := lang.Base()
-	if baseConf == language.No {
-		return expansions
+	if baseConf > language.No {
+		expansions[base.ISO3()] = true
+		expansions[base.String()] = true
 	}
 
 	region, regionConf := lang.Region()
-	if regionConf == language.No {
-		return expansions
+	if regionConf > language.No && baseConf > language.No {
+		key := fmt.Sprintf("%s_%s", base.String(), region.String())
+		expansions[key] = true
+
+		key = fmt.Sprintf("%s-%s", base.String(), region.String())
+		expansions[key] = true
 	}
 
-	expansions = append(expansions,
-		fmt.Sprintf("%s_%s", base.String(), region.String()),
-		fmt.Sprintf("%s-%s", base.String(), region.String()),
-		base.ISO3(),
-		fmt.Sprintf("%s_%s", base.ISO3(), region.ISO3()),
-		fmt.Sprintf("%s-%s", base.ISO3(), region.ISO3()),
-	)
+	script, scriptConf := lang.Script()
+	if scriptConf > language.No && baseConf > language.No {
+		key := fmt.Sprintf("%s_%s", base.String(), script.String())
+		expansions[key] = true
 
-	return expansions
+		key = fmt.Sprintf("%s-%s", base.String(), script.String())
+		expansions[key] = true
+	}
+
+	return stringMapKeys(expansions)
 }
 
 func parseLanguageName(lang string) (language.Tag, error) {
@@ -59,4 +67,22 @@ func languageInterfaceToTag(i interface{}) (language.Tag, error) {
 	default:
 		return language.Und, ErrRequireStringTag
 	}
+}
+
+func stringMapKeys(m map[string]bool) []string {
+	keys := make([]string, len(m))
+	i := 0
+	for key := range m {
+		keys[i] = key
+		i++
+	}
+	// Longest first
+	sort.SliceStable(keys, func(i, j int) bool {
+		if x, y := len(keys[i]), len(keys[j]); x != y {
+			return x > y
+		}
+
+		return keys[i] < keys[j]
+	})
+	return keys
 }

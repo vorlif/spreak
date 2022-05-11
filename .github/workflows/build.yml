@@ -13,34 +13,21 @@ jobs:
         with:
           go-version: '1.17'
       - uses: actions/checkout@v3
-      - name: lint spreak
+      - name: lint
         uses: golangci/golangci-lint-action@v3.1.0
         with:
-          version: latest
-      - name: ling xspreak
-        uses: golangci/golangci-lint-action@v3.1.0
-        with:
-          working-directory: xspreak
           version: latest
 
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
     - uses: actions/setup-go@v3
       with:
         go-version: 1.18
 
-    - name: Build spreak
-      run: go build -v ./...
+        - name: Build
+          run: go build -v ./...
 
-    - name: Test spreak
-      run: go test -v ./...
-      
-    - name: Build xspreak
-      working-directory: xspreak
-      run: go build -v ./...
-      
-    - name: Test xspreak
-      working-directory: xspreak
-      run: go test -v ./...
+        - name: Test
+          run: go test -v ./...

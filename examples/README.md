@@ -12,6 +12,10 @@ stored in the folder `locale`.
   * Advanced example to demonstrate how spreak can be used with xspreak
   * xspreak command `xspreak -e -D dayinfo/ -p locale/ -d dayinfo`
 
+* [httptempl](features/httptempl)
+  * Includes a simple example of how to use spreak with a web server and template.
+  * xspreak command `xspreak -e -D features/httptempl/ -p locale/ -d httptempl`
+
 * [embed](./features/embed)
   * Example how spreak can be used with the embed api
 

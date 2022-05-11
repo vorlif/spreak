@@ -7,7 +7,7 @@ import (
 
 	"github.com/vorlif/spreak/internal/mo"
 	"github.com/vorlif/spreak/internal/plural"
-	"github.com/vorlif/spreak/internal/po"
+	"github.com/vorlif/spreak/po"
 )
 
 // A Decoder reads and decodes catalogs for a language and a domain from a byte array.

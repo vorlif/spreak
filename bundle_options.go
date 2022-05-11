@@ -86,7 +86,7 @@ func WithFilesystemLoader(domain string, fsOpts ...FsOption) BundleOption {
 		}
 
 		if _, found := opts.domainLoaders[domain]; found {
-			return fmt.Errorf("%w: loader for domain %s already set", errSpreak, domain)
+			return fmt.Errorf("spreak: loader for domain %s already set", domain)
 		}
 
 		opts.domainLoaders[domain] = l

@@ -51,7 +51,7 @@ msgstr "ID"`
 }
 
 func TestParse_File(t *testing.T) {
-	content, errRead := os.ReadFile("../../testdata/parser/poedit_en_GB.po")
+	content, errRead := os.ReadFile("../testdata/parser/poedit_en_GB.po")
 	require.NoError(t, errRead)
 
 	file, err := Parse(content)
