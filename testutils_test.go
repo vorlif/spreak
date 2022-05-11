@@ -2,14 +2,15 @@ package spreak
 
 import (
 	"io/fs"
+	"path/filepath"
 
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/language"
 )
 
-const (
-	testdataStructureDir = "./testdata/structure"
-	testTranslationDir   = "testdata/translation-test/"
+var (
+	testdataStructureDir = filepath.FromSlash("./testdata/structure")
+	testTranslationDir   = filepath.FromSlash("testdata/translation-test/")
 )
 
 type testDecoder struct {

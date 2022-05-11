@@ -25,6 +25,12 @@ func TestNewFilesystemLoader(t *testing.T) {
 		require.Error(t, err)
 		require.Nil(t, fsLoader)
 	})
+
+	t.Run("error is returned if multiple file systems are to be stored", func(t *testing.T) {
+		fsLoader, err := NewFilesystemLoader(WithPath(testdataStructureDir), WithPath(testdataStructureDir))
+		require.Error(t, err)
+		require.Nil(t, fsLoader)
+	})
 }
 
 func TestFilesystemLoader_Load(t *testing.T) {
@@ -88,11 +94,11 @@ func TestLoadPo(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			false, filepath.FromSlash("de/my_category/b.po"), PoFile,
+			false, filepath.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.German, "a", "",
-			false, filepath.FromSlash("de/LC_MESSAGES/a.po"), PoFile,
+			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.French, "a", "",
@@ -183,11 +189,11 @@ func TestDisableSearch(t *testing.T) {
 		},
 		{
 			language.German, "a", "LC_MESSAGES",
-			false, "de/LC_MESSAGES/a.po", PoFile,
+			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.German, "b", "my_category",
-			false, "de/my_category/b.po", PoFile,
+			false, filepath.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.English, "domain", "cat",

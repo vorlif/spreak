@@ -1,6 +1,7 @@
 package spreak
 
 import (
+	"errors"
 	"fmt"
 	"testing"
 
@@ -25,6 +26,55 @@ func getLocalizerForTest(t *testing.T) *Localizer {
 	require.NotNil(t, localizer)
 
 	return localizer
+}
+
+func TestLocalizer_FallbackLanguageIsUsed(t *testing.T) {
+	bundle, errB := NewBundle(
+		WithSourceLanguage(language.English),
+		WithFallbackLanguage(language.German),
+		WithDefaultDomain("a"),
+		WithDomainPath("a", testTranslationDir),
+		WithDomainPath("z", testTranslationDir),
+	)
+	require.NoError(t, errB)
+	require.NotNil(t, bundle)
+
+	localizer := NewLocalizer(bundle, "zh")
+	require.NotNil(t, localizer)
+
+	assert.Equal(t, language.German, localizer.Language())
+}
+
+func TestLocalizer_SourceIsUsed(t *testing.T) {
+	bundle, errB := NewBundle(
+		WithSourceLanguage(language.English),
+		WithDefaultDomain("a"),
+		WithDomainPath("a", testTranslationDir),
+		WithDomainPath("z", testTranslationDir),
+	)
+	require.NoError(t, errB)
+	require.NotNil(t, bundle)
+
+	localizer := NewLocalizer(bundle, "zh")
+	require.NotNil(t, localizer)
+
+	assert.Equal(t, language.English, localizer.Language())
+}
+
+func TestNewLocalizer_InvalidInputIsIgnored(t *testing.T) {
+	bundle, errB := NewBundle(
+		WithSourceLanguage(language.English),
+		WithDefaultDomain("a"),
+		WithDomainPath("a", testTranslationDir),
+		WithDomainPath("z", testTranslationDir),
+		WithLanguage(language.German),
+	)
+	require.NoError(t, errB)
+	require.NotNil(t, bundle)
+
+	localizer := NewLocalizer(bundle, 5, 2, nil, "de")
+	require.NotNil(t, localizer)
+	assert.Equal(t, language.German, localizer.Language())
 }
 
 func TestLocalizer_Getter(t *testing.T) {
@@ -89,6 +139,7 @@ func TestLocalizer_SimplePublicFunctions(t *testing.T) {
 	assert.Equal(t, "1 day", localizer.DNGetf("unknown", "%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", localizer.DNGetf("unknown", "%d car", "%d cars", 10, 10))
 
+	assert.Equal(t, "Test mit Context", localizer.PGet("context", "Test with context"))
 	assert.Equal(t, "Test mit Context", localizer.PGetf("context", "Test with context"))
 	assert.Equal(t, "Test with context", localizer.PGetf("other", "Test with context", 5))
 
@@ -180,4 +231,12 @@ func TestLocalizer_MainFunctions(t *testing.T) {
 		assert.Error(t, err)
 		assert.Equal(t, "1 day", tr)
 	})
+}
+
+func TestLocalizer_LocalizeError(t *testing.T) {
+	localizer := getLocalizerForTest(t)
+
+	err := errors.New("test error")
+	err = localizer.LocalizeError(err)
+	assert.Error(t, err)
 }

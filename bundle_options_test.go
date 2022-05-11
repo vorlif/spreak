@@ -61,6 +61,13 @@ func TestWithFallbackLanguage(t *testing.T) {
 			}
 		}
 	}
+
+	t.Run("error on invalid language", func(t *testing.T) {
+		bundle, err = NewBundle(WithFallbackLanguage(1))
+		assert.Error(t, err)
+		assert.Nil(t, bundle)
+	})
+
 }
 
 func TestWithLanguage(t *testing.T) {
@@ -101,6 +108,15 @@ func TestWithLoader(t *testing.T) {
 
 	t.Run("A domain can have only one loader", func(t *testing.T) {
 		bundle, err := NewBundle(WithDomainPath(NoDomain, "/tmp"), WithDomainPath(NoDomain, testdataStructureDir))
+		require.Error(t, err)
+		require.Nil(t, bundle)
+
+		loader := testLoader{
+			f: func(lang language.Tag, domain string) (Catalog, error) {
+				return nil, errors.New("test loader")
+			},
+		}
+		bundle, err = NewBundle(WithDomainLoader(NoDomain, &loader), WithDomainLoader(NoDomain, &loader))
 		require.Error(t, err)
 		require.Nil(t, bundle)
 	})
@@ -212,5 +228,42 @@ func TestWithFilesystemLoader(t *testing.T) {
 		bundle, err := NewBundle(WithFilesystemLoader(NoDomain, nil))
 		require.Error(t, err)
 		require.Nil(t, bundle)
+	})
+}
+
+func TestWithErrorContext(t *testing.T) {
+	t.Run("Empty string is set", func(t *testing.T) {
+		bundle, err := NewBundle(WithErrorContext(NoCtx))
+		require.NoError(t, err)
+		require.NotNil(t, bundle)
+		assert.Equal(t, NoCtx, bundle.errContext)
+	})
+
+	t.Run("Value is set", func(t *testing.T) {
+		bundle, err := NewBundle(WithErrorContext("my-context"))
+		require.NoError(t, err)
+		require.NotNil(t, bundle)
+		assert.Equal(t, "my-context", bundle.errContext)
+	})
+}
+
+func TestWithLanguageMatcherBuilder(t *testing.T) {
+	t.Run("Nil is not an valid option", func(t *testing.T) {
+		bundle, err := NewBundle(WithLanguageMatcherBuilder(nil))
+		require.Error(t, err)
+		require.Nil(t, bundle)
+	})
+
+	t.Run("language match-builder is set", func(t *testing.T) {
+		var matcher language.Matcher
+		builder := func(t []language.Tag, options ...language.MatchOption) language.Matcher {
+			matcher = language.NewMatcher(t, options...)
+			return matcher
+		}
+		bundle, err := NewBundle(WithLanguageMatcherBuilder(builder))
+		require.NoError(t, err)
+		require.NotNil(t, bundle)
+
+		assert.Equal(t, matcher, bundle.languageMatcher)
 	})
 }
