@@ -55,7 +55,7 @@ func main() {
 
 ### Extract strings
 
-Strings for the translations can be extracted via the command line program xspreak.
+Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
 
 ```
 go install github.com/vorlif/xspreak@v0.2.1

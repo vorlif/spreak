@@ -127,3 +127,60 @@ func TestCommentSort(t *testing.T) {
 		assert.Equal(t, refs[5], c.References[5])
 	})
 }
+
+func TestCommentMerge(t *testing.T) {
+	t.Run("There are no duplicate references", func(t *testing.T) {
+		c := NewComment()
+		c.AddReference(&Reference{Path: "a"})
+		c.AddReference(&Reference{Path: "b"})
+		c.AddReference(&Reference{Path: "c"})
+		other := NewComment()
+		dupRef := &Reference{Path: "a"}
+		other.AddReference(dupRef)
+		other.AddReference(&Reference{Path: "d"})
+		other.AddReference(&Reference{Path: "e"})
+
+		assert.Len(t, c.References, 3)
+		c.mergeReferences(other)
+		assert.Len(t, c.References, 5)
+		assert.Len(t, other.References, 3)
+	})
+
+	t.Run("only new references", func(t *testing.T) {
+		c := NewComment()
+		other := NewComment()
+		other.AddReference(&Reference{Path: "d"})
+		other.AddReference(&Reference{Path: "e"})
+
+		assert.Len(t, c.References, 0)
+		c.mergeReferences(other)
+		assert.Len(t, c.References, 2)
+	})
+
+	t.Run("There are no duplicate flags", func(t *testing.T) {
+		c := NewComment()
+		c.AddFlag("a")
+		c.AddFlag("b")
+		c.AddFlag("c")
+		other := NewComment()
+		other.AddFlag("a")
+		other.AddFlag("d")
+		other.AddFlag("e")
+
+		assert.Len(t, c.Flags, 3)
+		c.mergeFlags(other)
+		assert.Len(t, c.Flags, 5)
+		assert.Len(t, other.Flags, 3)
+	})
+
+	t.Run("only new flags", func(t *testing.T) {
+		c := NewComment()
+		other := NewComment()
+		other.AddFlag("d")
+		other.AddFlag("e")
+
+		assert.Len(t, c.Flags, 0)
+		c.mergeFlags(other)
+		assert.Len(t, c.Flags, 2)
+	})
+}

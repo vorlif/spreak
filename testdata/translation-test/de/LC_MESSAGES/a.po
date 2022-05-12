@@ -49,3 +49,7 @@ msgid "%d issue with the translation found."
 msgid_plural "%d issues with the translation found."
 msgstr[0] "Es wurde %d Problem mit der Übersetzung gefunden."
 msgstr[1] "Es wurden %d Probleme mit der Übersetzung gefunden."
+
+msgctxt "errors"
+msgid "failure"
+msgstr "fehler"

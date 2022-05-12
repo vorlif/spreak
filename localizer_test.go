@@ -127,15 +127,18 @@ func TestLocalizer_SimplePublicFunctions(t *testing.T) {
 	assert.Equal(t, "ID", localizer.Getf("id"))
 	assert.Equal(t, "en_id", localizer.Getf("en_id"))
 
+	assert.Equal(t, "ID", localizer.DGet("a", "id"))
 	assert.Equal(t, "ID", localizer.DGetf("a", "id"))
 	assert.Equal(t, "en_id", localizer.DGetf("a", "en_id"))
 	assert.Equal(t, "id", localizer.DGetf("unknown", "id"))
 
+	assert.Equal(t, "%d Tag", localizer.NGet("%d day", "%d days", 1))
 	assert.Equal(t, "1 Tag", localizer.NGetf("%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", localizer.NGetf("%d car", "%d cars", 10, 10))
 
 	assert.Equal(t, "1 Tag", localizer.DNGetf("a", "%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", localizer.DNGetf("a", "%d car", "%d cars", 10, 10))
+	assert.Equal(t, "%d day", localizer.DNGet("unknown", "%d day", "%d days", 1))
 	assert.Equal(t, "1 day", localizer.DNGetf("unknown", "%d day", "%d days", 1, 1))
 	assert.Equal(t, "10 cars", localizer.DNGetf("unknown", "%d car", "%d cars", 10, 10))
 
@@ -148,6 +151,7 @@ func TestLocalizer_SimplePublicFunctions(t *testing.T) {
 	assert.Equal(t, "Test with context", localizer.DPGetf("unknown", "context", "Test with context"))
 	assert.Equal(t, "Test with context", localizer.DPGetf("unknown", "other", "Test with context", 5))
 
+	assert.Equal(t, "%d Ergebniss", localizer.NPGetf("context", "%d result", "%d results", 1))
 	assert.Equal(t, "1 Ergebniss", localizer.NPGetf("context", "%d result", "%d results", 1, 1))
 	assert.Equal(t, "10 Ergebnisse", localizer.NPGetf("context", "%d result", "%d results", 10, 10))
 	assert.Equal(t, "1 result", localizer.NPGetf("other", "%d result", "%d results", 1, 1))
@@ -155,6 +159,7 @@ func TestLocalizer_SimplePublicFunctions(t *testing.T) {
 	assert.Equal(t, "1 car", localizer.NPGetf("context", "%d car", "%d cars", 1, 1))
 	assert.Equal(t, "10 cars", localizer.NPGetf("context", "%d car", "%d cars", 10, 10))
 
+	assert.Equal(t, "%d Ergebniss", localizer.DNPGet("a", "context", "%d result", "%d results", 1))
 	assert.Equal(t, "1 Ergebniss", localizer.DNPGetf("a", "context", "%d result", "%d results", 1, 1))
 	assert.Equal(t, "10 Ergebnisse", localizer.DNPGetf("a", "context", "%d result", "%d results", 10, 10))
 	assert.Equal(t, "1 result", localizer.DNPGetf("a", "other", "%d result", "%d results", 1, 1))
@@ -236,7 +241,50 @@ func TestLocalizer_MainFunctions(t *testing.T) {
 func TestLocalizer_LocalizeError(t *testing.T) {
 	localizer := getLocalizerForTest(t)
 
-	err := errors.New("test error")
-	err = localizer.LocalizeError(err)
-	assert.Error(t, err)
+	t.Run("error translation", func(t *testing.T) {
+		want := "fehler"
+		get := localizer.LocalizeError(errors.New("failure"))
+		assert.Error(t, get)
+		assert.IsType(t, &localize.Error{}, get)
+		assert.Equal(t, want, get.Error())
+	})
+
+	t.Run("localizable error", func(t *testing.T) {
+		raw := &testLocalizeErr{
+			singular:  "failure",
+			errorText: "other",
+		}
+
+		get := localizer.LocalizeError(raw)
+		assert.Error(t, get)
+		assert.IsType(t, raw, get)
+		assert.Equal(t, raw.errorText, get.Error())
+
+		raw.context = "errors"
+		get = localizer.LocalizeError(raw)
+		assert.Error(t, get)
+		assert.IsType(t, &localize.Error{}, get)
+		want := "fehler"
+		assert.Equal(t, want, get.Error())
+
+		raw.singular = "The kindergarten"
+		raw.context = ""
+		raw.domain = "z"
+		raw.hasDomain = true
+		get = localizer.LocalizeError(raw)
+		assert.True(t, localizer.HasLocale())
+		assert.Contains(t, localizer.locale.Domains(), "z")
+		assert.Error(t, get)
+		if assert.IsType(t, &localize.Error{}, get) {
+			loErr := get.(*localize.Error)
+			want = "Der Kindergarten"
+			assert.Equal(t, want, loErr.Translation)
+		}
+	})
+
+	t.Run("no translation", func(t *testing.T) {
+		err := errors.New("unknown error")
+		get := localizer.LocalizeError(err)
+		assert.Exactly(t, err, get)
+	})
 }

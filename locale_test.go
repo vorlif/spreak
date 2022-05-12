@@ -1,6 +1,7 @@
 package spreak
 
 import (
+	"errors"
 	"fmt"
 	"testing"
 
@@ -11,7 +12,7 @@ import (
 	"github.com/vorlif/spreak/localize"
 )
 
-func getLocaleForDomain(t *testing.T) *Locale {
+func getLocale(t *testing.T) *Locale {
 	bundle, errB := NewBundle(
 		WithDefaultDomain("a"),
 		WithDomainPath("a", testTranslationDir),
@@ -31,7 +32,7 @@ func getLocaleForDomain(t *testing.T) *Locale {
 }
 
 func TestLocale_Getter(t *testing.T) {
-	locale := getLocaleForDomain(t)
+	locale := getLocale(t)
 
 	assert.Equal(t, language.German, locale.Language())
 	assert.Equal(t, "a", locale.DefaultDomain())
@@ -43,7 +44,7 @@ func TestLocale_Getter(t *testing.T) {
 }
 
 func TestLocale_SimplePublicFunctions(t *testing.T) {
-	locale := getLocaleForDomain(t)
+	locale := getLocale(t)
 	assert.Equal(t, "ID", locale.Get("id"))
 	assert.Equal(t, "en_id", locale.Get("en_id"))
 	assert.Equal(t, "en_id", locale.Getf("en_id"))
@@ -95,7 +96,7 @@ func TestLocale_SimplePublicFunctions(t *testing.T) {
 }
 
 func TestLocale_TranslateWithError(t *testing.T) {
-	locale := getLocaleForDomain(t)
+	locale := getLocale(t)
 
 	localizeMsg := &localize.Message{
 		Singular: "%d day",
@@ -123,7 +124,7 @@ func TestLocale_TranslateWithError(t *testing.T) {
 }
 
 func TestLocale_MainFunctions(t *testing.T) {
-	locale := getLocaleForDomain(t)
+	locale := getLocale(t)
 
 	t.Run("translate singular", func(t *testing.T) {
 		for _, tt := range singularTestData {
@@ -173,4 +174,106 @@ func TestNewLocale_UseSourceLanguage(t *testing.T) {
 	require.NotNil(t, locale)
 	assert.Equal(t, language.Italian, locale.language)
 	assert.True(t, locale.isSourceLanguage)
+}
+
+func TestLocale_LocalizeError(t *testing.T) {
+	locale := getLocale(t)
+
+	t.Run("error translation", func(t *testing.T) {
+		want := "fehler"
+		get := locale.LocalizeError(errors.New("failure"))
+		assert.Error(t, get)
+		assert.IsType(t, &localize.Error{}, get)
+		assert.Equal(t, want, get.Error())
+	})
+
+	t.Run("localizable error", func(t *testing.T) {
+		raw := &testLocalizeErr{
+			singular:  "failure",
+			errorText: "other",
+		}
+
+		get := locale.LocalizeError(raw)
+		assert.Error(t, get)
+		assert.IsType(t, raw, get)
+		assert.Equal(t, raw.errorText, get.Error())
+
+		raw.context = "errors"
+		get = locale.LocalizeError(raw)
+		assert.Error(t, get)
+		assert.IsType(t, &localize.Error{}, get)
+		want := "fehler"
+		assert.Equal(t, want, get.Error())
+
+		raw.singular = "The kindergarten"
+		raw.context = ""
+		raw.domain = "z"
+		raw.hasDomain = true
+		get = locale.LocalizeError(raw)
+		assert.Error(t, get)
+		if assert.IsType(t, &localize.Error{}, get) {
+			loErr := get.(*localize.Error)
+			want = "Der Kindergarten"
+			assert.Equal(t, want, loErr.Translation)
+		}
+	})
+
+	t.Run("no translation", func(t *testing.T) {
+		err := errors.New("unknown error")
+		get := locale.LocalizeError(err)
+		assert.Exactly(t, err, get)
+	})
+}
+
+func TestLocaleMissingCallback(t *testing.T) {
+	var lastErr error
+	bundle, errB := NewBundle(
+		WithDefaultDomain("a"),
+		WithDomainPath("a", testTranslationDir),
+		WithDomainPath("z", testTranslationDir),
+		WithLanguage(language.German),
+		WithMissingTranslationCallback(func(err error) {
+			lastErr = err
+		}),
+	)
+	require.NoError(t, errB)
+	require.NotNil(t, bundle)
+
+	locale, errL := NewLocale(bundle, language.German)
+	require.NoError(t, errL)
+	require.NotNil(t, locale)
+
+	want := "empty translation"
+	get := locale.Get(want)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingTranslation{}, lastErr)
+
+	get = locale.NGet(want, "plural", 1)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingTranslation{}, lastErr)
+
+	get = locale.PGet("unknown", want)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingContext{}, lastErr)
+
+	get = locale.NPGet("unknown", want, "plural", 1)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingContext{}, lastErr)
+
+	get = locale.DGet("unknown-domain", want)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingDomain{}, lastErr)
+
+	get = locale.DNGet("unknown-domain", want, "plural", 1)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingDomain{}, lastErr)
+
+	want = "#+/?%=§$=§$"
+	get = locale.Get(want)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingMessageID{}, lastErr)
+
+	get = locale.NGet(want, "plural", 1)
+	assert.Equal(t, want, get)
+	assert.IsType(t, &ErrMissingMessageID{}, lastErr)
 }

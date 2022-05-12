@@ -31,3 +31,6 @@ msgid "%d issue"
 msgid_plural "%d issues"
 msgstr[0] "%d Problem"
 msgstr[1] "%d Probleme"
+
+msgid "The kindergarten"
+msgstr "Der Kindergarten"

@@ -25,7 +25,7 @@ func NewMessage() *Message {
 
 func (m *Message) AddReference(ref *Reference) {
 	if m.Comment == nil {
-		m.Comment = &Comment{}
+		m.Comment = NewComment()
 	}
 
 	m.Comment.AddReference(ref)
@@ -44,29 +44,16 @@ func (m *Message) Less(q *Message) bool {
 }
 
 func (m *Message) Merge(other *Message) {
-	newReferences := make([]*Reference, 0)
-	for _, otherRef := range other.Comment.References {
-		for _, ref := range m.Comment.References {
-			if ref.Equal(otherRef) {
-				continue
-			}
-
-			newReferences = append(newReferences, otherRef)
-		}
+	if other == nil {
+		return
 	}
-	m.Comment.References = append(m.Comment.References, newReferences...)
 
-	newFlags := make([]string, 0)
-	for _, otherFlag := range other.Comment.Flags {
-		for _, flag := range m.Comment.Flags {
-			if flag == otherFlag {
-				continue
-			}
-
-			newFlags = append(newFlags, otherFlag)
-		}
+	if m.Comment == nil {
+		m.Comment = NewComment()
 	}
-	m.Comment.Flags = append(m.Comment.Flags, newFlags...)
+
+	m.Comment.mergeReferences(other.Comment)
+	m.Comment.mergeFlags(other.Comment)
 	m.Comment.sort()
 
 	if m.IDPlural == "" && other.IDPlural != "" {

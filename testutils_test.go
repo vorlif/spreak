@@ -6,6 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/language"
+
+	"github.com/vorlif/spreak/localize"
 )
 
 var (
@@ -62,6 +64,35 @@ func (t *testPrinter) Init(_ []language.Tag) {}
 var _ Printer = (*testPrinter)(nil)
 
 func (t *testPrinter) GetPrintFunc(tag language.Tag) PrintFunc { return t.f(tag) }
+
+type testLocalizeErr struct {
+	singular  string
+	plural    string
+	context   string
+	domain    string
+	hasDomain bool
+	errorText string
+}
+
+var _ localize.Localizable = (*testLocalizeErr)(nil)
+
+func (t *testLocalizeErr) GetMsgID() string { return t.singular }
+
+func (t *testLocalizeErr) GetPluralID() string { return t.plural }
+
+func (t *testLocalizeErr) GetContext() string { return t.context }
+
+func (testLocalizeErr) GetVars() []interface{} { return nil }
+
+func (testLocalizeErr) GetCount() int { return 0 }
+
+func (t *testLocalizeErr) HasDomain() bool { return t.hasDomain }
+
+func (t *testLocalizeErr) GetDomain() string { return t.domain }
+
+func (t *testLocalizeErr) Error() string { return t.errorText }
+
+func (t *testLocalizeErr) String() string { return t.GetMsgID() }
 
 var singularTestData = []struct {
 	msgID      string

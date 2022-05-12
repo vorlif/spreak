@@ -83,6 +83,54 @@ func (c *Comment) AddFlag(flag string) {
 	c.Flags = append(c.Flags, flag)
 }
 
+func (c *Comment) mergeReferences(other *Comment) {
+	if other == nil || len(other.References) == 0 {
+		return
+	}
+
+	newReferences := make([]*Reference, 0)
+
+	for _, otherRef := range other.References {
+		hasRef := false
+		for _, ref := range c.References {
+			if ref.Equal(otherRef) {
+				hasRef = true
+				break
+			}
+		}
+
+		if !hasRef {
+			newReferences = append(newReferences, otherRef)
+		}
+	}
+
+	c.References = append(c.References, newReferences...)
+}
+
+func (c *Comment) mergeFlags(other *Comment) {
+	if other == nil || len(other.Flags) == 0 {
+		return
+	}
+
+	newFlags := make([]string, 0)
+
+	for _, otherFlag := range other.Flags {
+		hasRef := false
+		for _, flag := range c.Flags {
+			if flag == otherFlag {
+				hasRef = true
+				break
+			}
+		}
+
+		if !hasRef {
+			newFlags = append(newFlags, otherFlag)
+		}
+	}
+
+	c.Flags = append(c.Flags, newFlags...)
+}
+
 func (c *Comment) sortReferences() {
 	sort.Slice(c.References, func(i, j int) bool {
 		if c.References[i].Path != c.References[j].Path {

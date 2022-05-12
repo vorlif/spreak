@@ -75,3 +75,15 @@ func TestMessageSort(t *testing.T) {
 	assert.Equal(t, messages[0], o)
 	assert.Equal(t, messages[1], msg)
 }
+
+func TestMessage_Merge(t *testing.T) {
+	msg := NewMessage()
+	msg.AddReference(&Reference{Path: "b"})
+	o := NewMessage()
+	o.AddReference(&Reference{Path: "a"})
+	o.Comment.AddFlag("flag-a")
+
+	msg.Merge(o)
+	assert.Len(t, msg.Comment.References, 2)
+	assert.Len(t, msg.Comment.Flags, 1)
+}
