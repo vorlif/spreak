@@ -189,7 +189,7 @@ func (p *parser) parseComment() (*Comment, error) {
 			comment.Extracted += line
 		case commentFlags:
 			line = strings.TrimSpace(line[2:]) // #,
-			rawFlags := strings.Split(line[2:], " ")
+			rawFlags := strings.Split(line, " ")
 			for _, flag := range rawFlags {
 				comment.Flags = append(comment.Flags, strings.TrimSpace(flag))
 			}
@@ -214,7 +214,7 @@ func (p *parser) parseComment() (*Comment, error) {
 		case commentReference:
 			line = strings.TrimSpace(line[2:]) // #:
 
-			rawReferences := strings.Split(line[2:], " ")
+			rawReferences := strings.Split(line, " ")
 			for _, rawRef := range rawReferences {
 				rawRef = strings.TrimSpace(rawRef)
 				colonIdx := strings.Index(rawRef, ":")

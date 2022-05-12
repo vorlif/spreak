@@ -44,6 +44,19 @@ func (f *File) AddMessage(msg *Message) {
 	f.Messages.Add(msg)
 }
 
+func (f *File) GetMessage(ctx string, id string) *Message {
+	if _, hasCtx := f.Messages[ctx]; !hasCtx {
+		return nil
+	}
+
+	msg, ok := f.Messages[ctx][id]
+	if !ok {
+		return nil
+	}
+
+	return msg
+}
+
 func (f *File) String() string {
 	if f.Header != nil {
 		return fmt.Sprintf("po file %s %s", f.Header.ProjectIDVersion, f.Header.Language)

@@ -122,3 +122,22 @@ func TestParse_File(t *testing.T) {
 	})
 
 }
+
+func TestParseComment(t *testing.T) {
+	t.Run("parse flags", func(t *testing.T) {
+		content := `#, python-format
+msgid "%(value)s trillion"
+msgid_plural "%(value)s trillion"
+msgstr[0] "%(value)s Billion"
+msgstr[1] "%(value)s Billionen"
+`
+		file, err := Parse([]byte(content))
+		require.NoError(t, err)
+		require.NotNil(t, file)
+		require.NotNil(t, file.Messages)
+		msg := file.GetMessage("", "%(value)s trillion")
+		assert.NotNil(t, msg)
+		assert.Len(t, msg.Comment.Flags, 1)
+		assert.Equal(t, msg.Comment.Flags[0], "python-format")
+	})
+}
