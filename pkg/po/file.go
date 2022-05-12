@@ -37,6 +37,10 @@ func (f *File) AddMessage(msg *Message) {
 		f.Messages = make(Messages)
 	}
 
+	if msg.ID == "" {
+		return
+	}
+
 	f.Messages.Add(msg)
 }
 

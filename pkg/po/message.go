@@ -23,47 +23,42 @@ func NewMessage() *Message {
 	}
 }
 
-func (p *Message) AddReference(ref *Reference) {
-	if p.Comment == nil {
-		p.Comment = &Comment{}
+func (m *Message) AddReference(ref *Reference) {
+	if m.Comment == nil {
+		m.Comment = &Comment{}
 	}
 
-	p.Comment.AddReference(ref)
+	m.Comment.AddReference(ref)
 }
 
-func (p *Message) Less(q *Message) bool {
-	if p.Comment.Less(q.Comment) {
-		return true
+func (m *Message) Less(q *Message) bool {
+	if m.Comment != nil && q.Comment != nil {
+		return m.Comment.Less(q.Comment)
 	}
 
-	if a, b := p.Context, q.Context; a != b {
+	if a, b := m.ID, q.ID; a != b {
 		return a < b
 	}
-	if a, b := p.ID, q.ID; a != b {
-		return a < b
-	}
-	if a, b := p.IDPlural, q.IDPlural; a != b {
-		return a < b
-	}
+
 	return false
 }
 
-func (p *Message) Merge(other *Message) {
+func (m *Message) Merge(other *Message) {
 	newReferences := make([]*Reference, 0)
-	for _, ref := range p.Comment.References {
-		for _, otherRef := range other.Comment.References {
-			if ref.Line == otherRef.Line && ref.Path == otherRef.Path {
+	for _, otherRef := range other.Comment.References {
+		for _, ref := range m.Comment.References {
+			if ref.Equal(otherRef) {
 				continue
 			}
 
 			newReferences = append(newReferences, otherRef)
 		}
 	}
-	p.Comment.References = append(p.Comment.References, newReferences...)
+	m.Comment.References = append(m.Comment.References, newReferences...)
 
 	newFlags := make([]string, 0)
-	for _, flag := range p.Comment.Flags {
-		for _, otherFlag := range other.Comment.Flags {
+	for _, otherFlag := range other.Comment.Flags {
+		for _, flag := range m.Comment.Flags {
 			if flag == otherFlag {
 				continue
 			}
@@ -71,10 +66,11 @@ func (p *Message) Merge(other *Message) {
 			newFlags = append(newFlags, otherFlag)
 		}
 	}
-	p.Comment.Flags = append(p.Comment.Flags, newFlags...)
+	m.Comment.Flags = append(m.Comment.Flags, newFlags...)
+	m.Comment.sort()
 
-	if p.IDPlural == "" && other.IDPlural != "" {
-		p.IDPlural = other.IDPlural
+	if m.IDPlural == "" && other.IDPlural != "" {
+		m.IDPlural = other.IDPlural
 	}
 }
 

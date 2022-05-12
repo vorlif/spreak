@@ -65,6 +65,7 @@ msgstr ""
 }
 
 func TestEncoder_Message(t *testing.T) {
+
 	file := &File{}
 	msg := &Message{
 		Comment: &Comment{
@@ -77,8 +78,12 @@ func TestEncoder_Message(t *testing.T) {
 		Str:      map[int]string{},
 	}
 	file.AddMessage(msg)
+	var buff bytes.Buffer
+	enc := NewEncoder(&buff)
 
-	want := `# Test comment
+	t.Run("Placeholders for translations are added", func(t *testing.T) {
+
+		want := `# Test comment
 #, fuzzy
 msgctxt "ctx"
 msgid "test"
@@ -87,13 +92,54 @@ msgstr[0] ""
 msgstr[1] ""
 
 `
-	var buff bytes.Buffer
-	enc := NewEncoder(&buff)
-	err := enc.Encode(file)
-	require.NoError(t, err)
-	assert.Equal(t, want, buff.String())
+		err := enc.Encode(file)
+		require.NoError(t, err)
+		assert.Equal(t, want, buff.String())
+	})
 
-	want = `# Test comment
+	// Add reference
+	msg.AddReference(&Reference{Path: "z"})
+
+	// Set translations
+	msg.Str[0] = "a"
+	msg.Str[1] = "b"
+	msg.Str[2] = "c"
+
+	t.Run("Translations are given out", func(t *testing.T) {
+		want := `# Test comment
+#: z
+#, fuzzy
+msgctxt "ctx"
+msgid "test"
+msgid_plural "test_plural"
+msgstr[0] "a"
+msgstr[1] "b"
+msgstr[2] "c"
+
+`
+		buff.Reset()
+
+		err := enc.Encode(file)
+		require.NoError(t, err)
+		assert.Equal(t, want, buff.String())
+	})
+
+	// Add messsage
+	o := NewMessage()
+	o.ID = "mytest"
+	o.Comment.Extracted = "TRANSLATORS: This is a unit test"
+	o.AddReference(&Reference{Path: "a", Line: 10})
+	file.AddMessage(o)
+
+	t.Run("Messages are sorted", func(t *testing.T) {
+
+		want := `#. TRANSLATORS: This is a unit test
+#: a:10
+msgid "mytest"
+msgstr ""
+
+# Test comment
+#: z
 #, fuzzy
 msgctxt "ctx"
 msgid "test"
@@ -104,13 +150,69 @@ msgstr[2] "c"
 
 `
 
-	buff.Reset()
-	msg.Str[0] = "a"
-	msg.Str[1] = "b"
-	msg.Str[2] = "c"
+		buff.Reset()
+		err := enc.Encode(file)
+		require.NoError(t, err)
+		assert.Equal(t, want, buff.String())
+	})
+}
 
-	err = enc.Encode(file)
-	require.NoError(t, err)
-	assert.Equal(t, want, buff.String())
+func TestEncoderDisableWriteReference(t *testing.T) {
+	t.Run("References are written as standard", func(t *testing.T) {
+		file := &File{
+			Header: &Header{Comment: &Comment{Translator: "Copyright"}},
+		}
+		msg := &Message{
+			ID:       "test",
+			IDPlural: "test_plural",
+		}
+		msg.AddReference(&Reference{Path: "z"})
+		msg.AddReference(&Reference{Path: "x", Line: 5})
+		file.AddMessage(msg)
+		var buff bytes.Buffer
+		enc := NewEncoder(&buff)
+		enc.SetWriteEmptyHeader(false)
+		enc.SetWriteReferences(true)
 
+		err := enc.Encode(file)
+		require.NoError(t, err)
+
+		want := `# Copyright
+
+#: x:5 z
+msgid "test"
+msgid_plural "test_plural"
+msgstr[0] ""
+msgstr[1] ""
+
+`
+		assert.Equal(t, want, buff.String())
+	})
+
+	t.Run("Disable do not write the reference", func(t *testing.T) {
+		file := &File{
+			Header: &Header{Comment: &Comment{Translator: "Copyright"}},
+		}
+		msg := &Message{
+			ID:       "test",
+			IDPlural: "test_plural",
+		}
+		msg.AddReference(&Reference{Path: "z"})
+		file.AddMessage(msg)
+		var buff bytes.Buffer
+		enc := NewEncoder(&buff)
+		enc.SetWriteHeader(false)
+		enc.SetWriteReferences(false)
+
+		err := enc.Encode(file)
+		require.NoError(t, err)
+
+		want := `msgid "test"
+msgid_plural "test_plural"
+msgstr[0] ""
+msgstr[1] ""
+
+`
+		assert.Equal(t, want, buff.String())
+	})
 }

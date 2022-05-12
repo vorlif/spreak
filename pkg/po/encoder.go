@@ -13,19 +13,22 @@ import (
 
 // An Encoder writes a po file to an output stream.
 type Encoder struct {
-	w               *bufio.Writer
-	wrapWidth       int
-	writeHeader     bool
-	writeReferences bool
+	w                *bufio.Writer
+	wrapWidth        int
+	writeHeader      bool
+	writeEmptyHeader bool
+	writeReferences  bool
+	sort             bool
 }
 
 // NewEncoder returns a new encoder that writes to w.
 func NewEncoder(w io.Writer) *Encoder {
 	return &Encoder{
-		w:               bufio.NewWriter(w),
-		wrapWidth:       -1,
-		writeHeader:     true,
-		writeReferences: true,
+		w:                bufio.NewWriter(w),
+		wrapWidth:        -1,
+		writeHeader:      true,
+		writeReferences:  true,
+		writeEmptyHeader: true,
 	}
 }
 
@@ -39,6 +42,14 @@ func (e *Encoder) SetWriteHeader(write bool) {
 
 func (e *Encoder) SetWriteReferences(write bool) {
 	e.writeReferences = write
+}
+
+func (e *Encoder) SetWriteEmptyHeader(write bool) {
+	e.writeEmptyHeader = write
+}
+
+func (e *Encoder) SetSort(sort bool) {
+	e.sort = sort
 }
 
 func (e *Encoder) Encode(f *File) error {
@@ -60,7 +71,7 @@ func (e *Encoder) Encode(f *File) error {
 			}
 		}
 		sort.Slice(messages, func(i, j int) bool {
-			return messages[i].Comment.Less(messages[j].Comment)
+			return messages[j].Less(messages[i])
 		})
 		for _, msg := range messages {
 			if err := e.encodeMessage(msg); err != nil {
@@ -76,41 +87,57 @@ func (e *Encoder) Encode(f *File) error {
 	return e.w.Flush()
 }
 
+type headerEntry struct {
+	key   string
+	value string
+}
+
 func (e *Encoder) encodeHeader(h *Header) error {
 	if err := e.encodeComment(h.Comment); err != nil {
 		return err
 	}
 
-	lines := []string{
-		`msgid ""` + "\n",
-		`msgstr ""` + "\n",
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderProjectIDVersion, h.ProjectIDVersion),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderReportMsgIDBugsTo, h.ReportMsgidBugsTo),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderPOTCreationDate, h.POTCreationDate),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderPORevisionDate, h.PORevisionDate),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderLastTranslator, h.LastTranslator),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderLanguageTeam, h.LanguageTeam),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderLanguage, h.Language),
+	headers := []headerEntry{
+		{HeaderProjectIDVersion, h.ProjectIDVersion},
+		{HeaderReportMsgIDBugsTo, h.ReportMsgidBugsTo},
+		{HeaderPOTCreationDate, h.POTCreationDate},
+		{HeaderPORevisionDate, h.PORevisionDate},
+		{HeaderLastTranslator, h.LastTranslator},
+		{HeaderLanguageTeam, h.LanguageTeam},
+		{HeaderLanguage, h.Language},
+		{HeaderMIMEVersion, h.MimeVersion},
+		{HeaderContentType, h.ContentType},
+		{HeaderContentTransferEncoding, h.ContentTransferEncoding},
+		{HeaderPluralForms, h.PluralForms},
+		{HeaderXGenerator, h.XGenerator},
 	}
 
-	if h.MimeVersion != "" {
-		lines = append(lines, fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderMIMEVersion, h.MimeVersion))
-	}
-
-	lines = append(lines,
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderContentType, h.ContentType),
-		fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderContentTransferEncoding, h.ContentTransferEncoding),
-	)
-
-	if h.PluralForms != "" {
-		lines = append(lines, fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderPluralForms, h.PluralForms))
-	}
-
-	if h.XGenerator != "" {
-		lines = append(lines, fmt.Sprintf(`"%s: %s\n"`+"\n", HeaderXGenerator, h.XGenerator))
-	}
 	for k, v := range h.UnknownFields {
-		lines = append(lines, fmt.Sprintf(`"%s: %s\n"`+"\n", k, v))
+		headers = append(headers, headerEntry{k, v})
+	}
+
+	if !e.writeEmptyHeader {
+		var hasHeader bool
+		for _, header := range headers {
+			if header.value != "" {
+				hasHeader = true
+				break
+			}
+		}
+		if !hasHeader {
+			return nil
+		}
+	}
+
+	lines := make([]string, 0, len(headers))
+	lines = append(lines, `msgid ""`+"\n")
+	lines = append(lines, `msgstr ""`+"\n")
+	for _, header := range headers {
+		isOptional := header.key == HeaderMIMEVersion || header.key == HeaderPluralForms || header.key == HeaderXGenerator
+		if isOptional && header.value == "" {
+			continue
+		}
+		lines = append(lines, fmt.Sprintf(`"%s: %s\n"`+"\n", header.key, header.value))
 	}
 
 	for _, line := range lines {
@@ -118,6 +145,7 @@ func (e *Encoder) encodeHeader(h *Header) error {
 			return err
 		}
 	}
+
 	return nil
 }
 
@@ -144,8 +172,16 @@ func (e *Encoder) encodeComment(c *Comment) error {
 
 	if len(c.References) > 0 && e.writeReferences {
 		var buff bytes.Buffer
-		for _, ref := range c.References {
-			buff.WriteString(fmt.Sprintf("%s:%d ", ref.Path, ref.Line))
+		for i, ref := range c.References {
+			prefix := ""
+			if i > 0 {
+				prefix = " "
+			}
+			if ref.Line > 0 {
+				buff.WriteString(fmt.Sprintf("%s%s:%d", prefix, ref.Path, ref.Line))
+			} else {
+				buff.WriteString(fmt.Sprintf("%s%s", prefix, ref.Path))
+			}
 		}
 
 		for _, comment := range util.WrapString(buff.String(), e.wrapWidth) {

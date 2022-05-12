@@ -18,6 +18,8 @@ const (
 	nulSeparator = "\x00" // msgid and msgstr separator
 )
 
+var ErrInvalidMagicNumber = errors.New("mo file has invalid magic number")
+
 type parser struct {
 	bo binary.ByteOrder
 	r  io.ReadSeeker
@@ -88,7 +90,7 @@ func (p *parser) parseByteOrder() error {
 	case magicBigEndian:
 		p.bo = binary.BigEndian
 	default:
-		return errors.New("mo file has invalid magic number")
+		return ErrInvalidMagicNumber
 	}
 
 	p.magicNumber = magicNumber

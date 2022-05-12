@@ -1,6 +1,9 @@
 package mo
 
 import (
+	"bytes"
+	"encoding/binary"
+	"io"
 	"os"
 	"testing"
 
@@ -78,4 +81,46 @@ func TestParse_File(t *testing.T) {
 
 		assert.Equal(t, 650, count)
 	})
+}
+
+func TestParse_InvalidByteOrder(t *testing.T) {
+	buff := &bytes.Buffer{}
+	err := binary.Write(buff, binary.BigEndian, uint32(0x950412df))
+	require.NoError(t, err)
+
+	p := newParser(bytes.NewReader(buff.Bytes()))
+	require.NotNil(t, p)
+	err = p.parseByteOrder()
+	assert.Error(t, err)
+	assert.Equal(t, ErrInvalidMagicNumber, err)
+
+	p = newParser(bytes.NewReader([]byte{}))
+	require.NotNil(t, p)
+	err = p.parseByteOrder()
+	assert.Error(t, err)
+	assert.Equal(t, io.EOF, err)
+}
+
+func TestParse_UseEndian(t *testing.T) {
+	buff := &bytes.Buffer{}
+	err := binary.Write(buff, binary.BigEndian, uint32(magicLittleEndian))
+	require.NoError(t, err)
+
+	p := newParser(bytes.NewReader(buff.Bytes()))
+	require.NotNil(t, p)
+	err = p.parseByteOrder()
+	if assert.NoError(t, err) {
+		assert.Equal(t, binary.BigEndian, p.bo)
+	}
+
+	buff = &bytes.Buffer{}
+	err = binary.Write(buff, binary.LittleEndian, uint32(magicLittleEndian))
+	require.NoError(t, err)
+
+	p = newParser(bytes.NewReader(buff.Bytes()))
+	require.NotNil(t, p)
+	err = p.parseByteOrder()
+	if assert.NoError(t, err) {
+		assert.Equal(t, binary.LittleEndian, p.bo)
+	}
 }

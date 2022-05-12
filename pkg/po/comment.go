@@ -20,6 +20,10 @@ func (r Reference) String() string {
 	return r.Path
 }
 
+func (r Reference) Equal(o *Reference) bool {
+	return r.Path == o.Path && r.Line == o.Line && r.Column == o.Column
+}
+
 type Comment struct {
 	Translator     string       // #  translator-comments
 	Extracted      string       // #. extracted-comments
@@ -44,29 +48,20 @@ func (c *Comment) AddReference(ref *Reference) {
 	c.sortReferences()
 }
 
-func (c *Comment) sortReferences() {
-	sort.Slice(c.References, func(i, j int) bool {
-		if c.References[i].Path == c.References[j].Path {
-			return c.References[i].Line < c.References[j].Line
-		}
-
-		return c.References[i].Path < c.References[j].Path
-	})
-}
-
 func (c *Comment) Less(q *Comment) bool {
+	c.sort()
 	for i := 0; i < len(c.References); i++ {
 		if i >= len(q.References) {
 			break
 		}
 		if c := strings.Compare(c.References[i].Path, q.References[i].Path); c != 0 {
-			return c == -1
+			return c == 1
 		}
 		if a, b := c.References[i].Line, q.References[i].Line; a != b {
-			return a < b
+			return a > b
 		}
 		if a, b := c.References[i].Column, q.References[i].Column; a != b {
-			return a < b
+			return a > b
 		}
 	}
 	return false
@@ -86,4 +81,23 @@ func (c *Comment) AddFlag(flag string) {
 		return
 	}
 	c.Flags = append(c.Flags, flag)
+}
+
+func (c *Comment) sortReferences() {
+	sort.Slice(c.References, func(i, j int) bool {
+		if c.References[i].Path != c.References[j].Path {
+			return c.References[i].Path < c.References[j].Path
+		}
+
+		if c.References[i].Line != c.References[j].Line {
+			return c.References[i].Line < c.References[j].Line
+		}
+
+		return c.References[i].Column < c.References[j].Column
+	})
+}
+
+func (c *Comment) sort() {
+	c.sortReferences()
+	sort.Strings(c.Flags)
 }
