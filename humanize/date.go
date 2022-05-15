@@ -112,7 +112,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		deltaSec := int64(delta.Truncate(time.Second).Seconds())
 		if int64(delta.Round(time.Second).Hours()) >= 24 {
 			entry := naturalTimeStrings["past-day"]
-			timeSince := h.TimeSinceFrom(t, now, withTimeStrings(naturalPastSubstrings))
+			timeSince := h.TimeSince(t, withTimeStrings(naturalPastSubstrings))
 			return h.loc.Getf(entry.singular, timeSince)
 		} else if deltaSec == 0 {
 			entry := naturalTimeStrings["now"]
@@ -135,7 +135,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	deltaSec := int64(delta.Truncate(time.Second).Seconds())
 	if int64(delta.Round(time.Second).Hours()) >= 24 {
 		entry := naturalTimeStrings["future-day"]
-		timeSince := h.TimeUntilFrom(t, now, withTimeStrings(naturalFutureSubstrings))
+		timeSince := h.TimeUntil(t, withTimeStrings(naturalFutureSubstrings))
 		return h.loc.Getf(entry.singular, timeSince)
 	} else if deltaSec == 0 {
 		entry := naturalTimeStrings["now"]

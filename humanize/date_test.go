@@ -42,40 +42,45 @@ func TestNaturalDay(t *testing.T) {
 func TestHumanizer_NaturalTime(t *testing.T) {
 	h := createSourceHumanizer(t)
 
-	now := time.Now()
-	tests := []struct {
-		expected string
-		time     interface{}
-	}{
-		{"test", "test"},
-		{"now", now},
-		{"now", now.Add(-time.Microsecond)},
-		{"a second ago", now.Add(-time.Second)},
-		{"30 seconds ago", now.Add(-30 * time.Second)},
-		{"a minute ago", now.Add(-90 * time.Second)},
-		{"2 minutes ago", now.Add(-2 * time.Minute)},
-		{"an hour ago", now.Add(-time.Hour)},
-		{"23 hours ago", now.Add(-(23*time.Hour + 50*time.Minute + 50*time.Second))},
-		{"1 day ago", now.AddDate(0, 0, -1)},
-		{"1 year, 4 months ago", now.AddDate(0, 0, -500)},
-		{"now", now.Add(500 * time.Millisecond)},
-		{"a second from now", now.Add(time.Second)},
-		{"30 seconds from now", now.Add(30 * time.Second)},
-		{"a minute from now", now.Add(90 * time.Second)},
-		{"2 minutes from now", now.Add(2 * time.Minute)},
-		{"an hour from now", now.Add(time.Hour)},
-		{"23 hours from now", now.Add(23*time.Hour + 50*time.Minute + 50*time.Second)},
-		{"1 day from now", now.AddDate(0, 0, 1)},
-		{"2 days, 6 hours from now", now.Add(2*24*time.Hour + 6*time.Hour)},
-		{"1 year, 4 months from now", now.AddDate(0, 0, 500)},
-		{"now", now.In(time.UTC)},
-	}
+	t.Run("test common use cases", func(t *testing.T) {
+		now := time.Now()
+		tests := []struct {
+			expected string
+			time     interface{}
+		}{
+			{"test", "test"},
+			{"a second ago", now.Add(-time.Second)},
+			{"30 seconds ago", now.Add(-30 * time.Second)},
+			{"a minute ago", now.Add(-90 * time.Second)},
+			{"2 minutes ago", now.Add(-2 * time.Minute)},
+			{"an hour ago", now.Add(-time.Hour)},
+			{"23 hours ago", now.Add(-(23*time.Hour + 50*time.Minute + 50*time.Second))},
+			{"1 day ago", now.AddDate(0, 0, -1)},
+			{"1 year, 4 months ago", now.AddDate(0, 0, -500)},
+			{"a second from now", now.Add(time.Second)},
+			{"30 seconds from now", now.Add(30 * time.Second)},
+			{"a minute from now", now.Add(90 * time.Second)},
+			{"2 minutes from now", now.Add(2 * time.Minute)},
+			{"an hour from now", now.Add(time.Hour)},
+			{"23 hours from now", now.Add(23*time.Hour + 50*time.Minute + 50*time.Second)},
+			{"1 day from now", now.AddDate(0, 0, 1)},
+			{"2 days, 6 hours from now", now.Add(2*24*time.Hour + 6*time.Hour)},
+			{"1 year, 4 months from now", now.AddDate(0, 0, 500)},
+		}
 
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("%v => %s", tt.time, tt.expected), func(t *testing.T) {
-			assert.Equal(t, tt.expected, h.NaturalTime(tt.time))
-		})
-	}
+		for _, tt := range tests {
+			t.Run(fmt.Sprintf("%v => %s", tt.time, tt.expected), func(t *testing.T) {
+				assert.Equal(t, tt.expected, h.NaturalTime(tt.time))
+			})
+		}
+	})
+
+	t.Run("test now", func(t *testing.T) {
+		assert.Equal(t, "now", h.NaturalTime(time.Now()))
+		assert.Equal(t, "now", h.NaturalTime(time.Now().Add(-time.Microsecond)))
+		assert.Equal(t, "now", h.NaturalTime(time.Now().In(time.UTC)))
+		assert.Equal(t, "now", h.NaturalTime(time.Now().Add(500*time.Millisecond)))
+	})
 }
 
 func TestHumanizer_TimeSince(t *testing.T) {
@@ -89,6 +94,7 @@ func TestHumanizer_TimeSince(t *testing.T) {
 
 	t.Run("test invalid input", func(t *testing.T) {
 		assert.Equal(t, "test", h.TimeSince("test"))
+		assert.Equal(t, "test", h.TimeUntil("test"))
 	})
 
 	t.Run("test equal datetimes", func(t *testing.T) {
