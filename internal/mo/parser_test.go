@@ -124,3 +124,38 @@ func TestParse_UseEndian(t *testing.T) {
 		assert.Equal(t, binary.LittleEndian, p.bo)
 	}
 }
+
+func TestParse_EdgeCases(t *testing.T) {
+	t.Run("nil input", func(t *testing.T) {
+		f, err := ParseBytes(nil)
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+
+	t.Run("empty input", func(t *testing.T) {
+		f, err := ParseBytes([]byte{})
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+
+	t.Run("unexpected end", func(t *testing.T) {
+		buff := &bytes.Buffer{}
+		err := binary.Write(buff, binary.BigEndian, uint32(magicLittleEndian))
+		require.NoError(t, err)
+		f, err := ParseBytes([]byte{})
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+}
+
+func TestParseReader(t *testing.T) {
+	f, errO := os.Open("../../testdata/parser/poedit_en_GB.mo")
+	require.NoError(t, errO)
+	defer f.Close()
+
+	file, err := ParseReader(f)
+	require.NoError(t, err)
+	require.NotNil(t, file)
+	require.NotNil(t, file.Header)
+	require.NotNil(t, file.Messages)
+}

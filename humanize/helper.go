@@ -1,10 +1,19 @@
 package humanize
 
-import "math"
+import (
+	"math"
+
+	"golang.org/x/text/language"
+)
 
 // LanguageName returns the name of the spoken language as called by the languages used.
 func (h *Humanizer) LanguageName(lang string) string {
 	return h.loc.Get(lang)
+}
+
+// Language returns the currently used language.
+func (h *Humanizer) Language() language.Tag {
+	return h.loc.Language()
 }
 
 func floorDivision(a, b float64) int64 {

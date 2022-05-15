@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"golang.org/x/text/language"
 )
 
 func TestHumanizer_LanguageName(t *testing.T) {
@@ -31,4 +32,16 @@ func TestToFixed(t *testing.T) {
 			assert.Equal(t, tt.expected, toFixed(tt.num, tt.precision))
 		})
 	}
+}
+
+func TestHumanizer_Language(t *testing.T) {
+	h := createGermanHumanizer(t)
+	assert.Equal(t, language.German, h.Language())
+
+	h = createSourceHumanizer(t)
+	assert.Equal(t, language.English, h.Language())
+
+	p := createNewParcel(t)
+	h = p.CreateHumanizer(language.Und)
+	assert.Equal(t, language.English, h.Language())
 }
