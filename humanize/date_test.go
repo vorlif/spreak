@@ -2,6 +2,7 @@ package humanize
 
 import (
 	"fmt"
+	"os"
 	"testing"
 	"time"
 
@@ -76,10 +77,26 @@ func TestHumanizer_NaturalTime(t *testing.T) {
 	})
 
 	t.Run("test now", func(t *testing.T) {
-		assert.Equal(t, "now", h.NaturalTime(time.Now()))
-		assert.Equal(t, "now", h.NaturalTime(time.Now().Add(-time.Microsecond)))
-		assert.Equal(t, "now", h.NaturalTime(time.Now().In(time.UTC)))
-		assert.Equal(t, "now", h.NaturalTime(time.Now().Add(500*time.Millisecond)))
+		tests := []struct {
+			time interface{}
+		}{
+			{time.Now()},
+			{time.Now().Add(-time.Microsecond)},
+			{time.Now().Add(-500 * time.Microsecond)},
+			{time.Now().Add(time.Microsecond)},
+			{time.Now().Add(500 * time.Microsecond)},
+			{time.Now().In(time.UTC)},
+		}
+
+		ciResults := []string{"now", "a second from now", "a second ago"}
+		for _, tt := range tests {
+			if os.Getenv("CI") == "" {
+				assert.Equal(t, "now", h.NaturalTime(tt.time))
+			} else {
+				assert.Contains(t, ciResults, h.NaturalTime(tt.time))
+			}
+		}
+
 	})
 }
 
