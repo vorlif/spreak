@@ -50,11 +50,12 @@ func TestTimeFormatter(t *testing.T) {
 	})
 
 	t.Run("test epoch", func(t *testing.T) {
-		assert.Equal(t, formatTime(h, time.UnixMilli(0), "U"), "0")
+		assert.Equal(t, formatTime(h, time.Unix(0, 0), "U"), "0")
 	})
 
 	t.Run("test microseconds", func(t *testing.T) {
-		d := time.UnixMicro(123)
+		val := int64(123)
+		d := time.Unix(val/1e6, (val%1e6)*1e3)
 		assert.Equal(t, "000123", formatTime(h, d, "u"))
 	})
 
