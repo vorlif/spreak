@@ -1,0 +1,566 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Kelechi Precious Nwachukwu <prekel27@gmail.com>, 2020
+# Mariusz Felisiak <felisiak.mariusz@gmail.com>, 2020
+# Okpala Olisa <Olisamarvis@gmail.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-19 20:23+0200\n"
+"PO-Revision-Date: 2020-07-30 12:26+0000\n"
+"Last-Translator: Mariusz Felisiak <felisiak.mariusz@gmail.com>\n"
+"Language-Team: Igbo (http://www.transifex.com/django/django/language/ig/)\n"
+"Language: ig\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Venezuelan Spanish"
+msgstr "Spanishi ndị Venezuela "
+
+msgid "Hungarian"
+msgstr "Hungarian"
+
+msgid "Macedonian"
+msgstr "Macedonian"
+
+msgid "Tamil"
+msgstr "Tamil"
+
+msgid "Bengali"
+msgstr "Bengali"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Scottish Gaelic"
+msgstr "Scottish Gaelici"
+
+msgid "Serbian Latin"
+msgstr "Serbian Latini"
+
+msgid "French"
+msgstr "Fụrenchị"
+
+msgid "Frisian"
+msgstr "Frisian"
+
+msgid "Mongolian"
+msgstr "Mongolian"
+
+msgid "may"
+msgstr "mee"
+
+msgid "Azerbaijani"
+msgstr "Azerbaijani"
+
+msgid "Catalan"
+msgstr "Catalan"
+
+msgid "September"
+msgstr "Septemba"
+
+msgid "Saturday"
+msgstr "Satọdee"
+
+msgid "January"
+msgstr "Jenụwarị"
+
+msgid "Nicaraguan Spanish"
+msgstr "Spanishi ndị Nicaraguan"
+
+msgid "Indonesian"
+msgstr "Indonesian"
+
+msgid "Slovak"
+msgstr "Slovaki"
+
+msgid "Tajik"
+msgstr "Tajik"
+
+msgid "jun"
+msgstr "juu"
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Greek"
+msgstr "Greeki"
+
+msgid "Portuguese"
+msgstr "Portuguisi"
+
+msgid "Ukrainian"
+msgstr "Ukrainiani"
+
+msgid "Thu"
+msgstr "Tọọ"
+
+msgid "July"
+msgstr "Julaị"
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d bytes"
+msgstr[1] ""
+
+msgid "Belarusian"
+msgstr "Belarusia"
+
+msgid "Norwegian Bokmål"
+msgstr "Bokmål ndị Norway"
+
+msgid "Dutch"
+msgstr "Dutch"
+
+msgid "Norwegian Nynorsk"
+msgstr "Nynorsk ndị Norway "
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "midnight"
+msgstr "etiti Abalị"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "Australian English"
+msgstr "Bekee ndị Australia"
+
+msgid "Galician"
+msgstr "Galiciani"
+
+msgid "December"
+msgstr "Disemba"
+
+msgid "apr"
+msgstr "epr"
+
+msgid "Basque"
+msgstr "Basque"
+
+msgid "Slovenian"
+msgstr "Sloveniani"
+
+msgid "Mon"
+msgstr "Mọnde"
+
+msgid "Tue"
+msgstr "Tiu"
+
+msgid "aug"
+msgstr "ọgọ"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "Welsh"
+msgstr "Welsh"
+
+msgid "Swahili"
+msgstr "Swahili"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Simplified Chinese"
+msgstr "Chinisi Ndị Mfe"
+
+msgid "Wed"
+msgstr "Wen"
+
+msgid "jan"
+msgstr "jen"
+
+msgid "Lower Sorbian"
+msgstr "Sorbian nke Ala"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Finnish"
+msgstr "Finnishi"
+
+msgid "Wednesday"
+msgstr "Wenezdee"
+
+msgid "Thursday"
+msgstr "Tọọzdee"
+
+msgid "March"
+msgstr "Maachị"
+
+msgid "oct"
+msgstr "ọkt"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "Bulgarian"
+msgstr "Bulgaria"
+
+msgid "Argentinian Spanish"
+msgstr "Spanishi ndị Argentina"
+
+msgid "Kyrgyz"
+msgstr "Kyrgyz"
+
+msgid "Malayalam"
+msgstr "Malayalam"
+
+msgid "Marathi"
+msgstr "Marathi"
+
+msgid "Thai"
+msgstr "Thai"
+
+msgid "dec"
+msgstr "dis"
+
+msgid "Mexican Spanish"
+msgstr "Spanishi ndị Mexico "
+
+msgid "Upper Sorbian"
+msgstr "Sorbian nke Elu"
+
+msgid "Fri"
+msgstr "Fraị"
+
+msgid "Sun"
+msgstr "Ụka"
+
+msgid "Bosnian"
+msgstr "Bosnian"
+
+msgid "Swedish"
+msgstr "Swedishi"
+
+msgid "June"
+msgstr "Juun"
+
+msgid "November"
+msgstr "Novemba"
+
+msgid "Monday"
+msgstr "Mọnde"
+
+msgid "mar"
+msgstr "maa"
+
+msgid "Asturian"
+msgstr "Asturian"
+
+msgid "Latvian"
+msgstr "Latvian"
+
+msgid "Brazilian Portuguese"
+msgstr "Portuguese ndị Brazil"
+
+msgid "Udmurt"
+msgstr "Udmurt"
+
+msgid "feb"
+msgstr "feb"
+
+msgid "Irish"
+msgstr "Irishi"
+
+msgid "Nepali"
+msgstr "Nepali"
+
+msgid "Italian"
+msgstr "Italian"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid "German"
+msgstr "Germani"
+
+msgid "Luxembourgish"
+msgstr "Luxembourgish"
+
+msgid "Khmer"
+msgstr "Khmer"
+
+msgid "Lithuanian"
+msgstr "Lithuanian"
+
+msgid "Telugu"
+msgstr "Telugu"
+
+msgid "February"
+msgstr "Febrụwarị"
+
+msgid "April"
+msgstr "Eprel"
+
+msgid "Danish"
+msgstr "Danishi"
+
+msgid "Colombian Spanish"
+msgstr "Spanishi ndị Colombia "
+
+msgid "Polish"
+msgstr "Polishi"
+
+msgid "jul"
+msgstr "jul"
+
+msgid "Romanian"
+msgstr "Romaniani"
+
+msgid "Serbian"
+msgstr "Serbiani"
+
+msgid "Tuesday"
+msgstr "Tiuzdee"
+
+msgid "Spanish"
+msgstr "Spanishi"
+
+msgid "Punjabi"
+msgstr "Punjabi"
+
+msgid "August"
+msgstr "Ọgọọst"
+
+msgid "Arabic"
+msgstr "Arabici"
+
+msgid "Vietnamese"
+msgstr "Vietnamesi"
+
+msgid "PM"
+msgstr "PM"
+
+msgid "AM"
+msgstr "AM"
+
+msgid "Estonian"
+msgstr "Estonian"
+
+msgid "Persian"
+msgstr "Persian"
+
+msgid "Tatar"
+msgstr "Tatar"
+
+msgid "Traditional Chinese"
+msgstr "Odịnala Chinisi"
+
+msgid "Kabyle"
+msgstr "Kabyle"
+
+msgid "Turkmen"
+msgstr "Turkmen"
+
+msgid "Georgian"
+msgstr "Georgian"
+
+msgid "p.m."
+msgstr "p.m."
+
+msgid "October"
+msgstr "Ọktoba"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Ido"
+msgstr "Ido"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "Kazakh"
+msgstr "Kazakh"
+
+msgid "Sunday"
+msgstr "Mbọsi Uka"
+
+msgid "May"
+msgstr "Mee"
+
+msgid "sep"
+msgstr "sep"
+
+msgid "Hebrew"
+msgstr "Hibru"
+
+msgid "Burmese"
+msgstr "Burmese"
+
+msgid "a.m."
+msgstr "a.m."
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "Algerian Arabic"
+msgstr "Arabici ndị Algeria  "
+
+msgid "Ossetic"
+msgstr "Ossetici"
+
+msgid "Friday"
+msgstr "Fraịdee"
+
+msgid "Albanian"
+msgstr "Albaniani"
+
+msgid "noon"
+msgstr "Ehihie"
+
+msgid "nov"
+msgstr "nov"
+
+msgid "British English"
+msgstr "Bekee ndị Britain"
+
+msgid "Icelandic"
+msgstr "Icelandici"
+
+msgid "Igbo"
+msgstr "ìgbò"
+
+msgid "Japanese"
+msgstr "Japanisi "
+
+msgid "Russian"
+msgstr "Russiani"
+
+msgid "Breton"
+msgstr "Breton"
+
+msgid "English"
+msgstr "Bekee"
+
+msgid "Armenian"
+msgstr "Armeniani"
+
+msgid "Kannada"
+msgstr "Kannada"
+
+msgid "Turkish"
+msgstr "Turkishi"
+
+msgid "Uzbek"
+msgstr "Uzbeki"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+msgid "Czech"
+msgstr "Czech"
+
+msgid "Croatian"
+msgstr "Croatian"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Jenụwarị"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Eprel"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mee"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Ọkt."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Nov."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Maachị"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Juun"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Julaị"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Ọgọ."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sep."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dis."
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Jenụwarị"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Febrụwarị"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Eprel"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Juun"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Ọktoba"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Novemba"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Disemba"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Maachị"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mee"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Julaị"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Ọgọọst"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Septemba"
+

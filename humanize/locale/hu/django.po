@@ -1,0 +1,792 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Akos Zsolt Hochrein <hoch.akos@gmail.com>, 2018
+# András Veres-Szentkirályi, 2016-2021
+# Attila Nagy <>, 2012
+# Dóra Szendrei <szendrgigi@gmail.com>, 2017
+# Istvan Farkas <istvan.farkas@gmail.com>, 2019
+# Jannis Leidel <jannis@leidel.info>, 2011
+# János R, 2011-2012,2014
+# Máté Őry <orymate@iit.bme.hu>, 2013
+# Szilveszter Farkas <szilveszter.farkas@gmail.com>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-15 09:00+0100\n"
+"PO-Revision-Date: 2021-04-01 15:20+0000\n"
+"Last-Translator: András Veres-Szentkirályi\n"
+"Language-Team: Hungarian (http://www.transifex.com/django/django/language/hu/)\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "február"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "június"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "július"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "augusztus"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "szeptember"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "november"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "december"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "január"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "március"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "április"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "május"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "október"
+
+#. Translators: Ordinal format when value ends with 0, e.g. 80th.
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 5, e.g. 85th.
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v."
+
+#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 9, e.g. 89th.
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "jan."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "jún."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "aug."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "szept."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "okt."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "nov."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "febr."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "márc."
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "ápr."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "máj."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "júl."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "dec."
+
+#. Translators: Ordinal format when value ends with 6, e.g. 86th.
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 7, e.g. 87th.
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 8, e.g. 88th.
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v."
+
+msgid "mar"
+msgstr "már"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "five"
+msgstr "öt"
+
+#, python-format
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s millió"
+msgstr[1] "%[1]s millió"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "egy óra múlva"
+msgstr[1] "%[1]v óra múlva"
+
+msgid "Tatar"
+msgstr "Tatár"
+
+msgid "Uzbek"
+msgstr "Üzbég"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Ukrainian"
+msgstr "Ukrán"
+
+msgid "July"
+msgstr "július"
+
+msgid "Arabic"
+msgstr "Arab"
+
+msgid "Azerbaijani"
+msgstr "azerbajdzsáni"
+
+msgid "Bosnian"
+msgstr "Bosnyák"
+
+msgid "Catalan"
+msgstr "Katalán"
+
+msgid "English"
+msgstr "Angol"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid "oct"
+msgstr "okt"
+
+msgid "Bulgarian"
+msgstr "Bolgár"
+
+msgid "Sunday"
+msgstr "vasárnap"
+
+msgid "May"
+msgstr "május"
+
+msgid "British English"
+msgstr "Brit angol"
+
+msgid "Georgian"
+msgstr "Grúz"
+
+msgid "Kannada"
+msgstr "Kannada"
+
+msgid "Sun"
+msgstr "vas"
+
+msgid "Wednesday"
+msgstr "szerda"
+
+msgid "January"
+msgstr "január"
+
+#, python-format
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s billió"
+msgstr[1] "%[1]s billió"
+
+#, python-format
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s trillió"
+msgstr[1] "%[1]s trillió"
+
+msgid "tomorrow"
+msgstr "holnap"
+
+msgid "German"
+msgstr "Német"
+
+msgid "Serbian"
+msgstr "Szerb"
+
+msgid "eight"
+msgstr "nyolc"
+
+#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] " %[1]s milliárd"
+msgstr[1] " %[1]s milliárd"
+
+msgid "may"
+msgstr "máj"
+
+msgid "Serbian Latin"
+msgstr "Latin betűs szerb"
+
+msgid "Urdu"
+msgstr "urdu"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "October"
+msgstr "október"
+
+#, python-format
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s trilliárd"
+msgstr[1] "%[1]s trilliárd"
+
+msgid "Breton"
+msgstr "Breton"
+
+msgid "Australian English"
+msgstr "Ausztráliai angol"
+
+msgid "Venezuelan Spanish"
+msgstr "Venezuelai spanyol"
+
+msgid "Marathi"
+msgstr "Maráthi"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "Kazakh"
+msgstr "Kazak"
+
+msgid "Dutch"
+msgstr "Holland"
+
+msgid "Traditional Chinese"
+msgstr "Hagyományos kínai"
+
+msgid "Thu"
+msgstr "csüt"
+
+msgid "jun"
+msgstr "jún"
+
+msgid "AM"
+msgstr "DE"
+
+msgid "Tuesday"
+msgstr "kedd"
+
+msgid "aug"
+msgstr "aug"
+
+msgid "four"
+msgstr "négy"
+
+#, python-format
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s kvintillió"
+msgstr[1] "%[1]s kvintillió"
+
+msgid "Basque"
+msgstr "Baszk "
+
+msgid "Luxembourgish"
+msgstr "Luxemburgi"
+
+msgid "p.m."
+msgstr "du"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "egy perce"
+msgstr[1] "%[1]v perce"
+
+msgid "Wed"
+msgstr "sze"
+
+msgid "Swahili"
+msgstr "Szuahéli"
+
+msgid "Monday"
+msgstr "hétfő"
+
+msgid "sep"
+msgstr "sze"
+
+msgid "seven"
+msgstr "hét"
+
+#, python-format
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s kvadrillió"
+msgstr[1] "%[1]s kvadrillió"
+
+msgid "Czech"
+msgstr "Cseh"
+
+msgid "Kabyle"
+msgstr "Kabil"
+
+msgid "Lithuanian"
+msgstr "Litván"
+
+msgid "Slovak"
+msgstr "Szlovák"
+
+msgid "Udmurt"
+msgstr "Udmurt"
+
+msgid "April"
+msgstr "április"
+
+#, python-format
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s googol"
+msgstr[1] "%[1]s googol"
+
+msgid "now"
+msgstr "most"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "egy perc múlva"
+msgstr[1] "%[1]v perc múlva"
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2
+#. weeks'
+#, python-format
+msgid "%[1]v from now"
+msgstr "%[1]v múlva"
+
+msgid "French"
+msgstr "Francia"
+
+msgid "jan"
+msgstr "jan"
+
+msgid "Spanish"
+msgstr "Spanyol"
+
+msgid "Armenian"
+msgstr "Örmény"
+
+msgid "Italian"
+msgstr "Olasz"
+
+msgid "noon"
+msgstr "dél"
+
+msgid "Thursday"
+msgstr "csütörtök"
+
+msgid "midnight"
+msgstr "éjfél"
+
+msgid "Mon"
+msgstr "hét"
+
+msgid "February"
+msgstr "február"
+
+msgid "Indonesian"
+msgstr "Indonéz"
+
+msgid "Mongolian"
+msgstr "Mongol"
+
+msgid "Ossetic"
+msgstr "Oszét"
+
+msgid "Swedish"
+msgstr "Svéd"
+
+msgid "a.m."
+msgstr "de"
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d bájt"
+msgstr[1] "%[1]d bájt"
+
+msgid "Simplified Chinese"
+msgstr "Egyszerű kínai"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2
+#. weeks'
+#, python-format
+msgid "%[1]v ago"
+msgstr " %[1]v ezelőtt"
+
+msgid "Danish"
+msgstr "Dán"
+
+msgid "Norwegian Nynorsk"
+msgstr "Nynorsk norvég"
+
+msgid "Punjabi"
+msgstr "Punjabi"
+
+msgid "Vietnamese"
+msgstr "Vietnámi"
+
+msgid "Hebrew"
+msgstr "Héber"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Burmese"
+msgstr "Burmai"
+
+msgid "March"
+msgstr "március"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "egy másodperce"
+msgstr[1] "%[1]v másodperce"
+
+msgid "Kyrgyz"
+msgstr "kirgiz"
+
+msgid "Nepali"
+msgstr "Nepáli"
+
+msgid "Tamil"
+msgstr "Tamil"
+
+msgid "Japanese"
+msgstr "Japán"
+
+msgid "Korean"
+msgstr "Koreai"
+
+msgid "June"
+msgstr "június"
+
+msgid "jul"
+msgstr "júl"
+
+msgid "dec"
+msgstr "dec"
+
+msgid "today"
+msgstr "ma"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "egy órája"
+msgstr[1] "%[1]v órája"
+
+msgid "Argentinian Spanish"
+msgstr "Argentin spanyol"
+
+msgid "Scottish Gaelic"
+msgstr "Skót gael"
+
+msgid "Telugu"
+msgstr "Telugu"
+
+msgid "three"
+msgstr "három"
+
+msgid "Saturday"
+msgstr "szombat"
+
+msgid "six"
+msgstr "hat"
+
+msgid "yesterday"
+msgstr "tegnap"
+
+msgid "Romanian"
+msgstr "Román"
+
+msgid "Sat"
+msgstr "szo"
+
+msgid "August"
+msgstr "augusztus"
+
+msgid "Thai"
+msgstr "Thai"
+
+msgid "Friday"
+msgstr "péntek"
+
+msgid "Asturian"
+msgstr "Asztúriai"
+
+msgid "Welsh"
+msgstr "Walesi"
+
+msgid "Frisian"
+msgstr "Fríz"
+
+msgid "Igbo"
+msgstr "igbo"
+
+msgid "Tajik"
+msgstr "tadzsik"
+
+msgid "feb"
+msgstr "feb"
+
+msgid "Nicaraguan Spanish"
+msgstr "Nicaraguai spanyol"
+
+msgid "Persian"
+msgstr "Perzsa"
+
+msgid "Irish"
+msgstr "Ír"
+
+msgid "Malayalam"
+msgstr "Malajálam"
+
+msgid "Fri"
+msgstr "pén"
+
+msgid "November"
+msgstr "november"
+
+msgid "two"
+msgstr "kettő"
+
+msgid "Algerian Arabic"
+msgstr "algériai arab"
+
+msgid "Bengali"
+msgstr "Bengáli"
+
+msgid "Upper Sorbian"
+msgstr "Felsőszorb"
+
+msgid "Latvian"
+msgstr "Lett"
+
+msgid "Croatian"
+msgstr "Horvát"
+
+msgid "Icelandic"
+msgstr "Izlandi"
+
+msgid "Turkish"
+msgstr "Török"
+
+msgid "nine"
+msgstr "kilenc"
+
+#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s billiárd"
+msgstr[1] "%[1]s billiárd"
+
+#, python-format
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s kvintilliárd"
+msgstr[1] "%[1]s kvintilliárd"
+
+msgid "Greek"
+msgstr "Görög"
+
+msgid "Finnish"
+msgstr "Finn"
+
+msgid "Macedonian"
+msgstr "Macedón"
+
+msgid "Norwegian Bokmål"
+msgstr "Bokmål norvég"
+
+msgid "Slovenian"
+msgstr "Szlovén"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "egy másodperc múlva"
+msgstr[1] "%[1]v másodperc múlva"
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Lower Sorbian"
+msgstr "Alsószorb"
+
+msgid "Colombian Spanish"
+msgstr "Kolumbiai spanyol"
+
+msgid "Hungarian"
+msgstr "Magyar"
+
+msgid "September"
+msgstr "szeptember"
+
+msgid "apr"
+msgstr "ápr"
+
+msgid "Estonian"
+msgstr "Észt"
+
+msgid "Khmer"
+msgstr "Khmer"
+
+msgid "Russian"
+msgstr "Orosz"
+
+msgid "Turkmen"
+msgstr "türkmén"
+
+msgid "December"
+msgstr "december"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Portuguese"
+msgstr "Portugál"
+
+msgid "Brazilian Portuguese"
+msgstr "Brazíliai portugál"
+
+msgid "Albanian"
+msgstr "Albán"
+
+msgid "Tue"
+msgstr "kedd"
+
+msgid "Galician"
+msgstr "Gall"
+
+msgid "nov"
+msgstr "nov"
+
+msgid "one"
+msgstr "egy"
+
+#, python-format
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s kvadrilliárd"
+msgstr[1] "%[1]s kvadrilliárd"
+
+msgid "Belarusian"
+msgstr "Belarusz"
+
+msgid "Esperanto"
+msgstr "Eszperantó"
+
+msgid "Mexican Spanish"
+msgstr "Mexikói spanyol"
+
+msgid "Polish"
+msgstr "Lengyel"
+
+msgid "PM"
+msgstr "DU"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v."
+
+#. Translators: Ordinal format when value ends with 4, e.g. 84th.
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v."
+

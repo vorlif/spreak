@@ -1,0 +1,835 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Apostolis Bessas <mpessas+txc@transifex.com>, 2013
+# Dimitris Glezos <glezos@transifex.com>, 2011,2013,2017
+# Fotis Athineos <fotis@transifex.com>, 2021
+# Giannis Meletakis <meletakis@gmail.com>, 2015
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Nick Mavrakis <mavrakis.n@gmail.com>, 2017-2020
+# Nikolas Demiridis <nikolas@demiridis.gr>, 2014
+# Nick Mavrakis <mavrakis.n@gmail.com>, 2016
+# Pãnoș <panos.laganakos@gmail.com>, 2014
+# Pãnoș <panos.laganakos@gmail.com>, 2016
+# Serafeim Papastefanos <spapas@gmail.com>, 2016
+# Stavros Korokithakis <stavros@korokithakis.net>, 2014,2016
+# Yorgos Pagles <y.pagles@gmail.com>, 2011-2012
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 10:22+0200\n"
+"PO-Revision-Date: 2021-11-18 21:19+0000\n"
+"Last-Translator: Transifex Bot <>\n"
+"Language-Team: Greek (http://www.transifex.com/django/django/language/el/)\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 9, e.g. 89th.
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 0, e.g. 80th.
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 5, e.g. 85th.
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 6, e.g. 86th.
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 7, e.g. 87th.
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 8, e.g. 88th.
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%vο"
+
+#. Translators: Ordinal format when value ends with 4, e.g. 84th.
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vο"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ιαν."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Μάρτιος"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Απρίλ."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Σεπτ."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Δεκ."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Φεβ."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Μάιος"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Ιούν."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Ιούλ."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Αύγ."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Οκτ."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Νοέμ."
+
+#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%vο"
+
+msgid "eight"
+msgstr "οκτώ"
+
+msgid "Marathi"
+msgstr "Μαράθι"
+
+msgid "Brazilian Portuguese"
+msgstr "Πορτογαλικά - διάλεκτος Βραζιλίας"
+
+msgid "Ukrainian"
+msgstr "Ουκρανικά"
+
+msgid "Monday"
+msgstr "Δευτέρα"
+
+msgid "feb"
+msgstr "Φεβ"
+
+msgid "one"
+msgstr "ένα"
+
+msgid "seven"
+msgstr "εφτά"
+
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+msgid "Uzbek"
+msgstr "Ουζμπεκικά"
+
+msgid "Fri"
+msgstr "Παρ"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "μια ώρα πρίν"
+msgstr[1] "%[1]v ώρες πρίν"
+
+msgid "Burmese"
+msgstr "Βιρμανικά"
+
+msgid "Swedish"
+msgstr "Σουηδικά"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "Tamil"
+msgstr "Διάλεκτος Ταμίλ"
+
+msgid "Wednesday"
+msgstr "Τετάρτη"
+
+msgid "oct"
+msgstr "Οκτ"
+
+msgid "three"
+msgstr "τρία"
+
+#, python-format
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] " %[1]s  εκατομμύριο"
+msgstr[1] " %[1]s  εκατομμύρια"
+
+msgid "Kazakh"
+msgstr "Καζακστά"
+
+msgid "Macedonian"
+msgstr "Μακεδονικά"
+
+msgid "Malayalam"
+msgstr "Μαλαγιαλάμ"
+
+msgid "Norwegian Nynorsk"
+msgstr "Νορβηγική διάλεκτος Nynorsk - Νεονορβηγική"
+
+msgid "Mon"
+msgstr "Δευ"
+
+msgid "English"
+msgstr "Αγγλικά"
+
+msgid "Hindi"
+msgstr "Ινδικά"
+
+msgid "Romanian"
+msgstr "Ρουμανικά"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+msgid "midnight"
+msgstr "μεσάνυχτα"
+
+msgid "Sun"
+msgstr "Κυρ"
+
+msgid "yesterday"
+msgstr "χθες"
+
+msgid "Mongolian"
+msgstr "Μογγολικά"
+
+msgid "Telugu"
+msgstr "Τελούγκου"
+
+msgid "Udmurt"
+msgstr "Ουντμουρτικά"
+
+msgid "a.m."
+msgstr "πμ."
+
+msgid "two"
+msgstr "δύο"
+
+msgid "German"
+msgstr "Γερμανικά"
+
+msgid "Hebrew"
+msgstr "Εβραϊκά"
+
+msgid "Afrikaans"
+msgstr "Αφρικάνς"
+
+msgid "Welsh"
+msgstr "Ουαλικά"
+
+msgid "Scottish Gaelic"
+msgstr "Σκωτσέζικα Γαελικά"
+
+msgid "Tajik"
+msgstr "Τατζικικά"
+
+#, python-format
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Friday"
+msgstr "Παρασκευή"
+
+msgid "September"
+msgstr "Σεπτέμβριος"
+
+msgid "Thai"
+msgstr "Ταϊλάνδης"
+
+msgid "Traditional Chinese"
+msgstr "Παραδοσιακά Κινέζικα"
+
+msgid "jan"
+msgstr "Ιαν"
+
+msgid "Greek"
+msgstr "Ελληνικά"
+
+msgid "Esperanto"
+msgstr "Εσπεράντο"
+
+msgid "Finnish"
+msgstr "Φινλανδικά"
+
+msgid "Igbo"
+msgstr "Ίγκμπο"
+
+msgid "Latvian"
+msgstr "Λεττονικά"
+
+msgid "Arabic"
+msgstr "Αραβικά"
+
+msgid "Algerian Arabic"
+msgstr "Αραβικά Αλγερίας"
+
+msgid "Azerbaijani"
+msgstr "Γλώσσα Αζερμπαϊτζάν"
+
+msgid "Lithuanian"
+msgstr "Λιθουανικά"
+
+msgid "April"
+msgstr "Απρίλιος"
+
+#, python-format
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s επτάκις εκατομμύριο"
+msgstr[1] "%[1]s επτάκις εκατομμύρια"
+
+msgid "tomorrow"
+msgstr "αύριο"
+
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+msgid "aug"
+msgstr "Αύγ"
+
+msgid "dec"
+msgstr "Δεκ"
+
+msgid "AM"
+msgstr "ΠΜ"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid "five"
+msgstr "πέντε"
+
+msgid "today"
+msgstr "σήμερα"
+
+msgid "Mexican Spanish"
+msgstr "Μεξικανική διάλεκτος Ισπανικών"
+
+msgid "Swahili"
+msgstr "Σουαχίλι"
+
+msgid "Turkmen"
+msgstr "Τουρκμενικά"
+
+#, python-format
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Wed"
+msgstr "Τετ"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "ένα δευτερόλεπτο πρίν"
+msgstr[1] "%[1]v δευτερόλεπτα πρίν"
+
+msgid "Czech"
+msgstr "Τσέχικα"
+
+msgid "Georgian"
+msgstr "Γεωργιανά"
+
+msgid "Korean"
+msgstr "Κορεάτικα"
+
+msgid "Norwegian Bokmål"
+msgstr "Νορβηγικά Μποκμάλ"
+
+msgid "December"
+msgstr "Δεκέμβριος"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "Albanian"
+msgstr "Αλβανικά"
+
+msgid "Tatar"
+msgstr "Ταταρικά"
+
+msgid "Tue"
+msgstr "Τρί"
+
+msgid "four"
+msgstr "τέσσερα"
+
+#, python-format
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s πεντάκις εκατομμύριo"
+msgstr[1] "%[1]s πεντάκις εκατομμύρια"
+
+msgid "Khmer"
+msgstr "Χμερ"
+
+msgid "Kyrgyz"
+msgstr "Κιργιζικά"
+
+msgid "Dutch"
+msgstr "Ολλανδικά"
+
+#, python-format
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "may"
+msgstr "Μάι"
+
+#, python-format
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s εξάκις εκατομμύριo"
+msgstr[1] "%[1]s εξάκις εκατομμύρια"
+
+msgid "Italian"
+msgstr "Ιταλικά"
+
+msgid "Nepali"
+msgstr "Νεπαλέζικα"
+
+msgid "Slovenian"
+msgstr "Σλοβενικά"
+
+msgid "Serbian Latin"
+msgstr "Σέρβικα Λατινικά"
+
+msgid "Vietnamese"
+msgstr "Βιετναμέζικα"
+
+msgid "Simplified Chinese"
+msgstr "Απλοποιημένα Κινέζικα"
+
+msgid "November"
+msgstr "Νοέμβριος"
+
+#, python-format
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s δεκάκις εκατομμύριο"
+msgstr[1] "%[1]s δεκάκις εκατομμύρια"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "ένα λεπτό από τώρα"
+msgstr[1] "%[1]v λεπτά από τώρα"
+
+msgid "Venezuelan Spanish"
+msgstr "Ισπανικά Βενεζουέλας"
+
+msgid "Indonesian"
+msgstr "Ινδονησιακά"
+
+msgid "Russian"
+msgstr "Ρωσικά"
+
+msgid "nov"
+msgstr "Νοέ"
+
+#, python-format
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s οκτάκις εκατομμύριο"
+msgstr[1] "%[1]s οκτάκις εκατομμύρια"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "ένα λεπτό πρίν"
+msgstr[1] "%[1]v λεπτά πρίν"
+
+msgid "Breton"
+msgstr "Βρετονικά"
+
+msgid "Icelandic"
+msgstr "Ισλανδικά"
+
+msgid "sep"
+msgstr "Σεπ"
+
+msgid "nine"
+msgstr "εννιά"
+
+msgid "Nicaraguan Spanish"
+msgstr "Ισπανικά Νικαράγουας "
+
+#, python-format
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Thu"
+msgstr "Πέμ"
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d bytes"
+msgstr[1] "%[1]d bytes"
+
+msgid "jun"
+msgstr "Ιούν"
+
+msgid "French"
+msgstr "Γαλλικά"
+
+msgid "Thursday"
+msgstr "Πέμπτη"
+
+msgid "January"
+msgstr "Ιανουάριος"
+
+msgid "March"
+msgstr "Μάρτιος"
+
+msgid "June"
+msgstr "Ιούνιος"
+
+msgid "February"
+msgstr "Φεβρουάριος"
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2
+#. weeks'
+#, python-format
+msgid "%[1]v ago"
+msgstr "πριν από %[1]v"
+
+msgid "Galician"
+msgstr "Γαελικά"
+
+msgid "Ido"
+msgstr "Ίντο"
+
+msgid "Slovak"
+msgstr "Σλοβακικά"
+
+msgid "Turkish"
+msgstr "Τουρκικά"
+
+msgid "Bulgarian"
+msgstr "Βουλγαρικά"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "Colombian Spanish"
+msgstr "Ισπανικά Κολομβίας"
+
+msgid "Armenian"
+msgstr "Αρμενικά"
+
+msgid "PM"
+msgstr "ΜΜ"
+
+msgid "Sunday"
+msgstr "Κυριακή"
+
+msgid "October"
+msgstr "Οκτώβριος"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "ένα δευτερόλεπτο από τώρα"
+msgstr[1] "%[1]v δευτερόλεπτα από τώρα"
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#, python-format
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "μία ώρα από τώρα"
+msgstr[1] "%[1]v ώρες από τώρα"
+
+msgid "Kannada"
+msgstr "Κανάντα"
+
+msgid "Saturday"
+msgstr "Σάββατο"
+
+msgid "Danish"
+msgstr "Δανέζικα"
+
+msgid "Australian English"
+msgstr "Αγγλικά Αυστραλίας"
+
+msgid "Luxembourgish"
+msgstr "Λουξεμβουργιανά"
+
+msgid "Sat"
+msgstr "Σαβ"
+
+#, python-format
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s τρισεκατομμύριο"
+msgstr[1] "%[1]s τρισεκατομμύρια"
+
+msgid "Bosnian"
+msgstr "Βοσνιακά"
+
+msgid "Interlingua"
+msgstr "Ιντερλίνγκουα"
+
+msgid "Ossetic"
+msgstr "Οσσετικά"
+
+#, python-format
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s googol"
+msgstr[1] "%[1]s googol"
+
+msgid "now"
+msgstr "τώρα"
+
+msgid "Bengali"
+msgstr "Μπενγκάλι"
+
+msgid "Basque"
+msgstr "Βάσκικα"
+
+msgid "Frisian"
+msgstr "Frisian"
+
+msgid "mar"
+msgstr "Μάρ"
+
+msgid "Punjabi"
+msgstr "Πουντζάμπι"
+
+msgid "six"
+msgstr "έξι"
+
+msgid "Estonian"
+msgstr "Εσθονικά"
+
+msgid "Persian"
+msgstr "Περσικά"
+
+msgid "Croatian"
+msgstr "Κροατικά"
+
+msgid "Malay"
+msgstr ""
+
+msgid "Kabyle"
+msgstr "Kabyle"
+
+msgid "Polish"
+msgstr "Πολωνικά"
+
+msgid "Tuesday"
+msgstr "Τρίτη"
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2
+#. weeks'
+#, python-format
+msgid "%[1]v from now"
+msgstr "σε %[1]v"
+
+msgid "Asturian"
+msgstr "Αστούριας"
+
+msgid "Lower Sorbian"
+msgstr "Κάτω Σορβικά"
+
+msgid "Upper Sorbian"
+msgstr "Άνω Σορβικά"
+
+msgid "Hungarian"
+msgstr "Ουγγρικά"
+
+msgid "July"
+msgstr "Ιούλιος"
+
+msgid "August"
+msgstr "Αύγουστος"
+
+msgid "Japanese"
+msgstr "Γιαπωνέζικα"
+
+msgid "May"
+msgstr "Μάιος"
+
+msgid "apr"
+msgstr "Απρ"
+
+#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s δισεκατομμύριο"
+msgstr[1] "%[1]s δισεκατομμύρια"
+
+msgid "Belarusian"
+msgstr "Λευκορώσικα"
+
+msgid "Catalan"
+msgstr "Καταλανικά"
+
+msgid "British English"
+msgstr "Αγγλικά Βρετανίας"
+
+msgid "Argentinian Spanish"
+msgstr "Ισπανικά Αργεντινής"
+
+msgid "jul"
+msgstr "Ιούλ"
+
+msgid "noon"
+msgstr "μεσημέρι"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s τετράκις εκατομμύριο"
+msgstr[1] "%[1]s τετράκις εκατομμύρια"
+
+#, python-format
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s εννεάκις εκατομμύριο"
+msgstr[1] "%[1]s εννεάκις εκατομμύρια"
+
+msgid "Irish"
+msgstr "Ιρλανδικά"
+
+msgid "Serbian"
+msgstr "Σερβικά"
+
+msgid "p.m."
+msgstr "μμ."
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Δεκεμβρίου"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Μαρτίου"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Απριλίου"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Ιουνίου"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Ιουλίου"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Αυγούστου"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Οκτωβρίου"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Νοεμβρίου"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ιανουαρίου"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Φεβρουαρίου"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Μαΐου"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Σεπτεμβρίου"
+

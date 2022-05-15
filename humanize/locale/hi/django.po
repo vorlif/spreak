@@ -1,0 +1,721 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# alkuma <alok.kumar@gmail.com>, 2013
+# Chandan kumar <chandankumar.093047@gmail.com>, 2012
+# Claude Paroz <claude@2xlibre.net>, 2020
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Pratik <kpratik217@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-19 20:23+0200\n"
+"PO-Revision-Date: 2020-07-14 21:42+0000\n"
+"Last-Translator: Transifex Bot <>\n"
+"Language-Team: Hindi (http://www.transifex.com/django/django/language/hi/)\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Argentinian Spanish"
+msgstr "अर्जेंटीना स्पैनिश "
+
+msgid "Kazakh"
+msgstr "कज़ाख"
+
+msgid "Friday"
+msgstr "शुक्रवार"
+
+msgid "Saturday"
+msgstr "शनिवार"
+
+msgid "English"
+msgstr "अंग्रेज़ी "
+
+msgid "Burmese"
+msgstr "बर्मीज़"
+
+msgid "Sunday"
+msgstr "रविवार"
+
+#, python-format
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s कुइनतिलिअन "
+msgstr[1] "%[1]s कुइनतिलिअन "
+
+#, python-format
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s देसीलियन"
+msgstr[1] "%[1]s देसीलियन"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Asturian"
+msgstr ""
+
+msgid "Welsh"
+msgstr "वेल्श"
+
+msgid "jun"
+msgstr "जून"
+
+msgid "Interlingua"
+msgstr "इंतर्लिंगुआ"
+
+msgid "Swahili"
+msgstr "स्वाहिली"
+
+msgid "Tue"
+msgstr "मंगल"
+
+msgid "March"
+msgstr "मार्च"
+
+msgid "October"
+msgstr "अक्टूबर"
+
+msgid "Galician"
+msgstr "गलिशियन"
+
+msgid "Dutch"
+msgstr "डच"
+
+msgid "Albanian"
+msgstr "अल्बेनियन्"
+
+msgid "Wed"
+msgstr "बुध"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s मेबी "
+
+msgid "tomorrow"
+msgstr "कल"
+
+msgid "Estonian"
+msgstr "एस्टोनियन"
+
+msgid "Japanese"
+msgstr "जपानी"
+
+msgid "Traditional Chinese"
+msgstr "पारम्परिक चीनी"
+
+msgid "Tuesday"
+msgstr "मंगलवार"
+
+msgid "five"
+msgstr "पाँच"
+
+msgid "now"
+msgstr "अभी"
+
+msgid "Venezuelan Spanish"
+msgstr "वेनेज़ुएलाई स्पेनिश"
+
+msgid "PM"
+msgstr "बजे"
+
+#, python-format
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s सेक्सतिलियन"
+msgstr[1] "%[1]s सेक्सतिलियन"
+
+msgid "Serbian"
+msgstr "सर्बियन"
+
+msgid "Thursday"
+msgstr "गुरूवार"
+
+msgid "nov"
+msgstr "नव"
+
+#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s करोड़ शंख"
+msgstr[1] "%[1]s करोड़ शंख"
+
+msgid "Slovak"
+msgstr "स्लोवाक"
+
+msgid "Punjabi"
+msgstr "पंजाबी"
+
+msgid "Tajik"
+msgstr ""
+
+msgid "Udmurt"
+msgstr "उद्मर्त"
+
+msgid "January"
+msgstr "जनवरी"
+
+msgid "Croatian"
+msgstr "क्रोयेशियन"
+
+msgid "Khmer"
+msgstr "ख्मेर"
+
+msgid "three"
+msgstr "तीन"
+
+msgid "yesterday"
+msgstr "कल (बीता)"
+
+msgid "Bulgarian"
+msgstr "बलगारियन"
+
+msgid "Greek"
+msgstr "ग्रीक"
+
+msgid "Nicaraguan Spanish"
+msgstr "निकारागुआ स्पैनिश"
+
+msgid "sep"
+msgstr "सित"
+
+msgid "Colombian Spanish"
+msgstr ""
+
+msgid "Lithuanian"
+msgstr "लिथुवेनियन"
+
+msgid "Ossetic"
+msgstr "ओस्सेटिक"
+
+msgid "feb"
+msgstr "फ़र"
+
+msgid "mar"
+msgstr "मा"
+
+msgid "Telugu"
+msgstr "तेलुगु"
+
+msgid "Ukrainian"
+msgstr "यूक्रानियन"
+
+msgid "Wednesday"
+msgstr "बुधवार"
+
+msgid "four"
+msgstr "चार"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Frisian"
+msgstr "फ्रिसियन"
+
+msgid "Ido"
+msgstr ""
+
+msgid "Norwegian Nynorsk"
+msgstr "नार्वेजियन नायनॉर्स्क"
+
+#, python-format
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s गोगोल"
+msgstr[1] "%[1]s गोगोल"
+
+msgid "Arabic"
+msgstr "अरबी"
+
+msgid "Sun"
+msgstr "रवि"
+
+msgid "April"
+msgstr "अप्रैल"
+
+msgid "December"
+msgstr "दिसमबर"
+
+msgid "Spanish"
+msgstr "स्पानिश"
+
+msgid "Simplified Chinese"
+msgstr "सरल चीनी"
+
+msgid "February"
+msgstr "फ़रवरी"
+
+msgid "November"
+msgstr "नवमबर"
+
+msgid "Icelandic"
+msgstr "आयिस्लान्डिक"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+msgid "six"
+msgstr "छह"
+
+msgid "seven"
+msgstr "सात"
+
+#, python-format
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s सेपतिलियन "
+msgstr[1] "%[1]s सेपतिलियन "
+
+msgid "Hebrew"
+msgstr "हि‍ब्रू"
+
+msgid "Armenian"
+msgstr ""
+
+#, python-format
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s खरब"
+msgstr[1] "%[1]s खरब"
+
+msgid "Basque"
+msgstr "बास्क"
+
+msgid "Portuguese"
+msgstr "पुर्तगाली"
+
+#, python-format
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s मिलियन"
+msgstr[1] "%[1]s मिलियन"
+
+msgid "French"
+msgstr "फ्रेंच"
+
+msgid "Brazilian Portuguese"
+msgstr "ब्रजिलियन पुर्तगाली"
+
+msgid "June"
+msgstr "जून"
+
+msgid "jul"
+msgstr "जुल"
+
+#, python-format
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s ओकतिलियन "
+msgstr[1] "%[1]s ओकतिलियन "
+
+msgid "Lower Sorbian"
+msgstr ""
+
+msgid "Vietnamese"
+msgstr "वियतनामी"
+
+msgid "noon"
+msgstr "दोपहर"
+
+msgid "July"
+msgstr "जुलाई"
+
+msgid "nine"
+msgstr "नौ"
+
+msgid "Danish"
+msgstr "दानिश"
+
+msgid "Kyrgyz"
+msgstr ""
+
+msgid "Serbian Latin"
+msgstr "सर्बियाई लैटिन"
+
+msgid "Urdu"
+msgstr "उर्दू"
+
+msgid "Malayalam"
+msgstr "मलयालम"
+
+msgid "Marathi"
+msgstr ""
+
+msgid "a.m."
+msgstr "बजे"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s पीबी"
+
+msgid "AM"
+msgstr "बजे"
+
+msgid "August"
+msgstr "अगस्त"
+
+msgid "eight"
+msgstr "आठ"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Georgian"
+msgstr "ज्योर्जियन"
+
+msgid "Kannada"
+msgstr "कन्‍नड़"
+
+msgid "Polish"
+msgstr "पोलिश"
+
+msgid "Latvian"
+msgstr "लात्वियन"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "Tatar"
+msgstr "तातार"
+
+msgid "today"
+msgstr "आज"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Bengali"
+msgstr "बंगाली"
+
+msgid "Bosnian"
+msgstr "बोस्नियन"
+
+msgid "Australian English"
+msgstr ""
+
+msgid "Mon"
+msgstr "सोम"
+
+msgid "May"
+msgstr "मई"
+
+msgid "Hindi"
+msgstr "हिंदी"
+
+msgid "Indonesian"
+msgstr "इन्डोनेशियन "
+
+msgid "Russian"
+msgstr "रूसी"
+
+msgid "Turkmen"
+msgstr ""
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d बाइट"
+msgstr[1] "%[1]d बाइट"
+
+msgid "Azerbaijani"
+msgstr "आज़रबाइजानी"
+
+msgid "Esperanto"
+msgstr "एस्परेन्तो"
+
+msgid "jan"
+msgstr "जन"
+
+msgid "aug"
+msgstr "अग"
+
+msgid "Czech"
+msgstr "च्चेक"
+
+msgid "Korean"
+msgstr "कोरियन"
+
+msgid "Mongolian"
+msgstr "मंगोलियन"
+
+msgid "Monday"
+msgstr "सोम‌वार"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s जीबी "
+
+msgid "Luxembourgish"
+msgstr "लक्संबर्गी"
+
+msgid "Thai"
+msgstr "थाई"
+
+msgid "Thu"
+msgstr "गुरू"
+
+msgid "Fri"
+msgstr "शुक्र"
+
+msgid "may"
+msgstr "मई"
+
+msgid "one"
+msgstr "एक"
+
+msgid "Breton"
+msgstr "ब्रेटन"
+
+msgid "Catalan"
+msgstr "कटलान"
+
+msgid "Italian"
+msgstr "इटैलियन"
+
+msgid "Swedish"
+msgstr "स्वीडिश"
+
+msgid "two"
+msgstr "दो"
+
+msgid "Persian"
+msgstr "पारसी"
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Tamil"
+msgstr "तमिल"
+
+msgid "Sat"
+msgstr "शनि"
+
+msgid "apr"
+msgstr "अप्र"
+
+msgid "Algerian Arabic"
+msgstr ""
+
+msgid "Belarusian"
+msgstr "बेलारूसी"
+
+msgid "German"
+msgstr "जर्मन"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgid "Nepali"
+msgstr "नेपाली"
+
+msgid "p.m."
+msgstr "बजे"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s केबी "
+
+#, python-format
+msgid "%s TB"
+msgstr "%s टीबी"
+
+msgid "British English"
+msgstr "ब्रिटिश अंग्रेजी"
+
+msgid "Finnish"
+msgstr "फ़िन्निश"
+
+msgid "Irish"
+msgstr "आयरिश"
+
+msgid "Turkish"
+msgstr "तुर्किश"
+
+msgid "Uzbek"
+msgstr ""
+
+#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s बिलियन"
+msgstr[1] "%[1]s बिलियन"
+
+msgid "Slovenian"
+msgstr "स्लोवेनियन"
+
+msgid "September"
+msgstr "सितमबर"
+
+msgid "Igbo"
+msgstr ""
+
+msgid "Macedonian"
+msgstr "मेसिडोनियन"
+
+msgid "Romanian"
+msgstr "रोमानियन"
+
+#, python-format
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s नोनिलियन"
+msgstr[1] "%[1]s नोनिलियन"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Afrikaans"
+msgstr "अफ़्रीकांस"
+
+msgid "Mexican Spanish"
+msgstr "मेक्सिकन स्पैनिश"
+
+msgid "Hungarian"
+msgstr "हंगेरियन"
+
+msgid "midnight"
+msgstr "मध्यरात्री"
+
+msgid "oct"
+msgstr "अक्ट"
+
+msgid "dec"
+msgstr "दिस्"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "अप्रैल"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "जून"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "जुलाई"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "अक्टूबर"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "दिसम्बर"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "जनवरी."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "मई"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "अग."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "सितम्बर."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "नवम्बर."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "फ़रवरी."
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "अक्टूबर"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "अप्रैल"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "जुलाई"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "मई"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "जून"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "अगस्त"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "सितंबर"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "नवंबर"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "जनवरी"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "फरवरी"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "दिसंबर"
+

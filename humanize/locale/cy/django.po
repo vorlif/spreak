@@ -1,0 +1,739 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Maredudd ap Gwyndaf <maredudd@maredudd.com>, 2012,2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-27 22:40+0200\n"
+"PO-Revision-Date: 2019-11-05 00:38+0000\n"
+"Last-Translator: Ramiro Morales\n"
+"Language-Team: Welsh (http://www.transifex.com/django/django/language/cy/)\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+
+msgid "February"
+msgstr "Chwefror"
+
+msgid "Greek"
+msgstr "Groegedd"
+
+msgid "Burmese"
+msgstr "Byrmaneg"
+
+msgid "Ossetic"
+msgstr "Osetieg"
+
+msgid "Urdu"
+msgstr "Wrdw"
+
+msgid "Simplified Chinese"
+msgstr "Tsieinëeg Syml"
+
+msgid "Thu"
+msgstr "Iau"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "un awr yn ôl"
+msgstr[1] "%[1]v awr yn ôl"
+msgstr[2] "%[1]v awr yn ôl"
+msgstr[3] "%[1]v awr yn ôl"
+
+msgid "Czech"
+msgstr "Tsieceg"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Khmer"
+msgstr "Chmereg"
+
+msgid "p.m."
+msgstr "y.h."
+
+msgid "Colombian Spanish"
+msgstr ""
+
+msgid "Indonesian"
+msgstr "Indoneseg"
+
+msgid "Traditional Chinese"
+msgstr "Tseinëeg Traddodiadol"
+
+msgid "Wednesday"
+msgstr "Dydd Mercher"
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d beit"
+msgstr[1] "%[1]d beit"
+msgstr[2] "%[1]d beit"
+msgstr[3] "%[1]d beit"
+
+msgid "Saturday"
+msgstr "Dydd Sadwrn"
+
+msgid "Fri"
+msgstr "Gwe"
+
+msgid "Belarusian"
+msgstr "Belarwseg"
+
+msgid "German"
+msgstr "Almaeneg"
+
+msgid "Frisian"
+msgstr "Ffrisieg"
+
+msgid "Hebrew"
+msgstr "Hebraeg"
+
+msgid "Latvian"
+msgstr "Latfieg"
+
+msgid "Swedish"
+msgstr "Swedeg"
+
+msgid "Portuguese"
+msgstr "Portiwgaleg"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ","
+
+msgid "one"
+msgstr "un"
+
+msgid "tomorrow"
+msgstr "fory"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "un eiliad o nawr"
+msgstr[1] "%[1]v eiliad o nawr"
+msgstr[2] "%[1]v eiliad o nawr"
+msgstr[3] "%[1]v eiliad o nawr"
+
+msgid "Asturian"
+msgstr "Astwrieg"
+
+msgid "English"
+msgstr "Saesneg"
+
+msgid "Armenian"
+msgstr ""
+
+msgid "Russian"
+msgstr "Rwsieg"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "un munud o nawr"
+msgstr[1] "%[1]v funud o nawr"
+msgstr[2] "%[1]v munud o nawr"
+msgstr[3] "%[1]v munud o nawr"
+
+msgid "Swahili"
+msgstr "Swahili"
+
+msgid "Turkish"
+msgstr "Twrceg"
+
+msgid "Wed"
+msgstr "Mer"
+
+msgid "jun"
+msgstr "meh"
+
+msgid "five"
+msgstr "pump"
+
+msgid "Bengali"
+msgstr "Bengaleg"
+
+msgid "British English"
+msgstr "Saesneg Prydain"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid "July"
+msgstr "Gorffenaf"
+
+msgid "apr"
+msgstr "ebr"
+
+msgid "nine"
+msgstr "naw"
+
+msgid "Malayalam"
+msgstr "Malaialam"
+
+msgid "Marathi"
+msgstr "Marathi"
+
+msgid "Slovenian"
+msgstr "Slofeneg"
+
+msgid "Tatar"
+msgstr "Tatareg"
+
+msgid "Tue"
+msgstr "Maw"
+
+msgid "jul"
+msgstr "gor"
+
+#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s biliwn"
+msgstr[1] "%[1]s biliwn"
+msgstr[2] "%[1]s biliwn"
+msgstr[3] "%[1]s biliwn"
+
+msgid "now"
+msgstr "nawr"
+
+msgid "Mongolian"
+msgstr "Mongoleg"
+
+#, python-format
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s miliwn"
+msgstr[1] "%[1]s miliwn"
+msgstr[2] "%[1]s miliwn"
+msgstr[3] "%[1]s miliwn"
+
+msgid "Lithuanian"
+msgstr "Lithwaneg"
+
+msgid "Romanian"
+msgstr "Romaneg"
+
+msgid "October"
+msgstr "Hydref"
+
+msgid "Persian"
+msgstr "Persieg"
+
+msgid "Dutch"
+msgstr "Iseldireg"
+
+#, python-format
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s gwgol"
+msgstr[1] "%[1]s gwgol"
+msgstr[2] "%[1]s gwgol"
+msgstr[3] "%[1]s gwgol"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "un eiliad yn ôl"
+msgstr[1] "%[1]v eiliad yn ôl"
+msgstr[2] "%[1]v eiliad yn ôl"
+msgstr[3] "%[1]v eiliad yn ôl"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Irish"
+msgstr "Gwyddeleg"
+
+msgid "seven"
+msgstr "saith"
+
+msgid "Afrikaans"
+msgstr "Affricaneg"
+
+msgid "Breton"
+msgstr "Llydaweg"
+
+msgid "Argentinian Spanish"
+msgstr "Sbaeneg Ariannin"
+
+msgid "June"
+msgstr "Mehefin"
+
+msgid "December"
+msgstr "Rhagfyr"
+
+msgid "Slovak"
+msgstr "Slofaceg"
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "three"
+msgstr "tri"
+
+msgid "six"
+msgstr "chwech"
+
+msgid "Welsh"
+msgstr "Cymraeg"
+
+msgid "Croatian"
+msgstr "Croasieg"
+
+msgid "Hungarian"
+msgstr "Hwngareg"
+
+msgid "Brazilian Portuguese"
+msgstr "Portiwgaleg Brasil"
+
+msgid "Sunday"
+msgstr "Dydd Sul"
+
+msgid "jan"
+msgstr "ion"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Japanese"
+msgstr "Siapanëeg"
+
+msgid "Luxembourgish"
+msgstr "Lwcsembergeg"
+
+msgid "Serbian"
+msgstr "Serbeg"
+
+msgid "November"
+msgstr "Tachwedd"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "two"
+msgstr "dau"
+
+msgid "four"
+msgstr "pedwar"
+
+#, python-format
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s triliwn"
+msgstr[1] "%[1]s triliwn"
+msgstr[2] "%[1]s triliwn"
+msgstr[3] "%[1]s triliwn"
+
+#, python-format
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s secstiliwn"
+msgstr[1] "%[1]s secstiliwn"
+msgstr[2] "%[1]s secstiliwn"
+msgstr[3] "%[1]s secstiliwn"
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Georgian"
+msgstr "Georgeg"
+
+msgid "Nepali"
+msgstr "Nepaleg"
+
+msgid "Punjabi"
+msgstr "Pwnjabi"
+
+msgid "Tamil"
+msgstr "Tamil"
+
+#, python-format
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s noniliwn"
+msgstr[1] "%[1]s noniliwn"
+msgstr[2] "%[1]s noniliwn"
+msgstr[3] "%[1]s noniliwn"
+
+msgid "today"
+msgstr "heddiw"
+
+msgid "Estonian"
+msgstr "Estoneg"
+
+msgid "Kazakh"
+msgstr "Casacstanaidd"
+
+msgid "Macedonian"
+msgstr "Macedoneg"
+
+msgid "aug"
+msgstr "aws"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s cwadriliwn"
+msgstr[1] "%[1]s cwadriliwn"
+msgstr[2] "%[1]s cwadriliwn"
+msgstr[3] "%[1]s cwadriliwn"
+
+msgid "Australian English"
+msgstr "Saesneg Awstralia"
+
+msgid "Serbian Latin"
+msgstr "Lladin Serbiaidd"
+
+msgid "Udmurt"
+msgstr "Wdmwrteg"
+
+msgid "Vietnamese"
+msgstr "Fietnameg"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Bosnian"
+msgstr "Bosnieg"
+
+msgid "Albanian"
+msgstr "Albaneg"
+
+msgid "Thai"
+msgstr "Tai"
+
+msgid "Mon"
+msgstr "Llu"
+
+msgid "feb"
+msgstr "chw"
+
+msgid "yesterday"
+msgstr "ddoe"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "un munud yn ôl"
+msgstr[1] "%[1]v munud yn ôl"
+msgstr[2] "%[1]v munud yn ôl"
+msgstr[3] "%[1]v munud yn ôl"
+
+msgid "Azerbaijani"
+msgstr "Azerbaijanaidd"
+
+msgid "Finnish"
+msgstr "Ffinneg"
+
+msgid "a.m."
+msgstr "y.b."
+
+msgid "Bulgarian"
+msgstr "Bwlgareg"
+
+msgid "Nicaraguan Spanish"
+msgstr "Sbaeneg Nicaragwa"
+
+msgid "midnight"
+msgstr "canol nos"
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Monday"
+msgstr "Dydd Llun"
+
+msgid "Danish"
+msgstr "Daneg"
+
+msgid "Mexican Spanish"
+msgstr "Sbaeneg Mecsico"
+
+msgid "Sat"
+msgstr "Sad"
+
+msgid "nov"
+msgstr "tach"
+
+msgid "Polish"
+msgstr "Pwyleg"
+
+msgid "Ukrainian"
+msgstr "Wcreineg"
+
+msgid "Catalan"
+msgstr "Catalaneg"
+
+msgid "Spanish"
+msgstr "Sbaeneg"
+
+msgid "French"
+msgstr "Ffrangeg"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgid "Italian"
+msgstr "Eidaleg"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "dec"
+msgstr "rhag"
+
+#, python-format
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s septiliwn"
+msgstr[1] "%[1]s septiliwn"
+msgstr[2] "%[1]s septiliwn"
+msgstr[3] "%[1]s septiliwn"
+
+#, python-format
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s dengiliwn"
+msgstr[1] "%[1]s dengiliwn"
+msgstr[2] "%[1]s dengiliwn"
+msgstr[3] "%[1]s dengiliwn"
+
+msgid "Arabic"
+msgstr "Arabeg"
+
+msgid "Lower Sorbian"
+msgstr ""
+
+msgid "Korean"
+msgstr "Corëeg"
+
+msgid "September"
+msgstr "Medi"
+
+msgid "January"
+msgstr "Ionawr"
+
+msgid "August"
+msgstr "Awst"
+
+msgid "oct"
+msgstr "hyd"
+
+msgid "eight"
+msgstr "wyth"
+
+#, python-format
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s cwintiliwn"
+msgstr[1] "%[1]s cwintiliwn"
+msgstr[2] "%[1]s cwintiliwn"
+msgstr[3] "%[1]s cwintiliwn"
+
+msgid "Telugu"
+msgstr "Telwgw"
+
+msgid "March"
+msgstr "Mawrth"
+
+msgid "April"
+msgstr "Ebrill"
+
+msgid "may"
+msgstr "mai"
+
+msgid "Galician"
+msgstr "Galisieg"
+
+msgid "Norwegian Nynorsk"
+msgstr "Ninorsk Norwyeg"
+
+msgid "sep"
+msgstr "med"
+
+msgid "Sun"
+msgstr "Sul"
+
+msgid "mar"
+msgstr "maw"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "un awr o nawr"
+msgstr[1] "%[1]v awr o nawr"
+msgstr[2] "%[1]v awr o nawr"
+msgstr[3] "%[1]v awr o nawr"
+
+msgid "Basque"
+msgstr "Basgeg"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Icelandic"
+msgstr "Islandeg"
+
+msgid "AM"
+msgstr "YB"
+
+msgid "Friday"
+msgstr "Dydd Gwener"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "Thursday"
+msgstr "Dydd Iau"
+
+#, python-format
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s octiliwn"
+msgstr[1] "%[1]s octiliwn"
+msgstr[2] "%[1]s octiliwn"
+msgstr[3] "%[1]s octiliwn"
+
+msgid "Venezuelan Spanish"
+msgstr "Sbaeneg Feneswela"
+
+msgid "Kannada"
+msgstr "Canadeg"
+
+msgid "PM"
+msgstr "YH"
+
+msgid "noon"
+msgstr "canol dydd"
+
+msgid "Tuesday"
+msgstr "Dydd Mawrth"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mawrth"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Meh."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Hydr."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Tach."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Rhag."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ion."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Chwe."
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Ebrill"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Gorff."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Awst"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Medi"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Gorffenaf"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Medi"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Rhagfyr"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ionawr"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Chwefror"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mawrth"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Ebrill"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Tachwedd"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Mehefin"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Awst"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Hydref"
+

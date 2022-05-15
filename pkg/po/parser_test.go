@@ -31,6 +31,44 @@ func TestParse_Header(t *testing.T) {
 	assert.NotNil(t, file)
 	assert.NotNil(t, file.Header)
 	assert.Empty(t, file.Messages)
+
+	t.Run("parse comment", func(t *testing.T) {
+		header := `# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# F Wolff <friedel@translate.org.za>, 2019-2020
+# Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
+# unklphil <villiers.strauss@gmail.com>, 2014,2019
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-19 20:23+0200\n"
+"PO-Revision-Date: 2020-07-20 19:37+0000\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: Afrikaans (http://www.transifex.com/django/django/language/"
+"af/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"`
+
+		file, err := ParseString(header)
+		assert.NoError(t, err)
+		assert.NotNil(t, file)
+		assert.NotNil(t, file.Header)
+		assert.Empty(t, file.Messages)
+
+		want := `This file is distributed under the same license as the Django package.
+
+Translators:
+F Wolff <friedel@translate.org.za>, 2019-2020
+Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
+unklphil <villiers.strauss@gmail.com>, 2014,2019`
+		assert.Equal(t, want, file.Header.Comment.Translator)
+
+	})
 }
 
 func TestParse_Context(t *testing.T) {

@@ -145,8 +145,9 @@ loop:
 		case msgStr, msgStrLine:
 			msg.Str[0] += DecodePoString(lit)
 		case msgStrPlural:
-			left := strings.Index(lit, `[`)
-			right := strings.LastIndex(lit, `]`)
+			left := strings.Index(lit, "[")
+			right := strings.Index(lit, "]")
+			// We do not need to check if there is a negative index, because the scanner already checks it.
 			idx, err := strconv.Atoi(lit[left+1 : right])
 			if err != nil {
 				return nil, fmt.Errorf("po file contains an invalid entry for a plural translation (line %d)", p.s.pos)
@@ -178,13 +179,13 @@ func (p *parser) parseComment() (*Comment, error) {
 		case commentTranslator:
 			line = strings.TrimSpace(line[1:]) // #
 			if comment.Translator != "" {
-				comment.Translator = "\n"
+				comment.Translator += "\n"
 			}
 			comment.Translator += line
 		case commentExtracted:
 			line = strings.TrimSpace(line[2:]) // #.
 			if comment.Extracted != "" {
-				comment.Extracted = "\n"
+				comment.Extracted += "\n"
 			}
 			comment.Extracted += line
 		case commentFlags:

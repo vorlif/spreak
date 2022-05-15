@@ -257,6 +257,14 @@ func (l *Localizer) LocalizeError(err error) error {
 	return err
 }
 
+func (l *Localizer) Print(format string, vars ...interface{}) string {
+	if l.locale != nil {
+		return l.locale.printFunc(format, vars...)
+	}
+
+	return l.fallbackPrintFunc(format, vars...)
+}
+
 func (l *Localizer) dpGettextErr(domain localize.Domain, ctx localize.Context, msgID localize.Singular, vars ...interface{}) (string, error) {
 	if l.locale != nil {
 		return l.locale.dpGettextErr(domain, ctx, msgID, vars...)

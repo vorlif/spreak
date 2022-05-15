@@ -1,6 +1,7 @@
 package util
 
 import (
+	"encoding/json"
 	"fmt"
 	"testing"
 	"time"
@@ -54,6 +55,7 @@ func TestToNumber(t *testing.T) {
 		{"weekday pointer", wd, float64(wd), assert.NoError},
 		{"nil pointer", nil, 0, assert.Error},
 		{"invalid string", "hello world", 0, assert.Error},
+		{"json number", json.Number("1234"), 1234, assert.NoError},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

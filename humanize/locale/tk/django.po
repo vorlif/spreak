@@ -1,0 +1,605 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Mariusz Felisiak <felisiak.mariusz@gmail.com>, 2020-2021
+# Resulkary <resulsaparov@gmail.com>, 2020
+# Welbeck Garli <welbeckgrlyw@gmail.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 10:22+0200\n"
+"PO-Revision-Date: 2021-11-24 16:30+0000\n"
+"Last-Translator: Mariusz Felisiak <felisiak.mariusz@gmail.com>\n"
+"Language-Team: Turkmen (http://www.transifex.com/django/django/language/tk/)\n"
+"Language: tk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Sun"
+msgstr "Ýek"
+
+msgid "Basque"
+msgstr "Baskça"
+
+msgid "midnight"
+msgstr "ýary gije"
+
+msgid "Mon"
+msgstr "Duş"
+
+msgid "Wed"
+msgstr "Çarş"
+
+msgid "Thu"
+msgstr "Pen"
+
+msgid "Breton"
+msgstr "Breton"
+
+msgid "Telugu"
+msgstr "Telugu"
+
+msgid "March"
+msgstr "Mart"
+
+msgid "dec"
+msgstr "dek"
+
+msgid "Dutch"
+msgstr "Gollandça"
+
+msgid "Serbian"
+msgstr "Serbçe"
+
+msgid "p.m."
+msgstr "p.m"
+
+msgid "Azerbaijani"
+msgstr "Azeri Türkçesi"
+
+msgid "Czech"
+msgstr "Çehçe"
+
+msgid "Colombian Spanish"
+msgstr "Kolumbiýa Ispançasy"
+
+msgid "Lithuanian"
+msgstr "Litwança"
+
+msgid "Macedonian"
+msgstr "Makedonça"
+
+msgid "a.m."
+msgstr "a.m"
+
+msgid "AM"
+msgstr "AM"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "Ossetic"
+msgstr "Osetikçe"
+
+msgid "Udmurt"
+msgstr "Udmurt"
+
+msgid "Ukrainian"
+msgstr "Ukrainçe"
+
+msgid "jan"
+msgstr "ýan"
+
+msgid "mar"
+msgstr "mart"
+
+msgid "Arabic"
+msgstr "Arapça"
+
+msgid "Tatar"
+msgstr "Tatarça"
+
+msgid "feb"
+msgstr "few"
+
+msgid "Indonesian"
+msgstr "Indonezça"
+
+msgid "Swedish"
+msgstr "Şwedçe"
+
+msgid "Spanish"
+msgstr "Ispança"
+
+msgid "Serbian Latin"
+msgstr "Serb Latynçasy"
+
+msgid "noon"
+msgstr "günortan"
+
+msgid "apr"
+msgstr "apr"
+
+msgid "Mongolian"
+msgstr "Mongolça"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr """
+
+msgid "Tue"
+msgstr "Siş"
+
+msgid "Sat"
+msgstr "Şen"
+
+msgid "January"
+msgstr "Ýanwar"
+
+msgid "Kabyle"
+msgstr "Kabyle"
+
+msgid "Korean"
+msgstr "Koreýçe"
+
+msgid "Kyrgyz"
+msgstr "Gyrgyzça"
+
+msgid "jul"
+msgstr "iýul"
+
+msgid "Traditional Chinese"
+msgstr "Adaty Hytaýça"
+
+msgid "Turkish"
+msgstr "Türkçe"
+
+msgid "July"
+msgstr "Iýul"
+
+msgid "Slovenian"
+msgstr "Slowençe"
+
+msgid "Tajik"
+msgstr "Täjik"
+
+#, python-format
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Fri"
+msgstr "Anna"
+
+msgid "May"
+msgstr "Maý"
+
+msgid "Asturian"
+msgstr "Asturian"
+
+msgid "Welsh"
+msgstr "Uelsçe"
+
+msgid "Burmese"
+msgstr "Birma"
+
+msgid "Thai"
+msgstr "Taýça"
+
+msgid "October"
+msgstr "Oktýabr"
+
+msgid "Armenian"
+msgstr "Ermeniçe"
+
+msgid "Punjabi"
+msgstr "Penjebiçe"
+
+#, python-format
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Bosnian"
+msgstr "Bosniýaça"
+
+msgid "Catalan"
+msgstr "Katalan"
+
+msgid "British English"
+msgstr "Britan Iňlisçesi"
+
+msgid "Frisian"
+msgstr "Frisça"
+
+msgid "oct"
+msgstr "okt"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "Lower Sorbian"
+msgstr "Aşaky Sorbian"
+
+msgid "Marathi"
+msgstr "Marasi"
+
+#, python-format
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Algerian Arabic"
+msgstr "Alžir Arapçasy"
+
+msgid "Irish"
+msgstr "Irlandça"
+
+msgid "Scottish Gaelic"
+msgstr "Şotlandiýa Gaelçasy"
+
+msgid "Brazilian Portuguese"
+msgstr "Braziliýa Portugalçasy"
+
+msgid "September"
+msgstr "Sentýabr"
+
+msgid "Greek"
+msgstr "Grekçe"
+
+msgid "Venezuelan Spanish"
+msgstr "Wenezuela Ispançasy"
+
+msgid "Upper Sorbian"
+msgstr "Ýokarky Sorbian"
+
+msgid "Polish"
+msgstr "Polýakça"
+
+msgid "Slovak"
+msgstr "Slowakça"
+
+msgid "PM"
+msgstr "PM"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Icelandic"
+msgstr "Islandça"
+
+msgid "Italian"
+msgstr "Italýança"
+
+msgid "Japanese"
+msgstr "Ýaponça"
+
+msgid "Kazakh"
+msgstr "Gazakça"
+
+msgid "Mexican Spanish"
+msgstr "Meksika Ispançasy"
+
+msgid "Khmer"
+msgstr "Hmerçe"
+
+msgid "Tamil"
+msgstr "Tamil"
+
+msgid "Uzbek"
+msgstr "Özbekçe"
+
+msgid "Sunday"
+msgstr "Ýekşenbe"
+
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d baýt"
+msgstr[1] "%[1]d baýt"
+
+msgid "Galician"
+msgstr "Galisiýaça"
+
+msgid "Georgian"
+msgstr "Gruzinçe"
+
+msgid "Vietnamese"
+msgstr "Wýetnamça"
+
+#, python-format
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "December"
+msgstr "Dekabr"
+
+msgid "sep"
+msgstr "sent"
+
+msgid "French"
+msgstr "Fransuzça"
+
+msgid "Nepali"
+msgstr "Nepali"
+
+msgid "Albanian"
+msgstr "Albança"
+
+msgid "Urdu"
+msgstr "Urduça"
+
+msgid "Friday"
+msgstr "Anna"
+
+msgid "Bulgarian"
+msgstr "Bolgar"
+
+msgid "Hebrew"
+msgstr "Ýewreýçe"
+
+msgid "Igbo"
+msgstr "Igbo"
+
+msgid "Saturday"
+msgstr "Şenbe"
+
+msgid "Russian"
+msgstr "Rusça"
+
+msgid "Monday"
+msgstr "Duşenbe"
+
+msgid "Thursday"
+msgstr "Penşenbe"
+
+msgid "November"
+msgstr "Noýabr"
+
+msgid "nov"
+msgstr "noý"
+
+msgid "April"
+msgstr "Aprel"
+
+msgid "may"
+msgstr "maý"
+
+msgid "Bengali"
+msgstr "Bengali"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Argentinian Spanish"
+msgstr "Argentina Ispançasy"
+
+msgid "Simplified Chinese"
+msgstr "Ýönekeýleşdirilen Hytaýça"
+
+msgid "February"
+msgstr "Fewral"
+
+msgid "Danish"
+msgstr "Daniýaça"
+
+msgid "Nicaraguan Spanish"
+msgstr "Nikaragua Ispançasy"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Swahili"
+msgstr "Swahili"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid "Australian English"
+msgstr "Awstraliýa Iňlisçesi"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Kannada"
+msgstr "Kannada"
+
+msgid "Latvian"
+msgstr "Latwiýaça"
+
+msgid "Portuguese"
+msgstr "Portugalça"
+
+msgid "Persian"
+msgstr "Parsça"
+
+msgid "Hungarian"
+msgstr "Wengerçe"
+
+msgid "Norwegian Bokmål"
+msgstr "Norwegiýa Bokmaly"
+
+msgid "Norwegian Nynorsk"
+msgstr "Norwegiýa Nynorskçasy"
+
+msgid "Tuesday"
+msgstr "Sişenbe"
+
+msgid "June"
+msgstr "Iýun"
+
+msgid "August"
+msgstr "Awgust"
+
+msgid "English"
+msgstr "Iňlisçe"
+
+msgid "Estonian"
+msgstr "Estonça"
+
+msgid "Croatian"
+msgstr "Horwatça"
+
+msgid "Romanian"
+msgstr "Rumynça"
+
+#, python-format
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "jun"
+msgstr "iýun"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "German"
+msgstr "Nemesçe"
+
+msgid "Finnish"
+msgstr "Finçe"
+
+msgid "Malayalam"
+msgstr "Malaýalam"
+
+msgid "aug"
+msgstr "awg"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "Belarusian"
+msgstr "Belarusça"
+
+msgid "Wednesday"
+msgstr "Çarşenbe"
+
+msgid "Luxembourgish"
+msgstr "Lýuksemburgça"
+
+msgid "Malay"
+msgstr ""
+
+msgid "Turkmen"
+msgstr "Türkmençe"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ýan."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Maý"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Iýul"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sent."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Noý."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Few."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mart"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aprel"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Iýun"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Awg."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Okt."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dek."
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ýanwar"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Fewral"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Iýul"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Awgust"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Oktýabr"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Dekabr"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mart"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprel"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Maý"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Iýun"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Sentýabr"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Noýabr"
+
