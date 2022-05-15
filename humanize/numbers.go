@@ -23,6 +23,14 @@ var apnumbers = []string{
 
 // Apnumber returns for numbers 1-9, the number spelled out. Otherwise, return the  number.
 // This follows Associated Press style.
+//
+// Examples:
+//
+// - 1 becomes one.
+//
+// - 2 becomes two.
+//
+// - 10 becomes 10.
 func (h *Humanizer) Apnumber(val interface{}) string {
 	fl, err := util.ToNumber(val)
 	if err != nil {

@@ -2,6 +2,7 @@ package humanize
 
 import "math"
 
+// LanguageName returns the name of the spoken language as called by the languages used.
 func (h *Humanizer) LanguageName(lang string) string {
 	return h.loc.Get(lang)
 }

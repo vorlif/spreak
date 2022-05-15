@@ -42,7 +42,7 @@ func ParseString(content string) (*File, error) {
 func (p *parser) Parse() (*File, error) {
 	// special case, empty file
 	if tok, _ := p.scan(); tok == eof {
-		return nil, errors.New("po file cannot not be empty")
+		return nil, errors.New("po file cannot be empty")
 	}
 
 	p.unscan()
@@ -91,7 +91,7 @@ func (p *parser) Parse() (*File, error) {
 	}
 
 	if p.header == nil && len(p.messages) == 0 {
-		return nil, errors.New("po file cannot not be empty")
+		return nil, errors.New("po file cannot be empty")
 	}
 
 	file := &File{Header: &Header{}, Messages: p.messages}

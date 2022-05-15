@@ -11,6 +11,7 @@ import (
 	"github.com/vorlif/spreak/humanize/locale/be"
 	"github.com/vorlif/spreak/humanize/locale/de"
 	"github.com/vorlif/spreak/humanize/locale/es"
+	"github.com/vorlif/spreak/humanize/locale/it"
 	"github.com/vorlif/spreak/humanize/locale/zhHans"
 )
 
@@ -204,4 +205,40 @@ func ExampleHumanizer_FormatTime_shortDateTime() {
 	// 05/15/2022 6 p.m.
 	// 2022年5月15日 18:00
 	// 15.05.2022 18:00
+}
+
+func ExampleHumanizer_Date() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+
+	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.Date())
+	}
+	// May 16, 2022
+	// 16 Maggio 2022
+	// 16. Mai 2022
+}
+
+func ExampleHumanizer_Time() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+
+	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.Time())
+	}
+	// 12:30 a.m.
+	// 00:30
+	// 00:30
+}
+
+func ExampleHumanizer_Now() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+
+	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.Now())
+	}
+	// May 16, 2022, 12:34 a.m.
+	// Lunedì 16 Maggio 2022 00:34
+	// 16. Mai 2022 00:34
 }

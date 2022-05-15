@@ -2,16 +2,19 @@
 
 # Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak)
 
-Flexible translation library for Go based on the concepts of gettext.
+Flexible translation and humanization library for Go based on the concepts behind gettext.
 
-## Features
+### Features
 
-* Support for `fs.FS` and `embed`
+* Support for `fs.FS` (also `embed`)
 * Goroutine-safe and lock free through immutability
 * Easily extendable
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
+* [Direct support for the humanization](https://github.com/vorlif/spreak/edit/main/README.md#package-humanize)  of Go
+  data structures
+* Supports the po and mo file format.
 
-## Usage
+### Usage
 
 Spreak loads your translations and provides a simple interface for querying them.
 
@@ -99,11 +102,80 @@ I recommend the application [poedit](https://poedit.net/) for a quick start.
 After translation `.po` or `.mo` files are generated, which are used by spreak for looking up translations.
 Attention, do not translate the `.pot` file directly, as this is only a template.
 
-## What's next
+### What's next
 
 * Read what you can extract with [xspreak](https://github.com/vorlif/xspreak#xspreak)
 * Take a look in the [examples folder](./examples) for more examples of using spreak.
 
+## Package humanize
+
+The `humanize` package provides a collection of functions to convert Go data structures into a human-readable format.
+
+It was widely adopted from the Django project and also uses the Django translations.
+It should therefore be noted that the translations are under
+the [Django 3-clause BSD license](https://github.com/django/django/blob/main/LICENSE).
+
+To use the `humanize` package, you first need to load the languages you want to use.
+You can find a list of all supported languages under [humanize/locale/](humanize/locale)
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/vorlif/spreak/humanize"
+	"github.com/vorlif/spreak/humanize/locale/ar"
+	"github.com/vorlif/spreak/humanize/locale/es"
+	"github.com/vorlif/spreak/humanize/locale/zhHans"
+	"golang.org/x/text/language"
+)
+
+func main() {
+	// Load the translations for the desired languages
+	parcel := humanize.MustNew(
+		humanize.WithLocale(es.New(), ar.New(), zhHans.New()),
+	)
+
+	// Create a humanizer.
+	// A humanizer features a collection of humanize functions for a language.
+	h := parcel.CreateHumanizer(language.English)
+
+	// Uses the functions...
+	fmt.Println(h.Intword(1_000_000_000))
+	fmt.Println(h.NaturalDay(time.Now()))
+
+	t := time.Now().Add(5 * time.Minute)
+	fmt.Println(h.NaturalTime(t))
+
+	d := -80 * time.Hour
+	fmt.Println(h.TimeSince(d))
+
+	// ... for different languages
+	h = parcel.CreateHumanizer(language.Spanish)
+	fmt.Println(h.TimeSince(d))
+
+	// Output:
+	// 1.0 billion
+	// today
+	// 5 minutes from now
+	// 3 days, 8 hours
+	// 3 días, 8 horas
+}
+```
+
+A collection of all functions and further examples can be found in the documentation.
+
+### Add translations
+
+If you want to add a translation or add a new language, **do not do so in this repository**.
+The translations in this repository are automatically generated from the Django translations and additions should also
+be made there.
+Use the following link to do so: https://www.transifex.com/django/django/.
+
 ## License
 
 spreak is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+The translations of the `humanize` packages are licensed
+under [Django's BSD license](https://github.com/django/django/blob/main/LICENSE).

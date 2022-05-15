@@ -12,6 +12,7 @@ const (
 	djangoDomain = "django"
 )
 
+// Parcel data structure which collects the translations and can create humanizers.
 type Parcel struct {
 	bundle  *spreak.Bundle
 	locales map[language.Tag]*FormatData
@@ -22,24 +23,39 @@ type options struct {
 	locales       []*LocaleData
 }
 
+// A Humanizer represents a collection of functions for humanizing data structures for a chosen language.
 type Humanizer struct {
 	loc    *spreak.Localizer
 	format *FormatData
 }
 
+// LocaleData represents a collection of information and data about a language.
 type LocaleData struct {
 	Lang   language.Tag
 	Fs     fs.FS
 	Format *FormatData
 }
 
+// FormatData represents a collection of formatting rules that belongs to a language.
+// For example, the formatting of a date for a language.
+//
+// It is automatically provided when using a language from the locale package.
 type FormatData struct {
-	DateFormat          string
-	TimeFormat          string
-	DateTimeFormat      string
-	YearMonthFormat     string
-	MonthDayFormat      string
-	ShortDateFormat     string
+	// DateFormat is the formatting to use for displaying dates
+	// Fallback: 'N j, Y' (e.g. Feb. 4, 2003)
+	DateFormat string
+	// TimeFormat is the formatting to use for displaying time
+	// Fallback: 'P' (e.g. 4 p.m.)
+	TimeFormat string
+	// DateTimeFormat is the formatting to use for displaying datetime
+	// Fallback: 'N j, Y, P' (e.g. Feb. 4, 2003, 4 p.m.)
+	DateTimeFormat string
+	// Fallback: 'F Y'
+	YearMonthFormat string
+	MonthDayFormat  string
+	// Fallback: 'm/d/Y' (e.g. 12/31/2003)
+	ShortDateFormat string
+	// Fallback: 'm/d/Y P' (e.g. 12/31/2003 4 p.m.)
 	ShortDatetimeFormat string
 	FirstDayOfWeek      int
 }
@@ -55,8 +71,10 @@ var fallbackFormat = &FormatData{
 	FirstDayOfWeek:      0,
 }
 
+// An Option that can be used to customize the configuration when creating a parcel.
 type Option func(opts *options) error
 
+// WithLocale specifies which languages to support for humanization.
 func WithLocale(data ...*LocaleData) Option {
 	return func(opts *options) error {
 		opts.locales = append(opts.locales, data...)
@@ -64,6 +82,7 @@ func WithLocale(data ...*LocaleData) Option {
 	}
 }
 
+// WithBundleOption Allows to store custom options for the internally created spreak.Bundle.
 func WithBundleOption(opt spreak.BundleOption) Option {
 	return func(opts *options) error {
 		opts.bundleOptions = append(opts.bundleOptions, opt)
@@ -71,6 +90,7 @@ func WithBundleOption(opt spreak.BundleOption) Option {
 	}
 }
 
+// New creates a new parcel which holds the humanizers for the selected locales.
 func New(opts ...Option) (*Parcel, error) {
 	o := &options{
 		bundleOptions: nil,
@@ -87,7 +107,7 @@ func New(opts ...Option) (*Parcel, error) {
 		if d.Format == nil {
 			d.Format = fallbackFormat
 		}
-		d.Format.SetDefaults()
+		d.Format.setDefaults()
 	}
 
 	loader := newLoader(o.locales)
@@ -119,6 +139,7 @@ func New(opts ...Option) (*Parcel, error) {
 	return parcel, nil
 }
 
+// MustNew is similar to New except it panics if an error happens.
 func MustNew(opts ...Option) *Parcel {
 	parcel, err := New(opts...)
 	if err != nil {
@@ -127,8 +148,10 @@ func MustNew(opts ...Option) *Parcel {
 	return parcel
 }
 
-func (p *Parcel) CreateHumanizer(lang language.Tag) *Humanizer {
-	loc := spreak.NewLocalizer(p.bundle, lang)
+// CreateHumanizer creates a new humanizer.
+// Multiple languages can be passed and a spreak.Localizer is created which decides which language is used.
+func (p *Parcel) CreateHumanizer(lang ...interface{}) *Humanizer {
+	loc := spreak.NewLocalizer(p.bundle, lang...)
 
 	if data, ok := p.locales[loc.Language()]; ok {
 		return &Humanizer{loc: loc, format: data}
@@ -137,7 +160,7 @@ func (p *Parcel) CreateHumanizer(lang language.Tag) *Humanizer {
 	return &Humanizer{loc: loc, format: fallbackFormat}
 }
 
-func (f *FormatData) SetDefaults() {
+func (f *FormatData) setDefaults() {
 	if f.DateFormat == "" {
 		f.DateFormat = fallbackFormat.DateFormat
 	}

@@ -11,6 +11,7 @@ import (
 	"github.com/vorlif/spreak/internal/util"
 )
 
+// Keywords for selecting a predefined formatting for a language when using FormatTime.
 const (
 	DateFormat          = "DATE_FORMAT"
 	TimeFormat          = "TIME_FORMAT"
@@ -183,33 +184,33 @@ type timeSinceOptions struct {
 	depth       int
 }
 
-type TimeSinceOption func(opt *timeSinceOptions)
+type TimeOption func(opt *timeSinceOptions)
 
-func WithDepth(depth int) TimeSinceOption {
+func WithDepth(depth int) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.depth = depth
 	}
 }
 
-func withTimeStrings(timeStrings map[string]gettextEntry) TimeSinceOption {
+func withTimeStrings(timeStrings map[string]gettextEntry) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.timeStrings = timeStrings
 	}
 }
 
-func WithReverse(reverse bool) TimeSinceOption {
+func WithReverse(reverse bool) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.reverse = reverse
 	}
 }
 
-func WithNow(now time.Time) TimeSinceOption {
+func WithNow(now time.Time) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.now = now
 	}
 }
 
-// TimeSince take two datetime objects and return the time between d and now as a nicely
+// TimeSince take a time object and return the time between d and now as a nicely
 // formatted string, e.g. "10 minutes". If d occurs after now, return
 // "0 minutes".
 //
@@ -218,12 +219,9 @@ func WithNow(now time.Time) TimeSinceOption {
 // displayed.  For example, "2 weeks, 3 days" and "1 year, 3 months" are
 // possible outputs, but "2 weeks, 3 hours" and "1 year, 5 days" are not.
 //
-// `depth` is an optional integer to control the number of adjacent time
-// units returned.
-//
 // Adapted from
 // https://web.archive.org/web/20060617175230/http://blog.natbat.co.uk/archive/2003/Jun/14/time_since
-func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeSinceOption) string {
+func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string {
 	d, err := util.ToTime(inputTime)
 	if err != nil {
 		return fmt.Sprintf("%v", inputTime)
@@ -304,13 +302,17 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeSinceOption) st
 	return strings.Join(result, h.loc.Get(", "))
 }
 
-func (h *Humanizer) TimeSinceFrom(d time.Time, now time.Time, opts ...TimeSinceOption) string {
+// TimeSinceFrom works like TimeSince, but the time to use as the comparison point can be specified.
+// Is equivalent to TimeSince(d, WithNow(now)).
+func (h *Humanizer) TimeSinceFrom(d time.Time, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now))
 	return h.TimeSince(d, opts...)
 }
 
-// TimeUntil works like TimeSince, but return a string measuring the time until the given time.
-func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeSinceOption) string {
+// TimeUntil works similar to TimeSince, except that it measures the time from now until the given date or datetime.
+// For example, if today is 1 June 2006 and conferenceDate is a date instance holding 29 June 2006,
+// then TimeUntil(conferenceDate) will return “4 weeks”.
+func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeOption) string {
 	parsedTime, err := util.ToTime(d)
 	if err != nil {
 		return fmt.Sprintf("%v", d)
@@ -320,11 +322,21 @@ func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeSinceOption) string {
 	return h.TimeSince(parsedTime, opts...)
 }
 
-func (h *Humanizer) TimeUntilFrom(d time.Time, now time.Time, opts ...TimeSinceOption) string {
+// TimeUntilFrom works like TimeUntil, but the time to use as the comparison point can be specified.
+// Is equivalent to TimeUntil(d, WithNow(now)).
+func (h *Humanizer) TimeUntilFrom(d time.Time, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now), WithReverse(true))
 	return h.TimeSince(d, opts...)
 }
 
+// FormatTime formats a time according to the given format.
+// The format string should be use the Django date format syntax,
+// see https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
+//
+// Pre-defined keywords for selecting a predefined formatting for a language are:
+// humanize.DateFormat, humanize.TimeFormat, humanize.DateTimeFormat, humanize.YearMonthFormat,
+// humanize.MonthDayFormat, humanize.ShortDateFormat and humanize.ShortDatetimeFormat.
+// The output of the predefined formats depend on the language used.
 func (h *Humanizer) FormatTime(t time.Time, format string) string {
 	switch format {
 	case DateFormat:
@@ -347,14 +359,20 @@ func (h *Humanizer) FormatTime(t time.Time, format string) string {
 	return tf.format(format)
 }
 
+// Now returns the current date and time.
+// Short form for FormatTime(time.Now(), DateTimeFormat).
 func (h *Humanizer) Now() string {
 	return h.FormatTime(time.Now(), DateTimeFormat)
 }
 
+// Time returns the current time.
+// Short form for FormatTime(time.Now(), TimeFormat).
 func (h *Humanizer) Time() string {
 	return h.FormatTime(time.Now(), TimeFormat)
 }
 
+// Date returns the current date.
+// Short form for FormatTime(time.Now(), DateFormat).
 func (h *Humanizer) Date() string {
 	return h.FormatTime(time.Now(), DateFormat)
 }
