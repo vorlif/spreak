@@ -1,0 +1,27 @@
+package km
+
+import (
+	"embed"
+
+	"golang.org/x/text/language"
+
+	"github.com/vorlif/spreak/humanize"
+)
+
+//go:embed *.po
+var fsys embed.FS
+
+func New() *humanize.LocaleData {
+	return &humanize.LocaleData{
+		Lang: language.MustParse("km"),
+		Fs:   fsys,
+		Format: &humanize.FormatData{
+			DateFormat:          "j ខែ F ឆ្នាំ Y",
+			TimeFormat:          "G:i",
+			DateTimeFormat:      "j ខែ F ឆ្នាំ Y, G:i",
+			MonthDayFormat:      "j F",
+			ShortDateFormat:     "j M Y",
+			ShortDatetimeFormat: "j M Y, G:i",
+		},
+	}
+}

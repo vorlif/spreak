@@ -58,7 +58,7 @@ func (s *scanner) scan() (tok token, lit string) {
 	line = strings.TrimSpace(line)
 	if len(line) == 1 {
 		// comment without content
-		return s.scan()
+		return commentTranslator, line
 	}
 
 	if len(line) == 2 {

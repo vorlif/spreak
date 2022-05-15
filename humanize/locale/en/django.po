@@ -1,0 +1,1138 @@
+# This file is distributed under the same license as the Django package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 10:22+0200\n"
+"PO-Revision-Date: 2010-05-13 15:35+0200\n"
+"Last-Translator: Django team\n"
+"Language-Team: English <en@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: conf/global_settings.py:57
+msgid "Afrikaans"
+msgstr ""
+
+#: conf/global_settings.py:58
+msgid "Arabic"
+msgstr ""
+
+#: conf/global_settings.py:59
+msgid "Algerian Arabic"
+msgstr ""
+
+#: conf/global_settings.py:60
+msgid "Asturian"
+msgstr ""
+
+#: conf/global_settings.py:61
+msgid "Azerbaijani"
+msgstr ""
+
+#: conf/global_settings.py:62
+msgid "Bulgarian"
+msgstr ""
+
+#: conf/global_settings.py:63
+msgid "Belarusian"
+msgstr ""
+
+#: conf/global_settings.py:64
+msgid "Bengali"
+msgstr ""
+
+#: conf/global_settings.py:65
+msgid "Breton"
+msgstr ""
+
+#: conf/global_settings.py:66
+msgid "Bosnian"
+msgstr ""
+
+#: conf/global_settings.py:67
+msgid "Catalan"
+msgstr ""
+
+#: conf/global_settings.py:68
+msgid "Czech"
+msgstr ""
+
+#: conf/global_settings.py:69
+msgid "Welsh"
+msgstr ""
+
+#: conf/global_settings.py:70
+msgid "Danish"
+msgstr ""
+
+#: conf/global_settings.py:71
+msgid "German"
+msgstr ""
+
+#: conf/global_settings.py:72
+msgid "Lower Sorbian"
+msgstr ""
+
+#: conf/global_settings.py:73
+msgid "Greek"
+msgstr ""
+
+#: conf/global_settings.py:74
+msgid "English"
+msgstr ""
+
+#: conf/global_settings.py:75
+msgid "Australian English"
+msgstr ""
+
+#: conf/global_settings.py:76
+msgid "British English"
+msgstr ""
+
+#: conf/global_settings.py:77
+msgid "Esperanto"
+msgstr ""
+
+#: conf/global_settings.py:78
+msgid "Spanish"
+msgstr ""
+
+#: conf/global_settings.py:79
+msgid "Argentinian Spanish"
+msgstr ""
+
+#: conf/global_settings.py:80
+msgid "Colombian Spanish"
+msgstr ""
+
+#: conf/global_settings.py:81
+msgid "Mexican Spanish"
+msgstr ""
+
+#: conf/global_settings.py:82
+msgid "Nicaraguan Spanish"
+msgstr ""
+
+#: conf/global_settings.py:83
+msgid "Venezuelan Spanish"
+msgstr ""
+
+#: conf/global_settings.py:84
+msgid "Estonian"
+msgstr ""
+
+#: conf/global_settings.py:85
+msgid "Basque"
+msgstr ""
+
+#: conf/global_settings.py:86
+msgid "Persian"
+msgstr ""
+
+#: conf/global_settings.py:87
+msgid "Finnish"
+msgstr ""
+
+#: conf/global_settings.py:88
+msgid "French"
+msgstr ""
+
+#: conf/global_settings.py:89
+msgid "Frisian"
+msgstr ""
+
+#: conf/global_settings.py:90
+msgid "Irish"
+msgstr ""
+
+#: conf/global_settings.py:91
+msgid "Scottish Gaelic"
+msgstr ""
+
+#: conf/global_settings.py:92
+msgid "Galician"
+msgstr ""
+
+#: conf/global_settings.py:93
+msgid "Hebrew"
+msgstr ""
+
+#: conf/global_settings.py:94
+msgid "Hindi"
+msgstr ""
+
+#: conf/global_settings.py:95
+msgid "Croatian"
+msgstr ""
+
+#: conf/global_settings.py:96
+msgid "Upper Sorbian"
+msgstr ""
+
+#: conf/global_settings.py:97
+msgid "Hungarian"
+msgstr ""
+
+#: conf/global_settings.py:98
+msgid "Armenian"
+msgstr ""
+
+#: conf/global_settings.py:99
+msgid "Interlingua"
+msgstr ""
+
+#: conf/global_settings.py:100
+msgid "Indonesian"
+msgstr ""
+
+#: conf/global_settings.py:101
+msgid "Igbo"
+msgstr ""
+
+#: conf/global_settings.py:102
+msgid "Ido"
+msgstr ""
+
+#: conf/global_settings.py:103
+msgid "Icelandic"
+msgstr ""
+
+#: conf/global_settings.py:104
+msgid "Italian"
+msgstr ""
+
+#: conf/global_settings.py:105
+msgid "Japanese"
+msgstr ""
+
+#: conf/global_settings.py:106
+msgid "Georgian"
+msgstr ""
+
+#: conf/global_settings.py:107
+msgid "Kabyle"
+msgstr ""
+
+#: conf/global_settings.py:108
+msgid "Kazakh"
+msgstr ""
+
+#: conf/global_settings.py:109
+msgid "Khmer"
+msgstr ""
+
+#: conf/global_settings.py:110
+msgid "Kannada"
+msgstr ""
+
+#: conf/global_settings.py:111
+msgid "Korean"
+msgstr ""
+
+#: conf/global_settings.py:112
+msgid "Kyrgyz"
+msgstr ""
+
+#: conf/global_settings.py:113
+msgid "Luxembourgish"
+msgstr ""
+
+#: conf/global_settings.py:114
+msgid "Lithuanian"
+msgstr ""
+
+#: conf/global_settings.py:115
+msgid "Latvian"
+msgstr ""
+
+#: conf/global_settings.py:116
+msgid "Macedonian"
+msgstr ""
+
+#: conf/global_settings.py:117
+msgid "Malayalam"
+msgstr ""
+
+#: conf/global_settings.py:118
+msgid "Mongolian"
+msgstr ""
+
+#: conf/global_settings.py:119
+msgid "Marathi"
+msgstr ""
+
+#: conf/global_settings.py:120
+msgid "Burmese"
+msgstr ""
+
+#: conf/global_settings.py:120
+msgid "Malay"
+msgstr ""
+
+#: conf/global_settings.py:121
+msgid "Norwegian Bokmål"
+msgstr ""
+
+#: conf/global_settings.py:122
+msgid "Nepali"
+msgstr ""
+
+#: conf/global_settings.py:123
+msgid "Dutch"
+msgstr ""
+
+#: conf/global_settings.py:124
+msgid "Norwegian Nynorsk"
+msgstr ""
+
+#: conf/global_settings.py:125
+msgid "Ossetic"
+msgstr ""
+
+#: conf/global_settings.py:126
+msgid "Punjabi"
+msgstr ""
+
+#: conf/global_settings.py:127
+msgid "Polish"
+msgstr ""
+
+#: conf/global_settings.py:128
+msgid "Portuguese"
+msgstr ""
+
+#: conf/global_settings.py:129
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: conf/global_settings.py:130
+msgid "Romanian"
+msgstr ""
+
+#: conf/global_settings.py:131
+msgid "Russian"
+msgstr ""
+
+#: conf/global_settings.py:132
+msgid "Slovak"
+msgstr ""
+
+#: conf/global_settings.py:133
+msgid "Slovenian"
+msgstr ""
+
+#: conf/global_settings.py:134
+msgid "Albanian"
+msgstr ""
+
+#: conf/global_settings.py:135
+msgid "Serbian"
+msgstr ""
+
+#: conf/global_settings.py:136
+msgid "Serbian Latin"
+msgstr ""
+
+#: conf/global_settings.py:137
+msgid "Swedish"
+msgstr ""
+
+#: conf/global_settings.py:138
+msgid "Swahili"
+msgstr ""
+
+#: conf/global_settings.py:139
+msgid "Tamil"
+msgstr ""
+
+#: conf/global_settings.py:140
+msgid "Telugu"
+msgstr ""
+
+#: conf/global_settings.py:141
+msgid "Tajik"
+msgstr ""
+
+#: conf/global_settings.py:142
+msgid "Thai"
+msgstr ""
+
+#: conf/global_settings.py:143
+msgid "Turkmen"
+msgstr ""
+
+#: conf/global_settings.py:144
+msgid "Turkish"
+msgstr ""
+
+#: conf/global_settings.py:145
+msgid "Tatar"
+msgstr ""
+
+#: conf/global_settings.py:146
+msgid "Udmurt"
+msgstr ""
+
+#: conf/global_settings.py:147
+msgid "Ukrainian"
+msgstr ""
+
+#: conf/global_settings.py:148
+msgid "Urdu"
+msgstr ""
+
+#: conf/global_settings.py:149
+msgid "Uzbek"
+msgstr ""
+
+#: conf/global_settings.py:150
+msgid "Vietnamese"
+msgstr ""
+
+#: conf/global_settings.py:151
+msgid "Simplified Chinese"
+msgstr ""
+
+#: conf/global_settings.py:152
+msgid "Traditional Chinese"
+msgstr ""
+
+#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
+#: contrib/humanize/templatetags/humanize.py:30
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 0, e.g. 80th.
+#: contrib/humanize/templatetags/humanize.py:34
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
+#: contrib/humanize/templatetags/humanize.py:36
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
+#: contrib/humanize/templatetags/humanize.py:38
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
+#: contrib/humanize/templatetags/humanize.py:40
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 4, e.g. 84th.
+#: contrib/humanize/templatetags/humanize.py:42
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 5, e.g. 85th.
+#: contrib/humanize/templatetags/humanize.py:44
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 6, e.g. 86th.
+#: contrib/humanize/templatetags/humanize.py:46
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 7, e.g. 87th.
+#: contrib/humanize/templatetags/humanize.py:48
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 8, e.g. 88th.
+#: contrib/humanize/templatetags/humanize.py:50
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+#. Translators: Ordinal format when value ends with 9, e.g. 89th.
+#: contrib/humanize/templatetags/humanize.py:52
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:83
+#, python-format
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:84
+#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:85
+#, python-format
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:86
+#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:87
+#, python-format
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:88
+#, python-format
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:89
+#, python-format
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:90
+#, python-format
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:91
+#, python-format
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:92
+#, python-format
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:93
+#, python-format
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:136
+msgid "five"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:136
+msgid "one"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:136
+msgid "four"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:136
+msgid "two"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:136
+msgid "three"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:137
+msgid "six"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:137
+msgid "nine"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:137
+msgid "eight"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:137
+msgid "seven"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:158
+msgid "today"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:160
+msgid "tomorrow"
+msgstr ""
+
+#: contrib/humanize/templatetags/humanize.py:162
+msgid "yesterday"
+msgstr ""
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2 weeks'
+#: contrib/humanize/templatetags/humanize.py:180
+#, python-format
+msgid "%[1]v ago"
+msgstr ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:183
+#, python-format
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:186
+#, python-format
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:189
+#, python-format
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:190
+msgid "now"
+msgstr ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:193
+#, python-format
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:196
+#, python-format
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: please keep a non-breaking space (U+00A0) between count
+#. and time unit.
+#: contrib/humanize/templatetags/humanize.py:199
+#, python-format
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2 weeks'
+#: contrib/humanize/templatetags/humanize.py:201
+#, python-format
+msgid "%[1]v from now"
+msgstr ""
+
+#. Translators: 'naturaltime-past' strings will be included in '%(delta)s ago'
+#: contrib/humanize/templatetags/humanize.py:205
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:206
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:207
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:208
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:209
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:210
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: 'naturaltime-future' strings will be included in '%(delta)s from now'
+#: contrib/humanize/templatetags/humanize.py:214
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:215
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:216
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:217
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:218
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contrib/humanize/templatetags/humanize.py:219
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template/defaultfilters.py:856 template/defaultfilters.py:873
+#, python-format
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template/defaultfilters.py:875
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: template/defaultfilters.py:877
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: template/defaultfilters.py:879
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: template/defaultfilters.py:881
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: template/defaultfilters.py:883
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: utils/dateformat.py:72
+msgid "p.m."
+msgstr ""
+
+#: utils/dateformat.py:73
+msgid "a.m."
+msgstr ""
+
+#: utils/dateformat.py:78
+msgid "PM"
+msgstr ""
+
+#: utils/dateformat.py:79
+msgid "AM"
+msgstr ""
+
+#: utils/dateformat.py:150
+msgid "midnight"
+msgstr ""
+
+#: utils/dateformat.py:152
+msgid "noon"
+msgstr ""
+
+#: utils/dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: utils/dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: utils/dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: utils/dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: utils/dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: utils/dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: utils/dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: utils/dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: utils/dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: utils/dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "May"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "April"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "February"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "June"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "January"
+msgstr ""
+
+#: utils/dates.py:14
+msgid "March"
+msgstr ""
+
+#: utils/dates.py:15
+msgid "November"
+msgstr ""
+
+#: utils/dates.py:15
+msgid "September"
+msgstr ""
+
+#: utils/dates.py:15
+msgid "July"
+msgstr ""
+
+#: utils/dates.py:15
+msgid "October"
+msgstr ""
+
+#: utils/dates.py:15
+msgid "August"
+msgstr ""
+
+#: utils/dates.py:16
+msgid "December"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "mar"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "apr"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "jun"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "feb"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "jan"
+msgstr ""
+
+#: utils/dates.py:19
+msgid "may"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "oct"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "sep"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "dec"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "jul"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "nov"
+msgstr ""
+
+#: utils/dates.py:20
+msgid "aug"
+msgstr ""
+
+#: utils/dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: utils/dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: utils/dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: utils/dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: utils/dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: utils/dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: utils/dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: utils/dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: utils/dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: utils/dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: utils/dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: utils/dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: utils/dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: utils/dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: utils/dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: utils/dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: utils/dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: utils/dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: utils/dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: utils/dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: utils/text.py:261 utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: utils/timesince.py:9
+#, python-format
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/timesince.py:10
+#, python-format
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/timesince.py:11
+#, python-format
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/timesince.py:12
+#, python-format
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/timesince.py:13
+#, python-format
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/timesince.py:14
+#, python-format
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+

@@ -9,19 +9,76 @@ import (
 )
 
 func TestParse_Simple(t *testing.T) {
-	test := `
+	t.Run("test parse empty content", func(t *testing.T) {
+		file, err := Parse([]byte{})
+		assert.Error(t, err)
+		assert.Nil(t, file)
+	})
+
+	t.Run("test parse nil", func(t *testing.T) {
+		file, err := Parse(nil)
+		assert.Error(t, err)
+		assert.Nil(t, file)
+	})
+
+	t.Run("test parse message", func(t *testing.T) {
+		content := `
 msgid "id"
 msgstr "ID"`
-	file, err := Parse([]byte(test))
-	assert.NoError(t, err)
-	assert.NotNil(t, file)
-	assert.NotNil(t, file.Header)
-	assert.Equal(t, len(file.Messages), 1)
-	if assert.Contains(t, file.Messages, "") && assert.Contains(t, file.Messages[""], "id") {
-		msg := file.Messages[""]["id"]
-		assert.Equal(t, "id", msg.ID)
-		assert.Equal(t, "ID", msg.Str[0])
-	}
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		assert.NotNil(t, file)
+		assert.NotNil(t, file.Header)
+		assert.Equal(t, len(file.Messages), 1)
+		if assert.Contains(t, file.Messages, "") && assert.Contains(t, file.Messages[""], "id") {
+			msg := file.Messages[""]["id"]
+			assert.Equal(t, "id", msg.ID)
+			assert.Equal(t, "ID", msg.Str[0])
+		}
+	})
+
+	t.Run("test duplicated message id", func(t *testing.T) {
+		content := `
+msgid "id"
+msgstr "ID"
+
+msgid "id"
+msgstr ""`
+		f, err := Parse([]byte(content))
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+
+	t.Run("test invalid plural index", func(t *testing.T) {
+		content := `
+msgid "id"
+msgid_plural "id_plural"
+msgstr[0] "ID"
+msgstr[a] "ID"`
+
+		f, err := Parse([]byte(content))
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+
+	t.Run("test multiple headers", func(t *testing.T) {
+		content := `
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""`
+		f, err := Parse([]byte(content))
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
+
+	t.Run("test no messages comment", func(t *testing.T) {
+		content := "# Comment"
+		f, err := Parse([]byte(content))
+		assert.Error(t, err)
+		assert.Nil(t, f)
+	})
 }
 
 func TestParse_Header(t *testing.T) {
@@ -31,6 +88,44 @@ func TestParse_Header(t *testing.T) {
 	assert.NotNil(t, file)
 	assert.NotNil(t, file.Header)
 	assert.Empty(t, file.Messages)
+
+	t.Run("parse comment", func(t *testing.T) {
+		header := `# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# F Wolff <friedel@translate.org.za>, 2019-2020
+# Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
+# unklphil <villiers.strauss@gmail.com>, 2014,2019
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-19 20:23+0200\n"
+"PO-Revision-Date: 2020-07-20 19:37+0000\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: Afrikaans (http://www.transifex.com/django/django/language/"
+"af/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"`
+
+		file, err := ParseString(header)
+		assert.NoError(t, err)
+		assert.NotNil(t, file)
+		assert.NotNil(t, file.Header)
+		assert.Empty(t, file.Messages)
+
+		want := `This file is distributed under the same license as the Django package.
+
+Translators:
+F Wolff <friedel@translate.org.za>, 2019-2020
+Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
+unklphil <villiers.strauss@gmail.com>, 2014,2019`
+		assert.Equal(t, want, file.Header.Comment.Translator)
+
+	})
 }
 
 func TestParse_Context(t *testing.T) {
@@ -50,7 +145,7 @@ msgstr "ID"`
 	}
 }
 
-func TestParse_File(t *testing.T) {
+func TestParse_PoeditFile(t *testing.T) {
 	content, errRead := os.ReadFile("../../testdata/parser/poedit_en_GB.po")
 	require.NoError(t, errRead)
 
@@ -139,5 +234,61 @@ msgstr[1] "%(value)s Billionen"
 		assert.NotNil(t, msg)
 		assert.Len(t, msg.Comment.Flags, 1)
 		assert.Equal(t, msg.Comment.Flags[0], "python-format")
+	})
+
+	t.Run("test parse message prev", func(t *testing.T) {
+		content := `
+#| msgctxt "prev "
+#| "context"
+#| msgid "msgid "
+#| "prev"
+msgid "id"
+msgstr "ID"`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		require.NotNil(t, file)
+		msg := file.GetMessage("", "id")
+		require.NotNil(t, msg)
+		assert.Equal(t, "msgid prev", msg.Comment.PrevMsgID)
+		assert.Equal(t, "prev context", msg.Comment.PrevMsgContext)
+	})
+
+	t.Run("test parse reference", func(t *testing.T) {
+		content := `
+#: conf/global_settings.py:143 conf/global_settings.py:150
+#: contrib/humanize/templatetags/humanize.py:186
+msgid "id"
+msgstr "ID"`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		require.NotNil(t, file)
+		msg := file.GetMessage("", "id")
+		assert.Len(t, msg.Comment.References, 3)
+		msg.Comment.sortReferences()
+		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[0].Path)
+		assert.Equal(t, 143, msg.Comment.References[0].Line)
+		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[1].Path)
+		assert.Equal(t, 150, msg.Comment.References[1].Line)
+		assert.Equal(t, "contrib/humanize/templatetags/humanize.py", msg.Comment.References[2].Path)
+		assert.Equal(t, 186, msg.Comment.References[2].Line)
+	})
+}
+
+func TestMustParse(t *testing.T) {
+	t.Run("panics on error", func(t *testing.T) {
+		content := `this is invalid content for po files`
+		f := func() {
+			_ = MustParse([]byte(content))
+		}
+		assert.Panics(t, f)
+	})
+
+	t.Run("returns result", func(t *testing.T) {
+		content := `
+msgid "id"
+msgstr "ID"`
+
+		f := MustParse([]byte(content))
+		assert.NotNil(t, f)
 	})
 }
