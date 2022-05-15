@@ -3,6 +3,7 @@ package humanize
 import (
 	"fmt"
 	"math"
+	"sort"
 	"strings"
 	"time"
 
@@ -272,18 +273,14 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeSinceOption) st
 	}
 
 	since := delta
-	found := false
-	i := 0
-	for idx, chunk := range timeSinceChunks {
-		count := floorDivision(float64(since), float64(chunk.seconds))
-		i = idx
-		if count != 0 {
-			found = true
-			break
-		}
-	}
 
-	if !found {
+	i := sort.Search(len(timeSinceChunks), func(i int) bool {
+		chunk := timeSinceChunks[i]
+		count := floorDivision(float64(since), float64(chunk.seconds))
+		return count != 0
+	})
+
+	if i == len(timeSinceChunks) {
 		entry := o.timeStrings["minute"]
 		return h.loc.NPGetf(entry.context, entry.singular, entry.plural, 0, 0)
 	}
@@ -359,17 +356,4 @@ func (h *Humanizer) Time() string {
 
 func (h *Humanizer) Date() string {
 	return h.FormatTime(time.Now(), DateFormat)
-}
-
-func floorDivision(a, b float64) int64 {
-	return int64(math.Floor(toFixed(a/b, 3)))
-}
-
-func toFixed(num float64, precision int) float64 {
-	output := math.Pow(10, float64(precision))
-	return float64(round(num*output)) / output
-}
-
-func round(num float64) int {
-	return int(num + math.Copysign(0.5, num))
 }

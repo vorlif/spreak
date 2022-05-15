@@ -29,7 +29,7 @@ func (h *Humanizer) Apnumber(val interface{}) string {
 		return fmt.Sprintf("%v", val)
 	}
 
-	num := int(fl)
+	num := int64(fl)
 	if num <= 0 || num >= 10 {
 		return h.loc.Print("%d", num)
 	}
@@ -74,9 +74,9 @@ func (h *Humanizer) Intword(i interface{}) string {
 		largeNumber := math.Pow10(converter.exponent)
 		if absValue < (largeNumber * float64(1000)) {
 			newValue := value / largeNumber
-			roundedValue := int(math.Ceil(newValue-1)) + 1
+			roundedValue := int64(math.Ceil(newValue-1)) + 1
 			if roundedValue < 0 {
-				roundedValue = int(math.Abs(math.Floor(newValue)))
+				roundedValue = int64(math.Abs(math.Floor(newValue)))
 			}
 			formattedNumber := h.loc.Print("%.1f", newValue)
 			return h.loc.NGetf(converter.singular, converter.plural, roundedValue, formattedNumber)
@@ -130,7 +130,7 @@ func (h *Humanizer) Ordinal(i interface{}) string {
 		return fmt.Sprintf("%v", i)
 	}
 
-	value := int(floatValue)
+	value := int64(floatValue)
 	switch value % 100 {
 	case 11, 12, 13:
 		return h.loc.PGetf("ordinal 11, 12, 13", "%vth", value)

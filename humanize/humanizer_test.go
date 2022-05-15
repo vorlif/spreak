@@ -4,8 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak"
 	"github.com/vorlif/spreak/internal/util"
 )
 
@@ -28,7 +30,7 @@ var testGermanLocaleData = &LocaleData{
 	},
 }
 
-func createNewParcel(t *testing.T) *Parcel {
+func createNewParcel(_ *testing.T) *Parcel {
 	es := &LocaleData{Lang: language.Spanish, Fs: util.DirFS(esLocaleDir)}
 
 	return MustNew(WithLocale(testGermanLocaleData, es))
@@ -42,4 +44,20 @@ func createGermanHumanizer(t *testing.T) *Humanizer {
 func createSourceHumanizer(t *testing.T) *Humanizer {
 	p := createNewParcel(t)
 	return p.CreateHumanizer(language.English)
+}
+
+func TestNew(t *testing.T) {
+	t.Run("test same domain returns error", func(t *testing.T) {
+		parcel, err := New(WithBundleOption(spreak.WithDomainPath(djangoDomain, "../testdata/humanize")))
+		assert.Error(t, err)
+		assert.Contains(t, err.Error(), "django")
+		assert.Nil(t, parcel)
+	})
+
+	t.Run("test MuseNew with error panics", func(t *testing.T) {
+		f := func() {
+			_ = MustNew(WithBundleOption(spreak.WithDomainPath(djangoDomain, "../testdata/humanize")))
+		}
+		assert.Panics(t, f)
+	})
 }
