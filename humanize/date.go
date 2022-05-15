@@ -101,12 +101,13 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 // NaturalTime shows for a time value how many seconds, minutes, or hours ago
 // compared to current timestamp return representing string.
 func (h *Humanizer) NaturalTime(i interface{}) string {
+	now := time.Now()
 	t, err := util.ToTime(i)
 	if err != nil {
 		return fmt.Sprintf("%v", i)
 	}
 
-	now := time.Now().In(t.Location())
+	now = now.In(t.Location())
 	if t.Before(now) {
 		delta := now.Sub(t)
 		deltaSec := int64(delta.Truncate(time.Second).Seconds())
@@ -131,8 +132,8 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		}
 	}
 
-	delta := t.Sub(now).Round(time.Second)
-	deltaSec := int64(delta.Truncate(time.Second).Seconds())
+	delta := t.Sub(now)
+	deltaSec := int64(delta.Round(time.Second).Seconds())
 	if int64(delta.Round(time.Second).Hours()) >= 24 {
 		entry := naturalTimeStrings["future-day"]
 		timeSince := h.TimeUntil(t, withTimeStrings(naturalFutureSubstrings))
@@ -143,7 +144,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	} else if deltaSec < 60 {
 		entry := naturalTimeStrings["future-second"]
 		return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-	} else if floorDivision(delta.Round(time.Second).Seconds(), 60) < 60 {
+	} else if floorDivision(float64(deltaSec), 60) < 60 {
 		count := int64(math.Floor(float64(deltaSec) / 60))
 		entry := naturalTimeStrings["future-minute"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
