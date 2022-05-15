@@ -1,7 +1,6 @@
 package humanize
 
 import (
-	"os"
 	"strconv"
 	"testing"
 	"time"
@@ -16,7 +15,11 @@ func formatTime(h *Humanizer, t time.Time, format string) string {
 }
 
 func init() {
-	_ = os.Setenv("TZ", "CET")
+	cet, err := time.LoadLocation("CET")
+	if err != nil {
+		panic(err)
+	}
+	time.Local = cet
 }
 
 func TestTimeFormatter(t *testing.T) {
