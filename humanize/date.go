@@ -107,9 +107,9 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 
 	now := time.Now().In(t.Location())
 	if t.Before(now) {
-		delta := now.Sub(t)
+		delta := now.Sub(t).Round(time.Second)
 		deltaSec := int64(delta.Seconds())
-		if delta.Hours() > 24 {
+		if delta.Hours() >= 24 {
 			entry := naturalTimeStrings["past-day"]
 			timeSince := h.TimeSinceFrom(t, now, withTimeStrings(naturalPastSubstrings))
 			return h.loc.Getf(entry.singular, timeSince)
