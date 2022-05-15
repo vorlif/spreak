@@ -1,6 +1,7 @@
 package humanize
 
 import (
+	"os"
 	"strconv"
 	"testing"
 	"time"
@@ -12,6 +13,10 @@ import (
 func formatTime(h *Humanizer, t time.Time, format string) string {
 	tf := newTimeFormatter(h, t)
 	return tf.format(format)
+}
+
+func init() {
+	_ = os.Setenv("TZ", "CET")
 }
 
 func TestTimeFormatter(t *testing.T) {
@@ -130,12 +135,12 @@ func TestTimeFormatter(t *testing.T) {
 			specifier string
 			expected  string
 		}{
-			{"e", "CET"},
-			{"O", "+0100"},
-			{"r", "Sun, 08 Jul 1979 22:00:00 +0100"},
-			{"T", "Local"},
-			{"U", "300315600"},
-			{"Z", "3600"},
+			{"e", "CEST"},
+			{"O", "+0200"},
+			{"r", "Sun, 08 Jul 1979 22:00:00 +0200"},
+			{"T", "CET"},
+			{"U", "300312000"},
+			{"Z", "7200"},
 		}
 		for _, tt := range tests {
 			t.Run(tt.specifier, func(t *testing.T) {
