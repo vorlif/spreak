@@ -131,8 +131,8 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	}
 
 	delta := t.Sub(now).Round(time.Second)
-	deltaSec := int64(delta.Seconds())
-	if delta.Round(time.Minute).Hours() >= 24 {
+	deltaSec := int64(delta.Truncate(time.Second).Seconds())
+	if int64(delta.Round(time.Second).Hours()) >= 24 {
 		entry := naturalTimeStrings["future-day"]
 		timeSince := h.TimeUntilFrom(t, now, withTimeStrings(naturalFutureSubstrings))
 		return h.loc.Getf(entry.singular, timeSince)
@@ -142,7 +142,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	} else if deltaSec < 60 {
 		entry := naturalTimeStrings["future-second"]
 		return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-	} else if math.Floor(float64(deltaSec)/60) < 60 {
+	} else if floorDivision(delta.Round(time.Second).Seconds(), 60) < 60 {
 		count := int64(math.Floor(float64(deltaSec) / 60))
 		entry := naturalTimeStrings["future-minute"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
