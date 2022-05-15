@@ -107,9 +107,9 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 
 	now := time.Now().In(t.Location())
 	if t.Before(now) {
-		delta := now.Sub(t).Round(time.Second)
-		deltaSec := int64(delta.Seconds())
-		if delta.Hours() >= 24 {
+		delta := now.Sub(t)
+		deltaSec := int64(delta.Truncate(time.Second).Seconds())
+		if int64(delta.Round(time.Second).Hours()) >= 24 {
 			entry := naturalTimeStrings["past-day"]
 			timeSince := h.TimeSinceFrom(t, now, withTimeStrings(naturalPastSubstrings))
 			return h.loc.Getf(entry.singular, timeSince)
@@ -119,7 +119,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		} else if deltaSec < 60 {
 			entry := naturalTimeStrings["past-second"]
 			return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-		} else if floorDivision(float64(deltaSec), 60) < 60 {
+		} else if floorDivision(delta.Round(time.Second).Seconds(), 60) < 60 {
 			count := int64(math.Floor(float64(deltaSec) / 60))
 			entry := naturalTimeStrings["past-minute"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
