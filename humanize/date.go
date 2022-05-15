@@ -97,6 +97,10 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 	"minute": {"naturaltime-future", "%[1]v minute", "%[1]v minutes"},
 }
 
+func round(f float64, v int64) float64 {
+	return math.Floor((math.Round(float64(f)*100) / 100) / float64(v))
+}
+
 // NaturalTime shows for a time value how many seconds, minutes, or hours ago
 // compared to current timestamp return representing string.
 func (h *Humanizer) NaturalTime(i interface{}) string {
@@ -119,12 +123,12 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		} else if deltaSec < 60 {
 			entry := naturalTimeStrings["past-second"]
 			return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-		} else if math.Floor(float64(deltaSec)/60) < 60 {
-			count := int64(math.Floor(float64(deltaSec) / 60))
+		} else if round(float64(deltaSec), 60) < 60 {
+			count := int64(round(float64(deltaSec), 60))
 			entry := naturalTimeStrings["past-minute"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
 		} else {
-			count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
+			count := int64(round(round(float64(deltaSec), 60), 60))
 			entry := naturalTimeStrings["past-hour"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
 		}
@@ -142,12 +146,12 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	} else if deltaSec < 60 {
 		entry := naturalTimeStrings["future-second"]
 		return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-	} else if math.Floor(float64(deltaSec)/60) < 60 {
-		count := int64(math.Floor(float64(deltaSec) / 60))
+	} else if round(float64(deltaSec), 60) < 60 {
+		count := int64(round(float64(deltaSec), 60))
 		entry := naturalTimeStrings["future-minute"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	} else {
-		count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
+		count := int64(round(round(float64(deltaSec), 60), 60))
 		entry := naturalTimeStrings["future-hour"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	}
