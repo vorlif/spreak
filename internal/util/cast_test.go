@@ -125,10 +125,12 @@ func TestToTime(t *testing.T) {
 	t.Run("test duration", func(t *testing.T) {
 		d, err := ToTime(5 * time.Minute)
 		assert.NoError(t, err)
-		assert.Zero(t, time.Since(d).Truncate(5*time.Minute), time.Duration(0))
+		mins := time.Until(d).Minutes()
+		assert.Truef(t, mins >= 4.75 && mins <= 5.25, fmt.Sprintf("%v", mins))
 
 		d, err = ToTime(-10 * time.Hour)
 		assert.NoError(t, err)
-		assert.LessOrEqual(t, time.Until(d).Truncate(-10*time.Hour), time.Duration(0))
+		hours := time.Since(d).Hours()
+		assert.Truef(t, hours >= 9.9 && hours <= 10.1, fmt.Sprintf("%v", hours))
 	})
 }
