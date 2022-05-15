@@ -85,10 +85,6 @@ func ToNumber(n interface{}) (res float64, err error) {
 	return ToNumber(fmt.Sprintf("%v", n))
 }
 
-func IsNilInterface(i interface{}) bool {
-	return i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil())
-}
-
 // From html/template/content.go
 // Copyright 2011 The Go Authors. All rights reserved.
 // indirect returns the value, after dereferencing as many times

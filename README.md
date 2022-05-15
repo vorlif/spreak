@@ -10,7 +10,7 @@ Flexible translation and humanization library for Go based on the concepts behin
 * Goroutine-safe and lock free through immutability
 * Easily extendable
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
-* [Direct support for the humanization](https://github.com/vorlif/spreak/edit/main/README.md#package-humanize)  of Go
+* [Direct support for humanization](https://github.com/vorlif/spreak/tree/humanize#package-humanize)  of Go
   data structures
 * Supports the po and mo file format.
 
@@ -107,13 +107,13 @@ Attention, do not translate the `.pot` file directly, as this is only a template
 * Read what you can extract with [xspreak](https://github.com/vorlif/xspreak#xspreak)
 * Take a look in the [examples folder](./examples) for more examples of using spreak.
 
-## Package humanize
+## Package humanize [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak/humanize)](https://pkg.go.dev/github.com/vorlif/spreak/humanize)
 
 The `humanize` package provides a collection of functions to convert Go data structures into a human-readable format.
 
 It was widely adopted from the Django project and also uses the Django translations.
 It should therefore be noted that the translations are under
-the [Django 3-clause BSD license](https://github.com/django/django/blob/main/LICENSE).
+the [Django 3-clause BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).
 
 To use the `humanize` package, you first need to load the languages you want to use.
 You can find a list of all supported languages under [humanize/locale/](humanize/locale)
@@ -178,4 +178,4 @@ Use the following link to do so: https://www.transifex.com/django/django/.
 
 spreak is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
 The translations of the `humanize` packages are licensed
-under [Django's BSD license](https://github.com/django/django/blob/main/LICENSE).
+under [Django's BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).

@@ -252,6 +252,26 @@ msgstr "ID"`
 		assert.Equal(t, "msgid prev", msg.Comment.PrevMsgID)
 		assert.Equal(t, "prev context", msg.Comment.PrevMsgContext)
 	})
+
+	t.Run("test parse reference", func(t *testing.T) {
+		content := `
+#: conf/global_settings.py:143 conf/global_settings.py:150
+#: contrib/humanize/templatetags/humanize.py:186
+msgid "id"
+msgstr "ID"`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		require.NotNil(t, file)
+		msg := file.GetMessage("", "id")
+		assert.Len(t, msg.Comment.References, 3)
+		msg.Comment.sortReferences()
+		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[0].Path)
+		assert.Equal(t, 143, msg.Comment.References[0].Line)
+		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[1].Path)
+		assert.Equal(t, 150, msg.Comment.References[1].Line)
+		assert.Equal(t, "contrib/humanize/templatetags/humanize.py", msg.Comment.References[2].Path)
+		assert.Equal(t, 186, msg.Comment.References[2].Line)
+	})
 }
 
 func TestMustParse(t *testing.T) {

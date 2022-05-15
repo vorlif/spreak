@@ -24,7 +24,7 @@ func TestToNumber(t *testing.T) {
 
 	tests := []struct {
 		name    string
-		args    interface{}
+		arg     interface{}
 		wantRes float64
 		wantErr assert.ErrorAssertionFunc
 	}{
@@ -59,11 +59,76 @@ func TestToNumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotRes, err := ToNumber(tt.args)
-			if !tt.wantErr(t, err, fmt.Sprintf("ToNumber(%v)", tt.args)) {
+			gotRes, err := ToNumber(tt.arg)
+			if !tt.wantErr(t, err, fmt.Sprintf("ToNumber(%v)", tt.arg)) {
 				return
 			}
-			assert.Equalf(t, tt.wantRes, gotRes, "ToNumber(%v)", tt.args)
+			assert.Equalf(t, tt.wantRes, gotRes, "ToNumber(%v)", tt.arg)
 		})
 	}
+}
+
+func TestToTime(t *testing.T) {
+	now := time.Now()
+
+	t.Run("test errors", func(t *testing.T) {
+		now := time.Now()
+		tests := []struct {
+			name    string
+			arg     interface{}
+			wantErr assert.ErrorAssertionFunc
+		}{
+			{"time", now, assert.NoError},
+			{"zero time", time.Time{}, assert.NoError},
+			{"positive duration", 5 * time.Minute, assert.NoError},
+			{"negative duration", -5 * time.Hour, assert.NoError},
+			{"number to time", 1_000, assert.NoError},
+			{"pointer", &now, assert.NoError},
+			{"nil", nil, assert.Error},
+			{"invalid time", "string", assert.Error},
+		}
+
+		for _, tt := range tests {
+			t.Run(tt.name, func(t *testing.T) {
+				d, err := ToTime(tt.arg)
+				tt.wantErr(t, err, fmt.Sprintf("ToTime(%v)", tt.arg))
+				assert.NotNil(t, d)
+			})
+		}
+	})
+
+	t.Run("test simple time input", func(t *testing.T) {
+		d, err := ToTime(now)
+		assert.NoError(t, err)
+		assert.Equal(t, now, d)
+	})
+
+	t.Run("test pointer", func(t *testing.T) {
+		d, err := ToTime(&now)
+		assert.NoError(t, err)
+		assert.Equal(t, now, d)
+	})
+
+	t.Run("test numbers", func(t *testing.T) {
+		d, err := ToTime(1_000)
+		assert.NoError(t, err)
+		assert.Equal(t, int64(1000), d.Unix())
+	})
+
+	t.Run("test empty", func(t *testing.T) {
+		d, err := ToTime(time.Time{})
+		assert.NoError(t, err)
+		assert.True(t, d.IsZero())
+		assert.Equal(t, time.Time{}, d)
+	})
+
+	t.Run("test duration", func(t *testing.T) {
+		d, err := ToTime(5 * time.Minute)
+		assert.NoError(t, err)
+		assert.Zero(t, time.Since(d).Truncate(5*time.Minute), time.Duration(0))
+
+		d, err = ToTime(-10 * time.Hour)
+		assert.NoError(t, err)
+		assert.LessOrEqual(t, time.Until(d).Truncate(-10*time.Hour), time.Duration(0))
+	})
 }
