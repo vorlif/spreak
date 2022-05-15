@@ -97,10 +97,6 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 	"minute": {"naturaltime-future", "%[1]v minute", "%[1]v minutes"},
 }
 
-func round(f float64, v int64) float64 {
-	return math.Floor((math.Round(float64(f)*100) / 100) / float64(v))
-}
-
 // NaturalTime shows for a time value how many seconds, minutes, or hours ago
 // compared to current timestamp return representing string.
 func (h *Humanizer) NaturalTime(i interface{}) string {
@@ -112,7 +108,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	now := time.Now().In(t.Location())
 	if t.Before(now) {
 		delta := now.Sub(t)
-		deltaSec := int64(delta.Round(time.Second).Seconds())
+		deltaSec := int64(delta.Seconds())
 		if delta.Hours() > 24 {
 			entry := naturalTimeStrings["past-day"]
 			timeSince := h.TimeSinceFrom(t, now, withTimeStrings(naturalPastSubstrings))
@@ -123,12 +119,12 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		} else if deltaSec < 60 {
 			entry := naturalTimeStrings["past-second"]
 			return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-		} else if round(float64(deltaSec), 60) < 60 {
-			count := int64(round(float64(deltaSec), 60))
+		} else if floorDivision(float64(deltaSec), 60) < 60 {
+			count := int64(math.Floor(float64(deltaSec) / 60))
 			entry := naturalTimeStrings["past-minute"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
 		} else {
-			count := int64(round(round(float64(deltaSec), 60), 60))
+			count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
 			entry := naturalTimeStrings["past-hour"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
 		}
@@ -146,12 +142,12 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	} else if deltaSec < 60 {
 		entry := naturalTimeStrings["future-second"]
 		return h.loc.NGetf(entry.singular, entry.plural, deltaSec, deltaSec)
-	} else if round(float64(deltaSec), 60) < 60 {
-		count := int64(round(float64(deltaSec), 60))
+	} else if math.Floor(float64(deltaSec)/60) < 60 {
+		count := int64(math.Floor(float64(deltaSec) / 60))
 		entry := naturalTimeStrings["future-minute"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	} else {
-		count := int64(round(round(float64(deltaSec), 60), 60))
+		count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
 		entry := naturalTimeStrings["future-hour"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	}
@@ -279,7 +275,7 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeSinceOption) st
 	found := false
 	i := 0
 	for idx, chunk := range timeSinceChunks {
-		count := int64(math.Floor(float64(since) / float64(chunk.seconds)))
+		count := floorDivision(float64(since), float64(chunk.seconds))
 		i = idx
 		if count != 0 {
 			found = true
@@ -296,8 +292,8 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeSinceOption) st
 	currentDepth := 0
 	for i < len(timeSinceChunks) && currentDepth < o.depth {
 		chunk := timeSinceChunks[i]
-		count := int64(math.Round(float64(since)/float64(chunk.seconds)*100) / 100)
-		if count == 0 {
+		count := floorDivision(float64(since), float64(chunk.seconds))
+		if count <= 0 {
 			break
 		}
 		entry := o.timeStrings[chunk.name]
@@ -363,4 +359,17 @@ func (h *Humanizer) Time() string {
 
 func (h *Humanizer) Date() string {
 	return h.FormatTime(time.Now(), DateFormat)
+}
+
+func floorDivision(a, b float64) int64 {
+	return int64(math.Floor(toFixed(a/b, 3)))
+}
+
+func toFixed(num float64, precision int) float64 {
+	output := math.Pow(10, float64(precision))
+	return float64(round(num*output)) / output
+}
+
+func round(num float64) int {
+	return int(num + math.Copysign(0.5, num))
 }

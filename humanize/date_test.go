@@ -1,6 +1,7 @@
 package humanize
 
 import (
+	"fmt"
 	"testing"
 	"time"
 
@@ -71,7 +72,7 @@ func TestHumanizer_NaturalTime(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(tt.expected, func(t *testing.T) {
+		t.Run(fmt.Sprintf("%v => %s", tt.time, tt.expected), func(t *testing.T) {
 			assert.Equal(t, tt.expected, h.NaturalTime(tt.time))
 		})
 	}
