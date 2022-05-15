@@ -10,7 +10,7 @@ Flexible translation and humanization library for Go based on the concepts behin
 * Goroutine-safe and lock free through immutability
 * Easily extendable
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
-* [Direct support for humanization](https://github.com/vorlif/spreak/tree/humanize#package-humanize)  of Go
+* [Direct support for humanization](#package-humanize-)  of Go
   data structures
 * Supports the po and mo file format.
 
