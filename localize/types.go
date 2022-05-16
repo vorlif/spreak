@@ -17,18 +17,29 @@ type Context = string
 // Domain is an alias type for string which is used by xspreak for extracting strings.
 type Domain = string
 
+// A Localizable allows access to a message that needs to be translated.
+//
+// An implementation can be passed directly to a spreak.Localizer or spreak.Locale via
+// l.Localize(impl) to obtain a translation.
 type Localizable interface {
+	// GetMsgID specifies the message id (singular) for which the message should be translated.
 	GetMsgID() string
+	// GetPluralID specifies the plural for which the message should be translated.
 	GetPluralID() string
+	// GetContext specifies the context for which the message should be translated.
 	GetContext() string
+	// GetVars is optional, can be used to pass parameters.
 	GetVars() []interface{}
 	GetCount() int
+	// HasDomain specifies whether the domain of Domain() is to be used.
+	// If false the default domain is used.
 	HasDomain() bool
+	// GetDomain specifies the domain for which the message should be translated.
 	GetDomain() string
 }
 
 // Message is a simple struct representing a message without a domain.
-// Can be converted to a translated string by Localizers or a Locale.
+// Can be converted to a translated string by spreak.Localizer or spreak.Locale.
 type Message struct {
 	Singular Singular
 	Plural   Plural
