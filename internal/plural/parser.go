@@ -25,7 +25,7 @@ func (f *Forms) IndexForN(n interface{}) int {
 		return 0
 	}
 
-	num = math.Abs(math.RoundToEven(num))
+	num = math.RoundToEven(math.Abs(num))
 	result := f.node.evaluate(int(num))
 	return result
 }

@@ -123,6 +123,26 @@ func TestLocale_TranslateWithError(t *testing.T) {
 	assert.Equal(t, "Test mit Context", tr)
 }
 
+func TestLocale_Localize(t *testing.T) {
+	locale := getLocale(t)
+	msg := &localize.Message{
+		Singular: "%d day",
+		Plural:   "%d days",
+		Context:  "",
+		Vars:     nil,
+		Count:    10,
+	}
+
+	tr, err := locale.LocalizeWithError(msg)
+	assert.NoError(t, err)
+	assert.Equal(t, "%d Tage", tr)
+
+	msg.Count = 0
+	tr, err = locale.LocalizeWithError(msg)
+	assert.NoError(t, err)
+	assert.Equal(t, "%d Tage", tr)
+}
+
 func TestLocale_MainFunctions(t *testing.T) {
 	locale := getLocale(t)
 

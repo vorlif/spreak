@@ -190,6 +190,30 @@ type timeSinceOptions struct {
 	depth       int
 }
 
+func newTimeSinceOptions(opts ...TimeOption) *timeSinceOptions {
+	o := &timeSinceOptions{
+		reverse:     false,
+		timeStrings: nil,
+		depth:       -1,
+	}
+	for _, opt := range opts {
+		opt(o)
+	}
+
+	if o.timeStrings == nil || len(o.timeStrings) == 0 {
+		o.timeStrings = timeSinceStrings
+	}
+	if o.depth <= 0 {
+		o.depth = 2
+	}
+
+	if o.now.IsZero() {
+		o.now = time.Now()
+	}
+
+	return o
+}
+
 type TimeOption func(opt *timeSinceOptions)
 
 func WithDepth(depth int) TimeOption {
@@ -233,21 +257,8 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 		return formatErrorMessage(inputTime)
 	}
 
-	o := &timeSinceOptions{
-		reverse:     false,
-		timeStrings: nil,
-		depth:       -1,
-	}
-	for _, opt := range opts {
-		opt(o)
-	}
+	o := newTimeSinceOptions(opts...)
 
-	if o.timeStrings == nil || len(o.timeStrings) == 0 {
-		o.timeStrings = timeSinceStrings
-	}
-	if o.depth <= 0 {
-		o.depth = 2
-	}
 	now := o.now
 	if now.IsZero() {
 		now = time.Now()

@@ -23,6 +23,7 @@ func newTimeFormatter(h *Humanizer, t time.Time) *timeFormatter {
 	}
 }
 
+//nolint:cyclop
 func (tf *timeFormatter) format(formatString string) string {
 	runes := []rune(formatString)
 	var buf strings.Builder

@@ -27,7 +27,7 @@ func ToTime(i interface{}) (t time.Time, err error) {
 	return time.Time{}, fmt.Errorf("unable to cast %#v of type %T to Time", i, i)
 }
 
-func ToNumber(n interface{}) (res float64, err error) {
+func ToNumber(n interface{}) (float64, error) {
 	n = indirect(n)
 	if n == nil {
 		return 0, errors.New("number is nil")
@@ -35,47 +35,35 @@ func ToNumber(n interface{}) (res float64, err error) {
 
 	switch nt := n.(type) {
 	case uint:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case uint8:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case uint16:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case uint32:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case uint64:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case int:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case int8:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case int16:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case int32:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case int64:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case float32:
-		res = float64(nt)
-		return
+		return float64(nt), nil
 	case float64:
-		res = nt
-		return
+		return nt, nil
 	case string:
-		res, err = strconv.ParseFloat(nt, 64)
+		res, err := strconv.ParseFloat(nt, 64)
 		if err != nil {
 			return 0, fmt.Errorf("unable to cast %#v of type %T to float64", n, n)
 		}
-		return
+		return res, nil
 	}
 
 	if num, errC := ToNumber(fmt.Sprintf("%d", n)); errC == nil {

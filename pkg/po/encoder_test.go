@@ -216,3 +216,23 @@ msgstr[1] ""
 		assert.Equal(t, want, buff.String())
 	})
 }
+
+func TestEncoder_SetWrapWidth(t *testing.T) {
+	file := &File{
+		Header: &Header{Comment: &Comment{Translator: "This is an very long line with many words without meaning"}},
+	}
+	var buff bytes.Buffer
+	enc := NewEncoder(&buff)
+	enc.SetWrapWidth(15)
+	enc.SetWriteEmptyHeader(false)
+	err := enc.Encode(file)
+	assert.NoError(t, err)
+
+	want := `# This is an very
+# long line with
+# many words
+# without meaning
+
+`
+	assert.Equal(t, want, buff.String())
+}
