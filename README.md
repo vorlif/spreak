@@ -48,11 +48,10 @@ func main() {
 
 	// Translate
 	fmt.Println(t.Get("Hello world"))
+    // Output: Hola Mundo
+	
 	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
-
-	// Output:
-	//  Hola Mundo
-	//  Tengo 2 perros
+    // Output: Tengo 2 perros
 }
 ```
 
@@ -110,8 +109,7 @@ Attention, do not translate the `.pot` file directly, as this is only a template
 ## Package humanize [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak/humanize)](https://pkg.go.dev/github.com/vorlif/spreak/humanize)
 
 The `humanize` package provides a collection of functions to convert Go data structures into a human-readable format.
-
-It was widely adopted from the Django project and also uses the Django translations.
+It was widely adopted from the [Django project](https://github.com/django/django) and also uses the Django translations.
 It should therefore be noted that the translations are under
 the [Django 3-clause BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).
 
@@ -144,28 +142,28 @@ func main() {
 
 	// Uses the functions...
 	fmt.Println(h.Intword(1_000_000_000))
+    // Output: 1.0 billion
+	
 	fmt.Println(h.NaturalDay(time.Now()))
+    // Output: today
 
 	t := time.Now().Add(5 * time.Minute)
 	fmt.Println(h.NaturalTime(t))
+    // Output: 5 minutes from now
 
 	d := -80 * time.Hour
 	fmt.Println(h.TimeSince(d))
+    // Output: 3 days, 8 hours
 
 	// ... for different languages
 	h = parcel.CreateHumanizer(language.Spanish)
 	fmt.Println(h.TimeSince(d))
-
-	// Output:
-	// 1.0 billion
-	// today
-	// 5 minutes from now
-	// 3 days, 8 hours
-	// 3 días, 8 horas
+    // Output: 3 días, 8 horas
 }
 ```
 
-A collection of all functions and further examples can be found in the documentation.
+A collection of all functions and further examples can be found in
+the [documentation](https://pkg.go.dev/github.com/vorlif/spreak/humanize).
 
 ### Add translations
 
