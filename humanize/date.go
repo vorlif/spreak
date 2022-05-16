@@ -12,12 +12,26 @@ import (
 
 // Keywords for selecting a predefined formatting for a language when using FormatTime.
 const (
-	DateFormat          = "DATE_FORMAT"
-	TimeFormat          = "TIME_FORMAT"
-	DateTimeFormat      = "DATETIME_FORMAT"
-	YearMonthFormat     = "YEAR_MONTH_FORMAT"
-	MonthDayFormat      = "MONTH_DAY_FORMAT"
-	ShortDateFormat     = "SHORT_DATE_FORMAT"
+	// DateFormat is the formatting to use for displaying dates
+	// Fallback: 'N j, Y' (e.g. Feb. 4, 2003).
+	DateFormat = "DATE_FORMAT"
+	// TimeFormat is the formatting to use for displaying time
+	// Fallback: 'P' (e.g. 4 p.m.)
+	TimeFormat = "TIME_FORMAT"
+	// DateTimeFormat is the formatting to use for displaying datetime
+	// Fallback: 'N j, Y, P' (e.g. Feb. 4, 2003, 4 p.m.)
+	DateTimeFormat = "DATETIME_FORMAT"
+	// YearMonthFormat is suitable for cases when only the year and month should be displayed.
+	// Fallback: 'F Y'.
+	YearMonthFormat = "YEAR_MONTH_FORMAT"
+	// MonthDayFormat is suitable for cases when only the month and day should be displayed.
+	// Fallback 'F j'.
+	MonthDayFormat = "MONTH_DAY_FORMAT"
+	// ShortDateFormat
+	// Fallback: 'm/d/Y' (e.g. 12/31/2003).
+	ShortDateFormat = "SHORT_DATE_FORMAT"
+	// ShortDatetimeFormat
+	// Fallback: 'm/d/Y P' (e.g. 12/31/2003 4 p.m.)
 	ShortDatetimeFormat = "SHORT_DATETIME_FORMAT"
 )
 
@@ -184,17 +198,19 @@ var timeSinceChunks = []struct {
 }
 
 type timeSinceOptions struct {
-	now         time.Time
-	reverse     bool
-	timeStrings map[string]gettextEntry
-	depth       int
+	now             time.Time
+	reverse         bool
+	timeStrings     map[string]gettextEntry
+	depth           int
+	requireAdjacent bool
 }
 
 func newTimeSinceOptions(opts ...TimeOption) *timeSinceOptions {
 	o := &timeSinceOptions{
-		reverse:     false,
-		timeStrings: nil,
-		depth:       -1,
+		reverse:         false,
+		timeStrings:     nil,
+		depth:           -1,
+		requireAdjacent: true,
 	}
 	for _, opt := range opts {
 		opt(o)
@@ -214,8 +230,15 @@ func newTimeSinceOptions(opts ...TimeOption) *timeSinceOptions {
 	return o
 }
 
+// TimeOption allows to control the output of the time function.
 type TimeOption func(opt *timeSinceOptions)
 
+// WithDepth can be used to set the maximum number of time units to be displayed.
+// Default value 2.
+//
+// By default, only adjacent time units are displayed.
+// For example, "1 week, 3 days" is a adjacent, but not "1 week, 3 hours".
+// To disable this behavior, the WithoutAdjacentCheck option can be passed.
 func WithDepth(depth int) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.depth = depth
@@ -234,6 +257,17 @@ func WithReverse(reverse bool) TimeOption {
 	}
 }
 
+// WithoutAdjacentCheck disables that only adjacent time units are output.
+// By default, only adjacent time units are displayed.
+// For example, "1 week, 3 days" is a adjacent, but not "1 week, 3 hours".
+func WithoutAdjacentCheck() TimeOption {
+	return func(opt *timeSinceOptions) {
+		opt.requireAdjacent = false
+	}
+}
+
+// WithNow allows to set the starting point of calculations.
+// Default is time.Now().
 func WithNow(now time.Time) TimeOption {
 	return func(opt *timeSinceOptions) {
 		opt.now = now
@@ -268,6 +302,7 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 		d, now = now, d
 	}
 
+	// ignore microseconds
 	delta := now.In(time.UTC).Unix() - d.In(time.UTC).Unix()
 
 	// Deal with leapyears by subtracing the number of leapdays
@@ -281,7 +316,6 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 	}
 	delta -= 60 * 60 * 24 * int64(leapdays)
 
-	// ignore microseconds
 	if delta <= 0 {
 		//  d is in the future compared to now, stop processing.
 		entry := o.timeStrings["minute"]
@@ -306,14 +340,18 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 	for i < len(timeSinceChunks) && currentDepth < o.depth {
 		chunk := timeSinceChunks[i]
 		count := floorDivision(float64(since), float64(chunk.seconds))
+		i++
 		if count <= 0 {
-			break
+			if o.requireAdjacent {
+				break
+			} else {
+				continue
+			}
 		}
 		entry := o.timeStrings[chunk.name]
 		result = append(result, h.loc.NPGetf(entry.context, entry.singular, entry.plural, count, count))
 		since -= chunk.seconds * count
 		currentDepth++
-		i++
 	}
 
 	return strings.Join(result, h.loc.Get(", "))

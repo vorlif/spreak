@@ -50,14 +50,19 @@ type FormatData struct {
 	// DateTimeFormat is the formatting to use for displaying datetime
 	// Fallback: 'N j, Y, P' (e.g. Feb. 4, 2003, 4 p.m.)
 	DateTimeFormat string
+	// YearMonthFormat is suitable for cases when only the year and month should be displayed.
 	// Fallback: 'F Y'
 	YearMonthFormat string
-	MonthDayFormat  string
+	// MonthDayFormat is suitable for cases when only the month and day should be displayed.
+	// Fallback 'F j'
+	MonthDayFormat string
 	// Fallback: 'm/d/Y' (e.g. 12/31/2003)
 	ShortDateFormat string
 	// Fallback: 'm/d/Y P' (e.g. 12/31/2003 4 p.m.)
 	ShortDatetimeFormat string
-	FirstDayOfWeek      int
+	// FirstDayOfWeek defines the day of the week on which the week starts.
+	// e.d 0 = Sunday, 1 = Monday, etc...
+	FirstDayOfWeek int
 }
 
 var fallbackFormat = &FormatData{

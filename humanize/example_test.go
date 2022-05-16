@@ -3,6 +3,7 @@ package humanize_test
 import (
 	"fmt"
 	"math"
+	"strings"
 	"time"
 
 	"golang.org/x/text/language"
@@ -271,5 +272,53 @@ func ExampleHumanizer_FilesizeFormat() {
 	// 1 GB
 	// 1.000 Bytes
 	// 1 GB
+}
 
+func ExampleWithDepth() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+
+	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
+		h := parcel.CreateHumanizer(tag)
+		t := -3080*time.Hour - 5*time.Minute
+		fmt.Println(h.TimeSince(t, humanize.WithDepth(1), humanize.WithoutAdjacentCheck()))
+		fmt.Println(h.TimeSince(t, humanize.WithoutAdjacentCheck())) // 2 is default
+		fmt.Println(h.TimeSince(t, humanize.WithDepth(3), humanize.WithoutAdjacentCheck()))
+		fmt.Println(h.TimeSince(t, humanize.WithDepth(4), humanize.WithoutAdjacentCheck()))
+		fmt.Println(h.TimeSince(t, humanize.WithDepth(5), humanize.WithoutAdjacentCheck()))
+		fmt.Println(strings.Repeat(" -", 20))
+	}
+	// Output:
+	// 4 months
+	// 4 months, 1 week
+	// 4 months, 1 week, 1 day
+	// 4 months, 1 week, 1 day, 8 hours
+	// 4 months, 1 week, 1 day, 8 hours, 5 minutes
+	//  - - - - - - - - - - - - - - - - - - - -
+	// 4 месяцаў
+	// 4 месяцаў, 1 тыдзень
+	// 4 месяцаў, 1 тыдзень, 1 дзень
+	// 4 месяцаў, 1 тыдзень, 1 дзень, 8 гадзін
+	// 4 месяцаў, 1 тыдзень, 1 дзень, 8 гадзін, 5 хвілін
+	//  - - - - - - - - - - - - - - - - - - - -
+	// 4 Monate
+	// 4 Monate, 1 Woche
+	// 4 Monate, 1 Woche, 1 Tag
+	// 4 Monate, 1 Woche, 1 Tag, 8 Stunden
+	// 4 Monate, 1 Woche, 1 Tag, 8 Stunden, 5 Minuten
+	//  - - - - - - - - - - - - - - - - - - - -
+}
+
+func ExampleWithNow() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+
+	event := time.Date(2000, 01, 01, 00, 0, 0, 0, time.Local)
+	now := time.Date(1999, 12, 24, 00, 0, 0, 0, time.Local)
+	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.TimeUntil(event, humanize.WithNow(now)))
+	}
+	// Output:
+	// 1 week, 1 day
+	// 1 周，1 日
+	// 1 Woche, 1 Tag
 }

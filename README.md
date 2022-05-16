@@ -28,10 +28,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/vorlif/spreak/localize"
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/localize"
 )
 
 func main() {
@@ -139,11 +139,12 @@ import (
 	"fmt"
 	"time"
 
+	"golang.org/x/text/language"
+	
 	"github.com/vorlif/spreak/humanize"
 	"github.com/vorlif/spreak/humanize/locale/ar"
 	"github.com/vorlif/spreak/humanize/locale/es"
 	"github.com/vorlif/spreak/humanize/locale/zhHans"
-	"golang.org/x/text/language"
 )
 
 func main() {

@@ -236,6 +236,28 @@ func TestHumanizer_TimeSince(t *testing.T) {
 		}
 	})
 
+	t.Run("test disable require adjacent", func(t *testing.T) {
+		tests := []struct {
+			value    interface{}
+			depth    int
+			expected string
+		}{
+			{24*time.Hour + time.Minute, 3, "1 day, 1 minute"},
+			{30*24*time.Hour + time.Hour, 3, "1 month, 1 hour"},
+		}
+
+		for _, tt := range tests {
+			t.Run(tt.expected, func(t *testing.T) {
+				assert.Equal(t, tt.expected, h.TimeUntil(tt.value, WithDepth(tt.depth), WithoutAdjacentCheck()))
+			})
+		}
+	})
+
+	t.Run("test with zero now", func(t *testing.T) {
+		dur := 1 * time.Hour
+		assert.Equal(t, "1 hour", h.TimeUntil(dur, WithNow(time.Time{})))
+	})
+
 	t.Run("test with direct now time", func(t *testing.T) {
 		now := d.Add(2*week + 3*time.Hour + 4*time.Minute)
 		assert.Equal(t, "2 weeks", h.TimeSinceFrom(d, now))
