@@ -1,7 +1,6 @@
 package humanize
 
 import (
-	"fmt"
 	"math"
 
 	"golang.org/x/text/number"
@@ -24,6 +23,8 @@ var apnumbers = []string{
 // Apnumber returns for numbers 1-9, the number spelled out. Otherwise, return the  number.
 // This follows Associated Press style.
 //
+// Valid inputs are all values that can be interpreted as a number.
+//
 // Examples:
 //
 // - 1 becomes one.
@@ -34,7 +35,7 @@ var apnumbers = []string{
 func (h *Humanizer) Apnumber(val interface{}) string {
 	fl, err := util.ToNumber(val)
 	if err != nil {
-		return fmt.Sprintf("%v", val)
+		return formatErrorMessage(val)
 	}
 
 	num := int64(fl)
@@ -67,10 +68,16 @@ var intwordConverters = []struct {
 // Intword convert a large integer to a friendly text representation. Works best
 // for numbers over 1 million. For example, 1000000 becomes '1.0 million',
 // 1200000 becomes '1.2 million' and '1200000000' becomes '1.2 billion'.
+// Values up to 10^100 (Googol) are supported.
+//
+// Translates 1.0 as a singular phrase and all other numeric values as plural, this may be incorrect for some languages.
+// Works best for numbers over 1 million.
+//
+// Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Intword(i interface{}) string {
 	value, err := util.ToNumber(i)
 	if err != nil {
-		return fmt.Sprintf("%v", i)
+		return formatErrorMessage(i)
 	}
 
 	absValue := math.Abs(value)
@@ -95,10 +102,12 @@ func (h *Humanizer) Intword(i interface{}) string {
 
 // Intcomma converts an integer to a string containing commas every three digits.
 // For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
+//
+// Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Intcomma(i interface{}) string {
 	value, err := util.ToNumber(i)
 	if err != nil {
-		return fmt.Sprintf("%v", i)
+		return formatErrorMessage(i)
 	}
 
 	return h.loc.Print("%v", number.Decimal(value, number.MaxFractionDigits(6)))
@@ -132,10 +141,12 @@ var ordinalTemplates = []struct {
 
 // Ordinal converts an integer to its ordinal as a string. 1 is '1st', 2 is '2nd',
 // 3 is '3rd', etc. Works for any integer.
+//
+// Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Ordinal(i interface{}) string {
 	floatValue, err := util.ToNumber(i)
 	if err != nil {
-		return fmt.Sprintf("%v", i)
+		return formatErrorMessage(i)
 	}
 
 	value := int64(floatValue)

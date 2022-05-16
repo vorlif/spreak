@@ -1,7 +1,9 @@
 package humanize
 
 import (
+	"fmt"
 	"math"
+	"reflect"
 
 	"golang.org/x/text/language"
 )
@@ -23,4 +25,13 @@ func floorDivision(a, b float64) int64 {
 func toFixed(num float64, precision int) float64 {
 	output := math.Pow(10, float64(precision))
 	return math.Round(num*output) / output
+}
+
+func formatErrorMessage(i interface{}) string {
+	t := reflect.TypeOf(i)
+	if t == nil {
+		return "<nil>"
+	}
+
+	return fmt.Sprintf("%%!(%s=%v)", t.String(), i)
 }

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-06 14:53+0200\n"
-"PO-Revision-Date: 2022-05-06 14:57+0200\n"
+"POT-Creation-Date: 2022-05-16 09:10+0200\n"
+"PO-Revision-Date: 2022-05-16 09:11+0200\n"
 "Last-Translator: Florian Vogt\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -20,6 +20,12 @@ msgstr ""
 
 #. TRANSLATORS: This comment is automatically extracted by xspreak
 #. and can be used to leave useful hints for the translators.
-#: ../helloworld/main.go:26
+#: ../helloworld/main.go:28 ../helloworld/main.go:31
 msgid "Hello world"
 msgstr "Hola Mundo"
+
+#: ../helloworld/main.go:41
+msgid "I do not know any planet"
+msgid_plural "I do not know any planets"
+msgstr[0] "No conozco ningún planeta"
+msgstr[1] "No conozco ningún planeta"

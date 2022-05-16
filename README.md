@@ -24,6 +24,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/vorlif/spreak/localize"
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
@@ -52,6 +53,16 @@ func main() {
 
 	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
 	// Output: Tengo 2 perros
+
+	fmt.Println(t.Localize(GetPlanet()))
+	// Output: No conozco ningún planeta
+}
+
+func GetPlanet() *localize.Message {
+	return &localize.Message{
+		Singular: "I do not know any planet",
+		Plural:   "I do not know any planets",
+	}
 }
 ```
 
@@ -109,9 +120,9 @@ Attention, do not translate the `.pot` file directly, as this is only a template
 ## Package humanize [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak/humanize)](https://pkg.go.dev/github.com/vorlif/spreak/humanize)
 
 The `humanize` package provides a collection of functions to convert Go data structures into a human-readable format.
-It was widely adopted from the [Django project](https://github.com/django/django) and also uses the Django translations.
+It was widely adapted from the [Django project](https://github.com/django/django) and also uses the Django translations.
 It should therefore be noted that the translations are under
-the [Django 3-clause BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).
+the [Django's 3-clause BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).
 
 To use the `humanize` package, you first need to load the languages you want to use.
 You can find a list of all supported languages under [humanize/locale/](humanize/locale)
@@ -171,6 +182,7 @@ If you want to add a translation or add a new language, **do not do so in this r
 The translations in this repository are automatically generated from the Django translations and additions should also
 be made there.
 Use the following link to do so: https://www.transifex.com/django/django/.
+For all non-translation related errors, this repository must be used.
 
 ## License
 

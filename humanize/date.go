@@ -1,7 +1,6 @@
 package humanize
 
 import (
-	"fmt"
 	"math"
 	"sort"
 	"strings"
@@ -30,10 +29,14 @@ type gettextEntry struct {
 
 // NaturalDay returns for time values that are tomorrow, today or yesterday compared to present day
 // the representing string.
+// Any other time is formatted according to the defined DateFormat.
+//
+// Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
+// For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) NaturalDay(i interface{}) string {
 	t, err := util.ToTime(i)
 	if err != nil {
-		return fmt.Sprintf("%v", i)
+		return formatErrorMessage(i)
 	}
 
 	value := time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, t.Location())
@@ -49,7 +52,7 @@ func (h *Humanizer) NaturalDay(i interface{}) string {
 	case -1:
 		return h.loc.Get("yesterday")
 	default:
-		return t.String()
+		return h.FormatTime(t, DateFormat)
 	}
 }
 
@@ -101,11 +104,14 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 
 // NaturalTime shows for a time value how many seconds, minutes, or hours ago
 // compared to current timestamp return representing string.
+//
+// Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
+// For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) NaturalTime(i interface{}) string {
 	now := time.Now()
 	t, err := util.ToTime(i)
 	if err != nil {
-		return fmt.Sprintf("%v", i)
+		return formatErrorMessage(i)
 	}
 
 	now = now.In(t.Location())
@@ -219,12 +225,12 @@ func WithNow(now time.Time) TimeOption {
 // displayed.  For example, "2 weeks, 3 days" and "1 year, 3 months" are
 // possible outputs, but "2 weeks, 3 hours" and "1 year, 5 days" are not.
 //
-// Adapted from
-// https://web.archive.org/web/20060617175230/http://blog.natbat.co.uk/archive/2003/Jun/14/time_since
+// Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
+// For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string {
 	d, err := util.ToTime(inputTime)
 	if err != nil {
-		return fmt.Sprintf("%v", inputTime)
+		return formatErrorMessage(inputTime)
 	}
 
 	o := &timeSinceOptions{
@@ -304,7 +310,7 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 
 // TimeSinceFrom works like TimeSince, but the time to use as the comparison point can be specified.
 // Is equivalent to TimeSince(d, WithNow(now)).
-func (h *Humanizer) TimeSinceFrom(d time.Time, now time.Time, opts ...TimeOption) string {
+func (h *Humanizer) TimeSinceFrom(d interface{}, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now))
 	return h.TimeSince(d, opts...)
 }
@@ -315,7 +321,7 @@ func (h *Humanizer) TimeSinceFrom(d time.Time, now time.Time, opts ...TimeOption
 func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeOption) string {
 	parsedTime, err := util.ToTime(d)
 	if err != nil {
-		return fmt.Sprintf("%v", d)
+		return formatErrorMessage(d)
 	}
 
 	opts = append(opts, WithReverse(true))
@@ -324,7 +330,7 @@ func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeOption) string {
 
 // TimeUntilFrom works like TimeUntil, but the time to use as the comparison point can be specified.
 // Is equivalent to TimeUntil(d, WithNow(now)).
-func (h *Humanizer) TimeUntilFrom(d time.Time, now time.Time, opts ...TimeOption) string {
+func (h *Humanizer) TimeUntilFrom(d interface{}, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now), WithReverse(true))
 	return h.TimeSince(d, opts...)
 }

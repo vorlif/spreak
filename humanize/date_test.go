@@ -15,19 +15,19 @@ func TestNaturalDay(t *testing.T) {
 	today := time.Now()
 	yesterday := time.Now().AddDate(0, 0, -1)
 	tomorrow := time.Now().AddDate(0, 0, 1)
-	someday := time.Now().AddDate(0, 0, 10)
+	someday := time.Date(2022, 05, 01, 0, 0, 0, 0, time.UTC)
 
 	assert.Equal(t, "heute", h.NaturalDay(today))
 	assert.Equal(t, "gestern", h.NaturalDay(yesterday))
 	assert.Equal(t, "morgen", h.NaturalDay(tomorrow))
-	assert.Equal(t, someday.String(), h.NaturalDay(someday))
+	assert.Equal(t, "1. Mai 2022", h.NaturalDay(someday))
 
 	someday = time.Date(today.Year()+4, today.Month(), today.Day(), 0, 0, 0, today.Nanosecond(), today.Location())
-	assert.Equal(t, someday.String(), h.NaturalDay(someday))
+	assert.Equal(t, "16. Mai 2026", h.NaturalDay(someday))
 
 	month := (today.Month() + 1) % 12
 	someday = time.Date(today.Year(), month, today.Day(), 0, 0, 0, today.Nanosecond(), today.Location())
-	assert.Equal(t, someday.String(), h.NaturalDay(someday))
+	assert.Equal(t, "16. Juni 2022", h.NaturalDay(someday))
 
 	yesterday = time.Date(today.Year(), today.Month(), today.Day(), 0, 0, 0, today.Nanosecond(), today.Location()).Add(-1 * time.Minute)
 	assert.Equal(t, "gestern", h.NaturalDay(yesterday))
@@ -36,7 +36,7 @@ func TestNaturalDay(t *testing.T) {
 	assert.Equal(t, "today", h.NaturalDay(time.Now().Unix()))
 
 	t.Run("invalid data", func(t *testing.T) {
-		assert.Equal(t, "test", h.NaturalDay("test"))
+		assert.Equal(t, "%!(string=test)", h.NaturalDay("test"))
 	})
 }
 
@@ -49,7 +49,7 @@ func TestHumanizer_NaturalTime(t *testing.T) {
 			expected string
 			time     interface{}
 		}{
-			{"test", "test"},
+			{"%!(string=test)", "test"},
 			{"a second ago", now.Add(-time.Second)},
 			{"30 seconds ago", now.Add(-30 * time.Second)},
 			{"a minute ago", now.Add(-90 * time.Second)},
@@ -110,8 +110,10 @@ func TestHumanizer_TimeSince(t *testing.T) {
 	year := day * 365
 
 	t.Run("test invalid input", func(t *testing.T) {
-		assert.Equal(t, "test", h.TimeSince("test"))
-		assert.Equal(t, "test", h.TimeUntil("test"))
+		assert.Equal(t, "%!(string=test)", h.TimeSince("test"))
+		assert.Equal(t, "<nil>", h.TimeSince(nil))
+		assert.Equal(t, "%!(string=test)", h.TimeUntil("test"))
+		assert.Equal(t, "<nil>", h.TimeUntil(nil))
 	})
 
 	t.Run("test equal datetimes", func(t *testing.T) {

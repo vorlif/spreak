@@ -89,10 +89,22 @@ func ExampleHumanizer_NaturalDay() {
 		h := parcel.CreateHumanizer(tag)
 		fmt.Println(h.NaturalDay(time.Now()))
 	}
+
+	fmt.Println("---")
+
+	d := time.Date(2022, 05, 01, 0, 0, 0, 0, time.UTC)
+	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.NaturalDay(d))
+	}
 	// Output:
 	// today
 	// hoy
 	// 今天
+	// ---
+	// May 1, 2022
+	// 1 de Mayo de 2022
+	// 2022年5月1日
 }
 
 func ExampleHumanizer_NaturalTime() {

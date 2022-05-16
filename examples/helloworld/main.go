@@ -6,6 +6,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/localize"
 )
 
 func main() {
@@ -25,11 +26,20 @@ func main() {
 	// TRANSLATORS: This comment is automatically extracted by xspreak
 	// and can be used to leave useful hints for the translators.
 	fmt.Println(t.Get("Hello world"))
+	fmt.Println(t.Localize(GetPlanet()))
 
 	t = spreak.NewLocalizer(bundle, language.English)
 	fmt.Println(t.Get("Hello world"))
 
 	// Output:
 	// Hola Mundo
+	// No conozco ningún planeta
 	// Hello world
+}
+
+func GetPlanet() *localize.Message {
+	return &localize.Message{
+		Singular: "I do not know any planet",
+		Plural:   "I do not know any planets",
+	}
 }

@@ -1,6 +1,7 @@
 package humanize
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,7 +17,7 @@ func TestHumanizer_Apnumber(t *testing.T) {
 		assert.Equal(t, "0", h.Apnumber(0))
 		assert.Equal(t, "neun", h.Apnumber(9))
 		assert.Equal(t, "10", h.Apnumber(10))
-		assert.Equal(t, "test", h.Apnumber("test"))
+		assert.Equal(t, "%!(string=test)", h.Apnumber("test"))
 
 		tests := []struct {
 			input interface{}
@@ -33,7 +34,7 @@ func TestHumanizer_Apnumber(t *testing.T) {
 			{8, "acht"},
 			{9, "neun"},
 			{10, "10"},
-			{"test", "test"},
+			{"test", "%!(string=test)"},
 		}
 		for _, tt := range tests {
 			t.Run(tt.want, func(t *testing.T) {
@@ -58,7 +59,7 @@ func TestHumanizer_Apnumber(t *testing.T) {
 			{8, "eight"},
 			{9, "nine"},
 			{10, "10"},
-			{"test", "test"},
+			{"test", "%!(string=test)"},
 		}
 		for _, tt := range tests {
 			t.Run(tt.want, func(t *testing.T) {
@@ -83,7 +84,7 @@ func TestHumanizer_Intword(t *testing.T) {
 			{"1000000000", "1,0 Milliarde"},
 			{"2000000000", "2,0 Milliarden"},
 			{"6000000000000", "6,0 Billionen"},
-			{"test", "test"},
+			{"6000000000000", "6,0 Billionen"},
 		}
 		length := len(tests)
 		for i := 0; i < length; i++ {
@@ -98,6 +99,9 @@ func TestHumanizer_Intword(t *testing.T) {
 				assert.Equal(t, tt.want, h.Intword(tt.input))
 			})
 		}
+
+		assert.Equal(t, "%!(string=test)", h.Intword("test"))
+		assert.Equal(t, "%!(string=-test)", h.Intword("-test"))
 	})
 
 	t.Run("intword source", func(t *testing.T) {
@@ -106,6 +110,7 @@ func TestHumanizer_Intword(t *testing.T) {
 			input string
 			want  string
 		}{
+
 			{"100", "100"},
 			{"1000", "1,000"},
 			{"1000000", "1.0 million"},
@@ -117,7 +122,8 @@ func TestHumanizer_Intword(t *testing.T) {
 			{"1300000000000000", "1.3 quadrillion"},
 			{"3500000000000000000000", "3.5 sextillion"},
 			{"8100000000000000000000000000000000", "8.1 decillion"},
-			{"test", "test"},
+			{"1" + strings.Repeat("0", 100), "1.0 googol"},
+			{"1" + strings.Repeat("0", 104), "100,000,000,000,000,000,191,567,508,573,466,873,621,595,512,726,519,201,115,280,351,459,937,932,420,398,875,596,123,614,510,818,032,353,280"},
 		}
 		length := len(tests)
 		for i := 0; i < length; i++ {
@@ -133,6 +139,8 @@ func TestHumanizer_Intword(t *testing.T) {
 			})
 		}
 
+		assert.Equal(t, "%!(string=test)", h.Intword("test"))
+		assert.Equal(t, "%!(string=-test)", h.Intword("-test"))
 	})
 }
 
@@ -157,7 +165,7 @@ func TestHumanizer_Intcomma(t *testing.T) {
 			{"10311", "10.311"},
 			{"1000000", "1.000.000"},
 			{"1234567.1234567", "1.234.567,123457"},
-			{"test", "test"},
+			{"test", "%!(string=test)"},
 		}
 
 		for _, tt := range tests {
@@ -184,7 +192,7 @@ func TestHumanizer_Intcomma(t *testing.T) {
 			{"10311", "10,311"},
 			{"1000000", "1,000,000"},
 			{"1234567.1234567", "1,234,567.123457"},
-			{"test", "test"},
+			{"test", "%!(string=test)"},
 		}
 
 		h := createSourceHumanizer(t)
@@ -213,7 +221,7 @@ func TestHumanizer_Ordinal(t *testing.T) {
 			{"102", "102."},
 			{"103", "103."},
 			{"111", "111."},
-			{"something else", "something else"},
+			{"something else", "%!(string=something else)"},
 			{nil, "<nil>"},
 		}
 
@@ -241,7 +249,7 @@ func TestHumanizer_Ordinal(t *testing.T) {
 			{"102", "102nd"},
 			{"103", "103rd"},
 			{"111", "111th"},
-			{"something else", "something else"},
+			{"something else", "%!(string=something else)"},
 			{nil, "<nil>"},
 		}
 
