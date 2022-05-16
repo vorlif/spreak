@@ -32,7 +32,7 @@ type gettextMessage struct {
 }
 
 // Map for a quick lookup of messages.
-// First key is the context and second the MsgID (e.g. lookup["context"]["hello"])
+// First key is the context and second the MsgID (e.g. lookup["context"]["hello"]).
 type messageLookupMap map[string]map[string]*gettextMessage
 
 var _ Catalog = (*gettextCatalog)(nil)

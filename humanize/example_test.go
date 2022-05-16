@@ -2,6 +2,7 @@ package humanize_test
 
 import (
 	"fmt"
+	"math"
 	"time"
 
 	"golang.org/x/text/language"
@@ -253,4 +254,22 @@ func ExampleHumanizer_Now() {
 	// May 16, 2022, 12:34 a.m.
 	// Lunedì 16 Maggio 2022 00:34
 	// 16. Mai 2022 00:34
+}
+
+func ExampleHumanizer_FilesizeFormat() {
+	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+
+	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
+		h := parcel.CreateHumanizer(tag)
+		fmt.Println(h.FilesizeFormat(make([]byte, 1000)))
+		fmt.Println(h.FilesizeFormat(math.Pow(1024, 3)))
+	}
+	// Output:
+	// 1,000 bytes
+	// 1 GB
+	// 1,000 字节
+	// 1 GB
+	// 1.000 Bytes
+	// 1 GB
+
 }
