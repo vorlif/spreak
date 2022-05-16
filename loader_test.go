@@ -229,3 +229,91 @@ func TestNewDefaultResolver(t *testing.T) {
 		require.NotNil(t, reducer)
 	}
 }
+
+func TestWithDecoder(t *testing.T) {
+	t.Run("fallback to default decoders", func(t *testing.T) {
+		fl, err := NewFilesystemLoader(WithSystemFs())
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		if assert.Len(t, fl.decoder, 2) {
+			assert.IsType(t, (*poDecoder)(nil), fl.decoder[0])
+			assert.IsType(t, (*moDecoder)(nil), fl.decoder[1])
+		}
+
+	})
+
+	t.Run("WithPoDecoder disables fallback", func(t *testing.T) {
+		fl, err := NewFilesystemLoader(
+			WithPoDecoder(),
+			WithSystemFs(),
+		)
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		assert.Contains(t, fl.extensions, PoFile)
+		if assert.Len(t, fl.decoder, 1) {
+			assert.IsType(t, (*poDecoder)(nil), fl.decoder[0])
+		}
+	})
+
+	t.Run("WithMoDecoder disables fallback", func(t *testing.T) {
+		fl, err := NewFilesystemLoader(
+			WithMoDecoder(),
+			WithSystemFs(),
+		)
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		assert.Contains(t, fl.extensions, MoFile)
+		if assert.Len(t, fl.decoder, 1) {
+			assert.IsType(t, (*moDecoder)(nil), fl.decoder[0])
+		}
+	})
+
+	t.Run("WithDecoder sets decoder", func(t *testing.T) {
+		ext := ".json"
+		dec := &testDecoder{}
+
+		fl, err := NewFilesystemLoader(WithDecoder(ext, dec), WithSystemFs())
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+
+		assert.Contains(t, fl.extensions, ext)
+		assert.Contains(t, fl.decoder, dec)
+	})
+}
+
+func TestWithFs(t *testing.T) {
+	t.Run("WithFs sets fs", func(t *testing.T) {
+		fsys := &testFs{}
+		fl, err := NewFilesystemLoader(WithFs(fsys))
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		assert.Equal(t, fl.fsys, fsys)
+	})
+
+	t.Run("multiple fs returns error", func(t *testing.T) {
+		fsys := &testFs{}
+		fl, err := NewFilesystemLoader(WithFs(fsys), WithFs(fsys))
+		assert.Error(t, err)
+		require.Nil(t, fl)
+	})
+}
+
+func TestWithResolver(t *testing.T) {
+	t.Run("WithResolver sets resolver", func(t *testing.T) {
+		resolver := &testResolver{}
+		fl, err := NewFilesystemLoader(WithSystemFs(), WithResolver(resolver))
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		assert.Equal(t, fl.resolver, resolver)
+	})
+
+	t.Run("multiple resolver returns error", func(t *testing.T) {
+		resolver := &testResolver{}
+		fl, err := NewFilesystemLoader(WithSystemFs(),
+			WithResolver(resolver),
+			WithResolver(resolver),
+		)
+		assert.Error(t, err)
+		require.Nil(t, fl)
+	})
+}
