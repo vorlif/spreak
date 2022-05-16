@@ -48,10 +48,10 @@ func main() {
 
 	// Translate
 	fmt.Println(t.Get("Hello world"))
-    // Output: Hola Mundo
-	
+	// Output: Hola Mundo
+
 	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
-    // Output: Tengo 2 perros
+	// Output: Tengo 2 perros
 }
 ```
 
@@ -142,23 +142,23 @@ func main() {
 
 	// Uses the functions...
 	fmt.Println(h.Intword(1_000_000_000))
-    // Output: 1.0 billion
-	
+	// Output: 1.0 billion
+
 	fmt.Println(h.NaturalDay(time.Now()))
-    // Output: today
+	// Output: today
 
 	t := time.Now().Add(5 * time.Minute)
 	fmt.Println(h.NaturalTime(t))
-    // Output: 5 minutes from now
+	// Output: 5 minutes from now
 
 	d := -80 * time.Hour
 	fmt.Println(h.TimeSince(d))
-    // Output: 3 days, 8 hours
+	// Output: 3 days, 8 hours
 
 	// ... for different languages
 	h = parcel.CreateHumanizer(language.Spanish)
 	fmt.Println(h.TimeSince(d))
-    // Output: 3 días, 8 horas
+	// Output: 3 días, 8 horas
 }
 ```
 
