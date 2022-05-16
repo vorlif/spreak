@@ -6,17 +6,15 @@ import (
 	"golang.org/x/text/language"
 )
 
-const (
-	// NoDomain is the domain which is used if no default domain is stored.
-	NoDomain = ""
+// NoDomain is the domain which is used if no default domain is stored.
+const NoDomain = ""
 
-	// NoCtx is the context which is used if no context is stored.
-	NoCtx = ""
+// NoCtx is the context which is used if no context is stored.
+const NoCtx = ""
 
-	// ErrorsCtx ist the context under which translations for extracted errors are searched.
-	// Can be changed when creating a bundle with WithErrorContext.
-	ErrorsCtx = "errors"
-)
+// ErrorsCtx ist the context under which translations for extracted errors are searched.
+// Can be changed when creating a bundle with WithErrorContext.
+const ErrorsCtx = "errors"
 
 // MissingTranslationCallback is a callback which can be stored with WithMissingTranslationCallback for a bundle.
 // Called when translations, domains, or other are missing.

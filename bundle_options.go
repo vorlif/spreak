@@ -13,7 +13,7 @@ type BundleOption func(opts *bundleBuilder) error
 
 // WithFallbackLanguage sets the fallback language to be used when creating Localizer if no suitable language is available.
 // Should be used only if the fallback language is different from source language.
-// Otherwise it should not be set.
+// Otherwise, it should not be set.
 func WithFallbackLanguage(lang interface{}) BundleOption {
 	return func(opts *bundleBuilder) error {
 		tag, err := languageInterfaceToTag(lang)

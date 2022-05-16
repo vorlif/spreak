@@ -52,11 +52,12 @@ func defaultPrintFunc(lang language.Tag) PrintFunc {
 	}
 }
 
+// Simple wrapper to use a PrinterFunction as a printer.
 type printFunctionWrapper struct {
 	f PrintFunc
 }
 
 var _ Printer = (*printFunctionWrapper)(nil)
 
-func (p *printFunctionWrapper) Init(_ []language.Tag)                   {}
-func (p *printFunctionWrapper) GetPrintFunc(tag language.Tag) PrintFunc { return p.f }
+func (p *printFunctionWrapper) Init(_ []language.Tag)                 {}
+func (p *printFunctionWrapper) GetPrintFunc(_ language.Tag) PrintFunc { return p.f }

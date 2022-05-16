@@ -1,5 +1,6 @@
 package po
 
+// Message is a representation of a single message in a catalog.
 type Message struct {
 	Comment  *Comment
 	Context  string

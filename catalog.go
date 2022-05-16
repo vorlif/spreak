@@ -31,7 +31,11 @@ type gettextMessage struct {
 	Translations map[int]string
 }
 
-type messageLookupMap map[string]map[string]*gettextMessage // ctx -> msgID -> msg
+// Map for a quick lookup of messages.
+// First key is the context and second the MsgID (e.g. lookup["context"]["hello"])
+type messageLookupMap map[string]map[string]*gettextMessage
+
+var _ Catalog = (*gettextCatalog)(nil)
 
 func (c *gettextCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	msg, err := c.getMessage(ctx, msgID, 0)
@@ -57,8 +61,6 @@ func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) 
 }
 
 func (c *gettextCatalog) Language() language.Tag { return c.language }
-
-var _ Catalog = (*gettextCatalog)(nil)
 
 func (c *gettextCatalog) getMessage(ctx, msgID string, idx int) (*gettextMessage, error) {
 	if _, hasCtx := c.translations[ctx]; !hasCtx {

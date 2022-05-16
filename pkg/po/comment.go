@@ -27,7 +27,7 @@ func (r Reference) Equal(o *Reference) bool {
 type Comment struct {
 	Translator     string       // #  translator-comments
 	Extracted      string       // #. extracted-comments
-	References     []*Reference // #: src/file.go:338
+	References     []*Reference // #: src/file.go:210
 	Flags          []string     // #, fuzzy,go-format,range:0..10
 	PrevMsgContext string       // #| msgctxt previous-context
 	PrevMsgID      string       // #| msgid previous-untranslated-string
