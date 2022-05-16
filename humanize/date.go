@@ -13,7 +13,7 @@ import (
 // Keywords for selecting a predefined formatting for a language when using FormatTime.
 const (
 	// DateFormat is the formatting to use for displaying dates
-	// Fallback: 'N j, Y' (e.g. Feb. 4, 2003)
+	// Fallback: 'N j, Y' (e.g. Feb. 4, 2003).
 	DateFormat = "DATE_FORMAT"
 	// TimeFormat is the formatting to use for displaying time
 	// Fallback: 'P' (e.g. 4 p.m.)
@@ -22,13 +22,13 @@ const (
 	// Fallback: 'N j, Y, P' (e.g. Feb. 4, 2003, 4 p.m.)
 	DateTimeFormat = "DATETIME_FORMAT"
 	// YearMonthFormat is suitable for cases when only the year and month should be displayed.
-	// Fallback: 'F Y'
+	// Fallback: 'F Y'.
 	YearMonthFormat = "YEAR_MONTH_FORMAT"
 	// MonthDayFormat is suitable for cases when only the month and day should be displayed.
-	// Fallback 'F j'
+	// Fallback 'F j'.
 	MonthDayFormat = "MONTH_DAY_FORMAT"
 	// ShortDateFormat
-	// Fallback: 'm/d/Y' (e.g. 12/31/2003)
+	// Fallback: 'm/d/Y' (e.g. 12/31/2003).
 	ShortDateFormat = "SHORT_DATE_FORMAT"
 	// ShortDatetimeFormat
 	// Fallback: 'm/d/Y P' (e.g. 12/31/2003 4 p.m.)
