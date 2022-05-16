@@ -77,13 +77,77 @@ func TestMessageSort(t *testing.T) {
 }
 
 func TestMessage_Merge(t *testing.T) {
-	msg := NewMessage()
-	msg.AddReference(&Reference{Path: "b"})
-	o := NewMessage()
-	o.AddReference(&Reference{Path: "a"})
-	o.Comment.AddFlag("flag-a")
+	t.Run("add message", func(t *testing.T) {
+		msg := NewMessage()
+		msg.AddReference(&Reference{Path: "b"})
+		o := NewMessage()
+		o.AddReference(&Reference{Path: "a"})
+		o.Comment.AddFlag("flag-a")
 
-	msg.Merge(o)
-	assert.Len(t, msg.Comment.References, 2)
-	assert.Len(t, msg.Comment.Flags, 1)
+		msg.Merge(o)
+		assert.Len(t, msg.Comment.References, 2)
+		assert.Len(t, msg.Comment.Flags, 1)
+	})
+
+	t.Run("nil message", func(t *testing.T) {
+		f := func() {
+			msg := NewMessage()
+			msg.Merge(nil)
+		}
+		assert.NotPanics(t, f)
+	})
+
+	t.Run("updates plural id", func(t *testing.T) {
+		msg := NewMessage()
+		msg.ID = "test"
+
+		other := NewMessage()
+		other.ID = "test"
+		other.IDPlural = "test_plural"
+
+		msg.Merge(other)
+		assert.Equal(t, other.IDPlural, msg.IDPlural)
+	})
+
+	t.Run("create comments struct", func(t *testing.T) {
+		msg := NewMessage()
+		msg.Comment = nil
+		assert.Nil(t, msg.Comment)
+		msg.Merge(NewMessage())
+		assert.NotNil(t, msg.Comment)
+	})
+}
+
+func TestMessages_Add(t *testing.T) {
+	t.Run("creates context map", func(t *testing.T) {
+		ctx := "context"
+		messages := make(Messages)
+		assert.NotContains(t, messages, ctx)
+
+		msg := NewMessage()
+		msg.Context = ctx
+		msg.ID = "test"
+		messages.Add(msg)
+
+		if assert.Contains(t, messages, ctx) {
+			assert.Contains(t, messages[ctx], msg.ID)
+			assert.Equal(t, messages[ctx][msg.ID], msg)
+		}
+	})
+
+	t.Run("update existing", func(t *testing.T) {
+		messages := make(Messages)
+		msg := NewMessage()
+		msg.ID = "test"
+
+		messages.Add(msg)
+
+		other := NewMessage()
+		other.ID = msg.ID
+		messages.Add(other)
+
+		assert.Equal(t, messages[msg.Context][msg.ID], msg)
+		assert.Len(t, messages, 1)
+		assert.Len(t, messages[msg.Context], 1)
+	})
 }
