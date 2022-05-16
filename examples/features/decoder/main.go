@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	// We want spreak to load our .json files here, so we create a FilesystemLoder here with our own decoder.
+	// We want spreak to load our .json files here, so we create a FilesystemLoader here with our own decoder.
 	fsLoader, errFS := spreak.NewFilesystemLoader(
 		spreak.WithDecoder(".json", jsonDecoder{}),
 		spreak.WithPath("./"),

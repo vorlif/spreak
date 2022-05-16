@@ -35,7 +35,7 @@ func TestNewFilesystemLoader(t *testing.T) {
 
 func TestFilesystemLoader_Load(t *testing.T) {
 	t.Run("failure when opening a file returns an error", func(t *testing.T) {
-		reducer := &testReducer{
+		reducer := &testResolver{
 			f: func(fsys fs.FS, extension string, lang language.Tag, domain string) (string, error) {
 				return "/failure.po", nil
 			},
@@ -45,7 +45,7 @@ func TestFilesystemLoader_Load(t *testing.T) {
 		}}
 		fsLoader, err := NewFilesystemLoader(
 			WithFs(fsys),
-			WithReducer(reducer),
+			WithResolver(reducer),
 		)
 		require.NoError(t, err)
 		require.NotNil(t, fsLoader)
@@ -62,12 +62,12 @@ func TestWithCategory(t *testing.T) {
 	t.Run("when a category is passed, it is used", func(t *testing.T) {
 		testCategory := "my_category"
 
-		reducer, errReducer := NewDefaultReducer(WithDisabledSearch(), WithCategory(testCategory))
-		require.NoError(t, errReducer)
+		reducer, errResolver := NewDefaultResolver(WithDisabledSearch(), WithCategory(testCategory))
+		require.NoError(t, errResolver)
 
 		fsLoader, err := NewFilesystemLoader(
 			WithFs(util.DirFS(testdataStructureDir)),
-			WithReducer(reducer),
+			WithResolver(reducer),
 		)
 		require.NoError(t, err)
 		require.NotNil(t, fsLoader)
@@ -115,16 +115,16 @@ func TestLoadPo(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		reducer, errR := NewDefaultReducer(WithCategory(tt.category))
+		reducer, errR := NewDefaultResolver(WithCategory(tt.category))
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
-		path, err := reducer.Reduce(fsys, tt.extension, tt.lang, tt.domain)
+		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
 		}
 
-		if assert.NoError(t, err, "Reduce(... %v %v %v %v...", tt.lang, tt.domain, tt.category, tt.extension) {
+		if assert.NoError(t, err, "Resolve(... %v %v %v %v...", tt.lang, tt.domain, tt.category, tt.extension) {
 			assert.Equal(t, tt.wantPath, path)
 		}
 	}
@@ -132,7 +132,7 @@ func TestLoadPo(t *testing.T) {
 }
 
 func TestReduceMoFiles(t *testing.T) {
-	reducer, errR := NewDefaultReducer()
+	reducer, errR := NewDefaultResolver()
 
 	require.NoError(t, errR)
 	require.NotNil(t, reducer)
@@ -161,7 +161,7 @@ func TestReduceMoFiles(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		path, err := reducer.Reduce(fsys, tt.extension, tt.lang, tt.domain)
+		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
@@ -202,11 +202,11 @@ func TestDisableSearch(t *testing.T) {
 	}
 
 	for idx, tt := range tests {
-		reducer, errR := NewDefaultReducer(WithDisabledSearch(), WithCategory(tt.category))
+		reducer, errR := NewDefaultResolver(WithDisabledSearch(), WithCategory(tt.category))
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
 
-		path, err := reducer.Reduce(fsys, tt.extension, tt.lang, tt.domain)
+		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err, idx)
 			continue
@@ -218,13 +218,13 @@ func TestDisableSearch(t *testing.T) {
 	}
 }
 
-func TestNewDefaultReducer(t *testing.T) {
-	reducer, err := NewDefaultReducer(WithDisabledSearch())
+func TestNewDefaultResolver(t *testing.T) {
+	reducer, err := NewDefaultResolver(WithDisabledSearch())
 	if assert.NoError(t, err) {
 		require.NotNil(t, reducer)
 	}
 
-	reducer, err = NewDefaultReducer()
+	reducer, err = NewDefaultResolver()
 	if assert.NoError(t, err) {
 		require.NotNil(t, reducer)
 	}

@@ -24,24 +24,28 @@ type Loader interface {
 	Load(lang language.Tag, domain string) (Catalog, error)
 }
 
-// A Reducer is used by the FilesystemLoader to find the appropriate path for a file.
+// A Resolver is used by the FilesystemLoader to resolve the appropriate path for a file.
 // If a file was not found, os.ErrNotFound should be returned.
 // All other errors cause the loaders search to stop.
-type Reducer interface {
-	Reduce(fsys fs.FS, extensions string, lang language.Tag, domain string) (string, error)
+//
+// fsys represents the file system from which the FilesystemLoader wants to load the file.
+// extensions is the file extension for which the file is to be resolved.
+// Language and Domain indicate for which domain in which language the file is searched.
+type Resolver interface {
+	Resolve(fsys fs.FS, extensions string, lang language.Tag, domain string) (string, error)
 }
 
 // FsOption is an option which can be used when creating the FilesystemLoader.
 type FsOption func(l *FilesystemLoader) error
 
-// ReducerOption is an option which can be used when creating the DefaultReducer.
-type ReducerOption func(r *defaultReducer)
+// ResolverOption is an option which can be used when creating the DefaultResolver.
+type ResolverOption func(r *defaultResolver)
 
 // FilesystemLoader is a Loader which loads and decodes files from a file system.
 // A file system here means an implementation of fs.FS.
 type FilesystemLoader struct {
 	fsys       fs.FS
-	reducer    Reducer
+	resolver   Resolver
 	extensions []string
 	decoder    []Decoder
 }
@@ -76,12 +80,12 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 		return nil, errors.New("spreak.Loader: try to create an FilesystemLoader without an filesystem")
 	}
 
-	if l.reducer == nil {
-		reducer, err := NewDefaultReducer()
+	if l.resolver == nil {
+		resolver, err := NewDefaultResolver()
 		if err != nil {
 			return nil, err
 		}
-		l.reducer = reducer
+		l.resolver = resolver
 	}
 
 	return l, nil
@@ -90,7 +94,7 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 func (l *FilesystemLoader) Load(lang language.Tag, domain string) (Catalog, error) {
 
 	for i, extension := range l.extensions {
-		path, errP := l.reducer.Reduce(l.fsys, extension, lang, domain)
+		path, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
 		if errP != nil {
 			if errors.Is(errP, os.ErrNotExist) {
 				continue
@@ -155,14 +159,14 @@ func WithPath(path string) FsOption {
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
 func WithSystemFs() FsOption { return WithPath("") }
 
-// WithReducer stores the reducer of a FilesystemLoader.
-// Lets the creation of the FilesystemLoader fail, if a Reducer was already deposited.
-func WithReducer(reducer Reducer) FsOption {
+// WithResolver stores the resolver of a FilesystemLoader.
+// Lets the creation of the FilesystemLoader fail, if a Resolver was already deposited.
+func WithResolver(resolver Resolver) FsOption {
 	return func(l *FilesystemLoader) error {
-		if l.reducer != nil {
-			return errors.New("spreak.Loader: Reducer for FilesystemLoader already set")
+		if l.resolver != nil {
+			return errors.New("spreak.Loader: Resolver for FilesystemLoader already set")
 		}
-		l.reducer = reducer
+		l.resolver = resolver
 		return nil
 	}
 }
@@ -181,14 +185,14 @@ func WithMoDecoder() FsOption { return WithDecoder(MoFile, &moDecoder{}) }
 // WithPoDecoder stores the mo file decoder.
 func WithPoDecoder() FsOption { return WithDecoder(PoFile, &poDecoder{}) }
 
-type defaultReducer struct {
+type defaultResolver struct {
 	search   bool
 	category string
 }
 
-// NewDefaultReducer create a reducer which can be used for a FilesystemLoader.
-func NewDefaultReducer(opts ...ReducerOption) (Reducer, error) {
-	l := &defaultReducer{
+// NewDefaultResolver create a resolver which can be used for a FilesystemLoader.
+func NewDefaultResolver(opts ...ResolverOption) (Resolver, error) {
+	l := &defaultResolver{
 		search:   true,
 		category: "",
 	}
@@ -200,15 +204,15 @@ func NewDefaultReducer(opts ...ReducerOption) (Reducer, error) {
 	return l, nil
 }
 
-func WithDisabledSearch() ReducerOption { return func(r *defaultReducer) { r.search = false } }
+func WithDisabledSearch() ResolverOption { return func(r *defaultResolver) { r.search = false } }
 
-func WithCategory(category string) ReducerOption {
-	return func(l *defaultReducer) {
+func WithCategory(category string) ResolverOption {
+	return func(l *defaultResolver) {
 		l.category = category
 	}
 }
 
-func (r *defaultReducer) Reduce(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
+func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
 	for _, lang := range ExpandLanguage(tag) {
 		path, err := r.searchFileForLanguageName(fsys, lang, domain, extension)
 		if errors.Is(err, os.ErrNotExist) {
@@ -221,7 +225,7 @@ func (r *defaultReducer) Reduce(fsys fs.FS, extension string, tag language.Tag, 
 	return "", os.ErrNotExist
 }
 
-func (r *defaultReducer) searchFileForLanguageName(fsys fs.FS, locale, domain, ext string) (string, error) {
+func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, ext string) (string, error) {
 
 	if domain != "" {
 		// .../locale/category/domain.mo

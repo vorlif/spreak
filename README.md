@@ -69,8 +69,8 @@ func GetPlanet() *localize.Message {
 Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
 
 ```
-go install github.com/vorlif/xspreak@v0.2.1
-xspreak -help
+go install github.com/vorlif/xspreak@v0.3.0
+xspreak --help
 ```
 
 xspreak creates `.pot` (PO Templates) files for this purpose which can be easily imported directly by many translation
@@ -96,8 +96,9 @@ Example:
 .../locale/LC_MESSAGES/domain.po
 ```
 
-By default spreak searches for translations in all these places.
-If you don't like this behavior you can implement your own Reducer or Loader.
+By default, spreak searches for translations in all these places.
+If you don't like this behavior you can implement your own [Resolver](examples/features/resolver) or
+[Loader](examples/features/loaders).
 
 ### Translate
 

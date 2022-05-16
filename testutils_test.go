@@ -35,15 +35,15 @@ func (t *testLoader) Load(lang language.Tag, domain string) (Catalog, error) {
 	return t.f(lang, domain)
 }
 
-type testReducer struct {
+type testResolver struct {
 	f func(fsys fs.FS, extension string, lang language.Tag, domain string) (string, error)
 }
 
-func (t *testReducer) Reduce(fsys fs.FS, extension string, lang language.Tag, domain string) (string, error) {
+func (t *testResolver) Resolve(fsys fs.FS, extension string, lang language.Tag, domain string) (string, error) {
 	return t.f(fsys, extension, lang, domain)
 }
 
-var _ Reducer = (*testReducer)(nil)
+var _ Resolver = (*testResolver)(nil)
 
 type testFs struct {
 	f func(name string) (fs.File, error)
