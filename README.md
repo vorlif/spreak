@@ -14,7 +14,13 @@ Flexible translation and humanization library for Go based on the concepts behin
 
 ### Usage
 
-Spreak loads your translations and provides a simple interface for querying them.
+Using spreak is easy. First, use go get to install the latest version of the library.
+
+```shell
+go get -u github.com/vorlif/spreak@latest
+```
+
+After that spreak offers you a comprehensive interface to load and query your translations.
 
 ```go
 package main
@@ -97,8 +103,8 @@ Example:
 ```
 
 By default, spreak searches for translations in all these places.
-If you don't like this behavior you can implement your own [Resolver](examples/features/resolver) or
-[Loader](examples/features/loaders).
+If you don't like this behavior you can implement your own [Resolver](examples/features/resolver/main.go) or
+[Loader](examples/features/loaders/main.go).
 
 ### Translate
 
