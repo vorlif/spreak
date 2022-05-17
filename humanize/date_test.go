@@ -22,12 +22,11 @@ func TestNaturalDay(t *testing.T) {
 	assert.Equal(t, "morgen", h.NaturalDay(tomorrow))
 	assert.Equal(t, "1. Mai 2022", h.NaturalDay(someday))
 
-	someday = time.Date(today.Year()+4, today.Month(), today.Day(), 0, 0, 0, today.Nanosecond(), today.Location())
-	assert.Equal(t, "16. Mai 2026", h.NaturalDay(someday))
+	assert.Equal(t, "1. Mai 2026", h.NaturalDay(someday.AddDate(4, 0, 0)))
 
 	month := (today.Month() + 1) % 12
-	someday = time.Date(today.Year(), month, today.Day(), 0, 0, 0, today.Nanosecond(), today.Location())
-	assert.Equal(t, "16. Juni 2022", h.NaturalDay(someday))
+	someday = time.Date(someday.Year(), month, someday.Day(), 0, 0, 0, someday.Nanosecond(), someday.Location())
+	assert.Equal(t, "1. Juni 2022", h.NaturalDay(someday))
 
 	yesterday = time.Date(today.Year(), today.Month(), today.Day(), 0, 0, 0, today.Nanosecond(), today.Location()).Add(-1 * time.Minute)
 	assert.Equal(t, "gestern", h.NaturalDay(yesterday))
