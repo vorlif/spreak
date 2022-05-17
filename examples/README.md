@@ -25,6 +25,9 @@ stored in the folder `locale`.
 * [loaders](./features/loaders)
   * Example how to load PO files from other sources
 
+* [resolver](./features/resolver)
+  * Example how to resolve the path to a file with translations.
+
 * [printer](./features/printer)
   * Example how to use your own printer
 

@@ -20,6 +20,9 @@ const (
 
 // Loader is responsible for loading Catalogs for a language and a domain.
 // A bundle loads each domain through its own loader.
+//
+// If a loader cannot find a matching catalog for it must return error spreak.ErrNotFound,
+// otherwise the bundle creation will be aborted with the returned error.
 type Loader interface {
 	Load(lang language.Tag, domain string) (Catalog, error)
 }

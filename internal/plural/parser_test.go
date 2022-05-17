@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 type fixture struct {
@@ -103,6 +104,15 @@ func TestForms_IndexForN(t *testing.T) {
 		assert.Zero(t, f.IndexForN("test"))
 		assert.Zero(t, f.IndexForN([]string{}))
 		assert.Zero(t, f.IndexForN(nil))
+	})
+
+	t.Run("nplurals=1", func(t *testing.T) {
+		f := MustParse("nplurals=1; plural=0;")
+		require.NotNil(t, f)
+
+		for i := -100; i <= 100; i++ {
+			assert.Zero(t, f.IndexForN(i))
+		}
 	})
 }
 
