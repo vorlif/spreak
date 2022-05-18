@@ -30,7 +30,7 @@ var testGermanLocaleData = &LocaleData{
 	},
 }
 
-func createNewParcel(_ *testing.T) *Parcel {
+func createNewParcel(_ *testing.T) *Collection {
 	es := &LocaleData{Lang: language.Spanish, Fs: util.DirFS(esLocaleDir)}
 
 	return MustNew(WithLocale(testGermanLocaleData, es))
@@ -48,10 +48,10 @@ func createSourceHumanizer(t *testing.T) *Humanizer {
 
 func TestNew(t *testing.T) {
 	t.Run("test same domain returns error", func(t *testing.T) {
-		parcel, err := New(WithBundleOption(spreak.WithDomainPath(djangoDomain, "../testdata/humanize")))
+		collection, err := New(WithBundleOption(spreak.WithDomainPath(djangoDomain, "../testdata/humanize")))
 		assert.Error(t, err)
 		assert.Contains(t, err.Error(), "django")
-		assert.Nil(t, parcel)
+		assert.Nil(t, collection)
 	})
 
 	t.Run("test MuseNew with error panics", func(t *testing.T) {

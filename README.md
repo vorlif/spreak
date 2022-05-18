@@ -149,13 +149,13 @@ import (
 
 func main() {
 	// Load the translations for the desired languages
-	parcel := humanize.MustNew(
+	collection := humanize.MustNew(
 		humanize.WithLocale(es.New(), ar.New(), zhHans.New()),
 	)
 
 	// Create a humanizer.
 	// A humanizer features a collection of humanize functions for a language.
-	h := parcel.CreateHumanizer(language.English)
+	h := collection.CreateHumanizer(language.English)
 
 	// Uses the functions...
 	fmt.Println(h.Intword(1_000_000_000))
@@ -173,7 +173,7 @@ func main() {
 	// Output: 3 days, 8 hours
 
 	// ... for different languages
-	h = parcel.CreateHumanizer(language.Spanish)
+	h = collection.CreateHumanizer(language.Spanish)
 	fmt.Println(h.TimeSince(d))
 	// Output: 3 días, 8 horas
 }

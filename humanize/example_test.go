@@ -18,10 +18,10 @@ import (
 )
 
 func ExampleHumanizer_Apnumber() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.German, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Apnumber(5))
 	}
 	// Output:
@@ -32,10 +32,10 @@ func ExampleHumanizer_Apnumber() {
 }
 
 func ExampleHumanizer_Intword() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Intword(1_000_000_000))
 	}
 	// Output:
@@ -45,10 +45,10 @@ func ExampleHumanizer_Intword() {
 }
 
 func ExampleHumanizer_Intcomma() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Intcomma(1_000_000_000))
 	}
 	// Output:
@@ -58,10 +58,10 @@ func ExampleHumanizer_Intcomma() {
 }
 
 func ExampleHumanizer_Ordinal() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Ordinal(5))
 	}
 	// Output:
@@ -71,10 +71,10 @@ func ExampleHumanizer_Ordinal() {
 }
 
 func ExampleHumanizer_LanguageName() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Printf("Examples in: %s, %s", h.LanguageName("English"), h.LanguageName("Spanish"))
 		fmt.Printf(" and %s\n", h.LanguageName("Simplified Chinese"))
 	}
@@ -85,10 +85,10 @@ func ExampleHumanizer_LanguageName() {
 }
 
 func ExampleHumanizer_NaturalDay() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), de.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.NaturalDay(time.Now()))
 	}
 
@@ -96,7 +96,7 @@ func ExampleHumanizer_NaturalDay() {
 
 	d := time.Date(2022, 05, 01, 0, 0, 0, 0, time.UTC)
 	for _, tag := range []language.Tag{language.English, language.Spanish, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.NaturalDay(d))
 	}
 	// Output:
@@ -110,10 +110,10 @@ func ExampleHumanizer_NaturalDay() {
 }
 
 func ExampleHumanizer_NaturalTime() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), ar.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), ar.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Arabic, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		t := time.Now().Add(5 * time.Minute)
 		fmt.Println(h.NaturalTime(t))
 	}
@@ -124,10 +124,10 @@ func ExampleHumanizer_NaturalTime() {
 }
 
 func ExampleHumanizer_NaturalTime_past() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), ar.New(), zhHans.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), ar.New(), zhHans.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Arabic, language.SimplifiedChinese} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		t := time.Now().Add(-2*time.Hour - 30*time.Minute)
 		fmt.Println(h.NaturalTime(t))
 	}
@@ -138,11 +138,11 @@ func ExampleHumanizer_NaturalTime_past() {
 }
 
 func ExampleHumanizer_TimeSince() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
 
+	t := time.Now().Add(-37 * time.Hour)
 	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
-		h := parcel.CreateHumanizer(tag)
-		t := time.Now().Add(-37 * time.Hour)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.TimeSince(t))
 	}
 	// Output:
@@ -152,11 +152,11 @@ func ExampleHumanizer_TimeSince() {
 }
 
 func ExampleHumanizer_TimeSince_duration() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
 
+	t := -80 * time.Hour
 	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
-		h := parcel.CreateHumanizer(tag)
-		t := -80 * time.Hour
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.TimeSince(t))
 	}
 	// Output:
@@ -166,11 +166,11 @@ func ExampleHumanizer_TimeSince_duration() {
 }
 
 func ExampleHumanizer_TimeUntil() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
 
+	t := time.Now().Add(37 * time.Hour)
 	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
-		h := parcel.CreateHumanizer(tag)
-		t := time.Now().Add(37 * time.Hour)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.TimeUntil(t))
 	}
 	// Output:
@@ -180,11 +180,11 @@ func ExampleHumanizer_TimeUntil() {
 }
 
 func ExampleHumanizer_FormatTime() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
 
 	now := time.Date(2022, 05, 15, 18, 0, 0, 0, time.Local)
 	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.FormatTime(now, humanize.DateTimeFormat))
 	}
 	// Output:
@@ -194,11 +194,11 @@ func ExampleHumanizer_FormatTime() {
 }
 
 func ExampleHumanizer_FormatTime_shortDate() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
 
 	now := time.Date(2022, 05, 15, 18, 0, 0, 0, time.Local)
 	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.FormatTime(now, humanize.ShortDateFormat))
 	}
 	// Output:
@@ -208,11 +208,11 @@ func ExampleHumanizer_FormatTime_shortDate() {
 }
 
 func ExampleHumanizer_FormatTime_shortDateTime() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
 
 	now := time.Date(2022, 05, 15, 18, 0, 0, 0, time.Local)
 	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.FormatTime(now, humanize.ShortDatetimeFormat))
 	}
 	// Output:
@@ -222,10 +222,10 @@ func ExampleHumanizer_FormatTime_shortDateTime() {
 }
 
 func ExampleHumanizer_Date() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Date())
 	}
 	// May 16, 2022
@@ -234,10 +234,10 @@ func ExampleHumanizer_Date() {
 }
 
 func ExampleHumanizer_Time() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Time())
 	}
 	// 12:30 a.m.
@@ -246,10 +246,10 @@ func ExampleHumanizer_Time() {
 }
 
 func ExampleHumanizer_Now() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), it.New(), de.New()))
 
 	for _, tag := range []language.Tag{language.English, language.Italian, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.Now())
 	}
 	// May 16, 2022, 12:34 a.m.
@@ -258,10 +258,10 @@ func ExampleHumanizer_Now() {
 }
 
 func ExampleHumanizer_FilesizeFormat() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
 
 	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.FilesizeFormat(make([]byte, 1000)))
 		fmt.Println(h.FilesizeFormat(math.Pow(1024, 3)))
 	}
@@ -275,11 +275,11 @@ func ExampleHumanizer_FilesizeFormat() {
 }
 
 func ExampleWithDepth() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), be.New(), de.New()))
 
+	t := -3080*time.Hour - 5*time.Minute
 	for _, tag := range []language.Tag{language.English, language.MustParse("be"), language.German} {
-		h := parcel.CreateHumanizer(tag)
-		t := -3080*time.Hour - 5*time.Minute
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.TimeSince(t, humanize.WithDepth(1), humanize.WithoutAdjacentCheck()))
 		fmt.Println(h.TimeSince(t, humanize.WithoutAdjacentCheck())) // 2 is default
 		fmt.Println(h.TimeSince(t, humanize.WithDepth(3), humanize.WithoutAdjacentCheck()))
@@ -309,12 +309,12 @@ func ExampleWithDepth() {
 }
 
 func ExampleWithNow() {
-	parcel := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
 
-	event := time.Date(2000, 01, 01, 00, 0, 0, 0, time.Local)
 	now := time.Date(1999, 12, 24, 00, 0, 0, 0, time.Local)
+	event := time.Date(2000, 01, 01, 00, 0, 0, 0, time.Local)
 	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
-		h := parcel.CreateHumanizer(tag)
+		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.TimeUntil(event, humanize.WithNow(now)))
 	}
 	// Output:

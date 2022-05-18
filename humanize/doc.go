@@ -5,13 +5,13 @@
 //
 // Usage
 //
-// Create a parcel with the languages you want to use.
-// 		parcel := humanize.MustNew(
+// Create a collection with the languages you want to use.
+// 		collection := humanize.MustNew(
 //		    humanize.WithLocale(es.New(), ar.New(), zhHans.New()),
 //		)
 //
 // Create a humanizer
-// 		h := parcel.CreateHumanizer(language.Spanish)
+// 		h := collection.CreateHumanizer(language.Spanish)
 //
 // Use it
 // 		fmt.Println(h.Intword(1_000_000_000))

@@ -12,8 +12,8 @@ const (
 	djangoDomain = "django"
 )
 
-// Parcel data structure which collects the translations and can create humanizers.
-type Parcel struct {
+// Collection data structure which collects the translations and can create humanizers.
+type Collection struct {
 	bundle  *spreak.Bundle
 	locales map[language.Tag]*FormatData
 }
@@ -76,7 +76,7 @@ var fallbackFormat = &FormatData{
 	FirstDayOfWeek:      0,
 }
 
-// An Option that can be used to customize the configuration when creating a parcel.
+// An Option that can be used to customize the configuration when creating a Collection.
 type Option func(opts *options) error
 
 // WithLocale specifies which languages to support for humanization.
@@ -95,8 +95,8 @@ func WithBundleOption(opt spreak.BundleOption) Option {
 	}
 }
 
-// New creates a new parcel which holds the humanizers for the selected locales.
-func New(opts ...Option) (*Parcel, error) {
+// New creates a new Collection which holds the humanizers for the selected locales.
+func New(opts ...Option) (*Collection, error) {
 	o := &options{
 		bundleOptions: nil,
 		locales:       nil,
@@ -117,14 +117,14 @@ func New(opts ...Option) (*Parcel, error) {
 
 	loader := newLoader(o.locales)
 
-	parcel := &Parcel{
+	coll := &Collection{
 		locales: make(map[language.Tag]*FormatData, len(o.locales)),
 	}
 	languages := make([]interface{}, 0, len(loader.locales))
 	for tag, data := range loader.locales {
 		languages = append(languages, tag)
 		if data.Format != nil {
-			parcel.locales[tag] = data.Format
+			coll.locales[tag] = data.Format
 		}
 	}
 
@@ -140,22 +140,22 @@ func New(opts ...Option) (*Parcel, error) {
 		return nil, err
 	}
 
-	parcel.bundle = bundle
-	return parcel, nil
+	coll.bundle = bundle
+	return coll, nil
 }
 
 // MustNew is similar to New except it panics if an error happens.
-func MustNew(opts ...Option) *Parcel {
-	parcel, err := New(opts...)
+func MustNew(opts ...Option) *Collection {
+	collection, err := New(opts...)
 	if err != nil {
 		panic(err)
 	}
-	return parcel
+	return collection
 }
 
 // CreateHumanizer creates a new humanizer.
 // Multiple languages can be passed and a spreak.Localizer is created which decides which language is used.
-func (p *Parcel) CreateHumanizer(lang ...interface{}) *Humanizer {
+func (p *Collection) CreateHumanizer(lang ...interface{}) *Humanizer {
 	loc := spreak.NewLocalizer(p.bundle, lang...)
 
 	if data, ok := p.locales[loc.Language()]; ok {
