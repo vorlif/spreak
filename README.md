@@ -1,10 +1,10 @@
-# Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak)
+# Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak) ![MinVersion](https://img.shields.io/badge/Go-1.16+-blue)
 
-Flexible translation and humanization library for Go based on the concepts behind gettext.
+Flexible translation and humanization library for Go based on the concepts behind gettext. Requires Go 1.16+.
 
 ### Features
 
-* Support for `fs.FS` (also `embed`)
+* Support for `fs.FS` (e.g. `embed`)
 * Goroutine-safe and lock free through immutability
 * Easily extendable
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
@@ -70,9 +70,12 @@ func GetPlanet() *localize.Message {
 }
 ```
 
-### Extract strings
+### Extract strings ![MinVersion](https://img.shields.io/badge/Go-1.18+-blue)
 
-Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
+
+Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak). 
+Attention, xspreak supports extraction from Go templates and therefore **requires Go 1.18+**. 
+Spreak itself supports Go 1.16+.
 
 ```
 go install github.com/vorlif/xspreak@v0.3.0
