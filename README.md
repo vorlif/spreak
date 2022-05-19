@@ -2,6 +2,14 @@
 
 Flexible translation and humanization library for Go based on the concepts behind gettext. Requires Go 1.16+.
 
+### Why another library?
+
+There are already many good libraries for Go, which allow to localize an application. However, I always came to a point where I was dissatisfied. 
+Either they use a *self defined format*, which could not be edited with common tools, especially not with the common online tools.
+Some libraries only support *one language at a time* or are *full of mutexes*. 
+And no tool could *easily extract the strings* to be translated. 
+I wanted to solve all these problems with spreak and have oriented myself on existing libraries.
+
 ### Features
 
 * Support for `fs.FS` (e.g. `embed`)
