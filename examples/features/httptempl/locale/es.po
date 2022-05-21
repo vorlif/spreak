@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-21 18:20+0200\n"
-"PO-Revision-Date: 2022-05-21 18:21+0200\n"
+"POT-Creation-Date: 2022-05-21 22:21+0200\n"
+"PO-Revision-Date: 2022-05-21 22:21+0200\n"
 "Last-Translator: Florian Vogt\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: ../main.go:19 ../main.go:153
+#: ../main.go:19 ../main.go:156
 msgid "Welcome to the Spreak Tour"
 msgstr ""
 
-#: ../main.go:123
+#: ../main.go:126
 msgid "The page you are looking for does not exist."
 msgstr ""
 
-#: ../main.go:128
+#: ../main.go:131
 msgid "Nice to see you %s"
 msgstr ""
 
 #. TRANSLATORS: spreak is the name of the application
-#: ../main.go:148
+#: ../main.go:151
 msgid "In the next steps we will see how we use spreak"
 msgstr ""
 
-#: ../main.go:149
+#: ../main.go:152
 msgid "You will understand why Florian has a dog"
 msgid_plural "You will understand why Florian has dogs"
 msgstr[0] ""

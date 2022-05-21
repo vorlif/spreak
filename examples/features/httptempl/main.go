@@ -57,6 +57,7 @@ type handler struct {
 
 var _ http.Handler = (*handler)(nil)
 
+// createLocalizer creates a localizer for a request which can be used to translate texts.
 func (h *handler) createLocalizer(r *http.Request) *spreak.Localizer {
 	supportedLangs := make([]interface{}, 0)
 	if cookie, err := r.Cookie(CookieName); err == nil && cookie.Value != "" {
@@ -89,6 +90,8 @@ func (h *handler) renderTemplate(name string, w http.ResponseWriter, r *http.Req
 	}
 }
 
+// setLanguage sets a cookie for a selected language.
+// This cookie is used for future requests to set the language of translations.
 func (h *handler) setLanguage(w http.ResponseWriter, r *http.Request) {
 	selectedLang := r.URL.Query().Get("lang")
 	if selectedLang != "" {

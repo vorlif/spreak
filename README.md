@@ -8,18 +8,18 @@ There are already many good libraries for Go, which allow to localize an applica
 However, I always came to a point where I was dissatisfied. 
 Either they use a self defined format, which could not be edited with common tools.
 Some libraries only support one language at a time or are use lot of mutexes. 
-And no tool could *easily extract the strings* to be translated.
-I wanted to try to solve these things for me and that's how spreak came out.
+And no tool could easily extract the strings to be translated.
+I wanted to solve these problems for myself and so spreak was born.
 
 ### Features
 
 * Support for `fs.FS` (e.g. `embed`)
 * Goroutine-safe and lock free through immutability
 * Easily extendable
-* [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
+* [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process (with support for templates)
 * [Direct support for humanization](#package-humanize-)  of Go
   data structures
-* Supports the po and mo file format.
+* Supports the commonly used po and mo file format.
 
 ### Usage
 
@@ -86,7 +86,7 @@ Strings for the translations can be extracted via the [command line program xspr
 **Requires Go 1.18+**.
 
 ```
-go install github.com/vorlif/xspreak@v0.3.0
+go install github.com/vorlif/xspreak@v0.4.0
 xspreak --help
 ```
 
@@ -132,6 +132,7 @@ Attention, do not translate the `.pot` file directly, as this is only a template
 
 * Read what you can extract with [xspreak](https://github.com/vorlif/xspreak#xspreak)
 * Take a look in the [examples folder](./examples) for more examples of using spreak.
+* Use it!
 
 ## Package humanize [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak/humanize)](https://pkg.go.dev/github.com/vorlif/spreak/humanize)
 

@@ -1,5 +1,24 @@
 
-Here you will find a number of helpful examples of how you can use spreak.
+Here you will find a number of helpful examples of how you can use spreak. 
+
+## Setup
+
+Follow these setup to run the `helloworld` example:
+
+1. Get the code
+
+  ```shell
+  $ git clone https://github.com/vorlif/spreak
+  ```
+
+2. Run the code
+
+  ```shell
+  cd spreak/examples/helloworld
+  go run main.go
+  ```
+
+## What is included?
 
 Unless otherwise required for the demonstration, all `.pot` files and the associated translations are
 stored in the folder `locale`.
@@ -12,7 +31,7 @@ stored in the folder `locale`.
   * Advanced example to demonstrate how spreak can be used with xspreak
   * xspreak command `xspreak -e -D dayinfo/ -p locale/ -d dayinfo`
 
-* [httptempl](features/httptempl): Includes a simple example of how to use spreak with a web server and templates
+* [httptempl](features/httptempl): Example of how to use spreak with a web server and templates
 
 * [embed](./features/embed/main.go): Example how spreak can be used with the embed api
 
