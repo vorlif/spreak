@@ -59,12 +59,14 @@ var _ http.Handler = (*handler)(nil)
 
 // createLocalizer creates a localizer for a request which can be used to translate texts.
 func (h *handler) createLocalizer(r *http.Request) *spreak.Localizer {
-	supportedLangs := make([]interface{}, 0)
+	clientLanguages := make([]interface{}, 0)
+
 	if cookie, err := r.Cookie(CookieName); err == nil && cookie.Value != "" {
-		supportedLangs = append(supportedLangs, cookie.Value)
+		clientLanguages = append(clientLanguages, cookie.Value)
 	}
-	supportedLangs = append(supportedLangs, r.Header.Get("Accept-Language"))
-	return spreak.NewLocalizer(h.bundle, supportedLangs...)
+
+	clientLanguages = append(clientLanguages, r.Header.Get("Accept-Language"))
+	return spreak.NewLocalizer(h.bundle, clientLanguages...)
 }
 
 // Routing of the requests
@@ -84,7 +86,9 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // Simple function to render a template.
 func (h *handler) renderTemplate(name string, w http.ResponseWriter, r *http.Request) {
 	localizer := h.createLocalizer(r)
-	err := h.templates.ExecuteTemplate(w, name, map[string]interface{}{"i18n": NewI18N(localizer)})
+	err := h.templates.ExecuteTemplate(w, name, map[string]interface{}{
+		"i18n": NewI18N(localizer),
+	})
 	if err != nil {
 		panic(err)
 	}
@@ -125,13 +129,13 @@ var notFoundTemplates = template.Must(template.New("").Parse(`
              width="72" height="57">
         <h1 class="display-5 fw-bold">{{ .i18n.Tr "The page you are looking for does not exist." }}</h1>
         <div class="col-lg-6 mx-auto">
-			{{range .Paragraphs}}
-				<p class="lead mb-4">{{.}}</p>
-			{{end}}
-           	<p>{{ .i18n.Tr "Nice to see you %s" .User}}</p>
-			<p>{{.Title}}</p>
+        {{range .Paragraphs}}
+            <p class="lead mb-4">{{.}}</p>
+        {{end}}
+        <p>{{ .i18n.Tr "Nice to see you %s" .User}}</p>
+        <p>{{.Title}}</p>
         </div>
-	</div>
+    </div>
 </main>
 
 </body>

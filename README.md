@@ -4,12 +4,12 @@ Flexible translation and humanization library for Go, based on the concepts behi
 
 ### Why another library?
 
-There are already many good libraries for Go, which allow to localize an application. 
-However, I always came to a point where I was dissatisfied. 
+There are already many good libraries for Go, which allow localizing an application.
+However, I always came to a point where I was dissatisfied.
 Either they use a self defined format, which could not be edited with common tools.
-Some libraries only support one language at a time or are use lot of mutexes. 
+Some libraries only support one language at a time or are using a lot of mutexes.
 And no tool could easily extract the strings to be translated.
-I wanted to solve these problems for myself and so spreak was born.
+I wanted to solve these problems for myself, and so spreak was born.
 
 ### Features
 
