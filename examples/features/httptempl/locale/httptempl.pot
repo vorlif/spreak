@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-21 22:21+0200\n"
+"POT-Creation-Date: 2022-05-22 01:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../main.go:19 ../main.go:156
-msgid "Welcome to the Spreak Tour"
-msgstr ""
-
-#: ../main.go:126
+#: ../not_found.go:27
 #, go-template
 msgid "The page you are looking for does not exist."
 msgstr ""
 
-#: ../main.go:131
+#: ../not_found.go:32
 #, go-format, go-template
 msgid "Nice to see you %s"
 msgstr ""
 
 #. TRANSLATORS: spreak is the name of the application
-#: ../main.go:151
+#: ../not_found.go:52
 msgid "In the next steps we will see how we use spreak"
 msgstr ""
 
-#: ../main.go:152
+#: ../not_found.go:53
 msgid "You will understand why Florian has a dog"
 msgid_plural "You will understand why Florian has dogs"
 msgstr[0] ""
 msgstr[1] ""
+
+#: ../not_found.go:57
+msgid "Welcome to the spreak tour"
+msgstr ""
 
 #: ../templates/forms.html:8
 #, go-template
