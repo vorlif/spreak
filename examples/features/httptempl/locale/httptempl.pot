@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE VERSION package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-21 18:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../main.go:19 ../main.go:153
+msgid "Welcome to the Spreak Tour"
+msgstr ""
+
+#: ../main.go:123
+#, go-template
+msgid "The page you are looking for does not exist."
+msgstr ""
+
+#: ../main.go:128
+#, go-format, go-template
+msgid "Nice to see you %s"
+msgstr ""
+
+#. TRANSLATORS: spreak is the name of the application
+#: ../main.go:148
+msgid "In the next steps we will see how we use spreak"
+msgstr ""
+
+#: ../main.go:149
+msgid "You will understand why Florian has a dog"
+msgid_plural "You will understand why Florian has dogs"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../templates/forms.html:8
+#, go-template
+msgid "Checkout"
+msgstr ""
+
+#: ../templates/forms.html:16
+#, go-template
+msgid "Checkout form"
+msgstr ""
+
+#: ../templates/forms.html:17
+#, go-template
+msgid ""
+"Below is an example form built entirely with Bootstrap’s form controls. Each "
+"required form group has a validation state that can be triggered by attempting "
+"to submit the form without completing it."
+msgstr ""
+
+#: ../templates/forms.html:23
+#, go-template
+msgid "Your cart"
+msgstr ""
+
+#: ../templates/forms.html:29
+#, go-template
+msgid "Product name"
+msgstr ""
+
+#: ../templates/forms.html:30
+#, go-template
+msgid "Brief description"
+msgstr ""
+
+#. TRANSLATORS: The %s represents a currency
+#: ../templates/forms.html:36
+#, go-format, go-template
+msgid "Total %s"
+msgstr ""
+
+#: ../templates/forms.html:49
+#, go-template
+msgid "Billing address"
+msgstr ""
+
+#. TRANSLATORS: This comment is displayed to the translators.
+#: ../templates/forms.html:54
+#, go-template
+msgid "First"
+msgstr ""
+
+#. TRANSLATORS: This comment is displayed to the translators.
+#: ../templates/forms.html:54
+#, go-template
+msgid "Name"
+msgstr ""
+
+#: ../templates/forms.html:59
+#, go-template
+msgid "Password"
+msgstr ""
+
+#: ../templates/forms.html:68
+#, go-template
+msgid "Save this information for next time"
+msgstr ""
+
+#: ../templates/forms.html:73
+#, go-template
+msgid "Continue to checkout"
+msgstr ""
+
+#: ../templates/home.html:8
+#, go-template
+msgid "Spreak Tour"
+msgstr ""
+
+#: ../templates/home.html:16
+#, go-template
+msgid "Welcome to Spreak"
+msgstr ""
+
+#: ../templates/home.html:19
+#, go-template
+msgid ""
+"Spreak is a flexible translation and humanization library for Go, based on the "
+"concepts behind gettext"
+msgstr ""
+
+#: ../templates/home.html:22
+#, go-template
+msgid "Forms"
+msgstr ""
+
+#: ../templates/home.html:28
+#, go-template
+msgid "Language selection field"
+msgstr ""
+
+#: ../templates/home.html:29
+#, go-template
+msgid "Choose a language"
+msgstr ""
+

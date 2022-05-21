@@ -1,14 +1,15 @@
 # Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak) ![MinVersion](https://img.shields.io/badge/Go-1.16+-blue)
 
-Flexible translation and humanization library for Go based on the concepts behind gettext. Requires Go 1.16+.
+Flexible translation and humanization library for Go, based on the concepts behind gettext. Requires Go 1.16+.
 
 ### Why another library?
 
-There are already many good libraries for Go, which allow to localize an application. However, I always came to a point where I was dissatisfied. 
-Either they use a *self defined format*, which could not be edited with common tools, especially not with the common online tools.
-Some libraries only support *one language at a time* or are *full of mutexes*. 
-And no tool could *easily extract the strings* to be translated. 
-I wanted to solve all these problems with spreak and have oriented myself on existing libraries.
+There are already many good libraries for Go, which allow to localize an application. 
+However, I always came to a point where I was dissatisfied. 
+Either they use a self defined format, which could not be edited with common tools.
+Some libraries only support one language at a time or are use lot of mutexes. 
+And no tool could *easily extract the strings* to be translated.
+I wanted to try to solve these things for me and that's how spreak came out.
 
 ### Features
 
@@ -81,9 +82,8 @@ func GetPlanet() *localize.Message {
 ### Extract strings ![MinVersion](https://img.shields.io/badge/Go-1.18+-blue)
 
 
-Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak). 
-Attention, xspreak supports extraction from Go templates and therefore **requires Go 1.18+**. 
-Spreak itself supports Go 1.16+.
+Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
+**Requires Go 1.18+**.
 
 ```
 go install github.com/vorlif/xspreak@v0.3.0

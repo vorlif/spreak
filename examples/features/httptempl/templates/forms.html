@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>{{.i18n.Tr "Checkout"}}</title>
+</head>
+<body class="bg-light">
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h2>{{.i18n.Tr "Checkout form"}}</h2>
+            <p class="lead">{{.i18n.Tr "Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it."}}</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">{{.i18n.Tr "Your cart"}}</span>
+                    <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">{{.i18n.Tr "Product name"}}</h6>
+                            <small class="text-muted">{{.i18n.Tr "Brief description"}}</small>
+                        </div>
+                        <span class="text-muted">$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        {{/* TRANSLATORS: The %s represents a currency */}}
+                        <span>{{.i18n.Tr "Total %s" "(USD)"}}</span>
+                        <strong>$20</strong>
+                    </li>
+                </ul>
+
+                <form class="card p-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Promo code">
+                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">{{.i18n.Tr "Billing address"}}</h4>
+                <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            {{/* TRANSLATORS: This comment is displayed to the translators. */}}
+                            <label for="firstName" class="form-label">{{.i18n.Tr "First"}} {{.i18n.Tr "Name"}}</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">{{.i18n.Tr "Password"}}</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <label class="form-check-label" for="save-info">{{.i18n.Tr "Save this information for next time"}}</label>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">{{.i18n.Tr "Continue to checkout"}}</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+</div>
+
+</body>
+</html>
