@@ -92,14 +92,14 @@ func (c *Comment) Merge(other *Comment) {
 		left := strings.Split(c.Translator, "\n")
 		right := strings.Split(other.Translator, "\n")
 		res := mergeStringArrays(left, right)
-		c.Translator = strings.Join(res, "\n")
+		c.Translator = strings.TrimSpace(strings.Join(res, "\n"))
 	}
 
 	if other.Extracted != "" {
 		left := strings.Split(c.Extracted, "\n")
 		right := strings.Split(other.Extracted, "\n")
 		res := mergeStringArrays(left, right)
-		c.Extracted = strings.Join(res, "\n")
+		c.Extracted = strings.TrimSpace(strings.Join(res, "\n"))
 	}
 
 	c.Flags = mergeStringArrays(c.Flags, other.Flags)

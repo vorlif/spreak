@@ -195,7 +195,7 @@ func TestCommentMerge(t *testing.T) {
 
 	t.Run("update extracted and translator", func(t *testing.T) {
 		comm := NewComment()
-		comm.Extracted = "a\nb\nc"
+		comm.Extracted = "\na\nb\nc"
 		comm.Translator = "x\ny"
 
 		other := NewComment()
@@ -204,7 +204,7 @@ func TestCommentMerge(t *testing.T) {
 
 		comm.Merge(other)
 		assert.Equal(t, "a\nb\nc\nd\ne\nf", comm.Extracted)
-		assert.Equal(t, "x\ny\nz\n", comm.Translator)
+		assert.Equal(t, "x\ny\nz", comm.Translator)
 	})
 }
 
