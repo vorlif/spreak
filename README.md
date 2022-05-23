@@ -79,14 +79,19 @@ func GetPlanet() *localize.Message {
 }
 ```
 
-### Extract strings ![MinVersion](https://img.shields.io/badge/Go-1.18+-blue)
+### Extract strings
 
 
 Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
-**Requires Go 1.18+**.
+Use a [pre-built binary](https://github.com/vorlif/xspreak/releases/latest) or install it from source:
 
+```bash
+go install github.com/vorlif/xspreak@latest
 ```
-go install github.com/vorlif/xspreak@v0.4.0
+
+Tests installation with:
+
+```bash
 xspreak --help
 ```
 
