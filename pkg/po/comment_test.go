@@ -117,7 +117,7 @@ func TestCommentSort(t *testing.T) {
 			c.AddReference(ref)
 		}
 
-		c.sortReferences()
+		c.sort()
 		require.Len(t, c.References, 6)
 		assert.Equal(t, refs[2], c.References[0])
 		assert.Equal(t, refs[4], c.References[1])
@@ -129,6 +129,15 @@ func TestCommentSort(t *testing.T) {
 }
 
 func TestCommentMerge(t *testing.T) {
+	t.Run("ignore nil comment", func(t *testing.T) {
+		f := func() {
+			c := NewComment()
+			c.Merge(nil)
+		}
+
+		assert.NotPanics(t, f)
+	})
+
 	t.Run("There are no duplicate references", func(t *testing.T) {
 		c := NewComment()
 		c.AddReference(&Reference{Path: "a"})
@@ -168,7 +177,7 @@ func TestCommentMerge(t *testing.T) {
 		other.AddFlag("e")
 
 		assert.Len(t, c.Flags, 3)
-		c.mergeFlags(other)
+		c.Merge(other)
 		assert.Len(t, c.Flags, 5)
 		assert.Len(t, other.Flags, 3)
 	})
@@ -180,7 +189,33 @@ func TestCommentMerge(t *testing.T) {
 		other.AddFlag("e")
 
 		assert.Len(t, c.Flags, 0)
-		c.mergeFlags(other)
+		c.Merge(other)
 		assert.Len(t, c.Flags, 2)
 	})
+
+	t.Run("update extracted and translator", func(t *testing.T) {
+		comm := NewComment()
+		comm.Extracted = "a\nb\nc"
+		comm.Translator = "x\ny"
+
+		other := NewComment()
+		other.Extracted = "d\nb\ne\nf"
+		other.Translator = "z\nx\n"
+
+		comm.Merge(other)
+		assert.Equal(t, "a\nb\nc\nd\ne\nf", comm.Extracted)
+		assert.Equal(t, "x\ny\nz\n", comm.Translator)
+	})
+}
+
+func Test_mergeStringArrays(t *testing.T) {
+	left := []string{"a", "b", "c"}
+	right := []string{"d", "b", "e", "f"}
+	want := []string{"a", "b", "c", "d", "e", "f"}
+	assert.Equal(t, want, mergeStringArrays(left, right))
+
+	left = []string{"z", "x", ""}
+	right = []string{"x", "y"}
+	want = []string{"z", "x", "", "y"}
+	assert.Equal(t, want, mergeStringArrays(left, right))
 }

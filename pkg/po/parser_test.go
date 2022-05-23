@@ -264,7 +264,7 @@ msgstr "ID"`
 		require.NotNil(t, file)
 		msg := file.GetMessage("", "id")
 		assert.Len(t, msg.Comment.References, 3)
-		msg.Comment.sortReferences()
+		msg.Comment.sort()
 		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[0].Path)
 		assert.Equal(t, 143, msg.Comment.References[0].Line)
 		assert.Equal(t, "conf/global_settings.py", msg.Comment.References[1].Path)

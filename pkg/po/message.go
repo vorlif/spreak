@@ -52,10 +52,7 @@ func (m *Message) Merge(other *Message) {
 	if m.Comment == nil {
 		m.Comment = NewComment()
 	}
-
-	m.Comment.mergeReferences(other.Comment)
-	m.Comment.mergeFlags(other.Comment)
-	m.Comment.sort()
+	m.Comment.Merge(other.Comment)
 
 	if m.IDPlural == "" && other.IDPlural != "" {
 		m.IDPlural = other.IDPlural

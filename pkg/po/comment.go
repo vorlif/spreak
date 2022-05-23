@@ -45,7 +45,7 @@ func (c *Comment) AddReference(ref *Reference) {
 		c.References = make([]*Reference, 0)
 	}
 	c.References = append(c.References, ref)
-	c.sortReferences()
+	c.sort()
 }
 
 func (c *Comment) Less(q *Comment) bool {
@@ -83,11 +83,32 @@ func (c *Comment) AddFlag(flag string) {
 	c.Flags = append(c.Flags, flag)
 }
 
-func (c *Comment) mergeReferences(other *Comment) {
-	if other == nil || len(other.References) == 0 {
+func (c *Comment) Merge(other *Comment) {
+	if other == nil {
 		return
 	}
 
+	if other.Translator != "" {
+		left := strings.Split(c.Translator, "\n")
+		right := strings.Split(other.Translator, "\n")
+		res := mergeStringArrays(left, right)
+		c.Translator = strings.Join(res, "\n")
+	}
+
+	if other.Extracted != "" {
+		left := strings.Split(c.Extracted, "\n")
+		right := strings.Split(other.Extracted, "\n")
+		res := mergeStringArrays(left, right)
+		c.Extracted = strings.Join(res, "\n")
+	}
+
+	c.Flags = mergeStringArrays(c.Flags, other.Flags)
+	c.mergeReferences(other)
+
+	c.sort()
+}
+
+func (c *Comment) mergeReferences(other *Comment) {
 	newReferences := make([]*Reference, 0)
 
 	for _, otherRef := range other.References {
@@ -107,31 +128,9 @@ func (c *Comment) mergeReferences(other *Comment) {
 	c.References = append(c.References, newReferences...)
 }
 
-func (c *Comment) mergeFlags(other *Comment) {
-	if other == nil || len(other.Flags) == 0 {
-		return
-	}
+func (c *Comment) sort() {
+	sort.Strings(c.Flags)
 
-	newFlags := make([]string, 0)
-
-	for _, otherFlag := range other.Flags {
-		hasRef := false
-		for _, flag := range c.Flags {
-			if flag == otherFlag {
-				hasRef = true
-				break
-			}
-		}
-
-		if !hasRef {
-			newFlags = append(newFlags, otherFlag)
-		}
-	}
-
-	c.Flags = append(c.Flags, newFlags...)
-}
-
-func (c *Comment) sortReferences() {
 	sort.Slice(c.References, func(i, j int) bool {
 		if c.References[i].Path != c.References[j].Path {
 			return c.References[i].Path < c.References[j].Path
@@ -145,7 +144,23 @@ func (c *Comment) sortReferences() {
 	})
 }
 
-func (c *Comment) sort() {
-	c.sortReferences()
-	sort.Strings(c.Flags)
+func mergeStringArrays(left, right []string) []string {
+	dst := make([]string, len(left), len(left)+len(right))
+	copy(dst, left)
+
+	for _, a := range right {
+		hasA := false
+		for _, b := range left {
+			if b == a {
+				hasA = true
+				break
+			}
+		}
+
+		if !hasA {
+			dst = append(dst, a)
+		}
+	}
+
+	return dst
 }
