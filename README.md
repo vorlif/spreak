@@ -16,9 +16,9 @@ I wanted to solve these problems for myself, and so spreak was born.
 * Support for `fs.FS` (e.g. `embed`)
 * Goroutine-safe and lock free through immutability
 * Easily extendable
-* [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process (with support for templates)
-* [Direct support for humanization](#package-humanize-)  of Go
-  data structures
+* [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process 
+  (with support for templates)
+* [Direct support for humanization](#package-humanize-)  of Go data structures
 * Supports the commonly used po and mo file format.
 
 ### Usage
@@ -62,13 +62,13 @@ func main() {
 
 	// Translate
 	fmt.Println(t.Get("Hello world"))
-	// Output: Hola Mundo
-
 	fmt.Println(t.NGetf("I have %d dog", "I have %d dogs", 2, 2))
-	// Output: Tengo 2 perros
-
 	fmt.Println(t.Localize(GetPlanet()))
-	// Output: No conozco ningún planeta
+	
+	// Output: 
+	// Hola Mundo
+	// Tengo 2 perros
+	// No conozco ningún planeta
 }
 
 func GetPlanet() *localize.Message {
@@ -80,7 +80,6 @@ func GetPlanet() *localize.Message {
 ```
 
 ### Extract strings
-
 
 Strings for the translations can be extracted via the [command line program xspreak](https://github.com/vorlif/xspreak).
 Use a [pre-built binary](https://github.com/vorlif/xspreak/releases/latest) or install it from source:
@@ -157,7 +156,7 @@ import (
 	"time"
 
 	"golang.org/x/text/language"
-	
+
 	"github.com/vorlif/spreak/humanize"
 	"github.com/vorlif/spreak/humanize/locale/ar"
 	"github.com/vorlif/spreak/humanize/locale/es"
