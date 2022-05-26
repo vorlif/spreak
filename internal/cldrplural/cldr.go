@@ -67,6 +67,7 @@ var OperandMap = map[string]Operand{
 	"f": OperandF,
 	"t": OperandT,
 	"c": OperandC,
+	"e": OperandC,
 }
 
 type FormFunc func(ops *Operands) Category
@@ -76,6 +77,7 @@ type RuleSet struct {
 	FormFunc   FormFunc
 }
 
+// The Operands are numeric values corresponding to features of the source number.
 type Operands struct {
 	N float64
 	I int64
@@ -86,7 +88,7 @@ type Operands struct {
 	C int64
 }
 
-// NewOperands converts the representation of a float value into the appropriate operands.
+// NewOperands converts the representation of a float value into the appropriate Operands.
 func NewOperands(a interface{}) *Operands {
 	a = util.Indirect(a)
 	if a == nil {

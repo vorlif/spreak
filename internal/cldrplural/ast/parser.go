@@ -341,7 +341,7 @@ func parseSampleRange(sampleRange string) []string {
 			}
 		}
 	} else {
-		panic("invalid sample range")
+		sampleValues = append(sampleValues, parts...)
 	}
 	return sampleValues
 }

@@ -36,8 +36,8 @@ func main() {
 		}
 	}
 
-	executeAndSafe("../prebuild_gen.go", codeTemplate, dataSets)
-	executeAndSafe("../prebuild_gen_test.go", testTemplate, dataSets)
+	executeAndSafe("../builtin_gen.go", codeTemplate, dataSets)
+	executeAndSafe("../builtin_gen_test.go", testTemplate, dataSets)
 	executeAndSafe("../evaluation_gen_test.go", evaluationTest, dataSets)
 }
 

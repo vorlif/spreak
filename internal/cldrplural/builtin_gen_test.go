@@ -61,8 +61,8 @@ func TestPrebuildPt_PTIt(t *testing.T) {
 	}
 }
 
-func TestPrebuildSvFyFiNlSwDeScnUrEtScIoEnCaGlAstLijIaYi(t *testing.T) {
-	for _, lang := range []string{"sv", "fy", "fi", "nl", "sw", "de", "scn", "ur", "et", "sc", "io", "en", "ca", "gl", "ast", "lij", "ia", "yi"} {
+func TestPrebuildSvIoNlScnIaFyDeGlEnYiSwEtUrFiAstCaScLij(t *testing.T) {
+	for _, lang := range []string{"sv", "io", "nl", "scn", "ia", "fy", "de", "gl", "en", "yi", "sw", "et", "ur", "fi", "ast", "ca", "sc", "lij"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -209,8 +209,8 @@ func TestPrebuildBe(t *testing.T) {
 	}
 }
 
-func TestPrebuildSmjNaqSmiSmsSeSmaIuSatSmn(t *testing.T) {
-	for _, lang := range []string{"smj", "naq", "smi", "sms", "se", "sma", "iu", "sat", "smn"} {
+func TestPrebuildSatSmiSmaSeNaqSmsIuSmnSmj(t *testing.T) {
+	for _, lang := range []string{"sat", "smi", "sma", "se", "naq", "sms", "iu", "smn", "smj"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -232,8 +232,8 @@ func TestPrebuildSmjNaqSmiSmsSeSmaIuSatSmn(t *testing.T) {
 	}
 }
 
-func TestPrebuildMgNsoLnBhoTiGuwPaAkWa(t *testing.T) {
-	for _, lang := range []string{"mg", "nso", "ln", "bho", "ti", "guw", "pa", "ak", "wa"} {
+func TestPrebuildMgPaTiWaLnNsoAkBhoGuw(t *testing.T) {
+	for _, lang := range []string{"mg", "pa", "ti", "wa", "ln", "nso", "ak", "bho", "guw"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -288,8 +288,8 @@ func TestPrebuildKw(t *testing.T) {
 	}
 }
 
-func TestPrebuildRoMo(t *testing.T) {
-	for _, lang := range []string{"ro", "mo"} {
+func TestPrebuildMoRo(t *testing.T) {
+	for _, lang := range []string{"mo", "ro"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -339,8 +339,8 @@ func TestPrebuildHe(t *testing.T) {
 	}
 }
 
-func TestPrebuildSuBoThNqoKoToKdeLoIdOsaWoKeaIgViBmJvMyLktSahKmTpiYoHnjSgYueIiUndZhDzJboMsJwJaSes(t *testing.T) {
-	for _, lang := range []string{"su", "bo", "th", "nqo", "ko", "to", "kde", "lo", "id", "osa", "wo", "kea", "ig", "vi", "bm", "jv", "my", "lkt", "sah", "km", "tpi", "yo", "hnj", "sg", "yue", "ii", "und", "zh", "dz", "jbo", "ms", "jw", "ja", "ses"} {
+func TestPrebuildKmMyJboSgBoYueIiSesYoHnjViMsNqoKoSahZhDzTpiJvBmSuWoThIdKdeJwLoToLktJaKeaOsaIgUnd(t *testing.T) {
+	for _, lang := range []string{"km", "my", "jbo", "sg", "bo", "yue", "ii", "ses", "yo", "hnj", "vi", "ms", "nqo", "ko", "sah", "zh", "dz", "tpi", "jv", "bm", "su", "wo", "th", "id", "kde", "jw", "lo", "to", "lkt", "ja", "kea", "osa", "ig", "und"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -352,8 +352,8 @@ func TestPrebuildSuBoThNqoKoToKdeLoIdOsaWoKeaIgViBmJvMyLktSahKmTpiYoHnjSgYueIiUn
 	}
 }
 
-func TestPrebuildAsFaHiPcmZuDoiGuAmKnBn(t *testing.T) {
-	for _, lang := range []string{"as", "fa", "hi", "pcm", "zu", "doi", "gu", "am", "kn", "bn"} {
+func TestPrebuildGuAmHiBnFaDoiZuKnPcmAs(t *testing.T) {
+	for _, lang := range []string{"gu", "am", "hi", "bn", "fa", "doi", "zu", "kn", "pcm", "as"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -500,8 +500,8 @@ func TestPrebuildArArs(t *testing.T) {
 	}
 }
 
-func TestPrebuildFilCebTl(t *testing.T) {
-	for _, lang := range []string{"fil", "ceb", "tl"} {
+func TestPrebuildCebFilTl(t *testing.T) {
+	for _, lang := range []string{"ceb", "fil", "tl"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -592,8 +592,8 @@ func TestPrebuildMk(t *testing.T) {
 	}
 }
 
-func TestPrebuildTnNbMlPsMasKkKcgJgoMnOsDvSdhLbRmSaqBgFurNahNynSoElNdSsAzTigWaeFoTkKajUgKkjNnhKuOmVeCkbGswOrHawKsChrAnEeSqTsTrBezCeJmcNoXhNyStKaTeSyrSnKyMrRofLgMgoSsySehVoEoEuSdTeoHaUzBrxKsbNeNnRwkTaVunKlXogBalPapCggNrAfBemAsaHu(t *testing.T) {
-	for _, lang := range []string{"tn", "nb", "ml", "ps", "mas", "kk", "kcg", "jgo", "mn", "os", "dv", "sdh", "lb", "rm", "saq", "bg", "fur", "nah", "nyn", "so", "el", "nd", "ss", "az", "tig", "wae", "fo", "tk", "kaj", "ug", "kkj", "nnh", "ku", "om", "ve", "ckb", "gsw", "or", "haw", "ks", "chr", "an", "ee", "sq", "ts", "tr", "bez", "ce", "jmc", "no", "xh", "ny", "st", "ka", "te", "syr", "sn", "ky", "mr", "rof", "lg", "mgo", "ssy", "seh", "vo", "eo", "eu", "sd", "teo", "ha", "uz", "brx", "ksb", "ne", "nn", "rwk", "ta", "vun", "kl", "xog", "bal", "pap", "cgg", "nr", "af", "bem", "asa", "hu"} {
+func TestPrebuildNeCggKkjNynAzNbPsKlSsyTaTeJgoNoSdMnCeEeSsXhElSoTeoHaNahUgLbTsBemUzFoEoKajXogCkbVoHawNnhTrKcgTkTnTigRwkSehNnVeEuFurHuLgAnGswKyDvKsMlWaeBezKkNyAfOrRofChrOsSnBrxMasPapKuSqSyrAsaMrNrBalMgoBgKaSdhNdSaqVunStOmKsbRmJmc(t *testing.T) {
+	for _, lang := range []string{"ne", "cgg", "kkj", "nyn", "az", "nb", "ps", "kl", "ssy", "ta", "te", "jgo", "no", "sd", "mn", "ce", "ee", "ss", "xh", "el", "so", "teo", "ha", "nah", "ug", "lb", "ts", "bem", "uz", "fo", "eo", "kaj", "xog", "ckb", "vo", "haw", "nnh", "tr", "kcg", "tk", "tn", "tig", "rwk", "seh", "nn", "ve", "eu", "fur", "hu", "lg", "an", "gsw", "ky", "dv", "ks", "ml", "wae", "bez", "kk", "ny", "af", "or", "rof", "chr", "os", "sn", "brx", "mas", "pap", "ku", "sq", "syr", "asa", "mr", "nr", "bal", "mgo", "bg", "ka", "sdh", "nd", "saq", "vun", "st", "om", "ksb", "rm", "jmc"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -740,8 +740,8 @@ func TestPrebuildMt(t *testing.T) {
 	}
 }
 
-func TestPrebuildLvPrg(t *testing.T) {
-	for _, lang := range []string{"lv", "prg"} {
+func TestPrebuildPrgLv(t *testing.T) {
+	for _, lang := range []string{"prg", "lv"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -763,8 +763,8 @@ func TestPrebuildLvPrg(t *testing.T) {
 	}
 }
 
-func TestPrebuildRuUk(t *testing.T) {
-	for _, lang := range []string{"ru", "uk"} {
+func TestPrebuildUkRu(t *testing.T) {
+	for _, lang := range []string{"uk", "ru"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 
@@ -832,8 +832,8 @@ func TestPrebuildShi(t *testing.T) {
 	}
 }
 
-func TestPrebuildShSrHrBs(t *testing.T) {
-	for _, lang := range []string{"sh", "sr", "hr", "bs"} {
+func TestPrebuildShSrBsHr(t *testing.T) {
+	for _, lang := range []string{"sh", "sr", "bs", "hr"} {
 		set, found := prebuildRuleSets[language.MustParse(lang)]
 		require.True(t, found)
 

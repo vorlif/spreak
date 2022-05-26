@@ -15,6 +15,7 @@ func MustParseRules(rules map[Category]string) *RuleSet {
 	return f
 }
 
+// ParseRules creates a RuleSet from a set of rules, which can be evaluated at runtime.
 func ParseRules(rawRules map[Category]string) (*RuleSet, error) {
 	categories := make([]Category, 0, len(rawRules))
 	rules := make(map[Category]*ast.Rule)
@@ -116,7 +117,7 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 		case OperandC:
 			return float64(ops.C % val)
 		default:
-			panic("invalid operand")
+			panic("invalid operand " + e.Op.Operand)
 		}
 	case *ast.OperandExpr:
 		switch OperandMap[e.Operand] {
@@ -135,7 +136,7 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 		case OperandC:
 			return float64(ops.C)
 		default:
-			panic("invalid operand")
+			panic("invalid operand " + e.Operand)
 		}
 	default:
 		panic("not an expression")
