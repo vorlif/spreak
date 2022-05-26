@@ -1,4 +1,4 @@
-package plural
+package poplural
 
 import (
 	"reflect"

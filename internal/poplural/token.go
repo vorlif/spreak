@@ -1,4 +1,4 @@
-package plural
+package poplural
 
 type token string
 

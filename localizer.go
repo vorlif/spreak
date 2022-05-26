@@ -3,7 +3,7 @@ package spreak
 import (
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/plural"
+	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/localize"
 )
 
@@ -79,7 +79,7 @@ func newLocalizerFromTag(bundle *Bundle, domain string, tag ...language.Tag) *Lo
 	}
 
 	if l.fallbackPluralFunc == nil {
-		l.fallbackPluralFunc, _ = plural.ForLanguage(bundle.sourceLanguage)
+		l.fallbackPluralFunc, _ = poplural.ForLanguage(bundle.sourceLanguage)
 	}
 	if l.fallbackPrintFunc == nil {
 		l.fallbackPrintFunc = bundle.printer.GetPrintFunc(bundle.sourceLanguage)
