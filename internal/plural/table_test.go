@@ -10,7 +10,7 @@ import (
 )
 
 func TestPluralFormsTable(t *testing.T) {
-	for lang, rule := range pluralFormsTable {
+	for lang, rule := range formsTable {
 		_, err := Parse(rule)
 		if err != nil {
 			t.Errorf("Parse(%s) for %s generates error", rule, lang)
@@ -25,7 +25,7 @@ func TestForLanguage(t *testing.T) {
 		require.False(t, found)
 		require.NotNil(t, forms)
 
-		fallbackRule := pluralFormsTable[language.Und.String()]
+		fallbackRule := formsTable[language.Und.String()]
 		fallbackForms, err := Parse(fallbackRule)
 		require.NoError(t, err)
 		require.NotNil(t, fallbackForms)
@@ -58,7 +58,7 @@ func Test_pluralRuleForLanguage(t *testing.T) {
 		t.Run(tt, func(t *testing.T) {
 			lang := language.MustParse(tt)
 			got, gotFound := pluralRuleForLanguage(lang)
-			forms := pluralFormsTable[tt]
+			forms := formsTable[tt]
 			assert.Equalf(t, forms, got, "pluralRuleForLanguage(%v)", lang)
 			assert.True(t, gotFound, "pluralRuleForLanguage(%v)", lang)
 		})
@@ -76,7 +76,7 @@ func Test_pluralRuleForLanguage(t *testing.T) {
 		t.Run(tt.langName, func(t *testing.T) {
 			lang := language.MustParse(tt.langName)
 			got, gotFound := pluralRuleForLanguage(lang)
-			forms := pluralFormsTable[tt.wantLang]
+			forms := formsTable[tt.wantLang]
 			assert.Equalf(t, forms, got, "pluralRuleForLanguage(%v)", lang)
 			assert.True(t, gotFound, "pluralRuleForLanguage(%v)", lang)
 		})

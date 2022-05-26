@@ -12,13 +12,13 @@ func ForLanguage(lang language.Tag) (func(n interface{}) int, bool) {
 func pluralRuleForLanguage(lang language.Tag) (string, bool) {
 	n := lang
 	for !n.IsRoot() {
-		if rule, hasRule := pluralFormsTable[n.String()]; hasRule {
+		if rule, hasRule := formsTable[n.String()]; hasRule {
 			return rule, true
 		}
 
 		base, confidence := n.Base()
 		if confidence >= language.High {
-			if rule, hasRule := pluralFormsTable[base.String()]; hasRule {
+			if rule, hasRule := formsTable[base.String()]; hasRule {
 				return rule, true
 			}
 		}
@@ -26,10 +26,10 @@ func pluralRuleForLanguage(lang language.Tag) (string, bool) {
 		n = n.Parent()
 	}
 
-	return pluralFormsTable[language.Und.String()], false
+	return formsTable[language.Und.String()], false
 }
 
-var pluralFormsTable = map[string]string{
+var formsTable = map[string]string{
 	language.Und.String(): "nplurals=2; plural=(n != 1);",
 	"af":                  "nplurals=2; plural=(n != 1);",
 	"ak":                  "nplurals=2; plural=(n > 1);",
