@@ -2,7 +2,7 @@ package cldrplural
 
 import "golang.org/x/text/language"
 
-var prebuildRuleSets = make(map[language.Tag]*RuleSet)
+var prebuildRuleSets = make(map[language.Tag]*RuleSet, 40)
 
 func addRuleSet(langs []string, set *RuleSet) {
 	for _, lang := range langs {

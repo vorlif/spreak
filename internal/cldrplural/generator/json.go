@@ -88,7 +88,7 @@ func (j *RuleJSON) hash() string {
 	return hex.EncodeToString(h.Sum(nil))
 }
 
-type PluralsJSON struct {
+type PluralsFile struct {
 	Supplemental struct {
 		Version struct {
 			UnicodeVersion string `json:"_unicodeVersion"`

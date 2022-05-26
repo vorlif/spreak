@@ -34,7 +34,7 @@ func TestExtractOperands(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		op := ExtractOperands(tt.src)
+		op := NewOperands(tt.src)
 		assert.Equalf(t, tt.n, op.N, "N %s", tt.src)
 		assert.Equalf(t, tt.i, op.I, "I %s", tt.src)
 		assert.Equalf(t, tt.v, op.V, "V %s", tt.src)
@@ -63,7 +63,7 @@ func Test_formatExponent(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.input, func(t *testing.T) {
-			assert.Equalf(t, tt.want, formatExponent(tt.input, tt.c), "formatExponent(%q, %d) = %s", tt.input, tt.c, tt.want)
+			assert.Equalf(t, tt.want, shiftDecimalPoint(tt.input, tt.c), "shiftDecimalPoint(%q, %d) = %s", tt.input, tt.c, tt.want)
 		})
 
 	}

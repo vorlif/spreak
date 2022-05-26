@@ -8,6 +8,7 @@ import (
 	"github.com/vorlif/spreak/internal/cldrplural/ast"
 )
 
+// compileNode converts a rule tree to go code.
 func compileNode(node ast.Node) string {
 	switch e := node.(type) {
 	case *ast.BinaryExpr:

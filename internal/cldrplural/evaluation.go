@@ -16,7 +16,7 @@ func MustParseRules(rules map[Category]string) *RuleSet {
 }
 
 func ParseRules(rawRules map[Category]string) (*RuleSet, error) {
-	categories := make([]Category, len(rawRules))
+	categories := make([]Category, 0, len(rawRules))
 	rules := make(map[Category]*ast.Rule)
 
 	for cat, rawRule := range rawRules {
@@ -26,6 +26,10 @@ func ParseRules(rawRules map[Category]string) (*RuleSet, error) {
 		}
 		rules[cat] = rule
 		categories = append(categories, cat)
+	}
+
+	if _, hasOther := rawRules[Other]; !hasOther {
+		categories = append(categories, Other)
 	}
 
 	formF := func(rules map[Category]*ast.Rule) FormFunc {
@@ -43,6 +47,7 @@ func ParseRules(rawRules map[Category]string) (*RuleSet, error) {
 	return &RuleSet{Categories: categories, FormFunc: formF}, nil
 }
 
+// Evaluates whether an abstract rule applies to an operation.
 func evaluate(rule *ast.Rule, ops *Operands) bool {
 	// Other has no conditions and therefore no tree
 	if rule.Root == nil {
@@ -140,14 +145,12 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 // isFloatInRange tests whether a float64 value x is within a range [from, to].
 // Multiple ranges can be specified,.
 func isFloatInRange(x float64, rangeValues ...int64) bool {
-	for i := 0; i < len(rangeValues); i++ {
+	for i := 0; i < len(rangeValues); i += 2 {
 		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
 			if float64(v) == x {
 				return true
 			}
 		}
-
-		i++
 	}
 
 	return false
@@ -156,14 +159,12 @@ func isFloatInRange(x float64, rangeValues ...int64) bool {
 // isIntInRange tests whether an int64 value x is within a range [from, to].
 // Multiple ranges can be specified,.
 func isIntInRange(x int64, rangeValues ...int64) bool {
-	for i := 0; i < len(rangeValues); i++ {
+	for i := 0; i < len(rangeValues); i += 2 {
 		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
 			if v == x {
 				return true
 			}
 		}
-
-		i++
 	}
 
 	return false

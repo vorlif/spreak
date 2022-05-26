@@ -48,9 +48,7 @@ func MustParse(rawRule string) *Rule {
 }
 
 func Parse(rawRule string) (*Rule, error) {
-	p := &parser{
-		s: newScanner(rawRule),
-	}
+	p := &parser{s: newScanner(rawRule)}
 
 	a, err := p.Parse()
 	if err != nil {

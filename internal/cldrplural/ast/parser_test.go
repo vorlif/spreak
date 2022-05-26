@@ -177,3 +177,12 @@ func Test_parseSampleRange(t *testing.T) {
 		})
 	}
 }
+
+func TestMustParse(t *testing.T) {
+	t.Run("invalid rule panics", func(t *testing.T) {
+		f := func() {
+			MustParse("abz")
+		}
+		assert.Panics(t, f)
+	})
+}

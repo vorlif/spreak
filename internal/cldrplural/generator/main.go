@@ -19,7 +19,7 @@ func main() {
 	data, err := os.ReadFile(pluralsFile)
 	checkError(err)
 
-	root := &PluralsJSON{}
+	root := &PluralsFile{}
 	checkError(json.Unmarshal(data, root))
 
 	dataSets := make(map[string]*DataSet, 40)
@@ -38,9 +38,11 @@ func main() {
 
 	executeAndSafe("../prebuild_gen.go", codeTemplate, dataSets)
 	executeAndSafe("../prebuild_gen_test.go", testTemplate, dataSets)
-	executeAndSafe("../evaluation_test.go", evaluationTest, dataSets)
+	executeAndSafe("../evaluation_gen_test.go", evaluationTest, dataSets)
 }
 
+// executeAndSafe applies the DataSet's to a parsed template and saves the result correctly
+// formatted in a file 'name'.
 func executeAndSafe(name string, tmpl *template.Template, dataSets map[string]*DataSet) {
 	var buf bytes.Buffer
 	err := tmpl.Execute(&buf, dataSets)
@@ -126,7 +128,7 @@ func TestPrebuild{{$data.Name}}(t *testing.T) {
 		{{range $data.Rules}}
 			{{$samples := ExtractSamples .Raw}}
 			for _, sample := range {{printf "%#v" $samples}} {
-				op := ExtractOperands(sample)
+				op := NewOperands(sample)
 				assert.Equal(t, {{.Category}}, set.FormFunc(op)) 
 			}
 		{{end}}
@@ -154,7 +156,7 @@ func TestEvaluate{{$data.Name}}(t *testing.T) {
 		
 		{{$samples := ExtractSamples .Raw}}
 		for _, sample := range {{printf "%#v" $samples}} {
-			op := ExtractOperands(sample)
+			op := NewOperands(sample)
 			assert.True(t, evaluate(rule, op), sample)
 		}
 	{{end}}

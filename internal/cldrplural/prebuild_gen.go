@@ -46,7 +46,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"nl", "ast", "de", "en", "et", "sc", "fy", "lij", "sw", "io", "scn", "ia", "gl", "fi", "ur", "ca", "sv", "yi"}, &RuleSet{
+	addRuleSet([]string{"sv", "fy", "fi", "nl", "sw", "de", "scn", "ur", "et", "sc", "io", "en", "ca", "gl", "ast", "lij", "ia", "yi"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -164,7 +164,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"smn", "sms", "sma", "smi", "smj", "naq", "sat", "se", "iu"}, &RuleSet{
+	addRuleSet([]string{"smj", "naq", "smi", "sms", "se", "sma", "iu", "sat", "smn"}, &RuleSet{
 		Categories: newCategories(One, Two, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -182,7 +182,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"wa", "nso", "ti", "pa", "bho", "guw", "ak", "mg", "ln"}, &RuleSet{
+	addRuleSet([]string{"mg", "nso", "ln", "bho", "ti", "guw", "pa", "ak", "wa"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -269,7 +269,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"to", "lo", "und", "jbo", "bm", "ses", "ig", "ii", "my", "jw", "km", "yo", "hnj", "ja", "nqo", "ms", "th", "ko", "tpi", "bo", "kea", "zh", "lkt", "id", "vi", "sah", "su", "osa", "kde", "dz", "jv", "yue", "wo", "sg"}, &RuleSet{
+	addRuleSet([]string{"su", "bo", "th", "nqo", "ko", "to", "kde", "lo", "id", "osa", "wo", "kea", "ig", "vi", "bm", "jv", "my", "lkt", "sah", "km", "tpi", "yo", "hnj", "sg", "yue", "ii", "und", "zh", "dz", "jbo", "ms", "jw", "ja", "ses"}, &RuleSet{
 		Categories: newCategories(Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -277,7 +277,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"pcm", "am", "as", "zu", "kn", "doi", "fa", "hi", "gu", "bn"}, &RuleSet{
+	addRuleSet([]string{"as", "fa", "hi", "pcm", "zu", "doi", "gu", "am", "kn", "bn"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -467,7 +467,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"ky", "fur", "sdh", "xh", "ce", "nnh", "ps", "rof", "pap", "st", "asa", "hu", "af", "bal", "gsw", "ssy", "tig", "bez", "ckb", "ny", "brx", "vo", "cgg", "kk", "tn", "ts", "ug", "mgo", "mn", "ve", "saq", "eo", "vun", "lg", "tk", "tr", "ks", "rwk", "ne", "el", "haw", "kl", "rm", "nn", "ee", "no", "nr", "kkj", "os", "ta", "jmc", "jgo", "mas", "or", "wae", "sd", "bg", "dv", "ksb", "kaj", "so", "ku", "nb", "an", "nyn", "eu", "kcg", "mr", "xog", "ka", "nd", "fo", "om", "sq", "ml", "sn", "syr", "bem", "seh", "az", "chr", "ss", "te", "lb", "nah", "uz", "ha", "teo"}, &RuleSet{
+	addRuleSet([]string{"tn", "nb", "ml", "ps", "mas", "kk", "kcg", "jgo", "mn", "os", "dv", "sdh", "lb", "rm", "saq", "bg", "fur", "nah", "nyn", "so", "el", "nd", "ss", "az", "tig", "wae", "fo", "tk", "kaj", "ug", "kkj", "nnh", "ku", "om", "ve", "ckb", "gsw", "or", "haw", "ks", "chr", "an", "ee", "sq", "ts", "tr", "bez", "ce", "jmc", "no", "xh", "ny", "st", "ka", "te", "syr", "sn", "ky", "mr", "rof", "lg", "mgo", "ssy", "seh", "vo", "eo", "eu", "sd", "teo", "ha", "uz", "brx", "ksb", "ne", "nn", "rwk", "ta", "vun", "kl", "xog", "bal", "pap", "cgg", "nr", "af", "bem", "asa", "hu"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -480,7 +480,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"cs", "sk"}, &RuleSet{
+	addRuleSet([]string{"sk", "cs"}, &RuleSet{
 		Categories: newCategories(One, Few, Many, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -603,7 +603,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"uk", "ru"}, &RuleSet{
+	addRuleSet([]string{"ru", "uk"}, &RuleSet{
 		Categories: newCategories(One, Few, Many, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -657,7 +657,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"sr", "bs", "sh", "hr"}, &RuleSet{
+	addRuleSet([]string{"sh", "sr", "hr", "bs"}, &RuleSet{
 		Categories: newCategories(One, Few, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -703,7 +703,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"hy", "kab", "ff"}, &RuleSet{
+	addRuleSet([]string{"ff", "kab", "hy"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 

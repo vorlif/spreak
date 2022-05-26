@@ -1,9 +1,12 @@
 package cldrplural
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 	"strings"
+
+	"github.com/vorlif/spreak/internal/util"
 )
 
 type Category byte
@@ -39,14 +42,14 @@ const (
 )
 
 func (op Operand) String() string {
-	if name, ok := OperandNames[op]; ok {
+	if name, ok := operandNames[op]; ok {
 		return name
 	}
 
 	return "unknown operand"
 }
 
-var OperandNames = map[Operand]string{
+var operandNames = map[Operand]string{
 	OperandN: "n",
 	OperandI: "i",
 	OperandV: "v",
@@ -83,15 +86,48 @@ type Operands struct {
 	C int64
 }
 
-// ExtractOperands converts the representation of a float value into the appropriate operands.
-func ExtractOperands(raw string) *Operands {
+// NewOperands converts the representation of a float value into the appropriate operands.
+func NewOperands(a interface{}) *Operands {
+	a = util.Indirect(a)
+	if a == nil {
+		return newOperandsInt(0)
+	}
+
+	switch v := a.(type) {
+	case string:
+		return newOperandsString(v)
+	case int64:
+		return newOperandsInt(v)
+	case int:
+		return newOperandsInt(int64(v))
+	case float32:
+		return newOperandsString(fmt.Sprintf("%v", v))
+	case float64:
+		return newOperandsString(fmt.Sprintf("%v", v))
+	default:
+		num, err := util.ToNumber(v)
+		if err != nil {
+			return newOperandsInt(0)
+		}
+		return newOperandsString(fmt.Sprintf("%v", num))
+	}
+}
+
+func newOperandsInt(i int64) *Operands {
+	if i < 0 {
+		i = -i
+	}
+	return &Operands{float64(i), i, 0, 0, 0, 0, 0}
+}
+
+func newOperandsString(raw string) *Operands {
 	op := &Operands{}
 
 	if strings.Contains(raw, "c") {
 		cIdx := strings.Index(raw, "c")
 		c, _ := strconv.Atoi(raw[cIdx+1:])
 		op.C = int64(c)
-		raw = formatExponent(raw[:cIdx], c)
+		raw = shiftDecimalPoint(raw[:cIdx], c)
 	}
 
 	src, _ := strconv.ParseFloat(raw, 64)
@@ -116,8 +152,9 @@ func ExtractOperands(raw string) *Operands {
 	return op
 }
 
-func formatExponent(raw string, c int) string {
+func shiftDecimalPoint(raw string, c int) string {
 	var s strings.Builder
+
 	shift := false
 	for _, r := range raw {
 		if r == '.' {
