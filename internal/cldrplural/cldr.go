@@ -77,6 +77,11 @@ type RuleSet struct {
 	FormFunc   FormFunc
 }
 
+func (rs *RuleSet) Evaluate(a interface{}) Category {
+	ops := NewOperands(a)
+	return rs.FormFunc(ops)
+}
+
 // The Operands are numeric values corresponding to features of the source number.
 type Operands struct {
 	N float64

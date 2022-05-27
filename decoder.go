@@ -93,7 +93,7 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string) (Catal
 		if err != nil {
 			return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
 		}
-		catl.pluralFunc = forms.IndexForN
+		catl.pluralFunc = forms.Evaluate
 	} else {
 		forms, _ := poplural.ForLanguage(lang)
 		catl.pluralFunc = forms

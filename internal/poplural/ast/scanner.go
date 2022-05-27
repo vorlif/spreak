@@ -1,4 +1,4 @@
-package poplural
+package ast
 
 import (
 	"bufio"
@@ -21,7 +21,7 @@ func newScanner(r io.Reader) *scanner {
 	return &scanner{r: bufio.NewReader(r)}
 }
 
-func (s *scanner) scan() (tok token, lit string) {
+func (s *scanner) scan() (tok Token, lit string) {
 	ch := s.read()
 	if ch == scannerEOF {
 		return eof, ""
@@ -42,9 +42,9 @@ func (s *scanner) scan() (tok token, lit string) {
 	case scannerEOF:
 		return eof, ""
 	case '%':
-		return reminder, string(ch)
+		return Reminder, string(ch)
 	case '?':
-		return question, string(ch)
+		return Question, string(ch)
 	case ':':
 		return colon, string(ch)
 	case ';':
@@ -57,25 +57,25 @@ func (s *scanner) scan() (tok token, lit string) {
 		nextCh := s.read()
 		switch string([]rune{ch, nextCh}) {
 		case "!=":
-			return notEqual, "!="
+			return NotEqual, "!="
 		case "&&":
-			return logicalAnd, "&&"
+			return LogicalAnd, "&&"
 		case "==":
-			return equal, "=="
+			return Equal, "=="
 		case "||":
-			return logicalOr, "||"
+			return LogicalOr, "||"
 		case ">=":
-			return greaterOrEqual, ">="
+			return GreaterOrEqual, ">="
 		case "<=":
-			return lessOrEqual, "<="
+			return LessOrEqual, "<="
 		}
 
 		s.unread()
 		switch ch {
 		case '<':
-			return less, string(ch)
+			return Less, string(ch)
 		case '>':
-			return greater, string(ch)
+			return Greater, string(ch)
 		case '=':
 			return assign, string(ch)
 		}
@@ -85,7 +85,7 @@ func (s *scanner) scan() (tok token, lit string) {
 }
 
 // scanWhitespace consumes the current rune and all contiguous whitespace.
-func (s *scanner) scanWhitespace() (tok token, lit string) {
+func (s *scanner) scanWhitespace() (tok Token, lit string) {
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
 
@@ -103,7 +103,7 @@ func (s *scanner) scanWhitespace() (tok token, lit string) {
 	return whitespace, buf.String()
 }
 
-func (s *scanner) scanNumber() (tok token, lit string) {
+func (s *scanner) scanNumber() (tok Token, lit string) {
 	// Create a buffer and read the current character into it.
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
@@ -119,10 +119,10 @@ func (s *scanner) scanNumber() (tok token, lit string) {
 		}
 	}
 
-	return number, buf.String()
+	return Value, buf.String()
 }
 
-func (s *scanner) scanText() (tok token, lit string) {
+func (s *scanner) scanText() (tok Token, lit string) {
 	var buf bytes.Buffer
 	buf.WriteRune(s.read())
 
@@ -143,7 +143,7 @@ func (s *scanner) scanText() (tok token, lit string) {
 	case prefixPlural:
 		return plural, buf.String()
 	case variableN:
-		return variable, buf.String()
+		return Operand, buf.String()
 	default:
 		return failure, buf.String()
 	}

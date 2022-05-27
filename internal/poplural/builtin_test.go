@@ -9,15 +9,6 @@ import (
 	"golang.org/x/text/language"
 )
 
-func TestPluralFormsTable(t *testing.T) {
-	for lang, rule := range formsTable {
-		_, err := Parse(rule)
-		if err != nil {
-			t.Errorf("Parse(%s) for %s generates error", rule, lang)
-		}
-	}
-}
-
 func TestForLanguage(t *testing.T) {
 	t.Run("if the language is not known a fallback is used", func(t *testing.T) {
 		unknownLang := language.MustParse("art")
@@ -25,12 +16,10 @@ func TestForLanguage(t *testing.T) {
 		require.False(t, found)
 		require.NotNil(t, forms)
 
-		fallbackRule := formsTable[language.Und.String()]
-		fallbackForms, err := Parse(fallbackRule)
-		require.NoError(t, err)
-		require.NotNil(t, fallbackForms)
+		fallbackForm := rawToBuiltIn[fallbackRule]
+		require.NotNil(t, fallbackForm)
 
-		sf1 := reflect.ValueOf(fallbackForms.IndexForN).Pointer()
+		sf1 := reflect.ValueOf(fallbackForm.Evaluate).Pointer()
 		sf2 := reflect.ValueOf(forms).Pointer()
 		assert.Equal(t, sf1, sf2)
 	})
@@ -58,7 +47,7 @@ func Test_pluralRuleForLanguage(t *testing.T) {
 		t.Run(tt, func(t *testing.T) {
 			lang := language.MustParse(tt)
 			got, gotFound := pluralRuleForLanguage(lang)
-			forms := formsTable[tt]
+			forms := langToBuiltIn[lang.String()]
 			assert.Equalf(t, forms, got, "pluralRuleForLanguage(%v)", lang)
 			assert.True(t, gotFound, "pluralRuleForLanguage(%v)", lang)
 		})
@@ -76,7 +65,7 @@ func Test_pluralRuleForLanguage(t *testing.T) {
 		t.Run(tt.langName, func(t *testing.T) {
 			lang := language.MustParse(tt.langName)
 			got, gotFound := pluralRuleForLanguage(lang)
-			forms := formsTable[tt.wantLang]
+			forms := langToBuiltIn[tt.wantLang]
 			assert.Equalf(t, forms, got, "pluralRuleForLanguage(%v)", lang)
 			assert.True(t, gotFound, "pluralRuleForLanguage(%v)", lang)
 		})

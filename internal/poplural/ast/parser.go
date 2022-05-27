@@ -1,38 +1,20 @@
-package poplural
+package ast
 
 import (
 	"errors"
 	"fmt"
-	"math"
 	"strconv"
 	"strings"
-
-	"github.com/vorlif/spreak/internal/util"
 )
 
 type Forms struct {
-	Nplurals int
-	node     *node
-}
-
-func (f *Forms) IndexForN(n interface{}) int {
-	if f.node == nil {
-		return 0
-	}
-
-	num, err := util.ToNumber(n)
-	if err != nil {
-		return 0
-	}
-
-	num = math.RoundToEven(math.Abs(num))
-	result := f.node.evaluate(int(num))
-	return result
+	NPlurals int
+	Root     Node
 }
 
 type parser struct {
 	s           *scanner
-	lastToken   token  // last read token
+	lastToken   Token  // last read Token
 	lastLiteral string // last read literal
 	n           int    // buffer size (max=1)
 }
@@ -65,22 +47,22 @@ func (p *parser) Parse() (*Forms, error) {
 	}
 
 	//nolint:revive
-	if tok, lit := p.scanIgnoreWhitespace(); tok != number {
+	if tok, lit := p.scanIgnoreWhitespace(); tok != Value {
 		return nil, fmt.Errorf("po parser: found %q, expected '=' after nplurals", lit)
 	} else {
-		forms.Nplurals, _ = strconv.Atoi(lit)
+		forms.NPlurals, _ = strconv.Atoi(lit)
 	}
 
 	if tok, lit := p.scanIgnoreWhitespace(); tok != semicolon {
-		return nil, fmt.Errorf("po parser: found %q, expected ';' after 'nplurals=%d'", lit, forms.Nplurals)
+		return nil, fmt.Errorf("po parser: found %q, expected ';' after 'nplurals=%d'", lit, forms.NPlurals)
 	}
 
 	if tok, lit := p.scanIgnoreWhitespace(); tok != plural {
-		return nil, fmt.Errorf("po parser: found %q, expected 'plural' after 'nplurals=%d; '", lit, forms.Nplurals)
+		return nil, fmt.Errorf("po parser: found %q, expected 'plural' after 'nplurals=%d; '", lit, forms.NPlurals)
 	}
 
 	if tok, lit := p.scanIgnoreWhitespace(); tok != assign {
-		return nil, fmt.Errorf("po parser: found %q, expected '=' after 'nplurals=%d; plural'", lit, forms.Nplurals)
+		return nil, fmt.Errorf("po parser: found %q, expected '=' after 'nplurals=%d; plural'", lit, forms.NPlurals)
 	}
 
 	if errScan := p.scanNext(); errScan != nil {
@@ -92,7 +74,7 @@ func (p *parser) Parse() (*Forms, error) {
 		return nil, err
 	}
 
-	forms.node = n
+	forms.Root = n
 
 	if p.lastToken != semicolon {
 		return nil, fmt.Errorf("po parser: found %q, expected ';' at end", p.lastLiteral)
@@ -106,15 +88,13 @@ func (p *parser) Parse() (*Forms, error) {
 
 }
 
-func (p *parser) expression() (*node, error) {
+func (p *parser) expression() (Node, error) {
 	n, err := p.logicalOrExpression()
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == question {
-		questionNode := newNode(p.lastToken)
-
+	if p.lastToken == Question {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
@@ -123,7 +103,6 @@ func (p *parser) expression() (*node, error) {
 		if errCt != nil {
 			return nil, errCt
 		}
-		questionNode.setNode(1, condTrue)
 
 		if p.lastToken != colon {
 			return nil, fmt.Errorf("po parser: found %q, expected \":\"", p.lastLiteral)
@@ -138,23 +117,24 @@ func (p *parser) expression() (*node, error) {
 			return nil, errCf
 		}
 
-		questionNode.setNode(2, condFalse)
-		questionNode.setNode(0, n)
-		return questionNode, nil
+		qmNode := &QuestionMarkExpr{
+			Cond: n,
+			T:    condTrue,
+			F:    condFalse,
+		}
+		return qmNode, nil
 	}
 
 	return n, nil
 }
 
-func (p *parser) logicalOrExpression() (*node, error) {
+func (p *parser) logicalOrExpression() (Node, error) {
 	ln, err := p.logicalAndExpression()
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == logicalOr {
-		orNode := newNode(p.lastToken)
-
+	if p.lastToken == LogicalOr {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
@@ -164,30 +144,32 @@ func (p *parser) logicalOrExpression() (*node, error) {
 			return nil, errRn
 		}
 
-		if rn.token == logicalOr {
-			orNode.setNode(0, ln)
-			orNode.setNode(1, rn.getNode(0))
-			rn.setNode(0, orNode)
-			return rn, nil
+		orNode := &BinaryExpr{
+			X:  ln,
+			Op: LogicalOr,
+			Y:  rn,
 		}
 
-		orNode.setNode(0, ln)
-		orNode.setNode(1, rn)
+		if rn.Type() == LogicalOr {
+			rnNode := rn.(*BinaryExpr)
+			orNode.Y = rnNode.X
+			rnNode.X = orNode
+			return rnNode, nil
+		}
+
 		return orNode, nil
 	}
 
 	return ln, nil
 }
 
-func (p *parser) logicalAndExpression() (*node, error) {
+func (p *parser) logicalAndExpression() (Node, error) {
 	ln, err := p.equalityExpression() // left
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == logicalAnd {
-		andNode := newNode(p.lastToken) // up
-
+	if p.lastToken == LogicalAnd {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
@@ -197,29 +179,33 @@ func (p *parser) logicalAndExpression() (*node, error) {
 			return nil, errRn
 		}
 
-		if rn.token == logicalAnd {
-			andNode.setNode(0, ln)
-			andNode.setNode(1, rn.getNode(0))
-			rn.setNode(0, andNode)
-			return rn, nil
+		andNode := &BinaryExpr{
+			X:  ln,
+			Op: LogicalAnd,
+			Y:  rn,
 		}
 
-		andNode.setNode(0, ln)
-		andNode.setNode(1, rn)
+		if rn.Type() == LogicalAnd {
+			rnNode := rn.(*BinaryExpr)
+			andNode.Y = rnNode.X
+			rnNode.X = andNode
+			return rnNode, nil
+		}
+
 		return andNode, nil
 	}
 
 	return ln, nil
 }
 
-func (p *parser) equalityExpression() (*node, error) {
+func (p *parser) equalityExpression() (Node, error) {
 	n, err := p.relationalExpression()
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == equal || p.lastToken == notEqual {
-		compareNode := newNode(p.lastToken)
+	if p.lastToken == Equal || p.lastToken == NotEqual {
+		compareNode := &BinaryExpr{Op: p.lastToken}
 
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
@@ -230,22 +216,22 @@ func (p *parser) equalityExpression() (*node, error) {
 			return nil, errRe
 		}
 
-		compareNode.setNode(1, re)
-		compareNode.setNode(0, n)
+		compareNode.X = n
+		compareNode.Y = re
 		return compareNode, nil
 	}
 
 	return n, nil
 }
 
-func (p *parser) relationalExpression() (*node, error) {
+func (p *parser) relationalExpression() (Node, error) {
 	n, err := p.multiplicativeExpression()
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == greater || p.lastToken == less || p.lastToken == greaterOrEqual || p.lastToken == lessOrEqual {
-		compareNode := newNode(p.lastToken)
+	if p.lastToken == Greater || p.lastToken == Less || p.lastToken == GreaterOrEqual || p.lastToken == LessOrEqual {
+		compareNode := &BinaryExpr{Op: p.lastToken}
 
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
@@ -256,23 +242,21 @@ func (p *parser) relationalExpression() (*node, error) {
 			return nil, errMe
 		}
 
-		compareNode.setNode(1, me)
-		compareNode.setNode(0, n)
+		compareNode.X = n
+		compareNode.Y = me
 		return compareNode, nil
 	}
 
 	return n, nil
 }
 
-func (p *parser) multiplicativeExpression() (*node, error) {
+func (p *parser) multiplicativeExpression() (Node, error) {
 	n, err := p.pmExpression()
 	if err != nil {
 		return nil, err
 	}
 
-	if p.lastToken == reminder {
-		reminderNode := newNode(p.lastToken)
-
+	if p.lastToken == Reminder {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
@@ -282,29 +266,29 @@ func (p *parser) multiplicativeExpression() (*node, error) {
 			return nil, errPm
 		}
 
-		reminderNode.setNode(1, pm)
-		reminderNode.setNode(0, n)
-		return reminderNode, nil
+		modNode := &BinaryExpr{
+			X:  n,
+			Op: Reminder,
+			Y:  pm,
+		}
+		return modNode, nil
 	}
 
 	return n, nil
 }
 
-func (p *parser) pmExpression() (*node, error) {
-
-	if p.lastToken == variable {
-		variableNode := newNode(p.lastToken)
+func (p *parser) pmExpression() (Node, error) {
+	if p.lastToken == Operand {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
-		return variableNode, nil
-	} else if p.lastToken == number {
-		numberNode := newNode(p.lastToken)
-		numberNode.value, _ = strconv.Atoi(p.lastLiteral)
+		return &OperandExpr{}, nil
+	} else if p.lastToken == Value {
+		value, _ := strconv.ParseInt(p.lastLiteral, 10, 64)
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
-		return numberNode, nil
+		return &ValueExpr{Value: value}, nil
 	} else if p.lastToken == leftBracket {
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
@@ -336,7 +320,7 @@ func (p *parser) scanNext() error {
 	return nil
 }
 
-func (p *parser) scan() (tok token, lit string) {
+func (p *parser) scan() (tok Token, lit string) {
 	if p.n != 0 {
 		p.n = 0
 		return p.lastToken, p.lastLiteral
@@ -350,7 +334,7 @@ func (p *parser) scan() (tok token, lit string) {
 }
 
 // scanIgnoreWhitespace scans the next non-whitespace token.
-func (p *parser) scanIgnoreWhitespace() (tok token, lit string) {
+func (p *parser) scanIgnoreWhitespace() (tok Token, lit string) {
 	tok, lit = p.scan()
 	if tok == whitespace {
 		tok, lit = p.scan()
