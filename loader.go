@@ -7,9 +7,11 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak/internal/cldrplural"
 	"github.com/vorlif/spreak/internal/mo"
 	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/internal/util"
@@ -20,6 +22,8 @@ const (
 	UnknownFile = "unknown"
 	PoFile      = ".po"
 	MoFile      = ".mo"
+
+	poCLDRHeader = "X-spreak-use-CLDR"
 )
 
 // Loader is responsible for loading Catalogs for a language and a domain.
@@ -294,20 +298,35 @@ func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, 
 	return "", os.ErrNotExist
 }
 
-type poDecoder struct{}
-type moDecoder struct{}
+type poDecoder struct {
+	useCLDRPlural bool
+}
+
+type moDecoder struct {
+	useCLDRPlural bool
+}
 
 // NewPoDecoder returns a new Decoder for reading po files.
-func NewPoDecoder() Decoder {
-	return &poDecoder{}
-}
+// If a plural forms header is set, it will be used.
+// Otherwise, the CLDR plural rules are used to set the plural form.
+// If there is no CLDR plural rule, the English plural rules will be used.
+func NewPoDecoder() Decoder { return &poDecoder{} }
+
+// NewPoCLDRDecoder creates a decoder for reading po files,
+// which always uses the CLDR plural rules for determining the plural form.
+func NewPoCLDRDecoder() Decoder { return &poDecoder{useCLDRPlural: true} }
 
 // NewMoDecoder returns a new Decoder for reading mo files.
-func NewMoDecoder() Decoder {
-	return &moDecoder{}
-}
+// If a plural forms header is set, it will be used.
+// Otherwise, the CLDR plural rules are used to set the plural form.
+// If there is no CLDR plural rule, the English plural rules will be used.
+func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
 
-func (poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
+// NewMoCLDRDecoder creates a decoder for reading mo files,
+// which always uses the CLDR plural rules for determining the plural form.
+func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
+
+func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
 	poFile, errParse := po.Parse(data)
 	if errParse != nil {
 		return nil, errParse
@@ -316,10 +335,10 @@ func (poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog,
 	// We could check here if the language of the file matches the target language,
 	// but leave it off to make loading more flexible.
 
-	return buildGettextCatalog(poFile, lang, domain)
+	return buildGettextCatalog(poFile, lang, domain, d.useCLDRPlural)
 }
 
-func (moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
+func (d moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
 	moFile, errParse := mo.ParseBytes(data)
 	if errParse != nil {
 		return nil, errParse
@@ -328,10 +347,10 @@ func (moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog,
 	// We could check here if the language of the file matches the target language,
 	// but leave it off to make loading more flexible.
 
-	return buildGettextCatalog(moFile, lang, domain)
+	return buildGettextCatalog(moFile, lang, domain, d.useCLDRPlural)
 }
 
-func buildGettextCatalog(file *po.File, lang language.Tag, domain string) (Catalog, error) {
+func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLDRPlural bool) (Catalog, error) {
 	messages := make(messageLookupMap, len(file.Messages))
 
 	for ctx := range file.Messages {
@@ -364,16 +383,40 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string) (Catal
 		translations: messages,
 	}
 
-	if file.Header != nil && file.Header.PluralForms != "" {
-		forms, err := poplural.Parse(file.Header.PluralForms)
-		if err != nil {
-			return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
-		}
-		catl.pluralFunc = forms.Evaluate
-	} else {
-		forms, _ := poplural.ForLanguage(lang)
-		catl.pluralFunc = forms
+	if useCLDRPlural {
+		catl.pluralFunc = getCLDRPluralFunction(lang)
+		return catl, nil
 	}
 
+	if file.Header != nil {
+		if val := file.Header.Get(poCLDRHeader); strings.ToLower(val) == "true" {
+			catl.pluralFunc = getCLDRPluralFunction(lang)
+			return catl, nil
+		}
+
+		if file.Header.PluralForms != "" {
+			forms, err := poplural.Parse(file.Header.PluralForms)
+			if err != nil {
+				return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
+			}
+			catl.pluralFunc = forms.Evaluate
+			return catl, nil
+		}
+	}
+
+	catl.pluralFunc = getCLDRPluralFunction(lang)
 	return catl, nil
+}
+
+func getCLDRPluralFunction(lang language.Tag) func(a interface{}) int {
+	ruleSet, _ := cldrplural.ForLanguage(lang)
+	return func(a interface{}) int {
+		cat := ruleSet.Evaluate(a)
+		for i := 0; i < len(ruleSet.Categories); i++ {
+			if ruleSet.Categories[i] == cat {
+				return i
+			}
+		}
+		return 0
+	}
 }

@@ -370,3 +370,43 @@ func TestMoDecoder(t *testing.T) {
 	assert.Error(t, err)
 	assert.Nil(t, decode)
 }
+
+func TestNewPoCLDRDecoder(t *testing.T) {
+	dec := NewPoCLDRDecoder()
+
+	catl, err := dec.Decode(language.German, "", []byte(decodeTestData))
+	assert.NoError(t, err)
+	require.NotNil(t, catl)
+
+	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
+	assert.NoError(t, errT)
+	assert.Equal(t, "%d Tage", translation)
+}
+
+func TestCLDRHeader(t *testing.T) {
+	header := `
+msgid ""
+msgstr ""
+"Plural-Forms: invalid-pluralform\n"
+"X-spreak-use-CLDR: true\n"
+`
+
+	dec := NewPoDecoder()
+	catl, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
+	assert.NoError(t, err)
+	assert.NotNil(t, catl)
+	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
+	assert.NoError(t, errT)
+	assert.Equal(t, "%d Tage", translation)
+}
+
+func TestGetCLDRPluralFunction(t *testing.T) {
+	pf := getCLDRPluralFunction(language.MustParse("kw"))
+	assert.Equal(t, 0, pf(0))
+	assert.Equal(t, 1, pf(1))
+	assert.Equal(t, 2, pf(22))
+	assert.Equal(t, 3, pf(143))
+	assert.Equal(t, 4, pf(161))
+	assert.Equal(t, 5, pf(5))
+	assert.Equal(t, 5, pf(1004))
+}
