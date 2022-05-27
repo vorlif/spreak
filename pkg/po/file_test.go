@@ -91,3 +91,16 @@ func TestNewFile(t *testing.T) {
 	assert.NotNil(t, f.Messages)
 	assert.Empty(t, f.Messages)
 }
+
+func TestHeader_Get(t *testing.T) {
+	header := `msgid ""
+msgstr ""
+"x-unknown: val\n"
+`
+
+	f, err := ParseString(header)
+	assert.NoError(t, err)
+	require.NotNil(t, f)
+
+	assert.Equal(t, "val", f.Header.Get("X-UNKNOWN"))
+}

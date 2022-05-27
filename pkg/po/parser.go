@@ -256,7 +256,7 @@ func (p *parser) parseHeader(msg *Message) (*Header, error) {
 				continue
 			}
 
-			return nil, errors.New("po file does not have a valid header")
+			return nil, fmt.Errorf("po file has an invalid header: %s", lines)
 		}
 
 		key := strings.TrimSpace(line[:colonIdx])

@@ -114,3 +114,18 @@ func (h *Header) SetField(key, val string) {
 		h.UnknownFields[key] = val
 	}
 }
+
+func (h *Header) Get(key string) string {
+	if h.UnknownFields == nil {
+		return ""
+	}
+
+	key = strings.ToUpper(key)
+	for unknownHeader, val := range h.UnknownFields {
+		if strings.ToUpper(unknownHeader) == key {
+			return val
+		}
+	}
+
+	return ""
+}
