@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"text/template"
 
@@ -22,19 +23,34 @@ func main() {
 	root := &PluralsFile{}
 	checkError(json.Unmarshal(data, root))
 
-	dataSets := make(map[string]*DataSet, 40)
+	duplicateMap := make(map[string]*DataSet, 40)
+	dataSets := make([]*DataSet, 0, 40)
 	for lang, jsonRules := range root.Supplemental.PluralsTypeCardinal {
 		h := jsonRules.hash()
-		if _, ok := dataSets[h]; ok {
-			dataSets[h].Languages = append(dataSets[h].Languages, lang)
+		if _, ok := duplicateMap[h]; ok {
+			duplicateMap[h].Languages = append(duplicateMap[h].Languages, lang)
 			continue
 		}
 
-		dataSets[h] = &DataSet{
+		ds := &DataSet{
 			Languages: []string{lang},
 			Rules:     jsonRules.ToData(),
 		}
+		duplicateMap[h] = ds
+		dataSets = append(dataSets, ds)
 	}
+
+	for _, dataset := range dataSets {
+		sort.Strings(dataset.Languages)
+	}
+
+	sort.Slice(dataSets, func(i, j int) bool {
+		if a, b := len(dataSets[i].Rules), len(dataSets[j].Rules); a != b {
+			return a < b
+		}
+
+		return dataSets[i].Name() < dataSets[j].Name()
+	})
 
 	executeAndSafe("../builtin_gen.go", codeTemplate, dataSets)
 	executeAndSafe("../builtin_gen_test.go", testTemplate, dataSets)
@@ -43,7 +59,7 @@ func main() {
 
 // executeAndSafe applies the DataSet's to a parsed template and saves the result correctly
 // formatted in a file 'name'.
-func executeAndSafe(name string, tmpl *template.Template, dataSets map[string]*DataSet) {
+func executeAndSafe(name string, tmpl *template.Template, dataSets []*DataSet) {
 	var buf bytes.Buffer
 	err := tmpl.Execute(&buf, dataSets)
 	checkError(err)
@@ -121,9 +137,9 @@ import (
 )
 
 {{range $key, $data := .}}
-func TestPrebuild{{$data.Name}}(t *testing.T) {
+func TestBuiltin{{$data.Name}}(t *testing.T) {
 	for _, lang := range {{printf "%#v" $data.Languages}} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 		{{range $data.Rules}}
 			{{$samples := ExtractSamples .Raw}}

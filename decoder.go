@@ -6,7 +6,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/internal/mo"
-	"github.com/vorlif/spreak/internal/plural"
+	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/pkg/po"
 )
 
@@ -89,13 +89,13 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string) (Catal
 	}
 
 	if file.Header != nil && file.Header.PluralForms != "" {
-		forms, err := plural.Parse(file.Header.PluralForms)
+		forms, err := poplural.Parse(file.Header.PluralForms)
 		if err != nil {
 			return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
 		}
-		catl.pluralFunc = forms.IndexForN
+		catl.pluralFunc = forms.Evaluate
 	} else {
-		forms, _ := plural.ForLanguage(lang)
+		forms, _ := poplural.ForLanguage(lang)
 		catl.pluralFunc = forms
 	}
 

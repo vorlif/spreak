@@ -10,9 +10,613 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestPrebuildLt(t *testing.T) {
+func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiUndViWoYoYueZh(t *testing.T) {
+	for _, lang := range []string{"bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "und", "vi", "wo", "yo", "yue", "zh"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgMasMgoMlMnMrNahNbNdNeNnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqSdSdhSehSnSoSqSsSsyStSyrTaTeTeoTigTkTnTrTsUgUzVeVoVunWaeXhXog(t *testing.T) {
+	for _, lang := range []string{"af", "an", "asa", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "dv", "ee", "el", "eo", "eu", "fo", "fur", "gsw", "ha", "haw", "hu", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "uz", "ve", "vo", "vun", "wae", "xh", "xog"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinAkBhoGuwLnMgNsoPaTiWa(t *testing.T) {
+	for _, lang := range []string{"ak", "bho", "guw", "ln", "mg", "nso", "pa", "ti", "wa"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "1.0", "0.00", "1.00", "0.000", "1.000", "0.0000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinAmAsBnDoiFaGuHiKnPcmZu(t *testing.T) {
+	for _, lang := range []string{"am", "as", "bn", "doi", "fa", "gu", "hi", "kn", "pcm", "zu"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinAstCaDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi(t *testing.T) {
+	for _, lang := range []string{"ast", "ca", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "scn", "sv", "sw", "ur", "yi"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinCebFilTl(t *testing.T) {
+	for _, lang := range []string{"ceb", "fil", "tl"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "2", "3", "5", "7", "8", "10", "11", "12", "13", "15", "17", "18", "20", "21", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.5", "0.7", "0.8", "1.0", "1.1", "1.2", "1.3", "1.5", "1.7", "1.8", "2.0", "2.1", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"4", "6", "9", "14", "16", "19", "24", "26", "104", "1004", "0.4", "0.6", "0.9", "1.4", "1.6", "1.9", "2.4", "2.6", "10.4", "100.4", "1000.4"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinDa(t *testing.T) {
+	for _, lang := range []string{"da"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinFfHyKab(t *testing.T) {
+	for _, lang := range []string{"ff", "hy", "kab"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinIs(t *testing.T) {
+	for _, lang := range []string{"is"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinMk(t *testing.T) {
+	for _, lang := range []string{"mk"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinSi(t *testing.T) {
+	for _, lang := range []string{"si"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "1.0", "0.00", "0.01", "1.00", "0.000", "0.001", "1.000", "0.0000", "0.0001", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinTzm(t *testing.T) {
+	for _, lang := range []string{"tzm"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "0.0", "1.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "20.0", "21.0", "22.0", "23.0", "24.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "100", "101", "102", "103", "104", "105", "106", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinBsHrShSr(t *testing.T) {
+	for _, lang := range []string{"bs", "hr", "sh", "sr"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "0.2", "0.3", "0.4", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "3.2", "3.3", "3.4", "4.2", "4.3", "4.4", "5.2", "10.2", "100.2", "1000.2"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinEs(t *testing.T) {
+	for _, lang := range []string{"es"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinFr(t *testing.T) {
+	for _, lang := range []string{"fr"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinItPt_PT(t *testing.T) {
+	for _, lang := range []string{"it", "pt-PT"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
+	for _, lang := range []string{"iu", "naq", "sat", "se", "sma", "smi", "smj", "smn", "sms"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinKsh(t *testing.T) {
+	for _, lang := range []string{"ksh"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Zero, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinLag(t *testing.T) {
+	for _, lang := range []string{"lag"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Zero, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinLvPrg(t *testing.T) {
+	for _, lang := range []string{"lv", "prg"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000", "0.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Zero, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.0", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "22", "23", "24", "25", "26", "27", "28", "29", "102", "1002", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "10.2", "100.2", "1000.2"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinMoRo(t *testing.T) {
+	for _, lang := range []string{"mo", "ro"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "102", "1002", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinPt(t *testing.T) {
+	for _, lang := range []string{"pt"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinShi(t *testing.T) {
+	for _, lang := range []string{"shi"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "2.00", "3.00", "4.00", "5.00", "6.00", "7.00", "8.00"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinBe(t *testing.T) {
+	for _, lang := range []string{"be"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "2.0", "3.0", "4.0", "22.0", "23.0", "24.0", "32.0", "33.0", "102.0", "1002.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "11.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinCsSk(t *testing.T) {
+	for _, lang := range []string{"cs", "sk"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinDsbHsb(t *testing.T) {
+	for _, lang := range []string{"dsb", "hsb"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002", "0.2", "1.2", "2.2", "3.2", "4.2", "5.2", "6.2", "7.2", "10.2", "100.2", "1000.2"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.3", "0.4", "1.3", "1.4", "2.3", "2.4", "3.3", "3.4", "4.3", "4.4", "5.3", "5.4", "6.3", "6.4", "7.3", "7.4", "10.3", "100.3", "1000.3"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinGd(t *testing.T) {
+	for _, lang := range []string{"gd"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "11", "1.0", "11.0", "1.00", "11.00", "1.000", "11.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "12", "2.0", "12.0", "2.00", "12.00", "2.000", "12.000", "2.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "4", "5", "6", "7", "8", "9", "10", "13", "14", "15", "16", "17", "18", "19", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "3.00"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinHe(t *testing.T) {
+	for _, lang := range []string{"he"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"20", "30", "40", "50", "60", "70", "80", "90", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "101", "1001", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinLt(t *testing.T) {
 	for _, lang := range []string{"lt"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
@@ -38,22 +642,27 @@ func TestPrebuildLt(t *testing.T) {
 	}
 }
 
-func TestPrebuildPt_PTIt(t *testing.T) {
-	for _, lang := range []string{"pt-PT", "it"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+func TestBuiltinMt(t *testing.T) {
+	for _, lang := range []string{"mt"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
-		for _, sample := range []string{"1"} {
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := NewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
-		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
+		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "102", "103", "104", "105", "106", "107", "1002", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "102.0", "1002.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "111", "112", "113", "114", "115", "116", "117", "1011", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "111.0", "1011.0"} {
 			op := NewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
+		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := NewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
@@ -61,9 +670,9 @@ func TestPrebuildPt_PTIt(t *testing.T) {
 	}
 }
 
-func TestPrebuildSvIoNlScnIaFyDeGlEnYiSwEtUrFiAstCaScLij(t *testing.T) {
-	for _, lang := range []string{"sv", "io", "nl", "scn", "ia", "fy", "de", "gl", "en", "yi", "sw", "et", "ur", "fi", "ast", "ca", "sc", "lij"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+func TestBuiltinPl(t *testing.T) {
+	for _, lang := range []string{"pl"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
@@ -71,7 +680,17 @@ func TestPrebuildSvIoNlScnIaFyDeGlEnYiSwEtUrFiAstCaScLij(t *testing.T) {
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := NewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
@@ -79,22 +698,27 @@ func TestPrebuildSvIoNlScnIaFyDeGlEnYiSwEtUrFiAstCaScLij(t *testing.T) {
 	}
 }
 
-func TestPrebuildLag(t *testing.T) {
-	for _, lang := range []string{"lag"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+func TestBuiltinRuUk(t *testing.T) {
+	for _, lang := range []string{"ru", "uk"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
-		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Zero, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
 			op := NewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := NewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
@@ -102,9 +726,103 @@ func TestPrebuildLag(t *testing.T) {
 	}
 }
 
-func TestPrebuildGv(t *testing.T) {
+func TestBuiltinSl(t *testing.T) {
+	for _, lang := range []string{"sl"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinBr(t *testing.T) {
+	for _, lang := range []string{"br"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "81.0", "101.0", "1001.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "22", "32", "42", "52", "62", "82", "102", "1002", "2.0", "22.0", "32.0", "42.0", "52.0", "62.0", "82.0", "102.0", "1002.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "4", "9", "23", "24", "29", "33", "34", "39", "43", "44", "49", "103", "1003", "3.0", "4.0", "9.0", "23.0", "24.0", "29.0", "33.0", "34.0", "103.0", "1003.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1000000", "1000000.0", "1000000.00", "1000000.000", "1000000.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "100", "1000", "10000", "100000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinGa(t *testing.T) {
+	for _, lang := range []string{"ga"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "4", "5", "6", "3.0", "4.0", "5.0", "6.0", "3.00", "4.00", "5.00", "6.00", "3.000", "4.000", "5.000", "6.000", "3.0000", "4.0000", "5.0000", "6.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"7", "8", "9", "10", "7.0", "8.0", "9.0", "10.0", "7.00", "8.00", "9.00", "10.00", "7.000", "8.000", "9.000", "10.000", "7.0000", "8.0000", "9.0000", "10.0000"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"0", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
+func TestBuiltinGv(t *testing.T) {
 	for _, lang := range []string{"gv"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "11", "21", "31", "41", "51", "61", "71", "101", "1001"} {
@@ -135,336 +853,9 @@ func TestPrebuildGv(t *testing.T) {
 	}
 }
 
-func TestPrebuildPt(t *testing.T) {
-	for _, lang := range []string{"pt"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildEs(t *testing.T) {
-	for _, lang := range []string{"es"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildBe(t *testing.T) {
-	for _, lang := range []string{"be"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "2.0", "3.0", "4.0", "22.0", "23.0", "24.0", "32.0", "33.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "11.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildSatSmiSmaSeNaqSmsIuSmnSmj(t *testing.T) {
-	for _, lang := range []string{"sat", "smi", "sma", "se", "naq", "sms", "iu", "smn", "smj"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildMgPaTiWaLnNsoAkBhoGuw(t *testing.T) {
-	for _, lang := range []string{"mg", "pa", "ti", "wa", "ln", "nso", "ak", "bho", "guw"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "1.0", "0.00", "1.00", "0.000", "1.000", "0.0000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildKw(t *testing.T) {
-	for _, lang := range []string{"kw"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Zero, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "22", "42", "62", "82", "102", "122", "142", "1000", "10000", "100000", "2.0", "22.0", "42.0", "62.0", "82.0", "102.0", "122.0", "142.0", "1000.0", "10000.0", "100000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "23", "43", "63", "83", "103", "123", "143", "1003", "3.0", "23.0", "43.0", "63.0", "83.0", "103.0", "123.0", "143.0", "1003.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"21", "41", "61", "81", "101", "121", "141", "161", "1001", "21.0", "41.0", "61.0", "81.0", "101.0", "121.0", "141.0", "161.0", "1001.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1004", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.1", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildMoRo(t *testing.T) {
-	for _, lang := range []string{"mo", "ro"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "102", "1002", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildHe(t *testing.T) {
-	for _, lang := range []string{"he"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"20", "30", "40", "50", "60", "70", "80", "90", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "101", "1001", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildKmMyJboSgBoYueIiSesYoHnjViMsNqoKoSahZhDzTpiJvBmSuWoThIdKdeJwLoToLktJaKeaOsaIgUnd(t *testing.T) {
-	for _, lang := range []string{"km", "my", "jbo", "sg", "bo", "yue", "ii", "ses", "yo", "hnj", "vi", "ms", "nqo", "ko", "sah", "zh", "dz", "tpi", "jv", "bm", "su", "wo", "th", "id", "kde", "jw", "lo", "to", "lkt", "ja", "kea", "osa", "ig", "und"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildGuAmHiBnFaDoiZuKnPcmAs(t *testing.T) {
-	for _, lang := range []string{"gu", "am", "hi", "bn", "fa", "doi", "zu", "kn", "pcm", "as"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildGd(t *testing.T) {
-	for _, lang := range []string{"gd"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "11", "1.0", "11.0", "1.00", "11.00", "1.000", "11.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "12", "2.0", "12.0", "2.00", "12.00", "2.000", "12.000", "2.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "4", "5", "6", "7", "8", "9", "10", "13", "14", "15", "16", "17", "18", "19", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "3.00"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildSl(t *testing.T) {
-	for _, lang := range []string{"sl"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildDa(t *testing.T) {
-	for _, lang := range []string{"da"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildIs(t *testing.T) {
-	for _, lang := range []string{"is"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildArArs(t *testing.T) {
+func TestBuiltinArArs(t *testing.T) {
 	for _, lang := range []string{"ar", "ars"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
@@ -500,415 +891,9 @@ func TestPrebuildArArs(t *testing.T) {
 	}
 }
 
-func TestPrebuildCebFilTl(t *testing.T) {
-	for _, lang := range []string{"ceb", "fil", "tl"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "2", "3", "5", "7", "8", "10", "11", "12", "13", "15", "17", "18", "20", "21", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.5", "0.7", "0.8", "1.0", "1.1", "1.2", "1.3", "1.5", "1.7", "1.8", "2.0", "2.1", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"4", "6", "9", "14", "16", "19", "24", "26", "104", "1004", "0.4", "0.6", "0.9", "1.4", "1.6", "1.9", "2.4", "2.6", "10.4", "100.4", "1000.4"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildBr(t *testing.T) {
-	for _, lang := range []string{"br"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "81.0", "101.0", "1001.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "22", "32", "42", "52", "62", "82", "102", "1002", "2.0", "22.0", "32.0", "42.0", "52.0", "62.0", "82.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "4", "9", "23", "24", "29", "33", "34", "39", "43", "44", "49", "103", "1003", "3.0", "4.0", "9.0", "23.0", "24.0", "29.0", "33.0", "34.0", "103.0", "1003.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1000000", "1000000.0", "1000000.00", "1000000.000", "1000000.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "100", "1000", "10000", "100000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildFr(t *testing.T) {
-	for _, lang := range []string{"fr"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildMk(t *testing.T) {
-	for _, lang := range []string{"mk"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildNeCggKkjNynAzNbPsKlSsyTaTeJgoNoSdMnCeEeSsXhElSoTeoHaNahUgLbTsBemUzFoEoKajXogCkbVoHawNnhTrKcgTkTnTigRwkSehNnVeEuFurHuLgAnGswKyDvKsMlWaeBezKkNyAfOrRofChrOsSnBrxMasPapKuSqSyrAsaMrNrBalMgoBgKaSdhNdSaqVunStOmKsbRmJmc(t *testing.T) {
-	for _, lang := range []string{"ne", "cgg", "kkj", "nyn", "az", "nb", "ps", "kl", "ssy", "ta", "te", "jgo", "no", "sd", "mn", "ce", "ee", "ss", "xh", "el", "so", "teo", "ha", "nah", "ug", "lb", "ts", "bem", "uz", "fo", "eo", "kaj", "xog", "ckb", "vo", "haw", "nnh", "tr", "kcg", "tk", "tn", "tig", "rwk", "seh", "nn", "ve", "eu", "fur", "hu", "lg", "an", "gsw", "ky", "dv", "ks", "ml", "wae", "bez", "kk", "ny", "af", "or", "rof", "chr", "os", "sn", "brx", "mas", "pap", "ku", "sq", "syr", "asa", "mr", "nr", "bal", "mgo", "bg", "ka", "sdh", "nd", "saq", "vun", "st", "om", "ksb", "rm", "jmc"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildSkCs(t *testing.T) {
-	for _, lang := range []string{"sk", "cs"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildPl(t *testing.T) {
-	for _, lang := range []string{"pl"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildDsbHsb(t *testing.T) {
-	for _, lang := range []string{"dsb", "hsb"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002", "0.2", "1.2", "2.2", "3.2", "4.2", "5.2", "6.2", "7.2", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.3", "0.4", "1.3", "1.4", "2.3", "2.4", "3.3", "3.4", "4.3", "4.4", "5.3", "5.4", "6.3", "6.4", "7.3", "7.4", "10.3", "100.3", "1000.3"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildSi(t *testing.T) {
-	for _, lang := range []string{"si"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "1.0", "0.00", "0.01", "1.00", "0.000", "0.001", "1.000", "0.0000", "0.0001", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildMt(t *testing.T) {
-	for _, lang := range []string{"mt"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "102", "103", "104", "105", "106", "107", "1002", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "111", "112", "113", "114", "115", "116", "117", "1011", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "111.0", "1011.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildPrgLv(t *testing.T) {
-	for _, lang := range []string{"prg", "lv"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000", "0.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Zero, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.0", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "22", "23", "24", "25", "26", "27", "28", "29", "102", "1002", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildUkRu(t *testing.T) {
-	for _, lang := range []string{"uk", "ru"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildTzm(t *testing.T) {
-	for _, lang := range []string{"tzm"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "0.0", "1.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "20.0", "21.0", "22.0", "23.0", "24.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "100", "101", "102", "103", "104", "105", "106", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildShi(t *testing.T) {
-	for _, lang := range []string{"shi"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "2.00", "3.00", "4.00", "5.00", "6.00", "7.00", "8.00"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildShSrBsHr(t *testing.T) {
-	for _, lang := range []string{"sh", "sr", "bs", "hr"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "0.2", "0.3", "0.4", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "3.2", "3.3", "3.4", "4.2", "4.3", "4.4", "5.2", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildGa(t *testing.T) {
-	for _, lang := range []string{"ga"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Two, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"3", "4", "5", "6", "3.0", "4.0", "5.0", "6.0", "3.00", "4.00", "5.00", "6.00", "3.000", "4.000", "5.000", "6.000", "3.0000", "4.0000", "5.0000", "6.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Few, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"7", "8", "9", "10", "7.0", "8.0", "9.0", "10.0", "7.00", "8.00", "9.00", "10.00", "7.000", "8.000", "9.000", "10.000", "7.0000", "8.0000", "9.0000", "10.0000"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Many, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"0", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildFfKabHy(t *testing.T) {
-	for _, lang := range []string{"ff", "kab", "hy"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
-		require.True(t, found)
-
-		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
-			assert.Equal(t, One, set.FormFunc(op))
-		}
-
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
-			assert.Equal(t, Other, set.FormFunc(op))
-		}
-
-	}
-}
-
-func TestPrebuildCy(t *testing.T) {
+func TestBuiltinCy(t *testing.T) {
 	for _, lang := range []string{"cy"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
@@ -944,9 +929,9 @@ func TestPrebuildCy(t *testing.T) {
 	}
 }
 
-func TestPrebuildKsh(t *testing.T) {
-	for _, lang := range []string{"ksh"} {
-		set, found := prebuildRuleSets[language.MustParse(lang)]
+func TestBuiltinKw(t *testing.T) {
+	for _, lang := range []string{"kw"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
@@ -959,7 +944,22 @@ func TestPrebuildKsh(t *testing.T) {
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
-		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+		for _, sample := range []string{"2", "22", "42", "62", "82", "102", "122", "142", "1000", "10000", "100000", "2.0", "22.0", "42.0", "62.0", "82.0", "102.0", "122.0", "142.0", "1000.0", "10000.0", "100000.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Two, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"3", "23", "43", "63", "83", "103", "123", "143", "1003", "3.0", "23.0", "43.0", "63.0", "83.0", "103.0", "123.0", "143.0", "1003.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Few, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"21", "41", "61", "81", "101", "121", "141", "161", "1001", "21.0", "41.0", "61.0", "81.0", "101.0", "121.0", "141.0", "161.0", "1001.0"} {
+			op := NewOperands(sample)
+			assert.Equal(t, Many, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1004", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.1", "1000000.0"} {
 			op := NewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}

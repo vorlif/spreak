@@ -93,13 +93,18 @@ func compileNode(node ast.Node) string {
 			}
 		}
 
+		isOnlyOneCheck := len(singleValues)+(len(valueRanges)/2) > 1
 		if e.Op == ast.Equal {
 			// If there are multiple checks they are separated by an "or" and should be bracketed.
-			if len(singleValues)+(len(valueRanges)/2) > 1 {
+			if isOnlyOneCheck {
 				return fmt.Sprintf("( %s )", b.String())
 			}
 
 			return b.String()
+		}
+
+		if isOnlyOneCheck {
+			return fmt.Sprintf("!%s", b.String())
 		}
 
 		return fmt.Sprintf("!( %s )", b.String())

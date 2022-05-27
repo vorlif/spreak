@@ -3,7 +3,7 @@ package spreak
 import (
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/plural"
+	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/localize"
 )
 
@@ -52,7 +52,7 @@ func buildLocale(bundle *Bundle, lang language.Tag, catalogs map[string]Catalog)
 		printFunc:      bundle.printer.GetPrintFunc(lang),
 	}
 
-	l.pluralFunc, _ = plural.ForLanguage(lang)
+	l.pluralFunc, _ = poplural.ForLanguage(lang)
 
 	return l
 }
@@ -65,7 +65,7 @@ func buildSourceCodeLocale(bundle *Bundle) *Locale {
 		printFunc:        bundle.printer.GetPrintFunc(bundle.sourceLanguage),
 		isSourceLanguage: true,
 	}
-	l.pluralFunc, _ = plural.ForLanguage(bundle.sourceLanguage)
+	l.pluralFunc, _ = poplural.ForLanguage(bundle.sourceLanguage)
 	return l
 }
 
