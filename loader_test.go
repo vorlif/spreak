@@ -394,7 +394,7 @@ msgstr ""
 	dec := NewPoDecoder()
 	catl, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
 	assert.NoError(t, err)
-	assert.NotNil(t, catl)
+	require.NotNil(t, catl)
 	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
 	assert.NoError(t, errT)
 	assert.Equal(t, "%d Tage", translation)

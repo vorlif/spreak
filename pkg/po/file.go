@@ -120,6 +120,7 @@ func (h *Header) Get(key string) string {
 		return ""
 	}
 
+	key = strings.ToUpper(key)
 	for unknownHeader, val := range h.UnknownFields {
 		if strings.ToUpper(unknownHeader) == key {
 			return val
