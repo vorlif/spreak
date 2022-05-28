@@ -23,7 +23,7 @@ func WithFallbackLanguage(lang interface{}) BundleOption {
 
 		opts.fallbackLanguage = tag
 		opts.setupActions = append(opts.setupActions, func(builder *bundleBuilder) error {
-			return builder.preloadLanguages(true, tag)
+			return builder.preloadLanguages(false, tag)
 		})
 		return nil
 	}

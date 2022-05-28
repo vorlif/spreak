@@ -34,10 +34,13 @@ func TestWithDomainFs(t *testing.T) {
 }
 
 func TestWithFallbackLanguage(t *testing.T) {
-	bundle, err := NewBundle(WithFallbackLanguage("en"))
+	bundle, err := NewBundle(
+		WithFallbackLanguage("en"),
+		WithDomainPath("b", testdataStructureDir),
+	)
 	if assert.NoError(t, err) {
 		assert.NotNil(t, bundle)
-		assert.Equal(t, language.English, bundle.fallbackLanguage)
+		assert.Equal(t, language.English, bundle.fallbackLocale.language)
 	}
 
 	missingCount := 0
@@ -53,7 +56,7 @@ func TestWithFallbackLanguage(t *testing.T) {
 
 	if assert.NoError(t, err) {
 		assert.NotNil(t, bundle)
-		assert.Equal(t, language.MustParse("de_AT"), bundle.fallbackLanguage)
+		assert.Equal(t, language.MustParse("de_AT"), bundle.fallbackLocale.language)
 
 		require.Equal(t, 0, missingCount)
 		if !assert.Equal(t, 1, len(bundle.languages)) {

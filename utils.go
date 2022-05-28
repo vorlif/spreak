@@ -133,7 +133,7 @@ func (e *ErrNotFound) String() string {
 	return fmt.Sprintf("spreak: item of type %q for lang=%q could not be found: %s ", e.Type, e.Language, e.Identifier)
 }
 
-// ErrMissingLanguage is the error returned when a Locale should be created and the matching language is not
+// ErrMissingLanguage is the error returned when a locale should be created and the matching language is not
 // loaded or has no Catalog.
 type ErrMissingLanguage struct {
 	Language language.Tag
