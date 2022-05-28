@@ -3,7 +3,6 @@ package spreak
 import (
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/localize"
 )
 
@@ -14,11 +13,9 @@ import (
 // If no language fits, the fallback language is used.
 // If no fallback language is specified, the source language is used.
 type Localizer struct {
-	bundle             *Bundle
-	defaultDomain      string
-	locale             *Locale
-	fallbackPrintFunc  PrintFunc
-	fallbackPluralFunc pluralFunction
+	bundle        *Bundle
+	locale        *Locale
+	defaultDomain string
 }
 
 // NewLocalizerForDomain creates a new Localizer for a language and a default domain,
@@ -72,17 +69,8 @@ func newLocalizerFromTag(bundle *Bundle, domain string, tag ...language.Tag) *Lo
 	for _, accept := range tag {
 		if locale, err := NewLocale(bundle, accept); err == nil {
 			l.locale = locale
-			l.fallbackPrintFunc = locale.printFunc
-			l.fallbackPluralFunc = locale.pluralFunc
 			break
 		}
-	}
-
-	if l.fallbackPluralFunc == nil {
-		l.fallbackPluralFunc, _ = poplural.ForLanguage(bundle.sourceLanguage)
-	}
-	if l.fallbackPrintFunc == nil {
-		l.fallbackPrintFunc = bundle.printer.GetPrintFunc(bundle.sourceLanguage)
 	}
 
 	return l
@@ -262,7 +250,7 @@ func (l *Localizer) Print(format string, vars ...interface{}) string {
 		return l.locale.printFunc(format, vars...)
 	}
 
-	return l.fallbackPrintFunc(format, vars...)
+	return l.bundle.fallbackPrintFunc(format, vars...)
 }
 
 func (l *Localizer) dpGettextErr(domain localize.Domain, ctx localize.Context, msgID localize.Singular, vars ...interface{}) (string, error) {
@@ -270,7 +258,7 @@ func (l *Localizer) dpGettextErr(domain localize.Domain, ctx localize.Context, m
 		return l.locale.dpGettextErr(domain, ctx, msgID, vars...)
 	}
 
-	return l.fallbackPrintFunc(msgID, vars...), errMissingLocale
+	return l.bundle.fallbackPrintFunc(msgID, vars...), errMissingLocale
 }
 
 func (l *Localizer) dnpGettextErr(domain string, ctx localize.Context, singular localize.Singular, plural localize.Plural, n interface{}, vars ...interface{}) (string, error) {
@@ -278,9 +266,9 @@ func (l *Localizer) dnpGettextErr(domain string, ctx localize.Context, singular 
 		return l.locale.dnpGettextErr(domain, ctx, singular, plural, n, vars...)
 	}
 
-	if idx := l.fallbackPluralFunc(n); idx == 0 || plural == "" {
-		return l.fallbackPrintFunc(singular, vars...), errMissingLocale
+	if idx := l.bundle.fallbackPluralFunc(n); idx == 0 || plural == "" {
+		return l.bundle.fallbackPrintFunc(singular, vars...), errMissingLocale
 	}
 
-	return l.fallbackPrintFunc(plural, vars...), errMissingLocale
+	return l.bundle.fallbackPrintFunc(plural, vars...), errMissingLocale
 }

@@ -2,29 +2,31 @@ package spreak
 
 import (
 	"errors"
-	"fmt"
 	"io"
 	"io/fs"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/cldrplural"
-	"github.com/vorlif/spreak/internal/mo"
-	"github.com/vorlif/spreak/internal/poplural"
+	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/internal/util"
-	"github.com/vorlif/spreak/pkg/po"
 )
 
 const (
 	UnknownFile = "unknown"
 	PoFile      = ".po"
 	MoFile      = ".mo"
-
-	poCLDRHeader = "X-spreak-use-CLDR"
 )
+
+// Catalog represents a collection of messages (translations) for a language and a domain.
+// Normally it is a PO or MO file.
+// Deprecated: Moved to catalog.Catalog. This alias will be removed in version 1.0.
+type Catalog = catalog.Catalog
+
+// A Decoder reads and decodes catalogs for a language and a domain from a byte array.
+// Deprecated: Moved to catalog.Decoder and will be removed with v1.0.
+type Decoder = catalog.Decoder
 
 // Loader is responsible for loading Catalogs for a language and a domain.
 // A bundle loads each domain through its own loader.
@@ -32,12 +34,7 @@ const (
 // If a loader cannot find a matching catalog for it must return error spreak.ErrNotFound,
 // otherwise the bundle creation will be aborted with the returned error.
 type Loader interface {
-	Load(lang language.Tag, domain string) (Catalog, error)
-}
-
-// A Decoder reads and decodes catalogs for a language and a domain from a byte array.
-type Decoder interface {
-	Decode(lang language.Tag, domain string, data []byte) (Catalog, error)
+	Load(lang language.Tag, domain string) (catalog.Catalog, error)
 }
 
 // A Resolver is used by the FilesystemLoader to resolve the appropriate path for a file.
@@ -63,7 +60,7 @@ type FilesystemLoader struct {
 	fsys       fs.FS
 	resolver   Resolver
 	extensions []string
-	decoder    []Decoder
+	decoder    []catalog.Decoder
 }
 
 var _ Loader = (*FilesystemLoader)(nil)
@@ -74,7 +71,7 @@ var _ Loader = (*FilesystemLoader)(nil)
 // Otherwise, only the stored decoders are used.
 func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	l := &FilesystemLoader{
-		decoder:    make([]Decoder, 0),
+		decoder:    make([]catalog.Decoder, 0),
 		extensions: make([]string, 0),
 	}
 
@@ -88,8 +85,8 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	}
 
 	if len(l.decoder) == 0 {
-		l.addDecoder(PoFile, NewPoDecoder())
-		l.addDecoder(MoFile, NewMoDecoder())
+		l.addDecoder(PoFile, catalog.NewPoDecoder())
+		l.addDecoder(MoFile, catalog.NewMoDecoder())
 	}
 
 	if l.fsys == nil {
@@ -107,7 +104,7 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	return l, nil
 }
 
-func (l *FilesystemLoader) Load(lang language.Tag, domain string) (Catalog, error) {
+func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 
 	for i, extension := range l.extensions {
 		path, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
@@ -132,17 +129,17 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (Catalog, erro
 			return nil, errD
 		}
 
-		catalog, errC := l.decoder[i].Decode(lang, domain, data)
+		catl, errC := l.decoder[i].Decode(lang, domain, data)
 		if errC != nil {
 			return nil, errC
 		}
-		return catalog, nil
+		return catl, nil
 	}
 
 	return nil, NewErrNotFound(lang, "file", "domain=%q", domain)
 }
 
-func (l *FilesystemLoader) addDecoder(ext string, decoder Decoder) {
+func (l *FilesystemLoader) addDecoder(ext string, decoder catalog.Decoder) {
 	l.extensions = append(l.extensions, ext)
 	l.decoder = append(l.decoder, decoder)
 }
@@ -188,7 +185,7 @@ func WithResolver(resolver Resolver) FsOption {
 }
 
 // WithDecoder stores a decoder for an extension.
-func WithDecoder(ext string, decoder Decoder) FsOption {
+func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 	return func(r *FilesystemLoader) error {
 		r.addDecoder(ext, decoder)
 		return nil
@@ -196,10 +193,10 @@ func WithDecoder(ext string, decoder Decoder) FsOption {
 }
 
 // WithMoDecoder stores the mo file decoder.
-func WithMoDecoder() FsOption { return WithDecoder(MoFile, &moDecoder{}) }
+func WithMoDecoder() FsOption { return WithDecoder(MoFile, catalog.NewMoDecoder()) }
 
 // WithPoDecoder stores the mo file decoder.
-func WithPoDecoder() FsOption { return WithDecoder(PoFile, &poDecoder{}) }
+func WithPoDecoder() FsOption { return WithDecoder(PoFile, catalog.NewPoDecoder()) }
 
 type defaultResolver struct {
 	search   bool
@@ -296,127 +293,4 @@ func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, 
 	}
 
 	return "", os.ErrNotExist
-}
-
-type poDecoder struct {
-	useCLDRPlural bool
-}
-
-type moDecoder struct {
-	useCLDRPlural bool
-}
-
-// NewPoDecoder returns a new Decoder for reading po files.
-// If a plural forms header is set, it will be used.
-// Otherwise, the CLDR plural rules are used to set the plural form.
-// If there is no CLDR plural rule, the English plural rules will be used.
-func NewPoDecoder() Decoder { return &poDecoder{} }
-
-// NewPoCLDRDecoder creates a decoder for reading po files,
-// which always uses the CLDR plural rules for determining the plural form.
-func NewPoCLDRDecoder() Decoder { return &poDecoder{useCLDRPlural: true} }
-
-// NewMoDecoder returns a new Decoder for reading mo files.
-// If a plural forms header is set, it will be used.
-// Otherwise, the CLDR plural rules are used to set the plural form.
-// If there is no CLDR plural rule, the English plural rules will be used.
-func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
-
-// NewMoCLDRDecoder creates a decoder for reading mo files,
-// which always uses the CLDR plural rules for determining the plural form.
-func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
-
-func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	poFile, errParse := po.Parse(data)
-	if errParse != nil {
-		return nil, errParse
-	}
-
-	// We could check here if the language of the file matches the target language,
-	// but leave it off to make loading more flexible.
-
-	return buildGettextCatalog(poFile, lang, domain, d.useCLDRPlural)
-}
-
-func (d moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	moFile, errParse := mo.ParseBytes(data)
-	if errParse != nil {
-		return nil, errParse
-	}
-
-	// We could check here if the language of the file matches the target language,
-	// but leave it off to make loading more flexible.
-
-	return buildGettextCatalog(moFile, lang, domain, d.useCLDRPlural)
-}
-
-func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLDRPlural bool) (Catalog, error) {
-	messages := make(messageLookupMap, len(file.Messages))
-
-	for ctx := range file.Messages {
-		if len(file.Messages[ctx]) == 0 {
-			continue
-		}
-
-		if _, hasContext := messages[ctx]; !hasContext {
-			messages[ctx] = make(map[string]*gettextMessage)
-		}
-
-		for msgID, poMsg := range file.Messages[ctx] {
-			if msgID == "" {
-				continue
-			}
-
-			d := &gettextMessage{
-				Context:      poMsg.Context,
-				ID:           poMsg.ID,
-				IDPlural:     poMsg.IDPlural,
-				Translations: poMsg.Str,
-			}
-
-			messages[poMsg.Context][poMsg.ID] = d
-		}
-	}
-
-	catl := &gettextCatalog{
-		language:     lang,
-		translations: messages,
-	}
-
-	if useCLDRPlural {
-		catl.pluralFunc = getCLDRPluralFunction(lang)
-		return catl, nil
-	}
-
-	if file.Header != nil {
-		if val := file.Header.Get(poCLDRHeader); strings.ToLower(val) == "true" {
-			catl.pluralFunc = getCLDRPluralFunction(lang)
-			return catl, nil
-		}
-
-		if file.Header.PluralForms != "" {
-			forms, err := poplural.Parse(file.Header.PluralForms)
-			if err != nil {
-				return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
-			}
-			catl.pluralFunc = forms.Evaluate
-			return catl, nil
-		}
-	}
-
-	catl.pluralFunc = getCLDRPluralFunction(lang)
-	return catl, nil
-}
-
-func getCLDRPluralFunction(lang language.Tag) func(a interface{}) int {
-	ruleSet, _ := cldrplural.ForLanguage(lang)
-	return func(a interface{}) int {
-		cat := ruleSet.Evaluate(a)
-		for i := 0; i < len(ruleSet.Categories); i++ {
-			if ruleSet.Categories[i] == cat {
-				return i
-			}
-		}
-		return 0
-	}
 }

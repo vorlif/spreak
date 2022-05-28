@@ -9,6 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/localize"
 )
 
@@ -266,19 +267,19 @@ func TestLocaleMissingCallback(t *testing.T) {
 	want := "empty translation"
 	get := locale.Get(want)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingTranslation{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingTranslation{}, lastErr)
 
 	get = locale.NGet(want, "plural", 1)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingTranslation{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingTranslation{}, lastErr)
 
 	get = locale.PGet("unknown", want)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingContext{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingContext{}, lastErr)
 
 	get = locale.NPGet("unknown", want, "plural", 1)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingContext{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingContext{}, lastErr)
 
 	get = locale.DGet("unknown-domain", want)
 	assert.Equal(t, want, get)
@@ -291,9 +292,9 @@ func TestLocaleMissingCallback(t *testing.T) {
 	want = "#+/?%=§$=§$"
 	get = locale.Get(want)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingMessageID{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingMessageID{}, lastErr)
 
 	get = locale.NGet(want, "plural", 1)
 	assert.Equal(t, want, get)
-	assert.IsType(t, &ErrMissingMessageID{}, lastErr)
+	assert.IsType(t, &catalog.ErrMissingMessageID{}, lastErr)
 }

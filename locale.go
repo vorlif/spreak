@@ -3,6 +3,7 @@ package spreak
 import (
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/internal/poplural"
 	"github.com/vorlif/spreak/localize"
 )
@@ -13,13 +14,12 @@ import (
 // A locale needs at least one catalog and therefore there can be no locale,
 // if no catalog is found for at least one domain.
 type Locale struct {
-	bundle         *Bundle
-	language       language.Tag
-	defaultDomain  string
-	domainCatalogs map[string]Catalog
-	printFunc      PrintFunc
-
-	pluralFunc       pluralFunction
+	bundle           *Bundle
+	language         language.Tag
+	defaultDomain    string
+	domainCatalogs   map[string]catalog.Catalog
+	printFunc        PrintFunc
+	pluralFunc       poplural.PluralFunc
 	isSourceLanguage bool
 }
 
@@ -43,7 +43,7 @@ func NewLocaleWithDomain(bundle *Bundle, lang language.Tag, domain string) (*Loc
 	return nil, newMissingLanguageError(lang)
 }
 
-func buildLocale(bundle *Bundle, lang language.Tag, catalogs map[string]Catalog) *Locale {
+func buildLocale(bundle *Bundle, lang language.Tag, catalogs map[string]catalog.Catalog) *Locale {
 	l := &Locale{
 		bundle:         bundle,
 		language:       lang,
@@ -324,7 +324,7 @@ func (l *Locale) printSourceMessage(singular, plural string, n interface{}, vars
 	return l.printFunc(plural, vars...)
 }
 
-func (l *Locale) getCatalog(domain string) (Catalog, error) {
+func (l *Locale) getCatalog(domain string) (catalog.Catalog, error) {
 	if _, hasDomain := l.domainCatalogs[domain]; !hasDomain {
 		err := &ErrMissingDomain{
 			Language: l.language,

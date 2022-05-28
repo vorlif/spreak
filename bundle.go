@@ -4,6 +4,9 @@ import (
 	"errors"
 
 	"golang.org/x/text/language"
+
+	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/internal/poplural"
 )
 
 // NoDomain is the domain which is used if no default domain is stored.
@@ -27,7 +30,6 @@ type MissingTranslationCallback func(err error)
 // The matcher is used, for example, when a new Localizer is created to determine the best matching language.
 type LanguageMatcherBuilder func(t []language.Tag, options ...language.MatchOption) language.Matcher
 
-type pluralFunction func(n interface{}) int
 type setupAction func(options *bundleBuilder) error
 
 type bundleBuilder struct {
@@ -49,9 +51,11 @@ type Bundle struct {
 	defaultDomain   string
 	errContext      string
 
-	sourceLanguage   language.Tag
-	fallbackLanguage language.Tag
-	languageMatcher  language.Matcher
+	sourceLanguage     language.Tag
+	fallbackLanguage   language.Tag
+	fallbackPrintFunc  PrintFunc
+	fallbackPluralFunc poplural.PluralFunc
+	languageMatcher    language.Matcher
 
 	languages []language.Tag
 	locales   map[language.Tag]*Locale
@@ -104,6 +108,8 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 
 	builder.languageMatcher = builder.languageMatcherBuilder(builder.languages)
 	builder.printer.Init(builder.languages)
+	builder.fallbackPluralFunc, _ = poplural.ForLanguage(builder.sourceLanguage)
+	builder.fallbackPrintFunc = builder.printer.GetPrintFunc(builder.sourceLanguage)
 	return builder.Bundle, nil
 }
 
@@ -189,7 +195,7 @@ func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*Locale,
 		return locale, nil
 	}
 
-	catalogs := make(map[string]Catalog, len(b.domainLoaders))
+	catalogs := make(map[string]catalog.Catalog, len(b.domainLoaders))
 
 	for domain, domainLoader := range b.domainLoaders {
 		catl, errD := domainLoader.Load(lang, domain)

@@ -7,6 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/localize"
 )
 
@@ -16,22 +17,22 @@ var (
 )
 
 type testDecoder struct {
-	f func(lang language.Tag, domain string, data []byte) (Catalog, error)
+	f func(lang language.Tag, domain string, data []byte) (catalog.Catalog, error)
 }
 
-func (t *testDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
+func (t *testDecoder) Decode(lang language.Tag, domain string, data []byte) (catalog.Catalog, error) {
 	return t.f(lang, domain, data)
 }
 
-var _ Decoder = (*testDecoder)(nil)
+var _ catalog.Decoder = (*testDecoder)(nil)
 
 type testLoader struct {
-	f func(lang language.Tag, domain string) (Catalog, error)
+	f func(lang language.Tag, domain string) (catalog.Catalog, error)
 }
 
 var _ Loader = (*testLoader)(nil)
 
-func (t *testLoader) Load(lang language.Tag, domain string) (Catalog, error) {
+func (t *testLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 	return t.f(lang, domain)
 }
 

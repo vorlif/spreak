@@ -14,7 +14,9 @@ var (
 	langToBuiltIn = make(map[string]*Form)
 )
 
-func ForLanguage(lang language.Tag) (func(n interface{}) int, bool) {
+type PluralFunc = func(n interface{}) int
+
+func ForLanguage(lang language.Tag) (PluralFunc, bool) {
 	form, found := pluralRuleForLanguage(lang)
 	return form.Evaluate, found
 }
