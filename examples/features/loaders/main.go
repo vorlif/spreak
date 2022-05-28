@@ -6,6 +6,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/catalog"
 )
 
 const (
@@ -19,9 +20,9 @@ type myLoader struct{}
 
 var _ spreak.Loader = (*myLoader)(nil)
 
-func (myLoader) Load(lang language.Tag, domain string) (spreak.Catalog, error) {
+func (myLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 	if lang == language.Spanish && domain == Domain {
-		decoder := spreak.NewPoDecoder()
+		decoder := catalog.NewPoDecoder()
 		return decoder.Decode(lang, domain, esTranslations)
 	}
 

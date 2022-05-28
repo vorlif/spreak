@@ -7,6 +7,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/catalog"
 )
 
 func main() {
@@ -51,14 +52,14 @@ func main() {
 // We create our own decoder which designs a JSON catalog from the content of the JSON files.
 type jsonDecoder struct{}
 
-var _ spreak.Decoder = (*jsonDecoder)(nil)
+var _ catalog.Decoder = (*jsonDecoder)(nil)
 
-func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (spreak.Catalog, error) {
-	catalog := NewJsonCatalog(lang, domain)
-	if err := json.Unmarshal(data, &catalog.translations); err != nil {
+func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (catalog.Catalog, error) {
+	catl := NewJsonCatalog(lang, domain)
+	if err := json.Unmarshal(data, &catl.translations); err != nil {
 		return nil, err
 	}
-	return catalog, nil
+	return catl, nil
 }
 
 // We create a catalog for our JSON files.
@@ -76,7 +77,7 @@ func NewJsonCatalog(lang language.Tag, domain string) *jsonCatalog {
 	}
 }
 
-var _ spreak.Catalog = (*jsonCatalog)(nil)
+var _ catalog.Catalog = (*jsonCatalog)(nil)
 
 func (c *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return c.GetPluralTranslation(ctx, msgID, 1)
@@ -84,7 +85,7 @@ func (c *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 
 func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
 	if ctx != "" {
-		err := &spreak.ErrMissingContext{
+		err := &catalog.ErrMissingContext{
 			Language: c.language,
 			Domain:   c.domain,
 			Context:  ctx,
@@ -101,7 +102,7 @@ func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (st
 		msgID += "_plural"
 	}
 	if _, hasMsg := c.translations[msgID]; !hasMsg {
-		err := &spreak.ErrMissingMessageID{
+		err := &catalog.ErrMissingMessageID{
 			Language: c.language,
 			Domain:   c.domain,
 			Context:  ctx,
@@ -112,7 +113,7 @@ func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (st
 
 	translation := c.translations[msgID]
 	if translation == "" {
-		err := &spreak.ErrMissingTranslation{
+		err := &catalog.ErrMissingTranslation{
 			Language: c.language,
 			Domain:   c.domain,
 			Context:  ctx,

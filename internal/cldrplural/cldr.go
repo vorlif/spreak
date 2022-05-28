@@ -9,7 +9,7 @@ import (
 	"github.com/vorlif/spreak/internal/util"
 )
 
-type Category byte
+type Category int
 
 const (
 	Zero Category = iota

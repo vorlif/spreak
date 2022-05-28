@@ -8,6 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
+	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/internal/util"
 )
 
@@ -33,10 +34,13 @@ func TestWithDomainFs(t *testing.T) {
 }
 
 func TestWithFallbackLanguage(t *testing.T) {
-	bundle, err := NewBundle(WithFallbackLanguage("en"))
+	bundle, err := NewBundle(
+		WithFallbackLanguage("en"),
+		WithDomainPath("b", testdataStructureDir),
+	)
 	if assert.NoError(t, err) {
 		assert.NotNil(t, bundle)
-		assert.Equal(t, language.English, bundle.fallbackLanguage)
+		assert.Equal(t, language.English, bundle.fallbackLocale.language)
 	}
 
 	missingCount := 0
@@ -52,7 +56,7 @@ func TestWithFallbackLanguage(t *testing.T) {
 
 	if assert.NoError(t, err) {
 		assert.NotNil(t, bundle)
-		assert.Equal(t, language.MustParse("de_AT"), bundle.fallbackLanguage)
+		assert.Equal(t, language.MustParse("de_AT"), bundle.fallbackLocale.language)
 
 		require.Equal(t, 0, missingCount)
 		if !assert.Equal(t, 1, len(bundle.languages)) {
@@ -112,7 +116,7 @@ func TestWithLoader(t *testing.T) {
 		require.Nil(t, bundle)
 
 		loader := testLoader{
-			f: func(lang language.Tag, domain string) (Catalog, error) {
+			f: func(lang language.Tag, domain string) (catalog.Catalog, error) {
 				return nil, errors.New("test loader")
 			},
 		}
@@ -122,7 +126,7 @@ func TestWithLoader(t *testing.T) {
 	})
 
 	t.Run("The passed loader is set", func(t *testing.T) {
-		loader := &testLoader{f: func(lang language.Tag, domain string) (Catalog, error) {
+		loader := &testLoader{f: func(lang language.Tag, domain string) (catalog.Catalog, error) {
 			return nil, errors.New("not used")
 		}}
 		bundle, err := NewBundle(WithDomainLoader(NoDomain, loader))
@@ -167,12 +171,12 @@ func TestWithPrintFuncGenerator(t *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, bundle)
 		require.NotNil(t, bundle.printer)
-		assert.Equal(t, 0, executionCount)
+		assert.Equal(t, 1, executionCount)
 
 		printF := bundle.printer.GetPrintFunc(language.Und)
 		result := printF("test")
 		assert.Equal(t, language.Und.String(), result)
-		assert.Equal(t, 1, executionCount)
+		assert.Equal(t, 2, executionCount)
 	})
 
 	t.Run("Nil is not a valid print function generator", func(t *testing.T) {

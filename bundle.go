@@ -4,6 +4,8 @@ import (
 	"errors"
 
 	"golang.org/x/text/language"
+
+	"github.com/vorlif/spreak/catalog"
 )
 
 // NoDomain is the domain which is used if no default domain is stored.
@@ -27,12 +29,13 @@ type MissingTranslationCallback func(err error)
 // The matcher is used, for example, when a new Localizer is created to determine the best matching language.
 type LanguageMatcherBuilder func(t []language.Tag, options ...language.MatchOption) language.Matcher
 
-type pluralFunction func(n interface{}) int
 type setupAction func(options *bundleBuilder) error
 
 type bundleBuilder struct {
 	*Bundle
 
+	sourceLanguage         language.Tag
+	fallbackLanguage       language.Tag
 	languageMatcherBuilder LanguageMatcherBuilder
 	domainLoaders          map[string]Loader
 	setupActions           []setupAction
@@ -49,12 +52,12 @@ type Bundle struct {
 	defaultDomain   string
 	errContext      string
 
-	sourceLanguage   language.Tag
-	fallbackLanguage language.Tag
-	languageMatcher  language.Matcher
+	fallbackLocale  *locale
+	sourceLocale    *locale
+	languageMatcher language.Matcher
 
 	languages []language.Tag
-	locales   map[language.Tag]*Locale
+	locales   map[language.Tag]*locale
 	domains   map[string]bool
 }
 
@@ -64,17 +67,17 @@ type Bundle struct {
 func NewBundle(opts ...BundleOption) (*Bundle, error) {
 	builder := &bundleBuilder{
 		Bundle: &Bundle{
-			printer:          NewDefaultPrinter(),
-			defaultDomain:    NoDomain,
-			sourceLanguage:   language.Und,
-			fallbackLanguage: language.Und,
-			errContext:       ErrorsCtx,
+			printer:       NewDefaultPrinter(),
+			defaultDomain: NoDomain,
+			errContext:    ErrorsCtx,
 
 			languages: make([]language.Tag, 0),
-			locales:   make(map[language.Tag]*Locale),
+			locales:   make(map[language.Tag]*locale),
 			domains:   make(map[string]bool),
 		},
 		languageMatcherBuilder: language.NewMatcher,
+		fallbackLanguage:       language.Und,
+		sourceLanguage:         language.Und,
 
 		domainLoaders: make(map[string]Loader),
 		setupActions:  make([]setupAction, 0),
@@ -104,6 +107,19 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 
 	builder.languageMatcher = builder.languageMatcherBuilder(builder.languages)
 	builder.printer.Init(builder.languages)
+
+	if sourceLocale, hasSource := builder.locales[builder.sourceLanguage]; hasSource {
+		builder.Bundle.sourceLocale = sourceLocale
+	} else {
+		builder.Bundle.sourceLocale = buildSourceLocale(builder.Bundle, builder.sourceLanguage)
+	}
+
+	if fallbackLocale, hasFallback := builder.locales[builder.fallbackLanguage]; hasFallback {
+		builder.Bundle.fallbackLocale = fallbackLocale
+	} else {
+		builder.Bundle.fallbackLocale = builder.Bundle.sourceLocale
+	}
+
 	return builder.Bundle, nil
 }
 
@@ -173,23 +189,23 @@ func (b *bundleBuilder) preloadLanguages(optional bool, languages ...interface{}
 	return nil
 }
 
-func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*Locale, error) {
+func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*locale, error) {
 	if lang == language.Und {
 		return nil, newMissingLanguageError(lang)
 	}
 
 	if lang == b.sourceLanguage {
-		locale := buildSourceCodeLocale(b.Bundle)
-		b.locales[lang] = locale
+		sourceLocale := buildSourceLocale(b.Bundle, b.sourceLanguage)
+		b.locales[lang] = sourceLocale
 		b.languages = append(b.languages, lang)
-		return locale, nil
+		return sourceLocale, nil
 	}
 
-	if locale, isCached := b.locales[lang]; isCached {
-		return locale, nil
+	if cachedLocale, isCached := b.locales[lang]; isCached {
+		return cachedLocale, nil
 	}
 
-	catalogs := make(map[string]Catalog, len(b.domainLoaders))
+	catalogs := make(map[string]catalog.Catalog, len(b.domainLoaders))
 
 	for domain, domainLoader := range b.domainLoaders {
 		catl, errD := domainLoader.Load(lang, domain)
@@ -215,8 +231,8 @@ func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*Locale,
 		return nil, newMissingLanguageError(lang)
 	}
 
-	locale := buildLocale(b.Bundle, lang, catalogs)
-	b.locales[lang] = locale
+	langLocale := buildLocale(b.Bundle, lang, catalogs)
+	b.locales[lang] = langLocale
 	b.languages = append(b.languages, lang)
-	return locale, nil
+	return langLocale, nil
 }

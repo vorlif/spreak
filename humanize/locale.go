@@ -6,6 +6,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/catalog"
 )
 
 type localeLoader struct {
@@ -22,7 +23,7 @@ func newLoader(locales []*LocaleData) *localeLoader {
 	return loader
 }
 
-func (loader *localeLoader) Load(lang language.Tag, domain string) (spreak.Catalog, error) {
+func (loader *localeLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 	data, hasData := loader.locales[lang]
 	if !hasData {
 		return nil, spreak.NewErrNotFound(lang, "humanize", "domain=%q", domain)
@@ -33,7 +34,7 @@ func (loader *localeLoader) Load(lang language.Tag, domain string) (spreak.Catal
 		return nil, spreak.NewErrNotFound(lang, "humanize", "domain=%q,err=%v", domain, err)
 	}
 
-	dec := spreak.NewPoDecoder()
+	dec := catalog.NewPoDecoder()
 	catl, err := dec.Decode(lang, domain, content)
 	if err != nil {
 		return nil, err

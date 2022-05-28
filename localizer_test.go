@@ -83,7 +83,6 @@ func TestLocalizer_Getter(t *testing.T) {
 	assert.Equal(t, language.German, localizer.Language())
 	assert.Equal(t, "a", localizer.DefaultDomain())
 	assert.True(t, localizer.HasLocale())
-	assert.NotNil(t, localizer.GetLocale())
 }
 
 func TestLocalizer_NoLocale(t *testing.T) {
@@ -100,15 +99,13 @@ func TestLocalizer_NoLocale(t *testing.T) {
 	require.NotNil(t, localizer)
 
 	assert.False(t, localizer.HasLocale())
-	tr, err := localizer.dnpGettextErr("unknown", NoCtx, "%d day", "%d days", 10, 10)
+	tr, err := localizer.lookupPluralTranslation("unknown", NoCtx, "%d day", "%d days", 10, 10)
 	assert.Error(t, err)
 	assert.Equal(t, "10 days", tr)
 
-	tr, err = localizer.dpGettextErr("unknown", NoCtx, "%d day", 1)
+	tr, err = localizer.lookupSingularTranslation("unknown", NoCtx, "%d day", 1)
 	assert.Error(t, err)
 	assert.Equal(t, "1 day", tr)
-
-	assert.Nil(t, localizer.GetLocale())
 
 	localizeMsg := &localize.Message{
 		Singular: "%d day",
@@ -208,7 +205,7 @@ func TestLocalizer_MainFunctions(t *testing.T) {
 
 	t.Run("translate singular", func(t *testing.T) {
 		for _, tt := range singularTestData {
-			got, err := localizer.dpGettextErr("a", tt.ctx, tt.msgID, tt.params...)
+			got, err := localizer.lookupSingularTranslation("a", tt.ctx, tt.msgID, tt.params...)
 			tt.wantErr(t, err, fmt.Sprintf("pGettextErr(%q, %v)", tt.ctx, tt.msgID))
 			assert.Equalf(t, tt.translated, got, "pGettextErr(%q, %v)", tt.ctx, tt.msgID)
 		}
@@ -216,7 +213,7 @@ func TestLocalizer_MainFunctions(t *testing.T) {
 
 	t.Run("translate plural", func(t *testing.T) {
 		for idx, tt := range pluralTestData {
-			got, err := localizer.dnpGettextErr("a", tt.ctx, tt.msgID, tt.plural, tt.n, tt.params...)
+			got, err := localizer.lookupPluralTranslation("a", tt.ctx, tt.msgID, tt.plural, tt.n, tt.params...)
 			if tt.wantErr(t, err, fmt.Sprintf("localizer idx=%d npGettextErr(%q, %q)", idx, tt.ctx, tt.msgID)) {
 				assert.Equalf(t, tt.translated, got, "localizer idx=%d npGettextErr(%q, %q)", idx, tt.ctx, tt.msgID)
 			}
@@ -224,15 +221,15 @@ func TestLocalizer_MainFunctions(t *testing.T) {
 	})
 
 	t.Run("default text is returned for a non-existent domain", func(t *testing.T) {
-		tr, err := localizer.dnpGettextErr("unknown", NoCtx, "%d day", "%d days", 1, 1)
+		tr, err := localizer.lookupPluralTranslation("unknown", NoCtx, "%d day", "%d days", 1, 1)
 		assert.Error(t, err)
 		assert.Equal(t, "1 day", tr)
 
-		tr, err = localizer.dnpGettextErr("unknown", NoCtx, "%d day", "%d days", 10, 10)
+		tr, err = localizer.lookupPluralTranslation("unknown", NoCtx, "%d day", "%d days", 10, 10)
 		assert.Error(t, err)
 		assert.Equal(t, "10 days", tr)
 
-		tr, err = localizer.dpGettextErr("unknown", NoCtx, "%d day", 1)
+		tr, err = localizer.lookupSingularTranslation("unknown", NoCtx, "%d day", 1)
 		assert.Error(t, err)
 		assert.Equal(t, "1 day", tr)
 	})
@@ -273,7 +270,7 @@ func TestLocalizer_LocalizeError(t *testing.T) {
 		raw.hasDomain = true
 		get = localizer.LocalizeError(raw)
 		assert.True(t, localizer.HasLocale())
-		assert.Contains(t, localizer.locale.Domains(), "z")
+		assert.Contains(t, localizer.Domains(), "z")
 		assert.Error(t, get)
 		if assert.IsType(t, &localize.Error{}, get) {
 			loErr := get.(*localize.Error)
