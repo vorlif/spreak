@@ -1,0 +1,33 @@
+{
+  "forms.address": "Billing address",
+  "forms.cart": "Your cart",
+  "forms.checkout_title": "Checkout",
+  "forms.continue": "Continue to checkout",
+  "forms.description": "Brief description",
+  "forms.first": "First",
+  "forms.header": "Checkout",
+  "forms.keep_infos": "Save this information for next time",
+  "forms.lead": "Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.",
+  "forms.name": "Name",
+  "forms.password": "Password",
+  "forms.product": "Product name",
+  "forms.total": "Total %s",
+  "home.choose_language": "Choose a language",
+  "home.forms": "Forms",
+  "home.header": "Spreak Tour",
+  "home.lead": "Spreak is a flexible translation and humanization library for Go, based on the concepts behind gettext",
+  "home.selection_field": "Language selection field",
+  "home.title": "Welcome to Spreak",
+  "not_found.great_user": "Nice to see you %s",
+  "not_found.next_steps": "In the next steps we will see how we use spreak",
+  "not_found.not_exist": "The page you are looking for does not exist.",
+  "not_found.stupid_statement": {
+    "one": "You will understand why Florian has a dog",
+    "other": "You will understand why Florian has dogs"
+  },
+  "not_found.welcome": "Welcome to the spreak tour",
+  "not_found.wish": {
+    "one": "We wish you a nice day",
+    "other": "We wish you nice days"
+  }
+}

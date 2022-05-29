@@ -117,8 +117,6 @@ func (m *JSONCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (
 
 type JSONFile map[string]*JSONMessage
 
-type jsonMessageAlias JSONMessage
-
 type JSONMessage struct {
 	Comment string `json:"comment,omitempty"`
 	Context string `json:"context,omitempty"`
@@ -180,6 +178,8 @@ func (m *JSONMessage) MarshalJSON() ([]byte, error) {
 
 	return json.Marshal(m.Other)
 }
+
+type jsonMessageAlias JSONMessage
 
 func (m *JSONMessage) UnmarshalJSON(data []byte) error {
 	var other string
