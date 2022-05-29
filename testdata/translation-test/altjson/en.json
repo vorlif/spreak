@@ -1,0 +1,25 @@
+{
+  "domain.name": "alternative domain",
+  "user.welcome": "Welcome %s",
+  "week": {
+    "one": "week",
+    "other": "weeks"
+  },
+  "days": {
+    "one": "%d day",
+    "other": "%d days"
+  },
+  "test_context": {
+    "context": "context",
+    "other": "test with context"
+  },
+  "result_context": {
+    "context": "context",
+    "one": "%d result",
+    "other": "%d results"
+  },
+  "user.welcome_cowboy": {
+    "context": "cowboy",
+    "other": "Howdy %s"
+  }
+}

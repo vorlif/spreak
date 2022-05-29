@@ -8,11 +8,6 @@ import (
 	"github.com/vorlif/spreak/localize"
 )
 
-// A locale holds the catalogs of all domains for a language and provides an interface for their use.
-// It has a default domain, which can differ from the bundle default domain and is used
-// if no domain is specified for translations.
-// A locale needs at least one catalog and therefore there can be no locale,
-// if no catalog is found for at least one domain.
 type locale struct {
 	bundle           *Bundle
 	language         language.Tag

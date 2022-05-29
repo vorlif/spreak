@@ -2,6 +2,7 @@ package spreak
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"io/fs"
 	"os"
@@ -17,6 +18,7 @@ const (
 	UnknownFile = "unknown"
 	PoFile      = ".po"
 	MoFile      = ".mo"
+	JSONFile    = ".json"
 )
 
 // Catalog represents a collection of messages (translations) for a language and a domain.
@@ -87,6 +89,7 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	if len(l.decoder) == 0 {
 		l.addDecoder(PoFile, catalog.NewPoDecoder())
 		l.addDecoder(MoFile, catalog.NewMoDecoder())
+		l.addDecoder(JSONFile, catalog.NewJSONDecoder())
 	}
 
 	if l.fsys == nil {
@@ -131,7 +134,7 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 
 		catl, errC := l.decoder[i].Decode(lang, domain, data)
 		if errC != nil {
-			return nil, errC
+			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", path, errC)
 		}
 		return catl, nil
 	}

@@ -1,0 +1,18 @@
+{
+  "app.name": "TODO Liste",
+  "date.weekday": "Wochentag",
+  "user.goodbye": "Tschau %s",
+  "animal.cat": {
+    "one": "",
+    "other": ""
+  },
+  "animal.dog_my-animals": {
+    "context": "my-animals",
+    "one": "Ich habe einen Hund",
+    "other": "Ich habe Hunde"
+  },
+  "animal.dog": {
+    "one": "Jemand hat einen Hund",
+    "other": "Jemand hat Hunde"
+  }
+}
