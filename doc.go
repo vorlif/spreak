@@ -21,7 +21,8 @@
 //
 // Plurals
 //
-// For po and mo files both gettext plural rules and CLDR plural rules are supported.
+// For JSON files only the CLDR plural rules are supported.
+// For po and mo files both gettext plural forms and CLDR plural rules are supported.
 // The CLDR rules provides better support when floating point numbers are used.
 // When using the CLDR plural rules, a notation increasing from "Zero" to "Other" should be used.
 // For example, if the used language supports "Zero", "Few" and "Other", Zero should be notated as entry 0, Few as entry 1 and Other as entry 2.
@@ -29,7 +30,7 @@
 // On the website https://php-gettext.github.io/Languages/ you can find a list of gettext plural rules which are compatible to the CLDR plural rules.
 //
 // To use the CLDR rules in po/mo files you can either add a header "X-spreak-use-CLDR: true" or create a decoder with
-// NewPoCLDRDecoder() / NewMoCLDRDecoder().
+// catalog.NewPoCLDRDecoder() / catalog.NewMoCLDRDecoder().
 //
 // For Polish with One, Few and Other, the structure of a Po file according to this convention could look like this:
 //     msgid ""

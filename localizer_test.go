@@ -298,12 +298,12 @@ func TestKeyValueLocalizer(t *testing.T) {
 	require.NoError(t, errB)
 	require.NotNil(t, bundle)
 
-	deLoc := NewKeyValueLocalizer(bundle, "de")
-	enLoc := NewKeyValueLocalizer(bundle, "en")
+	deLoc := NewKeyLocalizer(bundle, "de")
+	enLoc := NewKeyLocalizer(bundle, "en")
 	assert.Equal(t, language.German, deLoc.Language())
 
 	t.Run("Uses fallback for unknown language", func(t *testing.T) {
-		localizer := NewKeyValueLocalizer(bundle, "es")
+		localizer := NewKeyLocalizer(bundle, "es")
 		require.False(t, localizer.HasLocale())
 
 		assert.Equal(t, "TODO List", localizer.Get("app.name"))
