@@ -14,5 +14,9 @@
   "animal.dog": {
     "one": "Jemand hat einen Hund",
     "other": "Jemand hat Hunde"
+  },
+  "missing.plural": {
+    "one": "",
+    "other": "Singular wird vermisst"
   }
 }

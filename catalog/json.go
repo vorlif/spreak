@@ -2,6 +2,7 @@ package catalog
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"golang.org/x/text/language"
 
@@ -16,6 +17,10 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 	var messages JSONFile
 	if err := json.Unmarshal(data, &messages); err != nil {
 		return nil, err
+	}
+
+	if len(messages) == 0 {
+		return nil, fmt.Errorf("spreak: File contains no translations lang=%v domain=%q", lang, domain)
 	}
 
 	catl := &JSONCatalog{
