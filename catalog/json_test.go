@@ -11,8 +11,8 @@ import (
 	"golang.org/x/text/language"
 )
 
-var jsonTestFile = filepath.FromSlash("../testdata/translation-test/json/en.json")
-var deJsonTestFile = filepath.FromSlash("../testdata/translation-test/json/de.json")
+var enJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/en.json")
+var deJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/de.json")
 
 func TestJsonMessage_MarshalJSON(t *testing.T) {
 	msg := &JSONMessage{Other: "test"}
@@ -68,7 +68,7 @@ func TestJsonDecoder_Decode(t *testing.T) {
 	})
 
 	t.Run("returns no error on valid input", func(t *testing.T) {
-		data, err := os.ReadFile(jsonTestFile)
+		data, err := os.ReadFile(enJSONTestFile)
 		assert.NoError(t, err)
 		require.NotNil(t, data)
 
@@ -80,7 +80,7 @@ func TestJsonDecoder_Decode(t *testing.T) {
 
 func TestJSONCatalog(t *testing.T) {
 	t.Run("test translation lookup", func(t *testing.T) {
-		data, err := os.ReadFile(jsonTestFile)
+		data, err := os.ReadFile(enJSONTestFile)
 		assert.NoError(t, err)
 		require.NotNil(t, data)
 
@@ -108,7 +108,7 @@ func TestJSONCatalog(t *testing.T) {
 	})
 
 	t.Run("test translation lookup errors", func(t *testing.T) {
-		data, err := os.ReadFile(deJsonTestFile)
+		data, err := os.ReadFile(deJSONTestFile)
 		assert.NoError(t, err)
 		require.NotNil(t, data)
 
