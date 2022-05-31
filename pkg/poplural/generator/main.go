@@ -32,7 +32,7 @@ func main() {
 
 // executeAndSafe applies the DataSet's to a parsed template and saves the result correctly
 // formatted in a file 'name'.
-func executeAndSafe(name string, tmpl *template.Template, rules []*RuleData) {
+func executeAndSafe(name string, tmpl *template.Template, rules []*ruleData) {
 	var buf bytes.Buffer
 	err := tmpl.Execute(&buf, rules)
 	checkError(err)

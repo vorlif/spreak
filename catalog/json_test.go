@@ -14,29 +14,6 @@ import (
 var enJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/en.json")
 var deJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/de.json")
 
-func TestJsonMessage_MarshalJSON(t *testing.T) {
-	msg := &JSONMessage{Other: "test"}
-
-	data, err := json.Marshal(msg)
-	assert.NoError(t, err)
-	require.NotNil(t, data)
-	assert.Equal(t, `"test"`, string(data))
-
-	msg.Context = "ctx"
-	data, err = json.Marshal(msg)
-	assert.NoError(t, err)
-	require.NotNil(t, data)
-	assert.Equal(t, `{"context":"ctx","other":"test"}`, string(data))
-
-	data, err = json.MarshalIndent(msg, "", "\t")
-	assert.NoError(t, err)
-	require.NotNil(t, data)
-	assert.Equal(t, `{
-	"context": "ctx",
-	"other": "test"
-}`, string(data))
-}
-
 func TestJsonMessage_UnmarshalJSON(t *testing.T) {
 	var msg JSONMessage
 	err := json.Unmarshal([]byte(`"test"`), &msg)

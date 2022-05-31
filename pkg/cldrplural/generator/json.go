@@ -6,20 +6,20 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/vorlif/spreak/internal/cldrplural"
+	"github.com/vorlif/spreak/pkg/cldrplural"
 )
 
-type DataSet struct {
+type dataSet struct {
 	Languages []string
-	Rules     []*RuleData
+	Rules     []*ruleData
 }
 
-type RuleData struct {
+type ruleData struct {
 	Raw      string
 	Category string
 }
 
-func (d *DataSet) Categories() []string {
+func (d *dataSet) Categories() []string {
 	categories := make([]string, len(d.Rules))
 	for i, r := range d.Rules {
 		categories[i] = r.Category
@@ -27,7 +27,7 @@ func (d *DataSet) Categories() []string {
 	return categories
 }
 
-func (d *DataSet) Name() string {
+func (d *dataSet) Name() string {
 	var b strings.Builder
 	for _, lang := range d.Languages {
 		r := []rune(lang)
@@ -40,12 +40,12 @@ func (d *DataSet) Name() string {
 	return b.String()
 }
 
-func (rd *RuleData) WithoutExamples() string {
+func (rd *ruleData) WithoutExamples() string {
 	rawRule := rd.Raw[:strings.Index(rd.Raw, "@")]
 	return strings.TrimSpace(rawRule)
 }
 
-type RuleJSON struct {
+type ruleJSON struct {
 	Zero  string `json:"pluralRule-count-zero"`
 	One   string `json:"pluralRule-count-one"`
 	Two   string `json:"pluralRule-count-two"`
@@ -54,30 +54,30 @@ type RuleJSON struct {
 	Other string `json:"pluralRule-count-other"`
 }
 
-func (j *RuleJSON) ToData() []*RuleData {
-	data := make([]*RuleData, 0, 3)
+func (j *ruleJSON) ToData() []*ruleData {
+	data := make([]*ruleData, 0, 3)
 	if j.Zero != "" {
-		data = append(data, &RuleData{Raw: j.Zero, Category: cldrplural.CategoryNames[cldrplural.Zero]})
+		data = append(data, &ruleData{Raw: j.Zero, Category: cldrplural.CategoryNames[cldrplural.Zero]})
 	}
 	if j.One != "" {
-		data = append(data, &RuleData{Raw: j.One, Category: cldrplural.CategoryNames[cldrplural.One]})
+		data = append(data, &ruleData{Raw: j.One, Category: cldrplural.CategoryNames[cldrplural.One]})
 	}
 	if j.Two != "" {
-		data = append(data, &RuleData{Raw: j.Two, Category: cldrplural.CategoryNames[cldrplural.Two]})
+		data = append(data, &ruleData{Raw: j.Two, Category: cldrplural.CategoryNames[cldrplural.Two]})
 	}
 	if j.Few != "" {
-		data = append(data, &RuleData{Raw: j.Few, Category: cldrplural.CategoryNames[cldrplural.Few]})
+		data = append(data, &ruleData{Raw: j.Few, Category: cldrplural.CategoryNames[cldrplural.Few]})
 	}
 	if j.Many != "" {
-		data = append(data, &RuleData{Raw: j.Many, Category: cldrplural.CategoryNames[cldrplural.Many]})
+		data = append(data, &ruleData{Raw: j.Many, Category: cldrplural.CategoryNames[cldrplural.Many]})
 	}
 	if j.Other != "" {
-		data = append(data, &RuleData{Raw: j.Other, Category: cldrplural.CategoryNames[cldrplural.Other]})
+		data = append(data, &ruleData{Raw: j.Other, Category: cldrplural.CategoryNames[cldrplural.Other]})
 	}
 	return data
 }
 
-func (j *RuleJSON) hash() string {
+func (j *ruleJSON) hash() string {
 	h := sha256.New()
 	h.Write([]byte(j.Zero))
 	h.Write([]byte(j.One))
@@ -88,12 +88,12 @@ func (j *RuleJSON) hash() string {
 	return hex.EncodeToString(h.Sum(nil))
 }
 
-type PluralsFile struct {
+type pluralsFile struct {
 	Supplemental struct {
 		Version struct {
 			UnicodeVersion string `json:"_unicodeVersion"`
 			CldrVersion    string `json:"_cldrVersion"`
 		} `json:"version"`
-		PluralsTypeCardinal map[string]RuleJSON `json:"plurals-type-cardinal"`
+		PluralsTypeCardinal map[string]ruleJSON `json:"plurals-type-cardinal"`
 	} `json:"supplemental"`
 }

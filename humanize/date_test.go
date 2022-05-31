@@ -15,18 +15,18 @@ func TestNaturalDay(t *testing.T) {
 	today := time.Now()
 	yesterday := time.Now().AddDate(0, 0, -1)
 	tomorrow := time.Now().AddDate(0, 0, 1)
-	someday := time.Date(2022, 05, 01, 0, 0, 0, 0, time.UTC)
+	someday := time.Date(2021, 05, 01, 0, 0, 0, 0, time.UTC)
 
 	assert.Equal(t, "heute", h.NaturalDay(today))
 	assert.Equal(t, "gestern", h.NaturalDay(yesterday))
 	assert.Equal(t, "morgen", h.NaturalDay(tomorrow))
-	assert.Equal(t, "1. Mai 2022", h.NaturalDay(someday))
+	assert.Equal(t, "1. Mai 2021", h.NaturalDay(someday))
 
-	assert.Equal(t, "1. Mai 2026", h.NaturalDay(someday.AddDate(4, 0, 0)))
+	assert.Equal(t, "1. Mai 2036", h.NaturalDay(someday.AddDate(15, 0, 0)))
 
 	month := (today.Month() + 1) % 12
 	someday = time.Date(someday.Year(), month, someday.Day(), 0, 0, 0, someday.Nanosecond(), someday.Location())
-	assert.Equal(t, "1. Juni 2022", h.NaturalDay(someday))
+	assert.Equal(t, "1. Juni 2021", h.NaturalDay(someday))
 
 	yesterday = time.Date(today.Year(), today.Month(), today.Day(), 0, 0, 0, today.Nanosecond(), today.Location()).Add(-1 * time.Minute)
 	assert.Equal(t, "gestern", h.NaturalDay(yesterday))

@@ -3,8 +3,8 @@ package poplural
 import (
 	"math"
 
-	"github.com/vorlif/spreak/internal/poplural/ast"
 	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/pkg/poplural/ast"
 )
 
 type Form struct {

@@ -70,7 +70,7 @@ func init() {
 		FormFunc: func(ops *Operands) Category {
 
 			// v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9
-			if ops.V == 0 && (isIntOneOf(ops.I, 1, 2, 3)) || ops.V == 0 && !isIntOneOf(ops.I%10, 4, 6, 9) || ops.V != 0 && !isIntOneOf(ops.F%10, 4, 6, 9) {
+			if ops.V == 0 && isIntOneOf(ops.I, 1, 2, 3) || ops.V == 0 && !isIntOneOf(ops.I%10, 4, 6, 9) || ops.V != 0 && !isIntOneOf(ops.F%10, 4, 6, 9) {
 				return One
 			}
 
@@ -83,7 +83,7 @@ func init() {
 		FormFunc: func(ops *Operands) Category {
 
 			// n = 1 or t != 0 and i = 0,1
-			if ops.N == 1 || ops.T != 0 && (isIntOneOf(ops.I, 0, 1)) {
+			if ops.N == 1 || ops.T != 0 && isIntOneOf(ops.I, 0, 1) {
 				return One
 			}
 
@@ -135,7 +135,7 @@ func init() {
 		FormFunc: func(ops *Operands) Category {
 
 			// n = 0,1 or i = 0 and f = 1
-			if (isFloatOneOf(ops.N, 0, 1)) || ops.I == 0 && ops.F == 1 {
+			if isFloatOneOf(ops.N, 0, 1) || ops.I == 0 && ops.F == 1 {
 				return One
 			}
 
@@ -166,7 +166,7 @@ func init() {
 			}
 
 			// v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14
-			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !(isIntInRange(ops.I%100, 12, 14)) || isIntInRange(ops.F%10, 2, 4) && !(isIntInRange(ops.F%100, 12, 14)) {
+			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !isIntInRange(ops.I%100, 12, 14) || isIntInRange(ops.F%10, 2, 4) && !isIntInRange(ops.F%100, 12, 14) {
 				return Few
 			}
 
@@ -184,7 +184,7 @@ func init() {
 			}
 
 			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
-			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !(isIntInRange(ops.C, 0, 5)) {
+			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
 				return Many
 			}
 
@@ -202,7 +202,7 @@ func init() {
 			}
 
 			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
-			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !(isIntInRange(ops.C, 0, 5)) {
+			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
 				return Many
 			}
 
@@ -220,7 +220,7 @@ func init() {
 			}
 
 			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
-			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !(isIntInRange(ops.C, 0, 5)) {
+			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
 				return Many
 			}
 
@@ -274,7 +274,7 @@ func init() {
 			}
 
 			// i = 0,1 and n != 0
-			if (isIntOneOf(ops.I, 0, 1)) && ops.N != 0 {
+			if isIntOneOf(ops.I, 0, 1) && ops.N != 0 {
 				return One
 			}
 
@@ -328,7 +328,7 @@ func init() {
 			}
 
 			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
-			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !(isIntInRange(ops.C, 0, 5)) {
+			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
 				return Many
 			}
 
@@ -364,7 +364,7 @@ func init() {
 			}
 
 			// n % 10 = 2..4 and n % 100 != 12..14
-			if isFloatInRange(math.Mod(ops.N, 10), 2, 4) && !(isFloatInRange(math.Mod(ops.N, 100), 12, 14)) {
+			if isFloatInRange(math.Mod(ops.N, 10), 2, 4) && !isFloatInRange(math.Mod(ops.N, 100), 12, 14) {
 				return Few
 			}
 
@@ -461,7 +461,7 @@ func init() {
 			}
 
 			// v = 0 and n != 0..10 and n % 10 = 0
-			if ops.V == 0 && !(isFloatInRange(ops.N, 0, 10)) && math.Mod(ops.N, 10) == 0 {
+			if ops.V == 0 && !isFloatInRange(ops.N, 0, 10) && math.Mod(ops.N, 10) == 0 {
 				return Many
 			}
 
@@ -474,12 +474,12 @@ func init() {
 		FormFunc: func(ops *Operands) Category {
 
 			// n % 10 = 1 and n % 100 != 11..19
-			if math.Mod(ops.N, 10) == 1 && !(isFloatInRange(math.Mod(ops.N, 100), 11, 19)) {
+			if math.Mod(ops.N, 10) == 1 && !isFloatInRange(math.Mod(ops.N, 100), 11, 19) {
 				return One
 			}
 
 			// n % 10 = 2..9 and n % 100 != 11..19
-			if isFloatInRange(math.Mod(ops.N, 10), 2, 9) && !(isFloatInRange(math.Mod(ops.N, 100), 11, 19)) {
+			if isFloatInRange(math.Mod(ops.N, 10), 2, 9) && !isFloatInRange(math.Mod(ops.N, 100), 11, 19) {
 				return Few
 			}
 
@@ -525,7 +525,7 @@ func init() {
 			}
 
 			// v = 0 and i % 10 = 2..4 and i % 100 != 12..14
-			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !(isIntInRange(ops.I%100, 12, 14)) {
+			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !isIntInRange(ops.I%100, 12, 14) {
 				return Few
 			}
 
@@ -548,7 +548,7 @@ func init() {
 			}
 
 			// v = 0 and i % 10 = 2..4 and i % 100 != 12..14
-			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !(isIntInRange(ops.I%100, 12, 14)) {
+			if ops.V == 0 && isIntInRange(ops.I%10, 2, 4) && !isIntInRange(ops.I%100, 12, 14) {
 				return Few
 			}
 
@@ -655,7 +655,7 @@ func init() {
 			}
 
 			// v = 0 and i % 100 = 0,20,40,60,80
-			if ops.V == 0 && (isIntOneOf(ops.I%100, 0, 20, 40, 60, 80)) {
+			if ops.V == 0 && isIntOneOf(ops.I%100, 0, 20, 40, 60, 80) {
 				return Few
 			}
 
@@ -749,7 +749,7 @@ func init() {
 			}
 
 			// n % 100 = 2,22,42,62,82 or n % 1000 = 0 and n % 100000 = 1000..20000,40000,60000,80000 or n != 0 and n % 1000000 = 100000
-			if (isFloatOneOf(math.Mod(ops.N, 100), 2, 22, 42, 62, 82)) || math.Mod(ops.N, 1000) == 0 && (isFloatInRange(math.Mod(ops.N, 100000), 1000, 20000) || isFloatOneOf(math.Mod(ops.N, 100000), 40000, 60000, 80000)) || ops.N != 0 && math.Mod(ops.N, 1000000) == 100000 {
+			if isFloatOneOf(math.Mod(ops.N, 100), 2, 22, 42, 62, 82) || math.Mod(ops.N, 1000) == 0 && (isFloatInRange(math.Mod(ops.N, 100000), 1000, 20000) || isFloatOneOf(math.Mod(ops.N, 100000), 40000, 60000, 80000)) || ops.N != 0 && math.Mod(ops.N, 1000000) == 100000 {
 				return Two
 			}
 
@@ -759,7 +759,7 @@ func init() {
 			}
 
 			// n != 1 and n % 100 = 1,21,41,61,81
-			if ops.N != 1 && (isFloatOneOf(math.Mod(ops.N, 100), 1, 21, 41, 61, 81)) {
+			if ops.N != 1 && isFloatOneOf(math.Mod(ops.N, 100), 1, 21, 41, 61, 81) {
 				return Many
 			}
 

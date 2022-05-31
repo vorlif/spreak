@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/internal/cldrplural/ast"
+	"github.com/vorlif/spreak/pkg/cldrplural/ast"
 )
 
 // compileNode converts a rule tree to go code.
@@ -93,21 +93,24 @@ func compileNode(node ast.Node) string {
 			}
 		}
 
-		isOnlyOneCheck := len(singleValues)+(len(valueRanges)/2) > 1
+		res := b.String()
+		hasMultipleChecks := strings.Contains(res, " || ")
+
 		if e.Op == ast.Equal {
 			// If there are multiple checks they are separated by an "or" and should be bracketed.
-			if isOnlyOneCheck {
+			if hasMultipleChecks {
 				return fmt.Sprintf("( %s )", b.String())
 			}
 
 			return b.String()
 		}
 
-		if isOnlyOneCheck {
-			return fmt.Sprintf("!%s", b.String())
+		if hasMultipleChecks {
+			return fmt.Sprintf("!( %s )", b.String())
 		}
 
-		return fmt.Sprintf("!( %s )", b.String())
+		return fmt.Sprintf("!%s", b.String())
+
 	default:
 		return ""
 	}

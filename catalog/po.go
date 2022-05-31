@@ -6,10 +6,10 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/cldrplural"
 	"github.com/vorlif/spreak/internal/mo"
-	"github.com/vorlif/spreak/internal/poplural"
+	"github.com/vorlif/spreak/pkg/cldrplural"
 	"github.com/vorlif/spreak/pkg/po"
+	"github.com/vorlif/spreak/pkg/poplural"
 )
 
 const poCLDRHeader = "X-spreak-use-CLDR"

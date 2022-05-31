@@ -29,6 +29,14 @@ var CategoryNames = map[Category]string{
 	Other: "Other",
 }
 
+func (cat Category) String() string {
+	if name, ok := CategoryNames[cat]; ok {
+		return name
+	}
+
+	return "unknown"
+}
+
 type Operand int
 
 const (

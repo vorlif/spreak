@@ -8,19 +8,19 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/vorlif/spreak/internal/poplural/ast"
+	"github.com/vorlif/spreak/pkg/poplural/ast"
 )
 
-var pluralsFile = filepath.FromSlash(filepath.Join("./plurals.json"))
+var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))
 
-func getJSONRules() []*RuleData {
-	data, err := os.ReadFile(pluralsFile)
+func getJSONRules() []*ruleData {
+	data, err := os.ReadFile(pluralsFilePath)
 	checkError(err)
 
-	root := PluralsFile{}
+	root := pluralsFile{}
 	checkError(json.Unmarshal(data, &root))
 
-	rulesData := map[string]*RuleData{}
+	rulesData := map[string]*ruleData{}
 	for lang, fileData := range root {
 		if rd, ok := rulesData[fileData.Formula]; ok {
 			rd.Languages = append(rd.Languages, lang)
@@ -29,7 +29,7 @@ func getJSONRules() []*RuleData {
 
 		formula := fmt.Sprintf("nplurals=%d; plural=%s;", fileData.Plurals, fileData.Formula)
 		parsed := ast.MustParse(formula)
-		rulesData[fileData.Formula] = &RuleData{
+		rulesData[fileData.Formula] = &ruleData{
 			Languages:   []string{lang},
 			Raw:         formula,
 			Count:       fileData.Plurals,
@@ -38,7 +38,7 @@ func getJSONRules() []*RuleData {
 		}
 	}
 
-	res := make([]*RuleData, 0, len(rulesData))
+	res := make([]*ruleData, 0, len(rulesData))
 	for _, rd := range rulesData {
 		res = append(res, rd)
 	}
@@ -46,9 +46,9 @@ func getJSONRules() []*RuleData {
 	return res
 }
 
-type PluralsFile map[string]FileLangData
+type pluralsFile map[string]fileLangData
 
-type FileLangData struct {
+type fileLangData struct {
 	Language string
 	Formula  string
 	Plurals  int
@@ -56,7 +56,7 @@ type FileLangData struct {
 	Examples map[string]string
 }
 
-type RuleData struct {
+type ruleData struct {
 	Raw         string
 	CompiledRaw string
 	Compiled    string
@@ -64,7 +64,7 @@ type RuleData struct {
 	Languages   []string
 }
 
-func (d *RuleData) Name() string {
+func (d *ruleData) Name() string {
 	if len(d.Languages) == 0 {
 		return d.CompiledRaw
 	}
