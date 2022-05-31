@@ -31,7 +31,9 @@ stored in the folder `locale`.
   * Advanced example to demonstrate how spreak can be used with xspreak
   * xspreak command `xspreak -e -D dayinfo/ -p locale/ -d dayinfo`
 
-* [httptempl](features/httptempl): Example of how to use spreak with a web server and templates
+* [httptempl](features/httptempl): Example of how to use spreak with a web server and `http/templates`
+*
+* [jhttptempl](features/jhttptempl): Example of how to use spreak with a web server, json and `http/templates`
 
 * [embed](./features/embed/main.go): Example how spreak can be used with the embed api
 

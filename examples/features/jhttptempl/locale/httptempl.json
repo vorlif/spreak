@@ -1,0 +1,33 @@
+{
+    "forms.address": "",
+    "forms.cart": "",
+    "forms.checkout_title": "",
+    "forms.continue": "",
+    "forms.description": "",
+    "forms.first": "",
+    "forms.header": "",
+    "forms.keep_infos": "",
+    "forms.lead": "",
+    "forms.name": "",
+    "forms.password": "",
+    "forms.product": "",
+    "forms.total": "",
+    "home.choose_language": "",
+    "home.forms": "",
+    "home.header": "",
+    "home.lead": "",
+    "home.selection_field": "",
+    "home.title": "",
+    "not_found.great_user": "",
+    "not_found.next_steps": "",
+    "not_found.not_exist": "",
+    "not_found.stupid_statement": {
+        "one": "",
+        "other": ""
+    },
+    "not_found.welcome": "",
+    "not_found.wish": {
+        "one": "",
+        "other": ""
+    }
+}

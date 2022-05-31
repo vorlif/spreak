@@ -1,0 +1,21 @@
+{
+  "domain.name": "Alternativer Domain",
+  "user.welcome": "Willkommen %s",
+  "week": {
+    "one": "Woche",
+    "other": "Wochen"
+  },
+  "days": {
+    "one": "%d Tag",
+    "other": "%d Tage"
+  },
+  "test_context": {
+    "context": "context",
+    "other": "Test mit Context"
+  },
+  "result_context": {
+    "context": "context",
+    "one": "%d Ergebnis",
+    "other": "%d Ergebnisse"
+  }
+}

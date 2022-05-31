@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet">
+    <title>{{.i18n.Tr "home.title" }}</title>
+</head>
+<body class="h-100">
+
+<main>
+    <div class="px-4 py-5 my-5 text-center">
+        <img alt="" class="d-block mx-auto mb-4" height="57"
+             src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" width="72">
+        <h1 class="display-5 fw-bold">{{.i18n.Tr "home.header"}}</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                {{.i18n.Tr "home.lead" }}
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a class="btn btn-primary btn-lg px-4 gap-3" href="/forms">{{$.i18n.Tr "home.forms"}}</a>
+                <a class="btn btn-outline-secondary btn-lg px-4" href="/unknown">404</a>
+            </div>
+        </div>
+
+        <form action="/setlang" class="col-lg-4 mx-auto my-5" method="get">
+            <select class="form-select" name="lang" aria-label="{{.i18n.Tr "Language selection field"}}" onchange="this.form.submit()">
+            <option selected>{{.i18n.Tr "home.choose_language"}}</option>
+            <option value="">Best match</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="ja">Japanese</option>
+            <option value="es">Spanish</option>
+            </select>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

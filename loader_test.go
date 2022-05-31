@@ -236,9 +236,10 @@ func TestWithDecoder(t *testing.T) {
 		fl, err := NewFilesystemLoader(WithSystemFs())
 		assert.NoError(t, err)
 		require.NotNil(t, fl)
-		if assert.Len(t, fl.decoder, 2) {
+		if assert.Len(t, fl.decoder, 3) {
 			assert.IsType(t, catalog.NewPoDecoder(), fl.decoder[0])
 			assert.IsType(t, catalog.NewMoDecoder(), fl.decoder[1])
+			assert.IsType(t, catalog.NewJSONDecoder(), fl.decoder[2])
 		}
 
 	})

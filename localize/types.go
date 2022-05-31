@@ -17,6 +17,17 @@ type Context = string
 // Domain is an alias type for string which is used by xspreak for extracting strings.
 type Domain = string
 
+// Key is an alias type for string which is used by xspreak for extracting strings.
+// The exported key is not stored as text, only the key is stored.
+// Should only be used when messages are identified by keys and not by strings. For example when using JSON.
+type Key = string
+
+// PluralKey is an alias type for string which is used by xspreak for extracting strings.
+// It represents a MsgId AND a PluralId which identify a message.
+// The exported key is not stored as text, only the key is stored.
+// Should only be used when messages are identified by keys and not by strings. For example when using JSON.
+type PluralKey = string
+
 // A Localizable allows access to a message that needs to be translated.
 //
 // An implementation can be passed directly to a spreak.Localizer or spreak.Locale via

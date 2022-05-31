@@ -1,0 +1,33 @@
+{
+  "app.name": "TODO List",
+  "date.weekday": "Weekday",
+  "date.monday": "Monday",
+  "date.friday": "Friday",
+  "user.goodbye": "Goodbye %s",
+  "animals": {
+    "one": "I have %v animal",
+    "other": "I have %v animals"
+  },
+  "animal.cat": {
+    "one": "I do not have a cat",
+    "other": "I do not have cats"
+  },
+  "animal.dog_my-animals": {
+    "context": "my-animals",
+    "one": "I have a dog",
+    "other": "I have dogs"
+  },
+  "animal_world": {
+    "context": "world",
+    "one": "There is one animal in the world",
+    "other": "There are %d animals in the world"
+  },
+  "animal.dog": {
+    "one": "Someone has a dog",
+    "other": "Someone has dogs"
+  },
+  "animal.name_my-animals": {
+    "context": "my-animals",
+    "other": "My pet's name is %s"
+  }
+}

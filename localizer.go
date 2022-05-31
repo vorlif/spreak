@@ -6,7 +6,9 @@ import (
 	"github.com/vorlif/spreak/localize"
 )
 
-// A Localizer is similar to a locale except that it is not bound to a language.
+// A Localizer holds the catalogs of all domains for a language and provides an interface for their use.
+// It has a default domain, which can differ from the bundle default domain and is used
+// if no domain is specified for translations.
 // A number of supported languages can be specified at creation time
 // where the language matcher of the bundle decides which language fits best.
 // For this language the Localizer then offers the possibility to translate.
@@ -17,6 +19,13 @@ type Localizer struct {
 	locale        *locale
 	defaultDomain string
 	localeFound   bool
+}
+
+// A KeyLocalizer is a wrapper for a Localizer, which can be used when looking up translations by key and not by source language.
+// It provides the same methods as a Localizer, but does not require the specification of a plural text.
+// The usage is useful for example when the translations are loaded from JSON files with a key-value structure.
+type KeyLocalizer struct {
+	*Localizer
 }
 
 // NewLocalizerForDomain creates a new Localizer for a language and a default domain,
@@ -51,8 +60,18 @@ func NewLocalizerForDomain(bundle *Bundle, domain string, lang ...interface{}) *
 }
 
 // NewLocalizer operates like NewLocalizerForDomain, with the default domain of the bundle as domain.
-func NewLocalizer(bundle *Bundle, langs ...interface{}) *Localizer {
-	return NewLocalizerForDomain(bundle, bundle.defaultDomain, langs...)
+func NewLocalizer(bundle *Bundle, lang ...interface{}) *Localizer {
+	return NewLocalizerForDomain(bundle, bundle.defaultDomain, lang...)
+}
+
+// NewKeyLocalizerForDomain creates a new Localizer with NewLocalizerForDomain which is then wrapped by a KeyLocalizer.
+func NewKeyLocalizerForDomain(bundle *Bundle, domain string, lang ...interface{}) *KeyLocalizer {
+	return &KeyLocalizer{Localizer: NewLocalizerForDomain(bundle, domain, lang...)}
+}
+
+// NewKeyLocalizer creates a new Localizer with NewLocalizer which is then wrapped by a KeyLocalizer.
+func NewKeyLocalizer(bundle *Bundle, langs ...interface{}) *KeyLocalizer {
+	return &KeyLocalizer{Localizer: NewLocalizer(bundle, langs...)}
 }
 
 func newLocalizerFromTag(bundle *Bundle, domain string, tag ...language.Tag) *Localizer {
@@ -136,6 +155,7 @@ func (l *Localizer) DGetf(domain localize.Domain, message localize.Singular, var
 
 // NGet acts like Get, but consider plural forms.
 // The plural formula is applied to n and return the resulting message (some languages have more than two plurals).
+// If n is a floating-point number and the CLDR rules are used, the floating-point number should be represented and passed as a string for the best result.
 func (l *Localizer) NGet(singular localize.Singular, plural localize.Plural, n interface{}) string {
 	t, _ := l.lookupPluralTranslation(l.defaultDomain, NoCtx, singular, plural, n)
 	return t
@@ -274,9 +294,11 @@ func (l *Localizer) lookupSingularTranslation(domain localize.Domain, ctx locali
 	}
 
 	errA := err
-	t, err = l.bundle.fallbackLocale.lookupSingularTranslation(domain, ctx, msgID, vars...)
-	if err == nil {
-		return t, errA
+	if l.locale.language != l.bundle.fallbackLocale.language {
+		t, err = l.bundle.fallbackLocale.lookupSingularTranslation(domain, ctx, msgID, vars...)
+		if err == nil {
+			return t, errA
+		}
 	}
 
 	// The source locale always returns a text and never an error
@@ -301,4 +323,101 @@ func (l *Localizer) lookupPluralTranslation(domain string, ctx localize.Context,
 
 	t, _ = l.bundle.sourceLocale.lookupPluralTranslation(domain, ctx, singular, plural, n, vars...)
 	return t, errA
+}
+
+func (l *KeyLocalizer) Get(key localize.Key) string {
+	t, _ := l.lookupSingularTranslation(l.defaultDomain, NoCtx, key)
+	return t
+}
+
+// Getf operates like Get, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) Getf(key localize.Key, vars ...interface{}) string {
+	t, _ := l.lookupSingularTranslation(l.defaultDomain, NoCtx, key, vars...)
+	return t
+}
+
+// DGet operates like Get, but look the message up in the specified domain.
+func (l *KeyLocalizer) DGet(domain localize.Domain, key localize.Key) string {
+	t, _ := l.lookupSingularTranslation(domain, NoCtx, key)
+	return t
+}
+
+// DGetf operates like Get, but look the message up in the specified domain and
+// formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) DGetf(domain localize.Domain, key localize.Key, vars ...interface{}) string {
+	t, _ := l.lookupSingularTranslation(domain, NoCtx, key, vars...)
+	return t
+}
+
+// NGet acts like Get, but consider plural forms.
+// The plural formula is applied to n and return the resulting message (some languages have more than two plurals).
+func (l *KeyLocalizer) NGet(key localize.PluralKey, n interface{}) string {
+	t, _ := l.lookupPluralTranslation(l.defaultDomain, NoCtx, key, key, n)
+	return t
+}
+
+// NGetf operates like NGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) NGetf(key localize.PluralKey, n interface{}, vars ...interface{}) string {
+	t, _ := l.lookupPluralTranslation(l.defaultDomain, NoCtx, key, key, n, vars...)
+	return t
+}
+
+// DNGet operates like NGet, but look the message up in the specified domain.
+func (l *KeyLocalizer) DNGet(domain localize.Domain, key localize.PluralKey, n interface{}) string {
+	t, _ := l.lookupPluralTranslation(domain, NoCtx, key, key, n)
+	return t
+}
+
+// DNGetf operates like DNGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) DNGetf(domain localize.Domain, key localize.PluralKey, n interface{}, vars ...interface{}) string {
+	t, _ := l.lookupPluralTranslation(domain, NoCtx, key, key, n, vars...)
+	return t
+}
+
+// PGet operates like Get, but restricted to the specified context.
+func (l *KeyLocalizer) PGet(context localize.Context, key localize.Key) string {
+	t, _ := l.lookupSingularTranslation(l.defaultDomain, context, key)
+	return t
+}
+
+// PGetf operates like PGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) PGetf(context localize.Context, key localize.Key, vars ...interface{}) string {
+	t, _ := l.lookupSingularTranslation(l.defaultDomain, context, key, vars...)
+	return t
+}
+
+// DPGet operates like Get, but look the message up in the specified domain and with the specified context.
+func (l *KeyLocalizer) DPGet(domain localize.Domain, context localize.Context, key localize.Key) string {
+	t, _ := l.lookupSingularTranslation(domain, context, key)
+	return t
+}
+
+// DPGetf operates like DPGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) DPGetf(domain localize.Domain, context localize.Context, key localize.Key, vars ...interface{}) string {
+	t, _ := l.lookupSingularTranslation(domain, context, key, vars...)
+	return t
+}
+
+// NPGet operates like NGet, but restricted to the specified context.
+func (l *KeyLocalizer) NPGet(context localize.Context, key localize.PluralKey, n interface{}) string {
+	t, _ := l.lookupPluralTranslation(l.defaultDomain, context, key, key, n)
+	return t
+}
+
+// NPGetf operates like NPGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) NPGetf(context localize.Context, key localize.PluralKey, n interface{}, vars ...interface{}) string {
+	t, _ := l.lookupPluralTranslation(l.defaultDomain, context, key, key, n, vars...)
+	return t
+}
+
+// DNPGet operates like NGet, but look the message up in the specified domain and with the specified context.
+func (l *KeyLocalizer) DNPGet(domain localize.Domain, context localize.Context, key localize.PluralKey, n interface{}) string {
+	t, _ := l.lookupPluralTranslation(domain, context, key, key, n)
+	return t
+}
+
+// DNPGetf operates like DNPGet, but formats the message according to a format identifier and returns the resulting string.
+func (l *KeyLocalizer) DNPGetf(domain localize.Domain, context localize.Context, key localize.PluralKey, n interface{}, vars ...interface{}) string {
+	t, _ := l.lookupPluralTranslation(domain, context, key, key, n, vars...)
+	return t
 }
