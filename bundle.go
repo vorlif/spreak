@@ -67,7 +67,9 @@ type Bundle struct {
 }
 
 // NewBundle creates a new bundle and returns it.
-// It returns an error message if something failed during creation.
+// An error is returned if something fails during creation.
+// This is only the case if one of the options returns an error.
+// A call without options will never return an error and can thus be used for testing or as a fallback.
 // The catalog of the specified domains and languages will be loaded during the creation.
 func NewBundle(opts ...BundleOption) (*Bundle, error) {
 	builder := &bundleBuilder{

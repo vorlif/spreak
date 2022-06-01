@@ -148,7 +148,7 @@ This creates a new `.pot` or `.json` file representing the *new* translation tem
 
 For PO files almost every translation tool offers the possibility to update the files from a POT file.
 With Poedit you can do it via `Translation -> Update from POT file`.
-If you use the gettext utilities you can use `msgmerge  es.po template.pot`.
+If you use the gettext utilities you can use `msgmerge -U es.po template.pot`.
 For all other tools, it is worth taking a look at the documentation.
 
 #### json files
@@ -184,6 +184,16 @@ Then spreak searches for the following files by default
 Where `es` is an example from the list `[es-ES, es_ES, spa, es]` and the file extension `.po` is an example from the list `[po, mo, json]`.
 If you don't like this behavior you can implement your own [Resolver](examples/features/resolver/main.go) or
 [Loader](examples/features/loaders/main.go).
+
+### How to use in tests?
+
+Just create a `Bundle` without options. 
+This will never return an error and can be used to create `Localizer` which then simply return the input.
+
+```go
+bundle, _ := spreak.NewBundle()
+t := spreak.NewLocalizer(bundle, language.Spanish)
+```
 
 ### What's next
 

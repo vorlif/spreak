@@ -18,6 +18,12 @@ func TestNewBundle(t *testing.T) {
 		require.Error(t, err)
 		require.Nil(t, bundle)
 	})
+
+	t.Run("creation without options returns no error", func(t *testing.T) {
+		bundle, err := NewBundle()
+		require.NoError(t, err)
+		require.NotNil(t, bundle)
+	})
 }
 
 func TestBundle_Domains(t *testing.T) {
