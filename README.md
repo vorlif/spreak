@@ -7,7 +7,7 @@ Flexible translation and humanization library for Go, based on the concepts behi
 * Goroutine-safe and lock free through immutability
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process 
   (with support for templates)
-* Support for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html) and [CLDR v41](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
+* Support for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html) and [CLDR v41](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules. [See pkg.go](https://pkg.go.dev/github.com/vorlif/spreak#hdr-Plurals)
 * Support of bilingual and monolingual formats
 * Built-in support for `po`, `mo` and [`json`](./examples/features/jhttptempl) files
 * [Direct support for humanization](#package-humanize-)  of Go data structures
@@ -91,15 +91,19 @@ xspreak extracts the strings from the program code and creates a template which 
 Before you extract your strings, you have to decide on a format.
 
 xspreak can either create a `.pot` (PO Templates) file in po format or a `.json` file.
-By default, a `.pot` file is extracted. With `-f json` a JSON file will be extracted.
-If you are not sure which format to use, I would recommend you to use po format, 
+If you are not sure which format to use, I would recommend you to use `po` format, 
 because it is supported by almost all translation programs, which makes your life and the life of your translators much easier.
 
 With `-D` you specify the path to your source code and with `-p` the one where the translation template should be saved.
 
 ```bash
+# for .pot
 xspreak -D path/to/source/ -p path/to/source/locale
+# for .json
+xspreak -D path/to/source/ -p path/to/source/locale -f json
 ```
+
+This creates a new `.pot` or `.json` file representing the translation template.
 
 ### Translate
 
@@ -126,16 +130,28 @@ xspreak merge -i locale/template.json -o locale/de.json -l de
 
 ### Update translations
 
+> :warning: It would be wise before making any move to **keep a backup**.
+
 If you add, change or remove strings, you should also update the translation files.
 To do this, you must first update the template:
 
 ```bash
+# for .pot
 xspreak -D path/to/source/ -p path/to/source/locale
+# for .json
+xspreak -D path/to/source/ -p path/to/source/locale -f json
 ```
+
+This creates a new `.pot` or `.json` file representing the *new* translation template.
+
+#### POT files
 
 For PO files almost every translation tool offers the possibility to update the files from a POT file.
 With Poedit you can do it via `Translation -> Update from POT file`.
 If you use the gettext utilities you can use `msgmerge  es.po template.pot`.
+For all other tools, it is worth taking a look at the documentation.
+
+#### json files
 
 For JSON files xspreak offers a simple way to update the translation files.
 
@@ -143,7 +159,8 @@ For JSON files xspreak offers a simple way to update the translation files.
 xspreak merge -i locale/template.json -o locale/de.json -l de
 ```
 
-> :warning: It would be wise before making any move to **keep a backup**.
+This copies new keys and existing translations from `template.json` to `de.json` and deletes keys from `de.json` 
+that are not present in `template.json`.
 
 ### Structure translations
 
