@@ -144,7 +144,7 @@ func TestBuiltin{{$data.Name}}(t *testing.T) {
 		{{range $data.Rules}}
 			{{$samples := ExtractSamples .Raw}}
 			for _, sample := range {{printf "%#v" $samples}} {
-				op := NewOperands(sample)
+				op := MustNewOperands(sample)
 				assert.Equal(t, {{.Category}}, set.FormFunc(op)) 
 			}
 		{{end}}
@@ -172,7 +172,7 @@ func TestEvaluate{{$data.Name}}(t *testing.T) {
 		
 		{{$samples := ExtractSamples .Raw}}
 		for _, sample := range {{printf "%#v" $samples}} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.True(t, evaluate(rule, op), sample)
 		}
 	{{end}}

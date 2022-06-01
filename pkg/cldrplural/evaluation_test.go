@@ -27,7 +27,7 @@ func TestParseRules(t *testing.T) {
 	assert.NotNil(t, set.Categories)
 	assert.NotNil(t, set.FormFunc)
 	assert.ElementsMatch(t, []Category{One, Other}, set.Categories)
-	assert.Equal(t, One, set.FormFunc(NewOperands("1")))
-	assert.Equal(t, Other, set.FormFunc(NewOperands("1.0")))
-	assert.Equal(t, Other, set.FormFunc(NewOperands("1.1")))
+	assert.Equal(t, One, set.FormFunc(MustNewOperands("1")))
+	assert.Equal(t, Other, set.FormFunc(MustNewOperands("1.0")))
+	assert.Equal(t, Other, set.FormFunc(MustNewOperands("1.1")))
 }

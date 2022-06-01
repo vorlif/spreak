@@ -1,6 +1,7 @@
 package cldrplural
 
 import (
+	"errors"
 	"fmt"
 	"math"
 	"strconv"
@@ -86,7 +87,10 @@ type RuleSet struct {
 }
 
 func (rs *RuleSet) Evaluate(a interface{}) Category {
-	ops := NewOperands(a)
+	ops, err := NewOperands(a)
+	if err != nil {
+		ops = newOperandsInt(0)
+	}
 	return rs.FormFunc(ops)
 }
 
@@ -101,20 +105,28 @@ type Operands struct {
 	C int64
 }
 
+func MustNewOperands(a interface{}) *Operands {
+	ops, err := NewOperands(a)
+	if err != nil {
+		panic(err)
+	}
+	return ops
+}
+
 // NewOperands converts the representation of a float value into the appropriate Operands.
-func NewOperands(a interface{}) *Operands {
+func NewOperands(a interface{}) (*Operands, error) {
 	a = util.Indirect(a)
 	if a == nil {
-		return newOperandsInt(0)
+		return nil, errors.New("operands value is nil")
 	}
 
 	switch v := a.(type) {
 	case string:
 		return newOperandsString(v)
 	case int64:
-		return newOperandsInt(v)
+		return newOperandsInt(v), nil
 	case int:
-		return newOperandsInt(int64(v))
+		return newOperandsInt(int64(v)), nil
 	case float32:
 		return newOperandsString(fmt.Sprintf("%v", v))
 	case float64:
@@ -122,7 +134,7 @@ func NewOperands(a interface{}) *Operands {
 	default:
 		num, err := util.ToNumber(v)
 		if err != nil {
-			return newOperandsInt(0)
+			return nil, err
 		}
 		return newOperandsString(fmt.Sprintf("%v", num))
 	}
@@ -135,36 +147,50 @@ func newOperandsInt(i int64) *Operands {
 	return &Operands{float64(i), i, 0, 0, 0, 0, 0}
 }
 
-func newOperandsString(raw string) *Operands {
+func newOperandsString(raw string) (*Operands, error) {
 	op := &Operands{}
 
-	if strings.Contains(raw, "c") {
-		cIdx := strings.Index(raw, "c")
-		c, _ := strconv.Atoi(raw[cIdx+1:])
+	if cIdx := strings.Index(raw, "c"); cIdx >= 0 {
+		c, err := strconv.Atoi(raw[cIdx+1:])
+		if err != nil {
+			return nil, err
+		}
 		op.C = int64(c)
 		raw = shiftDecimalPoint(raw[:cIdx], c)
 	}
 
-	src, _ := strconv.ParseFloat(raw, 64)
+	src, errP := strconv.ParseFloat(raw, 64)
+	if errP != nil {
+		return nil, errP
+	}
 
 	op.N = math.Abs(src)
 	op.I = int64(src)
 
 	if pointIdx := strings.Index(raw, "."); pointIdx >= 0 {
 		fractionDigits := raw[pointIdx+1:]
-		op.V = int64(len(fractionDigits))
-		if i, err := strconv.Atoi(fractionDigits); err == nil {
-			op.F = int64(i)
+		if fractionDigits != "" {
+			op.V = int64(len(fractionDigits))
+			i, err := strconv.ParseInt(fractionDigits, 10, 64)
+			if err != nil {
+				return nil, err
+			}
+			op.F = i
 		}
 
 		withoutZeros := strings.TrimRight(fractionDigits, "0")
-		op.W = int64(len(withoutZeros))
-		if i, err := strconv.Atoi(withoutZeros); err == nil {
-			op.T = int64(i)
+		if withoutZeros != "" {
+			op.W = int64(len(withoutZeros))
+			i, err := strconv.ParseInt(withoutZeros, 10, 64)
+			if err != nil {
+				return nil, err
+			}
+
+			op.T = i
 		}
 	}
 
-	return op
+	return op, nil
 }
 
 func shiftDecimalPoint(raw string, c int) string {
