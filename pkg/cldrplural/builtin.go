@@ -4,6 +4,8 @@ import "golang.org/x/text/language"
 
 var builtInRuleSets = make(map[string]*RuleSet, 40)
 
+// ForLanguage returns the set of rules for a language.
+// If no matching language is found, the English rule set and false are returned.
 func ForLanguage(lang language.Tag) (*RuleSet, bool) {
 	n := lang
 	for !n.IsRoot() {

@@ -191,34 +191,16 @@ func (c *gettextCatalog) Language() language.Tag { return c.language }
 
 func (c *gettextCatalog) getMessage(ctx, msgID string, idx int) (*gettextMessage, error) {
 	if _, hasCtx := c.translations[ctx]; !hasCtx {
-		err := &ErrMissingContext{
-			Language: c.language,
-			Domain:   c.domain,
-			Context:  ctx,
-		}
-		return nil, err
+		return nil, NewErrMissingContext(c.language, c.domain, ctx)
 	}
 
 	if _, hasMsg := c.translations[ctx][msgID]; !hasMsg {
-		err := &ErrMissingMessageID{
-			Language: c.language,
-			Domain:   c.domain,
-			Context:  ctx,
-			MsgID:    msgID,
-		}
-		return nil, err
+		return nil, NewErrMissingMessageID(c.language, c.domain, ctx, msgID)
 	}
 
 	msg := c.translations[ctx][msgID]
 	if tr, hasTranslation := msg.Translations[idx]; !hasTranslation || tr == "" {
-		err := &ErrMissingTranslation{
-			Language: c.language,
-			Domain:   c.domain,
-			Context:  ctx,
-			MsgID:    msgID,
-			Idx:      idx,
-		}
-		return nil, err
+		return nil, NewErrMissingTranslation(c.language, c.domain, ctx, msgID, idx)
 	}
 
 	return msg, nil

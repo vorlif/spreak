@@ -11,10 +11,14 @@ import (
 
 type jsonDecoder struct{}
 
+// NewJSONDecoder returns a new Decoder for reading JSON files.
+// The structure follows a key-value structure, where the key is either an ID or the singular text of the source language.
+// For singular-only texts, the value is a string with a translation.
+// For plural texts it is an object with the CLDR plural forms and the matching translations.
 func NewJSONDecoder() Decoder { return jsonDecoder{} }
 
 func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	var messages JSONFile
+	var messages jsonFile
 	if err := json.Unmarshal(data, &messages); err != nil {
 		return nil, err
 	}
@@ -24,7 +28,7 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 	}
 
 	catl := &JSONCatalog{
-		lookupMap: make(map[string]map[string]*JSONMessage),
+		lookupMap: make(map[string]map[string]*jsonMessage),
 		domain:    domain,
 		language:  lang,
 	}
@@ -37,7 +41,7 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 		}
 
 		if _, ok := catl.lookupMap[msg.Context]; !ok {
-			catl.lookupMap[msg.Context] = make(map[string]*JSONMessage)
+			catl.lookupMap[msg.Context] = make(map[string]*jsonMessage)
 		}
 
 		catl.lookupMap[msg.Context][key] = msg
@@ -49,7 +53,7 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 type JSONCatalog struct {
 	// Map for a quick lookup of messages.
 	// First key is the context and second the msg key (e.g. lookup["context"]["app.name"]).
-	lookupMap map[string]map[string]*JSONMessage
+	lookupMap map[string]map[string]*jsonMessage
 	domain    string
 	language  language.Tag
 	pluralSet *cldrplural.RuleSet
@@ -81,43 +85,25 @@ func (m *JSONCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (
 		key += "_" + ctx
 	}
 	if _, hasCtx := m.lookupMap[ctx]; !hasCtx {
-		err := &ErrMissingContext{
-			Language: m.language,
-			Domain:   m.domain,
-			Context:  ctx,
-		}
-		return "", err
+		return "", NewErrMissingContext(m.language, m.domain, ctx)
 	}
 
 	if _, hasMsg := m.lookupMap[ctx][key]; !hasMsg {
-		err := &ErrMissingMessageID{
-			Language: m.language,
-			Domain:   m.domain,
-			Context:  ctx,
-			MsgID:    key,
-		}
-		return "", err
+		return "", NewErrMissingMessageID(m.language, m.domain, ctx, key)
 	}
 
 	msg := m.lookupMap[ctx][key]
 	tr := msg.getTranslation(cat)
 	if tr == "" {
-		err := &ErrMissingTranslation{
-			Language: m.language,
-			Domain:   m.domain,
-			Context:  ctx,
-			MsgID:    key,
-			Idx:      int(cat),
-		}
-		return "", err
+		return "", NewErrMissingTranslation(m.language, m.domain, ctx, key, int(cat))
 	}
 
 	return tr, nil
 }
 
-type JSONFile map[string]*JSONMessage
+type jsonFile map[string]*jsonMessage
 
-type JSONMessage struct {
+type jsonMessage struct {
 	Comment string `json:"comment,omitempty"`
 	Context string `json:"context,omitempty"`
 
@@ -129,7 +115,7 @@ type JSONMessage struct {
 	Other string `json:"other"`
 }
 
-func (m *JSONMessage) getTranslation(cat cldrplural.Category) string {
+func (m *jsonMessage) getTranslation(cat cldrplural.Category) string {
 	switch cat {
 	case cldrplural.Zero:
 		return m.Zero
@@ -146,9 +132,9 @@ func (m *JSONMessage) getTranslation(cat cldrplural.Category) string {
 	}
 }
 
-type jsonMessageAlias JSONMessage
+type jsonMessageAlias jsonMessage
 
-func (m *JSONMessage) UnmarshalJSON(data []byte) error {
+func (m *jsonMessage) UnmarshalJSON(data []byte) error {
 	var other string
 	if err := json.Unmarshal(data, &other); err == nil {
 		m.Other = other

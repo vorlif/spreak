@@ -24,6 +24,14 @@ type Decoder interface {
 	Decode(lang language.Tag, domain string, data []byte) (Catalog, error)
 }
 
+func NewErrMissingContext(lang language.Tag, domain, context string) *ErrMissingContext {
+	return &ErrMissingContext{
+		Language: lang,
+		Domain:   domain,
+		Context:  context,
+	}
+}
+
 // ErrMissingContext is the error returned when a matching context was not found for a language and domain.
 type ErrMissingContext struct {
 	Language language.Tag
@@ -47,6 +55,15 @@ func (e *ErrMissingContext) String() string {
 	return b.String()
 }
 
+func NewErrMissingMessageID(lang language.Tag, domain, context, msgID string) *ErrMissingMessageID {
+	return &ErrMissingMessageID{
+		Language: lang,
+		Domain:   domain,
+		Context:  context,
+		MsgID:    msgID,
+	}
+}
+
 // ErrMissingMessageID is the error returned when a matching message was not found for a language and domain.
 type ErrMissingMessageID struct {
 	Language language.Tag
@@ -68,6 +85,16 @@ func (e *ErrMissingMessageID) String() string {
 	}
 	b.WriteString(fmt.Sprintf("msgID=%q", e.MsgID))
 	return b.String()
+}
+
+func NewErrMissingTranslation(lang language.Tag, domain, context, msgID string, idx int) *ErrMissingTranslation {
+	return &ErrMissingTranslation{
+		Language: lang,
+		Domain:   domain,
+		Context:  context,
+		MsgID:    msgID,
+		Idx:      idx,
+	}
 }
 
 // ErrMissingTranslation is the error returned when there is no translation for a domain of a language for a message.

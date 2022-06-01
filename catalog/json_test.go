@@ -15,12 +15,12 @@ var enJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/en.js
 var deJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/de.json")
 
 func TestJsonMessage_UnmarshalJSON(t *testing.T) {
-	var msg JSONMessage
+	var msg jsonMessage
 	err := json.Unmarshal([]byte(`"test"`), &msg)
 	assert.NoError(t, err)
 	assert.Equal(t, msg.Other, "test")
 
-	msg = JSONMessage{}
+	msg = jsonMessage{}
 	err = json.Unmarshal([]byte(`{"context":"ctx","other":"test"}`), &msg)
 	assert.NoError(t, err)
 	assert.Equal(t, msg.Other, "test")

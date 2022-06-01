@@ -30,6 +30,8 @@ func MustParse(rule string) *Form {
 	return form
 }
 
+// Parse parses a plural forms header and returns a function to evaluate this header.
+// If for a header there is already a predefined function, this function will be returned.
 func Parse(rule string) (*Form, error) {
 	parsed, err := ast.Parse(rule)
 	if err != nil {
