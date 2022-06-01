@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/cldrplural"
+	"github.com/vorlif/spreak/pkg/cldrplural"
 )
 
 type jsonDecoder struct{}
@@ -144,39 +144,6 @@ func (m *JSONMessage) getTranslation(cat cldrplural.Category) string {
 	default:
 		return m.Other
 	}
-}
-
-func (m *JSONMessage) hasFilledFields() bool {
-	if m.Comment != "" {
-		return true
-	}
-	if m.Context != "" {
-		return true
-	}
-	if m.Zero != "" {
-		return true
-	}
-	if m.One != "" {
-		return true
-	}
-	if m.Two != "" {
-		return true
-	}
-	if m.Few != "" {
-		return true
-	}
-	if m.Many != "" {
-		return true
-	}
-	return false
-}
-
-func (m *JSONMessage) MarshalJSON() ([]byte, error) {
-	if m.hasFilledFields() {
-		return json.Marshal(*m)
-	}
-
-	return json.Marshal(m.Other)
 }
 
 type jsonMessageAlias JSONMessage

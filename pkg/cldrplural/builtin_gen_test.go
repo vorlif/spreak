@@ -16,7 +16,7 @@ func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToT
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -29,12 +29,12 @@ func TestBuiltinAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJm
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -47,12 +47,12 @@ func TestBuiltinAkBhoGuwLnMgNsoPaTiWa(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "1.0", "0.00", "1.00", "0.000", "1.000", "0.0000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -65,12 +65,12 @@ func TestBuiltinAmAsBnDoiFaGuHiKnPcmZu(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -83,12 +83,12 @@ func TestBuiltinAstCaDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -101,12 +101,12 @@ func TestBuiltinCebFilTl(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "2", "3", "5", "7", "8", "10", "11", "12", "13", "15", "17", "18", "20", "21", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.5", "0.7", "0.8", "1.0", "1.1", "1.2", "1.3", "1.5", "1.7", "1.8", "2.0", "2.1", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"4", "6", "9", "14", "16", "19", "24", "26", "104", "1004", "0.4", "0.6", "0.9", "1.4", "1.6", "1.9", "2.4", "2.6", "10.4", "100.4", "1000.4"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -119,12 +119,12 @@ func TestBuiltinDa(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -137,12 +137,12 @@ func TestBuiltinFfHyKab(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -155,12 +155,12 @@ func TestBuiltinIs(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -173,12 +173,12 @@ func TestBuiltinMk(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "0.0", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -191,12 +191,12 @@ func TestBuiltinSi(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "1.0", "0.00", "0.01", "1.00", "0.000", "0.001", "1.000", "0.0000", "0.0001", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -209,12 +209,12 @@ func TestBuiltinTzm(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "0.0", "1.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "20.0", "21.0", "22.0", "23.0", "24.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "100", "101", "102", "103", "104", "105", "106", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -227,17 +227,17 @@ func TestBuiltinBsHrShSr(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "0.2", "0.3", "0.4", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "3.2", "3.3", "3.4", "4.2", "4.3", "4.4", "5.2", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -250,17 +250,17 @@ func TestBuiltinEs(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -273,17 +273,17 @@ func TestBuiltinFr(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -296,17 +296,17 @@ func TestBuiltinItPt_PT(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -319,17 +319,17 @@ func TestBuiltinIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -342,17 +342,17 @@ func TestBuiltinKsh(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -365,17 +365,17 @@ func TestBuiltinLag(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -388,17 +388,17 @@ func TestBuiltinLvPrg(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000", "0.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.0", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "22", "23", "24", "25", "26", "27", "28", "29", "102", "1002", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -411,17 +411,17 @@ func TestBuiltinMoRo(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "102", "1002", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -434,17 +434,17 @@ func TestBuiltinPt(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1000000", "1c6", "2c6", "3c6", "4c6", "5c6", "6c6", "1.0000001c6", "1.1c6", "2.0000001c6", "2.1c6", "3.0000001c6", "3.1c6"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1c3", "2c3", "3c3", "4c3", "5c3", "6c3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0", "1.0001c3", "1.1c3", "2.0001c3", "2.1c3", "3.0001c3", "3.1c3"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -457,17 +457,17 @@ func TestBuiltinShi(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "2.00", "3.00", "4.00", "5.00", "6.00", "7.00", "8.00"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "100", "1000", "10000", "100000", "1000000", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -480,22 +480,22 @@ func TestBuiltinBe(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002", "2.0", "3.0", "4.0", "22.0", "23.0", "24.0", "32.0", "33.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "11.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -508,22 +508,22 @@ func TestBuiltinCsSk(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -536,22 +536,22 @@ func TestBuiltinDsbHsb(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002", "0.2", "1.2", "2.2", "3.2", "4.2", "5.2", "6.2", "7.2", "10.2", "100.2", "1000.2"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.3", "0.4", "1.3", "1.4", "2.3", "2.4", "3.3", "3.4", "4.3", "4.4", "5.3", "5.4", "6.3", "6.4", "7.3", "7.4", "10.3", "100.3", "1000.3"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000", "0.0", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.5", "2.6", "2.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -564,22 +564,22 @@ func TestBuiltinGd(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "11", "1.0", "11.0", "1.00", "11.00", "1.000", "11.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "12", "2.0", "12.0", "2.00", "12.00", "2.000", "12.000", "2.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "5", "6", "7", "8", "9", "10", "13", "14", "15", "16", "17", "18", "19", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "3.00"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -592,22 +592,22 @@ func TestBuiltinHe(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"20", "30", "40", "50", "60", "70", "80", "90", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "101", "1001", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -620,22 +620,22 @@ func TestBuiltinLt(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "22", "23", "24", "25", "26", "27", "28", "29", "102", "1002", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "22.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.1", "1000.1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000", "0.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -648,22 +648,22 @@ func TestBuiltinMt(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "102", "103", "104", "105", "106", "107", "1002", "0.0", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "10.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "111", "112", "113", "114", "115", "116", "117", "1011", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "111.0", "1011.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -676,22 +676,22 @@ func TestBuiltinPl(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -704,22 +704,22 @@ func TestBuiltinRuUk(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "3", "4", "22", "23", "24", "32", "33", "34", "42", "43", "44", "52", "53", "54", "62", "102", "1002"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -732,22 +732,22 @@ func TestBuiltinSl(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "102", "202", "302", "402", "502", "602", "702", "1002"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "103", "104", "203", "204", "303", "304", "403", "404", "503", "504", "603", "604", "703", "704", "1003", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -760,27 +760,27 @@ func TestBuiltinBr(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "81.0", "101.0", "1001.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "22", "32", "42", "52", "62", "82", "102", "1002", "2.0", "22.0", "32.0", "42.0", "52.0", "62.0", "82.0", "102.0", "1002.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "9", "23", "24", "29", "33", "34", "39", "43", "44", "49", "103", "1003", "3.0", "4.0", "9.0", "23.0", "24.0", "29.0", "33.0", "34.0", "103.0", "1003.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1000000", "1000000.0", "1000000.00", "1000000.000", "1000000.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "100", "1000", "10000", "100000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -793,27 +793,27 @@ func TestBuiltinGa(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "5", "6", "3.0", "4.0", "5.0", "6.0", "3.00", "4.00", "5.00", "6.00", "3.000", "4.000", "5.000", "6.000", "3.0000", "4.0000", "5.0000", "6.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"7", "8", "9", "10", "7.0", "8.0", "9.0", "10.0", "7.00", "8.00", "9.00", "10.00", "7.000", "8.000", "9.000", "10.000", "7.0000", "8.0000", "9.0000", "10.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -826,27 +826,27 @@ func TestBuiltinGv(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"1", "11", "21", "31", "41", "51", "61", "71", "101", "1001"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "12", "22", "32", "42", "52", "62", "72", "102", "1002"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0", "20", "40", "60", "80", "100", "120", "140", "1000", "10000", "100000", "1000000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "5", "6", "7", "8", "9", "10", "13", "14", "15", "16", "17", "18", "19", "23", "103", "1003"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -859,32 +859,32 @@ func TestBuiltinArArs(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "4", "5", "6", "7", "8", "9", "10", "103", "104", "105", "106", "107", "108", "109", "110", "1003", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "103.0", "1003.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "111", "1011", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "111.0", "1011.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"100", "101", "102", "200", "201", "202", "300", "301", "302", "400", "401", "402", "500", "501", "502", "600", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.1", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -897,32 +897,32 @@ func TestBuiltinCy(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "2.0", "2.00", "2.000", "2.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "3.0", "3.00", "3.000", "3.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"6", "6.0", "6.00", "6.000", "6.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"4", "5", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 
@@ -935,32 +935,32 @@ func TestBuiltinKw(t *testing.T) {
 		require.True(t, found)
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Zero, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, One, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"2", "22", "42", "62", "82", "102", "122", "142", "1000", "10000", "100000", "2.0", "22.0", "42.0", "62.0", "82.0", "102.0", "122.0", "142.0", "1000.0", "10000.0", "100000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Two, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"3", "23", "43", "63", "83", "103", "123", "143", "1003", "3.0", "23.0", "43.0", "63.0", "83.0", "103.0", "123.0", "143.0", "1003.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Few, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"21", "41", "61", "81", "101", "121", "141", "161", "1001", "21.0", "41.0", "61.0", "81.0", "101.0", "121.0", "141.0", "161.0", "1001.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Many, set.FormFunc(op))
 		}
 
 		for _, sample := range []string{"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1004", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.1", "1000000.0"} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.Equal(t, Other, set.FormFunc(op))
 		}
 

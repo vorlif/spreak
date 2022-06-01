@@ -4,7 +4,15 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
+
+func TestMustNewOperands(t *testing.T) {
+	t.Run("panics on error", func(t *testing.T) {
+		f := func() { MustNewOperands("") }
+		assert.Panics(t, f)
+	})
+}
 
 func TestExtractOperands(t *testing.T) {
 	tests := []struct {
@@ -34,7 +42,8 @@ func TestExtractOperands(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		op := NewOperands(tt.src)
+		op, err := NewOperands(tt.src)
+		require.NoError(t, err)
 		assert.Equalf(t, tt.n, op.N, "N %s", tt.src)
 		assert.Equalf(t, tt.i, op.I, "I %s", tt.src)
 		assert.Equalf(t, tt.v, op.V, "V %s", tt.src)

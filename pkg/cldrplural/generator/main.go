@@ -11,20 +11,20 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/vorlif/spreak/internal/cldrplural/ast"
+	"github.com/vorlif/spreak/pkg/cldrplural/ast"
 )
 
-var pluralsFile = filepath.FromSlash(filepath.Join("./plurals.json"))
+var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))
 
 func main() {
-	data, err := os.ReadFile(pluralsFile)
+	data, err := os.ReadFile(pluralsFilePath)
 	checkError(err)
 
-	root := &PluralsFile{}
+	root := &pluralsFile{}
 	checkError(json.Unmarshal(data, root))
 
-	duplicateMap := make(map[string]*DataSet, 40)
-	dataSets := make([]*DataSet, 0, 40)
+	duplicateMap := make(map[string]*dataSet, 40)
+	dataSets := make([]*dataSet, 0, 40)
 	for lang, jsonRules := range root.Supplemental.PluralsTypeCardinal {
 		h := jsonRules.hash()
 		if _, ok := duplicateMap[h]; ok {
@@ -32,7 +32,7 @@ func main() {
 			continue
 		}
 
-		ds := &DataSet{
+		ds := &dataSet{
 			Languages: []string{lang},
 			Rules:     jsonRules.ToData(),
 		}
@@ -57,9 +57,9 @@ func main() {
 	executeAndSafe("../evaluation_gen_test.go", evaluationTest, dataSets)
 }
 
-// executeAndSafe applies the DataSet's to a parsed template and saves the result correctly
+// executeAndSafe applies the dataSet's to a parsed template and saves the result correctly
 // formatted in a file 'name'.
-func executeAndSafe(name string, tmpl *template.Template, dataSets []*DataSet) {
+func executeAndSafe(name string, tmpl *template.Template, dataSets []*dataSet) {
 	var buf bytes.Buffer
 	err := tmpl.Execute(&buf, dataSets)
 	checkError(err)
@@ -144,7 +144,7 @@ func TestBuiltin{{$data.Name}}(t *testing.T) {
 		{{range $data.Rules}}
 			{{$samples := ExtractSamples .Raw}}
 			for _, sample := range {{printf "%#v" $samples}} {
-				op := NewOperands(sample)
+				op := MustNewOperands(sample)
 				assert.Equal(t, {{.Category}}, set.FormFunc(op)) 
 			}
 		{{end}}
@@ -161,7 +161,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vorlif/spreak/internal/cldrplural/ast"
+	"github.com/vorlif/spreak/pkg/cldrplural/ast"
 )
 
 {{range $key, $data := .}}
@@ -172,7 +172,7 @@ func TestEvaluate{{$data.Name}}(t *testing.T) {
 		
 		{{$samples := ExtractSamples .Raw}}
 		for _, sample := range {{printf "%#v" $samples}} {
-			op := NewOperands(sample)
+			op := MustNewOperands(sample)
 			assert.True(t, evaluate(rule, op), sample)
 		}
 	{{end}}

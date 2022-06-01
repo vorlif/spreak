@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.com/vorlif/spreak/internal/poplural/ast"
+	"github.com/vorlif/spreak/pkg/poplural/ast"
 )
 
-func getExtraRules() []*RuleData {
-	list := make([]*RuleData, 0, len(extraRulesTable))
+func getExtraRules() []*ruleData {
+	list := make([]*ruleData, 0, len(extraRulesTable))
 	for _, raw := range extraRulesTable {
 		parsed := ast.MustParse(raw)
-		rd := &RuleData{
+		rd := &ruleData{
 			Raw:         raw,
 			Compiled:    compileForms(parsed),
 			CompiledRaw: ast.CompileToString(parsed),
