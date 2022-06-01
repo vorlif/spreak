@@ -32,7 +32,7 @@ stored in the folder `locale`.
   * xspreak command `xspreak -e -D dayinfo/ -p locale/ -d dayinfo`
 
 * [httptempl](features/httptempl): Example of how to use spreak with a web server and `http/templates`
-*
+
 * [jhttptempl](features/jhttptempl): Example of how to use spreak with a web server, json and `http/templates`
 
 * [embed](./features/embed/main.go): Example how spreak can be used with the embed api

@@ -25,7 +25,7 @@
         </div>
 
         <form action="/setlang" class="col-lg-4 mx-auto my-5" method="get">
-            <select aria-label="{{.i18n.Tr " class="form-select" home.selection_fieldname="lang""}}"
+            <select class="form-select" name="lang" aria-label="{{.i18n.Tr "home.selection_fieldname"}}" onchange="this.form.submit()">
             onchange="this.form.submit()">
             <option selected>{{.i18n.Tr "home.choose_language"}}</option>
             <option value="">Best match</option>

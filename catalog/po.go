@@ -32,6 +32,10 @@ func NewPoDecoder() Decoder { return &poDecoder{} }
 
 // NewPoCLDRDecoder creates a decoder for reading po files,
 // which always uses the CLDR plural rules for determining the plural form.
+// If no matching CLDR rule exists, the Po header rule is used. If no header exists,
+// the english plural rules (1 is singular, otherwise plural) are used.
+// Attention: The "Plural-Forms" header inside the Po file is ignored when using the CLDR rules.
+// To ensure optimal compatibility with other applications, care should be taken to ensure that the Po header is compatible with the CLDR rules.
 func NewPoCLDRDecoder() Decoder { return &poDecoder{useCLDRPlural: true} }
 
 // NewMoDecoder returns a new Decoder for reading mo files.
@@ -42,6 +46,10 @@ func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
 
 // NewMoCLDRDecoder creates a decoder for reading mo files,
 // which always uses the CLDR plural rules for determining the plural form.
+// If no matching CLDR rule exists, the Mo header rule is used. If no header exists,
+// the english plural rules (1 is singular, otherwise plural) are used.
+// Attention: The "Plural-Forms" header inside the Mo file is ignored when using the CLDR rules.
+// To ensure optimal compatibility with other applications, care should be taken to ensure that the Mo header is compatible with the CLDR rules.
 func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
 
 func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {

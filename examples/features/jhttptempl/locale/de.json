@@ -1,0 +1,33 @@
+{
+  "forms.address": "Rechnungsadresse",
+  "forms.cart": "",
+  "forms.checkout_title": "",
+  "forms.continue": "",
+  "forms.description": "",
+  "forms.first": "Vorname",
+  "forms.header": "",
+  "forms.keep_infos": "",
+  "forms.lead": "",
+  "forms.name": "",
+  "forms.password": "",
+  "forms.product": "",
+  "forms.total": "",
+  "home.choose_language": "Wähle eine Sprache",
+  "home.forms": "Formular",
+  "home.header": "",
+  "home.lead": "Spreak ist eine flexible Übersetzungs- und Humanisierungsbibliothek für Go, basierend auf den Konzepten von gettext",
+  "home.selection_field": "",
+  "home.title": "",
+  "not_found.great_user": "",
+  "not_found.next_steps": "",
+  "not_found.not_exist": "",
+  "not_found.stupid_statement": {
+    "one": "",
+    "other": ""
+  },
+  "not_found.welcome": "",
+  "not_found.wish": {
+    "one": "Wir wünschen dir einen schönen Tag",
+    "other": "Wir wünschen dir schöne Tage"
+  }
+}

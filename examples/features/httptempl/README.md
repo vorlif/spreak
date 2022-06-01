@@ -1,5 +1,8 @@
+### Spreak + po + `http/template`
 
-The following example shows how to use Spreak with templates for web projects.
+The following example shows how to use Spreak with the translation managed in `po` files and `html/template`
+for a web project.
+For an example with json files, see the [jhttptempl](../jhttptempl) example.
 
 In the `locale/` folder you will find the files for the translations. 
 The file `locale/httptempl.pot` can be used as a template for new translations.
