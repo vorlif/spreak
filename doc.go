@@ -24,7 +24,7 @@
 // For JSON files only the CLDR plural rules are supported.
 // For po and mo files both gettext plural forms and CLDR plural rules are supported.
 // The CLDR rules provides better support when floating point numbers are used.
-// When using the CLDR plural rules, a notation increasing from "Zero" to "Other" should be used.
+// When using the CLDR plural rules with po files, a notation increasing from "Zero" to "Other" should be used.
 // For example, if the used language supports "Zero", "Few" and "Other", Zero should be notated as entry 0, Few as entry 1 and Other as entry 2.
 // It is also recommended to define a gettext compatible plural rule.
 // On the website https://php-gettext.github.io/Languages/ you can find a list of gettext plural rules which are compatible to the CLDR plural rules.
@@ -43,4 +43,7 @@
 //     msgstr[0] "Translation with the plural form One"
 //     msgstr[1] "Translation with the plural form Few"
 //     msgstr[2] "Translation with the plural form Other"
+//
+// If floating point numbers are used, it is recommended to pass them formatted as strings as they will be displayed later.
+// For example, if the number n is to be displayed with two numbers after the decimal point, it should be formatted with fmt.Sprintf("%.2f", n).
 package spreak

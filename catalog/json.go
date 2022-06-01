@@ -27,7 +27,7 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 		return nil, fmt.Errorf("spreak: File contains no translations lang=%v domain=%q", lang, domain)
 	}
 
-	catl := &JSONCatalog{
+	catl := &jsonCatalog{
 		lookupMap: make(map[string]map[string]*jsonMessage),
 		domain:    domain,
 		language:  lang,
@@ -50,7 +50,7 @@ func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 	return catl, nil
 }
 
-type JSONCatalog struct {
+type jsonCatalog struct {
 	// Map for a quick lookup of messages.
 	// First key is the context and second the msg key (e.g. lookup["context"]["app.name"]).
 	lookupMap map[string]map[string]*jsonMessage
@@ -59,7 +59,7 @@ type JSONCatalog struct {
 	pluralSet *cldrplural.RuleSet
 }
 
-func (m *JSONCatalog) GetTranslation(ctx, msgID string) (string, error) {
+func (m *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	tr, err := m.getTranslation(ctx, msgID, cldrplural.Other)
 	if err != nil {
 		return msgID, err
@@ -68,7 +68,7 @@ func (m *JSONCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return tr, nil
 }
 
-func (m *JSONCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
+func (m *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
 	cat := m.pluralSet.Evaluate(n)
 	tr, err := m.getTranslation(ctx, msgID, cat)
 	if err != nil {
@@ -78,9 +78,9 @@ func (m *JSONCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (st
 	return tr, nil
 }
 
-func (m JSONCatalog) Language() language.Tag { return m.language }
+func (m jsonCatalog) Language() language.Tag { return m.language }
 
-func (m *JSONCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (string, error) {
+func (m *jsonCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (string, error) {
 	if ctx != "" {
 		key += "_" + ctx
 	}
