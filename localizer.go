@@ -231,6 +231,10 @@ func (l *Localizer) DNPGetf(domain localize.Domain, context localize.Context, si
 // If a suitable translation is found, it will be returned.
 // If no matching translation is found, the original string with the matching plural form and an error are returned.
 func (l *Localizer) LocalizeWithError(t localize.Localizable) (string, error) {
+	if t == nil {
+		return "<nil>", nil
+	}
+
 	var vars []interface{}
 	if len(t.GetVars()) > 0 {
 		vars = append(vars, t.GetVars()...)
@@ -262,6 +266,10 @@ func (l *Localizer) Localize(t localize.Localizable) string {
 // By default, this is the context "errors".
 // Using WithErrorContext("other") during bundle creation to change the error context for a bundle.
 func (l *Localizer) LocalizeError(err error) error {
+	if err == nil {
+		return nil
+	}
+
 	switch v := err.(type) {
 	case localize.Localizable:
 		translation, errT := l.LocalizeWithError(v)
