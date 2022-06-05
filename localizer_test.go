@@ -198,6 +198,10 @@ func TestLocalizer_TranslateWithError(t *testing.T) {
 	tr, err = localizer.LocalizeWithError(localizeMsg)
 	assert.NoError(t, err)
 	assert.Equal(t, "Test mit Context", tr)
+
+	tr, err = localizer.LocalizeWithError(nil)
+	assert.Error(t, err)
+	assert.Equal(t, "<nil>", tr)
 }
 
 func TestLocalizer_MainFunctions(t *testing.T) {
@@ -244,6 +248,12 @@ func TestLocalizer_LocalizeError(t *testing.T) {
 		assert.Error(t, get)
 		assert.IsType(t, &localize.Error{}, get)
 		assert.Equal(t, want, get.Error())
+	})
+
+	t.Run("nil error", func(t *testing.T) {
+		actual := localizer.LocalizeError(nil)
+		assert.NoError(t, actual)
+		assert.Nil(t, actual)
 	})
 
 	t.Run("localizable error", func(t *testing.T) {

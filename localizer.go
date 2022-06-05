@@ -1,6 +1,8 @@
 package spreak
 
 import (
+	"errors"
+
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/localize"
@@ -232,7 +234,7 @@ func (l *Localizer) DNPGetf(domain localize.Domain, context localize.Context, si
 // If no matching translation is found, the original string with the matching plural form and an error are returned.
 func (l *Localizer) LocalizeWithError(t localize.Localizable) (string, error) {
 	if t == nil {
-		return "<nil>", nil
+		return "<nil>", errors.New("spreak: Localizable is nil")
 	}
 
 	var vars []interface{}

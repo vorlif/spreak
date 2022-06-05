@@ -28,70 +28,12 @@ func TestDecodeMultilineString(t *testing.T) {
 }
 
 func TestEncodeMultilineString(t *testing.T) {
-	src := `This is an
-multiline string
-`
-	want := `""
-"This is an\n"
-"multiline string\n"`
-
-	get := EncodePoString(src, 60)
-	assert.Equal(t, want, get)
-
-	{
+	t.Run("default cases", func(t *testing.T) {
 		tests := []struct {
 			name string
 			raw  string
 			want string
 		}{
-			{
-				name: "Quotation marks are added",
-				raw:  `Extracted string`,
-				want: `"Extracted string"`,
-			},
-			{
-				name: "Intentional multiple quotation marks are preserved",
-				raw:  "\"Extracted string\"",
-				want: "\"\"Extracted string\"\"",
-			},
-			{
-				name: "Intentional backquotes are preserved",
-				raw:  "`Extracted string`",
-				want: "\"`Extracted string`\"",
-			},
-			{
-				name: "Multiline text are formatted correctly",
-				raw:  "This is an multiline\nstring",
-				want: `""
-"This is an multiline\n"
-"string"`,
-			},
-			{
-				name: "backquoted newline is converted to newline",
-				raw: `This is an multiline
-string`,
-				want: `""
-"This is an multiline\n"
-"string"`,
-			},
-			{
-				name: "Single line with a newline at the end remains a single line",
-				raw:  "Single line with newline\n",
-				want: `"Single line with newline\n"`,
-			},
-			{
-				name: "Last newline does not start a new line",
-				raw:  "Multiline\nwith\nnewlines\n",
-				want: `""
-"Multiline\n"
-"with\n"
-"newlines\n"`,
-			},
-			{
-				name: "Empty string formatted",
-				raw:  "",
-				want: "\"\"",
-			},
 			{
 				name: "Long lines will be wrapped",
 				raw: `
@@ -118,6 +60,83 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr,      sed diam nonumy ei
 				assert.Equal(t, tt.want, get)
 			})
 		}
+	})
+}
+
+func TestDecodePoString(t *testing.T) {
+	t.Run("header", func(t *testing.T) {
+		assert.Equal(t, poStrDecode, DecodePoString(poStrEncode))
+	})
+
+	tests := []struct {
+		name string
+		raw  string
+		want string
+	}{
+		{
+			name: "Quotation marks are added",
+			raw:  `"Extracted string"`,
+			want: `Extracted string`,
+		},
+		{
+			name: "Intentional multiple quotation marks are preserved",
+			raw:  "\"\\\"Extracted string\\\"\"",
+			want: "\"Extracted string\"",
+		},
+		{
+			name: "Intentional backquotes are preserved",
+			raw:  "\"`Extracted string`\"",
+			want: "`Extracted string`",
+		},
+		{
+			name: "Multiline text are formatted correctly",
+			raw: `""
+"This is an multiline\n"
+"string"`,
+			want: "This is an multiline\nstring",
+		},
+		{
+			name: "backquoted newline is converted to newline",
+			raw: `""
+"This is an multiline\n"
+"string"`,
+			want: `This is an multiline
+string`,
+		},
+		{
+			name: "Single line with a newline at the end remains a single line",
+			raw:  `"Single line with newline\n"`,
+			want: "Single line with newline\n",
+		},
+		{
+			name: "Last newline does not start a new line",
+			raw: `""
+"Multiline\n"
+"with\n"
+"newlines\n"`,
+			want: "Multiline\nwith\nnewlines\n",
+		},
+		{
+			name: "Empty string formatted",
+			raw:  "\"\"",
+			want: "",
+		},
+		{
+			name: "special chars",
+			raw:  "\"special\\t\\\"chars\\\"\\t\\\\\"",
+			want: `special	"chars"	\`,
+		},
+		{
+			name: "backslash",
+			raw:  "\"Test \\\\\\\\ \\\"id\\\"\\t\\\\ \\ \"",
+			want: `Test \\ "id"	\ \ `,
+		},
+	}
+	for i, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			actual := DecodePoString(tt.raw)
+			assert.Equal(t, tt.want, actual, "id=%d", i)
+		})
 	}
 }
 
@@ -187,12 +206,83 @@ func TestEncodePoStringWrap(t *testing.T) {
 
 }
 
-func TestDecodePoString(t *testing.T) {
-	assert.Equal(t, poStrDecode, DecodePoString(poStrEncode))
-}
-
 func TestEncodePoString(t *testing.T) {
-	assert.Equal(t, poStrEncodeStd, EncodePoString(poStrDecode, 60))
+	t.Run("header", func(t *testing.T) {
+		assert.Equal(t, poStrEncodeStd, EncodePoString(poStrDecode, 60))
+	})
+
+	tests := []struct {
+		name string
+		raw  string
+		want string
+	}{
+		{
+			name: "Quotation marks are added",
+			raw:  `Extracted string`,
+			want: `"Extracted string"`,
+		},
+		{
+			name: "Intentional multiple quotation marks are preserved",
+			raw:  "\"Extracted string\"",
+			want: "\"\\\"Extracted string\\\"\"",
+		},
+		{
+			name: "Intentional backquotes are preserved",
+			raw:  "`Extracted string`",
+			want: "\"`Extracted string`\"",
+		},
+		{
+			name: "Multiline text are formatted correctly",
+			raw:  "This is an multiline\nstring",
+			want: `""
+"This is an multiline\n"
+"string"`,
+		},
+		{
+			name: "backquoted newline is converted to newline",
+			raw: `This is an multiline
+string`,
+			want: `""
+"This is an multiline\n"
+"string"`,
+		},
+		{
+			name: "Single line with a newline at the end remains a single line",
+			raw:  "Single line with newline\n",
+			want: `"Single line with newline\n"`,
+		},
+		{
+			name: "Last newline does not start a new line",
+			raw:  "Multiline\nwith\nnewlines\n",
+			want: `""
+"Multiline\n"
+"with\n"
+"newlines\n"`,
+		},
+		{
+			name: "Empty string formatted",
+			raw:  "",
+			want: "\"\"",
+		},
+		{
+			name: "special chars",
+			raw: `special	"chars"	\`,
+			want: "\"special\\t\\\"chars\\\"\\t\\\\\"",
+		},
+		{
+			name: "backslash",
+			raw:  "Test \\\\ \"id\"\t\\",
+			want: "\"Test \\\\\\\\ \\\"id\\\"\\t\\\\\"",
+		},
+	}
+	for i, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			actual := EncodePoString(tt.raw, 60)
+			assert.Equal(t, tt.want, actual, "id=%d wrap=enabled", i)
+			actual = EncodePoString(tt.raw, -1)
+			assert.Equal(t, tt.want, actual, "id=%d wrap=disabled", i)
+		})
+	}
 }
 
 const poStrEncode = `# noise

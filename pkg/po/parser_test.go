@@ -272,6 +272,36 @@ msgstr "ID"`
 		assert.Equal(t, "contrib/humanize/templatetags/humanize.py", msg.Comment.References[2].Path)
 		assert.Equal(t, 186, msg.Comment.References[2].Line)
 	})
+
+	t.Run("parse special chars", func(t *testing.T) {
+		content := `
+msgid "This is an \"test\" \n with\ newline"
+msgstr "Das ist ein \"test\" \n mit\ newline"`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		require.NotNil(t, file)
+		require.Contains(t, file.Messages, "")
+		require.Contains(t, file.Messages[""], "This is an \"test\" \n with\\ newline")
+		msg := file.GetMessage("", "This is an \"test\" \n with\\ newline")
+		require.NotNil(t, msg)
+		require.Len(t, msg.Str, 1)
+		assert.Equal(t, "Das ist ein \"test\" \n mit\\ newline", msg.Str[0])
+	})
+
+	t.Run("parse tabs", func(t *testing.T) {
+		content := `
+msgid "Test		with 	tabs\t"
+msgstr "Test		mit 	Tabs\t"`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		require.NotNil(t, file)
+		require.Contains(t, file.Messages, "")
+		require.Contains(t, file.Messages[""], "Test\t\twith \ttabs\t")
+		msg := file.GetMessage("", "Test	\twith \ttabs\t")
+		require.NotNil(t, msg)
+		require.Len(t, msg.Str, 1)
+		assert.Equal(t, "Test\t\tmit \tTabs\t", msg.Str[0])
+	})
 }
 
 func TestMustParse(t *testing.T) {
