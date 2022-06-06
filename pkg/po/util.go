@@ -280,15 +280,18 @@ func escapePoString(s string) string {
 				buf.WriteByte('r')
 			case '\t':
 				buf.WriteByte('t')
+			case '\a':
+				buf.WriteByte('a')
+			case '\b':
+				buf.WriteByte('b')
+			case '\f':
+				buf.WriteByte('f')
+			case '\v':
+				buf.WriteByte('v')
 			default:
-				// This encodes bytes < 0x20 except for \t, \n and \r.
-				// If escapeHTML is set, it also escapes <, >, and &
-				// because they can lead to security holes when
-				// user-controlled strings are rendered into JSON
-				// and served to some browsers.
-				buf.WriteString(`u00`)
+				buf.WriteByte('x')
 				buf.WriteByte(hex[b>>4])
-				buf.WriteByte(hex[b&0xF])
+				buf.WriteByte(hex[hex[b&0xF]])
 			}
 			i++
 			start = i
@@ -358,6 +361,10 @@ func unescapePoBytes(s []byte) []byte {
 			}
 			r++
 			switch s[r] {
+			case 'a':
+				b[w] = '\a'
+				r++
+				w++
 			case '"', '\\', '/', '\'':
 				b[w] = s[r]
 				r++
@@ -380,6 +387,10 @@ func unescapePoBytes(s []byte) []byte {
 				w++
 			case 't':
 				b[w] = '\t'
+				r++
+				w++
+			case 'v':
+				b[w] = '\v'
 				r++
 				w++
 			default:

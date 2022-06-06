@@ -90,6 +90,9 @@ msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d Tag"
 msgstr[1] "%d Tage"
+
+msgid "Special\t	\"chars\""
+msgstr "Sonder\t	\"zeichen\""
 `
 
 func TestPoDecoder(t *testing.T) {
@@ -117,6 +120,16 @@ func TestPoDecoder(t *testing.T) {
 	catl, err = dec.Decode(lang, domain, []byte(decodePoInvalidPluralForm+decodeTestData))
 	assert.Error(t, err)
 	assert.Nil(t, catl)
+
+	t.Run("test special chars", func(t *testing.T) {
+		catl, err = dec.Decode(lang, domain, []byte(decodeTestData))
+		assert.NoError(t, err)
+		require.NotNil(t, catl)
+
+		tr, err := catl.GetTranslation("", "Special		\"chars\"")
+		assert.NoError(t, err)
+		assert.Equal(t, "Sonder\t\t\"zeichen\"", tr)
+	})
 }
 
 func TestMoDecoder(t *testing.T) {

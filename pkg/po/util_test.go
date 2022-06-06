@@ -68,74 +68,25 @@ func TestDecodePoString(t *testing.T) {
 		assert.Equal(t, poStrDecode, DecodePoString(poStrEncode))
 	})
 
-	tests := []struct {
-		name string
-		raw  string
-		want string
-	}{
-		{
-			name: "Quotation marks are added",
-			raw:  `"Extracted string"`,
-			want: `Extracted string`,
-		},
-		{
-			name: "Intentional multiple quotation marks are preserved",
-			raw:  "\"\\\"Extracted string\\\"\"",
-			want: "\"Extracted string\"",
-		},
-		{
-			name: "Intentional backquotes are preserved",
-			raw:  "\"`Extracted string`\"",
-			want: "`Extracted string`",
-		},
-		{
-			name: "Multiline text are formatted correctly",
-			raw: `""
-"This is an multiline\n"
-"string"`,
-			want: "This is an multiline\nstring",
-		},
-		{
-			name: "backquoted newline is converted to newline",
-			raw: `""
-"This is an multiline\n"
-"string"`,
-			want: `This is an multiline
-string`,
-		},
-		{
-			name: "Single line with a newline at the end remains a single line",
-			raw:  `"Single line with newline\n"`,
-			want: "Single line with newline\n",
-		},
-		{
-			name: "Last newline does not start a new line",
-			raw: `""
-"Multiline\n"
-"with\n"
-"newlines\n"`,
-			want: "Multiline\nwith\nnewlines\n",
-		},
-		{
-			name: "Empty string formatted",
-			raw:  "\"\"",
-			want: "",
-		},
-		{
-			name: "special chars",
-			raw:  "\"special\\t\\\"chars\\\"\\t\\\\\"",
-			want: `special	"chars"	\`,
-		},
-		{
-			name: "backslash",
-			raw:  "\"Test \\\\\\\\ \\\"id\\\"\\t\\\\ \\ \"",
-			want: `Test \\ "id"	\ \ `,
-		},
-	}
-	for i, tt := range tests {
+	for i, tt := range decodeEncodeTests {
 		t.Run(tt.name, func(t *testing.T) {
-			actual := DecodePoString(tt.raw)
-			assert.Equal(t, tt.want, actual, "id=%d", i)
+			actual := DecodePoString(tt.poLines)
+			assert.Equal(t, tt.code, actual, "id=%d", i)
+		})
+	}
+}
+
+func TestEncodePoString(t *testing.T) {
+	t.Run("header", func(t *testing.T) {
+		assert.Equal(t, poStrEncodeStd, EncodePoString(poStrDecode, 60))
+	})
+
+	for i, tt := range decodeEncodeTests {
+		t.Run(tt.name, func(t *testing.T) {
+			actual := EncodePoString(tt.code, 60)
+			assert.Equal(t, tt.poLines, actual, "id=%d wrap=enabled", i)
+			actual = EncodePoString(tt.code, -1)
+			assert.Equal(t, tt.poLines, actual, "id=%d wrap=disabled", i)
 		})
 	}
 }
@@ -206,85 +157,6 @@ func TestEncodePoStringWrap(t *testing.T) {
 
 }
 
-func TestEncodePoString(t *testing.T) {
-	t.Run("header", func(t *testing.T) {
-		assert.Equal(t, poStrEncodeStd, EncodePoString(poStrDecode, 60))
-	})
-
-	tests := []struct {
-		name string
-		raw  string
-		want string
-	}{
-		{
-			name: "Quotation marks are added",
-			raw:  `Extracted string`,
-			want: `"Extracted string"`,
-		},
-		{
-			name: "Intentional multiple quotation marks are preserved",
-			raw:  "\"Extracted string\"",
-			want: "\"\\\"Extracted string\\\"\"",
-		},
-		{
-			name: "Intentional backquotes are preserved",
-			raw:  "`Extracted string`",
-			want: "\"`Extracted string`\"",
-		},
-		{
-			name: "Multiline text are formatted correctly",
-			raw:  "This is an multiline\nstring",
-			want: `""
-"This is an multiline\n"
-"string"`,
-		},
-		{
-			name: "backquoted newline is converted to newline",
-			raw: `This is an multiline
-string`,
-			want: `""
-"This is an multiline\n"
-"string"`,
-		},
-		{
-			name: "Single line with a newline at the end remains a single line",
-			raw:  "Single line with newline\n",
-			want: `"Single line with newline\n"`,
-		},
-		{
-			name: "Last newline does not start a new line",
-			raw:  "Multiline\nwith\nnewlines\n",
-			want: `""
-"Multiline\n"
-"with\n"
-"newlines\n"`,
-		},
-		{
-			name: "Empty string formatted",
-			raw:  "",
-			want: "\"\"",
-		},
-		{
-			name: "special chars",
-			raw: `special	"chars"	\`,
-			want: "\"special\\t\\\"chars\\\"\\t\\\\\"",
-		},
-		{
-			name: "backslash",
-			raw:  "Test \\\\ \"id\"\t\\",
-			want: "\"Test \\\\\\\\ \\\"id\\\"\\t\\\\\"",
-		},
-	}
-	for i, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			actual := EncodePoString(tt.raw, 60)
-			assert.Equal(t, tt.want, actual, "id=%d wrap=enabled", i)
-			actual = EncodePoString(tt.raw, -1)
-			assert.Equal(t, tt.want, actual, "id=%d wrap=disabled", i)
-		})
-	}
-}
-
 const poStrEncode = `# noise
 123456789
 "Project-Id-Version: poedit\n"
@@ -346,3 +218,78 @@ const poStrEncodeStd = `""
 "X-Crowdin-File: /locales/poedit.pot\n"
 "X-Crowdin-File-ID: 3\n"
 "X-Generator: Poedit 3.0.1\n"`
+
+var decodeEncodeTests = []struct {
+	name    string
+	code    string
+	poLines string
+}{
+	{
+		name:    "Quotation marks are added",
+		code:    `Extracted string`,
+		poLines: `"Extracted string"`,
+	},
+	{
+		name:    "Intentional multiple quotation marks are preserved",
+		code:    "\"Extracted string\"",
+		poLines: "\"\\\"Extracted string\\\"\"",
+	},
+	{
+		name:    "Intentional backquotes are preserved",
+		code:    "`Extracted string`",
+		poLines: "\"`Extracted string`\"",
+	},
+	{
+		name: "Multiline text are formatted correctly",
+		code: "This is an multiline\nstring",
+		poLines: `""
+"This is an multiline\n"
+"string"`,
+	},
+	{
+		name: "backquoted newline is converted to newline",
+		code: `This is an multiline
+string`,
+		poLines: `""
+"This is an multiline\n"
+"string"`,
+	},
+	{
+		name:    "Single line with a newline at the end remains a single line",
+		code:    "Single line with newline\n",
+		poLines: `"Single line with newline\n"`,
+	},
+	{
+		name: "Last newline does not start a new line",
+		code: "Multiline\nwith\nnewlines\n",
+		poLines: `""
+"Multiline\n"
+"with\n"
+"newlines\n"`,
+	},
+	{
+		name:    "Empty string formatted",
+		code:    "",
+		poLines: "\"\"",
+	},
+	{
+		name: "special chars",
+		code: `{}()[]special	"chars"	\`,
+		poLines: "\"{}()[]special\\t\\\"chars\\\"\\t\\\\\"",
+	},
+	{
+		name:    "backslash",
+		code:    "Test \\\\ \"id\"\t\\",
+		poLines: "\"Test \\\\\\\\ \\\"id\\\"\\t\\\\\"",
+	},
+	{
+		name:    "ascii",
+		code:    "\a\f\v",
+		poLines: "\"\\a\\f\\v\"",
+	},
+	{
+		name:    "utf8",
+		code:    "äüö€$翻訳ファイル",
+		poLines: `"äüö€$翻訳ファイル"`,
+	},
+}
