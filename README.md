@@ -2,19 +2,27 @@
 
 Flexible translation and humanization library for Go, based on the concepts behind gettext. Requires Go 1.16+.
 
+### Why another library?
+
+There are already many good libraries for Go, which allow localizing an application.
+However, I always came to a point where I was dissatisfied.
+Either they use a self defined format, which could not be edited with common tools.
+Some libraries only support one language at a time or are using a lot of mutexes.
+And no tool could easily extract the strings to be translated.
+I wanted to solve these problems for myself, and so spreak was born.
+
 ### Features
 
+* Built-in support for `po`, `mo` and [`json`](./examples/features/jhttptempl) files
+* [Direct support for humanization](#package-humanize-)  of Go data structures
+* Support for `fs.FS` (e.g. `embed`)
 * Goroutine-safe and lock free through immutability
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
-  (with support for templates)
+  (with **support for templates**)
 * [Support](https://pkg.go.dev/github.com/vorlif/spreak#hdr-Plurals)
   for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html)
   and [CLDR v41](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
 * Support of bilingual and monolingual formats
-* Built-in support for `po`, `mo` and [`json`](./examples/features/jhttptempl) files
-* [Direct support for humanization](#package-humanize-)  of Go data structures
-* Support for `fs.FS` (e.g. `embed`)
-* Easily extendable
 
 ### Usage
 
