@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/pkg/cldrplural"
+	"github.com/vorlif/spreak/catalog/cldrplural"
 )
 
 type jsonDecoder struct{}

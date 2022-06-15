@@ -11,7 +11,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/vorlif/spreak/pkg/cldrplural/ast"
+	"github.com/vorlif/spreak/catalog/cldrplural/ast"
 )
 
 var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))

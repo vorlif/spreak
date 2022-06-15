@@ -8,7 +8,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/vorlif/spreak/pkg/poplural/ast"
+	"github.com/vorlif/spreak/catalog/poplural/ast"
 )
 
 var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))

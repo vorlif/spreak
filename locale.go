@@ -4,8 +4,8 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/catalog/poplural"
 	"github.com/vorlif/spreak/localize"
-	"github.com/vorlif/spreak/pkg/poplural"
 )
 
 // Deprecated: Will be removed with v1.0. A Localizer should be used, as it offers the same functionalities.

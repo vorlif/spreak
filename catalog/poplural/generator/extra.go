@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/vorlif/spreak/pkg/poplural/ast"
+	"github.com/vorlif/spreak/catalog/poplural/ast"
 )
 
 func getExtraRules() []*ruleData {

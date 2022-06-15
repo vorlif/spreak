@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/pkg/cldrplural/ast"
+	"github.com/vorlif/spreak/catalog/cldrplural/ast"
 )
 
 // compileNode converts a rule tree to go code.

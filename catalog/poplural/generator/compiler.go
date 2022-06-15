@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/pkg/poplural/ast"
+	"github.com/vorlif/spreak/catalog/poplural/ast"
 )
 
 func compileForms(forms *ast.Forms) string {

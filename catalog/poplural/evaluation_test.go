@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/vorlif/spreak/pkg/poplural/ast"
+	"github.com/vorlif/spreak/catalog/poplural/ast"
 )
 
 type fixture struct {

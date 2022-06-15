@@ -3,7 +3,7 @@ package cldrplural
 import (
 	"math"
 
-	"github.com/vorlif/spreak/pkg/cldrplural/ast"
+	"github.com/vorlif/spreak/catalog/cldrplural/ast"
 )
 
 func MustParseRules(rules map[Category]string) *RuleSet {
