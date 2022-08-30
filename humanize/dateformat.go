@@ -143,9 +143,9 @@ func (tf *timeFormatter) e() string {
 	return zone
 }
 
-//  Time, in 12-hour hours and minutes, with minutes left off if they're zero.
-//  Examples: '1', '1:30', '2:05', '2'
-//  Proprietary extension.
+// Time, in 12-hour hours and minutes, with minutes left off if they're zero.
+// Examples: '1', '1:30', '2:05', '2'
+// Proprietary extension.
 func (tf *timeFormatter) f() string {
 	hour := tf.data.Format("3")
 	if tf.data.Minute() > 0 {

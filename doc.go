@@ -1,6 +1,6 @@
 // Package spreak provides a simple translation facility based on the concepts of gettext.
 //
-// Fundamentals
+// # Fundamentals
 //
 // Domain: A message domain is a set of translatable messages.
 // Usually, every software package has its own message domain.
@@ -19,7 +19,7 @@
 // You should try to make it somehow canonical and never changing.
 // Because every time you change an Context, the translator will have to review the translation of msgid.
 //
-// Plurals
+// # Plurals
 //
 // For JSON files only the CLDR plural rules are supported.
 // For po and mo files both gettext plural forms and CLDR plural rules are supported.
@@ -33,16 +33,17 @@
 // catalog.NewPoCLDRDecoder() / catalog.NewMoCLDRDecoder().
 //
 // For Polish with One, Few and Other, the structure of a Po file according to this convention could look like this:
-//     msgid ""
-//     msgstr ""
-//     "Plural-Forms: n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : 2;\n"
-//     "X-spreak-use-CLDR: true\n"
 //
-//     msgid "id"
-//     msgid_plural "plural id"
-//     msgstr[0] "Translation with the plural form One"
-//     msgstr[1] "Translation with the plural form Few"
-//     msgstr[2] "Translation with the plural form Other"
+//	msgid ""
+//	msgstr ""
+//	"Plural-Forms: n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : 2;\n"
+//	"X-spreak-use-CLDR: true\n"
+//
+//	msgid "id"
+//	msgid_plural "plural id"
+//	msgstr[0] "Translation with the plural form One"
+//	msgstr[1] "Translation with the plural form Few"
+//	msgstr[2] "Translation with the plural form Other"
 //
 // If floating point numbers are used, it is recommended to pass them formatted as strings as they will be displayed later.
 // For example, if the number n is to be displayed with two numbers after the decimal point, it should be formatted with fmt.Sprintf("%.2f", n).
