@@ -1,10 +1,13 @@
 package spreak
 
 import (
+	"embed"
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strconv"
 	"testing"
+	"testing/fstest"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -13,6 +16,9 @@ import (
 	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/internal/util"
 )
+
+//go:embed testdata/structure/*
+var embedTestFS embed.FS
 
 func TestNewFilesystemLoader(t *testing.T) {
 	t.Run("error is returned when a nil option is passed", func(t *testing.T) {
@@ -297,6 +303,43 @@ func TestWithFs(t *testing.T) {
 		fl, err := NewFilesystemLoader(WithFs(fsys), WithFs(fsys))
 		assert.Error(t, err)
 		require.Nil(t, fl)
+	})
+
+	t.Run("embeddedFS", func(t *testing.T) {
+		testFS, err := fs.Sub(embedTestFS, "testdata/structure")
+
+		require.NoError(t, err)
+		require.NoError(t, fstest.TestFS(testFS, "de_AT.po", "es/helloworld.po"))
+
+		resolver, err := NewDefaultResolver()
+		require.NoError(t, err)
+
+		tests := []struct {
+			lang     language.Tag
+			domain   string
+			wantErr  bool
+			wantPath string
+		}{
+			{language.Spanish, "", true, ""},
+			{language.Spanish, "helloworld", false, "es/helloworld.po"},
+			{language.Zulu, "", true, ""},
+			{language.German, "a", false, "de/LC_MESSAGES/a.po"},
+			{language.German, "c", false, "de/c.po"},
+			{language.German, "d", true, ""},
+		}
+
+		for i, tt := range tests {
+			t.Run(strconv.Itoa(i), func(t *testing.T) {
+				getPath, getErr := resolver.Resolve(testFS, PoFile, tt.lang, tt.domain)
+				if tt.wantErr {
+					assert.Error(t, getErr)
+					assert.Empty(t, getPath)
+				} else {
+					assert.NoError(t, getErr)
+					assert.Equal(t, tt.wantPath, getPath)
+				}
+			})
+		}
 	})
 }
 
