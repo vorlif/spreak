@@ -148,6 +148,8 @@ func (l *FilesystemLoader) addDecoder(ext string, decoder catalog.Decoder) {
 }
 
 // WithFs stores a fs.FS as filesystem.
+// The file system can only be accessed with paths which are separated by slashes (Unix style).
+// If a different behavior is desired, a separate resolver must be stored with WithResolver.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
 func WithFs(fsys fs.FS) FsOption {
 	return func(l *FilesystemLoader) error {

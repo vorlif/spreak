@@ -4,6 +4,7 @@ import (
 	"embed"
 	"io/fs"
 	"os"
+	"path"
 	"path/filepath"
 	"strconv"
 	"testing"
@@ -101,11 +102,11 @@ func TestLoadPo(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			false, filepath.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.German, "a", "",
-			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.French, "a", "",
@@ -125,14 +126,14 @@ func TestLoadPo(t *testing.T) {
 		reducer, errR := NewDefaultResolver(WithCategory(tt.category))
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
 		}
 
 		if assert.NoError(t, err, "Resolve(... %v %v %v %v...", tt.lang, tt.domain, tt.category, tt.extension) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 
@@ -168,14 +169,14 @@ func TestReduceMoFiles(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
 		}
 
 		if assert.NoError(t, err) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 }
@@ -213,14 +214,14 @@ func TestDisableSearch(t *testing.T) {
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
 
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err, idx)
 			continue
 		}
 
 		if assert.NoError(t, err, idx) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 }
