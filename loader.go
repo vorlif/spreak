@@ -6,7 +6,7 @@ import (
 	"io"
 	"io/fs"
 	"os"
-	"path/filepath"
+	"path"
 
 	"golang.org/x/text/language"
 
@@ -110,7 +110,7 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 
 	for i, extension := range l.extensions {
-		path, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
+		resolvedPath, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
 		if errP != nil {
 			if errors.Is(errP, os.ErrNotExist) {
 				continue
@@ -118,7 +118,7 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 			return nil, errP
 		}
 
-		f, errF := l.fsys.Open(path)
+		f, errF := l.fsys.Open(resolvedPath)
 		if errF != nil {
 			if f != nil {
 				_ = f.Close()
@@ -134,7 +134,7 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 
 		catl, errC := l.decoder[i].Decode(lang, domain, data)
 		if errC != nil {
-			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", path, errC)
+			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, errC)
 		}
 		return catl, nil
 	}
@@ -148,6 +148,8 @@ func (l *FilesystemLoader) addDecoder(ext string, decoder catalog.Decoder) {
 }
 
 // WithFs stores a fs.FS as filesystem.
+// The file system can only be accessed with paths which are separated by slashes (Unix style).
+// If a different behavior is desired, a separate resolver must be stored with WithResolver.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
 func WithFs(fsys fs.FS) FsOption {
 	return func(l *FilesystemLoader) error {
@@ -230,67 +232,66 @@ func WithCategory(category string) ResolverOption {
 
 func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
 	for _, lang := range ExpandLanguage(tag) {
-		path, err := r.searchFileForLanguageName(fsys, lang, domain, extension)
+		searchPath, err := r.searchFileForLanguageName(fsys, lang, domain, extension)
 		if errors.Is(err, os.ErrNotExist) {
 			continue
 		}
 
-		return path, nil
+		return searchPath, nil
 	}
 
 	return "", os.ErrNotExist
 }
 
 func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, ext string) (string, error) {
-
 	if domain != "" {
 		// .../locale/category/domain.mo
-		path := filepath.Join(locale, r.category, domain+ext)
-		if _, err := fs.Stat(fsys, path); err == nil {
-			return path, nil
+		searchPath := path.Join(locale, r.category, domain+ext)
+		if _, err := fs.Stat(fsys, searchPath); err == nil {
+			return searchPath, nil
 		}
 	}
 
 	if r.search {
 		if domain != "" {
 			// .../locale/LC_MESSAGES/domain.mo
-			path := filepath.Join(locale, "LC_MESSAGES", domain+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath := path.Join(locale, "LC_MESSAGES", domain+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 
 			// .../locale/domain.mo
-			path = filepath.Join(locale, domain+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = path.Join(locale, domain+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 
 			// .../domain/locale.mo
-			path = filepath.Join(domain, locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = path.Join(domain, locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 
 		// .../locale.mo
-		path := filepath.Join(locale + ext)
-		if _, err := fs.Stat(fsys, path); err == nil {
-			return path, nil
+		searchPath := path.Join(locale + ext)
+		if _, err := fs.Stat(fsys, searchPath); err == nil {
+			return searchPath, nil
 		}
 
 		if r.category != "" {
 			// .../category/locale.mo
-			path = filepath.Join(r.category, locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = path.Join(r.category, locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 
 		if r.category != "LC_MESSAGES" {
 			// .../LC_MESSAGES/locale.mo
-			path = filepath.Join("LC_MESSAGES", locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = path.Join("LC_MESSAGES", locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 	}

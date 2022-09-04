@@ -9,6 +9,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+var testdataDir = filepath.FromSlash("../../testdata/")
+
 func TestDirFS(t *testing.T) {
 	dir, err := os.MkdirTemp("", "spreakTest")
 	require.NoError(t, err)
@@ -49,4 +51,26 @@ func TestDirFS(t *testing.T) {
 	file2, err := fs.Open(filepath.Base(file.Name()))
 	assert.NoError(t, err)
 	assert.NoError(t, file2.Close())
+}
+
+func TestDirFS_CrossPlatform(t *testing.T) {
+	fsys := DirFS(testdataDir)
+
+	t.Run("stat", func(t *testing.T) {
+		info, err := fsys.Stat("structure/es/")
+		assert.NoError(t, err)
+		assert.True(t, info.IsDir())
+
+		info, err = fsys.Stat("structure/es/helloworld.po")
+		assert.NoError(t, err)
+		assert.Equal(t, "helloworld.po", info.Name())
+	})
+
+	t.Run("open", func(t *testing.T) {
+		f, err := fsys.Open("structure/es/helloworld.po")
+		if assert.NoError(t, err) {
+			defer f.Close()
+		}
+	})
+
 }

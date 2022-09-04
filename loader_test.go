@@ -1,10 +1,13 @@
 package spreak
 
 import (
+	"embed"
 	"io/fs"
 	"os"
-	"path/filepath"
+	"path"
+	"strconv"
 	"testing"
+	"testing/fstest"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -13,6 +16,9 @@ import (
 	"github.com/vorlif/spreak/catalog"
 	"github.com/vorlif/spreak/internal/util"
 )
+
+//go:embed testdata/structure/*
+var embedTestFS embed.FS
 
 func TestNewFilesystemLoader(t *testing.T) {
 	t.Run("error is returned when a nil option is passed", func(t *testing.T) {
@@ -95,11 +101,11 @@ func TestLoadPo(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			false, filepath.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.German, "a", "",
-			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.French, "a", "",
@@ -119,14 +125,14 @@ func TestLoadPo(t *testing.T) {
 		reducer, errR := NewDefaultResolver(WithCategory(tt.category))
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
 		}
 
 		if assert.NoError(t, err, "Resolve(... %v %v %v %v...", tt.lang, tt.domain, tt.category, tt.extension) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 
@@ -162,14 +168,14 @@ func TestReduceMoFiles(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err)
 			continue
 		}
 
 		if assert.NoError(t, err) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 }
@@ -190,11 +196,11 @@ func TestDisableSearch(t *testing.T) {
 		},
 		{
 			language.German, "a", "LC_MESSAGES",
-			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.German, "b", "my_category",
-			false, filepath.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.English, "domain", "cat",
@@ -207,14 +213,14 @@ func TestDisableSearch(t *testing.T) {
 		require.NoError(t, errR)
 		require.NotNil(t, reducer)
 
-		path, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
+		resolvedPath, err := reducer.Resolve(fsys, tt.extension, tt.lang, tt.domain)
 		if tt.wantErr {
 			assert.Error(t, err, idx)
 			continue
 		}
 
 		if assert.NoError(t, err, idx) {
-			assert.Equal(t, tt.wantPath, path)
+			assert.Equal(t, tt.wantPath, resolvedPath)
 		}
 	}
 }
@@ -297,6 +303,43 @@ func TestWithFs(t *testing.T) {
 		fl, err := NewFilesystemLoader(WithFs(fsys), WithFs(fsys))
 		assert.Error(t, err)
 		require.Nil(t, fl)
+	})
+
+	t.Run("embeddedFS", func(t *testing.T) {
+		testFS, err := fs.Sub(embedTestFS, "testdata/structure")
+
+		require.NoError(t, err)
+		require.NoError(t, fstest.TestFS(testFS, "de_AT.po", "es/helloworld.po"))
+
+		resolver, err := NewDefaultResolver()
+		require.NoError(t, err)
+
+		tests := []struct {
+			lang     language.Tag
+			domain   string
+			wantErr  bool
+			wantPath string
+		}{
+			{language.Spanish, "", true, ""},
+			{language.Spanish, "helloworld", false, "es/helloworld.po"},
+			{language.Zulu, "", true, ""},
+			{language.German, "a", false, "de/LC_MESSAGES/a.po"},
+			{language.German, "c", false, "de/c.po"},
+			{language.German, "d", true, ""},
+		}
+
+		for i, tt := range tests {
+			t.Run(strconv.Itoa(i), func(t *testing.T) {
+				getPath, getErr := resolver.Resolve(testFS, PoFile, tt.lang, tt.domain)
+				if tt.wantErr {
+					assert.Error(t, getErr)
+					assert.Empty(t, getPath)
+				} else {
+					assert.NoError(t, getErr)
+					assert.Equal(t, tt.wantPath, getPath)
+				}
+			})
+		}
 	})
 }
 
