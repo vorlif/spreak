@@ -1,11 +1,13 @@
 package spreak
 
 import (
+	"embed"
 	"errors"
 	"fmt"
 	"io"
 	"io/fs"
 	"os"
+	"path"
 	"path/filepath"
 
 	"golang.org/x/text/language"
@@ -110,7 +112,7 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
 
 	for i, extension := range l.extensions {
-		path, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
+		resolvedPath, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
 		if errP != nil {
 			if errors.Is(errP, os.ErrNotExist) {
 				continue
@@ -118,7 +120,7 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 			return nil, errP
 		}
 
-		f, errF := l.fsys.Open(path)
+		f, errF := l.fsys.Open(resolvedPath)
 		if errF != nil {
 			if f != nil {
 				_ = f.Close()
@@ -134,7 +136,7 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 
 		catl, errC := l.decoder[i].Decode(lang, domain, data)
 		if errC != nil {
-			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", path, errC)
+			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, errC)
 		}
 		return catl, nil
 	}
@@ -230,67 +232,77 @@ func WithCategory(category string) ResolverOption {
 
 func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
 	for _, lang := range ExpandLanguage(tag) {
-		path, err := r.searchFileForLanguageName(fsys, lang, domain, extension)
+		searchPath, err := r.searchFileForLanguageName(fsys, lang, domain, extension)
 		if errors.Is(err, os.ErrNotExist) {
 			continue
 		}
 
-		return path, nil
+		return searchPath, nil
 	}
 
 	return "", os.ErrNotExist
 }
 
 func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, ext string) (string, error) {
+	// Function to assemble the path.
+	// Since for embedded file systems the separation of paths by slashes is used,
+	// a separate handling is necessary here.
+	// See: https://github.com/vorlif/spreak/issues/12
+	var joinFunc func(elem ...string) string
+	if _, isEmbedded := fsys.(embed.FS); isEmbedded {
+		joinFunc = path.Join
+	} else {
+		joinFunc = filepath.Join
+	}
 
 	if domain != "" {
 		// .../locale/category/domain.mo
-		path := filepath.Join(locale, r.category, domain+ext)
-		if _, err := fs.Stat(fsys, path); err == nil {
-			return path, nil
+		searchPath := joinFunc(locale, r.category, domain+ext)
+		if _, err := fs.Stat(fsys, searchPath); err == nil {
+			return searchPath, nil
 		}
 	}
 
 	if r.search {
 		if domain != "" {
 			// .../locale/LC_MESSAGES/domain.mo
-			path := filepath.Join(locale, "LC_MESSAGES", domain+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath := joinFunc(locale, "LC_MESSAGES", domain+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 
 			// .../locale/domain.mo
-			path = filepath.Join(locale, domain+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = joinFunc(locale, domain+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 
 			// .../domain/locale.mo
-			path = filepath.Join(domain, locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = joinFunc(domain, locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 
 		// .../locale.mo
-		path := filepath.Join(locale + ext)
-		if _, err := fs.Stat(fsys, path); err == nil {
-			return path, nil
+		searchPath := joinFunc(locale + ext)
+		if _, err := fs.Stat(fsys, searchPath); err == nil {
+			return searchPath, nil
 		}
 
 		if r.category != "" {
 			// .../category/locale.mo
-			path = filepath.Join(r.category, locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = joinFunc(r.category, locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 
 		if r.category != "LC_MESSAGES" {
 			// .../LC_MESSAGES/locale.mo
-			path = filepath.Join("LC_MESSAGES", locale+ext)
-			if _, err := fs.Stat(fsys, path); err == nil {
-				return path, nil
+			searchPath = joinFunc("LC_MESSAGES", locale+ext)
+			if _, err := fs.Stat(fsys, searchPath); err == nil {
+				return searchPath, nil
 			}
 		}
 	}
