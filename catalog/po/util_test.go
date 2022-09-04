@@ -273,8 +273,8 @@ string`,
 		poLines: "\"\"",
 	},
 	{
-		name: "special chars",
-		code: `{}()[]special	"chars"	\`,
+		name:    "special chars",
+		code:    `{}()[]special	"chars"	\`,
 		poLines: "\"{}()[]special\\t\\\"chars\\\"\\t\\\\\"",
 	},
 	{

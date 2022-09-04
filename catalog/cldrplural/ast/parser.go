@@ -8,30 +8,31 @@ import (
 
 // The parser can translate a single rule into an abstract
 // tree of nodes. It implements the following grammar::
-//     condition     = and_condition ('or' and_condition)*
-//                     ('@integer' samples)?
-//                     ('@decimal' samples)?
-//     and_condition = relation ('and' relation)*
-//     relation      = expr ('=' | '!=') range_list
-//     expr          = operand ('%' value)?
-//     operand       = 'n' | 'i' | 'f' | 't' | 'v' | 'w'
-//     range_list    = (range | value) (',' range_list)*
-//     value         = digit+
-//     digit         = 0|1|2|3|4|5|6|7|8|9
-//     range         = value'..'value
-//     samples       = sampleRange (',' sampleRange)* (',' ('…'|'...'))?
-//     sampleRange   = decimalValue '~' decimalValue
-//     decimalValue  = value ('.' value)?
 //
-//  - Whitespace can occur between or around any of the above tokens.
-//  - Rules should be mutually exclusive; for a given numeric value, only one
-//    rule should apply (i.e. the condition should only be true for one of
-//    the plural rule elements).
-//  - The in and within relations can take comma-separated lists, such as:
-//    'n in 3,5,7..15'.
-//  - Samples are ignored.
-//    The translator parses the expression on instanciation into an attribute
-//    called `ast`.
+//	   condition     = and_condition ('or' and_condition)*
+//	                   ('@integer' samples)?
+//	                   ('@decimal' samples)?
+//	   and_condition = relation ('and' relation)*
+//	   relation      = expr ('=' | '!=') range_list
+//	   expr          = operand ('%' value)?
+//	   operand       = 'n' | 'i' | 'f' | 't' | 'v' | 'w'
+//	   range_list    = (range | value) (',' range_list)*
+//	   value         = digit+
+//	   digit         = 0|1|2|3|4|5|6|7|8|9
+//	   range         = value'..'value
+//	   samples       = sampleRange (',' sampleRange)* (',' ('…'|'...'))?
+//	   sampleRange   = decimalValue '~' decimalValue
+//	   decimalValue  = value ('.' value)?
+//
+//	- Whitespace can occur between or around any of the above tokens.
+//	- Rules should be mutually exclusive; for a given numeric value, only one
+//	  rule should apply (i.e. the condition should only be true for one of
+//	  the plural rule elements).
+//	- The in and within relations can take comma-separated lists, such as:
+//	  'n in 3,5,7..15'.
+//	- Samples are ignored.
+//	  The translator parses the expression on instanciation into an attribute
+//	  called `ast`.
 type parser struct {
 	s           *scanner
 	lastToken   Token  // last read token
