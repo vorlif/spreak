@@ -5,7 +5,6 @@ import (
 	"io/fs"
 	"os"
 	"path"
-	"path/filepath"
 	"strconv"
 	"testing"
 	"testing/fstest"
@@ -197,11 +196,11 @@ func TestDisableSearch(t *testing.T) {
 		},
 		{
 			language.German, "a", "LC_MESSAGES",
-			false, filepath.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
 		},
 		{
 			language.German, "b", "my_category",
-			false, filepath.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), PoFile,
 		},
 		{
 			language.English, "domain", "cat",
