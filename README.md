@@ -1,6 +1,6 @@
 # Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak) ![MinVersion](https://img.shields.io/badge/Go-1.17+-blue)
 
-Flexible translation and humanization library for Go, based on the concepts behind gettext. Requires Go 1.16+.
+Flexible translation and humanization library for Go, based on the concepts behind gettext. Requires Go 1.17+.
 
 ### Why another library?
 
@@ -21,7 +21,7 @@ I wanted to solve these problems for myself, and so spreak was born.
   (with **support for templates**)
 * [Support](https://pkg.go.dev/github.com/vorlif/spreak#hdr-Plurals)
   for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html)
-  and [CLDR v41](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
+  and [CLDR v42](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
 * Support of bilingual and monolingual formats
 
 ### Usage
@@ -29,7 +29,7 @@ I wanted to solve these problems for myself, and so spreak was born.
 Using spreak is easy. First, use go get to install the latest version of the library.
 
 ```shell
-go get -u github.com/vorlif/spreak@latest
+go get -u github.com/vorlif/spreak
 ```
 
 After that, spreak offers you a comprehensive interface to load and query your translations.
@@ -50,6 +50,7 @@ func main() {
 	// Create a bundle that loads the translations for the required languages.
 	// Typically, you only need one bundle in an application.
 	bundle, err := spreak.NewBundle(
+		// Set the language used in the program code/templates
 		spreak.WithSourceLanguage(language.English),
 		// Set the path from which the translations should be loaded
 		spreak.WithDomainPath(spreak.NoDomain, "./locale"),
@@ -60,7 +61,7 @@ func main() {
 		panic(err)
 	}
 
-	// Create a Localiser to select the language to translate.
+	// Create a Localizer to select the language to translate.
 	t := spreak.NewLocalizer(bundle, language.Spanish)
 
 	// Translate
