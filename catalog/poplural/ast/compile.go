@@ -3,6 +3,7 @@ package ast
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 func CompileToString(forms *Forms) string {
@@ -16,7 +17,21 @@ func compileNode(node Node) string {
 	case *OperandExpr:
 		return "n"
 	case *QuestionMarkExpr:
-		return fmt.Sprintf("(%s) ? %s : %s", compileNode(v.Cond), compileNode(v.T), compileNode(v.F))
+		cond := compileNode(v.Cond)
+		then := compileNode(v.T)
+		other := compileNode(v.F)
+
+		if len(cond) > 1 && !(strings.HasPrefix(cond, "(") && strings.HasSuffix(cond, ")")) {
+			cond = "(" + cond + ")"
+		}
+		if len(then) > 1 {
+			then = "(" + then + ")"
+		}
+		if len(other) > 1 {
+			other = "(" + other + ")"
+		}
+
+		return fmt.Sprintf("%s ? %s : %s", cond, then, other)
 	case *BinaryExpr:
 		switch v.Type() {
 		case LogicalAnd:

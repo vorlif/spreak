@@ -161,7 +161,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vorlif/spreak/pkg/cldrplural/ast"
+	"github.com/vorlif/spreak/catalog/cldrplural/ast"
 )
 
 {{range $key, $data := .}}

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"unicode"
 
@@ -35,6 +36,7 @@ func getJSONRules() []*ruleData {
 			Count:       fileData.Plurals,
 			Compiled:    compileForms(parsed),
 			CompiledRaw: ast.CompileToString(parsed),
+			Examples:    extractExamples(fileData.Cases, fileData.Examples),
 		}
 	}
 
@@ -62,6 +64,8 @@ type ruleData struct {
 	Compiled    string
 	Count       int
 	Languages   []string
+	// Maps from index to examples
+	Examples map[int][]string
 }
 
 func (d *ruleData) Name() string {
@@ -80,4 +84,47 @@ func (d *ruleData) Name() string {
 	}
 
 	return b.String()
+}
+
+func extractExamples(cases []string, data map[string]string) map[int][]string {
+
+	extracted := make(map[int][]string, len(data))
+
+	for caseName, caseExamples := range data {
+		examples := make([]string, 0)
+
+		for _, example := range strings.Split(caseExamples, ",") {
+			// The last item is always an omission point
+			if example == " …" {
+				break
+			}
+
+			example = strings.TrimSpace(example)
+
+			if parts := strings.Split(example, "~"); len(parts) == 2 {
+				startNumber, err := strconv.Atoi(parts[0])
+				checkError(err)
+				stopNumber, err := strconv.Atoi(parts[1])
+				checkError(err)
+
+				for i := startNumber; i <= stopNumber; i++ {
+					examples = append(examples, strconv.Itoa(i))
+				}
+			} else {
+				// The JSON file uses "6c3" instead of "6e3".
+				example = strings.ReplaceAll(example, "c", "e")
+				examples = append(examples, example)
+			}
+		}
+
+		// Since the data is stored in a map, the appropriate index must be searched for.
+		for i, name := range cases {
+			if name == caseName {
+				extracted[i] = examples
+				break
+			}
+		}
+	}
+
+	return extracted
 }

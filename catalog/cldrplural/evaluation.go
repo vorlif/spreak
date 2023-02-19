@@ -4,6 +4,7 @@ import (
 	"math"
 
 	"github.com/vorlif/spreak/catalog/cldrplural/ast"
+	"github.com/vorlif/spreak/internal/util"
 )
 
 func MustParseRules(rules map[Category]string) *RuleSet {
@@ -144,11 +145,11 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 }
 
 // isFloatInRange tests whether a float64 value x is within a range [from, to].
-// Multiple ranges can be specified,.
+// Multiple ranges can be specified.
 func isFloatInRange(x float64, rangeValues ...int64) bool {
 	for i := 0; i < len(rangeValues); i += 2 {
 		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
-			if float64(v) == x {
+			if util.FloatEqual(float64(v), x) {
 				return true
 			}
 		}
@@ -158,7 +159,7 @@ func isFloatInRange(x float64, rangeValues ...int64) bool {
 }
 
 // isIntInRange tests whether an int64 value x is within a range [from, to].
-// Multiple ranges can be specified,.
+// Multiple ranges can be specified.
 func isIntInRange(x int64, rangeValues ...int64) bool {
 	for i := 0; i < len(rangeValues); i += 2 {
 		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
@@ -173,7 +174,7 @@ func isIntInRange(x int64, rangeValues ...int64) bool {
 
 func isFloatOneOf(target float64, vals ...int64) bool {
 	for _, val := range vals {
-		if float64(val) == target {
+		if util.FloatEqual(float64(val), target) {
 			return true
 		}
 	}

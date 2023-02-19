@@ -33,6 +33,8 @@ import (
 //	- Samples are ignored.
 //	  The translator parses the expression on instanciation into an attribute
 //	  called `ast`.
+//
+// See: http://unicode.org/reports/tr35/tr35-numbers.html#51-plural-rules-syntax
 type parser struct {
 	s           *scanner
 	lastToken   Token  // last read token
