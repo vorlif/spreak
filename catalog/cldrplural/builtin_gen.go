@@ -52,7 +52,7 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"ast", "ca", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "scn", "sv", "sw", "ur", "yi"}, &RuleSet{
+	addRuleSet([]string{"ast", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "scn", "sv", "sw", "ur", "yi"}, &RuleSet{
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
@@ -108,8 +108,8 @@ func init() {
 		Categories: newCategories(One, Other),
 		FormFunc: func(ops *Operands) Category {
 
-			// t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0
-			if ops.T == 0 && ops.I%10 == 1 && ops.I%100 != 11 || ops.T != 0 {
+			// t = 0 and i % 10 = 1 and i % 100 != 11 or t % 10 = 1 and t % 100 != 11
+			if ops.T == 0 && ops.I%10 == 1 && ops.I%100 != 11 || ops.T%10 == 1 && ops.T%100 != 11 {
 				return One
 			}
 
@@ -174,6 +174,24 @@ func init() {
 		},
 	})
 
+	addRuleSet([]string{"ca", "it", "pt-PT", "vec"}, &RuleSet{
+		Categories: newCategories(One, Many, Other),
+		FormFunc: func(ops *Operands) Category {
+
+			// i = 1 and v = 0
+			if ops.I == 1 && ops.V == 0 {
+				return One
+			}
+
+			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
+			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
+				return Many
+			}
+
+			return Other
+		},
+	})
+
 	addRuleSet([]string{"es"}, &RuleSet{
 		Categories: newCategories(One, Many, Other),
 		FormFunc: func(ops *Operands) Category {
@@ -210,18 +228,18 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"it", "pt-PT"}, &RuleSet{
-		Categories: newCategories(One, Many, Other),
+	addRuleSet([]string{"he"}, &RuleSet{
+		Categories: newCategories(One, Two, Other),
 		FormFunc: func(ops *Operands) Category {
 
-			// i = 1 and v = 0
-			if ops.I == 1 && ops.V == 0 {
+			// i = 1 and v = 0 or i = 0 and v != 0
+			if ops.I == 1 && ops.V == 0 || ops.I == 0 && ops.V != 0 {
 				return One
 			}
 
-			// e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
-			if ops.C == 0 && ops.I != 0 && ops.I%1000000 == 0 && ops.V == 0 || !isIntInRange(ops.C, 0, 5) {
-				return Many
+			// i = 2 and v = 0
+			if ops.I == 2 && ops.V == 0 {
+				return Two
 			}
 
 			return Other
@@ -309,8 +327,8 @@ func init() {
 				return One
 			}
 
-			// v != 0 or n = 0 or n % 100 = 2..19
-			if ops.V != 0 || ops.N == 0 || isFloatInRange(math.Mod(ops.N, 100), 2, 19) {
+			// v != 0 or n = 0 or n != 1 and n % 100 = 1..19
+			if ops.V != 0 || ops.N == 0 || ops.N != 1 && isFloatInRange(math.Mod(ops.N, 100), 1, 19) {
 				return Few
 			}
 
@@ -446,29 +464,6 @@ func init() {
 		},
 	})
 
-	addRuleSet([]string{"he"}, &RuleSet{
-		Categories: newCategories(One, Two, Many, Other),
-		FormFunc: func(ops *Operands) Category {
-
-			// i = 1 and v = 0
-			if ops.I == 1 && ops.V == 0 {
-				return One
-			}
-
-			// i = 2 and v = 0
-			if ops.I == 2 && ops.V == 0 {
-				return Two
-			}
-
-			// v = 0 and n != 0..10 and n % 10 = 0
-			if ops.V == 0 && !isFloatInRange(ops.N, 0, 10) && math.Mod(ops.N, 10) == 0 {
-				return Many
-			}
-
-			return Other
-		},
-	})
-
 	addRuleSet([]string{"lt"}, &RuleSet{
 		Categories: newCategories(One, Few, Many, Other),
 		FormFunc: func(ops *Operands) Category {
@@ -485,29 +480,6 @@ func init() {
 
 			// f != 0
 			if ops.F != 0 {
-				return Many
-			}
-
-			return Other
-		},
-	})
-
-	addRuleSet([]string{"mt"}, &RuleSet{
-		Categories: newCategories(One, Few, Many, Other),
-		FormFunc: func(ops *Operands) Category {
-
-			// n = 1
-			if ops.N == 1 {
-				return One
-			}
-
-			// n = 0 or n % 100 = 2..10
-			if ops.N == 0 || isFloatInRange(math.Mod(ops.N, 100), 2, 10) {
-				return Few
-			}
-
-			// n % 100 = 11..19
-			if isFloatInRange(math.Mod(ops.N, 100), 11, 19) {
 				return Many
 			}
 
@@ -661,6 +633,34 @@ func init() {
 
 			// v != 0
 			if ops.V != 0 {
+				return Many
+			}
+
+			return Other
+		},
+	})
+
+	addRuleSet([]string{"mt"}, &RuleSet{
+		Categories: newCategories(One, Two, Few, Many, Other),
+		FormFunc: func(ops *Operands) Category {
+
+			// n = 1
+			if ops.N == 1 {
+				return One
+			}
+
+			// n = 2
+			if ops.N == 2 {
+				return Two
+			}
+
+			// n = 0 or n % 100 = 3..10
+			if ops.N == 0 || isFloatInRange(math.Mod(ops.N, 100), 3, 10) {
+				return Few
+			}
+
+			// n % 100 = 11..19
+			if isFloatInRange(math.Mod(ops.N, 100), 11, 19) {
 				return Many
 			}
 
