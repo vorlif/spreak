@@ -1,6 +1,6 @@
 module example.com/spreak
 
-go 1.16
+go 1.17
 
 require (
 	github.com/Xuanwo/go-locale v1.1.0
