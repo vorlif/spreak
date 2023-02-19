@@ -58,6 +58,10 @@ func ToNumber(n interface{}) (float64, error) {
 		return float64(nt), nil
 	case float64:
 		return nt, nil
+	case complex64:
+		return float64(real(nt)), nil
+	case complex128:
+		return real(nt), nil
 	case string:
 		res, err := strconv.ParseFloat(nt, 64)
 		if err != nil {

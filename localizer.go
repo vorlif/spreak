@@ -11,11 +11,12 @@ import (
 // A Localizer holds the catalogs of all domains for a language and provides an interface for their use.
 // It has a default domain, which can differ from the bundle default domain and is used
 // if no domain is specified for translations.
-// A number of supported languages can be specified at creation time
+// A number of supported languages can be specified at creation time,
 // where the language matcher of the bundle decides which language fits best.
 // For this language the Localizer then offers the possibility to translate.
 // If no language fits, the fallback language is used.
 // If no fallback language is specified, the source language is used.
+// For web applications, a Localizer can be created for each request, which can be disposed of at the end of the request.
 type Localizer struct {
 	bundle        *Bundle
 	locale        *locale
