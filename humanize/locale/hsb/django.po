@@ -16,314 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#. Translators: Ordinal format when value ends with 6, e.g. 86th.
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v."
-
-#. Translators: Ordinal format when value ends with 7, e.g. 87th.
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v."
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v mjeńšina"
-msgstr[1] "%[1]v mjeńšinje"
-msgstr[2] "%[1]v mjeńšiny"
-msgstr[3] "%[1]v mjeńšin"
-
-#. Translators: 'naturaltime-past' strings will be included in '%(delta)s ago'
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v lěto"
-msgstr[1] "%[1]v lěće"
-msgstr[2] "%[1]v lěta"
-msgstr[3] "%[1]v lět"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v měsac"
-msgstr[1] "%[1]v měsacaj"
-msgstr[2] "%[1]v měsacy"
-msgstr[3] "%[1]v měsacow"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v tydźeń"
-msgstr[1] "%[1]v njedźeli"
-msgstr[2] "%[1]v njedźele"
-msgstr[3] "%[1]v njedźel"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dźeń"
-msgstr[1] "%[1]v dnjej"
-msgstr[2] "%[1]v dny"
-msgstr[3] "%[1]v dnjow"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v hodźina"
-msgstr[1] "%[1]v hodźinje"
-msgstr[2] "%[1]v hodźiny"
-msgstr[3] "%[1]v hodźin"
-
-#. Translators: 'naturaltime-future' strings will be included in '%(delta)s
-#. from now'
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v lěto"
-msgstr[1] "%[1]v lěće"
-msgstr[2] "%[1]v lěta"
-msgstr[3] "%[1]v lět"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v měsac"
-msgstr[1] "%[1]v měsacaj"
-msgstr[2] "%[1]v měsacy"
-msgstr[3] "%[1]v měsacow"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v tydźeń"
-msgstr[1] "%[1]v njedźeli"
-msgstr[2] "%[1]v njedźele"
-msgstr[3] "%[1]v njedźel"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dźeń"
-msgstr[1] "%[1]v dnjej"
-msgstr[2] "%[1]v dny"
-msgstr[3] "%[1]v dnjow"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v hodźina"
-msgstr[1] "%[1]v hodźinje"
-msgstr[2] "%[1]v hodźiny"
-msgstr[3] "%[1]v hodźin"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v mjeńšina"
-msgstr[1] "%[1]v mjeńšinje"
-msgstr[2] "%[1]v mjeńšiny"
-msgstr[3] "%[1]v mjeńšin"
-
-#. Translators: Ordinal format when value ends with 9, e.g. 89th.
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v."
-
-msgid "Sun"
-msgstr "Nje"
-
-msgid "October"
-msgstr "Oktober"
-
-msgid "November"
-msgstr "Nowember"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour ago"
-msgid_plural "%[1]v hours ago"
-msgstr[0] "před %[1]v hodźinu"
-msgstr[1] "před %[1]v hodźinomaj"
-msgstr[2] "před %[1]v hodźinami"
-msgstr[3] "před %[1]v hodźinami"
-
-msgid "Polish"
-msgstr "Pólšćina"
-
-msgid "Traditional Chinese"
-msgstr "Tradicionalna chinšćina"
-
-msgid "Basque"
-msgstr "Baskišćina"
-
-msgid "Ido"
-msgstr "Ido"
-
-msgid "Friday"
-msgstr "Pjatk"
-
-msgid "Fri"
-msgstr "Pja"
-
-msgid "apr"
-msgstr "apr."
-
-msgid "three"
-msgstr "tři"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second from now"
-msgid_plural "%[1]v seconds from now"
-msgstr[0] "za %[1]v sekundu"
-msgstr[1] "za %[1]v sekundźe"
-msgstr[2] "za %[1]v sekundy"
-msgstr[3] "za %[1]v sekundow"
-
-msgid "Belarusian"
-msgstr "Běłorušćina"
-
-msgid "oct"
-msgstr "okt."
-
-#, python-format
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v mjeńšina"
-msgstr[1] "%[1]v mjeńšinje"
-msgstr[2] "%[1]v mjeńšiny"
-msgstr[3] "%[1]v mjeńšin"
-
-msgid "Sunday"
-msgstr "Njedźela"
-
-msgid "February"
-msgstr "Februar"
-
-msgid "Armenian"
-msgstr "Armenšćina"
-
-msgid "Portuguese"
-msgstr "Portugalšćina"
-
-msgid "Thai"
-msgstr "Thaišćina"
-
-msgid "Turkish"
-msgstr "Turkowšćina"
-
-msgid "jan"
-msgstr "jan."
-
-#, python-format
-msgid "%[1]s octillion"
-msgid_plural "%[1]s octillion"
-msgstr[0] "%[1]s kwadriliarda"
-msgstr[1] "%[1]s kwadriliardźe"
-msgstr[2] "%[1]s kwadriliardy"
-msgstr[3] "%[1]s kwadriliardow"
-
-msgid "Galician"
-msgstr "Galicišćina"
-
-msgid "Hindi"
-msgstr "Hindišćina"
-
-msgid "Esperanto"
-msgstr "Esperanto"
-
-msgid "jun"
-msgstr "jun."
-
-msgid "German"
-msgstr "Němčina"
-
-msgid "Mexican Spanish"
-msgstr "Mexiska španišćina"
-
-msgid "Estonian"
-msgstr "Estišćina"
-
-msgid "Hungarian"
-msgstr "Madźaršćina"
-
-msgid "Malay"
-msgstr "Malajšćina"
-
-#, python-format
-msgid "%[1]s quadrillion"
-msgid_plural "%[1]s quadrillion"
-msgstr[0] "%[1]s biliarda"
-msgstr[1] "%[1]s biliardźe"
-msgstr[2] "%[1]s biliardy"
-msgstr[3] "%[1]s biliardow"
-
-msgid "Asturian"
-msgstr "Asturišćina"
-
-msgid "Bosnian"
-msgstr "Bosnišćina"
-
-msgid "March"
-msgstr "Měrc"
-
-msgid "May"
-msgstr "Meja"
-
-msgid "Dutch"
-msgstr "Nižozemšćina"
-
-msgid "Ossetic"
-msgstr "Osetšćina"
-
-msgid "January"
-msgstr "Januar"
-
-msgid "July"
-msgstr "Julij"
-
-msgid "August"
-msgstr "Awgust"
-
-#, python-format
-msgid "%s KB"
-msgstr "%s KB"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a minute from now"
-msgid_plural "%[1]v minutes from now"
-msgstr[0] "za %[1]v mjeńšinu"
-msgstr[1] "za %[1]v mjeńšinje"
-msgstr[2] "za %[1]v mjeńšiny"
-msgstr[3] "za %[1]v mjeńšin"
-
-msgid "Igbo"
-msgstr "Igbo"
-
-msgid "Kazakh"
-msgstr "Kazachšćina"
-
-msgid "two"
-msgstr "dwaj"
-
-#, python-format
 msgid "%[1]d byte"
 msgid_plural "%[1]d bytes"
 msgstr[0] "%[1]d bajt"
@@ -331,198 +23,6 @@ msgstr[1] "%[1]d bajtaj"
 msgstr[2] "%[1]d bajty"
 msgstr[3] "%[1]d bajtow"
 
-msgid "Slovak"
-msgstr "Słowakšćina"
-
-msgid "p.m."
-msgstr "popołdnju"
-
-msgid "Monday"
-msgstr "Póndźela"
-
-msgid "Thursday"
-msgstr "Štwórtk"
-
-#, python-format
-msgid "%s GB"
-msgstr "%s GB"
-
-msgid "now"
-msgstr "nětko"
-
-msgid "Upper Sorbian"
-msgstr "Hornjoserbšćina"
-
-msgid "Georgian"
-msgstr "Georgišćina"
-
-msgid "Bengali"
-msgstr "Bengalšćina"
-
-msgid "June"
-msgstr "Junij"
-
-msgid "sep"
-msgstr "sep."
-
-msgid "seven"
-msgstr "sydom"
-
-#, python-format
-msgid "%[1]s quintillion"
-msgid_plural "%[1]s quintillion"
-msgstr[0] "%[1]s trilion"
-msgstr[1] "%[1]s trilionaj"
-msgstr[2] "%[1]s triliony"
-msgstr[3] "%[1]s trilionow"
-
-#, python-format
-msgid "%[1]s googol"
-msgid_plural "%[1]s googol"
-msgstr[0] "%[1]s sedeciliarda"
-msgstr[1] "%[1]s sedeciliardźe"
-msgstr[2] "%[1]s sedeciliardy"
-msgstr[3] "%[1]s sedeciliardow"
-
-msgid "Frisian"
-msgstr "Frizišćina"
-
-msgid "Italian"
-msgstr "Italšćina"
-
-msgid "Kyrgyz"
-msgstr "Kirgišćina"
-
-msgid "Mongolian"
-msgstr "Mongolšćina"
-
-msgid "Albanian"
-msgstr "Albanšćina"
-
-#, python-format
-msgid "%[1]s million"
-msgid_plural "%[1]s million"
-msgstr[0] "%[1]s milion"
-msgstr[1] "%[1]s milionaj"
-msgstr[2] "%[1]s miliony"
-msgstr[3] "%[1]s milionow"
-
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v ago"
-msgstr "Před %[1]v"
-
-msgid "Algerian Arabic"
-msgstr "Algeriska arabšćina"
-
-msgid "Wednesday"
-msgstr "Srjeda"
-
-msgid "Mon"
-msgstr "Pón"
-
-msgid "Tamil"
-msgstr "Tamilšćina"
-
-msgid "Turkmen"
-msgstr "Turkmenšćina"
-
-#, python-format
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v lěto"
-msgstr[1] "%[1]vlěće"
-msgstr[2] "%[1]v lěta"
-msgstr[3] "%[1]v lět"
-
-msgid "Brazilian Portuguese"
-msgstr "Brazilska portugalšćina"
-
-msgid "Romanian"
-msgstr "Rumunšćina"
-
-msgid "mar"
-msgstr "měr."
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a minute ago"
-msgid_plural "%[1]v minutes ago"
-msgstr[0] "před %[1]v mjeńšinu"
-msgstr[1] "před %[1]v mjeńšinomaj"
-msgstr[2] "před %[1]v mjeńšinami"
-msgstr[3] "před %[1]v mjeńšinami"
-
-msgid "British English"
-msgstr "Britiska jendźelšćina"
-
-msgid "Persian"
-msgstr "Persišćina"
-
-msgid "Burmese"
-msgstr "Myanmaršćina"
-
-msgid "Norwegian Bokmål"
-msgstr "Norwegski bokmål"
-
-msgid "noon"
-msgstr "připołdnjo"
-
-msgid "Breton"
-msgstr "Bretonšćina"
-
-msgid "Catalan"
-msgstr "Katalanšćina"
-
-msgid "Kannada"
-msgstr "Kannadšćina"
-
-msgid "Telugu"
-msgstr "Telugušćina"
-
-msgid "AM"
-msgstr "dopołdnja"
-
-msgid "Wed"
-msgstr "Srj"
-
-msgid "may"
-msgstr "mej."
-
-#, python-format
-msgid "%s PB"
-msgstr "%s PB"
-
-msgid "six"
-msgstr "šěsć"
-
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v from now"
-msgstr "%[1]v wotnětka"
-
-msgid "Hebrew"
-msgstr "Hebrejšćina"
-
-msgid "Interlingua"
-msgstr "Interlingua"
-
-msgid "Malayalam"
-msgstr "Malajalam"
-
-msgid "Punjabi"
-msgstr "Pundźabišćina"
-
-msgid "Simplified Chinese"
-msgstr "Zjednorjene chinšćina"
-
-msgid "Sat"
-msgstr "Sob"
-
-#, python-format
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
 msgstr[0] "%[1]s miliarda"
@@ -530,104 +30,6 @@ msgstr[1] "%[1]s miliardźe"
 msgstr[2] "%[1]s miliardy"
 msgstr[3] "%[1]s miliardow"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second ago"
-msgid_plural "%[1]v seconds ago"
-msgstr[0] "před %[1]v sekundu"
-msgstr[1] "před %[1]v sekundomaj"
-msgstr[2] "před %[1]v sekundami"
-msgstr[3] "před %[1]v sekundami"
-
-msgid "Czech"
-msgstr "Čěšćina"
-
-msgid "April"
-msgstr "Apryl"
-
-msgid "Tajik"
-msgstr "Tadźikišćina"
-
-msgid "aug"
-msgstr "awg."
-
-msgid "Arabic"
-msgstr "Arabšćina"
-
-msgid "Spanish"
-msgstr "Španišćina"
-
-msgid "Serbian Latin"
-msgstr "Serbšćina, łaćonska"
-
-msgid "Tuesday"
-msgstr "Wutora"
-
-msgid "eight"
-msgstr "wosom"
-
-msgid "Argentinian Spanish"
-msgstr "Argentinska španišćina"
-
-msgid "Croatian"
-msgstr "Chorwatšćina"
-
-msgid "Udmurt"
-msgstr "Udmurtšćina"
-
-msgid "Vietnamese"
-msgstr "Vietnamšćina"
-
-msgid "September"
-msgstr "September"
-
-msgid "Icelandic"
-msgstr "Islandšćina"
-
-msgid "Slovenian"
-msgstr "Słowjenšćina"
-
-msgid "Swedish"
-msgstr "Šwedšćina"
-
-#, python-format
-msgid "%s MB"
-msgstr "%s MB"
-
-msgid "Scottish Gaelic"
-msgstr "Šotiska gaelšćina"
-
-msgid "Luxembourgish"
-msgstr "Luxemburgšćina"
-
-msgid "Norwegian Nynorsk"
-msgstr "Norwegski nynorsk"
-
-msgid "today"
-msgstr "dźensa"
-
-msgid "Finnish"
-msgstr "Finšćina"
-
-msgid "dec"
-msgstr "dec."
-
-msgid "Irish"
-msgstr "Irišćina"
-
-msgid "Ukrainian"
-msgstr "Ukrainšćina"
-
-#, python-format
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v měsac"
-msgstr[1] "%[1]v měsacaj"
-msgstr[2] "%[1]v měsacy"
-msgstr[3] "%[1]v měsacow"
-
-#, python-format
 msgid "%[1]s decillion"
 msgid_plural "%[1]s decillion"
 msgstr[0] "%[1]s kwintiliarda"
@@ -635,128 +37,20 @@ msgstr[1] "%[1]s kwintiliardźe"
 msgstr[2] "%[1]s kwintiliardy"
 msgstr[3] "%[1]s kwintiliardow"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour from now"
-msgid_plural "%[1]v hours from now"
-msgstr[0] "za %[1]v hodźinu"
-msgstr[1] "za %[1]v hodźinje"
-msgstr[2] "za %[1]v hodźiny"
-msgstr[3] "za %[1]v hodźin"
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s sedeciliarda"
+msgstr[1] "%[1]s sedeciliardźe"
+msgstr[2] "%[1]s sedeciliardy"
+msgstr[3] "%[1]s sedeciliardow"
 
-msgid "Colombian Spanish"
-msgstr "Kolumbiska španišćina"
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s milion"
+msgstr[1] "%[1]s milionaj"
+msgstr[2] "%[1]s miliony"
+msgstr[3] "%[1]s milionow"
 
-msgid "Latvian"
-msgstr "Letišćina"
-
-msgid "Russian"
-msgstr "Rušćina"
-
-msgid "a.m."
-msgstr "dopołdnja"
-
-msgid "Khmer"
-msgstr "Khmeršćina"
-
-msgid "Serbian"
-msgstr "Serbišćina"
-
-msgid "Saturday"
-msgstr "Sobota"
-
-msgid "Tue"
-msgstr "Wut"
-
-msgid "December"
-msgstr "December"
-
-msgid "one"
-msgstr "jedyn"
-
-#, python-format
-msgid "%[1]s trillion"
-msgid_plural "%[1]s trillion"
-msgstr[0] "%[1]s bilion"
-msgstr[1] "%[1]s bilionaj"
-msgstr[2] "%[1]s biliony"
-msgstr[3] "%[1]s bilionow"
-
-msgid "Australian English"
-msgstr "Awstralska jendźelšćina"
-
-msgid "Macedonian"
-msgstr "Makedonšćina"
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "Welsh"
-msgstr "Walizišćina"
-
-msgid "Venezuelan Spanish"
-msgstr "Venezuelska španišćina"
-
-msgid "Marathi"
-msgstr "Marathišćina"
-
-msgid "Nicaraguan Spanish"
-msgstr "Nikaraguaska španišćina"
-
-msgid "Indonesian"
-msgstr "Indonezišćina"
-
-#, python-format
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v hodźina"
-msgstr[1] "%[1]v hodźinje"
-msgstr[2] "%[1]v hodźiny"
-msgstr[3] "%[1]v hodźin"
-
-msgid "jul"
-msgstr "jul."
-
-msgid "nov"
-msgstr "now."
-
-msgid "four"
-msgstr "štyri"
-
-#, python-format
-msgid "%[1]s septillion"
-msgid_plural "%[1]s septillion"
-msgstr[0] "%[1]s kwadrilion"
-msgstr[1] "%[1]s kwadrilionaj"
-msgstr[2] "%[1]s kwadriliony"
-msgstr[3] "%[1]s kwadrilionow"
-
-msgid "yesterday"
-msgstr "wčera"
-
-msgid "feb"
-msgstr "feb."
-
-msgid "nine"
-msgstr "dźewjeć"
-
-msgid "Lower Sorbian"
-msgstr "Delnjoserbšćina"
-
-msgid "Tatar"
-msgstr "Tataršćina"
-
-#, python-format
-msgid "%[1]s sextillion"
-msgid_plural "%[1]s sextillion"
-msgstr[0] "%[1]s triliarda"
-msgstr[1] "%[1]s triliardźe"
-msgstr[2] "%[1]s triliardy"
-msgstr[3] "%[1]s triliardow"
-
-#, python-format
 msgid "%[1]s nonillion"
 msgid_plural "%[1]s nonillion"
 msgstr[0] "%[1]s kwintilion"
@@ -764,10 +58,51 @@ msgstr[1] "%[1]s kwintilionaj"
 msgstr[2] "%[1]s kwintiliony"
 msgstr[3] "%[1]s kwintilionow"
 
-msgid "Lithuanian"
-msgstr "Litawšćina"
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s kwadriliarda"
+msgstr[1] "%[1]s kwadriliardźe"
+msgstr[2] "%[1]s kwadriliardy"
+msgstr[3] "%[1]s kwadriliardow"
 
-#, python-format
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s biliarda"
+msgstr[1] "%[1]s biliardźe"
+msgstr[2] "%[1]s biliardy"
+msgstr[3] "%[1]s biliardow"
+
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s trilion"
+msgstr[1] "%[1]s trilionaj"
+msgstr[2] "%[1]s triliony"
+msgstr[3] "%[1]s trilionow"
+
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s kwadrilion"
+msgstr[1] "%[1]s kwadrilionaj"
+msgstr[2] "%[1]s kwadriliony"
+msgstr[3] "%[1]s kwadrilionow"
+
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s triliarda"
+msgstr[1] "%[1]s triliardźe"
+msgstr[2] "%[1]s triliardy"
+msgstr[3] "%[1]s triliardow"
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s bilion"
+msgstr[1] "%[1]s bilionaj"
+msgstr[2] "%[1]s biliony"
+msgstr[3] "%[1]s bilionow"
+
+msgid "%[1]v ago"
+msgstr "Před %[1]v"
+
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v dźeń"
@@ -775,37 +110,94 @@ msgstr[1] "%[1]v dnjej"
 msgstr[2] "%[1]v dny"
 msgstr[3] "%[1]v dnjow"
 
-msgid "Thu"
-msgstr "Štw"
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dźeń"
+msgstr[1] "%[1]v dnjej"
+msgstr[2] "%[1]v dny"
+msgstr[3] "%[1]v dnjow"
 
-msgid "French"
-msgstr "Francošćina"
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dźeń"
+msgstr[1] "%[1]v dnjej"
+msgstr[2] "%[1]v dny"
+msgstr[3] "%[1]v dnjow"
 
-msgid "Japanese"
-msgstr "Japanšćina"
+msgid "%[1]v from now"
+msgstr "%[1]v wotnětka"
 
-msgid "Kabyle"
-msgstr "Kabylšćina"
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v hodźina"
+msgstr[1] "%[1]v hodźinje"
+msgstr[2] "%[1]v hodźiny"
+msgstr[3] "%[1]v hodźin"
 
-msgid "Nepali"
-msgstr "Nepalšćina"
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v hodźina"
+msgstr[1] "%[1]v hodźinje"
+msgstr[2] "%[1]v hodźiny"
+msgstr[3] "%[1]v hodźin"
 
-msgid "Swahili"
-msgstr "Suahelšćina"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v hodźina"
+msgstr[1] "%[1]v hodźinje"
+msgstr[2] "%[1]v hodźiny"
+msgstr[3] "%[1]v hodźin"
 
-msgid "tomorrow"
-msgstr "jutře"
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v mjeńšina"
+msgstr[1] "%[1]v mjeńšinje"
+msgstr[2] "%[1]v mjeńšiny"
+msgstr[3] "%[1]v mjeńšin"
 
-msgid "Danish"
-msgstr "Danšćina"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v mjeńšina"
+msgstr[1] "%[1]v mjeńšinje"
+msgstr[2] "%[1]v mjeńšiny"
+msgstr[3] "%[1]v mjeńšin"
 
-msgid "Greek"
-msgstr "Grjekšćina"
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v mjeńšina"
+msgstr[1] "%[1]v mjeńšinje"
+msgstr[2] "%[1]v mjeńšiny"
+msgstr[3] "%[1]v mjeńšin"
 
-msgid "Uzbek"
-msgstr "Uzbekšćina"
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v měsac"
+msgstr[1] "%[1]v měsacaj"
+msgstr[2] "%[1]v měsacy"
+msgstr[3] "%[1]v měsacow"
 
-#, python-format
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v měsac"
+msgstr[1] "%[1]v měsacaj"
+msgstr[2] "%[1]v měsacy"
+msgstr[3] "%[1]v měsacow"
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v měsac"
+msgstr[1] "%[1]v měsacaj"
+msgstr[2] "%[1]v měsacy"
+msgstr[3] "%[1]v měsacow"
+
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v tydźeń"
@@ -813,170 +205,704 @@ msgstr[1] "%[1]v njedźeli"
 msgstr[2] "%[1]v njedźele"
 msgstr[3] "%[1]v njedźel"
 
-msgid "midnight"
-msgstr "połnoc"
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v tydźeń"
+msgstr[1] "%[1]v njedźeli"
+msgstr[2] "%[1]v njedźele"
+msgstr[3] "%[1]v njedźel"
 
-msgid "five"
-msgstr "pjeć"
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v tydźeń"
+msgstr[1] "%[1]v njedźeli"
+msgstr[2] "%[1]v njedźele"
+msgstr[3] "%[1]v njedźel"
 
-msgid "Azerbaijani"
-msgstr "Azerbajdźanšćina"
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v lěto"
+msgstr[1] "%[1]v lěće"
+msgstr[2] "%[1]v lěta"
+msgstr[3] "%[1]v lět"
 
-msgid "Korean"
-msgstr "Korejšćina"
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v lěto"
+msgstr[1] "%[1]v lěće"
+msgstr[2] "%[1]v lěta"
+msgstr[3] "%[1]v lět"
 
-msgid "Urdu"
-msgstr "Urdušćina"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v lěto"
+msgstr[1] "%[1]vlěće"
+msgstr[2] "%[1]v lěta"
+msgstr[3] "%[1]v lět"
 
-msgid "PM"
-msgstr "popołdnju"
+msgid "%s GB"
+msgstr "%s GB"
 
-#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "%s PB"
+msgstr "%s PB"
+
 msgid "%s TB"
 msgstr "%s TB"
 
-msgid "Afrikaans"
-msgstr "Afrikaanšćina"
-
-msgid "Bulgarian"
-msgstr "Bołharšćina"
-
-msgid "English"
-msgstr "Jendźelšćina"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Awgust"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "September"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Nowember"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "December"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Februar"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Měrc"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Meja"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Julij"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Januar"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Apryl"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Junij"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Oktober"
-
-#. Translators: Ordinal format when value ends with 0, e.g. 80th.
-msgctxt "ordinal 0"
-msgid "%vth"
+msgctxt "ordinal 2"
+msgid "%vnd"
 msgstr "%v."
 
-#. Translators: Ordinal format when value ends with 4, e.g. 84th.
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v."
-
-#. Translators: Ordinal format when value ends with 5, e.g. 85th.
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v."
-
-#. Translators: Ordinal format when value ends with 8, e.g. 88th.
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v."
-
-#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v."
-
-#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
 msgctxt "ordinal 3"
 msgid "%vrd"
 msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Feb."
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Julij"
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Okt."
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Dec."
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Jan."
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Měrc"
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v."
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "dopołdnja"
+
+msgid "Afrikaans"
+msgstr "Afrikaanšćina"
+
+msgid "Albanian"
+msgstr "Albanšćina"
+
+msgid "Algerian Arabic"
+msgstr "Algeriska arabšćina"
+
+msgid "April"
+msgstr "Apryl"
 
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Apryl"
 
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Meja"
+msgctxt "alt. month"
+msgid "April"
+msgstr "Apryl"
 
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Junij"
+msgid "Arabic"
+msgstr "Arabšćina"
+
+msgid "Argentinian Spanish"
+msgstr "Argentinska španišćina"
+
+msgid "Armenian"
+msgstr "Armenšćina"
+
+msgid "Asturian"
+msgstr "Asturišćina"
 
 msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Awg."
 
+msgid "August"
+msgstr "Awgust"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Awgust"
+
+msgid "Australian English"
+msgstr "Awstralska jendźelšćina"
+
+msgid "Azerbaijani"
+msgstr "Azerbajdźanšćina"
+
+msgid "Basque"
+msgstr "Baskišćina"
+
+msgid "Belarusian"
+msgstr "Běłorušćina"
+
+msgid "Bengali"
+msgstr "Bengalšćina"
+
+msgid "Bosnian"
+msgstr "Bosnišćina"
+
+msgid "Brazilian Portuguese"
+msgstr "Brazilska portugalšćina"
+
+msgid "Breton"
+msgstr "Bretonšćina"
+
+msgid "British English"
+msgstr "Britiska jendźelšćina"
+
+msgid "Bulgarian"
+msgstr "Bołharšćina"
+
+msgid "Burmese"
+msgstr "Myanmaršćina"
+
+msgid "Catalan"
+msgstr "Katalanšćina"
+
+msgid "Colombian Spanish"
+msgstr "Kolumbiska španišćina"
+
+msgid "Croatian"
+msgstr "Chorwatšćina"
+
+msgid "Czech"
+msgstr "Čěšćina"
+
+msgid "Danish"
+msgstr "Danšćina"
+
 msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Sept."
+msgid "Dec."
+msgstr "Dec."
+
+msgid "December"
+msgstr "December"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "December"
+
+msgid "Dutch"
+msgstr "Nižozemšćina"
+
+msgid "English"
+msgstr "Jendźelšćina"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Estonian"
+msgstr "Estišćina"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Februar"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "Finnish"
+msgstr "Finšćina"
+
+msgid "French"
+msgstr "Francošćina"
+
+msgid "Fri"
+msgstr "Pja"
+
+msgid "Friday"
+msgstr "Pjatk"
+
+msgid "Frisian"
+msgstr "Frizišćina"
+
+msgid "Galician"
+msgstr "Galicišćina"
+
+msgid "Georgian"
+msgstr "Georgišćina"
+
+msgid "German"
+msgstr "Němčina"
+
+msgid "Greek"
+msgstr "Grjekšćina"
+
+msgid "Hebrew"
+msgstr "Hebrejšćina"
+
+msgid "Hindi"
+msgstr "Hindišćina"
+
+msgid "Hungarian"
+msgstr "Madźaršćina"
+
+msgid "Icelandic"
+msgstr "Islandšćina"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Igbo"
+msgstr "Igbo"
+
+msgid "Indonesian"
+msgstr "Indonezišćina"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Irish"
+msgstr "Irišćina"
+
+msgid "Italian"
+msgstr "Italšćina"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Jan."
+
+msgid "January"
+msgstr "Januar"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Januar"
+
+msgid "Japanese"
+msgstr "Japanšćina"
+
+msgid "July"
+msgstr "Julij"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Julij"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Julij"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Junij"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Junij"
+
+msgid "June"
+msgstr "Junij"
+
+msgid "Kabyle"
+msgstr "Kabylšćina"
+
+msgid "Kannada"
+msgstr "Kannadšćina"
+
+msgid "Kazakh"
+msgstr "Kazachšćina"
+
+msgid "Khmer"
+msgstr "Khmeršćina"
+
+msgid "Korean"
+msgstr "Korejšćina"
+
+msgid "Kyrgyz"
+msgstr "Kirgišćina"
+
+msgid "Latvian"
+msgstr "Letišćina"
+
+msgid "Lithuanian"
+msgstr "Litawšćina"
+
+msgid "Lower Sorbian"
+msgstr "Delnjoserbšćina"
+
+msgid "Luxembourgish"
+msgstr "Luxemburgšćina"
+
+msgid "Macedonian"
+msgstr "Makedonšćina"
+
+msgid "Malay"
+msgstr "Malajšćina"
+
+msgid "Malayalam"
+msgstr "Malajalam"
+
+msgid "Marathi"
+msgstr "Marathišćina"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Měrc"
+
+msgid "March"
+msgstr "Měrc"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Měrc"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Meja"
+
+msgid "May"
+msgstr "Meja"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Meja"
+
+msgid "Mexican Spanish"
+msgstr "Mexiska španišćina"
+
+msgid "Mon"
+msgstr "Pón"
+
+msgid "Monday"
+msgstr "Póndźela"
+
+msgid "Mongolian"
+msgstr "Mongolšćina"
+
+msgid "Nepali"
+msgstr "Nepalšćina"
+
+msgid "Nicaraguan Spanish"
+msgstr "Nikaraguaska španišćina"
+
+msgid "Norwegian Bokmål"
+msgstr "Norwegski bokmål"
+
+msgid "Norwegian Nynorsk"
+msgstr "Norwegski nynorsk"
 
 msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Now."
 
-#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v."
+msgctxt "alt. month"
+msgid "November"
+msgstr "Nowember"
 
-#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v."
+msgid "November"
+msgstr "Nowember"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Okt."
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Oktober"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Ossetic"
+msgstr "Osetšćina"
+
+msgid "PM"
+msgstr "popołdnju"
+
+msgid "Persian"
+msgstr "Persišćina"
+
+msgid "Polish"
+msgstr "Pólšćina"
+
+msgid "Portuguese"
+msgstr "Portugalšćina"
+
+msgid "Punjabi"
+msgstr "Pundźabišćina"
+
+msgid "Romanian"
+msgstr "Rumunšćina"
+
+msgid "Russian"
+msgstr "Rušćina"
+
+msgid "Sat"
+msgstr "Sob"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Scottish Gaelic"
+msgstr "Šotiska gaelšćina"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sept."
+
+msgid "September"
+msgstr "September"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "September"
+
+msgid "Serbian"
+msgstr "Serbišćina"
+
+msgid "Serbian Latin"
+msgstr "Serbšćina, łaćonska"
+
+msgid "Simplified Chinese"
+msgstr "Zjednorjene chinšćina"
+
+msgid "Slovak"
+msgstr "Słowakšćina"
+
+msgid "Slovenian"
+msgstr "Słowjenšćina"
+
+msgid "Spanish"
+msgstr "Španišćina"
+
+msgid "Sun"
+msgstr "Nje"
+
+msgid "Sunday"
+msgstr "Njedźela"
+
+msgid "Swahili"
+msgstr "Suahelšćina"
+
+msgid "Swedish"
+msgstr "Šwedšćina"
+
+msgid "Tajik"
+msgstr "Tadźikišćina"
+
+msgid "Tamil"
+msgstr "Tamilšćina"
+
+msgid "Tatar"
+msgstr "Tataršćina"
+
+msgid "Telugu"
+msgstr "Telugušćina"
+
+msgid "Thai"
+msgstr "Thaišćina"
+
+msgid "Thu"
+msgstr "Štw"
+
+msgid "Thursday"
+msgstr "Štwórtk"
+
+msgid "Traditional Chinese"
+msgstr "Tradicionalna chinšćina"
+
+msgid "Tue"
+msgstr "Wut"
+
+msgid "Tuesday"
+msgstr "Wutora"
+
+msgid "Turkish"
+msgstr "Turkowšćina"
+
+msgid "Turkmen"
+msgstr "Turkmenšćina"
+
+msgid "Udmurt"
+msgstr "Udmurtšćina"
+
+msgid "Ukrainian"
+msgstr "Ukrainšćina"
+
+msgid "Upper Sorbian"
+msgstr "Hornjoserbšćina"
+
+msgid "Urdu"
+msgstr "Urdušćina"
+
+msgid "Uzbek"
+msgstr "Uzbekšćina"
+
+msgid "Venezuelan Spanish"
+msgstr "Venezuelska španišćina"
+
+msgid "Vietnamese"
+msgstr "Vietnamšćina"
+
+msgid "Wed"
+msgstr "Srj"
+
+msgid "Wednesday"
+msgstr "Srjeda"
+
+msgid "Welsh"
+msgstr "Walizišćina"
+
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "před %[1]v mjeńšinu"
+msgstr[1] "před %[1]v mjeńšinomaj"
+msgstr[2] "před %[1]v mjeńšinami"
+msgstr[3] "před %[1]v mjeńšinami"
+
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "za %[1]v mjeńšinu"
+msgstr[1] "za %[1]v mjeńšinje"
+msgstr[2] "za %[1]v mjeńšiny"
+msgstr[3] "za %[1]v mjeńšin"
+
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "před %[1]v sekundu"
+msgstr[1] "před %[1]v sekundomaj"
+msgstr[2] "před %[1]v sekundami"
+msgstr[3] "před %[1]v sekundami"
+
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "za %[1]v sekundu"
+msgstr[1] "za %[1]v sekundźe"
+msgstr[2] "za %[1]v sekundy"
+msgstr[3] "za %[1]v sekundow"
+
+msgid "a.m."
+msgstr "dopołdnja"
+
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "před %[1]v hodźinu"
+msgstr[1] "před %[1]v hodźinomaj"
+msgstr[2] "před %[1]v hodźinami"
+msgstr[3] "před %[1]v hodźinami"
+
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "za %[1]v hodźinu"
+msgstr[1] "za %[1]v hodźinje"
+msgstr[2] "za %[1]v hodźiny"
+msgstr[3] "za %[1]v hodźin"
+
+msgid "apr"
+msgstr "apr."
+
+msgid "aug"
+msgstr "awg."
+
+msgid "dec"
+msgstr "dec."
+
+msgid "eight"
+msgstr "wosom"
+
+msgid "feb"
+msgstr "feb."
+
+msgid "five"
+msgstr "pjeć"
+
+msgid "four"
+msgstr "štyri"
+
+msgid "jan"
+msgstr "jan."
+
+msgid "jul"
+msgstr "jul."
+
+msgid "jun"
+msgstr "jun."
+
+msgid "mar"
+msgstr "měr."
+
+msgid "may"
+msgstr "mej."
+
+msgid "midnight"
+msgstr "połnoc"
+
+msgid "nine"
+msgstr "dźewjeć"
+
+msgid "noon"
+msgstr "připołdnjo"
+
+msgid "nov"
+msgstr "now."
+
+msgid "now"
+msgstr "nětko"
+
+msgid "oct"
+msgstr "okt."
+
+msgid "one"
+msgstr "jedyn"
+
+msgid "p.m."
+msgstr "popołdnju"
+
+msgid "sep"
+msgstr "sep."
+
+msgid "seven"
+msgstr "sydom"
+
+msgid "six"
+msgstr "šěsć"
+
+msgid "three"
+msgstr "tři"
+
+msgid "today"
+msgstr "dźensa"
+
+msgid "tomorrow"
+msgstr "jutře"
+
+msgid "two"
+msgstr "dwaj"
+
+msgid "yesterday"
+msgstr "wčera"
 

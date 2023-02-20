@@ -105,7 +105,7 @@ func ExampleHumanizer_NaturalDay() {
 	// 今天
 	// ---
 	// May 1, 2022
-	// 1 de Mayo de 2022
+	// 1 de mayo de 2022
 	// 2022年5月1日
 }
 

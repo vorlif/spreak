@@ -23,329 +23,374 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Malayalam"
-msgstr "Tiếng Malayalam"
-
-msgid "January"
-msgstr "Tháng 1"
-
-msgid "mar"
-msgstr "Tháng 3"
-
-msgid "one"
-msgstr "Một"
-
-msgid "English"
-msgstr "Tiếng Anh"
-
-msgid "Serbian"
-msgstr "Tiếng Xéc-bi"
-
-msgid "Sunday"
-msgstr "Chủ nhật"
-
-msgid "September"
-msgstr "Tháng 9"
-
-msgid "jul"
-msgstr "Tháng 7"
-
-msgid "Belarusian"
-msgstr "Tiếng Bê-la-rút"
-
-msgid "Finnish"
-msgstr "Tiếng Phần Lan"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "an hour ago"
-msgid_plural "%[1]v hours ago"
-msgstr[0] "%[1]v giờ trước"
-msgstr[1] ""
-
-msgid "Afrikaans"
-msgstr "Afrikaans"
-
-msgid "Algerian Arabic"
-msgstr ""
-
-msgid "two"
-msgstr "Hai"
-
-msgid "five"
-msgstr "Năm"
-
-msgid "Khmer"
-msgstr "Tiếng Khơ-me"
-
-msgid "Macedonian"
-msgstr "Tiếng Maxêđôni"
-
-msgid "Burmese"
-msgstr "My-an-ma"
-
-msgid "Ukrainian"
-msgstr "Tiếng Ukraina"
-
-msgid "Sun"
-msgstr "Chủ nhật"
-
-msgid "November"
-msgstr "Tháng 11"
-
-msgid "six"
-msgstr "Sáu"
-
-#, python-format
-msgid "%[1]s decillion"
-msgid_plural "%[1]s decillion"
-msgstr[0] "%[1]s triệu tỷ tỷ tỷ"
-msgstr[1] ""
-
-msgid "Thai"
-msgstr "Tiếng Thái"
-
-msgid "AM"
-msgstr "sáng"
-
-msgid "now"
-msgstr "vừa mới đây"
-
-msgid "Mexican Spanish"
-msgstr "Mexican Spanish"
-
-msgid "Tamil"
-msgstr "Tiếng Ta-min"
-
-msgid "Turkmen"
-msgstr ""
-
-msgid "p.m."
-msgstr "p.m."
-
-msgid "Saturday"
-msgstr "Thứ 7"
-
-msgid "Tue"
-msgstr "Thứ 3"
-
-#, python-format
-msgid "%[1]s septillion"
-msgid_plural "%[1]s septillion"
-msgstr[0] "%[1]s triệu tỷ tỷ"
-msgstr[1] ""
-
-msgid "Kabyle"
-msgstr ""
-
-msgid "Venezuelan Spanish"
-msgstr "Tiếng Vê-nê-du-ê-la"
-
-msgid "Croatian"
-msgstr "Tiếng Croatia"
-
-#, python-format
-msgid "%[1]s trillion"
-msgid_plural "%[1]s trillion"
-msgstr[0] "%[1]s nghìn tỷ"
-msgstr[1] ""
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "an hour from now"
-msgid_plural "%[1]v hours from now"
-msgstr[0] "%[1]v giờ sau"
-msgstr[1] ""
-
-msgid "February"
-msgstr "Tháng 2"
-
-msgid "apr"
-msgstr "Tháng 4"
-
-msgid "British English"
-msgstr "British English"
-
-msgid "Tatar"
-msgstr "Tác-ta"
-
-msgid "December"
-msgstr "Tháng 12"
-
-msgid "Czech"
-msgstr "Tiếng Séc"
-
-msgid "Welsh"
-msgstr "Xứ Wales"
-
-msgid "Udmurt"
-msgstr "Udmurt"
-
-msgid "dec"
-msgstr "Tháng 12"
-
-#, python-format
-msgid "%[1]s googol"
-msgid_plural "%[1]s googol"
-msgstr[0] "%[1]s tỷ tỷ tỷ tỷ"
-msgstr[1] ""
-
-msgid "Breton"
-msgstr "Tiếng Breton"
-
-msgid "Interlingua"
-msgstr "Tiếng Khoa học Quốc tế"
-
-msgid "Portuguese"
-msgstr "Tiếng Bồ Đào Nha"
-
-#, python-format
-msgid "%[1]s octillion"
-msgid_plural "%[1]s octillion"
-msgstr[0] "%[1]s tỷ tỷ tỷ"
-msgstr[1] ""
-
-msgid "today"
-msgstr "Hôm nay"
-
-msgid "PM"
-msgstr "chiều"
-
-msgid "Mon"
-msgstr "Thứ 2"
-
-msgid "Basque"
-msgstr "Tiếng Baxcơ"
-
-msgid "Upper Sorbian"
-msgstr ""
-
-msgid "French"
-msgstr "Tiếng Pháp"
-
-msgid "Hindi"
-msgstr "Tiếng Hindi"
-
-msgid "Ossetic"
-msgstr "Ô-sét-ti-a"
-
-msgid "three"
-msgstr "Ba"
-
-msgid "Estonian"
-msgstr "Tiếng Estonia"
-
-msgid "Romanian"
-msgstr "Tiếng Ru-ma-ni"
-
-msgid "Vietnamese"
-msgstr "Tiếng Việt Nam"
-
-msgid "a.m."
-msgstr "a.m."
-
-#, python-format
 msgid "%[1]d byte"
 msgid_plural "%[1]d bytes"
 msgstr[0] "%[1]d byte"
 msgstr[1] ""
 
-#, python-format
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s tỷ"
+msgstr[1] ""
+
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s triệu tỷ tỷ tỷ"
+msgstr[1] ""
+
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "%[1]s tỷ tỷ tỷ tỷ"
+msgstr[1] ""
+
 msgid "%[1]s million"
 msgid_plural "%[1]s million"
 msgstr[0] "%[1]s triệu"
 msgstr[1] ""
 
-msgid "Dutch"
-msgstr "Tiếng Hà Lan"
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s nghỉn tỷ tỷ tỷ"
+msgstr[1] ""
 
-msgid "Catalan"
-msgstr "Tiếng Catala"
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s tỷ tỷ tỷ"
+msgstr[1] ""
 
-msgid "Irish"
-msgstr "Tiếng Ai-len"
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s triệu tỷ"
+msgstr[1] ""
 
-msgid "Kazakh"
-msgstr "Tiếng Kazakh"
-
-msgid "Lithuanian"
-msgstr "Tiếng Lat-vi"
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "jun"
-msgstr "Tháng 6"
-
-#, python-format
 msgid "%[1]s quintillion"
 msgid_plural "%[1]s quintillion"
 msgstr[0] "%[1]s tỷ tỷ"
 msgstr[1] ""
 
-msgid "Asturian"
-msgstr "Asturian"
-
-msgid "sep"
-msgstr "Tháng 9"
-
-msgid "Hungarian"
-msgstr "Tiếng Hung-ga-ri"
-
-msgid "Latvian"
-msgstr "Ngôn ngữ vùng Bantic"
-
-msgid "Uzbek"
-msgstr ""
-
-msgid "June"
-msgstr "Tháng 6"
-
-msgid "aug"
-msgstr "Tháng 8"
-
-msgid "yesterday"
-msgstr "Hôm qua"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a second ago"
-msgid_plural "%[1]v seconds ago"
-msgstr[0] "%[1]v giây trước"
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s triệu tỷ tỷ"
 msgstr[1] ""
 
-msgid "Scottish Gaelic"
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s nghỉn tỷ tỷ"
+msgstr[1] ""
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s nghìn tỷ"
+msgstr[1] ""
+
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "%s TB"
+msgstr "%s TB"
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "sáng"
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Albanian"
+msgstr "Tiếng Albania"
+
+msgid "Algerian Arabic"
 msgstr ""
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Tháng tư"
+
+msgid "April"
+msgstr "Tháng 4"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Tháng tư"
+
+msgid "Arabic"
+msgstr "Tiếng Ả Rập"
+
+msgid "Argentinian Spanish"
+msgstr "Argentinian Spanish"
 
 msgid "Armenian"
 msgstr ""
 
-msgid "Tuesday"
-msgstr "Thứ 3"
+msgid "Asturian"
+msgstr "Asturian"
 
-msgid "Wed"
-msgstr "Thứ 4"
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Tháng 8."
 
-msgid "Sat"
-msgstr "Thứ 7"
+msgid "August"
+msgstr "Tháng 8"
 
-#, python-format
-msgid "%s KB"
-msgstr "%s KB"
+msgctxt "alt. month"
+msgid "August"
+msgstr "Tháng tám"
+
+msgid "Australian English"
+msgstr "Tiếng Anh ở Úc"
+
+msgid "Azerbaijani"
+msgstr "Tiếng Azerbaijan"
+
+msgid "Basque"
+msgstr "Tiếng Baxcơ"
+
+msgid "Belarusian"
+msgstr "Tiếng Bê-la-rút"
+
+msgid "Bengali"
+msgstr "Tiếng Bengal"
+
+msgid "Bosnian"
+msgstr "Tiếng Bosnia"
+
+msgid "Brazilian Portuguese"
+msgstr "Brazilian Portuguese"
+
+msgid "Breton"
+msgstr "Tiếng Breton"
+
+msgid "British English"
+msgstr "British English"
+
+msgid "Bulgarian"
+msgstr "Tiếng Bun-ga-ri"
+
+msgid "Burmese"
+msgstr "My-an-ma"
+
+msgid "Catalan"
+msgstr "Tiếng Catala"
+
+msgid "Colombian Spanish"
+msgstr ""
+
+msgid "Croatian"
+msgstr "Tiếng Croatia"
+
+msgid "Czech"
+msgstr "Tiếng Séc"
 
 msgid "Danish"
 msgstr "Tiếng Đan Mạch"
 
-msgid "Nicaraguan Spanish"
-msgstr "Tiếng Tây Ban Nha-Nicaragua"
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Tháng 12."
 
-#, python-format
-msgid "%s MB"
-msgstr "%s MB"
+msgid "December"
+msgstr "Tháng 12"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Tháng mười hai"
+
+msgid "Dutch"
+msgstr "Tiếng Hà Lan"
+
+msgid "English"
+msgstr "Tiếng Anh"
+
+msgid "Esperanto"
+msgstr "Quốc Tế Ngữ"
+
+msgid "Estonian"
+msgstr "Tiếng Estonia"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Tháng 2."
+
+msgid "February"
+msgstr "Tháng 2"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Tháng hai"
+
+msgid "Finnish"
+msgstr "Tiếng Phần Lan"
+
+msgid "French"
+msgstr "Tiếng Pháp"
+
+msgid "Fri"
+msgstr "Thứ 6"
+
+msgid "Friday"
+msgstr "Thứ 6"
+
+msgid "Frisian"
+msgstr "Tiếng Frisco"
+
+msgid "Galician"
+msgstr "Tiếng Pháp cổ"
+
+msgid "Georgian"
+msgstr "Georgian"
+
+msgid "German"
+msgstr "Tiếng Đức"
+
+msgid "Greek"
+msgstr "Tiếng Hy Lạp"
+
+msgid "Hebrew"
+msgstr "Tiếng Do Thái cổ"
+
+msgid "Hindi"
+msgstr "Tiếng Hindi"
+
+msgid "Hungarian"
+msgstr "Tiếng Hung-ga-ri"
+
+msgid "Icelandic"
+msgstr "Tiếng Aixơlen"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Igbo"
+msgstr ""
+
+msgid "Indonesian"
+msgstr "Tiếng In-đô-nê-xi-a"
+
+msgid "Interlingua"
+msgstr "Tiếng Khoa học Quốc tế"
+
+msgid "Irish"
+msgstr "Tiếng Ai-len"
+
+msgid "Italian"
+msgstr "Tiếng Ý"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Tháng 1."
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Tháng một"
+
+msgid "January"
+msgstr "Tháng 1"
+
+msgid "Japanese"
+msgstr "Tiếng Nhật Bản"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Tháng bảy"
+
+msgid "July"
+msgstr "Tháng 7"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Tháng bảy"
+
+msgid "June"
+msgstr "Tháng 6"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Tháng sáu"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Tháng sáu"
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Kannada"
+msgstr "Tiếng Kannada"
+
+msgid "Kazakh"
+msgstr "Tiếng Kazakh"
+
+msgid "Khmer"
+msgstr "Tiếng Khơ-me"
+
+msgid "Korean"
+msgstr "Tiếng Hàn Quốc"
+
+msgid "Kyrgyz"
+msgstr ""
+
+msgid "Latvian"
+msgstr "Ngôn ngữ vùng Bantic"
+
+msgid "Lithuanian"
+msgstr "Tiếng Lat-vi"
+
+msgid "Lower Sorbian"
+msgstr ""
+
+msgid "Luxembourgish"
+msgstr "Tiếng Luxembourg"
+
+msgid "Macedonian"
+msgstr "Tiếng Maxêđôni"
+
+msgid "Malayalam"
+msgstr "Tiếng Malayalam"
+
+msgid "Marathi"
+msgstr "Marathi"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Tháng ba"
+
+msgid "March"
+msgstr "Tháng 3"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Tháng ba"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Tháng năm"
+
+msgid "May"
+msgstr "Tháng 5"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Tháng năm"
+
+msgid "Mexican Spanish"
+msgstr "Mexican Spanish"
+
+msgid "Mon"
+msgstr "Thứ 2"
+
+msgid "Monday"
+msgstr "Thứ 2"
 
 msgid "Mongolian"
 msgstr "Tiếng Mông Cổ"
@@ -353,372 +398,291 @@ msgstr "Tiếng Mông Cổ"
 msgid "Nepali"
 msgstr "Nê-pan"
 
-msgid "German"
-msgstr "Tiếng Đức"
-
-msgid "Galician"
-msgstr "Tiếng Pháp cổ"
-
-msgid "Ido"
-msgstr "Ido"
-
-msgid "Albanian"
-msgstr "Tiếng Albania"
-
-msgid "Thursday"
-msgstr "Thứ 5"
-
-msgid "may"
-msgstr "Tháng 5"
-
-#, python-format
-msgid "%[1]s nonillion"
-msgid_plural "%[1]s nonillion"
-msgstr[0] "%[1]s nghỉn tỷ tỷ tỷ"
-msgstr[1] ""
-
-msgid "Arabic"
-msgstr "Tiếng Ả Rập"
-
-msgid "Bulgarian"
-msgstr "Tiếng Bun-ga-ri"
-
-msgid "Igbo"
-msgstr ""
-
-msgid "Icelandic"
-msgstr "Tiếng Aixơlen"
-
-msgid "Luxembourgish"
-msgstr "Tiếng Luxembourg"
-
-msgid "Brazilian Portuguese"
-msgstr "Brazilian Portuguese"
-
-msgid "Traditional Chinese"
-msgstr "Tiếng Tàu truyền thống"
-
-msgid "nine"
-msgstr "Chín"
-
-#, python-format
-msgid "%[1]s quadrillion"
-msgid_plural "%[1]s quadrillion"
-msgstr[0] "%[1]s triệu tỷ"
-msgstr[1] ""
-
-msgid "jan"
-msgstr "Tháng 1"
-
-msgid "feb"
-msgstr "Tháng 2"
-
-msgid "Bosnian"
-msgstr "Tiếng Bosnia"
-
-msgid "Australian English"
-msgstr "Tiếng Anh ở Úc"
-
-msgid "midnight"
-msgstr "Nửa đêm"
-
-msgid "Fri"
-msgstr "Thứ 6"
-
-msgid "August"
-msgstr "Tháng 8"
-
-msgid "seven"
-msgstr "Bảy"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a second from now"
-msgid_plural "%[1]v seconds from now"
-msgstr[0] "%[1]v giây sau"
-msgstr[1] ""
-
-msgid "Kyrgyz"
-msgstr ""
-
-msgid "Slovak"
-msgstr "Ngôn ngữ Slô-vac"
-
-msgid "Swahili"
-msgstr "Xì-qua-hi-đi thuộc ngôn ngữ Bantu"
-
-msgid "Thu"
-msgstr "Thứ 5"
-
-msgid "July"
-msgstr "Tháng 7"
-
-msgid "October"
-msgstr "Tháng 10"
-
-msgid "Lower Sorbian"
-msgstr ""
-
-msgid "Spanish"
-msgstr "Tiếng Tây Ban Nha"
-
-msgid "Monday"
-msgstr "Thứ 2"
-
-msgid "March"
-msgstr "Tháng 3"
-
-msgid "nov"
-msgstr "Tháng 11"
-
-#, python-format
-msgid "%s PB"
-msgstr "%s PB"
-
-msgid "Esperanto"
-msgstr "Quốc Tế Ngữ"
-
-msgid "Japanese"
-msgstr "Tiếng Nhật Bản"
-
-msgid "Kannada"
-msgstr "Tiếng Kannada"
-
-msgid "Korean"
-msgstr "Tiếng Hàn Quốc"
+msgid "Nicaraguan Spanish"
+msgstr "Tiếng Tây Ban Nha-Nicaragua"
 
 msgid "Norwegian Bokmål"
 msgstr ""
-
-msgid "Slovenian"
-msgstr "Tiếng Slôven"
-
-msgid "Friday"
-msgstr "Thứ 6"
-
-msgid "four"
-msgstr "Bốn"
-
-msgid "Azerbaijani"
-msgstr "Tiếng Azerbaijan"
-
-msgid "Punjabi"
-msgstr "Punjabi"
-
-msgid "Serbian Latin"
-msgstr "Serbian Latin"
-
-#, python-format
-msgid "%[1]s sextillion"
-msgid_plural "%[1]s sextillion"
-msgstr[0] "%[1]s nghỉn tỷ tỷ"
-msgstr[1] ""
-
-msgid "Argentinian Spanish"
-msgstr "Argentinian Spanish"
-
-msgid "Persian"
-msgstr "Tiếng Ba Tư"
-
-msgid "Telugu"
-msgstr "Telugu"
-
-#, python-format
-msgid "%[1]s billion"
-msgid_plural "%[1]s billion"
-msgstr[0] "%[1]s tỷ"
-msgstr[1] ""
-
-msgid "tomorrow"
-msgstr "Ngày mai"
-
-msgid "noon"
-msgstr "Buổi trưa"
-
-msgid "Wednesday"
-msgstr "Thứ 4"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a minute from now"
-msgid_plural "%[1]v minutes from now"
-msgstr[0] "%[1]v phút sau"
-msgstr[1] ""
-
-msgid "Turkish"
-msgstr "Tiếng Thổ Nhĩ Kỳ"
-
-msgid "Swedish"
-msgstr "Tiếng Thụy Điển"
-
-msgid "oct"
-msgstr "Tháng 10"
-
-#, python-format
-msgid "%s TB"
-msgstr "%s TB"
-
-msgid "Hebrew"
-msgstr "Tiếng Do Thái cổ"
-
-msgid "Polish"
-msgstr "Tiếng Ba lan"
-
-msgid "Greek"
-msgstr "Tiếng Hy Lạp"
-
-msgid "Frisian"
-msgstr "Tiếng Frisco"
-
-msgid "Indonesian"
-msgstr "Tiếng In-đô-nê-xi-a"
-
-msgid "Russian"
-msgstr "Tiếng Nga"
-
-msgid "Tajik"
-msgstr ""
-
-msgid "May"
-msgstr "Tháng 5"
-
-msgid "eight"
-msgstr "Tám"
-
-msgid "Bengali"
-msgstr "Tiếng Bengal"
-
-msgid "Italian"
-msgstr "Tiếng Ý"
-
-msgid "Marathi"
-msgstr "Marathi"
-
-msgid "Simplified Chinese"
-msgstr "Tiếng Tàu giản thể"
-
-#, python-format
-msgid "%s GB"
-msgstr "%s GB"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a minute ago"
-msgid_plural "%[1]v minutes ago"
-msgstr[0] "%[1]v phút trước"
-msgstr[1] ""
-
-msgid "Colombian Spanish"
-msgstr ""
-
-msgid "Urdu"
-msgstr "Urdu"
-
-msgid "April"
-msgstr "Tháng 4"
-
-msgid "Georgian"
-msgstr "Georgian"
 
 msgid "Norwegian Nynorsk"
 msgstr "Tiếng Na Uy Nynorsk"
 
 msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Tháng 2."
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Tháng ba"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Tháng tư"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Tháng 9."
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Tháng 10."
-
-msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Tháng 11."
-
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Tháng 1."
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Tháng năm"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Tháng sáu"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Tháng bảy"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Tháng 8."
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Tháng 12."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Tháng Mười"
 
 msgctxt "alt. month"
 msgid "November"
 msgstr "Tháng mười một"
 
-msgctxt "alt. month"
-msgid "December"
-msgstr "Tháng mười hai"
+msgid "November"
+msgstr "Tháng 11"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Tháng 10."
+
+msgid "October"
+msgstr "Tháng 10"
 
 msgctxt "alt. month"
-msgid "January"
-msgstr "Tháng một"
+msgid "October"
+msgstr "Tháng Mười"
 
-msgctxt "alt. month"
-msgid "February"
-msgstr "Tháng hai"
+msgid "Ossetic"
+msgstr "Ô-sét-ti-a"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Tháng bảy"
+msgid "PM"
+msgstr "chiều"
 
-msgctxt "alt. month"
-msgid "August"
-msgstr "Tháng tám"
+msgid "Persian"
+msgstr "Tiếng Ba Tư"
+
+msgid "Polish"
+msgstr "Tiếng Ba lan"
+
+msgid "Portuguese"
+msgstr "Tiếng Bồ Đào Nha"
+
+msgid "Punjabi"
+msgstr "Punjabi"
+
+msgid "Romanian"
+msgstr "Tiếng Ru-ma-ni"
+
+msgid "Russian"
+msgstr "Tiếng Nga"
+
+msgid "Sat"
+msgstr "Thứ 7"
+
+msgid "Saturday"
+msgstr "Thứ 7"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Tháng 9."
 
 msgctxt "alt. month"
 msgid "September"
 msgstr "Tháng Chín"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Tháng ba"
+msgid "September"
+msgstr "Tháng 9"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "Tháng tư"
+msgid "Serbian"
+msgstr "Tiếng Xéc-bi"
 
-msgctxt "alt. month"
-msgid "May"
-msgstr "Tháng năm"
+msgid "Serbian Latin"
+msgstr "Serbian Latin"
 
-msgctxt "alt. month"
-msgid "June"
-msgstr "Tháng sáu"
+msgid "Simplified Chinese"
+msgstr "Tiếng Tàu giản thể"
+
+msgid "Slovak"
+msgstr "Ngôn ngữ Slô-vac"
+
+msgid "Slovenian"
+msgstr "Tiếng Slôven"
+
+msgid "Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+msgid "Sun"
+msgstr "Chủ nhật"
+
+msgid "Sunday"
+msgstr "Chủ nhật"
+
+msgid "Swahili"
+msgstr "Xì-qua-hi-đi thuộc ngôn ngữ Bantu"
+
+msgid "Swedish"
+msgstr "Tiếng Thụy Điển"
+
+msgid "Tajik"
+msgstr ""
+
+msgid "Tamil"
+msgstr "Tiếng Ta-min"
+
+msgid "Tatar"
+msgstr "Tác-ta"
+
+msgid "Telugu"
+msgstr "Telugu"
+
+msgid "Thai"
+msgstr "Tiếng Thái"
+
+msgid "Thu"
+msgstr "Thứ 5"
+
+msgid "Thursday"
+msgstr "Thứ 5"
+
+msgid "Traditional Chinese"
+msgstr "Tiếng Tàu truyền thống"
+
+msgid "Tue"
+msgstr "Thứ 3"
+
+msgid "Tuesday"
+msgstr "Thứ 3"
+
+msgid "Turkish"
+msgstr "Tiếng Thổ Nhĩ Kỳ"
+
+msgid "Turkmen"
+msgstr ""
+
+msgid "Udmurt"
+msgstr "Udmurt"
+
+msgid "Ukrainian"
+msgstr "Tiếng Ukraina"
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "Venezuelan Spanish"
+msgstr "Tiếng Vê-nê-du-ê-la"
+
+msgid "Vietnamese"
+msgstr "Tiếng Việt Nam"
+
+msgid "Wed"
+msgstr "Thứ 4"
+
+msgid "Wednesday"
+msgstr "Thứ 4"
+
+msgid "Welsh"
+msgstr "Xứ Wales"
+
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "%[1]v phút trước"
+msgstr[1] ""
+
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "%[1]v phút sau"
+msgstr[1] ""
+
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "%[1]v giây trước"
+msgstr[1] ""
+
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "%[1]v giây sau"
+msgstr[1] ""
+
+msgid "a.m."
+msgstr "a.m."
+
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "%[1]v giờ trước"
+msgstr[1] ""
+
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "%[1]v giờ sau"
+msgstr[1] ""
+
+msgid "apr"
+msgstr "Tháng 4"
+
+msgid "aug"
+msgstr "Tháng 8"
+
+msgid "dec"
+msgstr "Tháng 12"
+
+msgid "eight"
+msgstr "Tám"
+
+msgid "feb"
+msgstr "Tháng 2"
+
+msgid "five"
+msgstr "Năm"
+
+msgid "four"
+msgstr "Bốn"
+
+msgid "jan"
+msgstr "Tháng 1"
+
+msgid "jul"
+msgstr "Tháng 7"
+
+msgid "jun"
+msgstr "Tháng 6"
+
+msgid "mar"
+msgstr "Tháng 3"
+
+msgid "may"
+msgstr "Tháng 5"
+
+msgid "midnight"
+msgstr "Nửa đêm"
+
+msgid "nine"
+msgstr "Chín"
+
+msgid "noon"
+msgstr "Buổi trưa"
+
+msgid "nov"
+msgstr "Tháng 11"
+
+msgid "now"
+msgstr "vừa mới đây"
+
+msgid "oct"
+msgstr "Tháng 10"
+
+msgid "one"
+msgstr "Một"
+
+msgid "p.m."
+msgstr "p.m."
+
+msgid "sep"
+msgstr "Tháng 9"
+
+msgid "seven"
+msgstr "Bảy"
+
+msgid "six"
+msgstr "Sáu"
+
+msgid "three"
+msgstr "Ba"
+
+msgid "today"
+msgstr "Hôm nay"
+
+msgid "tomorrow"
+msgstr "Ngày mai"
+
+msgid "two"
+msgstr "Hai"
+
+msgid "yesterday"
+msgstr "Hôm qua"
 

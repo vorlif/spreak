@@ -17,11 +17,569 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "baiti %[1]d"
+msgstr[1] "baiti %[1]d"
+
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "bilioni %[1]s"
+msgstr[1] "bilioni %[1]s"
+
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "desilioni %[1]s"
+msgstr[1] "desilioni %[1]s"
+
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "gogoli %[1]s"
+msgstr[1] "gogoli %[1]s"
+
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "milioni %[1]s"
+msgstr[1] "milioni %[1]s"
+
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "nonilioni %[1]s"
+msgstr[1] "nonilioni %[1]s"
+
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "oktilioni %[1]s"
+msgstr[1] "oktilioni %[1]s"
+
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "kuadrilioni %[1]s"
+msgstr[1] "kuadrilioni %[1]s"
+
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "kuintilioni %[1]s"
+msgstr[1] "kuintilioni %[1]s"
+
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "septilioni %[1]s"
+msgstr[1] "septilioni %[1]s"
+
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "seksitilioni %[1]s"
+msgstr[1] "seksitilioni %[1]s"
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "trilioni %[1]s"
+msgstr[1] "trilioni %[1]s"
+
+msgid "%s GB"
+msgstr "GB %s"
+
+msgid "%s KB"
+msgstr "KB %s"
+
+msgid "%s MB"
+msgstr "MB %s"
+
+msgid "%s PB"
+msgstr "PB %s"
+
+msgid "%s TB"
+msgstr "TB %s"
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "AM"
+
+msgid "Afrikaans"
+msgstr "Kiafrikaani"
+
+msgid "Albanian"
+msgstr "Kialbania"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aprili"
+
+msgid "April"
+msgstr "Aprili"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprili"
+
+msgid "Arabic"
+msgstr "Kiarabu"
+
+msgid "Argentinian Spanish"
+msgstr "Kihispania cha Argentina"
+
+msgid "Armenian"
+msgstr ""
+
+msgid "Asturian"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Ago."
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Agosti"
+
+msgid "August"
+msgstr "Agosti"
+
+msgid "Australian English"
+msgstr "Kiingereza cha Kiaustalia"
+
+msgid "Azerbaijani"
+msgstr "Kiazerbaijani"
+
+msgid "Basque"
+msgstr "Kibaskyue"
+
+msgid "Belarusian"
+msgstr "Kibelarusi"
+
+msgid "Bengali"
+msgstr "Kibengali"
+
 msgid "Bosnian"
 msgstr "Kibosnia"
 
+msgid "Brazilian Portuguese"
+msgstr "Kireno cha Kibrazili"
+
+msgid "Breton"
+msgstr "Kibretoni"
+
+msgid "British English"
+msgstr "Kiingereza cha Uingereza"
+
+msgid "Bulgarian"
+msgstr "Kibulgaria"
+
+msgid "Burmese"
+msgstr ""
+
+msgid "Catalan"
+msgstr "Kikatalani"
+
+msgid "Colombian Spanish"
+msgstr ""
+
+msgid "Croatian"
+msgstr "Kikroeshia"
+
+msgid "Czech"
+msgstr "Kicheki"
+
+msgid "Danish"
+msgstr "Kideni"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dis."
+
+msgid "December"
+msgstr "Disemba"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Disemba"
+
+msgid "Dutch"
+msgstr "Kidachi"
+
+msgid "English"
+msgstr "Kiingereza"
+
+msgid "Esperanto"
+msgstr "Kiesperanto"
+
+msgid "Estonian"
+msgstr "Kiestonia"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+msgid "February"
+msgstr "Februari"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Februari"
+
+msgid "Finnish"
+msgstr "Kifini"
+
+msgid "French"
+msgstr "Kifaransa"
+
+msgid "Fri"
+msgstr "Ijmaa"
+
+msgid "Friday"
+msgstr "Ijumaa"
+
+msgid "Frisian"
+msgstr "Kifrisi"
+
+msgid "Galician"
+msgstr "Kigalatia"
+
+msgid "Georgian"
+msgstr "Kijiojia"
+
+msgid "German"
+msgstr "Kijerumani"
+
+msgid "Greek"
+msgstr "Kigiriki"
+
+msgid "Hebrew"
+msgstr "Kiyahudi"
+
+msgid "Hindi"
+msgstr "Kihindi"
+
+msgid "Hungarian"
+msgstr "Kihangaria"
+
+msgid "Icelandic"
+msgstr "Kiaiselandi"
+
+msgid "Ido"
+msgstr ""
+
+msgid "Indonesian"
+msgstr "Kiindonesia"
+
+msgid "Interlingua"
+msgstr ""
+
+msgid "Irish"
+msgstr "Kiairishi"
+
+msgid "Italian"
+msgstr "Kiitaliano"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Jan."
+
+msgid "January"
+msgstr "Januari"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Januari"
+
+msgid "Japanese"
+msgstr "Kijapani"
+
+msgid "July"
+msgstr "Julai"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Julai"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Julai"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Juni"
+
+msgid "June"
+msgstr "Juni"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Juni"
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Kannada"
+msgstr "Kikanada"
+
+msgid "Kazakh"
+msgstr "Kizakhi"
+
+msgid "Khmer"
+msgstr "Kihema"
+
+msgid "Korean"
+msgstr "Kikorea"
+
+msgid "Latvian"
+msgstr "Kilatvia"
+
+msgid "Lithuanian"
+msgstr "Kilithuania"
+
+msgid "Lower Sorbian"
+msgstr ""
+
+msgid "Luxembourgish"
+msgstr ""
+
+msgid "Macedonian"
+msgstr "Kimacedonia"
+
+msgid "Malayalam"
+msgstr "Kimalayalam"
+
+msgid "Marathi"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Machi"
+
+msgid "March"
+msgstr "Machi"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Machi"
+
+msgid "May"
+msgstr "Mei"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mei"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mei"
+
+msgid "Mexican Spanish"
+msgstr "Kihispania cha Mexico"
+
+msgid "Mon"
+msgstr "Jtatu"
+
+msgid "Monday"
+msgstr "Jumatatu"
+
+msgid "Mongolian"
+msgstr "Kimongolia"
+
+msgid "Nepali"
+msgstr "Kinepali"
+
+msgid "Nicaraguan Spanish"
+msgstr "Kihispania cha Nikaragua"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "Norwegian Nynorsk"
+msgstr "Kinynorki cha Kinorwei"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Nov."
+
+msgid "November"
+msgstr "Novemba"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Novemba"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Okt."
+
+msgid "October"
+msgstr "Oktoba"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Oktoba"
+
+msgid "Ossetic"
+msgstr ""
+
+msgid "PM"
+msgstr "PM"
+
+msgid "Persian"
+msgstr "Kipershia"
+
+msgid "Polish"
+msgstr "Kipolishi"
+
+msgid "Portuguese"
+msgstr "Kireno"
+
+msgid "Punjabi"
+msgstr "Kipanjabi"
+
+msgid "Romanian"
+msgstr "Kiromania"
+
+msgid "Russian"
+msgstr "Kirusi"
+
+msgid "Sat"
+msgstr "Jmosi"
+
 msgid "Saturday"
 msgstr "Jumamosi"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sep."
+
+msgid "September"
+msgstr "Septemba"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Septemba"
+
+msgid "Serbian"
+msgstr "Kiserbia"
+
+msgid "Serbian Latin"
+msgstr "Kilatini cha Kiserbia"
+
+msgid "Simplified Chinese"
+msgstr "Kichina Kilichorahisishwa"
+
+msgid "Slovak"
+msgstr "Kislovakia"
+
+msgid "Slovenian"
+msgstr "Kislovenia"
+
+msgid "Spanish"
+msgstr "Kihispania"
+
+msgid "Sun"
+msgstr "Jpili"
+
+msgid "Sunday"
+msgstr "Jumapili"
+
+msgid "Swahili"
+msgstr "Kiswahili"
+
+msgid "Swedish"
+msgstr "Kiswidi"
+
+msgid "Tamil"
+msgstr "Kitamili"
+
+msgid "Tatar"
+msgstr "Kitatari"
+
+msgid "Telugu"
+msgstr "kitegulu"
+
+msgid "Thai"
+msgstr "Kithai"
+
+msgid "Thu"
+msgstr "Alh"
+
+msgid "Thursday"
+msgstr "Alhamisi"
+
+msgid "Traditional Chinese"
+msgstr "Kichina Asilia"
+
+msgid "Tue"
+msgstr "Jnne"
+
+msgid "Tuesday"
+msgstr "Jumanne"
+
+msgid "Turkish"
+msgstr "Kituruki"
+
+msgid "Udmurt"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr "Kiukreni"
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Urdu"
+msgstr "Kiurdu"
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "Venezuelan Spanish"
+msgstr "Kihispania cha Kivenezuela"
+
+msgid "Vietnamese"
+msgstr "Kivietinamu"
+
+msgid "Wed"
+msgstr "jtano"
+
+msgid "Wednesday"
+msgstr "Jumatano"
+
+msgid "Welsh"
+msgstr "Kiweli"
+
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "Dakika iliyopita"
+msgstr[1] "Dakika %[1]v zilizopita"
+
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "Dakika moja kutoka sasa"
+msgstr[1] "Dakika %[1]v kutoka sasa"
+
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "Sekunde iliyopita"
+msgstr[1] "Sekunde %[1]v zilizopita"
+
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "Sekunde moja kutoka sasa"
+msgstr[1] "Sekunde %[1]v kutoka sasa"
+
+msgid "a.m."
+msgstr "a.m"
+
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "Saa lililopita"
+msgstr[1] "Masaa %[1]v yaliyopita"
+
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "Saa limoja kutoka sasa "
+msgstr[1] "Masaa %[1]v kutoka sasa"
 
 msgid "apr"
 msgstr "apr"
@@ -29,675 +587,81 @@ msgstr "apr"
 msgid "aug"
 msgstr "ago"
 
-msgid "Hindi"
-msgstr "Kihindi"
-
-msgid "Colombian Spanish"
-msgstr ""
-
-msgid "Finnish"
-msgstr "Kifini"
-
-msgid "May"
-msgstr "Mei"
-
-msgid "mar"
-msgstr "machi"
-
-msgid "Bulgarian"
-msgstr "Kibulgaria"
-
-msgid "Bengali"
-msgstr "Kibengali"
-
-msgid "Basque"
-msgstr "Kibaskyue"
-
-msgid "Icelandic"
-msgstr "Kiaiselandi"
-
-msgid "Ukrainian"
-msgstr "Kiukreni"
-
-msgid "September"
-msgstr "Septemba"
-
-msgid "Armenian"
-msgstr ""
-
-msgid "Albanian"
-msgstr "Kialbania"
-
-msgid "Tamil"
-msgstr "Kitamili"
-
-msgid "Traditional Chinese"
-msgstr "Kichina Asilia"
-
-msgid "April"
-msgstr "Aprili"
-
-msgid "oct"
-msgstr "okt"
-
-msgid "seven"
-msgstr "saba"
-
-msgid "today"
-msgstr "leo"
-
-msgid "Kabyle"
-msgstr ""
-
-msgid "March"
-msgstr "Machi"
-
-msgid "jul"
-msgstr "jul"
-
-msgid "Arabic"
-msgstr "Kiarabu"
-
-msgid "Interlingua"
-msgstr ""
-
-msgid "Ossetic"
-msgstr ""
-
-msgid "July"
-msgstr "Julai"
-
-msgid "two"
-msgstr "mbili"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "an hour ago"
-msgid_plural "%[1]v hours ago"
-msgstr[0] "Saa lililopita"
-msgstr[1] "Masaa %[1]v yaliyopita"
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "an hour from now"
-msgid_plural "%[1]v hours from now"
-msgstr[0] "Saa limoja kutoka sasa "
-msgstr[1] "Masaa %[1]v kutoka sasa"
-
-msgid "Belarusian"
-msgstr "Kibelarusi"
+msgid "dec"
+msgstr "dis"
 
 msgid "eight"
 msgstr "nane"
 
-#, python-format
-msgid "%[1]s billion"
-msgid_plural "%[1]s billion"
-msgstr[0] "bilioni %[1]s"
-msgstr[1] "bilioni %[1]s"
-
-msgid "Asturian"
-msgstr ""
-
-msgid "Croatian"
-msgstr "Kikroeshia"
-
-msgid "Upper Sorbian"
-msgstr ""
-
-msgid "Thai"
-msgstr "Kithai"
-
-msgid "AM"
-msgstr "AM"
-
-msgid "yesterday"
-msgstr "jana"
-
-msgid "Danish"
-msgstr "Kideni"
-
-msgid "Marathi"
-msgstr ""
-
-msgid "Romanian"
-msgstr "Kiromania"
-
-msgid "Tuesday"
-msgstr "Jumanne"
-
-msgid "Wednesday"
-msgstr "Jumatano"
-
-msgid "Fri"
-msgstr "Ijmaa"
-
-#, python-format
-msgid "%[1]s quintillion"
-msgid_plural "%[1]s quintillion"
-msgstr[0] "kuintilioni %[1]s"
-msgstr[1] "kuintilioni %[1]s"
-
-msgid "Norwegian Nynorsk"
-msgstr "Kinynorki cha Kinorwei"
-
-msgid "Uzbek"
-msgstr ""
-
-msgid "August"
-msgstr "Agosti"
-
-msgid "nine"
-msgstr "tisa"
-
-#, python-format
-msgid "%[1]s trillion"
-msgid_plural "%[1]s trillion"
-msgstr[0] "trilioni %[1]s"
-msgstr[1] "trilioni %[1]s"
-
-#, python-format
-msgid "%[1]s decillion"
-msgid_plural "%[1]s decillion"
-msgstr[0] "desilioni %[1]s"
-msgstr[1] "desilioni %[1]s"
-
-msgid "Estonian"
-msgstr "Kiestonia"
-
-msgid "Malayalam"
-msgstr "Kimalayalam"
-
-msgid "Serbian"
-msgstr "Kiserbia"
-
-msgid "jun"
-msgstr "Juni"
-
-msgid "Wed"
-msgstr "jtano"
-
-#, python-format
-msgid "%[1]s googol"
-msgid_plural "%[1]s googol"
-msgstr[0] "gogoli %[1]s"
-msgstr[1] "gogoli %[1]s"
-
-msgid "Breton"
-msgstr "Kibretoni"
-
-msgid "Welsh"
-msgstr "Kiweli"
-
-msgid "Lower Sorbian"
-msgstr ""
-
-msgid "Spanish"
-msgstr "Kihispania"
-
-msgid "Slovak"
-msgstr "Kislovakia"
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "Azerbaijani"
-msgstr "Kiazerbaijani"
-
-msgid "Mexican Spanish"
-msgstr "Kihispania cha Mexico"
-
-msgid "Hebrew"
-msgstr "Kiyahudi"
-
-msgid "Mongolian"
-msgstr "Kimongolia"
-
-msgid "December"
-msgstr "Disemba"
-
 msgid "feb"
 msgstr "feb"
-
-msgid "November"
-msgstr "Novemba"
-
-msgid "sep"
-msgstr "sep"
-
-msgid "nov"
-msgstr "nov"
-
-msgid "Czech"
-msgstr "Kicheki"
-
-msgid "Italian"
-msgstr "Kiitaliano"
-
-msgid "Russian"
-msgstr "Kirusi"
-
-msgid "Thu"
-msgstr "Alh"
-
-msgid "February"
-msgstr "Februari"
-
-#, python-format
-msgid "%[1]s million"
-msgid_plural "%[1]s million"
-msgstr[0] "milioni %[1]s"
-msgstr[1] "milioni %[1]s"
-
-msgid "Afrikaans"
-msgstr "Kiafrikaani"
-
-msgid "French"
-msgstr "Kifaransa"
-
-msgid "Indonesian"
-msgstr "Kiindonesia"
-
-msgid "Brazilian Portuguese"
-msgstr "Kireno cha Kibrazili"
-
-msgid "noon"
-msgstr "mchana"
-
-msgid "Nicaraguan Spanish"
-msgstr "Kihispania cha Nikaragua"
-
-msgid "Dutch"
-msgstr "Kidachi"
-
-msgid "Tatar"
-msgstr "Kitatari"
-
-msgid "January"
-msgstr "Januari"
-
-#, python-format
-msgid "%[1]s septillion"
-msgid_plural "%[1]s septillion"
-msgstr[0] "septilioni %[1]s"
-msgstr[1] "septilioni %[1]s"
-
-msgid "Polish"
-msgstr "Kipolishi"
-
-msgid "Swahili"
-msgstr "Kiswahili"
-
-#, python-format
-msgid "%s TB"
-msgstr "TB %s"
-
-msgid "Japanese"
-msgstr "Kijapani"
-
-msgid "Korean"
-msgstr "Kikorea"
-
-msgid "Portuguese"
-msgstr "Kireno"
-
-msgid "may"
-msgstr "mei"
-
-#, python-format
-msgid "%s MB"
-msgstr "MB %s"
-
-msgid "Sat"
-msgstr "Jmosi"
 
 msgid "five"
 msgstr "tano"
 
-msgid "six"
-msgstr "sita"
-
-#, python-format
-msgid "%[1]s quadrillion"
-msgid_plural "%[1]s quadrillion"
-msgstr[0] "kuadrilioni %[1]s"
-msgstr[1] "kuadrilioni %[1]s"
-
-msgid "Catalan"
-msgstr "Kikatalani"
-
-msgid "Ido"
-msgstr ""
-
-msgid "Georgian"
-msgstr "Kijiojia"
-
-msgid "Udmurt"
-msgstr ""
-
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a second ago"
-msgid_plural "%[1]v seconds ago"
-msgstr[0] "Sekunde iliyopita"
-msgstr[1] "Sekunde %[1]v zilizopita"
-
-msgid "Luxembourgish"
-msgstr ""
-
-msgid "October"
-msgstr "Oktoba"
-
-#, python-format
-msgid "%s GB"
-msgstr "GB %s"
-
-msgid "Greek"
-msgstr "Kigiriki"
-
-msgid "Swedish"
-msgstr "Kiswidi"
-
-msgid "Vietnamese"
-msgstr "Kivietinamu"
-
-msgid "June"
-msgstr "Juni"
-
-#, python-format
-msgid "%s KB"
-msgstr "KB %s"
-
-msgid "Irish"
-msgstr "Kiairishi"
-
-msgid "Latvian"
-msgstr "Kilatvia"
-
-msgid "Macedonian"
-msgstr "Kimacedonia"
-
-msgid "Nepali"
-msgstr "Kinepali"
-
-msgid "Sunday"
-msgstr "Jumapili"
-
-msgid "Sun"
-msgstr "Jpili"
-
-msgid "one"
-msgstr "moja"
-
 msgid "four"
 msgstr "nne"
-
-msgid "English"
-msgstr "Kiingereza"
-
-msgid "Scottish Gaelic"
-msgstr ""
-
-msgid "Serbian Latin"
-msgstr "Kilatini cha Kiserbia"
-
-msgid "PM"
-msgstr "PM"
-
-msgid "Friday"
-msgstr "Ijumaa"
-
-msgid "tomorrow"
-msgstr "kesho"
-
-msgid "Frisian"
-msgstr "Kifrisi"
-
-msgid "Simplified Chinese"
-msgstr "Kichina Kilichorahisishwa"
-
-msgid "Thursday"
-msgstr "Alhamisi"
-
-#, python-format
-msgid "%[1]s sextillion"
-msgid_plural "%[1]s sextillion"
-msgstr[0] "seksitilioni %[1]s"
-msgstr[1] "seksitilioni %[1]s"
-
-msgid "now"
-msgstr "sasa"
-
-msgid "Australian English"
-msgstr "Kiingereza cha Kiaustalia"
-
-msgid "Turkish"
-msgstr "Kituruki"
-
-#, python-format
-msgid "%[1]d byte"
-msgid_plural "%[1]d bytes"
-msgstr[0] "baiti %[1]d"
-msgstr[1] "baiti %[1]d"
-
-#, python-format
-msgid "%s PB"
-msgstr "PB %s"
-
-#, python-format
-msgid "%[1]s nonillion"
-msgid_plural "%[1]s nonillion"
-msgstr[0] "nonilioni %[1]s"
-msgstr[1] "nonilioni %[1]s"
-
-msgid "Persian"
-msgstr "Kipershia"
-
-msgid "Kazakh"
-msgstr "Kizakhi"
-
-msgid "Kannada"
-msgstr "Kikanada"
-
-msgid "Burmese"
-msgstr ""
-
-msgid "Norwegian Bokmål"
-msgstr ""
 
 msgid "jan"
 msgstr "jan"
 
-msgid "three"
-msgstr "tatu"
+msgid "jul"
+msgstr "jul"
 
-msgid "German"
-msgstr "Kijerumani"
+msgid "jun"
+msgstr "Juni"
 
-msgid "Galician"
-msgstr "Kigalatia"
+msgid "mar"
+msgstr "machi"
 
-msgid "Hungarian"
-msgstr "Kihangaria"
-
-msgid "Lithuanian"
-msgstr "Kilithuania"
-
-msgid "Slovenian"
-msgstr "Kislovenia"
-
-msgid "a.m."
-msgstr "a.m"
-
-#, python-format
-msgid "%[1]s octillion"
-msgid_plural "%[1]s octillion"
-msgstr[0] "oktilioni %[1]s"
-msgstr[1] "oktilioni %[1]s"
-
-msgid "Esperanto"
-msgstr "Kiesperanto"
-
-msgid "Venezuelan Spanish"
-msgstr "Kihispania cha Kivenezuela"
-
-msgid "Khmer"
-msgstr "Kihema"
+msgid "may"
+msgstr "mei"
 
 msgid "midnight"
 msgstr "usiku wa manane"
 
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a second from now"
-msgid_plural "%[1]v seconds from now"
-msgstr[0] "Sekunde moja kutoka sasa"
-msgstr[1] "Sekunde %[1]v kutoka sasa"
+msgid "nine"
+msgstr "tisa"
 
-msgid "Telugu"
-msgstr "kitegulu"
+msgid "noon"
+msgstr "mchana"
 
-msgid "Urdu"
-msgstr "Kiurdu"
+msgid "nov"
+msgstr "nov"
+
+msgid "now"
+msgstr "sasa"
+
+msgid "oct"
+msgstr "okt"
+
+msgid "one"
+msgstr "moja"
 
 msgid "p.m."
 msgstr "p.m"
 
-msgid "Monday"
-msgstr "Jumatatu"
+msgid "sep"
+msgstr "sep"
 
-msgid "Mon"
-msgstr "Jtatu"
+msgid "seven"
+msgstr "saba"
 
-msgid "dec"
-msgstr "dis"
+msgid "six"
+msgstr "sita"
 
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a minute ago"
-msgid_plural "%[1]v minutes ago"
-msgstr[0] "Dakika iliyopita"
-msgstr[1] "Dakika %[1]v zilizopita"
+msgid "three"
+msgstr "tatu"
 
-#. Translators: please keep a non-breaking space (U+00A0)
-#. between count and time unit.
-#, python-format
-msgid "a minute from now"
-msgid_plural "%[1]v minutes from now"
-msgstr[0] "Dakika moja kutoka sasa"
-msgstr[1] "Dakika %[1]v kutoka sasa"
+msgid "today"
+msgstr "leo"
 
-msgid "British English"
-msgstr "Kiingereza cha Uingereza"
+msgid "tomorrow"
+msgstr "kesho"
 
-msgid "Argentinian Spanish"
-msgstr "Kihispania cha Argentina"
+msgid "two"
+msgstr "mbili"
 
-msgid "Punjabi"
-msgstr "Kipanjabi"
-
-msgid "Tue"
-msgstr "Jnne"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Ago."
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Okt."
-
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Jan."
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Feb."
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Julai"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Juni"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Sep."
-
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Nov."
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Dis."
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Machi"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Aprili"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Mei"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mei"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Agosti"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Septemba"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Novemba"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Aprili"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Februari"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Machi"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Juni"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Julai"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Oktoba"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Disemba"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Januari"
+msgid "yesterday"
+msgstr "jana"
 
