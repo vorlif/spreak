@@ -26,176 +26,258 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Translators: Ordinal format when value ends with 6, e.g. 86th.
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v дэхь"
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d байт"
+msgstr[1] "%[1]d байт"
 
-#. Translators: Ordinal format when value ends with 0, e.g. 80th.
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v дэхь"
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s тэрбум"
+msgstr[1] "%[1]s тэрбум"
 
-msgid "today"
-msgstr "өнөөдөр"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second from now"
-msgid_plural "%[1]v seconds from now"
-msgstr[0] "1 секундын дараа"
-msgstr[1] "%[1]v секундын дараа"
-
-msgid "Lithuanian"
-msgstr "Литва"
-
-msgid "Simplified Chinese"
-msgstr "Хятад (хялбаршуулсан) "
-
-msgid "August"
-msgstr "8-р сар"
-
-msgid "Telugu"
-msgstr "Тэлүгү"
-
-msgid "one"
-msgstr "нэг"
-
-msgid "Afrikaans"
-msgstr "Африк"
-
-msgid "Bengali"
-msgstr "Бенгал"
-
-msgid "Danish"
-msgstr "Дани"
-
-msgid "Galician"
-msgstr "Галици"
-
-msgid "Upper Sorbian"
-msgstr "Дээд Сорбин"
-
-msgid "Ido"
-msgstr "Идо"
-
-msgid "nov"
-msgstr "11-р сар"
-
-msgid "Korean"
-msgstr "Солонгос"
-
-#, python-format
 msgid "%[1]s decillion"
 msgid_plural "%[1]s decillion"
 msgstr[0] "%[1]s эрхэт"
 msgstr[1] "%[1]s эрхэт"
 
-msgid "Swahili"
-msgstr "Савахил"
-
-msgid "three"
-msgstr "гурав"
-
-msgid "now"
-msgstr "одоо"
-
-msgid "Asturian"
-msgstr "Астури"
-
-msgid "Belarusian"
-msgstr "Беларус"
-
-msgid "Lower Sorbian"
-msgstr "Доод Сорбин"
-
-msgid "Basque"
-msgstr "Баск"
-
-msgid "Norwegian Nynorsk"
-msgstr "Норвегийн нюнорск"
-
-msgid "Welsh"
-msgstr "Уэльс"
-
-msgid "Frisian"
-msgstr "Фриз"
-
-msgid "Urdu"
-msgstr "Урду"
-
-msgid "Tuesday"
-msgstr "Мягмар гариг"
-
-msgid "oct"
-msgstr "10-р сар"
-
-msgid "Malayalam"
-msgstr "Малайз"
-
-msgid "Ossetic"
-msgstr "Оссетик"
-
-msgid "Polish"
-msgstr "Польш"
-
-msgid "sep"
-msgstr "9-р сар"
-
-msgid "four"
-msgstr "дөрөв"
-
-msgid "Hindi"
-msgstr "Хинди"
-
-msgid "Nepali"
-msgstr "Непал"
-
-msgid "Romanian"
-msgstr "Румын"
-
-msgid "five"
-msgstr "тав"
-
-msgid "Azerbaijani"
-msgstr "Азербажан"
-
-msgid "Bosnian"
-msgstr "Босни"
-
-msgid "Australian English"
-msgstr "Австрали Англи"
-
-msgid "Norwegian Bokmål"
-msgstr "Норвеги Бокмал"
-
-msgid "Thursday"
-msgstr "Пүрэв гариг"
-
-msgid "jan"
-msgstr "1-р сар"
-
-msgid "eight"
-msgstr "найм"
-
-#, python-format
 msgid "%[1]s googol"
 msgid_plural "%[1]s googol"
 msgstr[0] "%[1]s googol"
 msgstr[1] "%[1]s googol"
 
-msgid "Mexican Spanish"
-msgstr "Мексикийн Испани"
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s сая"
+msgstr[1] "%[1]s сая"
 
-msgid "Monday"
-msgstr "Даваа гариг"
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "%[1]s их шалтгааны үзэгдэл"
+msgstr[1] "%[1]s их шалтгааны үзэгдэл"
 
-msgid "Fri"
-msgstr "Баа"
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s өөр дээр "
+msgstr[1] "%[1]s өөр дээр "
 
-msgid "Sun"
-msgstr "Ням"
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s тунамал"
+msgstr[1] "%[1]s тунамал"
+
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s их ингүүмэл "
+msgstr[1] "%[1]s их ингүүмэл "
+
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s их өөр дээр "
+msgstr[1] "%[1]s их өөр дээр "
+
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s ялгаруулагч"
+msgstr[1] "%[1]s ялгаруулагч"
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s наяд"
+msgstr[1] "%[1]s наяд"
+
+msgid "%[1]v ago"
+msgstr "%[1]v ѳмнѳ"
+
+msgid "%[1]v from now"
+msgstr "одооноос %[1]v "
+
+msgid "%s GB"
+msgstr "%s GB"
+
+msgid "%s KB"
+msgstr "%s KB"
+
+msgid "%s MB"
+msgstr "%s MB"
+
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "%s TB"
+msgstr "%s TB"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v дахь"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v дахь"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v дэхь"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v дахь"
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "AM"
+
+msgid "Afrikaans"
+msgstr "Африк"
+
+msgid "Albanian"
+msgstr "Альбани"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Туулай"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "4-р сар."
+
+msgid "April"
+msgstr "4-р сар"
+
+msgid "Arabic"
+msgstr "Араб"
+
+msgid "Argentinian Spanish"
+msgstr "Аргентинийн Испани"
+
+msgid "Armenian"
+msgstr "Армен"
+
+msgid "Asturian"
+msgstr "Астури"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "8-р сар."
+
+msgid "August"
+msgstr "8-р сар"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Хонь"
+
+msgid "Australian English"
+msgstr "Австрали Англи"
+
+msgid "Azerbaijani"
+msgstr "Азербажан"
+
+msgid "Basque"
+msgstr "Баск"
+
+msgid "Belarusian"
+msgstr "Беларус"
+
+msgid "Bengali"
+msgstr "Бенгал"
+
+msgid "Bosnian"
+msgstr "Босни"
+
+msgid "Brazilian Portuguese"
+msgstr "Бразилийн Португали"
+
+msgid "Breton"
+msgstr "Бэрэйтон "
+
+msgid "British English"
+msgstr "Британи Англи"
+
+msgid "Bulgarian"
+msgstr "Болгар"
+
+msgid "Burmese"
+msgstr "Бирм"
+
+msgid "Catalan"
+msgstr "Каталан"
+
+msgid "Colombian Spanish"
+msgstr "Колумбийн Испаниар"
+
+msgid "Croatian"
+msgstr "Хорват"
+
+msgid "Czech"
+msgstr "Чех"
+
+msgid "Danish"
+msgstr "Дани"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "12-р сар."
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Гахай"
+
+msgid "December"
+msgstr "12-р сар"
+
+msgid "Dutch"
+msgstr "Голланд"
+
+msgid "English"
+msgstr "Англи"
+
+msgid "Esperanto"
+msgstr "Эсперанто"
+
+msgid "Estonian"
+msgstr "Эстони"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "2-р сар."
+
+msgid "February"
+msgstr "2-р сар"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Үхэр"
 
 msgid "Finnish"
 msgstr "Финлянд"
@@ -203,577 +285,442 @@ msgstr "Финлянд"
 msgid "French"
 msgstr "Франц"
 
-msgid "Persian"
-msgstr "Перс"
-
-msgid "Japanese"
-msgstr "Япон"
-
-msgid "Udmurt"
-msgstr "Удмурт"
-
-msgid "November"
-msgstr "11-р сар"
-
-#, python-format
-msgid "%[1]d byte"
-msgid_plural "%[1]d bytes"
-msgstr[0] "%[1]d байт"
-msgstr[1] "%[1]d байт"
-
-msgid "mar"
-msgstr "3-р сар"
-
-msgid "Greek"
-msgstr "Грек"
-
-msgid "Interlingua"
-msgstr "Interlingua"
-
-msgid "Punjabi"
-msgstr "Панжаби"
-
-msgid "Portuguese"
-msgstr "Португал"
-
-msgid "a.m."
-msgstr "a.m."
-
-msgid "June"
-msgstr "6-р сар"
-
-msgid "feb"
-msgstr "2-р сар"
-
-msgid "may"
-msgstr "5-р сар"
-
-msgid "February"
-msgstr "2-р сар"
-
-#, python-format
-msgid "%[1]s quintillion"
-msgid_plural "%[1]s quintillion"
-msgstr[0] "%[1]s их ингүүмэл "
-msgstr[1] "%[1]s их ингүүмэл "
-
-msgid "yesterday"
-msgstr "өчигдөр"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a minute ago"
-msgid_plural "%[1]v minutes ago"
-msgstr[0] "1 минутын өмнө"
-msgstr[1] "%[1]v минутын өмнө"
-
-msgid "Arabic"
-msgstr "Араб"
-
-msgid "British English"
-msgstr "Британи Англи"
-
-msgid "Estonian"
-msgstr "Эстони"
-
-msgid "Wednesday"
-msgstr "Лхагва гариг"
-
-msgid "jul"
-msgstr "7-р сар"
-
-#, python-format
-msgid "%[1]s trillion"
-msgid_plural "%[1]s trillion"
-msgstr[0] "%[1]s наяд"
-msgstr[1] "%[1]s наяд"
-
-msgid "English"
-msgstr "Англи"
-
-msgid "Hungarian"
-msgstr "Унгар"
-
-msgid "Mongolian"
-msgstr "Монгол"
-
-msgid "Thai"
-msgstr "Тайланд"
-
-msgid "Vietnamese"
-msgstr "Вьетнам"
-
-msgid "January"
-msgstr "1-р сар"
-
-#, python-format
-msgid "%[1]s sextillion"
-msgid_plural "%[1]s sextillion"
-msgstr[0] "%[1]s ялгаруулагч"
-msgstr[1] "%[1]s ялгаруулагч"
-
-#, python-format
-msgid "%[1]s nonillion"
-msgid_plural "%[1]s nonillion"
-msgstr[0] "%[1]s их шалтгааны үзэгдэл"
-msgstr[1] "%[1]s их шалтгааны үзэгдэл"
-
-msgid "Croatian"
-msgstr "Хорват"
-
-msgid "Albanian"
-msgstr "Альбани"
-
-msgid "Thu"
-msgstr "Пүр"
-
-msgid "March"
-msgstr "3-р сар"
-
-msgid "nine"
-msgstr "ес"
-
-#, python-format
-msgid "%[1]s quadrillion"
-msgid_plural "%[1]s quadrillion"
-msgstr[0] "%[1]s тунамал"
-msgstr[1] "%[1]s тунамал"
-
-msgid "Irish"
-msgstr "Ирланд"
-
-msgid "Icelandic"
-msgstr "Исланд"
-
-msgid "Sunday"
-msgstr "Ням гариг"
-
-msgid "Mon"
-msgstr "Дав"
-
-msgid "seven"
-msgstr "долоо"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second ago"
-msgid_plural "%[1]v seconds ago"
-msgstr[0] "1 секундын өмнө"
-msgstr[1] "%[1]v секундын өмнө"
-
-msgid "Italian"
-msgstr "Итали"
-
-msgid "Luxembourgish"
-msgstr "Лүксенбүргиш"
-
-#, python-format
-msgid "%s KB"
-msgstr "%s KB"
-
-#, python-format
-msgid "%[1]s septillion"
-msgid_plural "%[1]s septillion"
-msgstr[0] "%[1]s их өөр дээр "
-msgstr[1] "%[1]s их өөр дээр "
-
-#, python-format
-msgid "%[1]s octillion"
-msgid_plural "%[1]s octillion"
-msgstr[0] "%[1]s өөр дээр "
-msgstr[1] "%[1]s өөр дээр "
-
-msgid "Esperanto"
-msgstr "Эсперанто"
-
-msgid "Nicaraguan Spanish"
-msgstr "Никрагуан Испани"
-
-msgid "Hebrew"
-msgstr "Еврэй"
-
-msgid "p.m."
-msgstr "p.m."
-
-msgid "Saturday"
-msgstr "Бямба гариг"
-
-#, python-format
-msgid "%s GB"
-msgstr "%s GB"
-
-msgid "Breton"
-msgstr "Бэрэйтон "
-
-msgid "Argentinian Spanish"
-msgstr "Аргентинийн Испани"
-
-msgid "Venezuelan Spanish"
-msgstr "Венесуэлийн Спани"
-
-msgid "Kabyle"
-msgstr "Кабилэ"
-
-msgid "Swedish"
-msgstr "Щвед"
-
-msgid "September"
-msgstr "9-р сар"
-
-msgid "October"
-msgstr "10-р сар"
-
-msgid "tomorrow"
-msgstr "маргааш"
-
-msgid "Brazilian Portuguese"
-msgstr "Бразилийн Португали"
-
-msgid "Tatar"
-msgstr "Татар"
-
-msgid "jun"
-msgstr "6-р сар"
-
-msgid "Czech"
-msgstr "Чех"
-
-msgid "Kazakh"
-msgstr "Казак"
-
-msgid "Slovak"
-msgstr "Словак"
-
-msgid "PM"
-msgstr "PM"
-
-msgid "AM"
-msgstr "AM"
-
-msgid "Tue"
-msgstr "Мяг"
-
-msgid "Macedonian"
-msgstr "Македон"
-
-msgid "Dutch"
-msgstr "Голланд"
-
-msgid "December"
-msgstr "12-р сар"
-
-#, python-format
-msgid "%s MB"
-msgstr "%s MB"
-
-#, python-format
-msgid "%[1]s billion"
-msgid_plural "%[1]s billion"
-msgstr[0] "%[1]s тэрбум"
-msgstr[1] "%[1]s тэрбум"
-
-msgid "German"
-msgstr "Герман"
-
-msgid "Turkish"
-msgstr "Турк"
-
-msgid "Sat"
-msgstr "Бям"
-
-#, python-format
-msgid "%s PB"
-msgstr "%s PB"
-
-msgid "Wed"
-msgstr "Лха"
-
-msgid "two"
-msgstr "хоёр"
-
-#, python-format
-msgid "%[1]s million"
-msgid_plural "%[1]s million"
-msgstr[0] "%[1]s сая"
-msgstr[1] "%[1]s сая"
-
-msgid "Colombian Spanish"
-msgstr "Колумбийн Испаниар"
-
-msgid "Indonesian"
-msgstr "Индонези"
-
-msgid "Burmese"
-msgstr "Бирм"
-
-msgid "Russian"
-msgstr "Орос"
-
-msgid "noon"
-msgstr "үд дунд"
-
-msgid "May"
-msgstr "5-р сар"
-
-msgid "July"
-msgstr "7-р сар"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour ago"
-msgid_plural "%[1]v hours ago"
-msgstr[0] "1 цагийн өмнө"
-msgstr[1] "%[1]v цагийн өмнө"
-
-msgid "Bulgarian"
-msgstr "Болгар"
-
-msgid "Armenian"
-msgstr "Армен"
-
-msgid "Kannada"
-msgstr "Канад"
+msgid "Fri"
+msgstr "Баа"
 
 msgid "Friday"
 msgstr "Баасан гариг"
 
-msgid "six"
-msgstr "зургаа"
+msgid "Frisian"
+msgstr "Фриз"
 
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v from now"
-msgstr "одооноос %[1]v "
-
-msgid "Catalan"
-msgstr "Каталан"
-
-msgid "Serbian Latin"
-msgstr "Серби латин"
-
-msgid "Tamil"
-msgstr "Тамил"
-
-msgid "apr"
-msgstr "4-р сар"
-
-msgid "Uzbek"
-msgstr "Узбек"
-
-msgid "Traditional Chinese"
-msgstr "Хятад (уламжлалт)"
-
-msgid "dec"
-msgstr "12-р сар"
-
-#, python-format
-msgid "%s TB"
-msgstr "%s TB"
-
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v ago"
-msgstr "%[1]v ѳмнѳ"
-
-msgid "Scottish Gaelic"
-msgstr "Шотландийн Гаелик"
+msgid "Galician"
+msgstr "Галици"
 
 msgid "Georgian"
 msgstr "Гүрж"
 
-msgid "Slovenian"
-msgstr "Словен"
+msgid "German"
+msgstr "Герман"
 
-msgid "Ukrainian"
-msgstr "Украйн"
+msgid "Greek"
+msgstr "Грек"
 
-msgid "midnight"
-msgstr "шөнө дунд"
+msgid "Hebrew"
+msgstr "Еврэй"
 
-msgid "April"
-msgstr "4-р сар"
+msgid "Hindi"
+msgstr "Хинди"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a minute from now"
-msgid_plural "%[1]v minutes from now"
-msgstr[0] "1 минутын дараа"
-msgstr[1] "%[1]v минутын дараа"
+msgid "Hungarian"
+msgstr "Унгар"
 
-msgid "Spanish"
-msgstr "Испани"
+msgid "Icelandic"
+msgstr "Исланд"
 
-msgid "Latvian"
-msgstr "Латви"
+msgid "Ido"
+msgstr "Идо"
 
-msgid "Serbian"
-msgstr "Серби"
+msgid "Indonesian"
+msgstr "Индонези"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour from now"
-msgid_plural "%[1]v hours from now"
-msgstr[0] "1 цагийн дараа"
-msgstr[1] "%[1]v цагийн дараа"
+msgid "Interlingua"
+msgstr "Interlingua"
 
-msgid "Khmer"
-msgstr "Кхмер"
+msgid "Irish"
+msgstr "Ирланд"
 
-msgid "Marathi"
-msgstr "маратхи"
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "aug"
-msgstr "8-р сар "
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "10-р сар."
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "2-р сар."
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "3-р сар."
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "4-р сар."
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "5-р сар."
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "6-р сар."
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "8-р сар."
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "9-р сар."
-
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "11-р сар."
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "12-р сар."
+msgid "Italian"
+msgstr "Итали"
 
 msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "1-р сар."
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "7-р сар."
-
-#. Translators: Ordinal format when value ends with 9, e.g. 89th.
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v дэхь"
-
-#. Translators: Ordinal format when value ends with 7, e.g. 87th.
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v дэхь"
-
-#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v дэхь"
-
-#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v дахь"
-
-#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v дахь"
-
-#. Translators: Ordinal format when value ends with 4, e.g. 84th.
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v дахь"
-
-#. Translators: Ordinal format when value ends with 5, e.g. 85th.
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v дэхь"
-
-#. Translators: Ordinal format when value ends with 8, e.g. 88th.
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v дэхь"
+msgid "January"
+msgstr "1-р сар"
 
 msgctxt "alt. month"
 msgid "January"
 msgstr "Хулгана"
 
-msgctxt "alt. month"
-msgid "February"
-msgstr "Үхэр"
+msgid "Japanese"
+msgstr "Япон"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "Туулай"
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "7-р сар."
 
-msgctxt "alt. month"
-msgid "June"
-msgstr "Могой"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Бич"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Тахиа"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Нохой"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Бар"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Луу"
+msgid "July"
+msgstr "7-р сар"
 
 msgctxt "alt. month"
 msgid "July"
 msgstr "Морь"
 
 msgctxt "alt. month"
-msgid "August"
-msgstr "Хонь"
+msgid "June"
+msgstr "Могой"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "6-р сар."
+
+msgid "June"
+msgstr "6-р сар"
+
+msgid "Kabyle"
+msgstr "Кабилэ"
+
+msgid "Kannada"
+msgstr "Канад"
+
+msgid "Kazakh"
+msgstr "Казак"
+
+msgid "Khmer"
+msgstr "Кхмер"
+
+msgid "Korean"
+msgstr "Солонгос"
+
+msgid "Latvian"
+msgstr "Латви"
+
+msgid "Lithuanian"
+msgstr "Литва"
+
+msgid "Lower Sorbian"
+msgstr "Доод Сорбин"
+
+msgid "Luxembourgish"
+msgstr "Лүксенбүргиш"
+
+msgid "Macedonian"
+msgstr "Македон"
+
+msgid "Malayalam"
+msgstr "Малайз"
+
+msgid "Marathi"
+msgstr "маратхи"
 
 msgctxt "alt. month"
-msgid "December"
-msgstr "Гахай"
+msgid "March"
+msgstr "Бар"
 
-#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v дэхь"
+msgid "March"
+msgstr "3-р сар"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "3-р сар."
+
+msgid "May"
+msgstr "5-р сар"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Луу"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "5-р сар."
+
+msgid "Mexican Spanish"
+msgstr "Мексикийн Испани"
+
+msgid "Mon"
+msgstr "Дав"
+
+msgid "Monday"
+msgstr "Даваа гариг"
+
+msgid "Mongolian"
+msgstr "Монгол"
+
+msgid "Nepali"
+msgstr "Непал"
+
+msgid "Nicaraguan Spanish"
+msgstr "Никрагуан Испани"
+
+msgid "Norwegian Bokmål"
+msgstr "Норвеги Бокмал"
+
+msgid "Norwegian Nynorsk"
+msgstr "Норвегийн нюнорск"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "11-р сар."
+
+msgid "November"
+msgstr "11-р сар"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Нохой"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "10-р сар."
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Тахиа"
+
+msgid "October"
+msgstr "10-р сар"
+
+msgid "Ossetic"
+msgstr "Оссетик"
+
+msgid "PM"
+msgstr "PM"
+
+msgid "Persian"
+msgstr "Перс"
+
+msgid "Polish"
+msgstr "Польш"
+
+msgid "Portuguese"
+msgstr "Португал"
+
+msgid "Punjabi"
+msgstr "Панжаби"
+
+msgid "Romanian"
+msgstr "Румын"
+
+msgid "Russian"
+msgstr "Орос"
+
+msgid "Sat"
+msgstr "Бям"
+
+msgid "Saturday"
+msgstr "Бямба гариг"
+
+msgid "Scottish Gaelic"
+msgstr "Шотландийн Гаелик"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "9-р сар."
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Бич"
+
+msgid "September"
+msgstr "9-р сар"
+
+msgid "Serbian"
+msgstr "Серби"
+
+msgid "Serbian Latin"
+msgstr "Серби латин"
+
+msgid "Simplified Chinese"
+msgstr "Хятад (хялбаршуулсан) "
+
+msgid "Slovak"
+msgstr "Словак"
+
+msgid "Slovenian"
+msgstr "Словен"
+
+msgid "Spanish"
+msgstr "Испани"
+
+msgid "Sun"
+msgstr "Ням"
+
+msgid "Sunday"
+msgstr "Ням гариг"
+
+msgid "Swahili"
+msgstr "Савахил"
+
+msgid "Swedish"
+msgstr "Щвед"
+
+msgid "Tamil"
+msgstr "Тамил"
+
+msgid "Tatar"
+msgstr "Татар"
+
+msgid "Telugu"
+msgstr "Тэлүгү"
+
+msgid "Thai"
+msgstr "Тайланд"
+
+msgid "Thu"
+msgstr "Пүр"
+
+msgid "Thursday"
+msgstr "Пүрэв гариг"
+
+msgid "Traditional Chinese"
+msgstr "Хятад (уламжлалт)"
+
+msgid "Tue"
+msgstr "Мяг"
+
+msgid "Tuesday"
+msgstr "Мягмар гариг"
+
+msgid "Turkish"
+msgstr "Турк"
+
+msgid "Udmurt"
+msgstr "Удмурт"
+
+msgid "Ukrainian"
+msgstr "Украйн"
+
+msgid "Upper Sorbian"
+msgstr "Дээд Сорбин"
+
+msgid "Urdu"
+msgstr "Урду"
+
+msgid "Uzbek"
+msgstr "Узбек"
+
+msgid "Venezuelan Spanish"
+msgstr "Венесуэлийн Спани"
+
+msgid "Vietnamese"
+msgstr "Вьетнам"
+
+msgid "Wed"
+msgstr "Лха"
+
+msgid "Wednesday"
+msgstr "Лхагва гариг"
+
+msgid "Welsh"
+msgstr "Уэльс"
+
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "1 минутын өмнө"
+msgstr[1] "%[1]v минутын өмнө"
+
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "1 минутын дараа"
+msgstr[1] "%[1]v минутын дараа"
+
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "1 секундын өмнө"
+msgstr[1] "%[1]v секундын өмнө"
+
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "1 секундын дараа"
+msgstr[1] "%[1]v секундын дараа"
+
+msgid "a.m."
+msgstr "a.m."
+
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "1 цагийн өмнө"
+msgstr[1] "%[1]v цагийн өмнө"
+
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "1 цагийн дараа"
+msgstr[1] "%[1]v цагийн дараа"
+
+msgid "apr"
+msgstr "4-р сар"
+
+msgid "aug"
+msgstr "8-р сар "
+
+msgid "dec"
+msgstr "12-р сар"
+
+msgid "eight"
+msgstr "найм"
+
+msgid "feb"
+msgstr "2-р сар"
+
+msgid "five"
+msgstr "тав"
+
+msgid "four"
+msgstr "дөрөв"
+
+msgid "jan"
+msgstr "1-р сар"
+
+msgid "jul"
+msgstr "7-р сар"
+
+msgid "jun"
+msgstr "6-р сар"
+
+msgid "mar"
+msgstr "3-р сар"
+
+msgid "may"
+msgstr "5-р сар"
+
+msgid "midnight"
+msgstr "шөнө дунд"
+
+msgid "nine"
+msgstr "ес"
+
+msgid "noon"
+msgstr "үд дунд"
+
+msgid "nov"
+msgstr "11-р сар"
+
+msgid "now"
+msgstr "одоо"
+
+msgid "oct"
+msgstr "10-р сар"
+
+msgid "one"
+msgstr "нэг"
+
+msgid "p.m."
+msgstr "p.m."
+
+msgid "sep"
+msgstr "9-р сар"
+
+msgid "seven"
+msgstr "долоо"
+
+msgid "six"
+msgstr "зургаа"
+
+msgid "three"
+msgstr "гурав"
+
+msgid "today"
+msgstr "өнөөдөр"
+
+msgid "tomorrow"
+msgstr "маргааш"
+
+msgid "two"
+msgstr "хоёр"
+
+msgid "yesterday"
+msgstr "өчигдөр"
 

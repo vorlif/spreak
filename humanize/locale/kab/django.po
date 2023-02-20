@@ -15,534 +15,527 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Norwegian Nynorsk"
-msgstr ""
-
-msgid "Urdu"
-msgstr ""
-
-msgid "Saturday"
-msgstr "Sed"
-
-msgid "June"
-msgstr "Yunyu"
-
-msgid "Welsh"
-msgstr "Takusit"
-
-msgid "Nicaraguan Spanish"
-msgstr "Taspanit n Nikaragwa"
-
-msgid "Icelandic"
-msgstr "Taslandit"
-
-msgid "Khmer"
-msgstr ""
-
-msgid "Breton"
-msgstr "Tabrutunt"
-
-msgid "Lower Sorbian"
-msgstr "Tasiṛbit n wadda"
-
-msgid "Scottish Gaelic"
-msgstr ""
-
-msgid "Vietnamese"
-msgstr ""
-
-msgid "Fri"
-msgstr "Sem"
-
-msgid "February"
-msgstr "Fuṛaṛ"
-
-msgid "Bosnian"
-msgstr "Tabusnit"
-
-msgid "Finnish"
-msgstr "Tafinit"
-
-msgid "Swahili"
-msgstr "Taswahilit"
-
-msgid "noon"
-msgstr "ttnaṣfa n uzal"
-
-msgid "Bulgarian"
-msgstr "Tabulgarit"
-
-msgid "Serbian Latin"
-msgstr ""
-
-msgid "midnight"
-msgstr "ttnaṣfa n yiḍ"
-
-#, python-format
-msgid "%s MB"
-msgstr "%s MAṬ"
-
-msgid "Armenian"
-msgstr ""
-
-msgid "jul"
-msgstr "yul"
-
-msgid "November"
-msgstr "Wamber"
-
-msgid "Frisian"
-msgstr ""
-
-msgid "Portuguese"
-msgstr "Tapurtugit"
-
-msgid "Ukrainian"
-msgstr ""
-
-msgid "Wed"
-msgstr "Aha"
-
-msgid "Uzbek"
-msgstr ""
-
-#, python-format
-msgid "%s GB"
-msgstr "%s GAṬ"
-
-msgid "Asturian"
-msgstr "Tasturyant"
-
-msgid "British English"
-msgstr "Taglizit (UK)"
-
-msgid "Macedonian"
-msgstr "Tamasidunit"
-
-msgid "Mongolian"
-msgstr ""
-
-msgid "Ossetic"
-msgstr ""
-
-msgid "Brazilian Portuguese"
-msgstr ""
-
-msgid "Udmurt"
-msgstr ""
-
-msgid "AM"
-msgstr "FT"
-
-msgid "Monday"
-msgstr "Arim"
-
-msgid "aug"
-msgstr "ɣuc"
-
-#, python-format
 msgid "%[1]d byte"
 msgid_plural "%[1]d bytes"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Croatian"
-msgstr "Takarwasit"
+msgid "%s GB"
+msgstr "%s GAṬ"
 
-msgid "Interlingua"
-msgstr ""
+msgid "%s KB"
+msgstr "%s KAṬ"
 
-msgid "Albanian"
-msgstr "Talbanit"
+msgid "%s MB"
+msgstr "%s MAṬ"
+
+msgid "%s PB"
+msgstr "%s PAṬ"
+
+msgid "%s TB"
+msgstr "%s TAṬ"
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "FT"
 
 msgid "Afrikaans"
 msgstr "Tafrikanst"
 
-msgid "German"
-msgstr "Talmanit"
-
-msgid "Esperanto"
-msgstr "Taspirantit"
-
-msgid "Hindi"
-msgstr "Tahendit"
-
-msgid "Bengali"
-msgstr "Tabelgalit"
-
-msgid "Polish"
-msgstr "Tapulandit"
-
-msgid "Swedish"
-msgstr "Taswidit"
-
-msgid "Thu"
-msgstr "Amh"
-
-msgid "Wednesday"
-msgstr "Ahad"
-
-msgid "Sunday"
-msgstr "Acer"
-
-msgid "October"
-msgstr "Tuber"
-
-msgid "Kabyle"
-msgstr ""
-
-msgid "Thai"
-msgstr ""
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "Tuesday"
-msgstr "Aram"
-
-msgid "Czech"
-msgstr "Tačikit"
-
-msgid "Greek"
-msgstr "Tagrigit"
-
-msgid "Friday"
-msgstr "Sem"
-
-msgid "Sat"
-msgstr "Sed"
-
-msgid "September"
-msgstr "Ctamber"
-
-msgid "French"
-msgstr "Tafṛansist"
-
-msgid "may"
-msgstr "may"
-
-msgid "Arabic"
-msgstr "Taɛṛabt"
-
-msgid "Malayalam"
-msgstr "Tamayalamt"
-
-msgid "Slovenian"
-msgstr ""
-
-msgid "apr"
-msgstr "yeb"
-
-msgid "Norwegian Bokmål"
-msgstr ""
-
-msgid "August"
-msgstr "Ɣuct"
-
-#, python-format
-msgid "%s TB"
-msgstr "%s TAṬ"
-
-msgid "Danish"
-msgstr "Tadanit"
-
-msgid "Spanish"
-msgstr "Taspanit"
-
-msgid "Hebrew"
-msgstr ""
-
-msgid "Lithuanian"
-msgstr "Talitwanit"
-
-msgid "Colombian Spanish"
-msgstr "Taspanit n Kulumbya"
-
-msgid "Russian"
-msgstr "Tarusit"
-
-msgid "Simplified Chinese"
-msgstr ""
-
-msgid "p.m."
-msgstr "m.d."
-
-msgid "Australian English"
-msgstr "Taglizit n Ustralya"
-
-msgid "Persian"
-msgstr "Tafarsit"
-
-msgid "Tamil"
-msgstr "Taṭamult"
-
-msgid "Sun"
-msgstr "Ace"
-
-msgid "Azerbaijani"
-msgstr "Tazeṛbayǧant"
-
-msgid "Tatar"
-msgstr ""
-
-msgid "Tue"
-msgstr "Ara"
-
-msgid "December"
-msgstr "Dujamber"
-
-msgid "Luxembourgish"
-msgstr ""
-
-msgid "Serbian"
-msgstr "Tasiṛbit"
-
-msgid "Traditional Chinese"
-msgstr ""
-
-msgid "PM"
-msgstr "MD"
-
-msgid "Catalan"
-msgstr "Takaṭalant"
-
-msgid "Upper Sorbian"
-msgstr ""
-
-msgid "Kazakh"
-msgstr "Takazaxt"
-
-msgid "Kannada"
-msgstr "Takannadat"
-
-msgid "May"
-msgstr "Mayyu"
-
-msgid "January"
-msgstr "Yennayer"
-
-msgid "mar"
-msgstr "meɣ"
-
-msgid "sep"
-msgstr "cte"
-
-msgid "English"
-msgstr "Taglizit"
-
-msgid "Galician"
-msgstr ""
-
-msgid "Korean"
-msgstr "Takurit"
-
-msgid "Turkish"
-msgstr "Taṭurkit"
-
-msgid "July"
-msgstr "Yulyu"
-
-msgid "feb"
-msgstr "fuṛ"
-
-msgid "jun"
-msgstr "yun"
-
-msgid "Mexican Spanish"
-msgstr "Taspanit n Miksik"
-
-msgid "Italian"
-msgstr "Taṭelyanit"
-
-msgid "Romanian"
-msgstr "Tarumanit"
-
-msgid "Thursday"
-msgstr "Amhad"
-
-msgid "Ido"
-msgstr ""
-
-msgid "dec"
-msgstr "duj"
-
-#, python-format
-msgid "%s KB"
-msgstr "%s KAṬ"
-
-msgid "Argentinian Spanish"
-msgstr "Taspanit n Arjuntin"
-
-msgid "Slovak"
-msgstr "Tasluvakt"
-
-msgid "Mon"
-msgstr "Ari"
-
-msgid "March"
-msgstr "Meɣres"
-
-msgid "jan"
-msgstr "yen"
-
-#, python-format
-msgid "%s PB"
-msgstr "%s PAṬ"
-
-msgid "Georgian"
-msgstr "Tajyuṛjit"
-
-msgid "Burmese"
-msgstr "Tabirmanit"
-
-msgid "Nepali"
-msgstr "Tanipalit"
-
-msgid "Telugu"
-msgstr ""
-
-msgid "Dutch"
-msgstr "Tahulandit"
-
-msgid "nov"
-msgstr "wam"
-
-msgid "Belarusian"
-msgstr "Tabilurusit"
-
-msgid "Venezuelan Spanish"
-msgstr "Taspanit n Vinizwila"
-
-msgid "Estonian"
-msgstr "Tastunit"
-
-msgid "Japanese"
-msgstr ""
-
-msgid "Punjabi"
-msgstr "Tabenjabit"
-
-msgid "a.m."
-msgstr "f.t."
-
-msgid "Basque"
-msgstr "Tabaskit"
-
-msgid "Irish"
-msgstr ""
-
-msgid "Hungarian"
-msgstr "Tahungarit"
-
-msgid "Indonesian"
-msgstr "Tandunizit"
-
-msgid "Latvian"
-msgstr "Talitunit"
-
-msgid "Marathi"
-msgstr ""
+msgid "Albanian"
+msgstr "Talbanit"
 
 msgid "April"
 msgstr "Yebrir"
 
-msgid "oct"
-msgstr "tub"
-
 msgctxt "abbrev. month"
-msgid "March"
-msgstr "Meɣres"
+msgid "April"
+msgstr "Yebrir"
 
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Mayyu"
+msgctxt "alt. month"
+msgid "April"
+msgstr "Yebrir"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Yulyu"
+msgid "Arabic"
+msgstr "Taɛṛabt"
+
+msgid "Argentinian Spanish"
+msgstr "Taspanit n Arjuntin"
+
+msgid "Armenian"
+msgstr ""
+
+msgid "Asturian"
+msgstr "Tasturyant"
 
 msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Ɣuc."
 
-msgctxt "abbrev. month"
-msgid "Sept."
+msgid "August"
+msgstr "Ɣuct"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Ɣuct"
+
+msgid "Australian English"
+msgstr "Taglizit n Ustralya"
+
+msgid "Azerbaijani"
+msgstr "Tazeṛbayǧant"
+
+msgid "Basque"
+msgstr "Tabaskit"
+
+msgid "Belarusian"
+msgstr "Tabilurusit"
+
+msgid "Bengali"
+msgstr "Tabelgalit"
+
+msgid "Bosnian"
+msgstr "Tabusnit"
+
+msgid "Brazilian Portuguese"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Tub."
+msgid "Breton"
+msgstr "Tabrutunt"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Yen."
+msgid "British English"
+msgstr "Taglizit (UK)"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Yebrir"
+msgid "Bulgarian"
+msgstr "Tabulgarit"
 
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Yunyu"
+msgid "Burmese"
+msgstr "Tabirmanit"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Wam."
+msgid "Catalan"
+msgstr "Takaṭalant"
+
+msgid "Colombian Spanish"
+msgstr "Taspanit n Kulumbya"
+
+msgid "Croatian"
+msgstr "Takarwasit"
+
+msgid "Czech"
+msgstr "Tačikit"
+
+msgid "Danish"
+msgstr "Tadanit"
 
 msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Duj."
+
+msgid "December"
+msgstr "Dujamber"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Dujamber"
+
+msgid "Dutch"
+msgstr "Tahulandit"
+
+msgid "English"
+msgstr "Taglizit"
+
+msgid "Esperanto"
+msgstr "Taspirantit"
+
+msgid "Estonian"
+msgstr "Tastunit"
 
 msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Fuṛ."
 
 msgctxt "alt. month"
+msgid "February"
+msgstr "Fuṛaṛ"
+
+msgid "February"
+msgstr "Fuṛaṛ"
+
+msgid "Finnish"
+msgstr "Tafinit"
+
+msgid "French"
+msgstr "Tafṛansist"
+
+msgid "Fri"
+msgstr "Sem"
+
+msgid "Friday"
+msgstr "Sem"
+
+msgid "Frisian"
+msgstr ""
+
+msgid "Galician"
+msgstr ""
+
+msgid "Georgian"
+msgstr "Tajyuṛjit"
+
+msgid "German"
+msgstr "Talmanit"
+
+msgid "Greek"
+msgstr "Tagrigit"
+
+msgid "Hebrew"
+msgstr ""
+
+msgid "Hindi"
+msgstr "Tahendit"
+
+msgid "Hungarian"
+msgstr "Tahungarit"
+
+msgid "Icelandic"
+msgstr "Taslandit"
+
+msgid "Ido"
+msgstr ""
+
+msgid "Indonesian"
+msgstr "Tandunizit"
+
+msgid "Interlingua"
+msgstr ""
+
+msgid "Irish"
+msgstr ""
+
+msgid "Italian"
+msgstr "Taṭelyanit"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Yen."
+
 msgid "January"
 msgstr "Yennayer"
 
 msgctxt "alt. month"
-msgid "March"
-msgstr "Meɣres"
+msgid "January"
+msgstr "Yennayer"
 
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mayyu"
+msgid "Japanese"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Yulyu"
+
+msgid "July"
+msgstr "Yulyu"
 
 msgctxt "alt. month"
 msgid "July"
 msgstr "Yulyu"
 
 msgctxt "alt. month"
-msgid "August"
-msgstr "Ɣuct"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Tuber"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Fuṛaṛ"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Yebrir"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "Yunyu"
 
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Yunyu"
+
+msgid "June"
+msgstr "Yunyu"
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Kannada"
+msgstr "Takannadat"
+
+msgid "Kazakh"
+msgstr "Takazaxt"
+
+msgid "Khmer"
+msgstr ""
+
+msgid "Korean"
+msgstr "Takurit"
+
+msgid "Latvian"
+msgstr "Talitunit"
+
+msgid "Lithuanian"
+msgstr "Talitwanit"
+
+msgid "Lower Sorbian"
+msgstr "Tasiṛbit n wadda"
+
+msgid "Luxembourgish"
+msgstr ""
+
+msgid "Macedonian"
+msgstr "Tamasidunit"
+
+msgid "Malayalam"
+msgstr "Tamayalamt"
+
+msgid "Marathi"
+msgstr ""
+
 msgctxt "alt. month"
-msgid "September"
-msgstr "Ctamber"
+msgid "March"
+msgstr "Meɣres"
+
+msgid "March"
+msgstr "Meɣres"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Meɣres"
+
+msgid "May"
+msgstr "Mayyu"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mayyu"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mayyu"
+
+msgid "Mexican Spanish"
+msgstr "Taspanit n Miksik"
+
+msgid "Mon"
+msgstr "Ari"
+
+msgid "Monday"
+msgstr "Arim"
+
+msgid "Mongolian"
+msgstr ""
+
+msgid "Nepali"
+msgstr "Tanipalit"
+
+msgid "Nicaraguan Spanish"
+msgstr "Taspanit n Nikaragwa"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "Norwegian Nynorsk"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Wam."
 
 msgctxt "alt. month"
 msgid "November"
 msgstr "Wamber"
 
+msgid "November"
+msgstr "Wamber"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Tub."
+
 msgctxt "alt. month"
-msgid "December"
-msgstr "Dujamber"
+msgid "October"
+msgstr "Tuber"
+
+msgid "October"
+msgstr "Tuber"
+
+msgid "Ossetic"
+msgstr ""
+
+msgid "PM"
+msgstr "MD"
+
+msgid "Persian"
+msgstr "Tafarsit"
+
+msgid "Polish"
+msgstr "Tapulandit"
+
+msgid "Portuguese"
+msgstr "Tapurtugit"
+
+msgid "Punjabi"
+msgstr "Tabenjabit"
+
+msgid "Romanian"
+msgstr "Tarumanit"
+
+msgid "Russian"
+msgstr "Tarusit"
+
+msgid "Sat"
+msgstr "Sed"
+
+msgid "Saturday"
+msgstr "Sed"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Ctamber"
+
+msgid "September"
+msgstr "Ctamber"
+
+msgid "Serbian"
+msgstr "Tasiṛbit"
+
+msgid "Serbian Latin"
+msgstr ""
+
+msgid "Simplified Chinese"
+msgstr ""
+
+msgid "Slovak"
+msgstr "Tasluvakt"
+
+msgid "Slovenian"
+msgstr ""
+
+msgid "Spanish"
+msgstr "Taspanit"
+
+msgid "Sun"
+msgstr "Ace"
+
+msgid "Sunday"
+msgstr "Acer"
+
+msgid "Swahili"
+msgstr "Taswahilit"
+
+msgid "Swedish"
+msgstr "Taswidit"
+
+msgid "Tamil"
+msgstr "Taṭamult"
+
+msgid "Tatar"
+msgstr ""
+
+msgid "Telugu"
+msgstr ""
+
+msgid "Thai"
+msgstr ""
+
+msgid "Thu"
+msgstr "Amh"
+
+msgid "Thursday"
+msgstr "Amhad"
+
+msgid "Traditional Chinese"
+msgstr ""
+
+msgid "Tue"
+msgstr "Ara"
+
+msgid "Tuesday"
+msgstr "Aram"
+
+msgid "Turkish"
+msgstr "Taṭurkit"
+
+msgid "Udmurt"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr ""
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Urdu"
+msgstr ""
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "Venezuelan Spanish"
+msgstr "Taspanit n Vinizwila"
+
+msgid "Vietnamese"
+msgstr ""
+
+msgid "Wed"
+msgstr "Aha"
+
+msgid "Wednesday"
+msgstr "Ahad"
+
+msgid "Welsh"
+msgstr "Takusit"
+
+msgid "a.m."
+msgstr "f.t."
+
+msgid "apr"
+msgstr "yeb"
+
+msgid "aug"
+msgstr "ɣuc"
+
+msgid "dec"
+msgstr "duj"
+
+msgid "feb"
+msgstr "fuṛ"
+
+msgid "jan"
+msgstr "yen"
+
+msgid "jul"
+msgstr "yul"
+
+msgid "jun"
+msgstr "yun"
+
+msgid "mar"
+msgstr "meɣ"
+
+msgid "may"
+msgstr "may"
+
+msgid "midnight"
+msgstr "ttnaṣfa n yiḍ"
+
+msgid "noon"
+msgstr "ttnaṣfa n uzal"
+
+msgid "nov"
+msgstr "wam"
+
+msgid "oct"
+msgstr "tub"
+
+msgid "p.m."
+msgstr "m.d."
+
+msgid "sep"
+msgstr "cte"
 

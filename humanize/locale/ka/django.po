@@ -20,356 +20,185 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#. Translators: Ordinal format when value ends with 2, e.g. 82nd, except 12.
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]d ბაიტი"
+msgstr[1] "%[1]d ბაიტი"
+
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "%[1]s მილიარდი"
+msgstr[1] "%[1]s მილიარდი"
+
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "%[1]s დეცილიონი"
+msgstr[1] "%[1]s დეცილიონი"
 
-#. Translators: Ordinal format when value ends with 6, e.g. 86th.
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "აპრ."
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "ივნ."
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "ივლ."
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "აგვ."
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "ოქტ."
-
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "იან."
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "მარ."
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "სექტ."
-
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "ნოემ."
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "დეკ."
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "თებ."
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "მაი"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "აპრილი"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "ივნისი"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "აგვისტო"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "ოქტომბერი"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "მარტი"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "თებერვალი"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "მაისი"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "ივლისი"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "სექტემბერი"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "ნოემბერი"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "დეკემბერი"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "იანვარი"
-
-#. Translators: Ordinal format when value ends with 1, e.g. 81st, except 11.
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 5, e.g. 85th.
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 4, e.g. 84th.
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 7, e.g. 87th.
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format for 11 (11th), 12 (12th), and 13 (13th).
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 0, e.g. 80th.
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 8, e.g. 88th.
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-#. Translators: Ordinal format when value ends with 9, e.g. 89th.
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
-msgid "Frisian"
-msgstr "ფრისიული"
-
-msgid "Slovenian"
-msgstr "სლოვენიური"
-
-msgid "Wednesday"
-msgstr "ოთხშაბათი"
-
-msgid "Uzbek"
-msgstr ""
-
-msgid "aug"
-msgstr "აგვ"
-
-msgid "oct"
-msgstr "ოქტ"
-
-msgid "Lower Sorbian"
-msgstr "ქვემო სორბული"
-
-msgid "English"
-msgstr "ინგლისური"
-
-msgid "Korean"
-msgstr "კორეული"
-
-msgid "Serbian Latin"
-msgstr "სერბული (ლათინური)"
-
-msgid "British English"
-msgstr "ბრიტანეთის ინგლისური"
-
-msgid "Scottish Gaelic"
-msgstr "შოტლანდიური-გელური"
-
-msgid "Tue"
-msgstr "სამ"
-
-msgid "December"
-msgstr "დეკემბერი"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second ago"
-msgid_plural "%[1]v seconds ago"
-msgstr[0] "%[1]v წამის წინ"
-msgstr[1] "%[1]v წამის წინ"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a minute from now"
-msgid_plural "%[1]v minutes from now"
-msgstr[0] "%[1]v წუთში"
-msgstr[1] "%[1]v წუთში"
-
-msgid "Traditional Chinese"
-msgstr "ტრადიციული ჩინური"
-
-msgid "jul"
-msgstr "ივლ"
-
-msgid "Welsh"
-msgstr "უელსური"
-
-msgid "Malayalam"
-msgstr "მალაიზიური"
-
-msgid "Portuguese"
-msgstr "პორტუგალიური"
-
-msgid "April"
-msgstr "აპრილი"
-
-msgid "Hungarian"
-msgstr "უნგრული"
-
-msgid "Armenian"
-msgstr "სომხური"
-
-msgid "Russian"
-msgstr "რუსული"
-
-msgid "Urdu"
-msgstr "ურდუ"
-
-msgid "four"
-msgstr "ოთხი"
-
-#, python-format
-msgid "%[1]s million"
-msgid_plural "%[1]s million"
-msgstr[0] "%[1]s მილიონი"
-msgstr[1] "%[1]s მილიონი"
-
-#, python-format
-msgid "%[1]s quintillion"
-msgid_plural "%[1]s quintillion"
-msgstr[0] "%[1]s კვინტილიონი"
-msgstr[1] "%[1]s კვინტილიონი"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour from now"
-msgid_plural "%[1]v hours from now"
-msgstr[0] "%[1]v საათში"
-msgstr[1] "%[1]v საათში"
-
-msgid "Saturday"
-msgstr "შაბათი"
-
-msgid "Sat"
-msgstr "შაბ"
-
-msgid "may"
-msgstr "მაი"
-
-msgid "Croatian"
-msgstr "ხორვატიული"
-
-msgid "Nepali"
-msgstr "ნეპალური"
-
-msgid "Albanian"
-msgstr "ალბანური"
-
-msgid "Swedish"
-msgstr "შვედური"
-
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v from now"
-msgstr ""
-
-msgid "Bulgarian"
-msgstr "ბულგარული"
-
-msgid "Bosnian"
-msgstr "ბოსნიური"
-
-msgid "Australian English"
-msgstr "ავსტრალიური ინგლისური"
-
-msgid "Simplified Chinese"
-msgstr "გამარტივებული ჩინური"
-
-msgid "Ido"
-msgstr "იდო"
-
-msgid "Khmer"
-msgstr "ხმერული"
-
-msgid "Luxembourgish"
-msgstr "ლუქსემბურგული"
-
-msgid "Brazilian Portuguese"
-msgstr "ბრაზილიური პორტუგალიური"
-
-msgid "five"
-msgstr "ხუთი"
-
-#, python-format
 msgid "%[1]s googol"
 msgid_plural "%[1]s googol"
 msgstr[0] "%[1]s გუგოლი"
 msgstr[1] "%[1]s გუგოლი"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "an hour ago"
-msgid_plural "%[1]v hours ago"
-msgstr[0] "%[1]v საათის წინ"
-msgstr[1] "%[1]v საათის წინ"
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s მილიონი"
+msgstr[1] "%[1]s მილიონი"
 
-msgid "Finnish"
-msgstr "ფინური"
-
-#, python-format
-msgid "%[1]s quadrillion"
-msgid_plural "%[1]s quadrillion"
-msgstr[0] "%[1]s კვადრილიონი"
-msgstr[1] "%[1]s კვადრილიონი"
-
-#, python-format
 msgid "%[1]s nonillion"
 msgid_plural "%[1]s nonillion"
 msgstr[0] "%[1]s ნონილიონი"
 msgstr[1] "%[1]s ნონილიონი"
 
-msgid "Upper Sorbian"
-msgstr "ზემო სორბიული"
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "%[1]s ოქტილიონი"
+msgstr[1] "%[1]s ოქტილიონი"
 
-msgid "midnight"
-msgstr "შუაღამე"
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "%[1]s კვადრილიონი"
+msgstr[1] "%[1]s კვადრილიონი"
+
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "%[1]s კვინტილიონი"
+msgstr[1] "%[1]s კვინტილიონი"
+
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "%[1]s სეპტილიონი"
+msgstr[1] "%[1]s სეპტილიონი"
+
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "%[1]s სექსტილიონი"
+msgstr[1] "%[1]s სექსტილიონი"
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "%[1]s ტრილიონი"
+msgstr[1] "%[1]s ტრილიონი"
+
+msgid "%[1]v ago"
+msgstr ""
+
+msgid "%[1]v from now"
+msgstr ""
+
+msgid "%s GB"
+msgstr "%s გბ"
+
+msgid "%s KB"
+msgstr "%s კბ"
+
+msgid "%s MB"
+msgstr "%s მბ"
+
+msgid "%s PB"
+msgstr "%s პბ"
+
+msgid "%s TB"
+msgstr "%s ტბ"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""
+
+msgid ", "
+msgstr ", "
+
+msgid "AM"
+msgstr "AM"
+
+msgid "Afrikaans"
+msgstr "აფრიკაანსი"
+
+msgid "Albanian"
+msgstr "ალბანური"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "აპრ."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "აპრილი"
+
+msgid "April"
+msgstr "აპრილი"
+
+msgid "Arabic"
+msgstr "არაბული"
+
+msgid "Argentinian Spanish"
+msgstr "არგენტინის ესპანური"
+
+msgid "Armenian"
+msgstr "სომხური"
+
+msgid "Asturian"
+msgstr "ასტურიული"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "აგვ."
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "აგვისტო"
+
+msgid "August"
+msgstr "აგვისტო"
+
+msgid "Australian English"
+msgstr "ავსტრალიური ინგლისური"
+
+msgid "Azerbaijani"
+msgstr "აზერბაიჯანული"
+
+msgid "Basque"
+msgstr "ბასკური"
 
 msgid "Belarusian"
 msgstr "ბელარუსული"
@@ -377,272 +206,87 @@ msgstr "ბელარუსული"
 msgid "Bengali"
 msgstr "ბენგალიური"
 
-msgid "Sun"
-msgstr "კვრ"
+msgid "Bosnian"
+msgstr "ბოსნიური"
 
-#, python-format
-msgid "%[1]s sextillion"
-msgid_plural "%[1]s sextillion"
-msgstr[0] "%[1]s სექსტილიონი"
-msgstr[1] "%[1]s სექსტილიონი"
+msgid "Brazilian Portuguese"
+msgstr "ბრაზილიური პორტუგალიური"
 
-msgid "Marathi"
-msgstr "მარათული"
+msgid "Breton"
+msgstr "ბრეტონული"
 
-msgid "AM"
-msgstr "AM"
+msgid "British English"
+msgstr "ბრიტანეთის ინგლისური"
 
-msgid "Mon"
-msgstr "ორშ"
+msgid "Bulgarian"
+msgstr "ბულგარული"
 
-msgid "six"
-msgstr "ექვსი"
-
-#, python-format
-msgid "%[1]s billion"
-msgid_plural "%[1]s billion"
-msgstr[0] "%[1]s მილიარდი"
-msgstr[1] "%[1]s მილიარდი"
-
-#, python-format
-msgid "%[1]s trillion"
-msgid_plural "%[1]s trillion"
-msgstr[0] "%[1]s ტრილიონი"
-msgstr[1] "%[1]s ტრილიონი"
-
-msgid "Tamil"
-msgstr "თამილური"
-
-msgid "jun"
-msgstr "ივნ"
-
-msgid "seven"
-msgstr "შვიდი"
-
-msgid "Greek"
-msgstr "ბერძნული"
-
-msgid "Punjabi"
-msgstr "პუნჯაბი"
-
-msgid "Turkish"
-msgstr "თურქული"
-
-msgid "Telugu"
-msgstr "ტელუგუ"
-
-msgid "Thai"
-msgstr "ტაი"
-
-msgid "a.m."
-msgstr "a.m."
-
-msgid "PM"
-msgstr "PM"
-
-msgid "Asturian"
-msgstr "ასტურიული"
-
-msgid "Kazakh"
-msgstr "ყაზახური"
-
-msgid "Polish"
-msgstr "პოლონური"
-
-msgid "Slovak"
-msgstr "სლოვაკური"
-
-msgid "jan"
-msgstr "იან"
-
-msgid "yesterday"
-msgstr "გუშინ"
-
-msgid "Romanian"
-msgstr "რუმინული"
-
-msgid "Ukrainian"
-msgstr "უკრაინული"
-
-msgid "mar"
-msgstr "მარ"
-
-msgid "Kannada"
-msgstr "კანნადა"
-
-msgid "Norwegian Bokmål"
-msgstr "ნორვეგიული Bokmål"
-
-msgid "Serbian"
-msgstr "სერბული"
-
-msgid "January"
-msgstr "იანვარი"
+msgid "Burmese"
+msgstr "ბირმული"
 
 msgid "Catalan"
 msgstr "კატალანური"
 
-msgid "Hindi"
-msgstr "ჰინდი"
+msgid "Colombian Spanish"
+msgstr "კოლუმბიური ესპანური"
 
-msgid "Japanese"
-msgstr "იაპონური"
+msgid "Croatian"
+msgstr "ხორვატიული"
 
-msgid "Kabyle"
-msgstr "კაბილური"
-
-msgid "November"
-msgstr "ნოემბერი"
-
-#, python-format
-msgid "%s PB"
-msgstr "%s პბ"
-
-msgid "now"
-msgstr "ახლა"
+msgid "Czech"
+msgstr "ჩეხური"
 
 msgid "Danish"
 msgstr "დანიური"
 
-msgid "Mongolian"
-msgstr "მონღოლური"
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "დეკ."
 
-msgid "apr"
-msgstr "აპრ"
+msgctxt "alt. month"
+msgid "December"
+msgstr "დეკემბერი"
 
-msgid "Argentinian Spanish"
-msgstr "არგენტინის ესპანური"
-
-msgid "Udmurt"
-msgstr "უდმურტული"
-
-#. Translators: This string is used as a separator between list elements
-msgid ", "
-msgstr ", "
-
-msgid "Sunday"
-msgstr "კვირა"
-
-msgid "Azerbaijani"
-msgstr "აზერბაიჯანული"
-
-msgid "Interlingua"
-msgstr "ინტერლინგუა"
-
-msgid "feb"
-msgstr "თებ"
-
-msgid "tomorrow"
-msgstr "ხვალ"
-
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
-msgid "a second from now"
-msgid_plural "%[1]v seconds from now"
-msgstr[0] "%[1]v წამში"
-msgstr[1] "%[1]v წამში"
-
-msgid "Spanish"
-msgstr "ესპანური"
-
-msgid "Friday"
-msgstr "პარასკევი"
-
-msgid "Icelandic"
-msgstr "ისლანდიური"
+msgid "December"
+msgstr "დეკემბერი"
 
 msgid "Dutch"
 msgstr "ჰოლანდიური"
 
-msgid "Thursday"
-msgstr "ხუთშაბათი"
-
-msgid "sep"
-msgstr "სექ"
+msgid "English"
+msgstr "ინგლისური"
 
 msgid "Esperanto"
 msgstr "ესპერანტო"
 
-msgid "Persian"
-msgstr "სპარსული"
+msgid "Estonian"
+msgstr "ესტონური"
 
-msgid "Irish"
-msgstr "ირლანდიური"
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "თებ."
 
-msgid "Hebrew"
-msgstr "ებრაული"
+msgctxt "alt. month"
+msgid "February"
+msgstr "თებერვალი"
 
-#, python-format
-msgid "%[1]s octillion"
-msgid_plural "%[1]s octillion"
-msgstr[0] "%[1]s ოქტილიონი"
-msgstr[1] "%[1]s ოქტილიონი"
+msgid "February"
+msgstr "თებერვალი"
 
-msgid "German"
-msgstr "გერმანული"
+msgid "Finnish"
+msgstr "ფინური"
 
-msgid "Tatar"
-msgstr "თათრული"
+msgid "French"
+msgstr "ფრანგული"
 
-msgid "May"
-msgstr "მაისი"
+msgid "Fri"
+msgstr "პარ"
 
-msgid "Tuesday"
-msgstr "სამშაბათი"
+msgid "Friday"
+msgstr "პარასკევი"
 
-#, python-format
-msgid "%s GB"
-msgstr "%s გბ"
-
-msgid "one"
-msgstr "ერთი"
-
-#, python-format
-msgid "%[1]s septillion"
-msgid_plural "%[1]s septillion"
-msgstr[0] "%[1]s სეპტილიონი"
-msgstr[1] "%[1]s სეპტილიონი"
-
-msgid "Ossetic"
-msgstr "ოსური"
-
-msgid "noon"
-msgstr "შუადღე"
-
-#, python-format
-msgid "%[1]s decillion"
-msgid_plural "%[1]s decillion"
-msgstr[0] "%[1]s დეცილიონი"
-msgstr[1] "%[1]s დეცილიონი"
-
-msgid "Mexican Spanish"
-msgstr "მექსიკური ესპანური"
-
-msgid "Italian"
-msgstr "იტალიური"
-
-msgid "Vietnamese"
-msgstr "ვიეტნამური"
-
-msgid "Monday"
-msgstr "ორშაბათი"
-
-#, python-format
-msgid "%[1]d byte"
-msgid_plural "%[1]d bytes"
-msgstr[0] "%[1]d ბაიტი"
-msgstr[1] "%[1]d ბაიტი"
-
-#, python-format
-msgid "%s KB"
-msgstr "%s კბ"
-
-msgid "two"
-msgstr "ორი"
-
-msgid "Colombian Spanish"
-msgstr "კოლუმბიური ესპანური"
+msgid "Frisian"
+msgstr "ფრისიული"
 
 msgid "Galician"
 msgstr "გალიციური"
@@ -650,84 +294,351 @@ msgstr "გალიციური"
 msgid "Georgian"
 msgstr "ქართული"
 
-msgid "September"
-msgstr "სექტემბერი"
+msgid "German"
+msgstr "გერმანული"
 
-#, python-format
-msgid "%s MB"
-msgstr "%s მბ"
+msgid "Greek"
+msgstr "ბერძნული"
 
-#, python-format
-msgid "%s TB"
-msgstr "%s ტბ"
+msgid "Hebrew"
+msgstr "ებრაული"
 
-msgid "three"
-msgstr "სამი"
+msgid "Hindi"
+msgstr "ჰინდი"
 
-msgid "Estonian"
-msgstr "ესტონური"
+msgid "Hungarian"
+msgstr "უნგრული"
 
-msgid "Burmese"
-msgstr "ბირმული"
+msgid "Icelandic"
+msgstr "ისლანდიური"
 
-msgid "Thu"
-msgstr "ხუთ"
-
-msgid "October"
-msgstr "ოქტომბერი"
-
-msgid "Afrikaans"
-msgstr "აფრიკაანსი"
-
-msgid "French"
-msgstr "ფრანგული"
-
-msgid "p.m."
-msgstr "p.m."
-
-msgid "February"
-msgstr "თებერვალი"
+msgid "Ido"
+msgstr "იდო"
 
 msgid "Indonesian"
 msgstr "ინდონეზიური"
 
-msgid "Latvian"
-msgstr "ლატვიური"
+msgid "Interlingua"
+msgstr "ინტერლინგუა"
 
-msgid "June"
-msgstr "ივნისი"
+msgid "Irish"
+msgstr "ირლანდიური"
+
+msgid "Italian"
+msgstr "იტალიური"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "იან."
+
+msgid "January"
+msgstr "იანვარი"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "იანვარი"
+
+msgid "Japanese"
+msgstr "იაპონური"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "ივლისი"
 
 msgid "July"
 msgstr "ივლისი"
 
-msgid "nine"
-msgstr "ცხრა"
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ივლ."
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
-#, python-format
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "ივნ."
+
+msgid "June"
+msgstr "ივნისი"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "ივნისი"
+
+msgid "Kabyle"
+msgstr "კაბილური"
+
+msgid "Kannada"
+msgstr "კანნადა"
+
+msgid "Kazakh"
+msgstr "ყაზახური"
+
+msgid "Khmer"
+msgstr "ხმერული"
+
+msgid "Korean"
+msgstr "კორეული"
+
+msgid "Latvian"
+msgstr "ლატვიური"
+
+msgid "Lithuanian"
+msgstr "ლიტვური"
+
+msgid "Lower Sorbian"
+msgstr "ქვემო სორბული"
+
+msgid "Luxembourgish"
+msgstr "ლუქსემბურგული"
+
+msgid "Macedonian"
+msgstr "მაკედონიური"
+
+msgid "Malayalam"
+msgstr "მალაიზიური"
+
+msgid "Marathi"
+msgstr "მარათული"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "მარტი"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "მარ."
+
+msgid "March"
+msgstr "მარტი"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "მაი"
+
+msgid "May"
+msgstr "მაისი"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "მაისი"
+
+msgid "Mexican Spanish"
+msgstr "მექსიკური ესპანური"
+
+msgid "Mon"
+msgstr "ორშ"
+
+msgid "Monday"
+msgstr "ორშაბათი"
+
+msgid "Mongolian"
+msgstr "მონღოლური"
+
+msgid "Nepali"
+msgstr "ნეპალური"
+
+msgid "Nicaraguan Spanish"
+msgstr "ნიკარაგუული ესპანური"
+
+msgid "Norwegian Bokmål"
+msgstr "ნორვეგიული Bokmål"
+
+msgid "Norwegian Nynorsk"
+msgstr "ნორვეგიული-ნინორსკი"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "ნოემ."
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "ნოემბერი"
+
+msgid "November"
+msgstr "ნოემბერი"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ოქტ."
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ოქტომბერი"
+
+msgid "October"
+msgstr "ოქტომბერი"
+
+msgid "Ossetic"
+msgstr "ოსური"
+
+msgid "PM"
+msgstr "PM"
+
+msgid "Persian"
+msgstr "სპარსული"
+
+msgid "Polish"
+msgstr "პოლონური"
+
+msgid "Portuguese"
+msgstr "პორტუგალიური"
+
+msgid "Punjabi"
+msgstr "პუნჯაბი"
+
+msgid "Romanian"
+msgstr "რუმინული"
+
+msgid "Russian"
+msgstr "რუსული"
+
+msgid "Sat"
+msgstr "შაბ"
+
+msgid "Saturday"
+msgstr "შაბათი"
+
+msgid "Scottish Gaelic"
+msgstr "შოტლანდიური-გელური"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "სექტ."
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "სექტემბერი"
+
+msgid "September"
+msgstr "სექტემბერი"
+
+msgid "Serbian"
+msgstr "სერბული"
+
+msgid "Serbian Latin"
+msgstr "სერბული (ლათინური)"
+
+msgid "Simplified Chinese"
+msgstr "გამარტივებული ჩინური"
+
+msgid "Slovak"
+msgstr "სლოვაკური"
+
+msgid "Slovenian"
+msgstr "სლოვენიური"
+
+msgid "Spanish"
+msgstr "ესპანური"
+
+msgid "Sun"
+msgstr "კვრ"
+
+msgid "Sunday"
+msgstr "კვირა"
+
+msgid "Swahili"
+msgstr "სუაჰილი"
+
+msgid "Swedish"
+msgstr "შვედური"
+
+msgid "Tamil"
+msgstr "თამილური"
+
+msgid "Tatar"
+msgstr "თათრული"
+
+msgid "Telugu"
+msgstr "ტელუგუ"
+
+msgid "Thai"
+msgstr "ტაი"
+
+msgid "Thu"
+msgstr "ხუთ"
+
+msgid "Thursday"
+msgstr "ხუთშაბათი"
+
+msgid "Traditional Chinese"
+msgstr "ტრადიციული ჩინური"
+
+msgid "Tue"
+msgstr "სამ"
+
+msgid "Tuesday"
+msgstr "სამშაბათი"
+
+msgid "Turkish"
+msgstr "თურქული"
+
+msgid "Udmurt"
+msgstr "უდმურტული"
+
+msgid "Ukrainian"
+msgstr "უკრაინული"
+
+msgid "Upper Sorbian"
+msgstr "ზემო სორბიული"
+
+msgid "Urdu"
+msgstr "ურდუ"
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "Venezuelan Spanish"
+msgstr "ვენესუელის ესპანური"
+
+msgid "Vietnamese"
+msgstr "ვიეტნამური"
+
+msgid "Wed"
+msgstr "ოთხ"
+
+msgid "Wednesday"
+msgstr "ოთხშაბათი"
+
+msgid "Welsh"
+msgstr "უელსური"
+
 msgid "a minute ago"
 msgid_plural "%[1]v minutes ago"
 msgstr[0] "%[1]v წუთის წინ"
 msgstr[1] "%[1]v წუთის წინ"
 
-msgid "Arabic"
-msgstr "არაბული"
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "%[1]v წუთში"
+msgstr[1] "%[1]v წუთში"
 
-msgid "Czech"
-msgstr "ჩეხური"
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "%[1]v წამის წინ"
+msgstr[1] "%[1]v წამის წინ"
 
-msgid "August"
-msgstr "აგვისტო"
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "%[1]v წამში"
+msgstr[1] "%[1]v წამში"
 
-msgid "Venezuelan Spanish"
-msgstr "ვენესუელის ესპანური"
+msgid "a.m."
+msgstr "a.m."
 
-msgid "Norwegian Nynorsk"
-msgstr "ნორვეგიული-ნინორსკი"
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "%[1]v საათის წინ"
+msgstr[1] "%[1]v საათის წინ"
 
-msgid "Swahili"
-msgstr "სუაჰილი"
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "%[1]v საათში"
+msgstr[1] "%[1]v საათში"
+
+msgid "apr"
+msgstr "აპრ"
+
+msgid "aug"
+msgstr "აგვ"
 
 msgid "dec"
 msgstr "დეკ"
@@ -735,39 +646,75 @@ msgstr "დეკ"
 msgid "eight"
 msgstr "რვა"
 
-msgid "Nicaraguan Spanish"
-msgstr "ნიკარაგუული ესპანური"
+msgid "feb"
+msgstr "თებ"
 
-msgid "March"
-msgstr "მარტი"
+msgid "five"
+msgstr "ხუთი"
 
-msgid "Lithuanian"
-msgstr "ლიტვური"
+msgid "four"
+msgstr "ოთხი"
 
-msgid "Macedonian"
-msgstr "მაკედონიური"
+msgid "jan"
+msgstr "იან"
 
-msgid "Wed"
-msgstr "ოთხ"
+msgid "jul"
+msgstr "ივლ"
+
+msgid "jun"
+msgstr "ივნ"
+
+msgid "mar"
+msgstr "მარ"
+
+msgid "may"
+msgstr "მაი"
+
+msgid "midnight"
+msgstr "შუაღამე"
+
+msgid "nine"
+msgstr "ცხრა"
+
+msgid "noon"
+msgstr "შუადღე"
 
 msgid "nov"
 msgstr "ნოე"
 
+msgid "now"
+msgstr "ახლა"
+
+msgid "oct"
+msgstr "ოქტ"
+
+msgid "one"
+msgstr "ერთი"
+
+msgid "p.m."
+msgstr "p.m."
+
+msgid "sep"
+msgstr "სექ"
+
+msgid "seven"
+msgstr "შვიდი"
+
+msgid "six"
+msgstr "ექვსი"
+
+msgid "three"
+msgstr "სამი"
+
 msgid "today"
 msgstr "დღეს"
 
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%[1]v ago"
-msgstr ""
+msgid "tomorrow"
+msgstr "ხვალ"
 
-msgid "Breton"
-msgstr "ბრეტონული"
+msgid "two"
+msgstr "ორი"
 
-msgid "Basque"
-msgstr "ბასკური"
-
-msgid "Fri"
-msgstr "პარ"
+msgid "yesterday"
+msgstr "გუშინ"
 
