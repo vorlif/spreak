@@ -23,10 +23,12 @@ const (
 
 // Catalog represents a collection of messages (translations) for a language and a domain.
 // Normally it is a PO or MO file.
+//
 // Deprecated: Moved to catalog.Catalog. This alias will be removed in version 1.0.
 type Catalog = catalog.Catalog
 
 // A Decoder reads and decodes catalogs for a language and a domain from a byte array.
+//
 // Deprecated: Moved to catalog.Decoder and will be removed with v1.0.
 type Decoder = catalog.Decoder
 

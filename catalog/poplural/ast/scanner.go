@@ -90,14 +90,15 @@ func (s *scanner) scanWhitespace() (tok Token, lit string) {
 	buf.WriteRune(s.read())
 
 	for {
-		if ch := s.read(); ch == scannerEOF {
+		ch := s.read()
+		if ch == scannerEOF {
 			break
 		} else if !isWhitespace(ch) {
 			s.unread()
 			break
-		} else {
-			buf.WriteRune(ch)
 		}
+
+		buf.WriteRune(ch)
 	}
 
 	return whitespace, buf.String()
@@ -109,14 +110,14 @@ func (s *scanner) scanNumber() (tok Token, lit string) {
 	buf.WriteRune(s.read())
 
 	for {
-		if ch := s.read(); ch == scannerEOF {
+		ch := s.read()
+		if ch == scannerEOF {
 			break
 		} else if !isDigit(ch) && ch != '_' {
 			s.unread()
 			break
-		} else {
-			_, _ = buf.WriteRune(ch)
 		}
+		_, _ = buf.WriteRune(ch)
 	}
 
 	return Value, buf.String()
@@ -127,14 +128,14 @@ func (s *scanner) scanText() (tok Token, lit string) {
 	buf.WriteRune(s.read())
 
 	for {
-		if ch := s.read(); ch == scannerEOF {
+		ch := s.read()
+		if ch == scannerEOF {
 			break
 		} else if !isLetter(ch) && ch != '_' {
 			s.unread()
 			break
-		} else {
-			_, _ = buf.WriteRune(ch)
 		}
+		_, _ = buf.WriteRune(ch)
 	}
 
 	switch strings.ToLower(buf.String()) {

@@ -56,8 +56,8 @@ func newScanner(content string) *scanner {
 }
 
 func (s *scanner) Scan() (tok Token, lit string) {
-	lit, err := s.read()
-	if err != nil {
+	lit, errR := s.read()
+	if errR != nil {
 		return eof, ""
 	}
 
@@ -101,9 +101,9 @@ func (s *scanner) Scan() (tok Token, lit string) {
 		return ValueRange, lit
 	} else if reSampleRange.MatchString(lit) {
 		return sampleRange, lit
-	} else {
-		return unknown, lit
 	}
+
+	return unknown, lit
 }
 
 func (s *scanner) read() (string, error) {

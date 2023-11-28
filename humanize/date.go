@@ -132,6 +132,7 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 	if t.Before(now) {
 		delta := now.Sub(t)
 		deltaSec := int64(delta.Truncate(time.Second).Seconds())
+
 		if int64(delta.Round(time.Second).Hours()) >= 24 {
 			entry := naturalTimeStrings["past-day"]
 			timeSince := h.TimeSince(t, withTimeStrings(naturalPastSubstrings))
@@ -146,11 +147,11 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 			count := int64(math.Floor(float64(deltaSec) / 60))
 			entry := naturalTimeStrings["past-minute"]
 			return h.loc.NGetf(entry.singular, entry.plural, count, count)
-		} else {
-			count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
-			entry := naturalTimeStrings["past-hour"]
-			return h.loc.NGetf(entry.singular, entry.plural, count, count)
 		}
+
+		count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
+		entry := naturalTimeStrings["past-hour"]
+		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	}
 
 	delta := t.Sub(now)
@@ -169,11 +170,11 @@ func (h *Humanizer) NaturalTime(i interface{}) string {
 		count := int64(math.Floor(float64(deltaSec) / 60))
 		entry := naturalTimeStrings["future-minute"]
 		return h.loc.NGetf(entry.singular, entry.plural, count, count)
-	} else {
-		count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
-		entry := naturalTimeStrings["future-hour"]
-		return h.loc.NGetf(entry.singular, entry.plural, count, count)
 	}
+
+	count := int64(math.Floor(math.Floor(float64(deltaSec)/60) / 60))
+	entry := naturalTimeStrings["future-hour"]
+	return h.loc.NGetf(entry.singular, entry.plural, count, count)
 }
 
 var timeSinceStrings = map[string]gettextEntry{
@@ -344,9 +345,9 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 		if count <= 0 {
 			if o.requireAdjacent {
 				break
-			} else {
-				continue
 			}
+
+			continue
 		}
 		entry := o.timeStrings[chunk.name]
 		result = append(result, h.loc.NPGetf(entry.context, entry.singular, entry.plural, count, count))

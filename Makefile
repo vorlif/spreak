@@ -6,8 +6,6 @@ gofmt:
 
 
 lint:
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.1
-
 	@echo Running golangci-lint
 	golangci-lint run --fix ./...
 
