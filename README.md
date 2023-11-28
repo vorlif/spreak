@@ -1,4 +1,4 @@
-# Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak) ![MinVersion](https://img.shields.io/badge/Go-1.17+-blue)
+# Spreak ![Test status](https://github.com/vorlif/spreak/workflows/Test/badge.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak)](https://pkg.go.dev/github.com/vorlif/spreak) [![Go Report Card](https://goreportcard.com/badge/github.com/vorlif/spreak)](https://goreportcard.com/report/github.com/vorlif/spreak) [![codecov](https://codecov.io/gh/vorlif/spreak/branch/main/graph/badge.svg?token=N1O0ZE1OFW)](https://codecov.io/gh/vorlif/spreak) ![MinVersion](https://img.shields.io/badge/Go-1.19+-blue)
 
 Flexible translation and humanization library for Go, based on the concepts behind gettext. Requires Go 1.19+.
 
@@ -21,7 +21,7 @@ I wanted to solve these problems for myself, and so spreak was born.
   (with **support for templates**)
 * [Support](https://pkg.go.dev/github.com/vorlif/spreak#hdr-Plurals)
   for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html)
-  and [CLDR v42](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
+  and [CLDR v44](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
 * Support of bilingual and monolingual formats
 
 ### Usage

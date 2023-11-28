@@ -230,6 +230,32 @@ func TestEvaluateTzm(t *testing.T) {
 
 }
 
+func TestEvaluateBlo(t *testing.T) {
+	var rule *ast.Rule
+
+	rule = ast.MustParse("n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000")
+
+	for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
+		op := MustNewOperands(sample)
+		assert.True(t, evaluate(rule, op), sample)
+	}
+
+	rule = ast.MustParse("n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000")
+
+	for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+		op := MustNewOperands(sample)
+		assert.True(t, evaluate(rule, op), sample)
+	}
+
+	rule = ast.MustParse(" @integer 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~2.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …")
+
+	for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+		op := MustNewOperands(sample)
+		assert.True(t, evaluate(rule, op), sample)
+	}
+
+}
+
 func TestEvaluateBsHrShSr(t *testing.T) {
 	var rule *ast.Rule
 
