@@ -1,10 +1,10 @@
 module github.com/vorlif/spreak
 
-go 1.17
+go 1.19
 
 require (
-	github.com/stretchr/testify v1.8.1
-	golang.org/x/text v0.7.0
+	github.com/stretchr/testify v1.8.4
+	golang.org/x/text v0.14.0
 )
 
 require (
