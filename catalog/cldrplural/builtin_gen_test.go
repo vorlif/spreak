@@ -221,6 +221,29 @@ func TestBuiltinTzm(t *testing.T) {
 	}
 }
 
+func TestBuiltinBlo(t *testing.T) {
+	for _, lang := range []string{"blo"} {
+		set, found := builtInRuleSets[language.MustParse(lang).String()]
+		require.True(t, found)
+
+		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
+			op := MustNewOperands(sample)
+			assert.Equal(t, Zero, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
+			op := MustNewOperands(sample)
+			assert.Equal(t, One, set.FormFunc(op))
+		}
+
+		for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+			op := MustNewOperands(sample)
+			assert.Equal(t, Other, set.FormFunc(op))
+		}
+
+	}
+}
+
 func TestBuiltinBsHrShSr(t *testing.T) {
 	for _, lang := range []string{"bs", "hr", "sh", "sr"} {
 		set, found := builtInRuleSets[language.MustParse(lang).String()]

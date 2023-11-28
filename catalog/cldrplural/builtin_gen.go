@@ -156,6 +156,24 @@ func init() {
 		},
 	})
 
+	addRuleSet([]string{"blo"}, &RuleSet{
+		Categories: newCategories(Zero, One, Other),
+		FormFunc: func(ops *Operands) Category {
+
+			// n = 0
+			if ops.N == 0 {
+				return Zero
+			}
+
+			// n = 1
+			if ops.N == 1 {
+				return One
+			}
+
+			return Other
+		},
+	})
+
 	addRuleSet([]string{"bs", "hr", "sh", "sr"}, &RuleSet{
 		Categories: newCategories(One, Few, Other),
 		FormFunc: func(ops *Operands) Category {
