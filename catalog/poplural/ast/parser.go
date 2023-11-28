@@ -278,18 +278,19 @@ func (p *parser) multiplicativeExpression() (Node, error) {
 }
 
 func (p *parser) pmExpression() (Node, error) {
-	if p.lastToken == Operand {
+	switch p.lastToken {
+	case Operand:
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
 		return &OperandExpr{}, nil
-	} else if p.lastToken == Value {
+	case Value:
 		value, _ := strconv.ParseInt(p.lastLiteral, 10, 64)
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
 		return &ValueExpr{Value: value}, nil
-	} else if p.lastToken == leftBracket {
+	case leftBracket:
 		if errScan := p.scanNext(); errScan != nil {
 			return nil, errScan
 		}
@@ -308,7 +309,7 @@ func (p *parser) pmExpression() (Node, error) {
 		}
 
 		return exprNode, nil
-	} else {
+	default:
 		return nil, fmt.Errorf("found %q, expected something other", p.lastLiteral)
 	}
 }

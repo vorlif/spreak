@@ -52,15 +52,13 @@ func Parse(rule string) (*Form, error) {
 }
 
 func generateFormFunc(forms *ast.Forms) func(n int64) int {
-	return func(n int64) int { return evaluate(forms, n) }
-}
-
-func evaluate(forms *ast.Forms, num int64) int {
 	if forms.Root == nil {
-		return 0
+		return func(n int64) int { return 0 }
 	}
 
-	return int(evaluateNode(forms.Root, num))
+	return func(n int64) int {
+		return int(evaluateNode(forms.Root, n))
+	}
 }
 
 func evaluateNode(node ast.Node, num int64) int64 {

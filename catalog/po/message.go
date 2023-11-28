@@ -38,7 +38,7 @@ func (m *Message) Less(q *Message) bool {
 	}
 
 	if a, b := m.ID, q.ID; a != b {
-		return a < b
+		return a > b
 	}
 
 	return false

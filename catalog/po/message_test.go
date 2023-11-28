@@ -49,9 +49,9 @@ func TestMessage_Less(t *testing.T) {
 		m.ID = "a"
 		o.ID = "b"
 
-		assert.True(t, m.Less(o))
-		m.ID = "c"
 		assert.False(t, m.Less(o))
+		m.ID = "c"
+		assert.True(t, m.Less(o))
 	})
 
 	t.Run("Otherwise false is returned", func(t *testing.T) {

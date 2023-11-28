@@ -84,10 +84,10 @@ func TestEvaluate(t *testing.T) {
 		assert.NotNil(t, f)
 
 		f.Root = nil
-		assert.Zero(t, evaluate(f, -1))
-		assert.Zero(t, evaluate(f, 0))
-		assert.Zero(t, evaluate(f, 1))
-		assert.Zero(t, evaluate(f, 10))
+		assert.Zero(t, generateFormFunc(f)(-1))
+		assert.Zero(t, generateFormFunc(f)(0))
+		assert.Zero(t, generateFormFunc(f)(1))
+		assert.Zero(t, generateFormFunc(f)(10))
 	})
 
 	t.Run("test invalid input", func(t *testing.T) {

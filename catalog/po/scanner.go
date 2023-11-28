@@ -139,14 +139,15 @@ func (s *scanner) scanWhitespace() (tok token, lit string) {
 	buf.WriteString(currentLine)
 
 	for {
-		if line, err := s.read(); err == io.EOF {
+		line, err := s.read()
+		if err == io.EOF {
 			break
 		} else if !reBlankLine.MatchString(line) {
 			s.unread()
 			break
-		} else {
-			buf.WriteString(line)
 		}
+
+		buf.WriteString(line)
 	}
 
 	return whitespace, buf.String()
