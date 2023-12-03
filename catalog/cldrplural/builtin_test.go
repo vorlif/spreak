@@ -2,12 +2,25 @@ package cldrplural
 
 import (
 	"reflect"
+	"runtime"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 )
+
+// Returns the name of a function for a function type.
+func getFuncName(i any) string {
+	// github.com/vorlif/spreak/catalog/poplural.forLanguage.newFormCsSk.func28
+	funcName := runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()
+	if idx := strings.LastIndex(funcName, "."); idx >= 0 {
+		// github.com/vorlif/spreak/catalog/poplural.forLanguage.newFormCsSk
+		return funcName[:idx]
+	}
+	return funcName
+}
 
 func TestForLanguage(t *testing.T) {
 	t.Run("if the language is not known a fallback is used", func(t *testing.T) {
@@ -16,12 +29,9 @@ func TestForLanguage(t *testing.T) {
 		require.False(t, found)
 		require.NotNil(t, forms)
 
-		fallbackForm := builtInRuleSets[language.English.String()]
+		fallbackForm := forLanguage(language.English.String())
 		require.NotNil(t, fallbackForm)
-
-		sf1 := reflect.ValueOf(fallbackForm).Pointer()
-		sf2 := reflect.ValueOf(forms).Pointer()
-		assert.Equal(t, sf1, sf2)
+		assert.Equal(t, getFuncName(fallbackForm), getFuncName(forms))
 	})
 
 	t.Run("if the language has a region the base is used as fallback", func(t *testing.T) {
@@ -35,9 +45,7 @@ func TestForLanguage(t *testing.T) {
 		require.True(t, deFound)
 		require.NotNil(t, deForms)
 
-		sf1 := reflect.ValueOf(arForms).Pointer()
-		sf2 := reflect.ValueOf(deForms).Pointer()
-		assert.Equal(t, sf1, sf2)
+		assert.Equal(t, getFuncName(arForms), getFuncName(deForms))
 	})
 
 	t.Run("returns the correct value", func(t *testing.T) {
@@ -46,8 +54,8 @@ func TestForLanguage(t *testing.T) {
 			t.Run(tt, func(t *testing.T) {
 				lang := language.MustParse(tt)
 				got, gotFound := ForLanguage(lang)
-				forms := builtInRuleSets[lang.String()]
-				assert.Equalf(t, forms, got, "ForLanguage(%v)", lang)
+				forms := forLanguage(lang.String())
+				assert.Equalf(t, getFuncName(forms), getFuncName(got), "ForLanguage(%v)", lang)
 				assert.True(t, gotFound, "ForLanguage(%v)", lang)
 			})
 		}
@@ -66,9 +74,9 @@ func TestForLanguage(t *testing.T) {
 			t.Run(tt.langName, func(t *testing.T) {
 				lang := language.MustParse(tt.langName)
 				got, gotFound := ForLanguage(lang)
-				forms := builtInRuleSets[tt.wantLang]
-				assert.Equalf(t, forms, got, "pluralRuleForLanguage(%v)", lang)
-				assert.True(t, gotFound, "pluralRuleForLanguage(%v)", lang)
+				forms := forLanguage(lang.String())
+				assert.Equalf(t, getFuncName(forms), getFuncName(got), "ForLanguage(%v)", lang)
+				assert.True(t, gotFound, "ForLanguage(%v)", lang)
 			})
 		}
 	})

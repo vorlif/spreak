@@ -4,6 +4,7 @@ import (
 	"io"
 	"regexp"
 	"strings"
+	"unicode"
 )
 
 type Token int
@@ -33,25 +34,16 @@ var (
 )
 
 type scanner struct {
-	pluralTokens []string
-	pos          int
+	// The tokens of the rule to be scanned
+	tokens []string
+	// pos is position of the token at which the scanner is currently located.
+	pos int
 }
 
 func newScanner(content string) *scanner {
-	content = strings.Replace(content, "\r", "", -1)
-	fields := strings.Fields(content)
-	pluralTokens := make([]string, 0, len(fields))
-	for _, field := range fields {
-		for _, tok := range strings.Split(field, ",") {
-			tok = strings.TrimSpace(tok)
-			if tok != "" {
-				pluralTokens = append(pluralTokens, tok)
-			}
-		}
-	}
 	return &scanner{
-		pluralTokens: pluralTokens,
-		pos:          0,
+		tokens: generateTokens(content),
+		pos:    0,
 	}
 }
 
@@ -78,7 +70,7 @@ func (s *scanner) Scan() (tok Token, lit string) {
 		return And, lit
 	case "or":
 		return Or, lit
-	case "…", "...", ".", ",":
+	case "…", "...", ".":
 		return s.Scan()
 	}
 
@@ -107,11 +99,11 @@ func (s *scanner) Scan() (tok Token, lit string) {
 }
 
 func (s *scanner) read() (string, error) {
-	if s.pos >= len(s.pluralTokens) {
+	if s.pos >= len(s.tokens) {
 		return "", io.EOF
 	}
 
-	tok := s.pluralTokens[s.pos]
+	tok := s.tokens[s.pos]
 	s.pos++
 	return tok, nil
 }
@@ -120,4 +112,10 @@ func (s *scanner) unread() {
 	if s.pos > 0 {
 		s.pos--
 	}
+}
+
+func generateTokens(content string) []string {
+	return strings.FieldsFunc(content, func(r rune) bool {
+		return unicode.IsSpace(r) || r == ','
+	})
 }
