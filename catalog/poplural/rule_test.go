@@ -28,8 +28,6 @@ func TestWithFixtures(t *testing.T) {
 		err = dec.Decode(&fixtures)
 		require.NoError(t, err)
 
-		builtInCount := len(rawToBuiltIn)
-
 		for _, data := range fixtures {
 			parsed, err := ast.Parse(data.PluralForm)
 			require.NoError(t, err)
@@ -39,18 +37,15 @@ func TestWithFixtures(t *testing.T) {
 
 			require.NotNil(t, formFunc)
 
-			builtInForm := rawToBuiltIn[ast.CompileToString(parsed)]
-			builtInCount--
-			require.NotNil(t, builtInForm, data.PluralForm)
-			require.NotNil(t, builtInForm.FormFunc)
+			builtInRule := forRawRule(ast.CompileToString(parsed))
+			require.NotNil(t, builtInRule, data.PluralForm)
+			require.NotNil(t, builtInRule.FormFunc)
 
 			for input, want := range data.Fixture {
 				assert.Equalf(t, want, formFunc(int64(input)), "%s form.FormFunc(%d) = %d", data.PluralForm, input, want)
-				assert.Equalf(t, want, builtInForm.FormFunc(int64(input)), "%s builtInForm.FormFunc(%d) = %d", data.PluralForm, input, want)
+				assert.Equalf(t, want, builtInRule.FormFunc(int64(input)), "%s builtInForm.FormFunc(%d) = %d", data.PluralForm, input, want)
 			}
 		}
-
-		assert.Zero(t, builtInCount)
 	})
 }
 
@@ -94,9 +89,11 @@ func TestEvaluate(t *testing.T) {
 		f := MustParse("nplurals=2; plural=(n != 1);")
 		assert.NotNil(t, f)
 
-		assert.Zero(t, f.Evaluate("test"))
-		assert.Zero(t, f.Evaluate([]string{}))
-		assert.Zero(t, f.Evaluate(nil))
+		for _, testValue := range []any{"test", []string{}, nil} {
+			form, err := f.Evaluate(testValue)
+			assert.Error(t, err)
+			assert.Zero(t, form)
+		}
 	})
 
 	t.Run("nplurals=1", func(t *testing.T) {
@@ -104,7 +101,9 @@ func TestEvaluate(t *testing.T) {
 		require.NotNil(t, f)
 
 		for i := -100; i <= 100; i++ {
-			assert.Zero(t, f.Evaluate(i))
+			form, err := f.Evaluate(i)
+			require.NoError(t, err)
+			assert.Zero(t, form)
 		}
 	})
 }
