@@ -105,8 +105,8 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 	}
 
 	catl := &gettextCatalog{
-		language:     lang,
-		translations: messages,
+		language: lang,
+		messages: messages,
 	}
 
 	if useCLDRPlural {
@@ -159,9 +159,9 @@ func getCLDRPluralFunction(lang language.Tag) func(a any) (int, error) {
 type gettextCatalog struct {
 	language language.Tag
 
-	translations messageLookupMap
-	pluralFunc   gettextPluralFunction
-	domain       string
+	messages   messageLookupMap
+	pluralFunc gettextPluralFunction
+	domain     string
 }
 
 type gettextMessage struct {
@@ -177,7 +177,7 @@ type messageLookupMap map[string]map[string]*gettextMessage
 
 var _ Catalog = (*gettextCatalog)(nil)
 
-func (c *gettextCatalog) GetTranslation(ctx, msgID string) (string, error) {
+func (c *gettextCatalog) Lookup(ctx, msgID string) (string, error) {
 	msg, err := c.getMessage(ctx, msgID, 0)
 	if err != nil {
 		return msgID, err
@@ -186,7 +186,7 @@ func (c *gettextCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return msg.Translations[0], nil
 }
 
-func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
+func (c *gettextCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
 	idx, errPlural := c.pluralFunc(n)
 	if errPlural != nil {
 		return msgID, errPlural
@@ -202,15 +202,15 @@ func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n any) (string,
 func (c *gettextCatalog) Language() language.Tag { return c.language }
 
 func (c *gettextCatalog) getMessage(ctx, msgID string, idx int) (*gettextMessage, error) {
-	if _, hasCtx := c.translations[ctx]; !hasCtx {
+	if _, hasCtx := c.messages[ctx]; !hasCtx {
 		return nil, NewErrMissingContext(c.language, c.domain, ctx)
 	}
 
-	if _, hasMsg := c.translations[ctx][msgID]; !hasMsg {
+	if _, hasMsg := c.messages[ctx][msgID]; !hasMsg {
 		return nil, NewErrMissingMessageID(c.language, c.domain, ctx, msgID)
 	}
 
-	msg := c.translations[ctx][msgID]
+	msg := c.messages[ctx][msgID]
 	if tr, hasTranslation := msg.Translations[idx]; !hasTranslation || tr == "" {
 		return nil, NewErrMissingTranslation(c.language, c.domain, ctx, msgID, idx)
 	}
