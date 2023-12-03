@@ -14,7 +14,7 @@ import (
 
 const poCLDRHeader = "X-spreak-use-CLDR"
 
-type gettextPluralFunction func(n interface{}) (int, error)
+type gettextPluralFunction func(n any) (int, error)
 
 type poDecoder struct {
 	useCLDRPlural bool
@@ -186,7 +186,7 @@ func (c *gettextCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return msg.Translations[0], nil
 }
 
-func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
+func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
 	idx, errPlural := c.pluralFunc(n)
 	if errPlural != nil {
 		return msgID, errPlural

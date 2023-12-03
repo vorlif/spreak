@@ -111,7 +111,7 @@ func TestLocalizer_NoLocale(t *testing.T) {
 		Singular: "%d day",
 		Plural:   "%d days",
 		Context:  "",
-		Vars:     []interface{}{10},
+		Vars:     []any{10},
 		Count:    10,
 	}
 	tr, err = localizer.LocalizeWithError(localizeMsg)
@@ -179,7 +179,7 @@ func TestLocalizer_TranslateWithError(t *testing.T) {
 		Singular: "%d day",
 		Plural:   "%d days",
 		Context:  "",
-		Vars:     []interface{}{10},
+		Vars:     []any{10},
 		Count:    10,
 	}
 

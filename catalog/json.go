@@ -68,7 +68,7 @@ func (m *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return tr, nil
 }
 
-func (m *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
+func (m *jsonCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
 	cat, errEv := m.pluralSet.Evaluate(n)
 	if errEv != nil {
 		return msgID, errEv

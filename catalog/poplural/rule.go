@@ -19,8 +19,8 @@ type Rule struct {
 
 // Evaluate returns the appropriate plural form for any value.
 // If the value is not an integer, it is formatted accordingly.
-// If formatting is not possible, 0 is returned.
-func (f *Rule) Evaluate(a interface{}) (int, error) {
+// If formatting is not possible, an error is returned.
+func (f *Rule) Evaluate(a any) (int, error) {
 	num, err := util.ToNumber(a)
 	if err != nil {
 		return 0, err

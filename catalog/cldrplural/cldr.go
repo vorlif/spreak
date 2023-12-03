@@ -48,7 +48,7 @@ type RuleSet struct {
 	FormFunc FormFunc
 }
 
-func (rs *RuleSet) Evaluate(a interface{}) (Category, error) {
+func (rs *RuleSet) Evaluate(a any) (Category, error) {
 	ops, err := NewOperands(a)
 	if err != nil {
 		return Other, err
@@ -79,7 +79,7 @@ type Operands struct {
 
 // MustNewOperands is like NewOperands, but panics if the given value cannot be parsed.
 // It simplifies safe initialization of Operands values.
-func MustNewOperands(a interface{}) *Operands {
+func MustNewOperands(a any) *Operands {
 	ops, err := NewOperands(a)
 	if err != nil {
 		panic(err)
@@ -88,7 +88,7 @@ func MustNewOperands(a interface{}) *Operands {
 }
 
 // NewOperands converts the representation of a float value into the appropriate Operands.
-func NewOperands(a interface{}) (*Operands, error) {
+func NewOperands(a any) (*Operands, error) {
 	a = util.Indirect(a)
 	if a == nil {
 		return nil, errors.New("operands value is nil")

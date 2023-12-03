@@ -246,7 +246,7 @@ func (p *parser) parseMessageHeader(msg *po.Message) (header *po.Header) {
 	return
 }
 
-func (p *parser) binaryRead(data interface{}) error {
+func (p *parser) binaryRead(data any) error {
 	return binary.Read(p.r, p.bo, data)
 }
 

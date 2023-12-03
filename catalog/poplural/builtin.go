@@ -8,7 +8,7 @@ import (
 const fallbackRule = "nplurals=2; plural=n != 1;"
 
 // PluralFunc is a function that returns the appropriate plural form for a value.
-type PluralFunc = func(n interface{}) (int, error)
+type PluralFunc = func(a any) (int, error)
 
 // ForLanguage searches for the appropriate built-in plural function for a language.
 // If no function is found, the English plural function is automatically used.

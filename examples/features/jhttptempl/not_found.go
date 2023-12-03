@@ -54,7 +54,7 @@ func (h *handler) NotFound(w http.ResponseWriter, r *http.Request) {
 		localizer.NGet("not_found.stupid_statement", 1),
 	}
 
-	err := notFoundTemplate.Execute(w, map[string]interface{}{
+	err := notFoundTemplate.Execute(w, map[string]any{
 		"Title":      localizer.Get(Title),
 		"User":       username,
 		"Paragraphs": paragraphs,

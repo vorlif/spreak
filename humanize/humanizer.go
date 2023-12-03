@@ -120,7 +120,7 @@ func New(opts ...Option) (*Collection, error) {
 	coll := &Collection{
 		locales: make(map[language.Tag]*FormatData, len(o.locales)),
 	}
-	languages := make([]interface{}, 0, len(loader.locales))
+	languages := make([]any, 0, len(loader.locales))
 	for tag, data := range loader.locales {
 		languages = append(languages, tag)
 		if data.Format != nil {
@@ -155,7 +155,7 @@ func MustNew(opts ...Option) *Collection {
 
 // CreateHumanizer creates a new humanizer.
 // Multiple languages can be passed and a spreak.Localizer is created which decides which language is used.
-func (p *Collection) CreateHumanizer(lang ...interface{}) *Humanizer {
+func (p *Collection) CreateHumanizer(lang ...any) *Humanizer {
 	loc := spreak.NewLocalizer(p.bundle, lang...)
 
 	if data, ok := p.locales[loc.Language()]; ok {
