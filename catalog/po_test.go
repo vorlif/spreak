@@ -178,11 +178,23 @@ msgstr ""
 
 func TestGetCLDRPluralFunction(t *testing.T) {
 	pf := getCLDRPluralFunction(language.MustParse("kw"))
-	assert.Equal(t, 0, pf(0))
-	assert.Equal(t, 1, pf(1))
-	assert.Equal(t, 2, pf(22))
-	assert.Equal(t, 3, pf(143))
-	assert.Equal(t, 4, pf(161))
-	assert.Equal(t, 5, pf(5))
-	assert.Equal(t, 5, pf(1004))
+
+	tests := []struct {
+		input int
+		ouput int
+	}{
+		{0, 0},
+		{1, 1},
+		{22, 2},
+		{143, 3},
+		{161, 4},
+		{5, 5},
+		{1004, 5},
+	}
+
+	for _, test := range tests {
+		form, err := pf(test.input)
+		assert.NoError(t, err)
+		assert.Equal(t, test.ouput, form)
+	}
 }

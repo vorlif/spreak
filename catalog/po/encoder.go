@@ -52,36 +52,33 @@ func NewEncoder(w io.Writer) *Encoder {
 // SetWrapWidth defines at which length the texts should be wrapped.
 // To disable wrapping, the value can be set to -1.
 // Default is -1.
-func (enc *Encoder) SetWrapWidth(wrapWidth int) {
-	enc.wrapWidth = wrapWidth
-}
+func (enc *Encoder) SetWrapWidth(wrapWidth int) { enc.wrapWidth = wrapWidth }
 
 // SetWriteHeader sets whether a header should be written or not.
 // Default is true.
-func (enc *Encoder) SetWriteHeader(write bool) {
-	enc.writeHeader = write
-}
+func (enc *Encoder) SetWriteHeader(write bool) {enc.writeHeader = write}
 
 // SetWriteEmptyHeader sets whether a header without values should also be written or not.
 // Default is true.
-func (enc *Encoder) SetWriteEmptyHeader(write bool) {
-	enc.writeEmptyHeader = write
-}
+func (enc *Encoder) SetWriteEmptyHeader(write bool) {enc.writeEmptyHeader = write }
 
 // SetWriteReferences sets whether references to the origin of the text should be stored or not.
 // Default is true.
-func (enc *Encoder) SetWriteReferences(write bool) {
-	enc.writeReferences = write
-}
+func (enc *Encoder) SetWriteReferences(write bool) { enc.writeReferences = write}
 
 // SetSortFunction can be used to set a smaller than function with which the messages can be sorted before writing.
 func (enc *Encoder) SetSortFunction(f func(a *Message, b *Message) bool) {
 	enc.sortFunction = f
 }
 
-// Deprecated: Obsolete, it is always sorted, the method is removed with version 1.0.
-// Alternatively, a custom sort function can be set with SetSortFunction.
-func (enc *Encoder) SetSort(_ bool) {}
+	b := enc.encode(f)
+	_, err := enc.w.Write(b)
+	if err != nil {
+		return fmt.Errorf("po: cannot write: %w", err)
+	}
+
+	return nil
+}
 
 func (enc *Encoder) Encode(f *File) error {
 	if f == nil {
@@ -274,10 +271,7 @@ func (enc *Encoder) encodeTranslations(buff *bytes.Buffer, plural bool, orig map
 			m[1] = `""`
 		}
 
-		keys := make([]int, 0, len(m))
-		for k := range m {
-			keys = append(keys, k)
-		}
+		keys := util.Keys(m)
 		sort.Ints(keys)
 
 		for _, k := range keys {
