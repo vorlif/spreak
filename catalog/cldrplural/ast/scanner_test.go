@@ -149,3 +149,10 @@ func TestRegex(t *testing.T) {
 		}
 	})
 }
+
+func Test_generateTokens(t *testing.T) {
+	content := "i = 1 and v =  0 and n =  3..10  @integer   1, 2,3, …, @decimal 0.0~1.5\r"
+	token := generateTokens(content)
+	wantToken := []string{"i", "=", "1", "and", "v", "=", "0", "and", "n", "=", "3..10", "@integer", "1", "2", "3", "…", "@decimal", "0.0~1.5"}
+	assert.Equal(t, wantToken, token)
+}

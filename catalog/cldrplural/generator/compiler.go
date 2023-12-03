@@ -55,15 +55,19 @@ func compileNode(node ast.Node) string {
 		isFloatOperand := op.Operand == "n"
 
 		var b strings.Builder
-		if len(valueRanges) > 0 {
-			if isFloatOperand {
-				b.WriteString(fmt.Sprintf("isFloatInRange(%s, ", compiledExpr))
+		if valueCount := len(valueRanges); valueCount > 0 {
+			if valueCount == 2 && !isFloatOperand {
+				b.WriteString(fmt.Sprintf("(%[1]s >= %[2]s && %[1]s <= %[3]s)", compiledExpr, valueRanges[0], valueRanges[1]))
 			} else {
-				b.WriteString(fmt.Sprintf("isIntInRange(%s, ", compiledExpr))
-			}
+				if isFloatOperand {
+					b.WriteString(fmt.Sprintf("isFloatInRange(%s, ", compiledExpr))
+				} else {
+					b.WriteString(fmt.Sprintf("isIntInRange(%s, ", compiledExpr))
+				}
 
-			b.WriteString(strings.Join(valueRanges, ","))
-			b.WriteString(")")
+				b.WriteString(strings.Join(valueRanges, ","))
+				b.WriteString(")")
+			}
 		}
 
 		if len(singleValues) > 0 {
@@ -84,11 +88,13 @@ func compileNode(node ast.Node) string {
 			} else {
 				if isFloatOperand {
 					b.WriteString(fmt.Sprintf("isFloatOneOf(%s, ", compiledExpr))
+					b.WriteString(strings.Join(singleValues, ","))
 				} else {
-					b.WriteString(fmt.Sprintf("isIntOneOf(%s, ", compiledExpr))
+					b.WriteString("slices.Contains([]int64{")
+					b.WriteString(strings.Join(singleValues, ","))
+					b.WriteString(fmt.Sprintf("}, %s", compiledExpr))
 				}
 
-				b.WriteString(strings.Join(singleValues, ","))
 				b.WriteString(")")
 			}
 		}
