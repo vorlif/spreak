@@ -172,8 +172,8 @@ func TestGetCLDRPluralFunction(t *testing.T) {
 	pf := getCLDRPluralFunction(language.MustParse("kw"))
 
 	tests := []struct {
-		input int
-		ouput int
+		input  int
+		output int
 	}{
 		{0, 0},
 		{1, 1},
@@ -187,6 +187,6 @@ func TestGetCLDRPluralFunction(t *testing.T) {
 	for _, test := range tests {
 		form, err := pf(test.input)
 		assert.NoError(t, err)
-		assert.Equal(t, test.ouput, form)
+		assert.Equal(t, test.output, form)
 	}
 }

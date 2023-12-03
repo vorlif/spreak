@@ -192,12 +192,12 @@ func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 
 // WithMoDecoder stores the mo file decoder.
 //
-// Shorthand for WithDecoder(MoFile, catalog.NewMoDecoder()
+// Shorthand for WithDecoder(MoFile, catalog.NewMoDecoder().
 func WithMoDecoder() FsOption { return WithDecoder(MoFile, catalog.NewMoDecoder()) }
 
 // WithPoDecoder stores the mo file decoder.
 //
-// Shorthand for WithDecoder(PoFile, catalog.NewPoDecoder()
+// Shorthand for WithDecoder(PoFile, catalog.NewPoDecoder().
 func WithPoDecoder() FsOption { return WithDecoder(PoFile, catalog.NewPoDecoder()) }
 
 type defaultResolver struct {
