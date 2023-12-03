@@ -9,7 +9,7 @@ import (
 
 // Rule represents a rule as specified in the header of the po file under `Plural-Forms`.
 //
-// Example: nplurals=2; plural=n != 1;
+// Example: nplurals=2; plural=n != 1;.
 type Rule struct {
 	// Specifies how many plural forms this rule supports.
 	NPlurals int
