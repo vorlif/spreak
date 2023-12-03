@@ -77,10 +77,10 @@ func ToNumber(n interface{}) (float64, error) {
 	return ToNumber(fmt.Sprintf("%v", n))
 }
 
-// From html/template/content.go
-// Copyright 2011 The Go Authors. All rights reserved.
 // Indirect returns the value, after dereferencing as many times
 // as necessary to reach the base type (or nil).
+// From html/template/content.go
+// Copyright 2011 The Go Authors. All rights reserved.
 func Indirect(a interface{}) interface{} {
 	if a == nil {
 		return nil

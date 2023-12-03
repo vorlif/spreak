@@ -1,15 +1,16 @@
 package spreak
 
 import (
+	"cmp"
 	"errors"
 	"fmt"
-	"sort"
+	"slices"
 	"strings"
 
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 
-	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/internal/util"
 )
 
 var (
@@ -18,24 +19,9 @@ var (
 	errMissingLocale = errors.New("spreak: locale missing")
 )
 
-// Deprecated: Moved to catalog.NewPoDecoder and will be removed with v1.0.
-func NewPoDecoder() catalog.Decoder { return catalog.NewPoDecoder() }
-
-// Deprecated: Moved to catalog.NewMoDecoder and will be removed with v1.0.
-func NewMoDecoder() catalog.Decoder { return catalog.NewMoDecoder() }
-
-// Deprecated: Moved to catalog.ErrMissingContext and will be removed with v1.0.
-type ErrMissingContext = catalog.ErrMissingContext
-
-// Deprecated: Moved to catalog.ErrMissingMessageID and will be removed with v1.0.
-type ErrMissingMessageID = catalog.ErrMissingMessageID
-
-// Deprecated: Moved to catalog.ErrMissingTranslation and will be removed with v1.0.
-type ErrMissingTranslation = catalog.ErrMissingTranslation
-
 // PrintFunc formats according to a format specifier and returns the resulting string.
 // Like fmt.Sprintf(...)
-type PrintFunc func(str string, vars ...interface{}) string
+type PrintFunc func(str string, vars ...any) string
 
 // A Printer creates a PrintFunc for a language.
 // Can be stored with WithPrinter when creating a bundle.
@@ -71,7 +57,7 @@ func (d *defaultPrinter) GetPrintFunc(lang language.Tag) PrintFunc {
 
 func defaultPrintFunc(lang language.Tag) PrintFunc {
 	printer := message.NewPrinter(lang)
-	return func(str string, vars ...interface{}) string {
+	return func(str string, vars ...any) string {
 		if len(vars) > 0 {
 			return printer.Sprintf(str, vars...)
 		}
@@ -136,7 +122,7 @@ func parseLanguageName(lang string) (language.Tag, error) {
 	return language.Parse(lang)
 }
 
-func languageInterfaceToTag(i interface{}) (language.Tag, error) {
+func languageInterfaceToTag(i any) (language.Tag, error) {
 	switch v := i.(type) {
 	case string:
 		tag, err := parseLanguageName(v)
@@ -152,19 +138,19 @@ func languageInterfaceToTag(i interface{}) (language.Tag, error) {
 }
 
 func stringMapKeys(m map[string]bool) []string {
-	keys := make([]string, len(m))
-	i := 0
-	for key := range m {
-		keys[i] = key
-		i++
-	}
-	// Longest first
-	sort.SliceStable(keys, func(i, j int) bool {
-		if x, y := len(keys[i]), len(keys[j]); x != y {
-			return x > y
+	keys := util.Keys(m)
+
+	slices.SortStableFunc(keys, func(a, b string) int {
+		// Longest first
+		if x, y := len(a), len(b); x != y {
+			if x < y {
+				return 1
+			}
+
+			return -1
 		}
 
-		return keys[i] < keys[j]
+		return cmp.Compare(a, b)
 	})
 	return keys
 }
@@ -177,7 +163,7 @@ type ErrNotFound struct {
 	Identifier string
 }
 
-func NewErrNotFound(lang language.Tag, source string, format string, vars ...interface{}) *ErrNotFound {
+func NewErrNotFound(lang language.Tag, source string, format string, vars ...any) *ErrNotFound {
 	return &ErrNotFound{
 		Language:   lang,
 		Type:       source,

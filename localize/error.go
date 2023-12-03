@@ -6,14 +6,8 @@ type Error struct {
 	Wrapped     error
 }
 
-func (e *Error) Error() string {
-	return e.Translation
-}
+func (e *Error) Error() string { return e.Translation }
 
-func (e *Error) Unwrap() error {
-	return e.Wrapped
-}
+func (e *Error) Unwrap() error { return e.Wrapped }
 
-func (e *Error) String() string {
-	return e.Translation
-}
+func (e *Error) String() string { return e.Translation }

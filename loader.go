@@ -21,17 +21,6 @@ const (
 	JSONFile    = ".json"
 )
 
-// Catalog represents a collection of messages (translations) for a language and a domain.
-// Normally it is a PO or MO file.
-//
-// Deprecated: Moved to catalog.Catalog. This alias will be removed in version 1.0.
-type Catalog = catalog.Catalog
-
-// A Decoder reads and decodes catalogs for a language and a domain from a byte array.
-//
-// Deprecated: Moved to catalog.Decoder and will be removed with v1.0.
-type Decoder = catalog.Decoder
-
 // Loader is responsible for loading Catalogs for a language and a domain.
 // A bundle loads each domain through its own loader.
 //
@@ -177,6 +166,8 @@ func WithPath(path string) FsOption {
 
 // WithSystemFs stores the root path as filesystem.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
+//
+// Shorthand for WithPath("").
 func WithSystemFs() FsOption { return WithPath("") }
 
 // WithResolver stores the resolver of a FilesystemLoader.
@@ -200,9 +191,13 @@ func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 }
 
 // WithMoDecoder stores the mo file decoder.
+//
+// Shorthand for WithDecoder(MoFile, catalog.NewMoDecoder()
 func WithMoDecoder() FsOption { return WithDecoder(MoFile, catalog.NewMoDecoder()) }
 
 // WithPoDecoder stores the mo file decoder.
+//
+// Shorthand for WithDecoder(PoFile, catalog.NewPoDecoder()
 func WithPoDecoder() FsOption { return WithDecoder(PoFile, catalog.NewPoDecoder()) }
 
 type defaultResolver struct {
@@ -227,9 +222,7 @@ func NewDefaultResolver(opts ...ResolverOption) (Resolver, error) {
 func WithDisabledSearch() ResolverOption { return func(r *defaultResolver) { r.search = false } }
 
 func WithCategory(category string) ResolverOption {
-	return func(l *defaultResolver) {
-		l.category = category
-	}
+	return func(l *defaultResolver) { l.category = category }
 }
 
 func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
