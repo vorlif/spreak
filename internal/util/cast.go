@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func ToTime(i interface{}) (t time.Time, err error) {
+func ToTime(i any) (t time.Time, err error) {
 	i = Indirect(i)
 	if i == nil {
 		return time.Time{}, errors.New("time is nil")
@@ -27,7 +27,7 @@ func ToTime(i interface{}) (t time.Time, err error) {
 	return time.Time{}, fmt.Errorf("unable to cast %#v of type %T to Time", i, i)
 }
 
-func ToNumber(n interface{}) (float64, error) {
+func ToNumber(n any) (float64, error) {
 	n = Indirect(n)
 	if n == nil {
 		return 0, errors.New("number is nil")
@@ -81,7 +81,7 @@ func ToNumber(n interface{}) (float64, error) {
 // as necessary to reach the base type (or nil).
 // From html/template/content.go
 // Copyright 2011 The Go Authors. All rights reserved.
-func Indirect(a interface{}) interface{} {
+func Indirect(a any) any {
 	if a == nil {
 		return nil
 	}

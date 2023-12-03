@@ -12,10 +12,12 @@ import (
 type Catalog interface {
 	// GetTranslation Returns a translation for an ID within a given context.
 	GetTranslation(ctx, msgID string) (string, error)
+
 	// GetPluralTranslation Returns a translation within a given context.
 	// Here n is a number that should be used to determine the plural form.
-	GetPluralTranslation(ctx, msgID string, n interface{}) (string, error)
+	GetPluralTranslation(ctx, msgID string, n any) (string, error)
 
+	// Language specifies the language for which the catalog was created.//
 	Language() language.Tag
 }
 

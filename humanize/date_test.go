@@ -42,7 +42,7 @@ func TestHumanizer_NaturalTime(t *testing.T) {
 		now := time.Now()
 		tests := []struct {
 			expected string
-			time     interface{}
+			time     any
 		}{
 			{"%!(string=test)", "test"},
 			{"a second ago", now.Add(-time.Second)},
@@ -73,7 +73,7 @@ func TestHumanizer_NaturalTime(t *testing.T) {
 
 	t.Run("test now", func(t *testing.T) {
 		tests := []struct {
-			time interface{}
+			time any
 		}{
 			{time.Now()},
 			{time.Now().Add(-time.Microsecond)},
@@ -233,7 +233,7 @@ func TestHumanizer_TimeSince(t *testing.T) {
 
 	t.Run("test disable require adjacent", func(t *testing.T) {
 		tests := []struct {
-			value    interface{}
+			value    any
 			depth    int
 			expected string
 		}{

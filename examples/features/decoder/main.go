@@ -83,7 +83,7 @@ func (c *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return c.GetPluralTranslation(ctx, msgID, 1)
 }
 
-func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
+func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
 	if ctx != "" {
 		err := &catalog.ErrMissingContext{
 			Language: c.language,

@@ -85,7 +85,7 @@ func checkError(err error) {
 	}
 }
 
-var templateFuncs template.FuncMap = map[string]interface{}{
+var templateFuncs template.FuncMap = map[string]any{
 	"ConvertToGo": func(rawRule string) string {
 		rule, err := ast.Parse(rawRule)
 		checkError(err)

@@ -83,7 +83,7 @@ func TestHumanizer_FilesizeFormat(t *testing.T) {
 
 	t.Run("translation", func(t *testing.T) {
 		tests := []struct {
-			size     interface{}
+			size     any
 			expected string
 		}{
 			{1023, "1.023 Bytes"},

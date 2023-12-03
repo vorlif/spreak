@@ -40,7 +40,7 @@ type Localizable interface {
 	// GetContext specifies the context for which the message should be translated.
 	GetContext() string
 	// GetVars is optional, can be used to pass parameters.
-	GetVars() []interface{}
+	GetVars() []any
 	GetCount() int
 	// HasDomain specifies whether the domain of Domain() is to be used.
 	// If false the default domain is used.
@@ -55,7 +55,7 @@ type Message struct {
 	Singular Singular
 	Plural   Plural
 	Context  Context
-	Vars     []interface{}
+	Vars     []any
 	Count    int
 }
 
@@ -67,7 +67,7 @@ func (m *Message) GetPluralID() string { return m.Plural }
 
 func (m *Message) GetContext() string { return m.Context }
 
-func (m *Message) GetVars() []interface{} { return m.Vars }
+func (m *Message) GetVars() []any { return m.Vars }
 
 func (m *Message) GetCount() int { return m.Count }
 

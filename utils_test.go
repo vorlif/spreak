@@ -162,7 +162,7 @@ func (t *testLocalizeErr) GetPluralID() string { return t.plural }
 
 func (t *testLocalizeErr) GetContext() string { return t.context }
 
-func (testLocalizeErr) GetVars() []interface{} { return nil }
+func (testLocalizeErr) GetVars() []any { return nil }
 
 func (testLocalizeErr) GetCount() int { return 0 }
 
@@ -178,7 +178,7 @@ var singularTestData = []struct {
 	msgID      string
 	ctx        string
 	translated string
-	params     []interface{}
+	params     []any
 	wantErr    assert.ErrorAssertionFunc
 }{
 	{

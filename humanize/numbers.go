@@ -32,7 +32,7 @@ var apnumbers = []string{
 // - 2 becomes two.
 //
 // - 10 becomes 10.
-func (h *Humanizer) Apnumber(val interface{}) string {
+func (h *Humanizer) Apnumber(val any) string {
 	fl, err := util.ToNumber(val)
 	if err != nil {
 		return formatErrorMessage(val)
@@ -74,7 +74,7 @@ var intwordConverters = []struct {
 // Works best for numbers over 1 million.
 //
 // Valid inputs are all values that can be interpreted as a number.
-func (h *Humanizer) Intword(i interface{}) string {
+func (h *Humanizer) Intword(i any) string {
 	value, err := util.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
@@ -104,7 +104,7 @@ func (h *Humanizer) Intword(i interface{}) string {
 // For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
 //
 // Valid inputs are all values that can be interpreted as a number.
-func (h *Humanizer) Intcomma(i interface{}) string {
+func (h *Humanizer) Intcomma(i any) string {
 	value, err := util.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
@@ -143,7 +143,7 @@ var ordinalTemplates = []struct {
 // 3 is '3rd', etc. Works for any integer.
 //
 // Valid inputs are all values that can be interpreted as a number.
-func (h *Humanizer) Ordinal(i interface{}) string {
+func (h *Humanizer) Ordinal(i any) string {
 	floatValue, err := util.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)

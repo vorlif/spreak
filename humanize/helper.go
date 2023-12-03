@@ -51,7 +51,7 @@ const (
 //
 // Valid inputs are byte arrays or any numeric value.
 // For all other inputs, a string is returned with an error message in fmt style.
-func (h *Humanizer) FilesizeFormat(v interface{}) string {
+func (h *Humanizer) FilesizeFormat(v any) string {
 	var count int64
 	switch val := v.(type) {
 	case []byte:
@@ -104,7 +104,7 @@ func toFixed(num float64, precision int) float64 {
 	return math.Round(num*output) / output
 }
 
-func formatErrorMessage(i interface{}) string {
+func formatErrorMessage(i any) string {
 	t := reflect.TypeOf(i)
 	if t == nil {
 		return "<nil>"

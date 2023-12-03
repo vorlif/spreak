@@ -20,7 +20,7 @@ func TestHumanizer_Apnumber(t *testing.T) {
 		assert.Equal(t, "%!(string=test)", h.Apnumber("test"))
 
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{0, "0"},
@@ -46,7 +46,7 @@ func TestHumanizer_Apnumber(t *testing.T) {
 	t.Run("apnumber source", func(t *testing.T) {
 		h := createSourceHumanizer(t)
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{1, "one"},
@@ -150,7 +150,7 @@ func TestHumanizer_Intcomma(t *testing.T) {
 		assert.Equal(t, "1.234.567,123457", h.Intcomma("1234567.1234567"))
 
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{100, "100"},
@@ -177,7 +177,7 @@ func TestHumanizer_Intcomma(t *testing.T) {
 
 	t.Run("intcomma source", func(t *testing.T) {
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{100, "100"},
@@ -207,7 +207,7 @@ func TestHumanizer_Intcomma(t *testing.T) {
 func TestHumanizer_Ordinal(t *testing.T) {
 	t.Run("ordinal i18n", func(t *testing.T) {
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{"1", "1."},
@@ -235,7 +235,7 @@ func TestHumanizer_Ordinal(t *testing.T) {
 
 	t.Run("ordinal source", func(t *testing.T) {
 		tests := []struct {
-			input interface{}
+			input any
 			want  string
 		}{
 			{"1", "1st"},

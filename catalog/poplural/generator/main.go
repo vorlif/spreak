@@ -62,7 +62,7 @@ func checkError(err error) {
 	}
 }
 
-var templateFuncs template.FuncMap = map[string]interface{}{
+var templateFuncs template.FuncMap = map[string]any{
 	"StrJoin": func(elems []string, sep string) string {
 		values := slices.Clone(elems)
 		for i := range values {
