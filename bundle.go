@@ -4,10 +4,12 @@ import (
 	"errors"
 	"fmt"
 	"io/fs"
+	"slices"
 
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/internal/util"
 )
 
 // NoDomain is the domain which is used if no default domain is stored.
@@ -63,7 +65,7 @@ type Bundle struct {
 
 	languages []language.Tag
 	locales   map[language.Tag]*locale
-	domains   map[string]bool
+	domains   []string
 }
 
 // NewBundle creates a new bundle and returns it.
@@ -80,7 +82,7 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 
 			languages: make([]language.Tag, 0),
 			locales:   make(map[language.Tag]*locale),
-			domains:   make(map[string]bool),
+			domains:   nil,
 		},
 		languageMatcherBuilder: language.NewMatcher,
 		fallbackLanguage:       language.Und,
@@ -99,9 +101,7 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 		}
 	}
 
-	for domain := range builder.domainLoaders {
-		builder.domains[domain] = false
-	}
+	builder.domains = make([]string, 0, len(builder.domainLoaders))
 
 	for _, action := range builder.setupActions {
 		if action == nil {
@@ -132,29 +132,13 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 
 // Domains returns a list of loaded domains.
 // A domain is only loaded if at least one catalog is found in one language.
-func (b *Bundle) Domains() []string {
-	domains := make([]string, 0, len(b.domains))
-	for domain, loaded := range b.domains {
-		if loaded {
-			domains = append(domains, domain)
-		}
-	}
-	return domains
-}
+func (b *Bundle) Domains() []string { return slices.Clone(b.domains) }
 
 // CanLocalize indicates whether locales and domains have been loaded for translation.
-func (b *Bundle) CanLocalize() bool {
-	return len(b.locales) > 0 && len(b.Domains()) > 0
-}
+func (b *Bundle) CanLocalize() bool { return len(b.locales) > 0 && len(b.domains) > 0 }
 
 // SupportedLanguages returns all languages for which a catalog was found for at least one domain.
-func (b *Bundle) SupportedLanguages() []language.Tag {
-	languages := make([]language.Tag, 0, len(b.locales))
-	for lang := range b.locales {
-		languages = append(languages, lang)
-	}
-	return languages
-}
+func (b *Bundle) SupportedLanguages() []language.Tag { return util.Keys(b.locales) }
 
 // IsLanguageSupported indicates whether a language can be translated.
 // The check is done by the bundle's matcher and therefore languages that are not returned by
@@ -164,14 +148,14 @@ func (b *Bundle) IsLanguageSupported(lang language.Tag) bool {
 	return confidence > language.No
 }
 
-func (b *bundleBuilder) preloadLanguages(optional bool, languages ...interface{}) error {
+func (b *bundleBuilder) preloadLanguages(optional bool, languages ...any) error {
 	for _, accept := range languages {
 		tag, errT := languageInterfaceToTag(accept)
 		if errT != nil {
 			return errT
 		}
 
-		_, err := b.createLocale(optional, tag)
+		err := b.createLocale(optional, tag)
 		if err == nil {
 			continue
 		}
@@ -196,20 +180,20 @@ func (b *bundleBuilder) preloadLanguages(optional bool, languages ...interface{}
 	return nil
 }
 
-func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*locale, error) {
+func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) error {
 	if lang == language.Und {
-		return nil, newMissingLanguageError(lang)
+		return newMissingLanguageError(lang)
 	}
 
 	if lang == b.sourceLanguage {
 		sourceLocale := buildSourceLocale(b.Bundle, b.sourceLanguage)
 		b.locales[lang] = sourceLocale
 		b.languages = append(b.languages, lang)
-		return sourceLocale, nil
+		return nil
 	}
 
-	if cachedLocale, isCached := b.locales[lang]; isCached {
-		return cachedLocale, nil
+	if _, isCached := b.locales[lang]; isCached {
+		return nil
 	}
 
 	catalogs := make(map[string]catalog.Catalog, len(b.domainLoaders))
@@ -227,27 +211,29 @@ func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) (*locale,
 					continue
 				}
 			}
-			return nil, errD
+			return errD
 		}
 
 		catalogs[domain] = catl
-		b.domains[domain] = true
+		if !slices.Contains(b.domains, domain) {
+			b.domains = append(b.domains, domain)
+		}
 	}
 
 	if len(catalogs) == 0 {
-		return nil, newMissingLanguageError(lang)
+		return newMissingLanguageError(lang)
 	}
 
 	langLocale := buildLocale(b.Bundle, lang, catalogs)
 	b.locales[lang] = langLocale
 	b.languages = append(b.languages, lang)
-	return langLocale, nil
+	return nil
 }
 
 // WithFallbackLanguage sets the fallback language to be used when creating Localizer if no suitable language is available.
 // Should be used only if the fallback language is different from source language.
 // Otherwise, it should not be set.
-func WithFallbackLanguage(lang interface{}) BundleOption {
+func WithFallbackLanguage(lang any) BundleOption {
 	return func(opts *bundleBuilder) error {
 		tag, err := languageInterfaceToTag(lang)
 		if err != nil {
@@ -357,7 +343,7 @@ func WithDomainFs(domain string, fsys fs.FS) BundleOption {
 // otherwise unexpected behavior may occur.
 // This is because the matching algorithm of the language.matcher can give unexpected results.
 // See https://github.com/golang/go/issues/49176
-func WithLanguage(languages ...interface{}) BundleOption {
+func WithLanguage(languages ...any) BundleOption {
 	loadFunc := func(builder *bundleBuilder) error {
 		return builder.preloadLanguages(true, languages...)
 	}
@@ -370,7 +356,7 @@ func WithLanguage(languages ...interface{}) BundleOption {
 
 // WithRequiredLanguage works like WithLanguage except that the creation of the bundle fails
 // if a catalog for a language could not be found.
-func WithRequiredLanguage(languages ...interface{}) BundleOption {
+func WithRequiredLanguage(languages ...any) BundleOption {
 	loadFunc := func(builder *bundleBuilder) error {
 		return builder.preloadLanguages(false, languages...)
 	}
