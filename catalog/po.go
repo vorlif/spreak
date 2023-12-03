@@ -14,7 +14,7 @@ import (
 
 const poCLDRHeader = "X-spreak-use-CLDR"
 
-type gettextPluralFunction func(n interface{}) int
+type gettextPluralFunction func(n interface{}) (int, error)
 
 type poDecoder struct {
 	useCLDRPlural bool
@@ -121,11 +121,11 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 		}
 
 		if file.Header.PluralForms != "" {
-			forms, err := poplural.Parse(file.Header.PluralForms)
+			rule, err := poplural.Parse(file.Header.PluralForms)
 			if err != nil {
-				return nil, fmt.Errorf("spreak.Decoder: plural forms for po file %v#%v could not be parsed: %w", lang, domain, err)
+				return nil, fmt.Errorf("spreak.Decoder: plural rule for po file %v#%v could not be parsed: %w", lang, domain, err)
 			}
-			catl.pluralFunc = forms.Evaluate
+			catl.pluralFunc = rule.Evaluate
 			return catl, nil
 		}
 	}
@@ -134,16 +134,22 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 	return catl, nil
 }
 
-func getCLDRPluralFunction(lang language.Tag) func(a interface{}) int {
+func getCLDRPluralFunction(lang language.Tag) func(a interface{}) (int, error) {
 	ruleSet, _ := cldrplural.ForLanguage(lang)
-	return func(a interface{}) int {
-		cat := ruleSet.Evaluate(a)
+
+	return func(a interface{}) (int, error) {
+		cat, err := ruleSet.Evaluate(a)
+		if err != nil {
+			return 0, err
+		}
+
 		for i := 0; i < len(ruleSet.Categories); i++ {
 			if ruleSet.Categories[i] == cat {
-				return i
+				return i, nil
 			}
 		}
-		return 0
+
+		return 0, nil
 	}
 }
 
@@ -178,7 +184,10 @@ func (c *gettextCatalog) GetTranslation(ctx, msgID string) (string, error) {
 }
 
 func (c *gettextCatalog) GetPluralTranslation(ctx, msgID string, n interface{}) (string, error) {
-	idx := c.pluralFunc(n)
+	idx, errPlural := c.pluralFunc(n)
+	if errPlural != nil {
+		return msgID, errPlural
+	}
 	msg, err := c.getMessage(ctx, msgID, idx)
 	if err != nil {
 		return msgID, err

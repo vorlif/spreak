@@ -34,30 +34,19 @@ func NewEncoder(w io.Writer) *Encoder {
 // SetWrapWidth defines at which length the texts should be wrapped.
 // To disable wrapping, the value can be set to -1.
 // Default is -1.
-func (e *Encoder) SetWrapWidth(wrapWidth int) {
-	e.wrapWidth = wrapWidth
-}
+func (e *Encoder) SetWrapWidth(wrapWidth int) { e.wrapWidth = wrapWidth }
 
 // SetWriteHeader sets whether a header should be written or not.
 // Default is true.
-func (e *Encoder) SetWriteHeader(write bool) {
-	e.writeHeader = write
-}
+func (e *Encoder) SetWriteHeader(write bool) { e.writeHeader = write }
 
 // SetWriteEmptyHeader sets whether a header without values should also be written or not.
 // Default is true.
-func (e *Encoder) SetWriteEmptyHeader(write bool) {
-	e.writeEmptyHeader = write
-}
+func (e *Encoder) SetWriteEmptyHeader(write bool) { e.writeEmptyHeader = write }
 
 // SetWriteReferences sets whether references to the origin of the text should be stored or not.
 // Default is true.
-func (e *Encoder) SetWriteReferences(write bool) {
-	e.writeReferences = write
-}
-
-// Deprecated: Obsolete, it is always sorted, the method is removed with version 1.0.
-func (e *Encoder) SetSort(_ bool) {}
+func (e *Encoder) SetWriteReferences(write bool) { e.writeReferences = write }
 
 func (e *Encoder) Encode(f *File) error {
 	if f.Header != nil && e.writeHeader {
@@ -256,10 +245,7 @@ func (e *Encoder) encodeTranslations(plural bool, orig map[int]string) error {
 			m[1] = ""
 		}
 
-		keys := make([]int, 0, len(m))
-		for k := range m {
-			keys = append(keys, k)
-		}
+		keys := util.Keys(m)
 		sort.Ints(keys)
 
 		for _, k := range keys {
