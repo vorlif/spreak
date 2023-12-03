@@ -27,47 +27,47 @@ func TestCatalog_SimplePublicFunctions(t *testing.T) {
 	cat := getPoCatalogForDomain(t, "a")
 	assert.Equal(t, language.German, cat.Language())
 
-	translation, err := cat.GetTranslation("", "id")
+	translation, err := cat.Lookup("", "id")
 	if assert.NoError(t, err) {
 		assert.Equal(t, "ID", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("", "%d day", 1)
+	translation, err = cat.LookupPlural("", "%d day", 1)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Tag", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("", "%d car", 10)
+	translation, err = cat.LookupPlural("", "%d car", 10)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d car", translation)
 	}
 
-	translation, err = cat.GetTranslation("context", "Test with context")
+	translation, err = cat.Lookup("context", "Test with context")
 	if assert.NoError(t, err) {
 		assert.Equal(t, "Test mit Context", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "Test with context", 5)
+	translation, err = cat.LookupPlural("other", "Test with context", 5)
 	if assert.Error(t, err) {
 		assert.Equal(t, "Test with context", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("context", "%d result", 1)
+	translation, err = cat.LookupPlural("context", "%d result", 1)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Ergebniss", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("context", "%d result", 10)
+	translation, err = cat.LookupPlural("context", "%d result", 10)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Ergebnisse", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "%d result", 1)
+	translation, err = cat.LookupPlural("other", "%d result", 1)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d result", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "%d result", 10)
+	translation, err = cat.LookupPlural("other", "%d result", 10)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d result", translation)
 	}
@@ -113,11 +113,11 @@ func TestPoDecoder(t *testing.T) {
 	assert.NotNil(t, catl)
 	assert.Equal(t, lang, catl.Language())
 
-	translation, err := catl.GetTranslation("", "id")
+	translation, err := catl.Lookup("", "id")
 	assert.NoError(t, err)
 	assert.Equal(t, "ID", translation)
 
-	translation, err = catl.GetTranslation("", "xyz")
+	translation, err = catl.Lookup("", "xyz")
 	assert.Error(t, err)
 	assert.Equal(t, "xyz", translation)
 
@@ -134,7 +134,7 @@ func TestPoDecoder(t *testing.T) {
 		assert.NoError(t, err)
 		require.NotNil(t, catl)
 
-		tr, err := catl.GetTranslation("", "Special		\"chars\"")
+		tr, err := catl.Lookup("", "Special		\"chars\"")
 		assert.NoError(t, err)
 		assert.Equal(t, "Sonder\t\t\"zeichen\"", tr)
 	})
@@ -154,7 +154,7 @@ func TestNewPoCLDRDecoder(t *testing.T) {
 	assert.NoError(t, err)
 	require.NotNil(t, catl)
 
-	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
+	translation, errT := catl.LookupPlural("", "%d day", "1.2")
 	assert.NoError(t, errT)
 	assert.Equal(t, "%d Tage", translation)
 }
@@ -171,7 +171,7 @@ msgstr ""
 	catl, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
 	assert.NoError(t, err)
 	require.NotNil(t, catl)
-	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
+	translation, errT := catl.LookupPlural("", "%d day", "1.2")
 	assert.NoError(t, errT)
 	assert.Equal(t, "%d Tage", translation)
 }

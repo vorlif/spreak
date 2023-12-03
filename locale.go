@@ -55,7 +55,7 @@ func (l *locale) lookupSingularTranslation(domain localize.Domain, ctx localize.
 		return "", err
 	}
 
-	translation, errT := catl.GetTranslation(ctx, msgID)
+	translation, errT := catl.Lookup(ctx, msgID)
 	if errT != nil {
 		if l.bundle.missingCallback != nil {
 			l.bundle.missingCallback(errT)
@@ -81,7 +81,7 @@ func (l *locale) lookupPluralTranslation(domain string, ctx localize.Context, si
 		return "", err
 	}
 
-	translation, errT := catl.GetPluralTranslation(ctx, singular, n)
+	translation, errT := catl.LookupPlural(ctx, singular, n)
 	if errT != nil {
 		if l.bundle.missingCallback != nil {
 			l.bundle.missingCallback(errT)

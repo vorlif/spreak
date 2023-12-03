@@ -67,19 +67,19 @@ func TestJSONCatalog(t *testing.T) {
 
 		assert.Equal(t, language.English, cat.Language())
 
-		tr, err := cat.GetTranslation("", "app.name")
+		tr, err := cat.Lookup("", "app.name")
 		assert.NoError(t, err)
 		assert.Equal(t, "TODO List", tr)
 
-		tr, err = cat.GetPluralTranslation("", "animal.cat", 1)
+		tr, err = cat.LookupPlural("", "animal.cat", 1)
 		assert.NoError(t, err)
 		assert.Equal(t, "I do not have a cat", tr)
 
-		tr, err = cat.GetPluralTranslation("", "animal.cat", 2)
+		tr, err = cat.LookupPlural("", "animal.cat", 2)
 		assert.NoError(t, err)
 		assert.Equal(t, "I do not have cats", tr)
 
-		tr, err = cat.GetPluralTranslation("my-animals", "animal.dog", 2)
+		tr, err = cat.LookupPlural("my-animals", "animal.dog", 2)
 		assert.NoError(t, err)
 		assert.Equal(t, "I have dogs", tr)
 	})
@@ -95,19 +95,19 @@ func TestJSONCatalog(t *testing.T) {
 
 		assert.Equal(t, language.German, cat.Language())
 
-		tr, err := cat.GetTranslation("", "animal.cat")
+		tr, err := cat.Lookup("", "animal.cat")
 		assert.Error(t, err)
 		assert.Equal(t, "animal.cat", tr)
 
-		tr, err = cat.GetPluralTranslation("", "animal.cat", 1)
+		tr, err = cat.LookupPlural("", "animal.cat", 1)
 		assert.Error(t, err)
 		assert.Equal(t, "animal.cat", tr)
 
-		tr, err = cat.GetTranslation("unknown", "animal.dog")
+		tr, err = cat.Lookup("unknown", "animal.dog")
 		assert.Error(t, err)
 		assert.Equal(t, "animal.dog", tr)
 
-		tr, err = cat.GetPluralTranslation("", "missing.plural", 1)
+		tr, err = cat.LookupPlural("", "missing.plural", 1)
 		assert.Error(t, err)
 		assert.Equal(t, "missing.plural", tr)
 	})

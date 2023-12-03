@@ -59,7 +59,7 @@ type jsonCatalog struct {
 	pluralSet *cldrplural.RuleSet
 }
 
-func (m *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
+func (m *jsonCatalog) Lookup(ctx, msgID string) (string, error) {
 	tr, err := m.getTranslation(ctx, msgID, cldrplural.Other)
 	if err != nil {
 		return msgID, err
@@ -68,7 +68,7 @@ func (m *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
 	return tr, nil
 }
 
-func (m *jsonCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
+func (m *jsonCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
 	cat, errEv := m.pluralSet.Evaluate(n)
 	if errEv != nil {
 		return msgID, errEv
