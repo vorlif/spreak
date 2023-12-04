@@ -7,11 +7,13 @@ import (
 	"fmt"
 	"maps"
 	"slices"
+	"sort"
 	"strings"
 
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog/cldrplural"
+	"github.com/vorlif/spreak/internal/util"
 )
 
 // A JSONCatalog represents a collection of translations in JSON format.
@@ -210,15 +212,43 @@ func (m *jsonCatalog) UnmarshalJSON(data []byte) error {
 }
 
 func (m jsonCatalog) MarshalJSON() ([]byte, error) {
-	file := make(JSONMessages)
+	messages := make(JSONMessages, len(m.lookupMap))
 
 	for ctx := range m.lookupMap {
-		for msgId := range m.lookupMap[ctx] {
-			file[msgId] = m.lookupMap[ctx][msgId]
+		for key := range m.lookupMap[ctx] {
+			messages[key] = m.lookupMap[ctx][key]
 		}
 	}
 
-	return json.Marshal(file)
+	keys := util.Keys(messages)
+	sort.Strings(keys)
+
+	var buf bytes.Buffer
+	buf.WriteRune('{')
+
+	written := 0
+	for _, k := range keys {
+		if written > 0 {
+			buf.WriteRune(',')
+		}
+		written++
+
+		if data, err := json.Marshal(k); err != nil {
+			return nil, err
+		} else {
+			buf.Write(data)
+			buf.WriteRune(':')
+		}
+
+		if data, err := json.Marshal(messages[k]); err != nil {
+			return nil, err
+		} else {
+			buf.Write(data)
+		}
+	}
+	buf.WriteRune('}')
+
+	return buf.Bytes(), nil
 }
 
 // ApplyPluralCategoriesToJSONMessage removes plural categories that do not belong to the language and
@@ -378,6 +408,7 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 			buf.WriteRune(',')
 		}
 		i++
+
 		key := strings.ToLower(cat.String())
 		buf.WriteString(fmt.Sprintf(`"%s": `, key))
 		if data, err := json.Marshal(value); err != nil {
