@@ -13,7 +13,7 @@ import (
 func TestJsonEncoder_Encode(t *testing.T) {
 	t.Run("return an empty object on invalid input", func(t *testing.T) {
 		buf := &bytes.Buffer{}
-		enc := NewJsonEncoder(buf)
+		enc := NewJSONEncoder(buf)
 
 		for _, input := range []JSONCatalog{nil, NewJSONCatalog(language.English, "")} {
 			buf.Reset()
@@ -54,7 +54,7 @@ func TestJsonEncoder_Encode(t *testing.T) {
 `
 
 		buf := &bytes.Buffer{}
-		err := NewJsonEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(catl)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
