@@ -1,192 +1,40 @@
 package catalog
 
 import (
-	"fmt"
-	"strings"
+	"maps"
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/cldrplural"
-	"github.com/vorlif/spreak/catalog/po"
 	"github.com/vorlif/spreak/catalog/poplural"
-	"github.com/vorlif/spreak/internal/mo"
 )
 
-const poCLDRHeader = "X-spreak-use-CLDR"
-
-type gettextPluralFunction func(n any) (int, error)
-
-type poDecoder struct {
-	useCLDRPlural bool
-}
-
-type moDecoder struct {
-	useCLDRPlural bool
-}
-
-// NewPoDecoder returns a new Decoder for reading po files.
-// If a plural forms header is set, it will be used.
-// Otherwise, the CLDR plural rules are used to set the plural form.
-// If there is no CLDR plural rule, the English plural rules will be used.
-func NewPoDecoder() Decoder { return &poDecoder{} }
-
-// NewPoCLDRDecoder creates a decoder for reading po files,
-// which always uses the CLDR plural rules for determining the plural form.
-// If no matching CLDR rule exists, the Po header rule is used. If no header exists,
-// the english plural rules (1 is singular, otherwise plural) are used.
-// Attention: The "Plural-Forms" header inside the Po file is ignored when using the CLDR rules.
-// To ensure optimal compatibility with other applications, care should be taken to ensure that the Po header is compatible with the CLDR rules.
-func NewPoCLDRDecoder() Decoder { return &poDecoder{useCLDRPlural: true} }
-
-// NewMoDecoder returns a new Decoder for reading mo files.
-// If a plural forms header is set, it will be used.
-// Otherwise, the CLDR plural rules are used to set the plural form.
-// If there is no CLDR plural rule, the English plural rules will be used.
-func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
-
-// NewMoCLDRDecoder creates a decoder for reading mo files,
-// which always uses the CLDR plural rules for determining the plural form.
-// If no matching CLDR rule exists, the Mo header rule is used. If no header exists,
-// the english plural rules (1 is singular, otherwise plural) are used.
-// Attention: The "Plural-Forms" header inside the Mo file is ignored when using the CLDR rules.
-// To ensure optimal compatibility with other applications, care should be taken to ensure that the Mo header is compatible with the CLDR rules.
-func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
-
-func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	poFile, errParse := po.Parse(data)
-	if errParse != nil {
-		return nil, errParse
-	}
-
-	// We could check here if the language of the file matches the target language,
-	// but leave it off to make loading more flexible.
-
-	return buildGettextCatalog(poFile, lang, domain, d.useCLDRPlural)
-}
-
-func (d moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	moFile, errParse := mo.ParseBytes(data)
-	if errParse != nil {
-		return nil, errParse
-	}
-
-	// We could check here if the language of the file matches the target language,
-	// but leave it off to make loading more flexible.
-
-	return buildGettextCatalog(moFile, lang, domain, d.useCLDRPlural)
-}
-
-func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLDRPlural bool) (Catalog, error) {
-	messages := make(messageLookupMap, len(file.Messages))
-
-	for ctx := range file.Messages {
-		if len(file.Messages[ctx]) == 0 {
-			continue
-		}
-
-		if _, hasContext := messages[ctx]; !hasContext {
-			messages[ctx] = make(map[string]*gettextMessage)
-		}
-
-		for msgID, poMsg := range file.Messages[ctx] {
-			if msgID == "" {
-				continue
-			}
-
-			d := &gettextMessage{
-				Context:      poMsg.Context,
-				ID:           poMsg.ID,
-				IDPlural:     poMsg.IDPlural,
-				Translations: poMsg.Str,
-			}
-
-			messages[poMsg.Context][poMsg.ID] = d
-		}
-	}
-
-	catl := &gettextCatalog{
-		language: lang,
-		messages: messages,
-	}
-
-	if useCLDRPlural {
-		catl.pluralFunc = getCLDRPluralFunction(lang)
-		return catl, nil
-	}
-
-	if file.Header != nil {
-		if val := file.Header.Get(poCLDRHeader); strings.ToLower(val) == "true" {
-			catl.pluralFunc = getCLDRPluralFunction(lang)
-			return catl, nil
-		}
-
-		if file.Header.PluralForms != "" {
-			rule, err := poplural.Parse(file.Header.PluralForms)
-			if err != nil {
-				return nil, fmt.Errorf("spreak.Decoder: plural rule for po file %v#%v could not be parsed: %w", lang, domain, err)
-			}
-			catl.pluralFunc = rule.Evaluate
-			return catl, nil
-		}
-	}
-
-	catl.pluralFunc = getCLDRPluralFunction(lang)
-	return catl, nil
-}
-
-func getCLDRPluralFunction(lang language.Tag) func(a any) (int, error) {
-	ruleSet, _ := cldrplural.ForLanguage(lang)
-
-	catToForm := make(map[cldrplural.Category]int, len(ruleSet.Categories))
-	for idx, cat := range ruleSet.Categories {
-		catToForm[cat] = idx
-	}
-
-	return func(a any) (int, error) {
-		cat, err := ruleSet.Evaluate(a)
-		if err != nil {
-			return 0, err
-		}
-
-		if form, ok := catToForm[cat]; ok {
-			return form, nil
-		}
-
-		return 0, nil
-	}
-}
-
-type gettextCatalog struct {
-	language language.Tag
-
-	messages   messageLookupMap
-	pluralFunc gettextPluralFunction
-	domain     string
-}
-
-type gettextMessage struct {
-	Context      string
-	ID           string
-	IDPlural     string
-	Translations map[int]string
-}
-
-// Map for a quick lookup of messages.
+// PoLookupMap is a map for a quick lookup of messages.
 // First key is the context and second the MsgID (e.g. lookup["context"]["hello"]).
-type messageLookupMap map[string]map[string]*gettextMessage
+type PoLookupMap map[string]map[string]*GettextMessage
 
-var _ Catalog = (*gettextCatalog)(nil)
+type GettextCatalog struct {
+	// Language to which this catalog belongs.
+	language language.Tag
+	// Domain to which this catalog belongs.
+	domain string
+	// pluralFunc is function for determining the plural form for any number.
+	pluralFunc poplural.PluralFunc
+	// Map for quick access to the translations.
+	lookupMap PoLookupMap
+}
 
-func (c *gettextCatalog) Lookup(ctx, msgID string) (string, error) {
+var _ Catalog = (*GettextCatalog)(nil)
+
+func (c *GettextCatalog) Lookup(ctx, msgID string) (string, error) {
 	msg, err := c.getMessage(ctx, msgID, 0)
 	if err != nil {
 		return msgID, err
 	}
 
-	return msg.Translations[0], nil
+	return msg.translations[0], nil
 }
 
-func (c *gettextCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
+func (c *GettextCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
 	idx, errPlural := c.pluralFunc(n)
 	if errPlural != nil {
 		return msgID, errPlural
@@ -196,24 +44,59 @@ func (c *gettextCatalog) LookupPlural(ctx, msgID string, n any) (string, error) 
 		return msgID, err
 	}
 
-	return msg.Translations[idx], nil
+	return msg.translations[idx], nil
 }
 
-func (c *gettextCatalog) Language() language.Tag { return c.language }
+// Domain returns the domain to which this catalog belongs.
+func (c GettextCatalog) Domain() string { return c.domain }
 
-func (c *gettextCatalog) getMessage(ctx, msgID string, idx int) (*gettextMessage, error) {
-	if _, hasCtx := c.messages[ctx]; !hasCtx {
+// Language returns the language to which this catalog belongs.
+func (c GettextCatalog) Language() language.Tag { return c.language }
+
+// Messages returns a deep copy of the messages that belong to this catalog.
+// The messages are returned as a nested map, with the first map containing the context
+// and the second map containing the message ID.
+// Access is therefore via message["context"]["msgId"].
+func (c *GettextCatalog) Messages() PoLookupMap {
+	cpy := make(PoLookupMap, len(c.lookupMap))
+	for ctx := range c.lookupMap {
+		cpy[ctx] = make(map[string]*GettextMessage, len(c.lookupMap[ctx]))
+
+		for msgId := range c.lookupMap[ctx] {
+			msg := cpy[ctx][msgId]
+			cpy[ctx][msgId] = msg.Clone()
+		}
+	}
+	return cpy
+}
+
+func (c *GettextCatalog) getMessage(ctx, msgID string, idx int) (*GettextMessage, error) {
+	if _, hasCtx := c.lookupMap[ctx]; !hasCtx {
 		return nil, NewErrMissingContext(c.language, c.domain, ctx)
 	}
 
-	if _, hasMsg := c.messages[ctx][msgID]; !hasMsg {
+	if _, hasMsg := c.lookupMap[ctx][msgID]; !hasMsg {
 		return nil, NewErrMissingMessageID(c.language, c.domain, ctx, msgID)
 	}
 
-	msg := c.messages[ctx][msgID]
-	if tr, hasTranslation := msg.Translations[idx]; !hasTranslation || tr == "" {
+	msg := c.lookupMap[ctx][msgID]
+	if tr, hasTranslation := msg.translations[idx]; !hasTranslation || tr == "" {
 		return nil, NewErrMissingTranslation(c.language, c.domain, ctx, msgID, idx)
 	}
 
 	return msg, nil
+}
+
+type GettextMessage struct {
+	translations map[int]string
+}
+
+// Translations returns a depth copy of the translations.
+// The structure is returned as a map, with the key addressing the plural form.
+// If there is no plural form, the map contains only one item for 0.
+func (m GettextMessage) Translations() map[int]string { return maps.Clone(m.translations) }
+
+// Clone creates a deep copy of the message.
+func (m GettextMessage) Clone() *GettextMessage {
+	return &GettextMessage{translations: maps.Clone(m.translations)}
 }

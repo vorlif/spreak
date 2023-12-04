@@ -1,6 +1,9 @@
 cover.out
 coverage.html
 
+catalog/cldrplural/generator/plurals.json
+catalog/poplural/generator/plurals.json
+
 # IDE paths
 .project
 .settings
