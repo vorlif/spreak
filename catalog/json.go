@@ -1,6 +1,7 @@
 package catalog
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -318,6 +319,15 @@ func (m *JSONMessage) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+var categories = []cldrplural.Category{
+	cldrplural.Zero,
+	cldrplural.One,
+	cldrplural.Two,
+	cldrplural.Few,
+	cldrplural.Many,
+	cldrplural.Other,
+}
+
 func (m JSONMessage) MarshalJSON() ([]byte, error) {
 	if m.Translations == nil {
 		m.Translations = make(map[cldrplural.Category]string)
@@ -334,18 +344,49 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 		return json.Marshal(other)
 	}
 
-	mm := make(map[string]string, len(m.Translations))
+	var buf bytes.Buffer
+	buf.WriteRune('{')
 	if m.Comment != "" {
-		mm["comment"] = m.Comment
+		buf.WriteString(`"comment": `)
+		if data, err := json.Marshal(m.Comment); err != nil {
+			return nil, err
+		} else {
+			buf.Write(data)
+			buf.WriteRune(',')
+		}
+
 	}
+
 	if m.Context != "" {
-		mm["context"] = m.Context
+		buf.WriteString(`"context": `)
+		if data, err := json.Marshal(m.Context); err != nil {
+			return nil, err
+		} else {
+			buf.Write(data)
+			buf.WriteRune(',')
+		}
 	}
 
-	for cat, value := range m.Translations {
+	i := 0
+	for _, cat := range categories {
+		value, ok := m.Translations[cat]
+		if !ok {
+			continue
+		}
+
+		if i > 0 {
+			buf.WriteRune(',')
+		}
+		i++
 		key := strings.ToLower(cat.String())
-		mm[key] = value
+		buf.WriteString(fmt.Sprintf(`"%s": `, key))
+		if data, err := json.Marshal(value); err != nil {
+			return nil, err
+		} else {
+			buf.Write(data)
+		}
 	}
 
-	return json.Marshal(mm)
+	buf.WriteRune('}')
+	return buf.Bytes(), nil
 }

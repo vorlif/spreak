@@ -82,6 +82,59 @@ func TestJsonMessage_MarshalJSON(t *testing.T) {
 }`
 		assert.JSONEq(t, want, string(res))
 	})
+
+	t.Run("Marshals multiple values", func(t *testing.T) {
+		msg := JSONMessage{
+			Translations: map[cldrplural.Category]string{
+				cldrplural.Zero:  "zero",
+				cldrplural.Few:   "few",
+				cldrplural.Other: "other",
+			},
+		}
+		res, err := json.Marshal(msg)
+		require.NoError(t, err)
+		want := `{
+	"zero": "zero",
+	"few": "few",
+	"other":"other"
+}`
+		assert.JSONEq(t, want, string(res))
+	})
+
+	t.Run("Marshals with context", func(t *testing.T) {
+		msg := JSONMessage{
+			Context: "ctx",
+			Translations: map[cldrplural.Category]string{
+				cldrplural.Zero:  "zero",
+				cldrplural.Few:   "few",
+				cldrplural.Other: "other",
+			},
+		}
+		res, err := json.Marshal(msg)
+		require.NoError(t, err)
+		want := `{
+    "context": "ctx"
+	"zero": "zero",
+	"few": "few",
+	"other":"other"
+}`
+		assert.JSONEq(t, want, string(res))
+	})
+
+	t.Run("Marshals valid json", func(t *testing.T) {
+		msg := JSONMessage{Context: "ctx"}
+		res, err := json.Marshal(msg)
+		require.NoError(t, err)
+		want := `{"context": "ctx", "other": ""}`
+		assert.JSONEq(t, want, string(res))
+
+		msg.Context = ""
+		msg.Comment = "Test comment"
+		res, err = json.Marshal(msg)
+		require.NoError(t, err)
+		want = `{"comment": "Test comment", "other": ""}`
+		assert.JSONEq(t, want, string(res))
+	})
 }
 
 func TestJSONCatalog(t *testing.T) {
@@ -158,7 +211,7 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 		res := `{"car": "Car"}`
 
 		buf := &bytes.Buffer{}
-		err := NewJsonEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(catl)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
@@ -174,7 +227,7 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 
 		res := `{"car_ctx": {"context": "ctx","other": "Car"}}`
 		buf := &bytes.Buffer{}
-		err := NewJsonEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(catl)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
@@ -190,7 +243,7 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 
 		res := `{"car": {"one": "Car","other": "Cars"}}`
 		buf := &bytes.Buffer{}
-		err := NewJsonEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(catl)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})

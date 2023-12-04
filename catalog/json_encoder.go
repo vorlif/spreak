@@ -10,8 +10,8 @@ type JsonEncoder struct {
 	w io.Writer
 }
 
-// NewJsonEncoder returns a new encoder that writes a JSON catalog to w.
-func NewJsonEncoder(w io.Writer) *JsonEncoder { return &JsonEncoder{w: w} }
+// NewJSONEncoder returns a new encoder that writes a JSON catalog to w.
+func NewJSONEncoder(w io.Writer) *JsonEncoder { return &JsonEncoder{w: w} }
 
 // Encode converts a JSON messages map into the content of a JSON catalog file.
 //
