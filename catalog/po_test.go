@@ -198,3 +198,15 @@ func TestGetCLDRPluralFunction(t *testing.T) {
 		assert.Equal(t, test.output, form)
 	}
 }
+
+func TestGettextMessage_Translations(t *testing.T) {
+	msg := GettextMessage{
+		translations: map[int]string{0: "Car", 1: "Cars"},
+	}
+
+	cpy := msg.Translations()
+	assert.Equal(t, msg.translations, cpy)
+	cpy[0] = "Auto"
+	cpy[1] = "Autos"
+	assert.NotEqual(t, msg.translations, cpy)
+}
