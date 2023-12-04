@@ -113,7 +113,7 @@ func TestJsonMessage_MarshalJSON(t *testing.T) {
 		res, err := json.Marshal(msg)
 		require.NoError(t, err)
 		want := `{
-    "context": "ctx",
+	"context": "ctx",
 	"zero": "zero",
 	"few": "few",
 	"other":"other"
@@ -131,7 +131,7 @@ func TestJsonMessage_MarshalJSON(t *testing.T) {
 		res, err := json.Marshal(msg)
 		require.NoError(t, err)
 		want := `{
-    "one": "one",
+	"one": "one",
 	"other":"other"
 }`
 		assert.JSONEq(t, want, string(res))
