@@ -17,7 +17,7 @@ import (
 )
 
 func main() {
-	rules := append(readJsonRules(), getExtraRules()...)
+	rules := append(readJSONRules(), getExtraRules()...)
 
 	for _, r := range rules {
 		sort.Strings(r.Languages)

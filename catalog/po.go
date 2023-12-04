@@ -62,9 +62,9 @@ func (c *GettextCatalog) Messages() PoLookupMap {
 	for ctx := range c.lookupMap {
 		cpy[ctx] = make(map[string]*GettextMessage, len(c.lookupMap[ctx]))
 
-		for msgId := range c.lookupMap[ctx] {
-			msg := cpy[ctx][msgId]
-			cpy[ctx][msgId] = msg.Clone()
+		for msgID := range c.lookupMap[ctx] {
+			msg := cpy[ctx][msgID]
+			cpy[ctx][msgID] = msg.Clone()
 		}
 	}
 	return cpy

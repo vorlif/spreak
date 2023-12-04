@@ -186,8 +186,8 @@ func (m jsonCatalog) setMessage(key string, srcMsg *JSONMessage) error {
 }
 
 // Auxiliary method for tests.
-func (m *jsonCatalog) mustSetMessage(msgId string, srcMsg *JSONMessage) {
-	if err := m.setMessage(msgId, srcMsg); err != nil {
+func (m *jsonCatalog) mustSetMessage(msgID string, srcMsg *JSONMessage) {
+	if err := m.setMessage(msgID, srcMsg); err != nil {
 		panic(err)
 	}
 }
@@ -202,8 +202,8 @@ func (m *jsonCatalog) UnmarshalJSON(data []byte) error {
 		return errors.New("spreak: File contains no translations")
 	}
 
-	for msgId, msg := range file {
-		if err := m.setMessage(msgId, msg); err != nil {
+	for msgID, msg := range file {
+		if err := m.setMessage(msgID, msg); err != nil {
 			return err
 		}
 	}
@@ -226,25 +226,23 @@ func (m jsonCatalog) MarshalJSON() ([]byte, error) {
 	var buf bytes.Buffer
 	buf.WriteRune('{')
 
-	written := 0
-	for _, k := range keys {
-		if written > 0 {
+	for i, k := range keys {
+		if i > 0 {
 			buf.WriteRune(',')
 		}
-		written++
 
-		if data, err := json.Marshal(k); err != nil {
+		data, err := json.Marshal(k)
+		if err != nil {
 			return nil, err
-		} else {
-			buf.Write(data)
-			buf.WriteRune(':')
 		}
+		buf.Write(data)
+		buf.WriteRune(':')
 
-		if data, err := json.Marshal(messages[k]); err != nil {
+		data, err = json.Marshal(messages[k])
+		if err != nil {
 			return nil, err
-		} else {
-			buf.Write(data)
 		}
+		buf.Write(data)
 	}
 	buf.WriteRune('}')
 
@@ -378,23 +376,22 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 	buf.WriteRune('{')
 	if m.Comment != "" {
 		buf.WriteString(`"comment": `)
-		if data, err := json.Marshal(m.Comment); err != nil {
+		data, err := json.Marshal(m.Comment)
+		if err != nil {
 			return nil, err
-		} else {
-			buf.Write(data)
-			buf.WriteRune(',')
 		}
-
+		buf.Write(data)
+		buf.WriteRune(',')
 	}
 
 	if m.Context != "" {
 		buf.WriteString(`"context": `)
-		if data, err := json.Marshal(m.Context); err != nil {
+		data, err := json.Marshal(m.Context)
+		if err != nil {
 			return nil, err
-		} else {
-			buf.Write(data)
-			buf.WriteRune(',')
 		}
+		buf.Write(data)
+		buf.WriteRune(',')
 	}
 
 	i := 0
@@ -411,11 +408,11 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 
 		key := strings.ToLower(cat.String())
 		buf.WriteString(fmt.Sprintf(`"%s": `, key))
-		if data, err := json.Marshal(value); err != nil {
+		data, err := json.Marshal(value)
+		if err != nil {
 			return nil, err
-		} else {
-			buf.Write(data)
 		}
+		buf.Write(data)
 	}
 
 	buf.WriteRune('}')
