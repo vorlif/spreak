@@ -113,9 +113,25 @@ func TestJsonMessage_MarshalJSON(t *testing.T) {
 		res, err := json.Marshal(msg)
 		require.NoError(t, err)
 		want := `{
-    "context": "ctx"
+    "context": "ctx",
 	"zero": "zero",
 	"few": "few",
+	"other":"other"
+}`
+		assert.JSONEq(t, want, string(res))
+	})
+
+	t.Run("Marshals one", func(t *testing.T) {
+		msg := JSONMessage{
+			Translations: map[cldrplural.Category]string{
+				cldrplural.One:   "one",
+				cldrplural.Other: "other",
+			},
+		}
+		res, err := json.Marshal(msg)
+		require.NoError(t, err)
+		want := `{
+    "one": "one",
 	"other":"other"
 }`
 		assert.JSONEq(t, want, string(res))
