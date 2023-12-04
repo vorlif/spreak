@@ -7,6 +7,16 @@ import (
 	"github.com/vorlif/spreak/catalog/poplural/ast"
 )
 
+func newRuleData(rawRule string) *ruleData {
+	parsed := ast.MustParse(rawRule)
+	return &ruleData{
+		Raw:         rawRule,
+		Compiled:    compileForms(parsed),
+		CompiledRaw: ast.CompileToString(parsed),
+		Count:       parsed.NPlurals,
+	}
+}
+
 func compileForms(forms *ast.Forms) string {
 	if forms.NPlurals <= 1 {
 		return "return 0"

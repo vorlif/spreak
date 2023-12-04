@@ -13,7 +13,7 @@ import (
 
 func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant(t *testing.T) {
 	for _, lang := range []string{"bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "vi", "wo", "yo", "yue", "zh", "zh_Hans", "zh_Hant"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "100", "1000", "10000", "100000", "1000000"} {
@@ -27,7 +27,7 @@ func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToT
 
 func TestBuiltinAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScScnSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi(t *testing.T) {
 	for _, lang := range []string{"af", "an", "asa", "ast", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "da", "de", "de_AT", "de_CH", "dv", "ee", "el", "en", "en_AU", "en_CA", "en_GB", "en_US", "eo", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gsw", "ha", "haw", "hu", "ia", "io", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "lij", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nl", "nl_BE", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sc", "scn", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "sv", "sw", "sw_CD", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "ur", "uz", "ve", "vo", "vun", "wae", "xh", "xog", "yi"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -47,7 +47,7 @@ func TestBuiltinAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AU
 
 func TestBuiltinAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu(t *testing.T) {
 	for _, lang := range []string{"ak", "am", "as", "bho", "bn", "doi", "fa", "fa_AF", "ff", "gu", "guw", "hi", "hi_Latn", "hy", "kab", "kn", "ln", "mg", "nso", "pa", "pcm", "si", "ti", "wa", "zu"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1"} {
@@ -67,7 +67,7 @@ func TestBuiltinAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu
 
 func TestBuiltinCebFilTl(t *testing.T) {
 	for _, lang := range []string{"ceb", "fil", "tl"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1", "2", "3", "5", "7", "8", "10", "11", "12", "13", "15", "17", "18", "20", "21", "100", "1000", "10000", "100000", "1000000"} {
@@ -87,7 +87,7 @@ func TestBuiltinCebFilTl(t *testing.T) {
 
 func TestBuiltinIsMk(t *testing.T) {
 	for _, lang := range []string{"is", "mk"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
@@ -107,7 +107,7 @@ func TestBuiltinIsMk(t *testing.T) {
 
 func TestBuiltinTzm(t *testing.T) {
 	for _, lang := range []string{"tzm"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"} {
@@ -127,7 +127,7 @@ func TestBuiltinTzm(t *testing.T) {
 
 func TestBuiltinBeBsHrRuShSrSr_MEUk(t *testing.T) {
 	for _, lang := range []string{"be", "bs", "hr", "ru", "sh", "sr", "sr_ME", "uk"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
@@ -153,7 +153,7 @@ func TestBuiltinBeBsHrRuShSrSr_MEUk(t *testing.T) {
 
 func TestBuiltinCaEsEs_419Es_ESEs_MXItPt_PTVec(t *testing.T) {
 	for _, lang := range []string{"ca", "es", "es_419", "es_ES", "es_MX", "it", "pt_PT", "vec"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -179,7 +179,7 @@ func TestBuiltinCaEsEs_419Es_ESEs_MXItPt_PTVec(t *testing.T) {
 
 func TestBuiltinCsSk(t *testing.T) {
 	for _, lang := range []string{"cs", "sk"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -205,7 +205,7 @@ func TestBuiltinCsSk(t *testing.T) {
 
 func TestBuiltinFrFr_CAFr_CHPtPt_BR(t *testing.T) {
 	for _, lang := range []string{"fr", "fr_CA", "fr_CH", "pt", "pt_BR"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1"} {
@@ -231,7 +231,7 @@ func TestBuiltinFrFr_CAFr_CHPtPt_BR(t *testing.T) {
 
 func TestBuiltinHeIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 	for _, lang := range []string{"he", "iu", "naq", "sat", "se", "sma", "smi", "smj", "smn", "sms"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -257,7 +257,7 @@ func TestBuiltinHeIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 
 func TestBuiltinKshLag(t *testing.T) {
 	for _, lang := range []string{"ksh", "lag"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0"} {
@@ -283,7 +283,7 @@ func TestBuiltinKshLag(t *testing.T) {
 
 func TestBuiltinLt(t *testing.T) {
 	for _, lang := range []string{"lt"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
@@ -309,7 +309,7 @@ func TestBuiltinLt(t *testing.T) {
 
 func TestBuiltinLvPrg(t *testing.T) {
 	for _, lang := range []string{"lv", "prg"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000"} {
@@ -335,7 +335,7 @@ func TestBuiltinLvPrg(t *testing.T) {
 
 func TestBuiltinMoRoRo_MD(t *testing.T) {
 	for _, lang := range []string{"mo", "ro", "ro_MD"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -361,7 +361,7 @@ func TestBuiltinMoRoRo_MD(t *testing.T) {
 
 func TestBuiltinPl(t *testing.T) {
 	for _, lang := range []string{"pl"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -387,7 +387,7 @@ func TestBuiltinPl(t *testing.T) {
 
 func TestBuiltinShi(t *testing.T) {
 	for _, lang := range []string{"shi"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0", "1"} {
@@ -413,7 +413,7 @@ func TestBuiltinShi(t *testing.T) {
 
 func TestBuiltinDsbHsbSl(t *testing.T) {
 	for _, lang := range []string{"dsb", "hsb", "sl"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001"} {
@@ -445,7 +445,7 @@ func TestBuiltinDsbHsbSl(t *testing.T) {
 
 func TestBuiltinGd(t *testing.T) {
 	for _, lang := range []string{"gd"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "11"} {
@@ -477,7 +477,7 @@ func TestBuiltinGd(t *testing.T) {
 
 func TestBuiltinGv(t *testing.T) {
 	for _, lang := range []string{"gv"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "11", "21", "31", "41", "51", "61", "71", "101", "1001"} {
@@ -509,7 +509,7 @@ func TestBuiltinGv(t *testing.T) {
 
 func TestBuiltinBr(t *testing.T) {
 	for _, lang := range []string{"br"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1", "21", "31", "41", "51", "61", "81", "101", "1001"} {
@@ -547,7 +547,7 @@ func TestBuiltinBr(t *testing.T) {
 
 func TestBuiltinGa(t *testing.T) {
 	for _, lang := range []string{"ga"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -585,7 +585,7 @@ func TestBuiltinGa(t *testing.T) {
 
 func TestBuiltinMt(t *testing.T) {
 	for _, lang := range []string{"mt"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"1"} {
@@ -623,7 +623,7 @@ func TestBuiltinMt(t *testing.T) {
 
 func TestBuiltinArAr_001Ars(t *testing.T) {
 	for _, lang := range []string{"ar", "ar_001", "ars"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0"} {
@@ -667,7 +667,7 @@ func TestBuiltinArAr_001Ars(t *testing.T) {
 
 func TestBuiltinCy(t *testing.T) {
 	for _, lang := range []string{"cy"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0"} {
@@ -711,7 +711,7 @@ func TestBuiltinCy(t *testing.T) {
 
 func TestBuiltinKw(t *testing.T) {
 	for _, lang := range []string{"kw"} {
-		rule := forLanguage(language.MustParse(lang).String())
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
 		for _, example := range []string{"0"} {
