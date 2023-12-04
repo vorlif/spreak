@@ -6,7 +6,7 @@ import (
 	"slices"
 )
 
-func forLanguage(lang string) *RuleSet {
+func getBuiltInForLanguage(lang string) *RuleSet {
 	switch lang {
 	case "bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "und", "vi", "wo", "yo", "yue", "zh":
 		return newRuleSetBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiUndViWoYoYueZh()

@@ -29,7 +29,7 @@ func TestForLanguage(t *testing.T) {
 		require.False(t, found)
 		require.NotNil(t, forms)
 
-		fallbackForm := forLanguage(language.English.String())
+		fallbackForm := getBuiltInForLanguage(fallbackLanguage)
 		require.NotNil(t, fallbackForm)
 		assert.Equal(t, getFuncName(fallbackForm), getFuncName(forms))
 	})
@@ -54,7 +54,7 @@ func TestForLanguage(t *testing.T) {
 			t.Run(tt, func(t *testing.T) {
 				lang := language.MustParse(tt)
 				got, gotFound := ForLanguage(lang)
-				forms := forLanguage(lang.String())
+				forms := getBuiltInForLanguage(lang.String())
 				assert.Equalf(t, getFuncName(forms), getFuncName(got), "ForLanguage(%v)", lang)
 				assert.True(t, gotFound, "ForLanguage(%v)", lang)
 			})
@@ -74,7 +74,7 @@ func TestForLanguage(t *testing.T) {
 			t.Run(tt.langName, func(t *testing.T) {
 				lang := language.MustParse(tt.langName)
 				got, gotFound := ForLanguage(lang)
-				forms := forLanguage(lang.String())
+				forms := getBuiltInForLanguage(lang.String())
 				assert.Equalf(t, getFuncName(forms), getFuncName(got), "ForLanguage(%v)", lang)
 				assert.True(t, gotFound, "ForLanguage(%v)", lang)
 			})

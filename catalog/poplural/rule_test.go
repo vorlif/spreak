@@ -37,7 +37,7 @@ func TestWithFixtures(t *testing.T) {
 
 			require.NotNil(t, formFunc)
 
-			builtInRule := forRawRule(ast.CompileToString(parsed))
+			builtInRule := getBuiltInForRawRule(ast.CompileToString(parsed))
 			require.NotNil(t, builtInRule, data.PluralForm)
 			require.NotNil(t, builtInRule.FormFunc)
 

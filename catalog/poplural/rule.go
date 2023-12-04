@@ -51,7 +51,7 @@ func Parse(raw string) (*Rule, error) {
 
 	// Use of built-in functions, if available
 	compiledRaw := ast.CompileToString(parsed)
-	if rule := forRawRule(compiledRaw); rule != nil {
+	if rule := getBuiltInForRawRule(compiledRaw); rule != nil {
 		return rule, nil
 	}
 

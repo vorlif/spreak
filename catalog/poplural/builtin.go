@@ -4,8 +4,8 @@ import (
 	"golang.org/x/text/language"
 )
 
-// Plural rule for english texts.
-const fallbackRule = "nplurals=2; plural=n != 1;"
+// Language that is used for the rule if no rule can be found for a language.
+var fallbackLanguage = "en"
 
 // PluralFunc is a function that returns the appropriate plural form for a value.
 type PluralFunc = func(a any) (int, error)
@@ -21,19 +21,19 @@ func ForLanguage(lang language.Tag) (PluralFunc, bool) {
 func pluralRuleForLanguage(lang language.Tag) (*Rule, bool) {
 	n := lang
 	for !n.IsRoot() {
-		if form := forLanguage(n.String()); form != nil {
-			return form, true
+		if rule := getBuiltInForLanguage(n.String()); rule != nil {
+			return rule, true
 		}
 
 		base, confidence := n.Base()
 		if confidence >= language.High {
-			if form := forLanguage(base.String()); form != nil {
-				return form, true
+			if rule := getBuiltInForLanguage(base.String()); rule != nil {
+				return rule, true
 			}
 		}
 
 		n = n.Parent()
 	}
 
-	return forRawRule(fallbackRule), false
+	return getBuiltInForLanguage(fallbackLanguage), false
 }

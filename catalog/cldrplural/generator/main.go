@@ -127,7 +127,7 @@ import (
 	"slices"
 )
 
-func forLanguage(lang string) *RuleSet {
+func getBuiltInForLanguage(lang string) *RuleSet {
 	switch lang {
 	{{- range $key, $data := .}}
 	case {{CaseExpression $data.Languages}}:
@@ -176,7 +176,7 @@ import (
 {{range $key, $data := .}}
 func TestBuiltin{{$data.Name}}(t *testing.T) {
 	for _, lang := range {{printf "%#v" $data.Languages}} {
-		set := forLanguage(language.MustParse(lang).String())
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 		{{range $data.Rules}}
 			{{$samples := ExtractSamples .Raw}}

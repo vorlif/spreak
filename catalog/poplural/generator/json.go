@@ -14,7 +14,7 @@ import (
 
 var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))
 
-func getJSONRules() []*ruleData {
+func readJsonRules() []*ruleData {
 	data, err := os.ReadFile(pluralsFilePath)
 	checkError(err)
 
