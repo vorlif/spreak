@@ -69,7 +69,7 @@ type FilesystemLoader struct {
 
 var _ Loader = (*FilesystemLoader)(nil)
 
-// NewFilesystemLoader creates a new FileSystemLoader.
+// NewFilesystemLoader creates a new FilesystemLoader.
 // If no file system was stored during the creation, an error is returned.
 // If no decoder has been stored, the Po and Mo decoders are automatically used.
 // Otherwise, only the stored decoders are used.
@@ -208,7 +208,7 @@ func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 // Shorthand for WithDecoder(".mo", catalog.NewMoDecoder()).
 func WithMoDecoder() FsOption { return WithDecoder(".mo", catalog.NewMoDecoder()) }
 
-// WithPoDecoder stores the mo file decoder.
+// WithPoDecoder stores the po file decoder.
 //
 // Shorthand for WithDecoder(".po", catalog.NewPoDecoder()).
 func WithPoDecoder() FsOption { return WithDecoder(".po", catalog.NewPoDecoder()) }

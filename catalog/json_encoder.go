@@ -16,7 +16,6 @@ func NewJSONEncoder(w io.Writer) *JSONEncoder { return &JSONEncoder{w: w} }
 // Encode converts a JSON messages map into the content of a JSON catalog file.
 //
 // If nil or an empty map is passed, an empty JSON object is written.
-// If the map contains an empty message ID, an error ist returned.
 func (enc JSONEncoder) Encode(catl JSONCatalog) error {
 	if catl == nil {
 		_, err := enc.w.Write([]byte("{}"))
