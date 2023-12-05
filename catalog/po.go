@@ -12,6 +12,10 @@ import (
 // First key is the context and second the MsgID (e.g. lookup["context"]["hello"]).
 type PoLookupMap map[string]map[string]*GettextMessage
 
+// GettextCatalog is an abstract representation of a Mo or Po file.
+//
+// The catalog only contains the fields that are required for the Lookup function.
+// Other information such as comments or flags are discarded.
 type GettextCatalog struct {
 	// Language to which this catalog belongs.
 	language language.Tag
@@ -87,6 +91,9 @@ func (c *GettextCatalog) getMessage(ctx, msgID string, idx int) (*GettextMessage
 	return msg, nil
 }
 
+// GettextMessage is representation of a message from a Mo or Po file.
+// The message only contains the fields that are required for the lookup function.
+// Other information such as comments or flags are discarded.
 type GettextMessage struct {
 	translations map[int]string
 }

@@ -12,9 +12,6 @@ type JSONDecoder struct{}
 var _ Decoder = (*JSONDecoder)(nil)
 
 // NewJSONDecoder returns a new Decoder for reading JSON catalog files.
-// The structure follows a key-value structure, where the key is either an ID or the singular text of the source language.
-// For singular-only texts, the value is a string with a translation.
-// For plural texts it is an object with the CLDR plural forms and the matching translations.
 func NewJSONDecoder() *JSONDecoder { return &JSONDecoder{} }
 
 func (JSONDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {

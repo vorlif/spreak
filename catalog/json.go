@@ -88,8 +88,8 @@ func NewJSONCatalogWithMessages(lang language.Tag, domain string, messages JSONM
 	return catl, nil
 }
 
-func (m *jsonCatalog) Lookup(ctx, msgID string) (string, error) {
-	tr, err := m.getTranslation(ctx, msgID, cldrplural.Other)
+func (c *jsonCatalog) Lookup(ctx, msgID string) (string, error) {
+	tr, err := c.getTranslation(ctx, msgID, cldrplural.Other)
 	if err != nil {
 		return msgID, err
 	}
@@ -97,12 +97,12 @@ func (m *jsonCatalog) Lookup(ctx, msgID string) (string, error) {
 	return tr, nil
 }
 
-func (m *jsonCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
-	cat, errEv := m.pluralSet.Evaluate(n)
+func (c *jsonCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
+	cat, errEv := c.pluralSet.Evaluate(n)
 	if errEv != nil {
 		return msgID, errEv
 	}
-	tr, err := m.getTranslation(ctx, msgID, cat)
+	tr, err := c.getTranslation(ctx, msgID, cat)
 	if err != nil {
 		return msgID, err
 	}
@@ -117,7 +117,7 @@ func (c jsonCatalog) Domain() string { return c.domain }
 func (c jsonCatalog) Language() language.Tag { return c.language }
 
 // Messages returns a deep copy of the messages that belong to this catalog.
-func (c *jsonCatalog) Messages() JSONMessages {
+func (c jsonCatalog) Messages() JSONMessages {
 	cpy := make(JSONMessages, len(c.lookupMap))
 
 	for ctx := range c.lookupMap {
@@ -129,22 +129,22 @@ func (c *jsonCatalog) Messages() JSONMessages {
 	return cpy
 }
 
-func (m *jsonCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (string, error) {
+func (c *jsonCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (string, error) {
 	if ctx != "" {
 		key += "_" + ctx
 	}
-	if _, hasCtx := m.lookupMap[ctx]; !hasCtx {
-		return "", NewErrMissingContext(m.language, m.domain, ctx)
+	if _, hasCtx := c.lookupMap[ctx]; !hasCtx {
+		return "", NewErrMissingContext(c.language, c.domain, ctx)
 	}
 
-	if _, hasMsg := m.lookupMap[ctx][key]; !hasMsg {
-		return "", NewErrMissingMessageID(m.language, m.domain, ctx, key)
+	if _, hasMsg := c.lookupMap[ctx][key]; !hasMsg {
+		return "", NewErrMissingMessageID(c.language, c.domain, ctx, key)
 	}
 
-	msg := m.lookupMap[ctx][key]
+	msg := c.lookupMap[ctx][key]
 	tr, ok := msg.Translations[cat]
 	if !ok || tr == "" {
-		return "", NewErrMissingTranslation(m.language, m.domain, ctx, key, int(cat))
+		return "", NewErrMissingTranslation(c.language, c.domain, ctx, key, int(cat))
 	}
 
 	return tr, nil
@@ -152,7 +152,7 @@ func (m *jsonCatalog) getTranslation(ctx, key string, cat cldrplural.Category) (
 
 // Auxiliary method, which adds a message to the lookup map.
 // Cannot be made publicly accessible as this would violate the principle of immutability.
-func (m jsonCatalog) setMessage(key string, srcMsg *JSONMessage) error {
+func (c *jsonCatalog) setMessage(key string, srcMsg *JSONMessage) error {
 	if key == "" {
 		return errors.New("spreak: The message key must not be empty")
 	}
@@ -174,25 +174,28 @@ func (m jsonCatalog) setMessage(key string, srcMsg *JSONMessage) error {
 		return fmt.Errorf("spreak: \"%s\" does not have an \"other\" value, but is required", key)
 	}
 
-	applyCategoriesToJSONMessage(m.pluralSet.Categories, msg)
+	applyCategoriesToJSONMessage(c.pluralSet.Categories, msg)
 
 	ctx := msg.Context
-	if _, ok := m.lookupMap[ctx]; !ok {
-		m.lookupMap[ctx] = make(map[string]*JSONMessage)
+	if _, ok := c.lookupMap[ctx]; !ok {
+		c.lookupMap[ctx] = make(map[string]*JSONMessage)
 	}
 
-	m.lookupMap[ctx][key] = msg
+	c.lookupMap[ctx][key] = msg
 	return nil
 }
 
 // Auxiliary method for tests.
-func (m *jsonCatalog) mustSetMessage(msgID string, srcMsg *JSONMessage) {
-	if err := m.setMessage(msgID, srcMsg); err != nil {
+func (c *jsonCatalog) mustSetMessage(msgID string, srcMsg *JSONMessage) {
+	if err := c.setMessage(msgID, srcMsg); err != nil {
 		panic(err)
 	}
 }
 
-func (m *jsonCatalog) UnmarshalJSON(data []byte) error {
+// UnmarshalJSON can be used to fill the catalog with messages from a JSON catalog file.
+//
+// The process is not goroutine-safe and should not be performed after the handover to a spreak.Bundle.
+func (c *jsonCatalog) UnmarshalJSON(data []byte) error {
 	file := make(JSONMessages)
 	if err := json.Unmarshal(data, &file); err != nil {
 		return err
@@ -203,7 +206,7 @@ func (m *jsonCatalog) UnmarshalJSON(data []byte) error {
 	}
 
 	for msgID, msg := range file {
-		if err := m.setMessage(msgID, msg); err != nil {
+		if err := c.setMessage(msgID, msg); err != nil {
 			return err
 		}
 	}
@@ -211,12 +214,12 @@ func (m *jsonCatalog) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (m jsonCatalog) MarshalJSON() ([]byte, error) {
-	messages := make(JSONMessages, len(m.lookupMap))
+func (c jsonCatalog) MarshalJSON() ([]byte, error) {
+	messages := make(JSONMessages, len(c.lookupMap))
 
-	for ctx := range m.lookupMap {
-		for key := range m.lookupMap[ctx] {
-			messages[key] = m.lookupMap[ctx][key]
+	for ctx := range c.lookupMap {
+		for key := range c.lookupMap[ctx] {
+			messages[key] = c.lookupMap[ctx][key]
 		}
 	}
 
@@ -347,6 +350,7 @@ func (m *JSONMessage) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+// Defines the order in which the data is to be written.
 var categories = []cldrplural.Category{
 	cldrplural.Zero,
 	cldrplural.One,
@@ -365,32 +369,36 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 		m.Translations[cldrplural.Other] = ""
 	}
 
-	other := m.Translations[cldrplural.Other]
-
 	// If only Other is set, only Other is returned.
 	if m.Comment == "" && m.Context == "" && len(m.Translations) == 1 {
+		other := m.Translations[cldrplural.Other]
 		return json.Marshal(other)
 	}
 
 	var buf bytes.Buffer
+
+	writeKeyValue := func(key string, value any) error {
+		data, err := json.Marshal(value)
+		if err != nil {
+			return err
+		}
+		buf.WriteString(fmt.Sprintf(`"%s": `, key))
+		buf.Write(data)
+		return nil
+	}
+
 	buf.WriteRune('{')
 	if m.Comment != "" {
-		buf.WriteString(`"comment": `)
-		data, err := json.Marshal(m.Comment)
-		if err != nil {
+		if err := writeKeyValue("comment", m.Comment); err != nil {
 			return nil, err
 		}
-		buf.Write(data)
 		buf.WriteRune(',')
 	}
 
 	if m.Context != "" {
-		buf.WriteString(`"context": `)
-		data, err := json.Marshal(m.Context)
-		if err != nil {
+		if err := writeKeyValue("context", m.Context); err != nil {
 			return nil, err
 		}
-		buf.Write(data)
 		buf.WriteRune(',')
 	}
 
@@ -407,12 +415,9 @@ func (m JSONMessage) MarshalJSON() ([]byte, error) {
 		i++
 
 		key := strings.ToLower(cat.String())
-		buf.WriteString(fmt.Sprintf(`"%s": `, key))
-		data, err := json.Marshal(value)
-		if err != nil {
+		if err := writeKeyValue(key, value); err != nil {
 			return nil, err
 		}
-		buf.Write(data)
 	}
 
 	buf.WriteRune('}')
