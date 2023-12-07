@@ -16,7 +16,7 @@
 # Mirco Grillo <mirco.grillomg@gmail.com>, 2018,2020
 # Nicola Larosa <transifex@teknico.net>, 2013
 # palmux <palmux@gmail.com>, 2014-2015,2017,2021
-# Paolo Melchiorre <paolo@melchiorre.org>, 2022
+# Paolo Melchiorre <paolo@melchiorre.org>, 2022-2023
 # Mattia Procopio <promat85@gmail.com>, 2015
 # Riccardo Magliocchetti <riccardo.magliocchetti@gmail.com>, 2017
 # Stefano Brentegani <sbrentegani@gmail.com>, 2014-2017
@@ -24,9 +24,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: Paolo Melchiorre <paolo@melchiorre.org>\n"
+"POT-Creation-Date: 2023-01-17 02:13-0600\n"
+"PO-Revision-Date: 2023-04-25 06:49+0000\n"
+"Last-Translator: Paolo Melchiorre <paolo@melchiorre.org>, 2022-2023\n"
 "Language-Team: Italian (http://www.transifex.com/django/django/language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -38,169 +38,199 @@ msgid "%[1]d byte"
 msgid_plural "%[1]d bytes"
 msgstr[0] "%[1]d byte"
 msgstr[1] "%[1]d bytes"
+msgstr[2] "%[1]d bytes"
 
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
 msgstr[0] "%[1]s miliardo"
 msgstr[1] "%[1]s miliardi"
+msgstr[2] "%[1]s miliardi"
 
 msgid "%[1]s decillion"
 msgid_plural "%[1]s decillion"
 msgstr[0] "%[1]s milione di miliardi di miliardi di miliardi"
 msgstr[1] "%[1]s milioni di miliardi di miliardi di miliardi"
+msgstr[2] "%[1]s milioni di miliardi di miliardi di miliardi"
 
 msgid "%[1]s googol"
 msgid_plural "%[1]s googol"
 msgstr[0] "%[1]s googol"
 msgstr[1] "%[1]s googol"
+msgstr[2] "%[1]s googol"
 
 msgid "%[1]s million"
 msgid_plural "%[1]s million"
 msgstr[0] "%[1]s milione"
 msgstr[1] "%[1]s milioni"
+msgstr[2] "%[1]s milioni"
 
 msgid "%[1]s nonillion"
 msgid_plural "%[1]s nonillion"
 msgstr[0] "%[1]s migliaio di miliardi di miliardi di miliardi"
 msgstr[1] "%[1]s migliaia di miliardi di miliardi di miliardi"
+msgstr[2] "%[1]s migliaia di miliardi di miliardi di miliardi"
 
 msgid "%[1]s octillion"
 msgid_plural "%[1]s octillion"
 msgstr[0] "%[1]s miliardo di miliardi di miliardi"
 msgstr[1] "%[1]s miliardi di miliardi di miliardi"
+msgstr[2] "%[1]s miliardi di miliardi di miliardi"
 
 msgid "%[1]s quadrillion"
 msgid_plural "%[1]s quadrillion"
 msgstr[0] "%[1]s milione di miliardi"
 msgstr[1] "%[1]s milioni di miliardi"
+msgstr[2] "%[1]s milioni di miliardi"
 
 msgid "%[1]s quintillion"
 msgid_plural "%[1]s quintillion"
 msgstr[0] "%[1]s miliardo di miliardi"
 msgstr[1] "%[1]s miliardi di miliardi"
+msgstr[2] "%[1]s miliardi di miliardi"
 
 msgid "%[1]s septillion"
 msgid_plural "%[1]s septillion"
 msgstr[0] "%[1]s milione di miliardi di miliardi"
 msgstr[1] "%[1]s milioni di miliardi di miliardi"
+msgstr[2] "%[1]s milioni di miliardi di miliardi"
 
 msgid "%[1]s sextillion"
 msgid_plural "%[1]s sextillion"
 msgstr[0] "%[1]s migliaio di miliardi di miliardi"
 msgstr[1] "%[1]s migliaia di miliardi di miliardi"
+msgstr[2] "%[1]s migliaia di miliardi di miliardi"
 
 msgid "%[1]s trillion"
 msgid_plural "%[1]s trillion"
 msgstr[0] "%[1]s migliaio di miliardi"
 msgstr[1] "%[1]s migliaia di miliardi"
+msgstr[2] "%[1]s migliaia di miliardi"
 
 msgid "%[1]v ago"
 msgstr "%[1]v fa"
 
+msgctxt "naturaltime-future"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v giorno"
 msgstr[1] "%[1]v giorni"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v giorni"
-msgstr[1] "%[1]v giorni"
+msgstr[2] "%[1]v giorni"
 
 msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v giorno"
 msgstr[1] "%[1]v giorni"
+msgstr[2] "%[1]v giorni"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v giorno"
+msgstr[1] "%[1]v giorni"
+msgstr[2] "%[1]v giorni"
 
 msgid "%[1]v from now"
 msgstr "%[1]v da adesso"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v ora"
-msgstr[1] "%[1]v ore"
-
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v ora"
-msgstr[1] "%[1]v ore"
-
 msgctxt "naturaltime-past"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v ora"
 msgstr[1] "%[1]v ore"
+msgstr[2] "%[1]v ore"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v ora"
+msgstr[1] "%[1]v ore"
+msgstr[2] "%[1]v ore"
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v ora"
+msgstr[1] "%[1]v ore"
+msgstr[2] "%[1]v ore"
 
 msgctxt "naturaltime-past"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v minuto"
 msgstr[1] "%[1]v minuti"
-
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minuto"
-msgstr[1] "%[1]v minuti"
+msgstr[2] "%[1]v minuti"
 
 msgctxt "naturaltime-future"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v minuto"
 msgstr[1] "%[1]v minuti"
+msgstr[2] "%[1]v minuti"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minuto"
+msgstr[1] "%[1]v minuti"
+msgstr[2] "%[1]v minuti"
 
 msgctxt "naturaltime-future"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v mese"
 msgstr[1] "%[1]v mesi"
+msgstr[2] "%[1]v mesi"
 
 msgctxt "naturaltime-past"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v mese"
 msgstr[1] "%[1]v mesi"
+msgstr[2] "%[1]v mesi"
 
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v mese"
 msgstr[1] "%[1]v mesi"
+msgstr[2] "%[1]v mesi"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v settimana"
+msgstr[1] "%[1]v settimane"
+msgstr[2] "%[1]v settimane"
 
 msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v settimana"
 msgstr[1] "%[1]v settimane"
+msgstr[2] "%[1]v settimane"
 
 msgctxt "naturaltime-future"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v settimana"
 msgstr[1] "%[1]v settimane"
-
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v settimana"
-msgstr[1] "%[1]v settimane"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v anno"
-msgstr[1] "%[1]v anni"
+msgstr[2] "%[1]v settimane"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v anno"
 msgstr[1] "%[1]v anni"
+msgstr[2] "%[1]v anni"
 
 msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v anno"
 msgstr[1] "%[1]v anni"
+msgstr[2] "%[1]v anni"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v anno"
+msgstr[1] "%[1]v anni"
+msgstr[2] "%[1]v anni"
 
 msgid "%s GB"
 msgstr "%s GB"
@@ -229,7 +259,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%vesimo"
 
-msgctxt "ordinal 5"
+msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%vesimo"
 
@@ -237,11 +267,7 @@ msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%vesimo"
 
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%vesimo"
-
-msgctxt "ordinal 4"
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vesimo"
 
@@ -249,15 +275,19 @@ msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%vesimo"
 
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vesimo"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vesimo"
+
 msgctxt "ordinal 6"
 msgid "%vth"
 msgstr "%vesimo"
 
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%vesimo"
-
-msgctxt "ordinal 7"
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vesimo"
 
@@ -276,14 +306,14 @@ msgstr "Albanese"
 msgid "Algerian Arabic"
 msgstr "Arabo Algerino"
 
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprile"
+
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Aprile"
 
-msgid "April"
-msgstr "Aprile"
-
-msgctxt "alt. month"
 msgid "April"
 msgstr "Aprile"
 
@@ -346,6 +376,9 @@ msgstr "Birmano"
 msgid "Catalan"
 msgstr "Catalano"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Curdo centrale (Sorani)"
+
 msgid "Colombian Spanish"
 msgstr "Spagnolo Colombiano"
 
@@ -362,10 +395,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Dic."
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Dicembre"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Dicembre"
 
@@ -463,10 +496,6 @@ msgstr "Gennaio"
 msgid "Japanese"
 msgstr "Giapponese"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Luglio"
-
 msgid "July"
 msgstr "Luglio"
 
@@ -475,13 +504,17 @@ msgid "July"
 msgstr "Luglio"
 
 msgctxt "alt. month"
-msgid "June"
-msgstr "Giugno"
+msgid "July"
+msgstr "Luglio"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "Giugno"
 
 msgctxt "abbrev. month"
+msgid "June"
+msgstr "Giugno"
+
 msgid "June"
 msgstr "Giugno"
 
@@ -531,13 +564,14 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "Marzo"
 
-msgid "March"
-msgstr "Marzo"
-
 msgctxt "alt. month"
 msgid "March"
 msgstr "Marzo"
 
+msgid "March"
+msgstr "Marzo"
+
+msgctxt "alt. month"
 msgid "May"
 msgstr "Maggio"
 
@@ -545,7 +579,6 @@ msgctxt "abbrev. month"
 msgid "May"
 msgstr "Maggio"
 
-msgctxt "alt. month"
 msgid "May"
 msgstr "Maggio"
 
@@ -577,10 +610,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Nov."
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Novembre"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Novembre"
 
@@ -588,10 +621,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Ott."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Ottobre"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Ottobre"
 
@@ -739,21 +772,25 @@ msgid "a minute ago"
 msgid_plural "%[1]v minutes ago"
 msgstr[0] "un minuto fa"
 msgstr[1] "%[1]v minuti fa"
+msgstr[2] "%[1]v minuti fa"
 
 msgid "a minute from now"
 msgid_plural "%[1]v minutes from now"
 msgstr[0] "tra un minuto"
 msgstr[1] "tra %[1]v minuti"
+msgstr[2] "tra %[1]v minuti"
 
 msgid "a second ago"
 msgid_plural "%[1]v seconds ago"
 msgstr[0] "un secondo fa"
 msgstr[1] "%[1]v secondi fa"
+msgstr[2] "%[1]v secondi fa"
 
 msgid "a second from now"
 msgid_plural "%[1]v seconds from now"
 msgstr[0] "tra un secondo"
 msgstr[1] "tra %[1]v secondi"
+msgstr[2] "tra %[1]v secondi"
 
 msgid "a.m."
 msgstr "a.m."
@@ -762,11 +799,13 @@ msgid "an hour ago"
 msgid_plural "%[1]v hours ago"
 msgstr[0] "un ora fa"
 msgstr[1] "%[1]v ore fa"
+msgstr[2] "%[1]v ore fa"
 
 msgid "an hour from now"
 msgid_plural "%[1]v hours from now"
 msgstr[0] "tra un'ora"
 msgstr[1] "tra %[1]v ore"
+msgstr[2] "tra %[1]v ore"
 
 msgid "apr"
 msgstr "apr"

@@ -103,7 +103,6 @@ msgstr ""
 msgid "Albanian"
 msgstr "البانوی"
 
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "اپریل"
 
@@ -111,6 +110,7 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "اپریل"
 
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "اپریل"
 
@@ -130,10 +130,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "اگست"
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "اگست"
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "اگست"
 
@@ -189,10 +189,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "دسمبر"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "دسمبر"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "دسمبر"
 
@@ -287,10 +287,6 @@ msgstr "جنوری"
 msgid "Japanese"
 msgstr "جاپانی"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "جولائی"
-
 msgctxt "abbrev. month"
 msgid "July"
 msgstr "جولائی"
@@ -298,14 +294,18 @@ msgstr "جولائی"
 msgid "July"
 msgstr "جولائی"
 
+msgctxt "alt. month"
+msgid "July"
+msgstr "جولائی"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "جون"
+
 msgid "June"
 msgstr "جون"
 
 msgctxt "alt. month"
-msgid "June"
-msgstr "جون"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "جون"
 
@@ -349,10 +349,10 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "مارچ"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "مارچ"
 
+msgctxt "alt. month"
 msgid "March"
 msgstr "مارچ"
 
@@ -395,10 +395,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "نومبر"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "نومبر"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "نومبر"
 
@@ -450,10 +450,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "ستمبر"
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "ستمبر"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "ستمبر"
 

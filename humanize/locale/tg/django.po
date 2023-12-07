@@ -112,19 +112,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%v-ум"
 
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v-ум"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v-ум"
-
 msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v-ум"
-
-msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%v-ум"
 
@@ -136,11 +124,23 @@ msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%v-ум"
 
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v-ум"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v-ум"
+
 msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%v-ум"
 
-msgctxt "ordinal 9"
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v-ум"
+
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%v-ум"
 
@@ -163,10 +163,10 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "апрел"
 
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "Апрел"
 
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "Апрел"
 
@@ -336,12 +336,12 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Янв."
 
+msgid "January"
+msgstr "Январ"
+
 msgctxt "alt. month"
 msgid "January"
 msgstr "январ"
-
-msgid "January"
-msgstr "Январ"
 
 msgid "Japanese"
 msgstr "Японӣ"
@@ -350,10 +350,10 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "июл"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Июл"
 
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "Июл"
 
@@ -422,10 +422,10 @@ msgctxt "alt. month"
 msgid "May"
 msgstr "май"
 
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "Май"
 
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Май"
 
@@ -457,23 +457,23 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Ноя."
 
-msgid "November"
-msgstr "Ноябр"
-
 msgctxt "alt. month"
 msgid "November"
 msgstr "ноябр"
+
+msgid "November"
+msgstr "Ноябр"
 
 msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Окт."
 
+msgid "October"
+msgstr "Октябр"
+
 msgctxt "alt. month"
 msgid "October"
 msgstr "октябр"
-
-msgid "October"
-msgstr "Октябр"
 
 msgid "Ossetic"
 msgstr "Осетинӣ"
@@ -512,12 +512,12 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Сен."
 
-msgid "September"
-msgstr "Сентябр"
-
 msgctxt "alt. month"
 msgid "September"
 msgstr "сентябр"
+
+msgid "September"
+msgstr "Сентябр"
 
 msgid "Serbian"
 msgstr "Сербӣ"

@@ -116,26 +116,6 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr ""
 
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 9"
 msgid "%vth"
 msgstr ""
@@ -144,7 +124,27 @@ msgctxt "ordinal 5"
 msgid "%vth"
 msgstr ""
 
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
 msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 4"
 msgid "%vth"
 msgstr ""
 
@@ -246,10 +246,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "ธ.ค."
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "ธันวาคม"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "ธันวาคม"
 
@@ -269,10 +269,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "ก.พ."
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "กุมภาพันธ์"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "กุมภาพันธ์"
 
@@ -344,27 +344,27 @@ msgstr "มกราคม"
 msgid "Japanese"
 msgstr "ญี่ปุ่น"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "กรกฎาคม"
-
-msgid "July"
-msgstr "กรกฎาคม"
-
 msgctxt "abbrev. month"
 msgid "July"
 msgstr "ก.ค."
 
+msgctxt "alt. month"
+msgid "July"
+msgstr "กรกฎาคม"
+
+msgid "July"
+msgstr "กรกฎาคม"
+
+msgctxt "abbrev. month"
 msgid "June"
-msgstr "มิถุนายน"
+msgstr "มิ.ย."
 
 msgctxt "alt. month"
 msgid "June"
 msgstr "มิถุนายน"
 
-msgctxt "abbrev. month"
 msgid "June"
-msgstr "มิ.ย."
+msgstr "มิถุนายน"
 
 msgid "Kabyle"
 msgstr ""
@@ -413,12 +413,12 @@ msgstr "มี.ค."
 msgid "March"
 msgstr "มีนาคม"
 
-msgid "May"
-msgstr "พฤษภาคม"
-
 msgctxt "abbrev. month"
 msgid "May"
 msgstr "พ.ค."
+
+msgid "May"
+msgstr "พฤษภาคม"
 
 msgctxt "alt. month"
 msgid "May"
@@ -452,10 +452,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "พ.ย."
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "พฤศจิกายน"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "พฤศจิกายน"
 
@@ -507,10 +507,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "ก.ย."
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "กันยายน"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "กันยายน"
 

@@ -145,10 +145,6 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%v."
 
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v."
-
 msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%v."
@@ -157,15 +153,7 @@ msgctxt "ordinal 7"
 msgid "%vth"
 msgstr "%v."
 
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v."
-
 msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%v."
 
@@ -174,6 +162,18 @@ msgid "%vth"
 msgstr "%v."
 
 msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%v."
 
@@ -195,11 +195,11 @@ msgstr ""
 msgid "April"
 msgstr "apríl"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "April"
 msgstr "apríl"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "apríl"
 
@@ -219,10 +219,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "ág."
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "ágúst"
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "ágúst"
 
@@ -278,10 +278,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "des."
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "desember"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "desember"
 
@@ -369,16 +369,20 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "jan."
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "janúar"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "janúar"
 
 msgid "Japanese"
 msgstr "Japanska"
 
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "júlí"
+
 msgid "July"
 msgstr "júlí"
 
@@ -386,18 +390,14 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "júlí"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "júlí"
-
-msgid "June"
-msgstr "júní"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "júní"
-
 msgctxt "alt. month"
+msgid "June"
+msgstr "júní"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "júní"
+
 msgid "June"
 msgstr "júní"
 
@@ -443,6 +443,9 @@ msgstr "Malajalamska"
 msgid "Marathi"
 msgstr "Maratí"
 
+msgid "March"
+msgstr "mars"
+
 msgctxt "alt. month"
 msgid "March"
 msgstr "mars"
@@ -451,17 +454,14 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "mars"
 
-msgid "March"
-msgstr "mars"
-
-msgid "May"
-msgstr "maí"
-
 msgctxt "abbrev. month"
 msgid "May"
 msgstr "maí"
 
 msgctxt "alt. month"
+msgid "May"
+msgstr "maí"
+
 msgid "May"
 msgstr "maí"
 

@@ -10,20 +10,20 @@
 # Harro van der Klauw <hvdklauw@gmail.com>, 2011-2012
 # Ilja Maas <iljamaas@dreamsolution.nl>, 2015
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Jeffrey Gelens <jeffrey@noppo.pro>, 2011-2012,2014
+# 6a27f10aef159701c7a5ff07f0fb0a78_05545ed <bc5d401a7ecd9343dd5afac265ed8ab3_4845>, 2011-2012,2014
 # Michiel Overtoom <motoom@xs4all.nl>, 2014
 # Meteor0id, 2019-2020
 # 8de006b1b0894aab6aef71979dcd8bd6_5c6b207 <ff2658a8d8dbebbd9cc240b8c133a515_234097>, 2014-2015
 # Tino de Bruijn <tinodb@gmail.com>, 2013
-# Tonnes <tonnes.mb@gmail.com>, 2017,2019-2020,2022
+# Tonnes <tonnes.mb@gmail.com>, 2017,2019-2020,2022-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: Tonnes <tonnes.mb@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/django/django/language/nl/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: Tonnes <tonnes.mb@gmail.com>, 2017,2019-2020,2022-2023\n"
+"Language-Team: Dutch (http://app.transifex.com/django/django/language/nl/)\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,11 +93,6 @@ msgstr[1] "%[1]s biljoen"
 msgid "%[1]v ago"
 msgstr "%[1]v geleden"
 
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dag"
-msgstr[1] "%[1]v dagen"
-
 msgctxt "naturaltime-future"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
@@ -105,6 +100,11 @@ msgstr[0] "%[1]v dag"
 msgstr[1] "%[1]v dagen"
 
 msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dag"
+msgstr[1] "%[1]v dagen"
+
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v dag"
@@ -113,11 +113,6 @@ msgstr[1] "%[1]v dagen"
 msgid "%[1]v from now"
 msgstr "over %[1]v"
 
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v uur"
-msgstr[1] "%[1]v uur"
-
 msgctxt "naturaltime-past"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
@@ -125,6 +120,11 @@ msgstr[0] "%[1]v uur"
 msgstr[1] "%[1]v uur"
 
 msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uur"
+msgstr[1] "%[1]v uur"
+
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v uur"
@@ -164,6 +164,11 @@ msgid_plural "%[1]v months"
 msgstr[0] "%[1]v maand"
 msgstr[1] "%[1]v maanden"
 
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v week"
+msgstr[1] "%[1]v weken"
+
 msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
@@ -176,12 +181,7 @@ msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v week"
 msgstr[1] "%[1]v weken"
 
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v week"
-msgstr[1] "%[1]v weken"
-
-msgctxt "naturaltime-past"
+msgctxt "naturaltime-future"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v jaar"
@@ -192,7 +192,7 @@ msgid_plural "%[1]v years"
 msgstr[0] "%[1]v jaar"
 msgstr[1] "%[1]v jaar"
 
-msgctxt "naturaltime-future"
+msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v jaar"
@@ -225,23 +225,11 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%ve"
 
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%ve"
-
 msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%ve"
 
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%ve"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%ve"
-
-msgctxt "ordinal 11, 12, 13"
+msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%ve"
 
@@ -249,11 +237,23 @@ msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%ve"
 
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%ve"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%ve"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%ve"
+
 msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%ve"
 
-msgctxt "ordinal 9"
+msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%ve"
 
@@ -276,12 +276,12 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "april"
 
-msgid "April"
-msgstr "april"
-
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "apr"
+
+msgid "April"
+msgstr "april"
 
 msgid "Arabic"
 msgstr "Arabisch"
@@ -299,10 +299,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "aug"
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "augustus"
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "augustus"
 
@@ -341,6 +341,9 @@ msgstr "Birmaans"
 
 msgid "Catalan"
 msgstr "Catalaans"
+
+msgid "Central Kurdish (Sorani)"
+msgstr "Centraal-Koerdisch (Sorani)"
 
 msgid "Colombian Spanish"
 msgstr "Colombiaans Spaans"
@@ -463,23 +466,23 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "jul"
 
-msgid "July"
-msgstr "juli"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "juli"
+
+msgid "July"
+msgstr "juli"
+
+msgid "June"
+msgstr "juni"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "juni"
 
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "jun"
-
-msgid "June"
-msgstr "juni"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "juni"
 
 msgid "Kabyle"
 msgstr "Kabylisch"
@@ -534,10 +537,10 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "mrt"
 
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "mei"
 
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "mei"
 
@@ -573,10 +576,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "nov"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "november"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "november"
 
@@ -712,6 +715,9 @@ msgstr "Oppersorbisch"
 
 msgid "Urdu"
 msgstr "Urdu"
+
+msgid "Uyghur"
+msgstr "Oeigoers"
 
 msgid "Uzbek"
 msgstr "Oezbeeks"

@@ -112,15 +112,11 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr ""
 
-msgctxt "ordinal 0"
+msgctxt "ordinal 6"
 msgid "%vth"
 msgstr ""
 
 msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
 msgid "%vth"
 msgstr ""
 
@@ -132,15 +128,19 @@ msgctxt "ordinal 4"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 8"
 msgid "%vth"
 msgstr ""
 
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""
+
 msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 0"
 msgid "%vth"
 msgstr ""
 
@@ -159,14 +159,14 @@ msgstr "Alban tili"
 msgid "Algerian Arabic"
 msgstr "Jazoir arab tili"
 
+msgid "April"
+msgstr "Aprel"
+
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Aprel"
 
 msgctxt "alt. month"
-msgid "April"
-msgstr "Aprel"
-
 msgid "April"
 msgstr "Aprel"
 
@@ -245,10 +245,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Dek."
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Dekabr"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Dekabr"
 
@@ -268,10 +268,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Fev."
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Fevral"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Fevral"
 
@@ -407,10 +407,6 @@ msgstr "Malayalam tili"
 msgid "Marathi"
 msgstr "Marati tili"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Mart"
-
 msgid "March"
 msgstr "Mart"
 
@@ -419,13 +415,17 @@ msgid "March"
 msgstr "Mart"
 
 msgctxt "alt. month"
-msgid "May"
-msgstr "May"
-
-msgid "May"
-msgstr "May"
+msgid "March"
+msgstr "Mart"
 
 msgctxt "abbrev. month"
+msgid "May"
+msgstr "May"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "May"
+
 msgid "May"
 msgstr "May"
 
@@ -457,10 +457,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Noy."
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Noyabr"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Noyabr"
 
@@ -468,10 +468,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Okt."
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Oktabr"
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Oktabr"
 
@@ -512,10 +512,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Sen."
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Sentabr"
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Sentabr"
 

@@ -108,12 +108,12 @@ msgctxt "abbrev. month"
 msgid "April"
 msgstr "Апрель"
 
+msgid "April"
+msgstr "Апрель"
+
 msgctxt "alt. month"
 msgid "April"
 msgstr "апрель"
-
-msgid "April"
-msgstr "Апрель"
 
 msgid "Arabic"
 msgstr "Гарәп теле"
@@ -190,12 +190,12 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Дек."
 
-msgid "December"
-msgstr "Декабрь"
-
 msgctxt "alt. month"
 msgid "December"
 msgstr "декабрь"
+
+msgid "December"
+msgstr "Декабрь"
 
 msgid "Dutch"
 msgstr "Голланд теле"
@@ -213,12 +213,12 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Фев."
 
-msgid "February"
-msgstr "Февраль"
-
 msgctxt "alt. month"
 msgid "February"
 msgstr "февраль"
+
+msgid "February"
+msgstr "Февраль"
 
 msgid "Finnish"
 msgstr "Финн теле"
@@ -288,6 +288,10 @@ msgstr "гыйнвар"
 msgid "Japanese"
 msgstr "Япон теле"
 
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Июль"
+
 msgctxt "alt. month"
 msgid "July"
 msgstr "июль"
@@ -295,14 +299,10 @@ msgstr "июль"
 msgid "July"
 msgstr "Июль"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Июль"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "Июнь"
 
+msgctxt "abbrev. month"
 msgid "June"
 msgstr "Июнь"
 
@@ -346,10 +346,10 @@ msgstr "Малаялам теле"
 msgid "Marathi"
 msgstr ""
 
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "Март"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "Март"
 
@@ -407,12 +407,12 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Окт."
 
-msgid "October"
-msgstr "Октябрь"
-
 msgctxt "alt. month"
 msgid "October"
 msgstr "октябрь"
+
+msgid "October"
+msgstr "Октябрь"
 
 msgid "Ossetic"
 msgstr ""

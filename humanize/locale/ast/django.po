@@ -103,10 +103,10 @@ msgstr "Afrikáans"
 msgid "Albanian"
 msgstr "Albanu"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Abril"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Abril"
 
@@ -212,10 +212,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Feb."
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Febreru"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Febreru"
 
@@ -277,16 +277,17 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Xin."
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Xineru"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Xineru"
 
 msgid "Japanese"
 msgstr "Xaponés"
 
+msgctxt "alt. month"
 msgid "July"
 msgstr "Xunetu"
 
@@ -294,20 +295,19 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Xnt."
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "Xunetu"
-
-msgid "June"
-msgstr "Xunu"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Xunu"
 
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "Xun."
+
+msgid "June"
+msgstr "Xunu"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Xunu"
 
 msgid "Kabyle"
 msgstr ""
@@ -345,6 +345,9 @@ msgstr "Malayalam"
 msgid "Marathi"
 msgstr ""
 
+msgid "March"
+msgstr "Marzu"
+
 msgctxt "alt. month"
 msgid "March"
 msgstr "Marzu"
@@ -352,9 +355,6 @@ msgstr "Marzu"
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Mar."
-
-msgid "March"
-msgstr "Marzu"
 
 msgid "May"
 msgstr "Mayu"
@@ -406,10 +406,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Och."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Ochobre"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Ochobre"
 

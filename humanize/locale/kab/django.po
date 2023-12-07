@@ -156,10 +156,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Fuṛ."
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Fuṛaṛ"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Fuṛaṛ"
 
@@ -231,10 +231,6 @@ msgstr "Yennayer"
 msgid "Japanese"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Yulyu"
-
 msgid "July"
 msgstr "Yulyu"
 
@@ -242,7 +238,10 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "Yulyu"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Yulyu"
+
 msgid "June"
 msgstr "Yunyu"
 
@@ -250,6 +249,7 @@ msgctxt "abbrev. month"
 msgid "June"
 msgstr "Yunyu"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "Yunyu"
 
@@ -300,6 +300,7 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "Meɣres"
 
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "Mayyu"
 
@@ -307,7 +308,6 @@ msgctxt "alt. month"
 msgid "May"
 msgstr "Mayyu"
 
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Mayyu"
 
@@ -350,10 +350,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Tub."
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Tuber"
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Tuber"
 
@@ -394,10 +394,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr ""
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Ctamber"
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Ctamber"
 

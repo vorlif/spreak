@@ -1,0 +1,843 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Bawar Jalal, 2021
+# Bawar Jalal, 2020-2021
+# Bawar Jalal, 2020
+# kosar tofiq <kosar.belana@gmail.com>, 2020-2021
+# Swara <swara09@gmail.com>, 2022-2023
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-17 02:13-0600\n"
+"PO-Revision-Date: 2023-04-25 06:49+0000\n"
+"Last-Translator: Swara <swara09@gmail.com>, 2022-2023\n"
+"Language-Team: Central Kurdish (http://app.transifex.com/django/django/language/ckb/)\n"
+"Language: ckb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%[1]d byte"
+msgid_plural "%[1]d bytes"
+msgstr[0] "%[1]dبایت"
+msgstr[1] "%[1]d بایت"
+
+msgid "%[1]s billion"
+msgid_plural "%[1]s billion"
+msgstr[0] "‫%[1]s بلیۆن"
+msgstr[1] "‫%[1]s بلیۆن"
+
+msgid "%[1]s decillion"
+msgid_plural "%[1]s decillion"
+msgstr[0] "‫%[1]s دێستریلیۆن"
+msgstr[1] "‫%[1]s دێستریلیۆن"
+
+msgid "%[1]s googol"
+msgid_plural "%[1]s googol"
+msgstr[0] "‫%[1]s گوگۆڵ"
+msgstr[1] "‫%[1]s گوگۆڵ"
+
+msgid "%[1]s million"
+msgid_plural "%[1]s million"
+msgstr[0] "%[1]s ملیۆن"
+msgstr[1] "%[1]s ملیۆن"
+
+msgid "%[1]s nonillion"
+msgid_plural "%[1]s nonillion"
+msgstr[0] "‫%[1]s نۆنتریلۆن"
+msgstr[1] "‫%[1]s نۆنتریلۆن"
+
+msgid "%[1]s octillion"
+msgid_plural "%[1]s octillion"
+msgstr[0] "‫%[1]s ئۆکتریلیۆن"
+msgstr[1] "‫%[1]s ئۆکتریلیۆن"
+
+msgid "%[1]s quadrillion"
+msgid_plural "%[1]s quadrillion"
+msgstr[0] "‫%[1]s کوادرلیۆن"
+msgstr[1] "‫%[1]s کوادرلیۆن"
+
+msgid "%[1]s quintillion"
+msgid_plural "%[1]s quintillion"
+msgstr[0] "‫%[1]s کوینترلیۆن"
+msgstr[1] "‫%[1]s کوینترلیۆن"
+
+msgid "%[1]s septillion"
+msgid_plural "%[1]s septillion"
+msgstr[0] "‫%[1]s سێپتریلۆن"
+msgstr[1] "‫%[1]s سێپتریلۆن"
+
+msgid "%[1]s sextillion"
+msgid_plural "%[1]s sextillion"
+msgstr[0] "‫%[1]s شەش تریلۆن"
+msgstr[1] "‫%[1]s شەش تریلۆن"
+
+msgid "%[1]s trillion"
+msgid_plural "%[1]s trillion"
+msgstr[0] "‫%[1]s تریلۆن"
+msgstr[1] "‫%[1]s تریلۆن"
+
+msgid "%[1]v ago"
+msgstr "%[1]v پێشتر"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "‫%[1]v ڕۆژ"
+msgstr[1] "‫%[1]v ڕۆژ"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "‫%[1]v ڕۆژ"
+msgstr[1] "‫%[1]v ڕۆژ"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "‫%[1]v ڕۆژ"
+msgstr[1] "‫%[1]v ڕۆژ"
+
+msgid "%[1]v from now"
+msgstr "%[1]v لە ئێستاوە"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "‫%[1]v کاتژمێر"
+msgstr[1] "‫%[1]v کاتژمێر"
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "‫%[1]v کاتژمێر"
+msgstr[1] "‫%[1]v کاتژمێر"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "‫%[1]v کاتژمێر"
+msgstr[1] "‫%[1]v کاتژمێر"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "‫%[1]v خولەک"
+msgstr[1] "‫%[1]v خولەک"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "‫%[1]v خولەک"
+msgstr[1] "‫%[1]v خولەک"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "‫%[1]v خولەک"
+msgstr[1] "‫%[1]v خولەک"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "‫%[1]v مانگ"
+msgstr[1] "‫%[1]v مانگ"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "‫%[1]v مانگ"
+msgstr[1] "‫%[1]v مانگ"
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "‫%[1]v مانگ"
+msgstr[1] "‫%[1]v مانگ"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "‫%[1]v هەفتە"
+msgstr[1] "‫%[1]v هەفتە"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "‫%[1]v هەفتە"
+msgstr[1] "‫%[1]v هەفتە"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "‫%[1]v هەفتە"
+msgstr[1] "‫%[1]v هەفتە"
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "‫%[1]v ساڵ"
+msgstr[1] "‫%[1]v ساڵ"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "‫%[1]v ساڵ"
+msgstr[1] "‫%[1]v ساڵ"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "‫%[1]v ساڵ"
+msgstr[1] "‫%[1]v ساڵ"
+
+msgid "%s GB"
+msgstr "%s گب"
+
+msgid "%s KB"
+msgstr "%s کب"
+
+msgid "%s MB"
+msgstr "%s مب"
+
+msgid "%s PB"
+msgstr "%s پب"
+
+msgid "%s TB"
+msgstr "%s تب"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "‫%vnd"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "‫%vrd"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "‫%vst"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "‫%vth"
+
+msgid ", "
+msgstr "، "
+
+msgid "AM"
+msgstr "پ.ن"
+
+msgid "Afrikaans"
+msgstr "ئەفریقی"
+
+msgid "Albanian"
+msgstr "ئەلبانی"
+
+msgid "Algerian Arabic"
+msgstr "عەرەبیی جەزائیری"
+
+msgid "April"
+msgstr "گوڵان"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "گوڵان"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "گوڵان"
+
+msgid "Arabic"
+msgstr "عەرەبی"
+
+msgid "Argentinian Spanish"
+msgstr "ئیسپانیی ئەرجەنتینی"
+
+msgid "Armenian"
+msgstr "ئەرمەنی"
+
+msgid "Asturian"
+msgstr "ئاستوری"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "خەرمانان"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "خەرمانان"
+
+msgid "August"
+msgstr "خەرمانان"
+
+msgid "Australian English"
+msgstr "ئینگلیزی ئوستورالی"
+
+msgid "Azerbaijani"
+msgstr "ئازەربایجانی"
+
+msgid "Basque"
+msgstr "باسکۆیی"
+
+msgid "Belarusian"
+msgstr "بیلاڕوسی"
+
+msgid "Bengali"
+msgstr "بەنگالی"
+
+msgid "Bosnian"
+msgstr "بۆسنێیی"
+
+msgid "Brazilian Portuguese"
+msgstr "پورتوگالیی بەڕازیلی"
+
+msgid "Breton"
+msgstr "بریتۆنی"
+
+msgid "British English"
+msgstr "ئینگلیزی بەریتانی"
+
+msgid "Bulgarian"
+msgstr "بولگاری"
+
+msgid "Burmese"
+msgstr "بورمایی"
+
+msgid "Catalan"
+msgstr "کاتالانی"
+
+msgid "Central Kurdish (Sorani)"
+msgstr ""
+
+msgid "Colombian Spanish"
+msgstr "ئیسپانیی کۆڵۆمبی"
+
+msgid "Croatian"
+msgstr "کڕواتی"
+
+msgid "Czech"
+msgstr "چیکی"
+
+msgid "Danish"
+msgstr "دانیمارکی"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "‎بەفرانبار"
+
+msgid "December"
+msgstr "بەفرانبار"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "بەفرانبار"
+
+msgid "Dutch"
+msgstr "هۆڵەندی"
+
+msgid "English"
+msgstr "ئینگلیزی"
+
+msgid "Esperanto"
+msgstr "ئێسپەرانتەویی"
+
+msgid "Estonian"
+msgstr "ئیستۆنی"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "ڕەشەمە"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "ڕەشەمە"
+
+msgid "February"
+msgstr "ڕەشەمە"
+
+msgid "Finnish"
+msgstr "فینلەندی"
+
+msgid "French"
+msgstr "فەڕەنسی"
+
+msgid "Fri"
+msgstr "هەین"
+
+msgid "Friday"
+msgstr "هەینی"
+
+msgid "Frisian"
+msgstr "فریسی"
+
+msgid "Galician"
+msgstr "گالیسیایی"
+
+msgid "Georgian"
+msgstr "جۆرجی"
+
+msgid "German"
+msgstr "ئەڵمانی"
+
+msgid "Greek"
+msgstr "یۆنانی"
+
+msgid "Hebrew"
+msgstr "ئیسرائیلی"
+
+msgid "Hindi"
+msgstr "هیندی"
+
+msgid "Hungarian"
+msgstr "هەنگاری"
+
+msgid "Icelandic"
+msgstr "ئایسلەندی"
+
+msgid "Ido"
+msgstr "ئیدۆیی"
+
+msgid "Igbo"
+msgstr "ئیگبۆیی"
+
+msgid "Indonesian"
+msgstr "ئیندۆنیزی"
+
+msgid "Interlingua"
+msgstr "ئینتەرلینگوایی"
+
+msgid "Irish"
+msgstr "ئیرلەندی"
+
+msgid "Italian"
+msgstr "ئیتاڵی"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "‎ڕێبەندان"
+
+msgid "January"
+msgstr "ڕێبەندان"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "ڕێبەندان"
+
+msgid "Japanese"
+msgstr "یابانی"
+
+msgid "July"
+msgstr "گەلاوێژ"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "گەلاوێژ"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "گەلاوێژ"
+
+msgid "June"
+msgstr "پوشپەڕ"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "پوشپەڕ"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "پوشپەڕ"
+
+msgid "Kabyle"
+msgstr "کابایلی"
+
+msgid "Kannada"
+msgstr "کانێدایی"
+
+msgid "Kazakh"
+msgstr "کازاخی"
+
+msgid "Khmer"
+msgstr "خەمیری"
+
+msgid "Korean"
+msgstr "کۆری"
+
+msgid "Kyrgyz"
+msgstr "کیرگزستانی"
+
+msgid "Latvian"
+msgstr "لاتیڤی"
+
+msgid "Lithuanian"
+msgstr "لیتوانی"
+
+msgid "Lower Sorbian"
+msgstr "سۆربیانی خواروو"
+
+msgid "Luxembourgish"
+msgstr "لۆکسەمبۆرگی"
+
+msgid "Macedonian"
+msgstr "مەسەدۆنی"
+
+msgid "Malay"
+msgstr "مالایی"
+
+msgid "Malayalam"
+msgstr "مەلایالامی"
+
+msgid "Marathi"
+msgstr "ماراسی"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "نەورۆز"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "نەورۆز"
+
+msgid "March"
+msgstr "نەورۆز"
+
+msgid "May"
+msgstr "جۆزەردان"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "جۆزەردان"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "جۆزەردان"
+
+msgid "Mexican Spanish"
+msgstr "ئیسپانیی مەکسیکی"
+
+msgid "Mon"
+msgstr "دوو"
+
+msgid "Monday"
+msgstr "دووشەممە"
+
+msgid "Mongolian"
+msgstr "مەنگۆلی"
+
+msgid "Nepali"
+msgstr "نیپاڵی"
+
+msgid "Nicaraguan Spanish"
+msgstr "ئیسپانیی نیکاراگوایی"
+
+msgid "Norwegian Bokmål"
+msgstr "بۆکامۆلی نەرویجی"
+
+msgid "Norwegian Nynorsk"
+msgstr "نینۆرسکی نەرویجی"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "‎سەرماوەرز"
+
+msgid "November"
+msgstr "سەرماوەرز"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "سەرماوەرز"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "‎گەڵاڕێزان"
+
+msgid "October"
+msgstr "گەڵاڕێزان"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "گەڵاڕێزان"
+
+msgid "Ossetic"
+msgstr "ئۆسیتی"
+
+msgid "PM"
+msgstr "د.ن"
+
+msgid "Persian"
+msgstr "فارسی"
+
+msgid "Polish"
+msgstr "پۆڵۆنی"
+
+msgid "Portuguese"
+msgstr "پورتوگالی"
+
+msgid "Punjabi"
+msgstr "پونجابی"
+
+msgid "Romanian"
+msgstr "ڕۆمانیایی"
+
+msgid "Russian"
+msgstr "ڕووسی"
+
+msgid "Sat"
+msgstr "شەم"
+
+msgid "Saturday"
+msgstr "شەممە"
+
+msgid "Scottish Gaelic"
+msgstr "گالیکی سکۆتلەندی"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ڕەزبەر"
+
+msgid "September"
+msgstr "ڕەزبەر"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "ڕەزبەر"
+
+msgid "Serbian"
+msgstr "سڕبی"
+
+msgid "Serbian Latin"
+msgstr "سڕبیی لاتین"
+
+msgid "Simplified Chinese"
+msgstr "چینی سادەکراو"
+
+msgid "Slovak"
+msgstr "سلۆڤاکی"
+
+msgid "Slovenian"
+msgstr "سلۆڤینیایی"
+
+msgid "Spanish"
+msgstr "ئیسپانی"
+
+msgid "Sun"
+msgstr "یەک"
+
+msgid "Sunday"
+msgstr "یەکشەممە"
+
+msgid "Swahili"
+msgstr "سواهیلی"
+
+msgid "Swedish"
+msgstr "سویدی"
+
+msgid "Tajik"
+msgstr "تاجیکی"
+
+msgid "Tamil"
+msgstr "تامیلی"
+
+msgid "Tatar"
+msgstr "تاتاری"
+
+msgid "Telugu"
+msgstr "تێلوگویی"
+
+msgid "Thai"
+msgstr "تایلاندی"
+
+msgid "Thu"
+msgstr "پێنج"
+
+msgid "Thursday"
+msgstr "پێنجشەممە"
+
+msgid "Traditional Chinese"
+msgstr "چینی کلاسیکی"
+
+msgid "Tue"
+msgstr "سێ"
+
+msgid "Tuesday"
+msgstr "سێشەممە"
+
+msgid "Turkish"
+msgstr "تورکی"
+
+msgid "Turkmen"
+msgstr "تورکمانی"
+
+msgid "Udmurt"
+msgstr "ئودمورتی"
+
+msgid "Ukrainian"
+msgstr "ئۆکرانی"
+
+msgid "Upper Sorbian"
+msgstr "سڕبی سەروو"
+
+msgid "Urdu"
+msgstr "ئوردویی"
+
+msgid "Uzbek"
+msgstr "ئۆزبەکی"
+
+msgid "Venezuelan Spanish"
+msgstr "ئیسپانیی فەنزوێلایی"
+
+msgid "Vietnamese"
+msgstr "ڤێتنامی"
+
+msgid "Wed"
+msgstr "چوار"
+
+msgid "Wednesday"
+msgstr "چوارشەممە"
+
+msgid "Welsh"
+msgstr "وێڵزی"
+
+msgid "a minute ago"
+msgid_plural "%[1]v minutes ago"
+msgstr[0] "خولەکێک پێشتر"
+msgstr[1] "‫%[1]v خولەک پێشتر"
+
+msgid "a minute from now"
+msgid_plural "%[1]v minutes from now"
+msgstr[0] "خولەکێک لە ئێستاوە"
+msgstr[1] "‫%[1]v خولەک لە ئێستاوە"
+
+msgid "a second ago"
+msgid_plural "%[1]v seconds ago"
+msgstr[0] "چرکەیەک پێشتر"
+msgstr[1] "‫%[1]v چرکە پێشتر"
+
+msgid "a second from now"
+msgid_plural "%[1]v seconds from now"
+msgstr[0] "چرکەیەک لە ئێستاوە"
+msgstr[1] "‫%[1]v چرکە لە ئێستاوە"
+
+msgid "a.m."
+msgstr "پ.ن"
+
+msgid "an hour ago"
+msgid_plural "%[1]v hours ago"
+msgstr[0] "کاتژمێرێک پێشتر"
+msgstr[1] "‫%[1]v کاتژمێر پێشتر"
+
+msgid "an hour from now"
+msgid_plural "%[1]v hours from now"
+msgstr[0] "کاتژمێرێک لە ئێستاوە"
+msgstr[1] "‫%[1]v کاتژمێر لە ئێستاوە"
+
+msgid "apr"
+msgstr "گوڵان"
+
+msgid "aug"
+msgstr "خەرمانان"
+
+msgid "dec"
+msgstr "‎بەفرانبار"
+
+msgid "eight"
+msgstr "هەشت"
+
+msgid "feb"
+msgstr "ڕەشەمە"
+
+msgid "five"
+msgstr "پێنج"
+
+msgid "four"
+msgstr "چوار"
+
+msgid "jan"
+msgstr "‎ڕێبەندان"
+
+msgid "jul"
+msgstr "‎گەلاوێژ"
+
+msgid "jun"
+msgstr "پوشپەڕ"
+
+msgid "mar"
+msgstr "نەورۆز"
+
+msgid "may"
+msgstr "‎جۆزەردان"
+
+msgid "midnight"
+msgstr "نیوەشەو"
+
+msgid "nine"
+msgstr "نۆ"
+
+msgid "noon"
+msgstr "نیوەڕۆ"
+
+msgid "nov"
+msgstr "‎سەرماوەرز"
+
+msgid "now"
+msgstr "ئێستا"
+
+msgid "oct"
+msgstr "‎گەڵاڕێزان"
+
+msgid "one"
+msgstr "یەک"
+
+msgid "p.m."
+msgstr "پ.ن"
+
+msgid "sep"
+msgstr "‎ڕەزبەر"
+
+msgid "seven"
+msgstr "حەوت"
+
+msgid "six"
+msgstr "شەش"
+
+msgid "three"
+msgstr "سێ"
+
+msgid "today"
+msgstr "ئەمڕۆ"
+
+msgid "tomorrow"
+msgstr "سبەینێ"
+
+msgid "two"
+msgstr "دوو"
+
+msgid "yesterday"
+msgstr "دوێنێ"
+

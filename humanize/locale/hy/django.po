@@ -109,6 +109,14 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%vին"
 
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vրդ"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vրդ"
+
 msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%vրդ"
@@ -117,19 +125,11 @@ msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vրդ"
 
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%vրդ"
-
 msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vրդ"
 
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vրդ"
-
-msgctxt "ordinal 7"
+msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%vրդ"
 
@@ -153,16 +153,16 @@ msgstr "Աֆրիկաանս"
 msgid "Albanian"
 msgstr "Ալբաներեն"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Մարտ"
+
 msgctxt "alt. month"
 msgid "April"
 msgstr "Ապրիլ"
 
 msgid "April"
 msgstr "Ապրիլ"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Մարտ"
 
 msgid "Arabic"
 msgstr "Արաբերեն"
@@ -180,10 +180,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Օգոստ․"
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "Օգոստոս"
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "Օգոստոս"
 
@@ -239,10 +239,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Դեկ․"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Դեկտեմբեր"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Դեկտեմբեր"
 
@@ -262,10 +262,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Փետ․"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Փետրվար"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Փետրվար"
 
@@ -327,24 +327,24 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Հուն․"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Հունվար"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Հունվար"
 
 msgid "Japanese"
 msgstr "Ճապոներեն"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Հուլիս"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "Հուլիս"
 
+msgid "July"
+msgstr "Հուլիս"
+
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "Հուլիս"
 
@@ -399,21 +399,21 @@ msgctxt "alt. month"
 msgid "March"
 msgstr "Մարտ"
 
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Մարտ"
+
 msgid "March"
 msgstr "Մարտ"
 
 msgctxt "abbrev. month"
-msgid "March"
-msgstr "Մարտ"
+msgid "May"
+msgstr "Մայիս"
 
 msgid "May"
 msgstr "Մայիս"
 
 msgctxt "alt. month"
-msgid "May"
-msgstr "Մայիս"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Մայիս"
 
@@ -445,10 +445,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Նոյ․"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Նոյեմբեր"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Նոյեմբեր"
 
@@ -456,10 +456,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Հոկտ․"
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Հոկտեմբեր"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Հոկտեմբեր"
 

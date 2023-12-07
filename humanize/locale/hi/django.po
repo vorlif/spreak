@@ -141,10 +141,10 @@ msgstr "अल्बेनियन्"
 msgid "Algerian Arabic"
 msgstr "अल्जीरियाई अरब"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "अप्रैल"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "अप्रैल"
 
@@ -328,11 +328,11 @@ msgstr "जनवरी"
 msgid "Japanese"
 msgstr "जपानी"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "जुलाई"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "July"
 msgstr "जुलाई"
 
@@ -392,10 +392,10 @@ msgstr "मलयालम"
 msgid "Marathi"
 msgstr "मराठी"
 
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "मार्च"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "मार्च"
 
@@ -403,14 +403,14 @@ msgctxt "alt. month"
 msgid "March"
 msgstr "मार्च"
 
+msgctxt "alt. month"
+msgid "May"
+msgstr "मई"
+
 msgid "May"
 msgstr "मई"
 
 msgctxt "abbrev. month"
-msgid "May"
-msgstr "मई"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "मई"
 

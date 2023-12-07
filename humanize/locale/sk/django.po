@@ -1,21 +1,23 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
+# Adam Zahradník, 2023
 # Jannis Leidel <jannis@leidel.info>, 2011
 # 18f25ad6fa9930fc67cb11aca9d16a27, 2012-2013
 # Marian Andre <marian@andre.sk>, 2013,2015,2017-2018
-# Martin Kosír, 2011
-# Martin Tóth <ezimir@gmail.com>, 2017
+# 29cf7e517570e1bc05a1509565db92ae_2a01508, 2011
+# Martin Tóth <ezimir@gmail.com>, 2017,2023
+# Miroslav Bendik <miroslav.bendik@gmail.com>, 2023
 # Peter Kuma, 2021
 # Peter Stríž <petulak8@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-11-18 21:19+0000\n"
-"Last-Translator: Transifex Bot <>\n"
-"Language-Team: Slovak (http://www.transifex.com/django/django/language/sk/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: Martin Tóth <ezimir@gmail.com>, 2017,2023\n"
+"Language-Team: Slovak (http://app.transifex.com/django/django/language/sk/)\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,10 +33,10 @@ msgstr[3] "%[1]d bajtov"
 
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
-msgstr[0] " %[1]s miliarda"
-msgstr[1] " %[1]s miliardy"
-msgstr[2] " %[1]s miliárd"
-msgstr[3] " %[1]s miliárd"
+msgstr[0] "%[1]s miliarda"
+msgstr[1] "%[1]s miliardy"
+msgstr[2] "%[1]s miliárd"
+msgstr[3] "%[1]s miliárd"
 
 msgid "%[1]s decillion"
 msgid_plural "%[1]s decillion"
@@ -52,10 +54,10 @@ msgstr[3] "%[1]s googol"
 
 msgid "%[1]s million"
 msgid_plural "%[1]s million"
-msgstr[0] " %[1]s milión"
-msgstr[1] " %[1]s milióny"
-msgstr[2] " %[1]s miliónov"
-msgstr[3] " %[1]s miliónov"
+msgstr[0] "%[1]s milión"
+msgstr[1] "%[1]s milióny"
+msgstr[2] "%[1]s miliónov"
+msgstr[3] "%[1]s miliónov"
 
 msgid "%[1]s nonillion"
 msgid_plural "%[1]s nonillion"
@@ -109,50 +111,146 @@ msgstr[3] "%[1]s biliónov"
 msgid "%[1]v ago"
 msgstr "pred %[1]v"
 
+msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v dňom"
+msgstr[1] "%[1]v dňami"
+msgstr[2] "%[1]v dňami"
+msgstr[3] "%[1]v dňami"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v deň"
+msgstr[1] "%[1]v dni"
+msgstr[2] "%[1]v dní"
+msgstr[3] "%[1]v dní"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v deň"
+msgstr[1] "%[1]v dni"
+msgstr[2] "%[1]v dní"
+msgstr[3] "%[1]v dní"
 
 msgid "%[1]v from now"
 msgstr "o %[1]v"
 
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v hodina"
+msgstr[1] "%[1]v hodiny"
+msgstr[2] "%[1]v hodín"
+msgstr[3] "%[1]v hodiny"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v hodinu"
+msgstr[1] "%[1]v hodiny"
+msgstr[2] "%[1]v hodín"
+msgstr[3] "%[1]v hodín"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v hodinou"
+msgstr[1] "%[1]v hodinami"
+msgstr[2] "%[1]v hodinami"
+msgstr[3] "%[1]v hodinami"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minútu"
+msgstr[1] "%[1]v minúty"
+msgstr[2] "%[1]v minút"
+msgstr[3] "%[1]v minút"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minútou"
+msgstr[1] "%[1]v minútami"
+msgstr[2] "%[1]v minútami"
+msgstr[3] "%[1]v minútami"
 
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v minúta"
+msgstr[1] "%[1]v minúty"
+msgstr[2] "%[1]v minút"
+msgstr[3] "%[1]v minúty"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mesiacom"
+msgstr[1] "%[1]v mesiacmi"
+msgstr[2] "%[1]v mesiacmi"
+msgstr[3] "%[1]v mesiacmi"
 
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v mesiac"
+msgstr[1] "%[1]v mesiace"
+msgstr[2] "%[1]v mesiacov"
+msgstr[3] "%[1]v mesiacov"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mesiac"
+msgstr[1] "%[1]v mesiace"
+msgstr[2] "%[1]v mesiacov"
+msgstr[3] "%[1]v mesiacov"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v týždňom"
+msgstr[1] "%[1]v týždňami"
+msgstr[2] "%[1]v týždňami"
+msgstr[3] "%[1]v týždňami"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v týždeň"
+msgstr[1] "%[1]v týždne"
+msgstr[2] "%[1]v týždňov"
+msgstr[3] "%[1]v týždňov"
 
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v týždeň"
+msgstr[1] "%[1]v týždne"
+msgstr[2] "%[1]v týždňov"
+msgstr[3] "%[1]v týždňov"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%[1]v rok"
+msgstr[1] "%[1]v roky"
+msgstr[2] "%[1]v rokov"
+msgstr[3] "%[1]v rokov"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v rok"
+msgstr[1] "%[1]v roky"
+msgstr[2] "%[1]v rokov"
+msgstr[3] "%[1]v rokov"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v rokom"
+msgstr[1] "%[1]v rokmi"
+msgstr[2] "%[1]v rokmi"
+msgstr[3] "%[1]v rokmi"
 
 msgid "%s GB"
 msgstr "%s GB"
@@ -181,23 +279,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%v."
 
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v."
-
 msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%v."
 
@@ -205,11 +287,27 @@ msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%v."
 
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v."
+
 msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%v."
 
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v."
+
 msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%v."
 
@@ -228,16 +326,16 @@ msgstr "albánsky"
 msgid "Algerian Arabic"
 msgstr "alžírsky arabsky"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "apr."
-
-msgid "April"
-msgstr "apríl"
-
 msgctxt "alt. month"
 msgid "April"
 msgstr "apríl"
+
+msgid "April"
+msgstr "apríl"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "apr."
 
 msgid "Arabic"
 msgstr "arabský"
@@ -255,10 +353,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "aug."
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "august"
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "august"
 
@@ -298,6 +396,9 @@ msgstr "barmsky"
 msgid "Catalan"
 msgstr "katalánsky"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "stredná kurdčina (Sorani)"
+
 msgid "Colombian Spanish"
 msgstr "kolumbijská španielčina"
 
@@ -314,10 +415,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "dec."
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "december"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "december"
 
@@ -337,10 +438,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "feb."
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "február"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "február"
 
@@ -405,35 +506,35 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "jan."
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "január"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "január"
 
 msgid "Japanese"
 msgstr "japonsky"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "júl"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "júl"
 
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "júl"
 
-msgctxt "abbrev. month"
+msgid "July"
+msgstr "júl"
+
+msgctxt "alt. month"
 msgid "June"
 msgstr "jún"
 
 msgid "June"
 msgstr "jún"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
 msgid "June"
 msgstr "jún"
 
@@ -471,13 +572,16 @@ msgid "Macedonian"
 msgstr "macedónsky"
 
 msgid "Malay"
-msgstr ""
+msgstr "malajčina"
 
 msgid "Malayalam"
 msgstr "malajalámsky"
 
 msgid "Marathi"
 msgstr "maráthsky"
+
+msgid "March"
+msgstr "marec"
 
 msgctxt "abbrev. month"
 msgid "March"
@@ -487,10 +591,6 @@ msgctxt "alt. month"
 msgid "March"
 msgstr "marec"
 
-msgid "March"
-msgstr "marec"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "máj"
 
@@ -498,6 +598,7 @@ msgctxt "alt. month"
 msgid "May"
 msgstr "máj"
 
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "máj"
 
@@ -529,10 +630,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "nov."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "november"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "november"
 
@@ -584,10 +685,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "sep."
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "september"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "september"
 
@@ -668,6 +769,9 @@ msgstr "hornolužická srbčina"
 
 msgid "Urdu"
 msgstr "urdsky"
+
+msgid "Uyghur"
+msgstr "ujgursky"
 
 msgid "Uzbek"
 msgstr "uzbecky"

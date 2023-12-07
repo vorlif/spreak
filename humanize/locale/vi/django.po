@@ -113,12 +113,12 @@ msgstr "Tiếng Albania"
 msgid "Algerian Arabic"
 msgstr ""
 
+msgid "April"
+msgstr "Tháng 4"
+
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Tháng tư"
-
-msgid "April"
-msgstr "Tháng 4"
 
 msgctxt "alt. month"
 msgid "April"
@@ -199,12 +199,12 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Tháng 12."
 
-msgid "December"
-msgstr "Tháng 12"
-
 msgctxt "alt. month"
 msgid "December"
 msgstr "Tháng mười hai"
+
+msgid "December"
+msgstr "Tháng 12"
 
 msgid "Dutch"
 msgstr "Tiếng Hà Lan"
@@ -222,12 +222,12 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Tháng 2."
 
-msgid "February"
-msgstr "Tháng 2"
-
 msgctxt "alt. month"
 msgid "February"
 msgstr "Tháng hai"
+
+msgid "February"
+msgstr "Tháng 2"
 
 msgid "Finnish"
 msgstr "Tiếng Phần Lan"
@@ -290,19 +290,15 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Tháng 1."
 
+msgid "January"
+msgstr "Tháng 1"
+
 msgctxt "alt. month"
 msgid "January"
 msgstr "Tháng một"
 
-msgid "January"
-msgstr "Tháng 1"
-
 msgid "Japanese"
 msgstr "Tiếng Nhật Bản"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Tháng bảy"
 
 msgid "July"
 msgstr "Tháng 7"
@@ -311,12 +307,16 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Tháng bảy"
 
-msgid "June"
-msgstr "Tháng 6"
+msgctxt "alt. month"
+msgid "July"
+msgstr "Tháng bảy"
 
 msgctxt "alt. month"
 msgid "June"
 msgstr "Tháng sáu"
+
+msgid "June"
+msgstr "Tháng 6"
 
 msgctxt "abbrev. month"
 msgid "June"
@@ -361,16 +361,20 @@ msgstr "Tiếng Malayalam"
 msgid "Marathi"
 msgstr "Marathi"
 
+msgid "March"
+msgstr "Tháng 3"
+
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Tháng ba"
 
-msgid "March"
-msgstr "Tháng 3"
-
 msgctxt "alt. month"
 msgid "March"
 msgstr "Tháng ba"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Tháng năm"
 
 msgctxt "alt. month"
 msgid "May"
@@ -378,10 +382,6 @@ msgstr "Tháng năm"
 
 msgid "May"
 msgstr "Tháng 5"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Tháng năm"
 
 msgid "Mexican Spanish"
 msgstr "Mexican Spanish"
@@ -411,23 +411,23 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Tháng 11."
 
+msgid "November"
+msgstr "Tháng 11"
+
 msgctxt "alt. month"
 msgid "November"
 msgstr "Tháng mười một"
-
-msgid "November"
-msgstr "Tháng 11"
 
 msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Tháng 10."
 
-msgid "October"
-msgstr "Tháng 10"
-
 msgctxt "alt. month"
 msgid "October"
 msgstr "Tháng Mười"
+
+msgid "October"
+msgstr "Tháng 10"
 
 msgid "Ossetic"
 msgstr "Ô-sét-ti-a"
@@ -466,12 +466,12 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Tháng 9."
 
+msgid "September"
+msgstr "Tháng 9"
+
 msgctxt "alt. month"
 msgid "September"
 msgstr "Tháng Chín"
-
-msgid "September"
-msgstr "Tháng 9"
 
 msgid "Serbian"
 msgstr "Tiếng Xéc-bi"

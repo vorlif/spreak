@@ -213,10 +213,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Фев."
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Февраль"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Февраль"
 
@@ -278,20 +278,20 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Янв."
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Январь"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Январь"
 
 msgid "Japanese"
 msgstr "Япойнаг"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Июль"
 
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "Июль"
 
@@ -303,10 +303,10 @@ msgctxt "abbrev. month"
 msgid "June"
 msgstr "Июнь"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "Июнь"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "Июнь"
 
@@ -346,21 +346,21 @@ msgstr "Малайаг"
 msgid "Marathi"
 msgstr ""
 
+msgctxt "alt. month"
+msgid "March"
+msgstr "Мартъи"
+
+msgid "March"
+msgstr "Мартъи"
+
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Мартъи"
 
-msgid "March"
-msgstr "Мартъи"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Мартъи"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "Май"
 
+msgctxt "alt. month"
 msgid "May"
 msgstr "Май"
 
@@ -396,10 +396,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Ноя."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Ноябрь"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Ноябрь"
 
@@ -407,10 +407,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Окт."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Октябрь"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Октябрь"
 
@@ -451,10 +451,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Сен."
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Сентябрь"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Сентябрь"
 

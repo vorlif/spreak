@@ -82,12 +82,12 @@ msgstr[1] "%[1]s trilyon"
 msgid "%[1]v ago"
 msgstr "%[1]v əvvəl"
 
+msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v gün"
 msgstr[1] "%[1]v gün"
 
-msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v gün"
@@ -108,17 +108,17 @@ msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v saat"
 msgstr[1] "%[1]v saat"
 
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v saat"
-msgstr[1] "%[1]v saat"
-
 msgctxt "naturaltime-past"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v saat"
 msgstr[1] "%[1]v saat"
 
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v saat"
+msgstr[1] "%[1]v saat"
+
 msgctxt "naturaltime-past"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
@@ -136,23 +136,28 @@ msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v dəqiqə"
 msgstr[1] "%[1]v dəqiqə"
 
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v ay"
-msgstr[1] "%[1]v ay"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v ay"
-msgstr[1] "%[1]v ay"
-
 msgctxt "naturaltime-past"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v ay"
 msgstr[1] "%[1]v ay"
 
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v ay"
+msgstr[1] "%[1]v ay"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v ay"
+msgstr[1] "%[1]v ay"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v həftə"
+msgstr[1] "%[1]v həftə"
+
 msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
@@ -165,18 +170,13 @@ msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v həftə"
 msgstr[1] "%[1]v həftə"
 
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v həftə"
-msgstr[1] "%[1]v həftə"
-
-msgctxt "naturaltime-future"
+msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v il"
 msgstr[1] "%[1]v il"
 
-msgctxt "naturaltime-past"
+msgctxt "naturaltime-future"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v il"
@@ -218,17 +218,25 @@ msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%v."
 
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%vci"
-
-msgctxt "ordinal 7"
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vci"
 
 msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%vcü"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vcı"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vci"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vci"
 
 msgctxt "ordinal 9"
 msgid "%vth"
@@ -237,14 +245,6 @@ msgstr "%vcu"
 msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%v."
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vcı"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%vci"
 
 msgid ", "
 msgstr ", "
@@ -265,10 +265,10 @@ msgctxt "abbrev. month"
 msgid "April"
 msgstr "Aprel"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Aprel"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Aprel"
 
@@ -347,10 +347,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Dek."
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Dekabr"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Dekabr"
 
@@ -370,10 +370,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Fev."
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Fevral"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Fevral"
 
@@ -448,10 +448,10 @@ msgstr "Yanvar"
 msgid "Japanese"
 msgstr "Yaponca"
 
+msgctxt "abbrev. month"
 msgid "July"
 msgstr "İyul"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "İyul"
 
@@ -459,10 +459,10 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "İyul"
 
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "İyun"
 
+msgctxt "abbrev. month"
 msgid "June"
 msgstr "İyun"
 
@@ -516,17 +516,17 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "Mart"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Mart"
-
 msgid "March"
 msgstr "Mart"
 
 msgctxt "alt. month"
+msgid "March"
+msgstr "Mart"
+
 msgid "May"
 msgstr "May"
 
+msgctxt "alt. month"
 msgid "May"
 msgstr "May"
 
@@ -562,10 +562,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Noy."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Noyabr"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Noyabr"
 
@@ -617,10 +617,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Sent."
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Sentyabr"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Sentyabr"
 

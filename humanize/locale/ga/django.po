@@ -152,7 +152,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%vú"
 
-msgctxt "ordinal 11, 12, 13"
+msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%vú"
 
@@ -160,11 +160,19 @@ msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%vú"
 
-msgctxt "ordinal 9"
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%vú"
 
 msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vú"
 
@@ -173,14 +181,6 @@ msgid "%vth"
 msgstr "%vú"
 
 msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vú"
 
@@ -199,16 +199,16 @@ msgstr "Albáinis"
 msgid "Algerian Arabic"
 msgstr ""
 
+msgctxt "alt. month"
+msgid "April"
+msgstr "Mí Aibreáin"
+
 msgid "April"
 msgstr "Aibreán"
 
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Aib."
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Mí Aibreáin"
 
 msgid "Arabic"
 msgstr "Araibis"
@@ -226,12 +226,12 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Lún."
 
-msgid "August"
-msgstr "Lúnasa"
-
 msgctxt "alt. month"
 msgid "August"
 msgstr "Mí Lúnasa"
+
+msgid "August"
+msgstr "Lúnasa"
 
 msgid "Australian English"
 msgstr "Béarla Astrálach"
@@ -285,12 +285,12 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Noll."
 
-msgid "December"
-msgstr "Nollaig"
-
 msgctxt "alt. month"
 msgid "December"
 msgstr "Mí na Nollag"
+
+msgid "December"
+msgstr "Nollaig"
 
 msgid "Dutch"
 msgstr "Ollainnis"
@@ -308,12 +308,12 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Feabh."
 
+msgid "February"
+msgstr "Feabhra"
+
 msgctxt "alt. month"
 msgid "February"
 msgstr "Mí Feabhra"
-
-msgid "February"
-msgstr "Feabhra"
 
 msgid "Finnish"
 msgstr "Fionlainnis"
@@ -376,12 +376,12 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Ean."
 
-msgid "January"
-msgstr "Eanáir"
-
 msgctxt "alt. month"
 msgid "January"
 msgstr "Mí Eanáir"
+
+msgid "January"
+msgstr "Eanáir"
 
 msgid "Japanese"
 msgstr "Seapáinis"
@@ -390,12 +390,12 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Iúil"
 
-msgid "July"
-msgstr "Iúil"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "Mí Iúil"
+
+msgid "July"
+msgstr "Iúil"
 
 msgctxt "alt. month"
 msgid "June"
@@ -458,16 +458,16 @@ msgstr "Márta"
 msgid "March"
 msgstr "Márta"
 
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mí na Bealtaine"
-
 msgid "May"
 msgstr "Bealtaine"
 
 msgctxt "abbrev. month"
 msgid "May"
 msgstr "Beal."
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mí na Bealtaine"
 
 msgid "Mexican Spanish"
 msgstr "Spáinnis Mheicsiceo "
@@ -497,23 +497,23 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Samh."
 
-msgid "November"
-msgstr "Samhain"
-
 msgctxt "alt. month"
 msgid "November"
 msgstr "Mí na Samhna"
+
+msgid "November"
+msgstr "Samhain"
 
 msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "DFómh."
 
-msgid "October"
-msgstr "Deireadh Fómhair"
-
 msgctxt "alt. month"
 msgid "October"
 msgstr "Mí Dheireadh Fómhair"
+
+msgid "October"
+msgstr "Deireadh Fómhair"
 
 msgid "Ossetic"
 msgstr "Oiséitis"

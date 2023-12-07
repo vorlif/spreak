@@ -113,13 +113,13 @@ msgstr ""
 msgid "April"
 msgstr "ఎప్రిల్"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "ఏప్రిల్"
-
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "ఏప్రి."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "ఏప్రిల్"
 
 msgid "Arabic"
 msgstr "ఆరబిక్"
@@ -137,12 +137,12 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "ఆగ."
 
+msgid "August"
+msgstr "ఆగష్టు"
+
 msgctxt "alt. month"
 msgid "August"
 msgstr "ఆగస్ట్"
-
-msgid "August"
-msgstr "ఆగష్టు"
 
 msgid "Australian English"
 msgstr ""
@@ -219,10 +219,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "ఫిబ్ర."
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "ఫిబ్రవరి"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "ఫిబ్రవరి"
 
@@ -287,19 +287,15 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "జన."
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "జనవరి"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "జనవరి"
 
 msgid "Japanese"
 msgstr "జపనీ"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "జూలై"
 
 msgid "July"
 msgstr "జులై"
@@ -308,7 +304,10 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "జూలై"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "జూలై"
+
 msgid "June"
 msgstr "జూన్"
 
@@ -316,6 +315,7 @@ msgctxt "abbrev. month"
 msgid "June"
 msgstr "జూన్"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "జూన్"
 
@@ -369,14 +369,14 @@ msgstr "మార్చి"
 msgid "March"
 msgstr "మార్చి"
 
+msgctxt "alt. month"
+msgid "May"
+msgstr "మే"
+
 msgid "May"
 msgstr "మే"
 
 msgctxt "abbrev. month"
-msgid "May"
-msgstr "మే"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "మే"
 
@@ -419,10 +419,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "అక్టో."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "అక్టోబర్"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "అక్టోబర్"
 

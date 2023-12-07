@@ -151,27 +151,15 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%vο"
 
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%vο"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%vο"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%vο"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%vο"
-
 msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%vο"
 
-msgctxt "ordinal 4"
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vο"
+
+msgctxt "ordinal 6"
 msgid "%vth"
 msgstr "%vο"
 
@@ -179,7 +167,19 @@ msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vο"
 
-msgctxt "ordinal 6"
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vο"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vο"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vο"
+
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vο"
 
@@ -198,9 +198,6 @@ msgstr "Αλβανικά"
 msgid "Algerian Arabic"
 msgstr "Αραβικά Αλγερίας"
 
-msgid "April"
-msgstr "Απρίλιος"
-
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Απρίλ."
@@ -208,6 +205,9 @@ msgstr "Απρίλ."
 msgctxt "alt. month"
 msgid "April"
 msgstr "Απριλίου"
+
+msgid "April"
+msgstr "Απρίλιος"
 
 msgid "Arabic"
 msgstr "Αραβικά"
@@ -385,6 +385,10 @@ msgstr "Ιανουαρίου"
 msgid "Japanese"
 msgstr "Γιαπωνέζικα"
 
+msgctxt "alt. month"
+msgid "July"
+msgstr "Ιουλίου"
+
 msgid "July"
 msgstr "Ιούλιος"
 
@@ -392,16 +396,12 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Ιούλ."
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Ιουλίου"
+msgid "June"
+msgstr "Ιούνιος"
 
 msgctxt "alt. month"
 msgid "June"
 msgstr "Ιουνίου"
-
-msgid "June"
-msgstr "Ιούνιος"
 
 msgctxt "abbrev. month"
 msgid "June"
@@ -449,16 +449,16 @@ msgstr "Μαλαγιαλάμ"
 msgid "Marathi"
 msgstr "Μαράθι"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Μαρτίου"
-
-msgid "March"
-msgstr "Μάρτιος"
-
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Μάρτιος"
+
+msgid "March"
+msgstr "Μάρτιος"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Μαρτίου"
 
 msgctxt "alt. month"
 msgid "May"
@@ -499,23 +499,23 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Νοέμ."
 
+msgid "November"
+msgstr "Νοέμβριος"
+
 msgctxt "alt. month"
 msgid "November"
 msgstr "Νοεμβρίου"
-
-msgid "November"
-msgstr "Νοέμβριος"
 
 msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Οκτ."
 
+msgid "October"
+msgstr "Οκτώβριος"
+
 msgctxt "alt. month"
 msgid "October"
 msgstr "Οκτωβρίου"
-
-msgid "October"
-msgstr "Οκτώβριος"
 
 msgid "Ossetic"
 msgstr "Οσσετικά"
@@ -554,12 +554,12 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Σεπτ."
 
-msgid "September"
-msgstr "Σεπτέμβριος"
-
 msgctxt "alt. month"
 msgid "September"
 msgstr "Σεπτεμβρίου"
+
+msgid "September"
+msgstr "Σεπτέμβριος"
 
 msgid "Serbian"
 msgstr "Σερβικά"

@@ -2,17 +2,17 @@
 # 
 # Translators:
 # Besnik Bleta <besnik@programeshqip.org>, 2011-2014
-# Besnik Bleta <besnik@programeshqip.org>, 2020-2022
+# Besnik Bleta <besnik@programeshqip.org>, 2020-2023
 # Besnik Bleta <besnik@programeshqip.org>, 2015-2019
 # Jannis Leidel <jannis@leidel.info>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
-"Language-Team: Albanian (http://www.transifex.com/django/django/language/sq/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2020-2023\n"
+"Language-Team: Albanian (http://app.transifex.com/django/django/language/sq/)\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -146,7 +146,11 @@ msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "-të"
 
-msgctxt "ordinal 6"
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "-të"
+
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "-të"
 
@@ -158,11 +162,7 @@ msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "-të"
 
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "-të"
-
-msgctxt "ordinal 9"
+msgctxt "ordinal 7"
 msgid "%vth"
 msgstr "-të"
 
@@ -170,7 +170,7 @@ msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "-të"
 
-msgctxt "ordinal 7"
+msgctxt "ordinal 6"
 msgid "%vth"
 msgstr "-të"
 
@@ -189,7 +189,6 @@ msgstr "Shqipe"
 msgid "Algerian Arabic"
 msgstr "Arabishte Algjeriane"
 
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "Prill"
 
@@ -197,6 +196,7 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "Prill"
 
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "Prill"
 
@@ -216,10 +216,10 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Gus."
 
+msgctxt "alt. month"
 msgid "August"
 msgstr "Gusht"
 
-msgctxt "alt. month"
 msgid "August"
 msgstr "Gusht"
 
@@ -259,6 +259,9 @@ msgstr "Burmeze"
 msgid "Catalan"
 msgstr "Katalane"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Kurdishte e Qendrës (Sorani)"
+
 msgid "Colombian Spanish"
 msgstr "Spanjolle Kolumbiane"
 
@@ -275,10 +278,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Dhj."
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Dhjetor"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Dhjetor"
 
@@ -298,10 +301,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Shk."
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Shkurt"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Shkurt"
 
@@ -366,31 +369,31 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Jan."
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Janar"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Janar"
 
 msgid "Japanese"
 msgstr "Japoneze"
 
+msgid "July"
+msgstr "Korrik"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Korrik"
+
 msgctxt "alt. month"
 msgid "July"
 msgstr "Korrik"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Korrik"
-
-msgid "July"
-msgstr "Korrik"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "Qershor"
 
+msgctxt "abbrev. month"
 msgid "June"
 msgstr "Qershor"
 
@@ -440,25 +443,25 @@ msgstr "Malajalame"
 msgid "Marathi"
 msgstr "Marati"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Mars"
-
-msgid "March"
-msgstr "Mars"
-
 msgctxt "alt. month"
+msgid "March"
+msgstr "Mars"
+
+msgid "March"
+msgstr "Mars"
+
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "Mars"
 
 msgid "May"
 msgstr "Maj"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "May"
 msgstr "Maj"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "Maj"
 
@@ -629,6 +632,9 @@ msgstr "Sorbiane e Sipërme"
 
 msgid "Urdu"
 msgstr "Urdu"
+
+msgid "Uyghur"
+msgstr "Ujgure"
 
 msgid "Uzbek"
 msgstr "Uzbeke"

@@ -117,15 +117,11 @@ msgctxt "ordinal 5"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 7"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 6"
+msgctxt "ordinal 0"
 msgid "%vth"
 msgstr ""
 
@@ -133,15 +129,19 @@ msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 8"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 0"
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
 msgid "%vth"
 msgstr ""
 
@@ -246,10 +246,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "डिसम्वर"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "डिसम्वर"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "डिसम्वर"
 
@@ -351,10 +351,10 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "जुलै"
 
+msgctxt "alt. month"
 msgid "July"
 msgstr "जुलै"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "जुलै"
 
@@ -362,10 +362,10 @@ msgctxt "abbrev. month"
 msgid "June"
 msgstr "जुन"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "जुन"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "जुन"
 
@@ -408,25 +408,25 @@ msgstr "मलायलम"
 msgid "Marathi"
 msgstr "मराठी"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "मार्च"
-
 msgctxt "alt. month"
 msgid "March"
 msgstr "मार्च"
 
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "मार्च"
 
-msgid "May"
-msgstr "मई"
+msgid "March"
+msgstr "मार्च"
 
 msgctxt "alt. month"
 msgid "May"
 msgstr "मई"
 
 msgctxt "abbrev. month"
+msgid "May"
+msgstr "मई"
+
 msgid "May"
 msgstr "मई"
 
@@ -469,10 +469,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "अक्टुवर"
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "अक्टुवर"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "अक्टुवर"
 
