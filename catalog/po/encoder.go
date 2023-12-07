@@ -242,18 +242,18 @@ func (e *Encoder) encodeMessage(m *Message) error {
 func (e *Encoder) encodeTranslations(plural bool, orig map[int]string) error {
 	m := make(map[int]string, len(orig))
 	for k, v := range orig {
-		m[k] = v
+		m[k] = EncodePoString(v, e.wrapWidth)
 	}
 
 	// We need at least one entry
 	if len(m) == 0 {
-		m[0] = ""
+		m[0] = `""`
 	}
 
 	if plural {
 		if len(m) == 1 {
 			// Plural needs at least two entries
-			m[1] = ""
+			m[1] = `""`
 		}
 
 		keys := make([]int, 0, len(m))
@@ -263,12 +263,12 @@ func (e *Encoder) encodeTranslations(plural bool, orig map[int]string) error {
 		sort.Ints(keys)
 
 		for _, k := range keys {
-			if _, err := e.w.WriteString(fmt.Sprintf("msgstr[%d] \"%s\"\n", k, m[k])); err != nil {
+			if _, err := e.w.WriteString(fmt.Sprintf("msgstr[%d] %s\n", k, m[k])); err != nil {
 				return err
 			}
 		}
 	} else {
-		if _, err := e.w.WriteString(fmt.Sprintf("msgstr \"%s\"\n", m[0])); err != nil {
+		if _, err := e.w.WriteString(fmt.Sprintf("msgstr %s\n", m[0])); err != nil {
 			return err
 		}
 	}

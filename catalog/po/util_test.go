@@ -61,6 +61,21 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr,      sed diam nonumy ei
 			})
 		}
 	})
+
+	t.Run("unicode characters", func(t *testing.T) {
+		input := `ئاۋىستىرالىيە ئىنگلزچىسى
+ `
+		get := EncodePoString(input, -1)
+		want := `""
+"ئاۋىستىرالىيە ئىنگلزچىسى\n"
+" "`
+		assert.Equal(t, want, get)
+	})
+
+	t.Run("empty string", func(t *testing.T) {
+		get := EncodePoString("", -1)
+		assert.Equal(t, `""`, get)
+	})
 }
 
 func TestDecodePoString(t *testing.T) {
