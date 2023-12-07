@@ -15,10 +15,21 @@ import (
 )
 
 const (
+	// Deprecated: Will be removed in a future version.
+	// Has only been used for tests so far.
 	UnknownFile = "unknown"
-	PoFile      = ".po"
-	MoFile      = ".mo"
-	JSONFile    = ".json"
+	// PoFile is the file extension of Po files.
+	// Deprecated: Will be removed in a future version.
+	// The string should be kept in your own program code.
+	PoFile = ".po"
+	// MoFile is the file extension of Mo files.
+	// Deprecated: Will be removed in a future version.
+	// The string should be kept in your own program code.
+	MoFile = ".mo"
+	// JSONFile is the file extension of JSON files.
+	// Deprecated: Will be removed in a future version.
+	// The string should be kept in your own program code.
+	JSONFile = ".json"
 )
 
 // Catalog represents a collection of messages (translations) for a language and a domain.
@@ -42,7 +53,7 @@ type Loader interface {
 }
 
 // A Resolver is used by the FilesystemLoader to resolve the appropriate path for a file.
-// If a file was not found, os.ErrNotFound should be returned.
+// If a file was not found, os.ErrNotExist should be returned.
 // All other errors cause the loaders search to stop.
 //
 // fsys represents the file system from which the FilesystemLoader wants to load the file.
@@ -89,9 +100,9 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	}
 
 	if len(l.decoder) == 0 {
-		l.addDecoder(PoFile, catalog.NewPoDecoder())
-		l.addDecoder(MoFile, catalog.NewMoDecoder())
-		l.addDecoder(JSONFile, catalog.NewJSONDecoder())
+		l.addDecoder(".po", catalog.NewPoDecoder())
+		l.addDecoder(".mo", catalog.NewMoDecoder())
+		l.addDecoder(".json", catalog.NewJSONDecoder())
 	}
 
 	if l.fsys == nil {
@@ -177,6 +188,8 @@ func WithPath(path string) FsOption {
 
 // WithSystemFs stores the root path as filesystem.
 // Lets the creation of the FilesystemLoader fail, if a filesystem was already deposited.
+//
+// Shorthand for WithPath("").
 func WithSystemFs() FsOption { return WithPath("") }
 
 // WithResolver stores the resolver of a FilesystemLoader.
@@ -191,7 +204,9 @@ func WithResolver(resolver Resolver) FsOption {
 	}
 }
 
-// WithDecoder stores a decoder for an extension.
+// WithDecoder stores a decoder for a file extension.
+//
+// The file extension should begin with a dot. For example ".po" or ".json".
 func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 	return func(r *FilesystemLoader) error {
 		r.addDecoder(ext, decoder)
@@ -200,10 +215,19 @@ func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 }
 
 // WithMoDecoder stores the mo file decoder.
-func WithMoDecoder() FsOption { return WithDecoder(MoFile, catalog.NewMoDecoder()) }
+//
+// Shorthand for WithDecoder(".mo", catalog.NewMoDecoder()).
+func WithMoDecoder() FsOption { return WithDecoder(".mo", catalog.NewMoDecoder()) }
 
 // WithPoDecoder stores the mo file decoder.
-func WithPoDecoder() FsOption { return WithDecoder(PoFile, catalog.NewPoDecoder()) }
+//
+// Shorthand for WithDecoder(".po", catalog.NewPoDecoder()).
+func WithPoDecoder() FsOption { return WithDecoder(".po", catalog.NewPoDecoder()) }
+
+// WithJSONDecoder stores the JSON file decoder.
+//
+// Shorthand for WithDecoder(".json", catalog.NewJSONDecoder()).
+func WithJSONDecoder() FsOption { return WithDecoder(".json", catalog.NewJSONDecoder()) }
 
 type defaultResolver struct {
 	search   bool
@@ -211,6 +235,17 @@ type defaultResolver struct {
 }
 
 // NewDefaultResolver create a resolver which can be used for a FilesystemLoader.
+// It is the Resolver that is used if no separate resolver has been set.
+// He tries to find the files in different directories and returns the file that it found first.
+//
+// For example, if a Mo file is to be found, an attempt is made to resolve the following paths.
+//   - .../locale/category/domain.mo
+//   - .../locale/LC_MESSAGES/domain.mo
+//   - .../locale/domain.mo
+//   - .../domain/locale.mo
+//   - .../locale.mo
+//   - .../category/locale.mo
+//   - .../LC_MESSAGES/locale.mo
 func NewDefaultResolver(opts ...ResolverOption) (Resolver, error) {
 	l := &defaultResolver{
 		search:   true,
@@ -226,10 +261,10 @@ func NewDefaultResolver(opts ...ResolverOption) (Resolver, error) {
 
 func WithDisabledSearch() ResolverOption { return func(r *defaultResolver) { r.search = false } }
 
+// WithCategory defines an additional category which is included in the search.
+// For Gettext files, LC_MESSAGES is often used for this.
 func WithCategory(category string) ResolverOption {
-	return func(l *defaultResolver) {
-		l.category = category
-	}
+	return func(l *defaultResolver) { l.category = category }
 }
 
 func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag, domain string) (string, error) {
