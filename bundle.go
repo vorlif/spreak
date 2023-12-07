@@ -328,11 +328,15 @@ func WithFilesystemLoader(domain string, fsOpts ...FsOption) BundleOption {
 }
 
 // WithDomainPath loads a domain from a specified path.
+//
+// This is a shorthand for WithFilesystemLoader(domain, WithPath(path)).
 func WithDomainPath(domain string, path string) BundleOption {
 	return WithFilesystemLoader(domain, WithPath(path))
 }
 
 // WithDomainFs loads a domain from a fs.FS.
+//
+// This is a shorthand for WithFilesystemLoader(domain, WithFs(fsys)).
 func WithDomainFs(domain string, fsys fs.FS) BundleOption {
 	if fsys == nil {
 		return func(opts *bundleBuilder) error {

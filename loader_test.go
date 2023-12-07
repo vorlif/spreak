@@ -101,23 +101,23 @@ func TestLoadPo(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			false, path.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), ".po",
 		},
 		{
 			language.German, "a", "",
-			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), ".po",
 		},
 		{
 			language.French, "a", "",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 		{
 			language.English, "domain", "cat",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 		{
 			language.MustParse("de_AT"), "", "",
-			false, "de_AT.po", PoFile,
+			false, "de_AT.po", ".po",
 		},
 	}
 
@@ -155,15 +155,15 @@ func TestReduceMoFiles(t *testing.T) {
 	}{
 		{
 			language.German, "b", "my_category",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 		{
 			language.French, "a", "",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 		{
 			language.English, "domain", "cat",
-			false, "en.mo", MoFile,
+			false, "en.mo", ".mo",
 		},
 	}
 
@@ -192,19 +192,19 @@ func TestDisableSearch(t *testing.T) {
 	}{
 		{
 			language.German, "other", "my_category",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 		{
 			language.German, "a", "LC_MESSAGES",
-			false, path.Join("de", "LC_MESSAGES", "a.po"), PoFile,
+			false, path.Join("de", "LC_MESSAGES", "a.po"), ".po",
 		},
 		{
 			language.German, "b", "my_category",
-			false, path.Join("de", "my_category", "b.po"), PoFile,
+			false, path.Join("de", "my_category", "b.po"), ".po",
 		},
 		{
 			language.English, "domain", "cat",
-			true, "", UnknownFile,
+			true, "", "unknown",
 		},
 	}
 
@@ -257,7 +257,7 @@ func TestWithDecoder(t *testing.T) {
 		)
 		assert.NoError(t, err)
 		require.NotNil(t, fl)
-		assert.Contains(t, fl.extensions, PoFile)
+		assert.Contains(t, fl.extensions, ".po")
 		if assert.Len(t, fl.decoder, 1) {
 			assert.IsType(t, catalog.NewPoDecoder(), fl.decoder[0])
 		}
@@ -270,9 +270,22 @@ func TestWithDecoder(t *testing.T) {
 		)
 		assert.NoError(t, err)
 		require.NotNil(t, fl)
-		assert.Contains(t, fl.extensions, MoFile)
+		assert.Contains(t, fl.extensions, ".mo")
 		if assert.Len(t, fl.decoder, 1) {
 			assert.IsType(t, catalog.NewMoDecoder(), fl.decoder[0])
+		}
+	})
+
+	t.Run("WithJSONDecoder disables fallback", func(t *testing.T) {
+		fl, err := NewFilesystemLoader(
+			WithJSONDecoder(),
+			WithSystemFs(),
+		)
+		assert.NoError(t, err)
+		require.NotNil(t, fl)
+		assert.Contains(t, fl.extensions, ".json")
+		if assert.Len(t, fl.decoder, 1) {
+			assert.IsType(t, catalog.NewJSONDecoder(), fl.decoder[0])
 		}
 	})
 
@@ -330,7 +343,7 @@ func TestWithFs(t *testing.T) {
 
 		for i, tt := range tests {
 			t.Run(strconv.Itoa(i), func(t *testing.T) {
-				getPath, getErr := resolver.Resolve(testFS, PoFile, tt.lang, tt.domain)
+				getPath, getErr := resolver.Resolve(testFS, ".po", tt.lang, tt.domain)
 				if tt.wantErr {
 					assert.Error(t, getErr)
 					assert.Empty(t, getPath)

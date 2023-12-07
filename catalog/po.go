@@ -138,15 +138,20 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 	return catl, nil
 }
 
-func getCLDRPluralFunction(lang language.Tag) func(a interface{}) int {
+func getCLDRPluralFunction(lang language.Tag) func(a any) int {
 	ruleSet, _ := cldrplural.ForLanguage(lang)
-	return func(a interface{}) int {
+
+	catToForm := make(map[cldrplural.Category]int, len(ruleSet.Categories))
+	for idx, cat := range ruleSet.Categories {
+		catToForm[cat] = idx
+	}
+
+	return func(a any) int {
 		cat := ruleSet.Evaluate(a)
-		for i := 0; i < len(ruleSet.Categories); i++ {
-			if ruleSet.Categories[i] == cat {
-				return i
-			}
+		if form, ok := catToForm[cat]; ok {
+			return form
 		}
+
 		return 0
 	}
 }
