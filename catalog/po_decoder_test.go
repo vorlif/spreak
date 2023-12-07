@@ -28,6 +28,10 @@ msgstr[1] "%d Tage"
 
 msgid "Special\t	\"chars\""
 msgstr "Sonder\t	\"zeichen\""
+
+#, fuzzy
+msgid "Unknown"
+msgstr "Fuzzy translation"
 `
 
 func TestPoDecoder(t *testing.T) {
@@ -51,6 +55,10 @@ func TestPoDecoder(t *testing.T) {
 	translation, err = catl.Lookup("", "xyz")
 	assert.Error(t, err)
 	assert.Equal(t, "xyz", translation)
+
+	translation, err = catl.Lookup("", "Unknown")
+	assert.Error(t, err)
+	assert.Equal(t, "Unknown", translation)
 
 	catl, err = dec.Decode(lang, domain, []byte(decodePoInvalidPluralForm+decodeTestData))
 	assert.Error(t, err)

@@ -91,6 +91,10 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 				continue
 			}
 
+			if poMsg.Comment != nil && poMsg.Comment.HasFlag("fuzzy") {
+				continue
+			}
+
 			d := &GettextMessage{
 				translations: poMsg.Str,
 			}
