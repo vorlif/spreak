@@ -13,6 +13,13 @@ func TestHumanizer_LanguageName(t *testing.T) {
 	assert.Equal(t, "Deutsch", h.LanguageName("German"))
 }
 
+func TestHumanizer_LanguageNameByCode(t *testing.T) {
+	h := createGermanHumanizer(t)
+	assert.Equal(t, "Deutsch", h.LanguageNameByCode("de"))
+	assert.Equal(t, "Englisch", h.LanguageNameByCode("en"))
+	assert.Equal(t, "", h.LanguageNameByCode("abc"))
+}
+
 func TestToFixed(t *testing.T) {
 	tests := []struct {
 		num       float64

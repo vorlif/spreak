@@ -12,6 +12,8 @@ import (
 )
 
 // LanguageName returns the name of the spoken language as called by the languages used.
+//
+// If no translation exists for the name of the language, the input is returned.
 func (h *Humanizer) LanguageName(lang string) string {
 	return h.loc.Get(lang)
 }
