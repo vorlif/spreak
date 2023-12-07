@@ -128,10 +128,10 @@ msgstr "Affricaneg"
 msgid "Albanian"
 msgstr "Albaneg"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Ebrill"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Ebrill"
 
@@ -214,10 +214,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Rhag."
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Rhagfyr"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Rhagfyr"
 
@@ -237,10 +237,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Chwe."
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "Chwefror"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "Chwefror"
 
@@ -312,6 +312,10 @@ msgstr "Ionawr"
 msgid "Japanese"
 msgstr "Siapanëeg"
 
+msgctxt "alt. month"
+msgid "July"
+msgstr "Gorffenaf"
+
 msgid "July"
 msgstr "Gorffenaf"
 
@@ -319,20 +323,16 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Gorff."
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Gorffenaf"
-
-msgid "June"
-msgstr "Mehefin"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "Mehefin"
 
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "Meh."
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Mehefin"
 
 msgid "Kabyle"
 msgstr ""
@@ -381,14 +381,14 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "Mawrth"
 
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mai"
-
-msgid "May"
-msgstr "Mai"
-
 msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+msgid "May"
+msgstr "Mai"
+
+msgctxt "alt. month"
 msgid "May"
 msgstr "Mai"
 
@@ -420,10 +420,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Tach."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Tachwedd"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Tachwedd"
 
@@ -475,10 +475,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Medi"
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Medi"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Medi"
 

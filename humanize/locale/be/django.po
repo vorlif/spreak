@@ -2,16 +2,16 @@
 # 
 # Translators:
 # Viktar Palstsiuk <vipals@gmail.com>, 2014-2015
-# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021
-# Дмитрий Шатера <mr.bobsans@gmail.com>, 2016
+# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023
+# Bobsans <mr.bobsans@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-11-19 01:46+0000\n"
-"Last-Translator: znotdead <zhirafchik@gmail.com>\n"
-"Language-Team: Belarusian (http://www.transifex.com/django/django/language/be/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023\n"
+"Language-Team: Belarusian (http://app.transifex.com/django/django/language/be/)\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr[3] "%[1]d байтаў"
 
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
-msgstr[0] "%[1]s мільярд"
+msgstr[0] "%(value).s мільярд"
 msgstr[1] "%[1]s мільярды"
 msgstr[2] "%[1]s мільярдаў"
 msgstr[3] "%[1]s мільярдаў"
@@ -105,13 +105,6 @@ msgstr[3] "%[1]s трыльёнаў"
 msgid "%[1]v ago"
 msgstr "%[1]v таму"
 
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v дзень"
-msgstr[1] "%[1]v  дзён"
-msgstr[2] "%[1]v  дзён"
-msgstr[3] "%[1]v дзён"
-
 msgctxt "naturaltime-future"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
@@ -126,6 +119,13 @@ msgid_plural "%[1]v days"
 msgstr[0] "%[1]v дзень"
 msgstr[1] "%[1]v дзён"
 msgstr[2] "%[1]v дзён"
+msgstr[3] "%[1]v дзён"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v дзень"
+msgstr[1] "%[1]v  дзён"
+msgstr[2] "%[1]v  дзён"
 msgstr[3] "%[1]v дзён"
 
 msgid "%[1]v from now"
@@ -154,14 +154,6 @@ msgstr[1] "%[1]v гадзін"
 msgstr[2] "%[1]v гадзін"
 msgstr[3] "%[1]v гадзін"
 
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v хвіліна"
-msgstr[1] "%[1]v хвілін"
-msgstr[2] "%[1]v хвілін"
-msgstr[3] "%[1]v хвілін"
-
 msgctxt "naturaltime-future"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
@@ -170,12 +162,35 @@ msgstr[1] "%[1]v хвілін"
 msgstr[2] "%[1]v хвілін"
 msgstr[3] "%[1]v хвілін"
 
+msgctxt "naturaltime-past"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v хвіліна"
 msgstr[1] "%[1]v хвілін"
 msgstr[2] "%[1]v хвілін"
 msgstr[3] "%[1]v хвілін"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v хвіліна"
+msgstr[1] "%[1]v хвілін"
+msgstr[2] "%[1]v хвілін"
+msgstr[3] "%[1]v хвілін"
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v месяц"
+msgstr[1] "%[1]v месяцаў"
+msgstr[2] "%[1]v месяцаў"
+msgstr[3] "%[1]v месяцаў"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v месяц"
+msgstr[1] "%[1]v месяцаў"
+msgstr[2] "%[1]v месяцаў"
+msgstr[3] "%[1]v месяцаў"
 
 msgctxt "naturaltime-future"
 msgid "%[1]v month"
@@ -184,29 +199,6 @@ msgstr[0] "%[1]v месяц"
 msgstr[1] "%[1]v месяцаў"
 msgstr[2] "%[1]v месяцаў"
 msgstr[3] "%[1]v месяцаў"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v месяц"
-msgstr[1] "%[1]v месяцаў"
-msgstr[2] "%[1]v месяцаў"
-msgstr[3] "%[1]v месяцаў"
-
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v месяц"
-msgstr[1] "%[1]v месяцаў"
-msgstr[2] "%[1]v месяцаў"
-msgstr[3] "%[1]v месяцаў"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v тыдзень"
-msgstr[1] "%[1]v тыдняў"
-msgstr[2] "%[1]v тыдняў"
-msgstr[3] "%[1]v тыдняў"
 
 msgctxt "naturaltime-future"
 msgid "%[1]v week"
@@ -224,6 +216,14 @@ msgstr[2] "%[1]v тыдняў"
 msgstr[3] "%[1]v тыдняў"
 
 msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v тыдзень"
+msgstr[1] "%[1]v тыдняў"
+msgstr[2] "%[1]v тыдняў"
+msgstr[3] "%[1]v тыдняў"
+
+msgctxt "naturaltime-future"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v год"
@@ -238,7 +238,7 @@ msgstr[1] "%[1]v гадоў"
 msgstr[2] "%[1]v гадоў"
 msgstr[3] "%[1]v гадоў"
 
-msgctxt "naturaltime-future"
+msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v год"
@@ -273,11 +273,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%vы"
 
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 8"
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vы"
 
@@ -285,11 +281,11 @@ msgctxt "ordinal 7"
 msgid "%vth"
 msgstr "%vы"
 
-msgctxt "ordinal 5"
+msgctxt "ordinal 9"
 msgid "%vth"
 msgstr "%vы"
 
-msgctxt "ordinal 4"
+msgctxt "ordinal 6"
 msgid "%vth"
 msgstr "%vы"
 
@@ -297,11 +293,15 @@ msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%vы"
 
-msgctxt "ordinal 11, 12, 13"
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vы"
 
-msgctxt "ordinal 6"
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr "%vы"
 
@@ -320,6 +320,7 @@ msgstr "Альбанская"
 msgid "Algerian Arabic"
 msgstr "Алжырская арабская"
 
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "красавіка"
 
@@ -327,7 +328,6 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "красавіка"
 
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "красавіка"
 
@@ -390,6 +390,9 @@ msgstr "Бірманская"
 msgid "Catalan"
 msgstr "Каталёнская"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Цэнтральнакурдская (сарані)"
+
 msgid "Colombian Spanish"
 msgstr "Гішпанская (Калумбія)"
 
@@ -429,10 +432,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr "Люты"
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "лютага"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "лютага"
 
@@ -507,21 +510,21 @@ msgstr "студзеня"
 msgid "Japanese"
 msgstr "Японская"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "ліпеня"
-
 msgctxt "abbrev. month"
 msgid "July"
 msgstr "ліпеня"
 
+msgctxt "alt. month"
 msgid "July"
 msgstr "ліпеня"
 
+msgid "July"
+msgstr "ліпеня"
+
+msgctxt "alt. month"
 msgid "June"
 msgstr "чэрвеня"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "чэрвеня"
 
@@ -571,10 +574,10 @@ msgstr "Малаялам"
 msgid "Marathi"
 msgstr "Маратхі"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "сакавік"
 
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "сакавік"
 
@@ -582,14 +585,14 @@ msgctxt "alt. month"
 msgid "March"
 msgstr "сакавік"
 
-msgid "May"
-msgstr "траўня"
-
 msgctxt "alt. month"
 msgid "May"
 msgstr "траўня"
 
 msgctxt "abbrev. month"
+msgid "May"
+msgstr "траўня"
+
 msgid "May"
 msgstr "траўня"
 
@@ -632,10 +635,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Кас."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "кастрычніка"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "кастрычніка"
 
@@ -760,6 +763,9 @@ msgstr "Верхнелужыцкая"
 
 msgid "Urdu"
 msgstr "Урду"
+
+msgid "Uyghur"
+msgstr "Уйгурскі"
 
 msgid "Uzbek"
 msgstr "Узбецкі"

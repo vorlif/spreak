@@ -1,4 +1,4 @@
-package fr
+package ckb
 
 import (
 	"embed"
@@ -13,17 +13,17 @@ var fsys embed.FS
 
 func New() *humanize.LocaleData {
 	return &humanize.LocaleData{
-		Lang: language.MustParse("fr"),
+		Lang: language.MustParse("ckb"),
 		Fs:   fsys,
 		Format: &humanize.FormatData{
 			DateFormat:          "j F Y",
-			TimeFormat:          "H:i",
-			DateTimeFormat:      "j F Y H:i",
+			TimeFormat:          "G:i",
+			DateTimeFormat:      "j F Y، کاتژمێر G:i",
 			YearMonthFormat:     "F Y",
 			MonthDayFormat:      "j F",
-			ShortDateFormat:     "d/m/Y",
-			ShortDatetimeFormat: "d/m/Y H:i",
-			FirstDayOfWeek:      1,
+			ShortDateFormat:     "Y/n/j",
+			ShortDatetimeFormat: "Y/n/j،‏ G:i",
+			FirstDayOfWeek:      6,
 		},
 	}
 }

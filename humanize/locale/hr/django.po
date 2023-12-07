@@ -124,6 +124,9 @@ msgstr "Afrikaans"
 msgid "Albanian"
 msgstr "Albanski"
 
+msgid "April"
+msgstr "Travanj"
+
 msgctxt "alt. month"
 msgid "April"
 msgstr "travnja"
@@ -131,9 +134,6 @@ msgstr "travnja"
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "Tra."
-
-msgid "April"
-msgstr "Travanj"
 
 msgid "Arabic"
 msgstr "Arapski"
@@ -151,12 +151,12 @@ msgctxt "abbrev. month"
 msgid "Aug."
 msgstr "Kol."
 
-msgid "August"
-msgstr "Kolovoz"
-
 msgctxt "alt. month"
 msgid "August"
 msgstr "kolovoza"
+
+msgid "August"
+msgstr "Kolovoz"
 
 msgid "Australian English"
 msgstr "Australski engleski"
@@ -298,15 +298,18 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Sij."
 
-msgid "January"
-msgstr "Siječanj"
-
 msgctxt "alt. month"
 msgid "January"
 msgstr "siječnja"
 
+msgid "January"
+msgstr "Siječanj"
+
 msgid "Japanese"
 msgstr "Japanski"
+
+msgid "July"
+msgstr "Srpanj"
 
 msgctxt "alt. month"
 msgid "July"
@@ -316,19 +319,16 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Srp."
 
-msgid "July"
-msgstr "Srpanj"
-
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "Lip."
 
-msgid "June"
-msgstr "Lipanj"
-
 msgctxt "alt. month"
 msgid "June"
 msgstr "lipnja"
+
+msgid "June"
+msgstr "Lipanj"
 
 msgid "Kabyle"
 msgstr ""
@@ -366,6 +366,10 @@ msgstr "Malayalam"
 msgid "Marathi"
 msgstr "Marathi"
 
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Ožu."
+
 msgid "March"
 msgstr "Ožujak"
 
@@ -374,19 +378,15 @@ msgid "March"
 msgstr "ožujka"
 
 msgctxt "abbrev. month"
-msgid "March"
-msgstr "Ožu."
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Svi."
-
-msgid "May"
-msgstr "Svibanj"
 
 msgctxt "alt. month"
 msgid "May"
 msgstr "svibnja"
+
+msgid "May"
+msgstr "Svibanj"
 
 msgid "Mexican Spanish"
 msgstr "Meksički španjolski"
@@ -471,12 +471,12 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Ruj."
 
-msgid "September"
-msgstr "Rujan"
-
 msgctxt "alt. month"
 msgid "September"
 msgstr "rujna"
+
+msgid "September"
+msgstr "Rujan"
 
 msgid "Serbian"
 msgstr "Srpski"

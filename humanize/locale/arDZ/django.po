@@ -213,15 +213,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr ""
 
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
 msgid "%vth"
 msgstr ""
 
@@ -229,7 +221,11 @@ msgctxt "ordinal 7"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 11, 12, 13"
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
 msgid "%vth"
 msgstr ""
 
@@ -237,7 +233,11 @@ msgctxt "ordinal 9"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 8"
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
 msgid "%vth"
 msgstr ""
 
@@ -263,11 +263,11 @@ msgstr "العربية الجزائرية"
 msgid "April"
 msgstr "أفريل"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "April"
 msgstr "أفريل"
 
-msgctxt "alt. month"
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "أفريل"
 
@@ -346,10 +346,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "ديسمبر"
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "ديسمبر"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "ديسمبر"
 
@@ -437,10 +437,10 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "جانفي"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "جانفي"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "جانفي"
 
@@ -458,10 +458,10 @@ msgctxt "alt. month"
 msgid "July"
 msgstr "جويليه"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "جوان"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "جوان"
 
@@ -511,10 +511,10 @@ msgstr "المايالام"
 msgid "Marathi"
 msgstr "المهاراتية"
 
+msgctxt "abbrev. month"
 msgid "March"
 msgstr "مارس"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "مارس"
 
@@ -561,10 +561,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "نوفمبر"
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "نوفمبر"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "نوفمبر"
 

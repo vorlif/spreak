@@ -1,4 +1,4 @@
-package fr
+package ug
 
 import (
 	"embed"
@@ -13,16 +13,16 @@ var fsys embed.FS
 
 func New() *humanize.LocaleData {
 	return &humanize.LocaleData{
-		Lang: language.MustParse("fr"),
+		Lang: language.MustParse("ug"),
 		Fs:   fsys,
 		Format: &humanize.FormatData{
-			DateFormat:          "j F Y",
-			TimeFormat:          "H:i",
-			DateTimeFormat:      "j F Y H:i",
+			DateFormat:          "j F, Y",
+			TimeFormat:          "G:i",
+			DateTimeFormat:      "",
 			YearMonthFormat:     "F Y",
 			MonthDayFormat:      "j F",
-			ShortDateFormat:     "d/m/Y",
-			ShortDatetimeFormat: "d/m/Y H:i",
+			ShortDateFormat:     "Y/m/d",
+			ShortDatetimeFormat: "Y/m/d G:i",
 			FirstDayOfWeek:      1,
 		},
 	}

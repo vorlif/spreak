@@ -103,7 +103,6 @@ msgstr ""
 msgid "Albanian"
 msgstr ""
 
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "មេសា"
 
@@ -111,6 +110,7 @@ msgctxt "alt. month"
 msgid "April"
 msgstr "មេសា"
 
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "មេសា"
 
@@ -189,10 +189,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr ""
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "ធ្នូ"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "ធ្នូ"
 
@@ -212,10 +212,10 @@ msgctxt "abbrev. month"
 msgid "Feb."
 msgstr ""
 
+msgctxt "alt. month"
 msgid "February"
 msgstr "កុម្ភៈ"
 
-msgctxt "alt. month"
 msgid "February"
 msgstr "កុម្ភៈ"
 
@@ -290,15 +290,14 @@ msgstr "ភាសាជប៉ុន"
 msgid "July"
 msgstr "កក្កដា"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "កក្កដា"
-
 msgctxt "abbrev. month"
 msgid "July"
 msgstr "កក្កដា"
 
 msgctxt "alt. month"
+msgid "July"
+msgstr "កក្កដា"
+
 msgid "June"
 msgstr "មិថុនា"
 
@@ -306,6 +305,7 @@ msgctxt "abbrev. month"
 msgid "June"
 msgstr "មិថុនា"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "មិថុនា"
 
@@ -345,6 +345,10 @@ msgstr ""
 msgid "Marathi"
 msgstr ""
 
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "មិនា"
+
 msgctxt "alt. month"
 msgid "March"
 msgstr "មិនា"
@@ -353,9 +357,6 @@ msgid "March"
 msgstr "មិនា"
 
 msgctxt "abbrev. month"
-msgid "March"
-msgstr "មិនា"
-
 msgid "May"
 msgstr "ឧសភា"
 
@@ -363,7 +364,6 @@ msgctxt "alt. month"
 msgid "May"
 msgstr "ឧសភា"
 
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "ឧសភា"
 
@@ -406,10 +406,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr ""
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "តុលា"
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "តុលា"
 
@@ -450,10 +450,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr ""
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "កញ្ញា"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "កញ្ញា"
 

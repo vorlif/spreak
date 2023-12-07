@@ -113,19 +113,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr ""
 
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
 msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
 msgid "%vth"
 msgstr ""
 
@@ -133,7 +121,7 @@ msgctxt "ordinal 7"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 8"
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr ""
 
@@ -141,7 +129,19 @@ msgctxt "ordinal 9"
 msgid "%vth"
 msgstr ""
 
-msgctxt "ordinal 5"
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr ""
 
@@ -157,14 +157,14 @@ msgstr ""
 msgid "Albanian"
 msgstr "Албан"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Сәуір"
-
 msgid "April"
 msgstr "Сәуір"
 
 msgctxt "alt. month"
+msgid "April"
+msgstr "Сәуір"
+
+msgctxt "abbrev. month"
 msgid "April"
 msgstr "Сәуір"
 
@@ -341,21 +341,21 @@ msgstr "Қаңтар"
 msgid "Japanese"
 msgstr "Жапон"
 
-msgid "July"
-msgstr "Шілде"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Шілде"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "Шілде"
 
+msgid "July"
+msgstr "Шілде"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Шілде"
+
+msgctxt "abbrev. month"
 msgid "June"
 msgstr "Маусым"
 
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "Маусым"
 
@@ -399,25 +399,25 @@ msgstr "Малаялам"
 msgid "Marathi"
 msgstr ""
 
-msgid "March"
-msgstr "Наурыз"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Наурыз"
-
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Наурыз"
 
 msgctxt "alt. month"
+msgid "March"
+msgstr "Наурыз"
+
+msgid "March"
+msgstr "Наурыз"
+
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "Мамыр"
 
 msgid "May"
 msgstr "Мамыр"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "May"
 msgstr "Мамыр"
 
@@ -449,10 +449,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Қар."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Қараша"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Қараша"
 

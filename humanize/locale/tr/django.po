@@ -2,7 +2,7 @@
 # 
 # Translators:
 # Ahmet Emre Aladağ <emre.aladag@isik.edu.tr>, 2013
-# BouRock, 2015-2022
+# BouRock, 2015-2023
 # BouRock, 2014-2015
 # Caner Başaran <basaran.caner@gmail.com>, 2013
 # Cihad GÜNDOĞDU <cihadgundogdu@gmail.com>, 2012
@@ -17,10 +17,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: BouRock\n"
-"Language-Team: Turkish (http://www.transifex.com/django/django/language/tr/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: BouRock, 2015-2023\n"
+"Language-Team: Turkish (http://app.transifex.com/django/django/language/tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,18 +90,18 @@ msgstr[1] "%[1]s trilyon"
 msgid "%[1]v ago"
 msgstr "%[1]v önce"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v gün"
-msgstr[1] "%[1]v gün"
-
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v gün"
 msgstr[1] "%[1]v gün"
 
 msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v gün"
+msgstr[1] "%[1]v gün"
+
+msgctxt "naturaltime-future"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v gün"
@@ -110,6 +110,12 @@ msgstr[1] "%[1]v gün"
 msgid "%[1]v from now"
 msgstr "şu andan itibaren %[1]v"
 
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v saat"
+msgstr[1] "%[1]v saat"
+
 msgctxt "naturaltime-future"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
@@ -120,18 +126,6 @@ msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v saat"
 msgstr[1] "%[1]v saat"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v saat"
-msgstr[1] "%[1]v saat"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v dakika"
-msgstr[1] "%[1]v dakika"
 
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
@@ -145,10 +139,10 @@ msgstr[0] "%[1]v dakika"
 msgstr[1] "%[1]v dakika"
 
 msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v ay"
-msgstr[1] "%[1]v ay"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v dakika"
+msgstr[1] "%[1]v dakika"
 
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
@@ -156,6 +150,12 @@ msgstr[0] "%[1]v ay"
 msgstr[1] "%[1]v ay"
 
 msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v ay"
+msgstr[1] "%[1]v ay"
+
+msgctxt "naturaltime-past"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v ay"
@@ -166,13 +166,13 @@ msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v hafta"
 msgstr[1] "%[1]v hafta"
 
-msgctxt "naturaltime-future"
+msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v hafta"
 msgstr[1] "%[1]v hafta"
 
-msgctxt "naturaltime-past"
+msgctxt "naturaltime-future"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v hafta"
@@ -222,23 +222,7 @@ msgctxt "ordinal 1"
 msgid "%vst"
 msgstr "%v."
 
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v."
-
 msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%v."
 
@@ -246,7 +230,23 @@ msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%v."
 
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."
+
 msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%v."
 
@@ -273,10 +273,10 @@ msgctxt "abbrev. month"
 msgid "April"
 msgstr "Nisan"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Nisan"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Nisan"
 
@@ -339,6 +339,9 @@ msgstr "Birmanca"
 msgid "Catalan"
 msgstr "Katalanca"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Orta Kürtçe (Sorani)"
+
 msgid "Colombian Spanish"
 msgstr "Kolomiya İspanyolcası"
 
@@ -355,10 +358,10 @@ msgctxt "abbrev. month"
 msgid "Dec."
 msgstr "Ara."
 
+msgctxt "alt. month"
 msgid "December"
 msgstr "Aralık"
 
-msgctxt "alt. month"
 msgid "December"
 msgstr "Aralık"
 
@@ -471,12 +474,12 @@ msgctxt "alt. month"
 msgid "June"
 msgstr "Haziran"
 
+msgid "June"
+msgstr "Haziran"
+
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "Haz."
-
-msgid "June"
-msgstr "Haziran"
 
 msgid "Kabyle"
 msgstr "Kabiliye dili"
@@ -520,14 +523,14 @@ msgstr "Malayamca"
 msgid "Marathi"
 msgstr "Marathi dili"
 
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mart"
+
 msgid "March"
 msgstr "Mart"
 
 msgctxt "abbrev. month"
-msgid "March"
-msgstr "Mart"
-
-msgctxt "alt. month"
 msgid "March"
 msgstr "Mart"
 
@@ -581,10 +584,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Eki."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Ekim"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Ekim"
 
@@ -709,6 +712,9 @@ msgstr "Yukarı Sorb dili"
 
 msgid "Urdu"
 msgstr "Urduca"
+
+msgid "Uyghur"
+msgstr "Uygur"
 
 msgid "Uzbek"
 msgstr "‎Özbekçe"

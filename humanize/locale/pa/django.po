@@ -278,10 +278,10 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "ਜਨ"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "ਜਨਵਰੀ"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "ਜਨਵਰੀ"
 
@@ -299,10 +299,10 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "ਜੁਲ"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "ਜੂਨ"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "ਜੂਨ"
 
@@ -350,10 +350,10 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "ਮਾਰ"
 
+msgctxt "alt. month"
 msgid "March"
 msgstr "ਮਾਰਚ"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "ਮਾਰਚ"
 

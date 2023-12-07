@@ -1,17 +1,17 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
-# F Wolff <friedel@translate.org.za>, 2019-2020,2022
+# F Wolff <friedel@translate.org.za>, 2019-2020,2022-2023
 # Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
 # unklphil <villiers.strauss@gmail.com>, 2014,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: F Wolff <friedel@translate.org.za>\n"
-"Language-Team: Afrikaans (http://www.transifex.com/django/django/language/af/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>, 2019-2020,2022-2023\n"
+"Language-Team: Afrikaans (http://app.transifex.com/django/django/language/af/)\n"
 "Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,6 +81,18 @@ msgstr[1] "%[1]s biljoen"
 msgid "%[1]v ago"
 msgstr "%[1]v gelede"
 
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dag"
+msgstr[1] "%[1]v dae"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dag"
+msgstr[1] "%[1]v dae"
+
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v dag"
@@ -94,6 +106,30 @@ msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v uur"
 msgstr[1] "%[1]v uur"
 
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uur"
+msgstr[1] "%[1]v uur"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uur"
+msgstr[1] "%[1]v uur"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minuut"
+msgstr[1] "%[1]v minute"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minuut"
+msgstr[1] "%[1]v minute"
+
+msgctxt "naturaltime-past"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v minuut"
@@ -104,11 +140,47 @@ msgid_plural "%[1]v months"
 msgstr[0] "%[1]v maand"
 msgstr[1] "%[1]v maande"
 
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v maand"
+msgstr[1] "%[1]v maande"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v maand"
+msgstr[1] "%[1]v maande"
+
+msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v week"
 msgstr[1] "%[1]v weke"
 
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v week"
+msgstr[1] "%[1]v weke"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v week"
+msgstr[1] "%[1]v weke"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v jaar"
+msgstr[1] "%[1]v jaar"
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v jaar"
+msgstr[1] "%[1]v jaar"
+
+msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v jaar"
@@ -145,11 +217,11 @@ msgctxt "ordinal 6"
 msgid "%vth"
 msgstr "%vste"
 
-msgctxt "ordinal 7"
+msgctxt "ordinal 8"
 msgid "%vth"
 msgstr "%vste"
 
-msgctxt "ordinal 8"
+msgctxt "ordinal 4"
 msgid "%vth"
 msgstr "%vste"
 
@@ -165,11 +237,11 @@ msgctxt "ordinal 0"
 msgid "%vth"
 msgstr "%vste"
 
-msgctxt "ordinal 4"
+msgctxt "ordinal 5"
 msgid "%vth"
 msgstr "%vste"
 
-msgctxt "ordinal 5"
+msgctxt "ordinal 7"
 msgid "%vth"
 msgstr "%vste"
 
@@ -186,16 +258,16 @@ msgid "Albanian"
 msgstr "Albanees"
 
 msgid "Algerian Arabic"
-msgstr ""
-
-msgid "April"
-msgstr "April"
+msgstr "Algeriese Arabies"
 
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "April"
 
 msgctxt "alt. month"
+msgid "April"
+msgstr "April"
+
 msgid "April"
 msgstr "April"
 
@@ -257,6 +329,9 @@ msgstr "Birmaans"
 
 msgid "Catalan"
 msgstr "Katalaans"
+
+msgid "Central Kurdish (Sorani)"
+msgstr ""
 
 msgid "Colombian Spanish"
 msgstr "Kolombiaanse Spaans"
@@ -365,20 +440,20 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Jan."
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Januarie"
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Januarie"
 
 msgid "Japanese"
 msgstr "Japannees"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "Julie"
 
+msgctxt "alt. month"
 msgid "July"
 msgstr "Julie"
 
@@ -386,10 +461,10 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Julie"
 
+msgctxt "alt. month"
 msgid "June"
 msgstr "Junie"
 
-msgctxt "alt. month"
 msgid "June"
 msgstr "Junie"
 
@@ -439,9 +514,6 @@ msgstr "Malabaars"
 msgid "Marathi"
 msgstr "Marathi"
 
-msgid "March"
-msgstr "Maart"
-
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "Maart"
@@ -450,14 +522,17 @@ msgctxt "alt. month"
 msgid "March"
 msgstr "Maart"
 
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mei"
+msgid "March"
+msgstr "Maart"
 
 msgid "May"
 msgstr "Mei"
 
 msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mei"
+
+msgctxt "alt. month"
 msgid "May"
 msgstr "Mei"
 
@@ -489,10 +564,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Nov."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "November"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "November"
 
@@ -500,10 +575,10 @@ msgctxt "abbrev. month"
 msgid "Oct."
 msgstr "Okt."
 
+msgctxt "alt. month"
 msgid "October"
 msgstr "Oktober"
 
-msgctxt "alt. month"
 msgid "October"
 msgstr "Oktober"
 
@@ -544,10 +619,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Sept."
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "September"
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "September"
 
@@ -629,6 +704,9 @@ msgstr "Opper-Sorbies"
 msgid "Urdu"
 msgstr "Oerdoe"
 
+msgid "Uyghur"
+msgstr ""
+
 msgid "Uzbek"
 msgstr "Oesbekies "
 
@@ -655,7 +733,7 @@ msgstr[1] "%[1]v minute gelede"
 msgid "a minute from now"
 msgid_plural "%[1]v minutes from now"
 msgstr[0] "oor ’n minuut"
-msgstr[1] "%[1]v minute van nou af"
+msgstr[1] "oor %[1]v minute"
 
 msgid "a second ago"
 msgid_plural "%[1]v seconds ago"
@@ -665,7 +743,7 @@ msgstr[1] "%[1]v sekondes gelede"
 msgid "a second from now"
 msgid_plural "%[1]v seconds from now"
 msgstr[0] "oor ’n sekonde"
-msgstr[1] "oor %[1]v sekondes"
+msgstr[1] "oor %[1]v sekondes"
 
 msgid "a.m."
 msgstr "vm."
@@ -673,12 +751,12 @@ msgstr "vm."
 msgid "an hour ago"
 msgid_plural "%[1]v hours ago"
 msgstr[0] "’n uur gelede"
-msgstr[1] "%[1]v ure gelede"
+msgstr[1] "%[1]v uur gelede"
 
 msgid "an hour from now"
 msgid_plural "%[1]v hours from now"
 msgstr[0] "oor ’n uur"
-msgstr[1] "oor %[1]v ure"
+msgstr[1] "oor %[1]v ure"
 
 msgid "apr"
 msgstr "apr"

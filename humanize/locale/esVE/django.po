@@ -110,7 +110,6 @@ msgstr "Albano"
 msgid "Algerian Arabic"
 msgstr ""
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Abril"
 
@@ -118,6 +117,7 @@ msgctxt "abbrev. month"
 msgid "April"
 msgstr "Abril"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Abril"
 
@@ -297,9 +297,6 @@ msgstr "Enero"
 msgid "Japanese"
 msgstr "Japonés"
 
-msgid "July"
-msgstr "Julio"
-
 msgctxt "alt. month"
 msgid "July"
 msgstr "Julio"
@@ -308,14 +305,17 @@ msgctxt "abbrev. month"
 msgid "July"
 msgstr "Julio"
 
-msgctxt "alt. month"
-msgid "June"
-msgstr "Junio"
+msgid "July"
+msgstr "Julio"
 
 msgid "June"
 msgstr "Junio"
 
 msgctxt "abbrev. month"
+msgid "June"
+msgstr "Junio"
+
+msgctxt "alt. month"
 msgid "June"
 msgstr "Junio"
 
@@ -362,18 +362,18 @@ msgctxt "abbrev. month"
 msgid "March"
 msgstr "Marzo"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Marzo"
-
 msgid "March"
 msgstr "Marzo"
 
 msgctxt "alt. month"
+msgid "March"
+msgstr "Marzo"
+
+msgctxt "abbrev. month"
 msgid "May"
 msgstr "Mayo"
 
-msgctxt "abbrev. month"
+msgctxt "alt. month"
 msgid "May"
 msgstr "Mayo"
 
@@ -408,10 +408,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Nov."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Noviembre"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Noviembre"
 
@@ -463,10 +463,10 @@ msgctxt "abbrev. month"
 msgid "Sept."
 msgstr "Sep."
 
+msgctxt "alt. month"
 msgid "September"
 msgstr "Septiembre"
 
-msgctxt "alt. month"
 msgid "September"
 msgstr "Septiembre"
 

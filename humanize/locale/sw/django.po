@@ -108,10 +108,10 @@ msgctxt "abbrev. month"
 msgid "April"
 msgstr "Aprili"
 
+msgctxt "alt. month"
 msgid "April"
 msgstr "Aprili"
 
-msgctxt "alt. month"
 msgid "April"
 msgstr "Aprili"
 
@@ -278,10 +278,10 @@ msgctxt "abbrev. month"
 msgid "Jan."
 msgstr "Jan."
 
+msgctxt "alt. month"
 msgid "January"
 msgstr "Januari"
 
-msgctxt "alt. month"
 msgid "January"
 msgstr "Januari"
 
@@ -396,10 +396,10 @@ msgctxt "abbrev. month"
 msgid "Nov."
 msgstr "Nov."
 
+msgctxt "alt. month"
 msgid "November"
 msgstr "Novemba"
 
-msgctxt "alt. month"
 msgid "November"
 msgstr "Novemba"
 
