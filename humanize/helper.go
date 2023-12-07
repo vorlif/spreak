@@ -12,8 +12,26 @@ import (
 )
 
 // LanguageName returns the name of the spoken language as called by the languages used.
+//
+// If no translation exists for the name of the language, the input is returned.
 func (h *Humanizer) LanguageName(lang string) string {
 	return h.loc.Get(lang)
+}
+
+// LanguageNameByCode returns the name of a language for a language code
+// in the national language of the Humanizer.
+//
+// If no language is known for the code, an empty string is returned.
+// If a language is known, but no translations are available, the English name is returned.
+//
+// For example, if a Humanizer was created for French, 'Anglais' is returned for the code 'en'
+// and the value 'Allemand' for the code 'de'.
+func (h *Humanizer) LanguageNameByCode(code string) string {
+	info, ok := LocaleInfos[code]
+	if !ok {
+		return ""
+	}
+	return h.loc.Get(info.Name)
 }
 
 // Language returns the currently used language.

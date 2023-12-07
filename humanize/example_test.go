@@ -322,3 +322,30 @@ func ExampleWithNow() {
 	// 1 周，1 日
 	// 1 Woche, 1 Tag
 }
+
+func ExampleHumanizer_LanguageNameByCode() {
+	collection := humanize.MustNew(humanize.WithLocale(es.New(), zhHans.New(), de.New()))
+	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.Spanish} {
+		h := collection.CreateHumanizer(tag)
+		fmt.Println("Current language: ", h.Language())
+
+		for _, code := range []string{"de", "en"} {
+			fmt.Printf("%s: %s\n", code, h.LanguageNameByCode(code))
+		}
+
+		fmt.Println(strings.Repeat(" -", 20))
+	}
+	// Output:
+	// Current language:  en
+	// de: German
+	// en: English
+	//  - - - - - - - - - - - - - - - - - - - -
+	// Current language:  zh-Hans
+	// de: 德语
+	// en: 英语
+	//  - - - - - - - - - - - - - - - - - - - -
+	// Current language:  es
+	// de: Alemán
+	// en: Inglés
+	//  - - - - - - - - - - - - - - - - - - - -
+}
