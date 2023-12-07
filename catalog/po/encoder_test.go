@@ -155,6 +155,27 @@ msgstr[2] "c"
 		require.NoError(t, err)
 		assert.Equal(t, want, buff.String())
 	})
+
+	t.Run("Multiline are written correctly", func(t *testing.T) {
+		f := NewFile()
+		f.Header = nil
+
+		msg = NewMessage()
+		msg.ID = "Australian English"
+		msg.Str[0] = `ئاۋىستىرالىيە ئىنگلزچىسى
+ `
+		f.AddMessage(msg)
+		buff.Reset()
+		err := enc.Encode(f)
+		require.NoError(t, err)
+		want := `msgid "Australian English"
+msgstr ""
+"ئاۋىستىرالىيە ئىنگلزچىسى\n"
+" "
+
+`
+		assert.Equal(t, want, buff.String())
+	})
 }
 
 func TestEncoderDisableWriteReference(t *testing.T) {

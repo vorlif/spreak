@@ -79,6 +79,27 @@ msgstr ""`
 		assert.Error(t, err)
 		assert.Nil(t, f)
 	})
+
+	t.Run("multiline with special character", func(t *testing.T) {
+		content := `
+msgid "Australian English"
+msgstr ""
+"ئاۋىستىرالىيە ئىنگلزچىسى\n"
+" "
+`
+		f, err := Parse([]byte(content))
+		require.NoError(t, err)
+		assert.NotNil(t, f)
+
+		msg := f.GetMessage("", "Australian English")
+		require.NotNil(t, msg)
+		require.Contains(t, msg.Str, 0)
+
+		want := `ئاۋىستىرالىيە ئىنگلزچىسى
+ `
+
+		assert.Equal(t, want, msg.Str[0])
+	})
 }
 
 func TestParse_Header(t *testing.T) {
