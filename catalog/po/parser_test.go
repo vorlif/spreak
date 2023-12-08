@@ -1,12 +1,47 @@
 package po
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
+
+func ExampleParseString() {
+	doc := `
+msgid "Hello"
+msgstr "Hallo"
+`
+	f, err := ParseString(doc)
+	if err != nil {
+		panic(err)
+	}
+	msg := f.GetMessage("", "Hello")
+	fmt.Println(msg.ID)
+	fmt.Println(msg.Str[0])
+	// Output:
+	// Hello
+	// Hallo
+}
+
+func ExampleParse() {
+	doc := `
+msgid "Hello"
+msgstr "Hallo"
+`
+	f, err := Parse([]byte(doc))
+	if err != nil {
+		panic(err)
+	}
+	msg := f.GetMessage("", "Hello")
+	fmt.Println(msg.ID)
+	fmt.Println(msg.Str[0])
+	// Output:
+	// Hello
+	// Hallo
+}
 
 func TestParse_Simple(t *testing.T) {
 	t.Run("test parse empty content", func(t *testing.T) {

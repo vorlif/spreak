@@ -1,11 +1,34 @@
 package po
 
 import (
+	"fmt"
 	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
+
+func ExampleEncodePoString() {
+	s := `Hello
+World`
+	fmt.Println(EncodePoString(s, -1))
+	// Output:
+	// ""
+	// "Hello\n"
+	// "World"
+}
+
+func ExampleDecodePoString() {
+	s := `
+""
+"Hello\n"
+"World"
+`
+	fmt.Println(DecodePoString(s))
+	// Output:
+	// Hello
+	// World
+}
 
 func TestDecode_Newline(t *testing.T) {
 	raw := `"test\n"`

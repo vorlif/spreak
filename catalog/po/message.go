@@ -9,8 +9,6 @@ type Message struct {
 	Str      map[int]string
 }
 
-type Messages map[string]map[string]*Message
-
 func NewMessage() *Message {
 	return &Message{
 		Comment: &Comment{
@@ -32,6 +30,8 @@ func (m *Message) AddReference(ref *Reference) {
 	m.Comment.AddReference(ref)
 }
 
+// Deprecated: Will be removed in a future release.
+// Use the DefaultSortFunction.
 func (m *Message) Less(q *Message) bool {
 	if m.Comment != nil && q.Comment != nil {
 		return m.Comment.Less(q.Comment)
@@ -56,17 +56,5 @@ func (m *Message) Merge(other *Message) {
 
 	if m.IDPlural == "" && other.IDPlural != "" {
 		m.IDPlural = other.IDPlural
-	}
-}
-
-func (m Messages) Add(msg *Message) {
-	if _, ok := m[msg.Context]; !ok {
-		m[msg.Context] = make(map[string]*Message)
-	}
-
-	if _, ok := m[msg.Context][msg.ID]; ok {
-		m[msg.Context][msg.ID].Merge(msg)
-	} else {
-		m[msg.Context][msg.ID] = msg
 	}
 }

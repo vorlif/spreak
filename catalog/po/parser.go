@@ -260,7 +260,7 @@ func (p *parser) parseHeader(msg *Message) (*Header, error) {
 
 		key := strings.TrimSpace(line[:colonIdx])
 		val := strings.TrimSpace(line[colonIdx+1:])
-		header.SetField(key, val)
+		header.Set(key, val)
 	}
 	header.Comment = msg.Comment
 
