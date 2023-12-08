@@ -257,6 +257,23 @@ msgstr[1] "%(value)s Billionen"
 		assert.Equal(t, msg.Comment.Flags[0], "python-format")
 	})
 
+	t.Run("parse multiple flags", func(t *testing.T) {
+		content := `#,  python-format, fuzzy  test
+msgid "%(value)s trillion"
+msgstr ""
+`
+		file, err := Parse([]byte(content))
+		require.NoError(t, err)
+		require.NotNil(t, file)
+		require.NotNil(t, file.Messages)
+
+		msg := file.GetMessage("", "%(value)s trillion")
+		assert.True(t, msg.Comment.HasFlag("python-format"))
+		assert.True(t, msg.Comment.HasFlag("fuzzy"))
+		assert.True(t, msg.Comment.HasFlag("test"))
+		assert.False(t, msg.Comment.HasFlag("unknown"))
+	})
+
 	t.Run("test parse message prev", func(t *testing.T) {
 		content := `
 #| msgctxt "prev "
