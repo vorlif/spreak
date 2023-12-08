@@ -176,6 +176,26 @@ msgstr ""
 `
 		assert.Equal(t, want, buff.String())
 	})
+
+	t.Run("flags encoded correctly", func(t *testing.T) {
+		f := NewFile()
+		f.Header = nil
+
+		msg = NewMessage()
+		msg.ID = "Hello"
+		msg.Comment = NewComment()
+		msg.Comment.Flags = append(msg.Comment.Flags, "fuzzy", "go-format")
+		f.AddMessage(msg)
+		buff.Reset()
+		err := enc.Encode(f)
+		require.NoError(t, err)
+		want := `#, fuzzy, go-format
+msgid "Hello"
+msgstr ""
+
+`
+		assert.Equal(t, want, buff.String())
+	})
 }
 
 func TestEncoderDisableWriteReference(t *testing.T) {
