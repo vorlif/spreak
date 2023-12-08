@@ -240,7 +240,7 @@ func (p *parser) parseMessageHeader(msg *po.Message) (header *po.Header) {
 		}
 		key := strings.TrimSpace(line[:idx])
 		val := strings.TrimSpace(line[idx+1:])
-		header.SetField(key, val)
+		header.Set(key, val)
 	}
 
 	return

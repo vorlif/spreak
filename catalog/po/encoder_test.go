@@ -2,11 +2,91 @@ package po
 
 import (
 	"bytes"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
+
+func ExampleMarshal() {
+	f := NewFile()
+	f.Header = PlaceholderHeader("Spreak", "Florian Vogt", "info@example.org")
+	msg := NewMessage()
+	msg.ID = "Hello"
+	msg.Str[0] = "Hallo"
+	f.AddMessage(msg)
+
+	doc, err := Marshal(f)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(doc))
+}
+
+func ExampleNewEncoder() {
+	f := NewFile()
+	msg := NewMessage()
+	msg.ID = "Hello"
+	msg.Str[0] = "Hallo"
+	f.AddMessage(msg)
+
+	buff := &bytes.Buffer{}
+	enc := NewEncoder(buff)
+	enc.SetWriteEmptyHeader(false)
+	err := enc.Encode(f)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(buff.String())
+	// Output:
+	// msgid "Hello"
+	// msgstr "Hallo"
+
+}
+
+func ExampleEncoder_Encode() {
+	f := NewFile()
+	msg := NewMessage()
+	msg.ID = "Car"
+	msg.IDPlural = "Cars"
+	msg.Str[0] = "Auto"
+	msg.Str[1] = "Autos"
+	f.AddMessage(msg)
+
+	buff := &bytes.Buffer{}
+	enc := NewEncoder(buff)
+	enc.SetWriteEmptyHeader(false)
+	err := enc.Encode(f)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(buff.String())
+	// Output:
+	// msgid "Car"
+	// msgid_plural "Cars"
+	// msgstr[0] "Auto"
+	// msgstr[1] "Autos"
+}
+
+func TestMarshal(t *testing.T) {
+	f := NewFile()
+	msg := NewMessage()
+	msg.ID = "Hello"
+	msg.Str[0] = "Hallo"
+	f.AddMessage(msg)
+
+	doc, err := Marshal(f)
+	if err != nil {
+		panic(err)
+	}
+	want := `
+msgid "Hello"
+msgstr "Hallo"`
+	assert.Contains(t, string(doc), want)
+}
 
 func TestEncoderEmptyFile(t *testing.T) {
 	var buff bytes.Buffer
@@ -90,7 +170,6 @@ msgid "test"
 msgid_plural "test_plural"
 msgstr[0] ""
 msgstr[1] ""
-
 `
 		err := enc.Encode(file)
 		require.NoError(t, err)
@@ -115,7 +194,6 @@ msgid_plural "test_plural"
 msgstr[0] "a"
 msgstr[1] "b"
 msgstr[2] "c"
-
 `
 		buff.Reset()
 
@@ -147,7 +225,6 @@ msgid_plural "test_plural"
 msgstr[0] "a"
 msgstr[1] "b"
 msgstr[2] "c"
-
 `
 
 		buff.Reset()
@@ -172,7 +249,6 @@ msgstr[2] "c"
 msgstr ""
 "ئاۋىستىرالىيە ئىنگلزچىسى\n"
 " "
-
 `
 		assert.Equal(t, want, buff.String())
 	})
@@ -192,7 +268,6 @@ msgstr ""
 		want := `#, fuzzy, go-format
 msgid "Hello"
 msgstr ""
-
 `
 		assert.Equal(t, want, buff.String())
 	})
@@ -225,7 +300,6 @@ msgid "test"
 msgid_plural "test_plural"
 msgstr[0] ""
 msgstr[1] ""
-
 `
 		assert.Equal(t, want, buff.String())
 	})
@@ -252,7 +326,6 @@ msgstr[1] ""
 msgid_plural "test_plural"
 msgstr[0] ""
 msgstr[1] ""
-
 `
 		assert.Equal(t, want, buff.String())
 	})

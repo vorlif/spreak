@@ -104,3 +104,13 @@ msgstr ""
 
 	assert.Equal(t, "val", f.Header.Get("X-UNKNOWN"))
 }
+
+func TestPlaceholderHeader(t *testing.T) {
+	packageName := "Spreak"
+	copyrightHolder := "Florian Vogt"
+	bugsAddress := "bugs@address"
+	h := PlaceholderHeader(packageName, copyrightHolder, bugsAddress)
+	assert.Equal(t, bugsAddress, h.ReportMsgidBugsTo)
+	assert.Equal(t, packageName, h.ProjectIDVersion)
+	assert.Contains(t, h.Comment.Translator, copyrightHolder)
+}

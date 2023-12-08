@@ -48,6 +48,7 @@ func (c *Comment) AddReference(ref *Reference) {
 	c.sort()
 }
 
+// Deprecated: Will be removed in a future release.
 func (c *Comment) Less(q *Comment) bool {
 	c.sort()
 	for i := 0; i < len(c.References); i++ {

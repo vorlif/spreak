@@ -3,6 +3,7 @@ package po
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 const (
@@ -20,9 +21,28 @@ const (
 	HeaderXGenerator              = "X-Generator"
 )
 
+// File is Go data structure for a PO file.
 type File struct {
 	Header   *Header
 	Messages Messages
+}
+
+// Messages are the messages of a Po file.
+// The first map references the context, the second map the ID of the message.
+type Messages map[string]map[string]*Message
+
+// Add a message to the File.
+// If there is already a message with the same ID, the comments are merged.
+func (m Messages) Add(msg *Message) {
+	if _, ok := m[msg.Context]; !ok {
+		m[msg.Context] = make(map[string]*Message)
+	}
+
+	if _, ok := m[msg.Context][msg.ID]; ok {
+		m[msg.Context][msg.ID].Merge(msg)
+	} else {
+		m[msg.Context][msg.ID] = msg
+	}
 }
 
 func NewFile() *File {
@@ -32,6 +52,8 @@ func NewFile() *File {
 	}
 }
 
+// AddMessage adds a message to the File.
+// If there is already a message with the same ID, the comments are merged.
 func (f *File) AddMessage(msg *Message) {
 	if f.Messages == nil {
 		f.Messages = make(Messages)
@@ -44,6 +66,8 @@ func (f *File) AddMessage(msg *Message) {
 	f.Messages.Add(msg)
 }
 
+// GetMessage returns the message for a context and an ID.
+// If no ID exists, nil is returned.
 func (f *File) GetMessage(ctx string, id string) *Message {
 	if _, hasCtx := f.Messages[ctx]; !hasCtx {
 		return nil
@@ -81,7 +105,12 @@ type Header struct {
 	UnknownFields           map[string]string
 }
 
-func (h *Header) SetField(key, val string) {
+// Deprecated: Use Set.
+func (h *Header) SetField(key, val string) { h.Set(key, val) }
+
+// Set tores the key and value in the header.
+// If a key is already stored, the value is overwritten.
+func (h *Header) Set(key, val string) {
 	switch strings.ToUpper(key) {
 	case strings.ToUpper(HeaderProjectIDVersion):
 		h.ProjectIDVersion = val
@@ -115,7 +144,36 @@ func (h *Header) SetField(key, val string) {
 	}
 }
 
+// Get returns the respective value for a key.
+// If the key is not contained in the header, an empty string is returned.
 func (h *Header) Get(key string) string {
+	switch strings.ToUpper(key) {
+	case strings.ToUpper(HeaderProjectIDVersion):
+		return h.ProjectIDVersion
+	case strings.ToUpper(HeaderReportMsgIDBugsTo):
+		return h.ReportMsgidBugsTo
+	case strings.ToUpper(HeaderPOTCreationDate):
+		return h.POTCreationDate
+	case strings.ToUpper(HeaderPORevisionDate):
+		return h.PORevisionDate
+	case strings.ToUpper(HeaderLastTranslator):
+		return h.LastTranslator
+	case strings.ToUpper(HeaderLanguageTeam):
+		return h.LanguageTeam
+	case strings.ToUpper(HeaderLanguage):
+		return h.Language
+	case strings.ToUpper(HeaderMIMEVersion):
+		return h.MimeVersion
+	case strings.ToUpper(HeaderContentType):
+		return h.ContentType
+	case strings.ToUpper(HeaderContentTransferEncoding):
+		return h.ContentTransferEncoding
+	case strings.ToUpper(HeaderPluralForms):
+		return h.PluralForms
+	case strings.ToUpper(HeaderXGenerator):
+		return h.XGenerator
+	}
+
 	if h.UnknownFields == nil {
 		return ""
 	}
@@ -128,4 +186,34 @@ func (h *Header) Get(key string) string {
 	}
 
 	return ""
+}
+
+// PlaceholderHeader creates a placeholder header for an empty PO file.
+func PlaceholderHeader(packageName, copyrightHolder, bugsAddress string) *Header {
+	headerComment := fmt.Sprintf(`SOME DESCRIPTIVE TITLE.
+Copyright (C) YEAR %s
+This file is distributed under the same license as the %s package.
+FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+`, copyrightHolder, packageName)
+	return &Header{
+		Comment: &Comment{
+			Translator:     headerComment,
+			Extracted:      "",
+			References:     nil,
+			Flags:          []string{"fuzzy"},
+			PrevMsgContext: "",
+			PrevMsgID:      "",
+		},
+		ProjectIDVersion:        packageName,
+		ReportMsgidBugsTo:       bugsAddress,
+		POTCreationDate:         time.Now().Format("2006-01-02 15:04-0700"),
+		PORevisionDate:          "YEAR-MO-DA HO:MI+ZONE",
+		LastTranslator:          "FULL NAME <EMAIL@ADDRESS>",
+		LanguageTeam:            "LANGUAGE <LL@li.org>",
+		Language:                "",
+		MimeVersion:             "1.0",
+		ContentType:             "text/plain; charset=UTF-8",
+		ContentTransferEncoding: "8bit",
+		PluralForms:             "", // alternative  "nplurals=INTEGER; plural=EXPRESSION;"
+	}
 }
