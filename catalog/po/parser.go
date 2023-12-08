@@ -191,12 +191,8 @@ func (p *parser) parseComment() (*Comment, error) {
 			comment.Extracted += line
 		case commentFlags:
 			line = strings.TrimSpace(line[2:]) // #,
-			rawFlags := strings.FieldsFunc(line, func(r rune) bool {
-				return unicode.IsSpace(r) || r == ','
-			})
-			for _, flag := range rawFlags {
-				comment.Flags = append(comment.Flags, strings.TrimSpace(flag))
-			}
+			rawFlags := strings.FieldsFunc(line, func(r rune) bool { return unicode.IsSpace(r) || r == ',' })
+			comment.Flags = append(comment.Flags, rawFlags...)
 		case commentPrevContext:
 			line = strings.TrimSpace(line[10:]) // #| msgctxt
 			if line == "" {

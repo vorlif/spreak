@@ -258,7 +258,7 @@ msgstr[1] "%(value)s Billionen"
 	})
 
 	t.Run("parse multiple flags", func(t *testing.T) {
-		content := `#,  python-format, fuzzy  test
+		content := `#,  python-format, fuzzy  test  
 msgid "%(value)s trillion"
 msgstr ""
 `
