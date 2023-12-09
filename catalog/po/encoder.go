@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -33,8 +34,8 @@ type Encoder struct {
 	writeHeader      bool
 	writeEmptyHeader bool
 	writeReferences  bool
-	// Is a less than or equal to function which can be used to sort the messages of a Po file.
-	sortFunction func(a *Message, b *Message) bool
+	// Function which can be used to sort the messages of a Po file.
+	sortFunction func(a *Message, b *Message) int
 }
 
 // NewEncoder returns a new encoder that writes to w.
@@ -56,29 +57,20 @@ func (enc *Encoder) SetWrapWidth(wrapWidth int) { enc.wrapWidth = wrapWidth }
 
 // SetWriteHeader sets whether a header should be written or not.
 // Default is true.
-func (enc *Encoder) SetWriteHeader(write bool) {enc.writeHeader = write}
+func (enc *Encoder) SetWriteHeader(write bool) { enc.writeHeader = write }
 
 // SetWriteEmptyHeader sets whether a header without values should also be written or not.
 // Default is true.
-func (enc *Encoder) SetWriteEmptyHeader(write bool) {enc.writeEmptyHeader = write }
+func (enc *Encoder) SetWriteEmptyHeader(write bool) { enc.writeEmptyHeader = write }
 
 // SetWriteReferences sets whether references to the origin of the text should be stored or not.
 // Default is true.
-func (enc *Encoder) SetWriteReferences(write bool) { enc.writeReferences = write}
+func (enc *Encoder) SetWriteReferences(write bool) { enc.writeReferences = write }
 
-// SetSortFunction can be used to set a smaller than function with which the messages can be sorted before writing.
-func (enc *Encoder) SetSortFunction(f func(a *Message, b *Message) bool) {
-	enc.sortFunction = f
-}
-
-	b := enc.encode(f)
-	_, err := enc.w.Write(b)
-	if err != nil {
-		return fmt.Errorf("po: cannot write: %w", err)
-	}
-
-	return nil
-}
+// SetSortFunction can be used to set a function with which the messages can be sorted before writing.
+// This sort is not guaranteed to be stable.
+// cmp(a, b) should return a negative number when a < b, a positive number when a > b and zero when a == b.
+func (enc *Encoder) SetSortFunction(cmp func(a *Message, b *Message) int) { enc.sortFunction = cmp }
 
 func (enc *Encoder) Encode(f *File) error {
 	if f == nil {
@@ -110,9 +102,9 @@ func (enc *Encoder) encode(f *File) []byte {
 				messages = append(messages, msg)
 			}
 		}
-		sort.Slice(messages, func(i, j int) bool {
-			return enc.sortFunction(messages[j], messages[i])
-		})
+		if enc.sortFunction != nil {
+			slices.SortFunc(messages, enc.sortFunction)
+		}
 		for i, msg := range messages {
 			if i > 0 {
 				buff.WriteString("\n")
@@ -284,7 +276,7 @@ func (enc *Encoder) encodeTranslations(buff *bytes.Buffer, plural bool, orig map
 	}
 }
 
-func DefaultSortFunction(a *Message, b *Message) bool {
+func DefaultSortFunction(a *Message, b *Message) int {
 	if a.Comment != nil && b.Comment != nil {
 		a.Comment.sort()
 		b.Comment.sort()
@@ -294,24 +286,36 @@ func DefaultSortFunction(a *Message, b *Message) bool {
 				break
 			}
 			if c := strings.Compare(a.Comment.References[i].Path, b.Comment.References[i].Path); c != 0 {
-				return c == 1
+				return c
 			}
 			if c, k := a.Comment.References[i].Line, b.Comment.References[i].Line; c != k {
-				return c > k
+				if c > k {
+					return 1
+				} else {
+					return -1
+				}
 			}
 			if c, k := a.Comment.References[i].Column, b.Comment.References[i].Column; c != k {
-				return c > k
+				if c > k {
+					return 1
+				} else {
+					return -1
+				}
+			}
+
+			if c, k := a.Comment.References[i].Path, b.Comment.References[i].Path; c != "" && k != "" {
+				return strings.Compare(c, k)
 			}
 		}
 	}
 
-	if a.Context != b.Context {
-		return a.Context > b.Context
+	if c := strings.Compare(a.Context, b.Context); c != 0 {
+		return c
 	}
 
-	if a.ID != b.ID {
-		return a.ID > b.ID
+	if c := strings.Compare(a.ID, b.ID); c != 0 {
+		return c
 	}
 
-	return false
+	return 0
 }
