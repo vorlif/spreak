@@ -135,6 +135,28 @@ msgstr ""
 
 		assert.Equal(t, want, msg.Str[0])
 	})
+
+	t.Run("without space", func(t *testing.T) {
+		content := `# My App.
+# Copyright (C) 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+#: main.py:5
+msgid "Hello world"
+msgstr "Χέρε Κόσμε"
+#: main.py:6
+msgid "This is a translatable string"
+msgstr "Αυτό είναι ένα μεταφραζόμενο κείμενο"`
+
+		f, err := Parse([]byte(content))
+		require.NoError(t, err)
+		assert.NotNil(t, f)
+		assert.Equal(t, "1.0", f.Header.ProjectIDVersion)
+		assert.Equal(t, "Χέρε Κόσμε", f.GetMessage("", "Hello world").Str[0])
+		assert.Equal(t, "Αυτό είναι ένα μεταφραζόμενο κείμενο", f.GetMessage("", "This is a translatable string").Str[0])
+	})
 }
 
 func TestParse_Header(t *testing.T) {

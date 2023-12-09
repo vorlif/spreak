@@ -322,8 +322,8 @@ string`,
 	},
 	{
 		name:    "ascii",
-		code:    "\a\f\v",
-		poLines: "\"\\a\\f\\v\"",
+		code:    "\a\f\b\v",
+		poLines: "\"\\a\\f\\b\\v\"",
 	},
 	{
 		name:    "utf8",
