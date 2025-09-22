@@ -229,7 +229,7 @@ func TestWithPrintFuncGenerator(t *testing.T) {
 func TestWithPrintFunction(t *testing.T) {
 	t.Run("The passed print functions is set", func(t *testing.T) {
 		executionCount := 0
-		var printF PrintFunc = func(str string, vars ...any) string {
+		var printF PrintFunc = func(str string, _ ...any) string {
 			executionCount++
 			return str
 		}

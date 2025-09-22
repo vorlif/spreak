@@ -217,7 +217,7 @@ func newTimeSinceOptions(opts ...TimeOption) *timeSinceOptions {
 		opt(o)
 	}
 
-	if o.timeStrings == nil || len(o.timeStrings) == 0 {
+	if len(o.timeStrings) == 0 {
 		o.timeStrings = timeSinceStrings
 	}
 	if o.depth <= 0 {

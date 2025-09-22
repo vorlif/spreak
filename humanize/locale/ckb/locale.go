@@ -22,7 +22,7 @@ func New() *humanize.LocaleData {
 			YearMonthFormat:     "F Y",
 			MonthDayFormat:      "j F",
 			ShortDateFormat:     "Y/n/j",
-			ShortDatetimeFormat: "Y/n/j،‏ G:i",
+			ShortDatetimeFormat: "Y/n/j، G:i",
 			FirstDayOfWeek:      6,
 		},
 	}

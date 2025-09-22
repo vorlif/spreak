@@ -20,7 +20,7 @@ func New() *humanize.LocaleData {
 			TimeFormat:      "g:i A",
 			YearMonthFormat: "F Y",
 			MonthDayFormat:  "j F",
-			ShortDateFormat: "d‏/m‏/Y",
+			ShortDateFormat: "d/m/Y",
 		},
 	}
 }

@@ -267,7 +267,7 @@ func (enc *Encoder) encodeTranslations(buff *bytes.Buffer, plural bool, orig map
 		sort.Ints(keys)
 
 		for _, k := range keys {
-			buff.WriteString(fmt.Sprintf("msgstr[%d] %s\n", k, m[k]))
+			_, _ = fmt.Fprintf(buff, "msgstr[%d] %s\n", k, m[k])
 		}
 	} else {
 		buff.WriteString("msgstr ")

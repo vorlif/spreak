@@ -2,7 +2,6 @@ package humanize_test
 
 import (
 	"fmt"
-	"math"
 	"strings"
 	"time"
 
@@ -263,7 +262,7 @@ func ExampleHumanizer_FilesizeFormat() {
 	for _, tag := range []language.Tag{language.English, language.SimplifiedChinese, language.German} {
 		h := collection.CreateHumanizer(tag)
 		fmt.Println(h.FilesizeFormat(make([]byte, 1000)))
-		fmt.Println(h.FilesizeFormat(math.Pow(1024, 3)))
+		fmt.Println(h.FilesizeFormat(float64(1024 * 1024 * 1024)))
 	}
 	// Output:
 	// 1,000 bytes

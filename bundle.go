@@ -116,15 +116,15 @@ func NewBundle(opts ...BundleOption) (*Bundle, error) {
 	builder.printer.Init(builder.languages)
 
 	if sourceLocale, hasSource := builder.locales[builder.sourceLanguage]; hasSource {
-		builder.Bundle.sourceLocale = sourceLocale
+		builder.sourceLocale = sourceLocale
 	} else {
-		builder.Bundle.sourceLocale = buildSourceLocale(builder.Bundle, builder.sourceLanguage)
+		builder.sourceLocale = buildSourceLocale(builder.Bundle, builder.sourceLanguage)
 	}
 
 	if fallbackLocale, hasFallback := builder.locales[builder.fallbackLanguage]; hasFallback {
-		builder.Bundle.fallbackLocale = fallbackLocale
+		builder.fallbackLocale = fallbackLocale
 	} else {
-		builder.Bundle.fallbackLocale = builder.Bundle.sourceLocale
+		builder.fallbackLocale = builder.sourceLocale
 	}
 
 	return builder.Bundle, nil
@@ -325,7 +325,7 @@ func WithDomainPath(domain string, path string) BundleOption {
 // This is a shorthand for WithFilesystemLoader(domain, WithFs(fsys)).
 func WithDomainFs(domain string, fsys fs.FS) BundleOption {
 	if fsys == nil {
-		return func(opts *bundleBuilder) error {
+		return func(_ *bundleBuilder) error {
 			return errors.New("spreak.Bundle: fsys of WithDomainFs(..., fsys) is nil")
 		}
 	}
@@ -381,14 +381,14 @@ func WithPrinter(p Printer) BundleOption {
 
 // WithPrintFunction sets a PrintFunc which converts a formatted string and variables to a string. (Like fmt.Sprintf).
 func WithPrintFunction(printFunc PrintFunc) BundleOption {
-	if printFunc != nil {
-		printer := &printFunctionWrapper{f: printFunc}
-		return WithPrinter(printer)
+	if printFunc == nil {
+		return func(_ *bundleBuilder) error {
+			return errors.New("spreak.Bundle: parameter of WithPrintFunction(...) is nil")
+		}
 	}
 
-	return func(opts *bundleBuilder) error {
-		return errors.New("spreak.Bundle: parameter of WithPrintFunction(...) is nil")
-	}
+	printer := &printFunctionWrapper{f: printFunc}
+	return WithPrinter(printer)
 }
 
 // WithLanguageMatcherBuilder sets a LanguageMatcherBuilder.

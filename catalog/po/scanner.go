@@ -30,7 +30,7 @@ type scanner struct {
 }
 
 func newScanner(content string) *scanner {
-	content = strings.Replace(content, "\r", "", -1)
+	content = strings.ReplaceAll(content, "\r", "")
 	return &scanner{
 		lines: strings.Split(content, "\n"),
 		pos:   0,
