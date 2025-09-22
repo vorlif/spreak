@@ -223,19 +223,20 @@ func (p *parser) value() (*ValueExpr, error) {
 func (p *parser) rangeList() (*RangeListExpr, error) {
 	listNode := &RangeListExpr{}
 
-	if p.lastToken == Value {
+	switch p.lastToken {
+	case Value:
 		n, err := p.value()
 		if err != nil {
 			return nil, err
 		}
 		listNode.X = n
-	} else if p.lastToken == ValueRange {
+	case ValueRange:
 		n, err := p.rangeExpression()
 		if err != nil {
 			return nil, err
 		}
 		listNode.X = n
-	} else {
+	default:
 		return nil, fmt.Errorf("expected value range or value, got %q", p.lastLiteral)
 	}
 

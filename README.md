@@ -21,7 +21,7 @@ I wanted to solve these problems for myself, and so spreak was born.
   (with **support for templates**)
 * [Support](https://pkg.go.dev/github.com/vorlif/spreak#hdr-Plurals)
   for [gettext](https://www.gnu.org/software/gettext/manual/html_node/Plural-forms.html)
-  and [CLDR v44](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
+and [CLDR v47](https://cldr.unicode.org/index/cldr-spec/plural-rules) plural rules.
 * Support of bilingual and monolingual formats
 
 ### Usage

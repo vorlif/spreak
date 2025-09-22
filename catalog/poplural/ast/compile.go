@@ -21,7 +21,7 @@ func compileNode(node Node) string {
 		then := compileNode(v.T)
 		other := compileNode(v.F)
 
-		if len(cond) > 1 && !(strings.HasPrefix(cond, "(") && strings.HasSuffix(cond, ")")) {
+		if len(cond) > 1 && (!strings.HasPrefix(cond, "(") || !strings.HasSuffix(cond, ")")) {
 			cond = "(" + cond + ")"
 		}
 		if len(then) > 1 {

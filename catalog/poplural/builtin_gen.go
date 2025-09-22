@@ -4,11 +4,11 @@ package poplural
 func getBuiltInForRawRule(rawRule string) *Rule {
 	switch rawRule {
 	case "nplurals=1; plural=0;":
-		return newRuleBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant()
+		return newRuleBmBoDzHnjIdIgIiJaJboJvKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant()
 	case "nplurals=2; plural=n != 1;":
-		return newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScScnSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi()
+		return newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi()
 	case "nplurals=2; plural=n > 1;":
-		return newRuleAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu()
+		return newRuleAkAmAsBhoBnCswDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu()
 	case "nplurals=2; plural=n != 1 && n != 2 && n != 3 && ((n % 10 == 4 || n % 10 == 6) || n % 10 == 9);":
 		return newRuleCebFilTl()
 	case "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);":
@@ -61,24 +61,24 @@ func getBuiltInForRawRule(rawRule string) *Rule {
 		}
 	case "nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);":
 		return newRuleBeBsHrRuShSrSr_MEUk()
+	case "nplurals=3; plural=(n == 0) ? 0 : ((n == 1) ? 1 : 2);":
+		return newRuleBloKshLag()
 	case "nplurals=3; plural=(n == 1) ? 0 : ((n != 0 && n % 1000000 == 0) ? 1 : 2);":
-		return newRuleCaEsEs_419Es_ESEs_MXItPt_PTVec()
+		return newRuleCaEsEs_419Es_ESEs_MXItLldPt_PTScnVec()
 	case "nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);":
 		return newRuleCsSk()
 	case "nplurals=3; plural=(n == 0 || n == 1) ? 0 : ((n != 0 && n % 1000000 == 0) ? 1 : 2);":
 		return newRuleFrFr_CAFr_CHPtPt_BR()
 	case "nplurals=3; plural=(n == 1) ? 0 : ((n == 2) ? 1 : 2);":
 		return newRuleHeIuNaqSatSeSmaSmiSmjSmnSms()
-	case "nplurals=3; plural=(n == 0) ? 0 : ((n == 1) ? 1 : 2);":
-		return newRuleKshLag()
 	case "nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > 19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? 1 : 2);":
 		return newRuleLt()
 	case "nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);":
 		return newRuleLvPrg()
-	case "nplurals=3; plural=(n == 1) ? 0 : ((n == 0 || n != 1 && n % 100 >= 1 && n % 100 <= 19) ? 1 : 2);":
-		return newRuleMoRoRo_MD()
 	case "nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);":
 		return newRulePl()
+	case "nplurals=3; plural=(n == 1) ? 0 : ((n == 0 || n != 1 && n % 100 >= 1 && n % 100 <= 19) ? 1 : 2);":
+		return newRuleRoRo_MD()
 	case "nplurals=3; plural=(n == 0 || n == 1) ? 0 : ((n >= 2 && n <= 10) ? 1 : 2);":
 		return newRuleShi()
 	case "nplurals=3; plural=(n == 0) ? 0 : (((n == 0 || n == 1) && n != 0) ? 1 : 2);":
@@ -157,12 +157,12 @@ func getBuiltInForRawRule(rawRule string) *Rule {
 
 func getBuiltInForLanguage(lang string) *Rule {
 	switch lang {
-	case "bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "vi", "wo", "yo", "yue", "zh", "zh-Hans", "zh-Hant", "zh_Hans", "zh_Hant":
-		return newRuleBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant()
-	case "af", "an", "asa", "ast", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "da", "de", "de-AT", "de-CH", "de_AT", "de_CH", "dv", "ee", "el", "en", "en-AU", "en-CA", "en-GB", "en-US", "en_AU", "en_CA", "en_GB", "en_US", "eo", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gsw", "ha", "haw", "hu", "ia", "io", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "lij", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nl", "nl-BE", "nl_BE", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sc", "scn", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "sv", "sw", "sw-CD", "sw_CD", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "ur", "uz", "ve", "vo", "vun", "wae", "xh", "xog", "yi":
-		return newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScScnSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi()
-	case "ak", "am", "as", "bho", "bn", "doi", "fa", "fa-AF", "fa_AF", "ff", "gu", "guw", "hi", "hi-Latn", "hi_Latn", "hy", "kab", "kn", "ln", "mg", "nso", "pa", "pcm", "si", "ti", "wa", "zu":
-		return newRuleAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu()
+	case "bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "vi", "wo", "yo", "yue", "zh", "zh-Hans", "zh-Hant", "zh_Hans", "zh_Hant":
+		return newRuleBmBoDzHnjIdIgIiJaJboJvKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant()
+	case "af", "an", "asa", "ast", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "da", "de", "de-AT", "de-CH", "de_AT", "de_CH", "dv", "ee", "el", "en", "en-AU", "en-CA", "en-GB", "en-US", "en_AU", "en_CA", "en_GB", "en_US", "eo", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gsw", "ha", "haw", "hu", "ia", "io", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "lij", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nl", "nl-BE", "nl_BE", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sc", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "sv", "sw", "sw-CD", "sw_CD", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "ur", "uz", "ve", "vo", "vun", "wae", "xh", "xog", "yi":
+		return newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi()
+	case "ak", "am", "as", "bho", "bn", "csw", "doi", "fa", "fa-AF", "fa_AF", "ff", "gu", "guw", "hi", "hi-Latn", "hi_Latn", "hy", "kab", "kn", "ln", "mg", "nso", "pa", "pcm", "si", "ti", "wa", "zu":
+		return newRuleAkAmAsBhoBnCswDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu()
 	case "ceb", "fil", "tl":
 		return newRuleCebFilTl()
 	case "is", "mk":
@@ -171,24 +171,24 @@ func getBuiltInForLanguage(lang string) *Rule {
 		return newRuleTzm()
 	case "be", "bs", "hr", "ru", "sh", "sr", "sr-Latn", "sr-ME", "sr_ME", "uk":
 		return newRuleBeBsHrRuShSrSr_MEUk()
-	case "ca", "es", "es-419", "es-ES", "es-MX", "es_419", "es_ES", "es_MX", "it", "pt-PT", "pt_PT", "vec":
-		return newRuleCaEsEs_419Es_ESEs_MXItPt_PTVec()
+	case "blo", "ksh", "lag":
+		return newRuleBloKshLag()
+	case "ca", "es", "es-419", "es-ES", "es-MX", "es_419", "es_ES", "es_MX", "it", "lld", "pt-PT", "pt_PT", "scn", "vec":
+		return newRuleCaEsEs_419Es_ESEs_MXItLldPt_PTScnVec()
 	case "cs", "sk":
 		return newRuleCsSk()
 	case "fr", "fr-CA", "fr-CH", "fr_CA", "fr_CH", "pt", "pt-BR", "pt_BR":
 		return newRuleFrFr_CAFr_CHPtPt_BR()
 	case "he", "iu", "naq", "sat", "se", "sma", "smi", "smj", "smn", "sms":
 		return newRuleHeIuNaqSatSeSmaSmiSmjSmnSms()
-	case "ksh", "lag":
-		return newRuleKshLag()
 	case "lt":
 		return newRuleLt()
 	case "lv", "prg":
 		return newRuleLvPrg()
-	case "mo", "ro", "ro-MD", "ro_MD":
-		return newRuleMoRoRo_MD()
 	case "pl":
 		return newRulePl()
+	case "ro", "ro-MD", "ro_MD":
+		return newRuleRoRo_MD()
 	case "shi":
 		return newRuleShi()
 	case "dsb", "hsb", "sl":
@@ -214,8 +214,8 @@ func getBuiltInForLanguage(lang string) *Rule {
 	}
 }
 
-// [bm bo dz hnj id ig ii ja jbo jv jw kde kea km ko lkt lo ms my nqo osa sah ses sg su th to tpi vi wo yo yue zh zh_Hans zh_Hant]
-func newRuleBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant() *Rule {
+// [bm bo dz hnj id ig ii ja jbo jv kde kea km ko lkt lo ms my nqo osa sah ses sg su th to tpi vi wo yo yue zh zh_Hans zh_Hant]
+func newRuleBmBoDzHnjIdIgIiJaJboJvKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant() *Rule {
 	return &Rule{
 		NPlurals: 1,
 		// nplurals=1; plural=0;
@@ -225,8 +225,8 @@ func newRuleBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiVi
 	}
 }
 
-// [af an asa ast az bal bem bez bg brx ce cgg chr ckb da de de_AT de_CH dv ee el en en_AU en_CA en_GB en_US eo et eu fi fo fur fy gl gsw ha haw hu ia io jgo jmc ka kaj kcg kk kkj kl ks ksb ku ky lb lg lij mas mgo ml mn mr nah nb nd ne nl nl_BE nn nnh no nr ny nyn om or os pap ps rm rof rwk saq sc scn sd sdh seh sn so sq ss ssy st sv sw sw_CD syr ta te teo tig tk tn tr ts ug ur uz ve vo vun wae xh xog yi]
-func newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScScnSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi() *Rule {
+// [af an asa ast az bal bem bez bg brx ce cgg chr ckb da de de_AT de_CH dv ee el en en_AU en_CA en_GB en_US eo et eu fi fo fur fy gl gsw ha haw hu ia io jgo jmc ka kaj kcg kk kkj kl ks ksb ku ky lb lg lij mas mgo ml mn mr nah nb nd ne nl nl_BE nn nnh no nr ny nyn om or os pap ps rm rof rwk saq sc sd sdh seh sn so sq ss ssy st sv sw sw_CD syr ta te teo tig tk tn tr ts ug ur uz ve vo vun wae xh xog yi]
+func newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi() *Rule {
 	return &Rule{
 		NPlurals: 2,
 		// nplurals=2; plural=n != 1;
@@ -239,8 +239,8 @@ func newRuleAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_C
 	}
 }
 
-// [ak am as bho bn doi fa fa_AF ff gu guw hi hi_Latn hy kab kn ln mg nso pa pcm si ti wa zu]
-func newRuleAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu() *Rule {
+// [ak am as bho bn csw doi fa fa_AF ff gu guw hi hi_Latn hy kab kn ln mg nso pa pcm si ti wa zu]
+func newRuleAkAmAsBhoBnCswDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu() *Rule {
 	return &Rule{
 		NPlurals: 2,
 		// nplurals=2; plural=n > 1;
@@ -312,8 +312,25 @@ func newRuleBeBsHrRuShSrSr_MEUk() *Rule {
 	}
 }
 
-// [ca es es_419 es_ES es_MX it pt_PT vec]
-func newRuleCaEsEs_419Es_ESEs_MXItPt_PTVec() *Rule {
+// [blo ksh lag]
+func newRuleBloKshLag() *Rule {
+	return &Rule{
+		NPlurals: 3,
+		// nplurals=3; plural=(n == 0) ? 0 : ((n == 1) ? 1 : 2);
+		FormFunc: func(n int64) int {
+			if n == 0 {
+				return 0
+			}
+			if n == 1 {
+				return 1
+			}
+			return 2
+		},
+	}
+}
+
+// [ca es es_419 es_ES es_MX it lld pt_PT scn vec]
+func newRuleCaEsEs_419Es_ESEs_MXItLldPt_PTScnVec() *Rule {
 	return &Rule{
 		NPlurals: 3,
 		// nplurals=3; plural=(n == 1) ? 0 : ((n != 0 && n % 1000000 == 0) ? 1 : 2);
@@ -380,23 +397,6 @@ func newRuleHeIuNaqSatSeSmaSmiSmjSmnSms() *Rule {
 	}
 }
 
-// [ksh lag]
-func newRuleKshLag() *Rule {
-	return &Rule{
-		NPlurals: 3,
-		// nplurals=3; plural=(n == 0) ? 0 : ((n == 1) ? 1 : 2);
-		FormFunc: func(n int64) int {
-			if n == 0 {
-				return 0
-			}
-			if n == 1 {
-				return 1
-			}
-			return 2
-		},
-	}
-}
-
 // [lt]
 func newRuleLt() *Rule {
 	return &Rule{
@@ -431,23 +431,6 @@ func newRuleLvPrg() *Rule {
 	}
 }
 
-// [mo ro ro_MD]
-func newRuleMoRoRo_MD() *Rule {
-	return &Rule{
-		NPlurals: 3,
-		// nplurals=3; plural=(n == 1) ? 0 : ((n == 0 || n != 1 && n % 100 >= 1 && n % 100 <= 19) ? 1 : 2);
-		FormFunc: func(n int64) int {
-			if n == 1 {
-				return 0
-			}
-			if n == 0 || n != 1 && n%100 >= 1 && n%100 <= 19 {
-				return 1
-			}
-			return 2
-		},
-	}
-}
-
 // [pl]
 func newRulePl() *Rule {
 	return &Rule{
@@ -458,6 +441,23 @@ func newRulePl() *Rule {
 				return 0
 			}
 			if n%10 >= 2 && n%10 <= 4 && (n%100 < 12 || n%100 > 14) {
+				return 1
+			}
+			return 2
+		},
+	}
+}
+
+// [ro ro_MD]
+func newRuleRoRo_MD() *Rule {
+	return &Rule{
+		NPlurals: 3,
+		// nplurals=3; plural=(n == 1) ? 0 : ((n == 0 || n != 1 && n % 100 >= 1 && n % 100 <= 19) ? 1 : 2);
+		FormFunc: func(n int64) int {
+			if n == 1 {
+				return 0
+			}
+			if n == 0 || n != 1 && n%100 >= 1 && n%100 <= 19 {
 				return 1
 			}
 			return 2

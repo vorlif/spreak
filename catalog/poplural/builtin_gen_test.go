@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant(t *testing.T) {
-	for _, lang := range []string{"bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "vi", "wo", "yo", "yue", "zh", "zh_Hans", "zh_Hant"} {
+func TestBuiltinBmBoDzHnjIdIgIiJaJboJvKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiViWoYoYueZhZh_HansZh_Hant(t *testing.T) {
+	for _, lang := range []string{"bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "vi", "wo", "yo", "yue", "zh", "zh_Hans", "zh_Hant"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
@@ -25,8 +25,8 @@ func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToT
 	}
 }
 
-func TestBuiltinAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScScnSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi(t *testing.T) {
-	for _, lang := range []string{"af", "an", "asa", "ast", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "da", "de", "de_AT", "de_CH", "dv", "ee", "el", "en", "en_AU", "en_CA", "en_GB", "en_US", "eo", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gsw", "ha", "haw", "hu", "ia", "io", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "lij", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nl", "nl_BE", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sc", "scn", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "sv", "sw", "sw_CD", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "ur", "uz", "ve", "vo", "vun", "wae", "xh", "xog", "yi"} {
+func TestBuiltinAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AUEn_CAEn_GBEn_USEoEtEuFiFoFurFyGlGswHaHawHuIaIoJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgLijMasMgoMlMnMrNahNbNdNeNlNl_BENnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqScSdSdhSehSnSoSqSsSsyStSvSwSw_CDSyrTaTeTeoTigTkTnTrTsUgUrUzVeVoVunWaeXhXogYi(t *testing.T) {
+	for _, lang := range []string{"af", "an", "asa", "ast", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "da", "de", "de_AT", "de_CH", "dv", "ee", "el", "en", "en_AU", "en_CA", "en_GB", "en_US", "eo", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gsw", "ha", "haw", "hu", "ia", "io", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "lij", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nl", "nl_BE", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sc", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "sv", "sw", "sw_CD", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "ur", "uz", "ve", "vo", "vun", "wae", "xh", "xog", "yi"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
@@ -45,8 +45,8 @@ func TestBuiltinAfAnAsaAstAzBalBemBezBgBrxCeCggChrCkbDaDeDe_ATDe_CHDvEeElEnEn_AU
 	}
 }
 
-func TestBuiltinAkAmAsBhoBnDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu(t *testing.T) {
-	for _, lang := range []string{"ak", "am", "as", "bho", "bn", "doi", "fa", "fa_AF", "ff", "gu", "guw", "hi", "hi_Latn", "hy", "kab", "kn", "ln", "mg", "nso", "pa", "pcm", "si", "ti", "wa", "zu"} {
+func TestBuiltinAkAmAsBhoBnCswDoiFaFa_AFFfGuGuwHiHi_LatnHyKabKnLnMgNsoPaPcmSiTiWaZu(t *testing.T) {
+	for _, lang := range []string{"ak", "am", "as", "bho", "bn", "csw", "doi", "fa", "fa_AF", "ff", "gu", "guw", "hi", "hi_Latn", "hy", "kab", "kn", "ln", "mg", "nso", "pa", "pcm", "si", "ti", "wa", "zu"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
@@ -151,8 +151,34 @@ func TestBuiltinBeBsHrRuShSrSr_MEUk(t *testing.T) {
 	}
 }
 
-func TestBuiltinCaEsEs_419Es_ESEs_MXItPt_PTVec(t *testing.T) {
-	for _, lang := range []string{"ca", "es", "es_419", "es_ES", "es_MX", "it", "pt_PT", "vec"} {
+func TestBuiltinBloKshLag(t *testing.T) {
+	for _, lang := range []string{"blo", "ksh", "lag"} {
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNil(t, rule)
+
+		for _, example := range []string{"0"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 0, form, fmt.Sprintf("rule.Evaluate(%s) should be 0", example))
+		}
+
+		for _, example := range []string{"1"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 1, form, fmt.Sprintf("rule.Evaluate(%s) should be 1", example))
+		}
+
+		for _, example := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 2, form, fmt.Sprintf("rule.Evaluate(%s) should be 2", example))
+		}
+
+	}
+}
+
+func TestBuiltinCaEsEs_419Es_ESEs_MXItLldPt_PTScnVec(t *testing.T) {
+	for _, lang := range []string{"ca", "es", "es_419", "es_ES", "es_MX", "it", "lld", "pt_PT", "scn", "vec"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
 		require.NotNil(t, rule)
 
@@ -255,32 +281,6 @@ func TestBuiltinHeIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 	}
 }
 
-func TestBuiltinKshLag(t *testing.T) {
-	for _, lang := range []string{"ksh", "lag"} {
-		rule := getBuiltInForLanguage(language.MustParse(lang).String())
-		require.NotNil(t, rule)
-
-		for _, example := range []string{"0"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 0, form, fmt.Sprintf("rule.Evaluate(%s) should be 0", example))
-		}
-
-		for _, example := range []string{"1"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 1, form, fmt.Sprintf("rule.Evaluate(%s) should be 1", example))
-		}
-
-		for _, example := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 2, form, fmt.Sprintf("rule.Evaluate(%s) should be 2", example))
-		}
-
-	}
-}
-
 func TestBuiltinLt(t *testing.T) {
 	for _, lang := range []string{"lt"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
@@ -333,32 +333,6 @@ func TestBuiltinLvPrg(t *testing.T) {
 	}
 }
 
-func TestBuiltinMoRoRo_MD(t *testing.T) {
-	for _, lang := range []string{"mo", "ro", "ro_MD"} {
-		rule := getBuiltInForLanguage(language.MustParse(lang).String())
-		require.NotNil(t, rule)
-
-		for _, example := range []string{"1"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 0, form, fmt.Sprintf("rule.Evaluate(%s) should be 0", example))
-		}
-
-		for _, example := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "101", "1001"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 1, form, fmt.Sprintf("rule.Evaluate(%s) should be 1", example))
-		}
-
-		for _, example := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000"} {
-			form, err := rule.Evaluate(example)
-			require.NoError(t, err)
-			assert.Equal(t, 2, form, fmt.Sprintf("rule.Evaluate(%s) should be 2", example))
-		}
-
-	}
-}
-
 func TestBuiltinPl(t *testing.T) {
 	for _, lang := range []string{"pl"} {
 		rule := getBuiltInForLanguage(language.MustParse(lang).String())
@@ -377,6 +351,32 @@ func TestBuiltinPl(t *testing.T) {
 		}
 
 		for _, example := range []string{"0", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "100", "1000", "10000", "100000", "1000000"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 2, form, fmt.Sprintf("rule.Evaluate(%s) should be 2", example))
+		}
+
+	}
+}
+
+func TestBuiltinRoRo_MD(t *testing.T) {
+	for _, lang := range []string{"ro", "ro_MD"} {
+		rule := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNil(t, rule)
+
+		for _, example := range []string{"1"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 0, form, fmt.Sprintf("rule.Evaluate(%s) should be 0", example))
+		}
+
+		for _, example := range []string{"0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "101", "1001"} {
+			form, err := rule.Evaluate(example)
+			require.NoError(t, err)
+			assert.Equal(t, 1, form, fmt.Sprintf("rule.Evaluate(%s) should be 1", example))
+		}
+
+		for _, example := range []string{"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "100", "1000", "10000", "100000", "1000000"} {
 			form, err := rule.Evaluate(example)
 			require.NoError(t, err)
 			assert.Equal(t, 2, form, fmt.Sprintf("rule.Evaluate(%s) should be 2", example))

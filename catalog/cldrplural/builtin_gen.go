@@ -12,12 +12,12 @@ func getBuiltInForLanguage(lang string) *RuleSet {
 		return newRuleSetBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiUndViWoYoYueZh()
 	case "af", "an", "asa", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "dv", "ee", "el", "eo", "eu", "fo", "fur", "gsw", "ha", "haw", "hu", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "uz", "ve", "vo", "vun", "wae", "xh", "xog":
 		return newRuleSetAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgMasMgoMlMnMrNahNbNdNeNnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqSdSdhSehSnSoSqSsSsyStSyrTaTeTeoTigTkTnTrTsUgUzVeVoVunWaeXhXog()
-	case "ak", "bho", "guw", "ln", "mg", "nso", "pa", "ti", "wa":
-		return newRuleSetAkBhoGuwLnMgNsoPaTiWa()
+	case "ak", "bho", "csw", "guw", "ln", "mg", "nso", "pa", "ti", "wa":
+		return newRuleSetAkBhoCswGuwLnMgNsoPaTiWa()
 	case "am", "as", "bn", "doi", "fa", "gu", "hi", "kn", "pcm", "zu":
 		return newRuleSetAmAsBnDoiFaGuHiKnPcmZu()
-	case "ast", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "scn", "sv", "sw", "ur", "yi":
-		return newRuleSetAstDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi()
+	case "ast", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "sv", "sw", "ur", "yi":
+		return newRuleSetAstDeEnEtFiFyGlIaIoLijNlScSvSwUrYi()
 	case "ceb", "fil", "tl":
 		return newRuleSetCebFilTl()
 	case "da":
@@ -32,12 +32,12 @@ func getBuiltInForLanguage(lang string) *RuleSet {
 		return newRuleSetSi()
 	case "tzm":
 		return newRuleSetTzm()
-	case "blo":
-		return newRuleSetBlo()
+	case "blo", "ksh":
+		return newRuleSetBloKsh()
 	case "bs", "hr", "sh", "sr", "sr-Latn":
 		return newRuleSetBsHrShSr()
-	case "ca", "it", "pt-PT", "vec":
-		return newRuleSetCaItPt_PTVec()
+	case "ca", "it", "lld", "pt-PT", "scn", "vec":
+		return newRuleSetCaItLldPt_PTScnVec()
 	case "es":
 		return newRuleSetEs()
 	case "fr":
@@ -46,8 +46,6 @@ func getBuiltInForLanguage(lang string) *RuleSet {
 		return newRuleSetHe()
 	case "iu", "naq", "sat", "se", "sma", "smi", "smj", "smn", "sms":
 		return newRuleSetIuNaqSatSeSmaSmiSmjSmnSms()
-	case "ksh":
-		return newRuleSetKsh()
 	case "lag":
 		return newRuleSetLag()
 	case "lv", "prg":
@@ -119,8 +117,8 @@ func newRuleSetAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJmc
 	}
 }
 
-// [ak bho guw ln mg nso pa ti wa]
-func newRuleSetAkBhoGuwLnMgNsoPaTiWa() *RuleSet {
+// [ak bho csw guw ln mg nso pa ti wa]
+func newRuleSetAkBhoCswGuwLnMgNsoPaTiWa() *RuleSet {
 	return &RuleSet{
 		Categories: []Category{One, Other},
 		FormFunc: func(ops *Operands) Category {
@@ -149,8 +147,8 @@ func newRuleSetAmAsBnDoiFaGuHiKnPcmZu() *RuleSet {
 	}
 }
 
-// [ast de en et fi fy gl ia io lij nl sc scn sv sw ur yi]
-func newRuleSetAstDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi() *RuleSet {
+// [ast de en et fi fy gl ia io lij nl sc sv sw ur yi]
+func newRuleSetAstDeEnEtFiFyGlIaIoLijNlScSvSwUrYi() *RuleSet {
 	return &RuleSet{
 		Categories: []Category{One, Other},
 		FormFunc: func(ops *Operands) Category {
@@ -269,8 +267,8 @@ func newRuleSetTzm() *RuleSet {
 	}
 }
 
-// [blo]
-func newRuleSetBlo() *RuleSet {
+// [blo ksh]
+func newRuleSetBloKsh() *RuleSet {
 	return &RuleSet{
 		Categories: []Category{Zero, One, Other},
 		FormFunc: func(ops *Operands) Category {
@@ -309,8 +307,8 @@ func newRuleSetBsHrShSr() *RuleSet {
 	}
 }
 
-// [ca it pt-PT vec]
-func newRuleSetCaItPt_PTVec() *RuleSet {
+// [ca it lld pt-PT scn vec]
+func newRuleSetCaItLldPt_PTScnVec() *RuleSet {
 	return &RuleSet{
 		Categories: []Category{One, Many, Other},
 		FormFunc: func(ops *Operands) Category {
@@ -402,26 +400,6 @@ func newRuleSetIuNaqSatSeSmaSmiSmjSmnSms() *RuleSet {
 			// n = 2
 			if ops.N == 2 {
 				return Two
-			}
-
-			return Other
-		},
-	}
-}
-
-// [ksh]
-func newRuleSetKsh() *RuleSet {
-	return &RuleSet{
-		Categories: []Category{Zero, One, Other},
-		FormFunc: func(ops *Operands) Category {
-			// n = 0
-			if ops.N == 0 {
-				return Zero
-			}
-
-			// n = 1
-			if ops.N == 1 {
-				return One
 			}
 
 			return Other

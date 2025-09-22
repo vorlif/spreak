@@ -40,7 +40,7 @@ func TestEvaluateAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJ
 
 }
 
-func TestEvaluateAkBhoGuwLnMgNsoPaTiWa(t *testing.T) {
+func TestEvaluateAkBhoCswGuwLnMgNsoPaTiWa(t *testing.T) {
 	var rule *ast.Rule
 
 	rule = ast.MustParse("n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000")
@@ -78,7 +78,7 @@ func TestEvaluateAmAsBnDoiFaGuHiKnPcmZu(t *testing.T) {
 
 }
 
-func TestEvaluateAstDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi(t *testing.T) {
+func TestEvaluateAstDeEnEtFiFyGlIaIoLijNlScSvSwUrYi(t *testing.T) {
 	var rule *ast.Rule
 
 	rule = ast.MustParse("i = 1 and v = 0 @integer 1")
@@ -230,7 +230,7 @@ func TestEvaluateTzm(t *testing.T) {
 
 }
 
-func TestEvaluateBlo(t *testing.T) {
+func TestEvaluateBloKsh(t *testing.T) {
 	var rule *ast.Rule
 
 	rule = ast.MustParse("n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000")
@@ -247,9 +247,9 @@ func TestEvaluateBlo(t *testing.T) {
 		assert.True(t, evaluate(rule, op), sample)
 	}
 
-	rule = ast.MustParse(" @integer 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~2.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …")
+	rule = ast.MustParse(" @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …")
 
-	for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "100", "1000", "10000", "100000", "1000000", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
+	for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 		op := MustNewOperands(sample)
 		assert.True(t, evaluate(rule, op), sample)
 	}
@@ -282,7 +282,7 @@ func TestEvaluateBsHrShSr(t *testing.T) {
 
 }
 
-func TestEvaluateCaItPt_PTVec(t *testing.T) {
+func TestEvaluateCaItLldPt_PTScnVec(t *testing.T) {
 	var rule *ast.Rule
 
 	rule = ast.MustParse("i = 1 and v = 0 @integer 1")
@@ -406,32 +406,6 @@ func TestEvaluateIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 	rule = ast.MustParse(" @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …")
 
 	for _, sample := range []string{"0", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
-		op := MustNewOperands(sample)
-		assert.True(t, evaluate(rule, op), sample)
-	}
-
-}
-
-func TestEvaluateKsh(t *testing.T) {
-	var rule *ast.Rule
-
-	rule = ast.MustParse("n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000")
-
-	for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
-		op := MustNewOperands(sample)
-		assert.True(t, evaluate(rule, op), sample)
-	}
-
-	rule = ast.MustParse("n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000")
-
-	for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
-		op := MustNewOperands(sample)
-		assert.True(t, evaluate(rule, op), sample)
-	}
-
-	rule = ast.MustParse(" @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …")
-
-	for _, sample := range []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "100", "1000", "10000", "100000", "1000000", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 		op := MustNewOperands(sample)
 		assert.True(t, evaluate(rule, op), sample)
 	}
