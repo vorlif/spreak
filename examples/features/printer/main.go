@@ -48,7 +48,7 @@ func NewPrinter() spreak.Printer {
 }
 
 func (m myPrinter) GetPrintFunc(lang language.Tag) spreak.PrintFunc {
-	return func(str string, vars ...interface{}) string {
+	return func(str string, vars ...any) string {
 		f, p := parse(str, vars...)
 		return fmt.Sprintf(f, p...)
 	}
@@ -59,8 +59,8 @@ func (myPrinter) Init(languages []language.Tag) {}
 
 var re = regexp.MustCompile("%{(\\w+)}[.\\d]*[xsvTtbcdoqXUeEfFgGp]")
 
-func parse(format string, vars ...interface{}) (string, []interface{}) {
-	params := make(map[string]interface{}, len(vars)/2)
+func parse(format string, vars ...any) (string, []any) {
+	params := make(map[string]any, len(vars)/2)
 	for i := 0; i < len(vars); i++ {
 		key := fmt.Sprintf("%v", vars[i])
 		if i+1 < len(vars) {
@@ -72,7 +72,7 @@ func parse(format string, vars ...interface{}) (string, []interface{}) {
 	}
 
 	f, n := reformat(format)
-	p := make([]interface{}, len(n))
+	p := make([]any, len(n))
 	for i, v := range n {
 		p[i] = params[v]
 	}

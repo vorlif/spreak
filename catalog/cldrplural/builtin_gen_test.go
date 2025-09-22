@@ -12,8 +12,8 @@ import (
 
 func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiUndViWoYoYueZh(t *testing.T) {
 	for _, lang := range []string{"bm", "bo", "dz", "hnj", "id", "ig", "ii", "ja", "jbo", "jv", "jw", "kde", "kea", "km", "ko", "lkt", "lo", "ms", "my", "nqo", "osa", "sah", "ses", "sg", "su", "th", "to", "tpi", "und", "vi", "wo", "yo", "yue", "zh"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := MustNewOperands(sample)
@@ -25,8 +25,8 @@ func TestBuiltinBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToT
 
 func TestBuiltinAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJmcKaKajKcgKkKkjKlKsKsbKuKyLbLgMasMgoMlMnMrNahNbNdNeNnNnhNoNrNyNynOmOrOsPapPsRmRofRwkSaqSdSdhSehSnSoSqSsSsyStSyrTaTeTeoTigTkTnTrTsUgUzVeVoVunWaeXhXog(t *testing.T) {
 	for _, lang := range []string{"af", "an", "asa", "az", "bal", "bem", "bez", "bg", "brx", "ce", "cgg", "chr", "ckb", "dv", "ee", "el", "eo", "eu", "fo", "fur", "gsw", "ha", "haw", "hu", "jgo", "jmc", "ka", "kaj", "kcg", "kk", "kkj", "kl", "ks", "ksb", "ku", "ky", "lb", "lg", "mas", "mgo", "ml", "mn", "mr", "nah", "nb", "nd", "ne", "nn", "nnh", "no", "nr", "ny", "nyn", "om", "or", "os", "pap", "ps", "rm", "rof", "rwk", "saq", "sd", "sdh", "seh", "sn", "so", "sq", "ss", "ssy", "st", "syr", "ta", "te", "teo", "tig", "tk", "tn", "tr", "ts", "ug", "uz", "ve", "vo", "vun", "wae", "xh", "xog"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -43,8 +43,8 @@ func TestBuiltinAfAnAsaAzBalBemBezBgBrxCeCggChrCkbDvEeElEoEuFoFurGswHaHawHuJgoJm
 
 func TestBuiltinAkBhoGuwLnMgNsoPaTiWa(t *testing.T) {
 	for _, lang := range []string{"ak", "bho", "guw", "ln", "mg", "nso", "pa", "ti", "wa"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "1.0", "0.00", "1.00", "0.000", "1.000", "0.0000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -61,8 +61,8 @@ func TestBuiltinAkBhoGuwLnMgNsoPaTiWa(t *testing.T) {
 
 func TestBuiltinAmAsBnDoiFaGuHiKnPcmZu(t *testing.T) {
 	for _, lang := range []string{"am", "as", "bn", "doi", "fa", "gu", "hi", "kn", "pcm", "zu"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
 			op := MustNewOperands(sample)
@@ -79,8 +79,8 @@ func TestBuiltinAmAsBnDoiFaGuHiKnPcmZu(t *testing.T) {
 
 func TestBuiltinAstDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi(t *testing.T) {
 	for _, lang := range []string{"ast", "de", "en", "et", "fi", "fy", "gl", "ia", "io", "lij", "nl", "sc", "scn", "sv", "sw", "ur", "yi"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1"} {
 			op := MustNewOperands(sample)
@@ -97,8 +97,8 @@ func TestBuiltinAstDeEnEtFiFyGlIaIoLijNlScScnSvSwUrYi(t *testing.T) {
 
 func TestBuiltinCebFilTl(t *testing.T) {
 	for _, lang := range []string{"ceb", "fil", "tl"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "2", "3", "5", "7", "8", "10", "11", "12", "13", "15", "17", "18", "20", "21", "100", "1000", "10000", "100000", "1000000", "0.0", "0.1", "0.2", "0.3", "0.5", "0.7", "0.8", "1.0", "1.1", "1.2", "1.3", "1.5", "1.7", "1.8", "2.0", "2.1", "10.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := MustNewOperands(sample)
@@ -115,8 +115,8 @@ func TestBuiltinCebFilTl(t *testing.T) {
 
 func TestBuiltinDa(t *testing.T) {
 	for _, lang := range []string{"da"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"} {
 			op := MustNewOperands(sample)
@@ -133,8 +133,8 @@ func TestBuiltinDa(t *testing.T) {
 
 func TestBuiltinFfHyKab(t *testing.T) {
 	for _, lang := range []string{"ff", "hy", "kab"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
 			op := MustNewOperands(sample)
@@ -151,8 +151,8 @@ func TestBuiltinFfHyKab(t *testing.T) {
 
 func TestBuiltinIs(t *testing.T) {
 	for _, lang := range []string{"is"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.0", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
 			op := MustNewOperands(sample)
@@ -169,8 +169,8 @@ func TestBuiltinIs(t *testing.T) {
 
 func TestBuiltinMk(t *testing.T) {
 	for _, lang := range []string{"mk"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
 			op := MustNewOperands(sample)
@@ -187,8 +187,8 @@ func TestBuiltinMk(t *testing.T) {
 
 func TestBuiltinSi(t *testing.T) {
 	for _, lang := range []string{"si"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "1.0", "0.00", "0.01", "1.00", "0.000", "0.001", "1.000", "0.0000", "0.0001", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -205,8 +205,8 @@ func TestBuiltinSi(t *testing.T) {
 
 func TestBuiltinTzm(t *testing.T) {
 	for _, lang := range []string{"tzm"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "0.0", "1.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "20.0", "21.0", "22.0", "23.0", "24.0"} {
 			op := MustNewOperands(sample)
@@ -223,8 +223,8 @@ func TestBuiltinTzm(t *testing.T) {
 
 func TestBuiltinBlo(t *testing.T) {
 	for _, lang := range []string{"blo"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)
@@ -246,8 +246,8 @@ func TestBuiltinBlo(t *testing.T) {
 
 func TestBuiltinBsHrShSr(t *testing.T) {
 	for _, lang := range []string{"bs", "hr", "sh", "sr"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
 			op := MustNewOperands(sample)
@@ -269,8 +269,8 @@ func TestBuiltinBsHrShSr(t *testing.T) {
 
 func TestBuiltinCaItPt_PTVec(t *testing.T) {
 	for _, lang := range []string{"ca", "it", "pt-PT", "vec"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1"} {
 			op := MustNewOperands(sample)
@@ -292,8 +292,8 @@ func TestBuiltinCaItPt_PTVec(t *testing.T) {
 
 func TestBuiltinEs(t *testing.T) {
 	for _, lang := range []string{"es"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -315,8 +315,8 @@ func TestBuiltinEs(t *testing.T) {
 
 func TestBuiltinFr(t *testing.T) {
 	for _, lang := range []string{"fr"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
 			op := MustNewOperands(sample)
@@ -338,8 +338,8 @@ func TestBuiltinFr(t *testing.T) {
 
 func TestBuiltinHe(t *testing.T) {
 	for _, lang := range []string{"he"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.00", "0.01", "0.02", "0.03", "0.04", "0.05"} {
 			op := MustNewOperands(sample)
@@ -361,8 +361,8 @@ func TestBuiltinHe(t *testing.T) {
 
 func TestBuiltinIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 	for _, lang := range []string{"iu", "naq", "sat", "se", "sma", "smi", "smj", "smn", "sms"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -384,8 +384,8 @@ func TestBuiltinIuNaqSatSeSmaSmiSmjSmnSms(t *testing.T) {
 
 func TestBuiltinKsh(t *testing.T) {
 	for _, lang := range []string{"ksh"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)
@@ -407,8 +407,8 @@ func TestBuiltinKsh(t *testing.T) {
 
 func TestBuiltinLag(t *testing.T) {
 	for _, lang := range []string{"lag"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)
@@ -430,8 +430,8 @@ func TestBuiltinLag(t *testing.T) {
 
 func TestBuiltinLvPrg(t *testing.T) {
 	for _, lang := range []string{"lv", "prg"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "100", "1000", "10000", "100000", "1000000", "0.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "100.0", "1000.0", "10000.0", "100000.0", "1000000.0"} {
 			op := MustNewOperands(sample)
@@ -453,8 +453,8 @@ func TestBuiltinLvPrg(t *testing.T) {
 
 func TestBuiltinMoRo(t *testing.T) {
 	for _, lang := range []string{"mo", "ro"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1"} {
 			op := MustNewOperands(sample)
@@ -476,8 +476,8 @@ func TestBuiltinMoRo(t *testing.T) {
 
 func TestBuiltinPt(t *testing.T) {
 	for _, lang := range []string{"pt"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5"} {
 			op := MustNewOperands(sample)
@@ -499,8 +499,8 @@ func TestBuiltinPt(t *testing.T) {
 
 func TestBuiltinShi(t *testing.T) {
 	for _, lang := range []string{"shi"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "1", "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "0.00", "0.01", "0.02", "0.03", "0.04"} {
 			op := MustNewOperands(sample)
@@ -522,8 +522,8 @@ func TestBuiltinShi(t *testing.T) {
 
 func TestBuiltinBe(t *testing.T) {
 	for _, lang := range []string{"be"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
 			op := MustNewOperands(sample)
@@ -550,8 +550,8 @@ func TestBuiltinBe(t *testing.T) {
 
 func TestBuiltinCsSk(t *testing.T) {
 	for _, lang := range []string{"cs", "sk"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1"} {
 			op := MustNewOperands(sample)
@@ -578,8 +578,8 @@ func TestBuiltinCsSk(t *testing.T) {
 
 func TestBuiltinDsbHsb(t *testing.T) {
 	for _, lang := range []string{"dsb", "hsb"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001", "0.1", "1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "10.1", "100.1", "1000.1"} {
 			op := MustNewOperands(sample)
@@ -606,8 +606,8 @@ func TestBuiltinDsbHsb(t *testing.T) {
 
 func TestBuiltinGd(t *testing.T) {
 	for _, lang := range []string{"gd"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "11", "1.0", "11.0", "1.00", "11.00", "1.000", "11.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -634,8 +634,8 @@ func TestBuiltinGd(t *testing.T) {
 
 func TestBuiltinLt(t *testing.T) {
 	for _, lang := range []string{"lt"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "71.0", "81.0", "101.0", "1001.0"} {
 			op := MustNewOperands(sample)
@@ -662,8 +662,8 @@ func TestBuiltinLt(t *testing.T) {
 
 func TestBuiltinPl(t *testing.T) {
 	for _, lang := range []string{"pl"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1"} {
 			op := MustNewOperands(sample)
@@ -690,8 +690,8 @@ func TestBuiltinPl(t *testing.T) {
 
 func TestBuiltinRuUk(t *testing.T) {
 	for _, lang := range []string{"ru", "uk"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "71", "81", "101", "1001"} {
 			op := MustNewOperands(sample)
@@ -718,8 +718,8 @@ func TestBuiltinRuUk(t *testing.T) {
 
 func TestBuiltinSl(t *testing.T) {
 	for _, lang := range []string{"sl"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "101", "201", "301", "401", "501", "601", "701", "1001"} {
 			op := MustNewOperands(sample)
@@ -746,8 +746,8 @@ func TestBuiltinSl(t *testing.T) {
 
 func TestBuiltinBr(t *testing.T) {
 	for _, lang := range []string{"br"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "21", "31", "41", "51", "61", "81", "101", "1001", "1.0", "21.0", "31.0", "41.0", "51.0", "61.0", "81.0", "101.0", "1001.0"} {
 			op := MustNewOperands(sample)
@@ -779,8 +779,8 @@ func TestBuiltinBr(t *testing.T) {
 
 func TestBuiltinGa(t *testing.T) {
 	for _, lang := range []string{"ga"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -812,8 +812,8 @@ func TestBuiltinGa(t *testing.T) {
 
 func TestBuiltinGv(t *testing.T) {
 	for _, lang := range []string{"gv"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "11", "21", "31", "41", "51", "61", "71", "101", "1001"} {
 			op := MustNewOperands(sample)
@@ -845,8 +845,8 @@ func TestBuiltinGv(t *testing.T) {
 
 func TestBuiltinMt(t *testing.T) {
 	for _, lang := range []string{"mt"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"1", "1.0", "1.00", "1.000", "1.0000"} {
 			op := MustNewOperands(sample)
@@ -878,8 +878,8 @@ func TestBuiltinMt(t *testing.T) {
 
 func TestBuiltinArArs(t *testing.T) {
 	for _, lang := range []string{"ar", "ars"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)
@@ -916,8 +916,8 @@ func TestBuiltinArArs(t *testing.T) {
 
 func TestBuiltinCy(t *testing.T) {
 	for _, lang := range []string{"cy"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)
@@ -954,8 +954,8 @@ func TestBuiltinCy(t *testing.T) {
 
 func TestBuiltinKw(t *testing.T) {
 	for _, lang := range []string{"kw"} {
-		set, found := builtInRuleSets[language.MustParse(lang).String()]
-		require.True(t, found)
+		set := getBuiltInForLanguage(language.MustParse(lang).String())
+		require.NotNilf(t, set, "RuleSet for language %s (%s) not found", lang, language.MustParse(lang).String())
 
 		for _, sample := range []string{"0", "0.0", "0.00", "0.000", "0.0000"} {
 			op := MustNewOperands(sample)

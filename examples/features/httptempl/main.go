@@ -52,7 +52,7 @@ var _ http.Handler = (*handler)(nil)
 
 // createLocalizer creates a localizer for a request which can be used to translate texts.
 func (h *handler) createLocalizer(r *http.Request) *spreak.Localizer {
-	clientLanguages := make([]interface{}, 0)
+	clientLanguages := make([]any, 0)
 
 	if cookie, err := r.Cookie(CookieName); err == nil && cookie.Value != "" {
 		clientLanguages = append(clientLanguages, cookie.Value)
@@ -80,7 +80,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (h *handler) renderTemplate(name string, w http.ResponseWriter, r *http.Request) {
 	localizer := h.createLocalizer(r)
 
-	err := h.templates.ExecuteTemplate(w, name, map[string]interface{}{
+	err := h.templates.ExecuteTemplate(w, name, map[string]any{
 		"i18n": NewI18N(localizer),
 	})
 	if err != nil {
@@ -112,4 +112,4 @@ type i18n struct {
 func NewI18N(loc *spreak.Localizer) *i18n { return &i18n{loc: loc} }
 
 // We want to use Tr instead of "Getf" and therefore wrap the method.
-func (in *i18n) Tr(message string, vars ...interface{}) string { return in.loc.Getf(message, vars...) }
+func (in *i18n) Tr(message string, vars ...any) string { return in.loc.Getf(message, vars...) }

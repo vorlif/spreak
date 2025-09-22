@@ -203,7 +203,7 @@ func TestWithPrintFuncGenerator(t *testing.T) {
 		executionCount := 0
 		printer := &testPrinter{func(lang language.Tag) PrintFunc {
 			executionCount++
-			return func(str string, vars ...interface{}) string {
+			return func(str string, vars ...any) string {
 				return lang.String()
 			}
 		}}
@@ -229,7 +229,7 @@ func TestWithPrintFuncGenerator(t *testing.T) {
 func TestWithPrintFunction(t *testing.T) {
 	t.Run("The passed print functions is set", func(t *testing.T) {
 		executionCount := 0
-		var printF PrintFunc = func(str string, vars ...interface{}) string {
+		var printF PrintFunc = func(str string, vars ...any) string {
 			executionCount++
 			return str
 		}

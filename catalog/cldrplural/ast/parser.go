@@ -9,37 +9,45 @@ import (
 // The parser can translate a single rule into an abstract
 // tree of nodes. It implements the following grammar::
 //
-//	   condition     = and_condition ('or' and_condition)*
-//	                   ('@integer' samples)?
-//	                   ('@decimal' samples)?
-//	   and_condition = relation ('and' relation)*
-//	   relation      = expr ('=' | '!=') range_list
-//	   expr          = operand ('%' value)?
-//	   operand       = 'n' | 'i' | 'f' | 't' | 'v' | 'w'
-//	   range_list    = (range | value) (',' range_list)*
-//	   value         = digit+
-//	   digit         = 0|1|2|3|4|5|6|7|8|9
-//	   range         = value'..'value
-//	   samples       = sampleRange (',' sampleRange)* (',' ('…'|'...'))?
-//	   sampleRange   = decimalValue '~' decimalValue
-//	   decimalValue  = value ('.' value)?
+//		condition       = and_condition ('or' and_condition)*
+//	    samples         = ('@integer' sampleList)?
+//	                      ('@decimal' sampleList)?
+//	    and_condition   = relation ('and' relation)*
+//	    relation        = is_relation | in_relation | within_relation
+//	    is_relation     = expr 'is' ('not')? value
+//	    in_relation     = expr (('not')? 'in' | '=' | '!=') range_list
+//	    within_relation = expr ('not')? 'within' range_list
+//	    expr            = operand (('mod' | '%') value)?
+//	    operand         = 'n' | 'i' | 'f' | 't' | 'v' | 'w' | 'c' | 'e'
+//	    range_list      = (range | value) (',' range_list)*
+//	    range           = value'..'value
+//	    value           = digit+
+//	    sampleList      = sampleRange (',' sampleRange)* (',' ('…'|'...'))?
+//	    sampleRange     = sampleValue ('~' sampleValue)?
+//	    sampleValue     = sign? value ('.' digit+)? ([ce] digitPos digit+)?
+//	    sign            = '+' | '-'
+//	    digit           = [0-9]
+//	    digitPos        = [1-9]
 //
-//	- Whitespace can occur between or around any of the above tokens.
-//	- Rules should be mutually exclusive; for a given numeric value, only one
-//	  rule should apply (i.e. the condition should only be true for one of
-//	  the plural rule elements).
-//	- The in and within relations can take comma-separated lists, such as:
-//	  'n in 3,5,7..15'.
-//	- Samples are ignored.
-//	  The translator parses the expression on instanciation into an attribute
-//	  called `ast`.
+//		- Whitespace can occur between or around any of the above tokens.
+//		- Rules should be mutually exclusive; for a given numeric value, only one
+//		  rule should apply (i.e. the condition should only be true for one of
+//		  the plural rule elements).
+//		- The in and within relations can take comma-separated lists, such as:
+//		  'n in 3,5,7..15'.
+//		- Samples are ignored.
+//		  The translator parses the expression on instanciation into an attribute
+//		  called `ast`.
 //
 // See: http://unicode.org/reports/tr35/tr35-numbers.html#51-plural-rules-syntax
 type parser struct {
-	s           *scanner
-	lastToken   Token  // last read token
-	lastLiteral string // last read literal
-	n           int    // buffer size (max=1)
+	s *scanner
+	// lastToken is the last read token
+	lastToken Token
+	// lastLiteral is the last read literal
+	lastLiteral string
+	// buffer size (max=1)
+	n int
 }
 
 func MustParse(rawRule string) *Rule {
@@ -53,12 +61,12 @@ func MustParse(rawRule string) *Rule {
 func Parse(rawRule string) (*Rule, error) {
 	p := &parser{s: newScanner(rawRule)}
 
-	a, err := p.Parse()
+	rule, err := p.Parse()
 	if err != nil {
 		return nil, err
 	}
 
-	return a, nil
+	return rule, nil
 }
 
 func (p *parser) Parse() (*Rule, error) {
@@ -282,10 +290,12 @@ func (p *parser) rangeExpression() (*RangeExpr, error) {
 func (p *parser) samples() ([]string, error) {
 	var samples []string
 
-	if p.lastToken != eof && p.lastToken != sample {
-		return nil, fmt.Errorf("end of the rule expected got %q", p.lastLiteral)
-	} else if p.lastToken == eof {
+	if p.lastToken == eof {
 		return samples, nil
+	}
+
+	if p.lastToken != sample {
+		return nil, fmt.Errorf("end of the rule expected got %q", p.lastLiteral)
 	}
 
 	for p.lastToken != eof {
@@ -325,10 +335,7 @@ func (p *parser) scan() (tok Token, lit string) {
 		return p.lastToken, p.lastLiteral
 	}
 
-	tok, lit = p.s.Scan()
-
-	p.lastToken, p.lastLiteral = tok, lit
-
+	p.lastToken, p.lastLiteral = p.s.Scan()
 	return
 }
 

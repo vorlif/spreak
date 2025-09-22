@@ -102,39 +102,39 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 	switch e := node.(type) {
 	case *ast.ModuloExpr:
 		val := e.Value
-		switch OperandMap[e.Op.Operand] {
-		case OperandN:
+		switch e.Op.Operand {
+		case "n":
 			return math.Mod(ops.N, float64(val))
-		case OperandI:
+		case "i":
 			return float64(ops.I % val)
-		case OperandV:
+		case "v":
 			return float64(ops.V % val)
-		case OperandW:
+		case "w":
 			return float64(ops.W % val)
-		case OperandF:
+		case "f":
 			return float64(ops.F % val)
-		case OperandT:
+		case "t":
 			return float64(ops.T % val)
-		case OperandC:
+		case "c", "e":
 			return float64(ops.C % val)
 		default:
 			panic("invalid operand " + e.Op.Operand)
 		}
 	case *ast.OperandExpr:
-		switch OperandMap[e.Operand] {
-		case OperandN:
+		switch e.Operand {
+		case "n":
 			return ops.N
-		case OperandI:
+		case "i":
 			return float64(ops.I)
-		case OperandV:
+		case "v":
 			return float64(ops.V)
-		case OperandW:
+		case "w":
 			return float64(ops.W)
-		case OperandF:
+		case "f":
 			return float64(ops.F)
-		case OperandT:
+		case "t":
 			return float64(ops.T)
-		case OperandC:
+		case "c", "e":
 			return float64(ops.C)
 		default:
 			panic("invalid operand " + e.Operand)
@@ -148,22 +148,17 @@ func evaluateExpression(node ast.Node, ops *Operands) float64 {
 // Multiple ranges can be specified.
 func isFloatInRange(x float64, rangeValues ...int64) bool {
 	for i := 0; i < len(rangeValues); i += 2 {
-		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
-			if util.FloatEqual(float64(v), x) {
-				return true
-			}
+		lower := rangeValues[i]
+		upper := rangeValues[i+1]
+
+		// If the value is not within the range, not every value needs to be checked.
+		if !(x >= float64(lower) && x <= float64(upper)) {
+			continue
 		}
-	}
 
-	return false
-}
-
-// isIntInRange tests whether an int64 value x is within a range [from, to].
-// Multiple ranges can be specified.
-func isIntInRange(x int64, rangeValues ...int64) bool {
-	for i := 0; i < len(rangeValues); i += 2 {
-		for v := rangeValues[i]; v <= rangeValues[i+1]; v++ {
-			if v == x {
+		// Checking each value
+		for v := lower; v <= upper; v++ {
+			if util.FloatEqual(float64(v), x) {
 				return true
 			}
 		}
@@ -175,16 +170,6 @@ func isIntInRange(x int64, rangeValues ...int64) bool {
 func isFloatOneOf(target float64, vals ...int64) bool {
 	for _, val := range vals {
 		if util.FloatEqual(float64(val), target) {
-			return true
-		}
-	}
-
-	return false
-}
-
-func isIntOneOf(target int64, vals ...int64) bool {
-	for _, val := range vals {
-		if val == target {
 			return true
 		}
 	}

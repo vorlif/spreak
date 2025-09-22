@@ -32,17 +32,6 @@ const (
 	JSONFile = ".json"
 )
 
-// Catalog represents a collection of messages (translations) for a language and a domain.
-// Normally it is a PO or MO file.
-//
-// Deprecated: Moved to catalog.Catalog. This alias will be removed in version 1.0.
-type Catalog = catalog.Catalog
-
-// A Decoder reads and decodes catalogs for a language and a domain from a byte array.
-//
-// Deprecated: Moved to catalog.Decoder and will be removed with v1.0.
-type Decoder = catalog.Decoder
-
 // Loader is responsible for loading Catalogs for a language and a domain.
 // A bundle loads each domain through its own loader.
 //
@@ -80,7 +69,7 @@ type FilesystemLoader struct {
 
 var _ Loader = (*FilesystemLoader)(nil)
 
-// NewFilesystemLoader creates a new FileSystemLoader.
+// NewFilesystemLoader creates a new FilesystemLoader.
 // If no file system was stored during the creation, an error is returned.
 // If no decoder has been stored, the Po and Mo decoders are automatically used.
 // Otherwise, only the stored decoders are used.
@@ -219,7 +208,7 @@ func WithDecoder(ext string, decoder catalog.Decoder) FsOption {
 // Shorthand for WithDecoder(".mo", catalog.NewMoDecoder()).
 func WithMoDecoder() FsOption { return WithDecoder(".mo", catalog.NewMoDecoder()) }
 
-// WithPoDecoder stores the mo file decoder.
+// WithPoDecoder stores the po file decoder.
 //
 // Shorthand for WithDecoder(".po", catalog.NewPoDecoder()).
 func WithPoDecoder() FsOption { return WithDecoder(".po", catalog.NewPoDecoder()) }

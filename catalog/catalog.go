@@ -10,12 +10,14 @@ import (
 // Catalog represents a collection of messages (translations) for a language and a domain.
 // Normally it is a PO or MO file.
 type Catalog interface {
-	// GetTranslation Returns a translation for an ID within a given context.
-	GetTranslation(ctx, msgID string) (string, error)
-	// GetPluralTranslation Returns a translation within a given context.
-	// Here n is a number that should be used to determine the plural form.
-	GetPluralTranslation(ctx, msgID string, n interface{}) (string, error)
+	// Lookup returns a translation for an ID within a given context.
+	Lookup(ctx, msgID string) (string, error)
 
+	// LookupPlural returns a translation within a given context.
+	// Here n is a number that should be used to determine the plural form.
+	LookupPlural(ctx, msgID string, n any) (string, error)
+
+	// Language specifies the language for which the catalog was created.
 	Language() language.Tag
 }
 

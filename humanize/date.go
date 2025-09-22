@@ -47,7 +47,7 @@ type gettextEntry struct {
 //
 // Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
 // For all other inputs, a string is returned with an error message in fmt style.
-func (h *Humanizer) NaturalDay(i interface{}) string {
+func (h *Humanizer) NaturalDay(i any) string {
 	t, err := util.ToTime(i)
 	if err != nil {
 		return formatErrorMessage(i)
@@ -121,7 +121,7 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 //
 // Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
 // For all other inputs, a string is returned with an error message in fmt style.
-func (h *Humanizer) NaturalTime(i interface{}) string {
+func (h *Humanizer) NaturalTime(i any) string {
 	now := time.Now()
 	t, err := util.ToTime(i)
 	if err != nil {
@@ -286,7 +286,7 @@ func WithNow(now time.Time) TimeOption {
 //
 // Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
 // For all other inputs, a string is returned with an error message in fmt style.
-func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string {
+func (h *Humanizer) TimeSince(inputTime any, opts ...TimeOption) string {
 	d, err := util.ToTime(inputTime)
 	if err != nil {
 		return formatErrorMessage(inputTime)
@@ -360,7 +360,7 @@ func (h *Humanizer) TimeSince(inputTime interface{}, opts ...TimeOption) string 
 
 // TimeSinceFrom works like TimeSince, but the time to use as the comparison point can be specified.
 // Is equivalent to TimeSince(d, WithNow(now)).
-func (h *Humanizer) TimeSinceFrom(d interface{}, now time.Time, opts ...TimeOption) string {
+func (h *Humanizer) TimeSinceFrom(d any, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now))
 	return h.TimeSince(d, opts...)
 }
@@ -368,7 +368,7 @@ func (h *Humanizer) TimeSinceFrom(d interface{}, now time.Time, opts ...TimeOpti
 // TimeUntil works similar to TimeSince, except that it measures the time from now until the given date or datetime.
 // For example, if today is 1 June 2006 and conferenceDate is a date instance holding 29 June 2006,
 // then TimeUntil(conferenceDate) will return “4 weeks”.
-func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeOption) string {
+func (h *Humanizer) TimeUntil(d any, opts ...TimeOption) string {
 	parsedTime, err := util.ToTime(d)
 	if err != nil {
 		return formatErrorMessage(d)
@@ -380,7 +380,7 @@ func (h *Humanizer) TimeUntil(d interface{}, opts ...TimeOption) string {
 
 // TimeUntilFrom works like TimeUntil, but the time to use as the comparison point can be specified.
 // Is equivalent to TimeUntil(d, WithNow(now)).
-func (h *Humanizer) TimeUntilFrom(d interface{}, now time.Time, opts ...TimeOption) string {
+func (h *Humanizer) TimeUntilFrom(d any, now time.Time, opts ...TimeOption) string {
 	opts = append(opts, WithNow(now), WithReverse(true))
 	return h.TimeSince(d, opts...)
 }

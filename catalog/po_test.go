@@ -27,162 +27,83 @@ func TestCatalog_SimplePublicFunctions(t *testing.T) {
 	cat := getPoCatalogForDomain(t, "a")
 	assert.Equal(t, language.German, cat.Language())
 
-	translation, err := cat.GetTranslation("", "id")
+	translation, err := cat.Lookup("", "id")
 	if assert.NoError(t, err) {
 		assert.Equal(t, "ID", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("", "%d day", 1)
+	translation, err = cat.LookupPlural("", "%d day", 1)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Tag", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("", "%d car", 10)
+	translation, err = cat.LookupPlural("", "%d car", 10)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d car", translation)
 	}
 
-	translation, err = cat.GetTranslation("context", "Test with context")
+	translation, err = cat.Lookup("context", "Test with context")
 	if assert.NoError(t, err) {
 		assert.Equal(t, "Test mit Context", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "Test with context", 5)
+	translation, err = cat.LookupPlural("other", "Test with context", 5)
 	if assert.Error(t, err) {
 		assert.Equal(t, "Test with context", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("context", "%d result", 1)
+	translation, err = cat.LookupPlural("context", "%d result", 1)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Ergebniss", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("context", "%d result", 10)
+	translation, err = cat.LookupPlural("context", "%d result", 10)
 	if assert.NoError(t, err) {
 		assert.Equal(t, "%d Ergebnisse", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "%d result", 1)
+	translation, err = cat.LookupPlural("other", "%d result", 1)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d result", translation)
 	}
 
-	translation, err = cat.GetPluralTranslation("other", "%d result", 10)
+	translation, err = cat.LookupPlural("other", "%d result", 10)
 	if assert.Error(t, err) {
 		assert.Equal(t, "%d result", translation)
 	}
-}
-
-const decodePoInvalidPluralForm = `
-msgid ""
-msgstr ""
-"Plural-Forms: invalid-pluralform\n"
-`
-
-const decodeTestData = `
-msgid "id"
-msgstr "ID"
-
-msgid "empty translation"
-msgstr ""
-
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d Tag"
-msgstr[1] "%d Tage"
-
-msgid "Special\t	\"chars\""
-msgstr "Sonder\t	\"zeichen\""
-
-#, fuzzy
-msgid "Unknown"
-msgstr "Fuzzy translation"
-`
-
-func TestPoDecoder(t *testing.T) {
-	domain := "my-domain"
-	lang := language.German
-
-	dec := NewPoDecoder()
-	catl, err := dec.Decode(lang, domain, []byte{})
-	assert.Error(t, err)
-	assert.Nil(t, catl)
-
-	catl, err = dec.Decode(lang, domain, []byte(decodeTestData))
-	assert.NoError(t, err)
-	assert.NotNil(t, catl)
-	assert.Equal(t, lang, catl.Language())
-
-	translation, err := catl.GetTranslation("", "id")
-	assert.NoError(t, err)
-	assert.Equal(t, "ID", translation)
-
-	translation, err = catl.GetTranslation("", "xyz")
-	assert.Error(t, err)
-	assert.Equal(t, "xyz", translation)
-
-	translation, err = catl.GetTranslation("", "Unknown")
-	assert.Error(t, err)
-	assert.Equal(t, "Unknown", translation)
-
-	catl, err = dec.Decode(lang, domain, []byte(decodePoInvalidPluralForm+decodeTestData))
-	assert.Error(t, err)
-	assert.Nil(t, catl)
-
-	t.Run("test special chars", func(t *testing.T) {
-		catl, err = dec.Decode(lang, domain, []byte(decodeTestData))
-		assert.NoError(t, err)
-		require.NotNil(t, catl)
-
-		tr, err := catl.GetTranslation("", "Special		\"chars\"")
-		assert.NoError(t, err)
-		assert.Equal(t, "Sonder\t\t\"zeichen\"", tr)
-	})
-}
-
-func TestMoDecoder(t *testing.T) {
-	dec := NewMoDecoder()
-	decode, err := dec.Decode(language.German, "", []byte{})
-	assert.Error(t, err)
-	assert.Nil(t, decode)
-}
-
-func TestNewPoCLDRDecoder(t *testing.T) {
-	dec := NewPoCLDRDecoder()
-
-	catl, err := dec.Decode(language.German, "", []byte(decodeTestData))
-	assert.NoError(t, err)
-	require.NotNil(t, catl)
-
-	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
-	assert.NoError(t, errT)
-	assert.Equal(t, "%d Tage", translation)
-}
-
-func TestCLDRHeader(t *testing.T) {
-	header := `
-msgid ""
-msgstr ""
-"Plural-Forms: invalid-pluralform\n"
-"X-spreak-use-CLDR: true\n"
-`
-
-	dec := NewPoDecoder()
-	catl, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
-	assert.NoError(t, err)
-	require.NotNil(t, catl)
-	translation, errT := catl.GetPluralTranslation("", "%d day", "1.2")
-	assert.NoError(t, errT)
-	assert.Equal(t, "%d Tage", translation)
 }
 
 func TestGetCLDRPluralFunction(t *testing.T) {
 	pf := getCLDRPluralFunction(language.MustParse("kw"))
-	assert.Equal(t, 0, pf(0))
-	assert.Equal(t, 1, pf(1))
-	assert.Equal(t, 2, pf(22))
-	assert.Equal(t, 3, pf(143))
-	assert.Equal(t, 4, pf(161))
-	assert.Equal(t, 5, pf(5))
-	assert.Equal(t, 5, pf(1004))
+
+	tests := []struct {
+		input  int
+		output int
+	}{
+		{0, 0},
+		{1, 1},
+		{22, 2},
+		{143, 3},
+		{161, 4},
+		{5, 5},
+		{1004, 5},
+	}
+
+	for _, test := range tests {
+		form, err := pf(test.input)
+		assert.NoError(t, err)
+		assert.Equal(t, test.output, form)
+	}
+}
+
+func TestGettextMessage_Translations(t *testing.T) {
+	msg := GettextMessage{
+		translations: map[int]string{0: "Car", 1: "Cars"},
+	}
+
+	cpy := msg.Translations()
+	assert.Equal(t, msg.translations, cpy)
+	cpy[0] = "Auto"
+	cpy[1] = "Autos"
+	assert.NotEqual(t, msg.translations, cpy)
 }

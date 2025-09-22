@@ -1,6 +1,8 @@
 module example.com/spreak
 
-go 1.19
+go 1.21
+
+toolchain go1.21.4
 
 require (
 	github.com/Xuanwo/go-locale v1.1.0

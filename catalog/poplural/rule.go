@@ -7,44 +7,55 @@ import (
 	"github.com/vorlif/spreak/internal/util"
 )
 
-type Form struct {
+// Rule represents a rule as specified in the header of the po file under `Plural-Forms`.
+//
+// Example: nplurals=2; plural=n != 1;.
+type Rule struct {
+	// Specifies how many plural forms this rule supports.
 	NPlurals int
+	// Function that returns the appropriate plural form for a number.
 	FormFunc func(n int64) int
 }
 
-func (f *Form) Evaluate(a interface{}) int {
+// Evaluate returns the appropriate plural form for any value.
+// If the value is not an integer, it is formatted accordingly.
+// If formatting is not possible, an error is returned.
+func (f *Rule) Evaluate(a any) (int, error) {
 	num, err := util.ToNumber(a)
 	if err != nil {
-		return 0
+		return 0, err
 	}
 
 	num = math.RoundToEven(math.Abs(num))
-	return f.FormFunc(int64(num))
+	return f.FormFunc(int64(num)), nil
 }
 
-func MustParse(rule string) *Form {
-	form, err := Parse(rule)
+// MustParse is like Parse, but panics if the given rule string cannot be parsed.
+// It simplifies safe initialization of Rule values.
+func MustParse(raw string) *Rule {
+	rule, err := Parse(raw)
 	if err != nil {
 		panic(err)
 	}
-	return form
+	return rule
 }
 
 // Parse parses a plural forms header and returns a function to evaluate this header.
 // If for a header there is already a predefined function, this function will be returned.
-func Parse(rule string) (*Form, error) {
-	parsed, err := ast.Parse(rule)
+// If parsing failed it returns an error.
+func Parse(raw string) (*Rule, error) {
+	parsed, err := ast.Parse(raw)
 	if err != nil {
 		return nil, err
 	}
 
 	// Use of built-in functions, if available
 	compiledRaw := ast.CompileToString(parsed)
-	if form, ok := rawToBuiltIn[compiledRaw]; ok {
-		return form, nil
+	if rule := getBuiltInForRawRule(compiledRaw); rule != nil {
+		return rule, nil
 	}
 
-	f := &Form{
+	f := &Rule{
 		NPlurals: parsed.NPlurals,
 		FormFunc: generateFormFunc(parsed),
 	}
@@ -61,6 +72,7 @@ func generateFormFunc(forms *ast.Forms) func(n int64) int {
 	}
 }
 
+// evaluateNode computes the plural form for a number and a rule that was parsed at runtime.
 func evaluateNode(node ast.Node, num int64) int64 {
 	var conditionTrue bool
 

@@ -4,52 +4,36 @@ import (
 	"golang.org/x/text/language"
 )
 
-const fallbackRule = "nplurals=2; plural=n != 1;"
+// Language that is used for the rule if no rule can be found for a language.
+var fallbackLanguage = "en"
 
-var (
-	// "nplurals=2; plural=(n != 1);" -> Form.
-	rawToBuiltIn = make(map[string]*Form)
+// PluralFunc is a function that returns the appropriate plural form for a value.
+type PluralFunc = func(a any) (int, error)
 
-	// language.Tag.String() -> Form.
-	langToBuiltIn = make(map[string]*Form)
-)
-
-type PluralFunc = func(n interface{}) int
-
+// ForLanguage searches for the appropriate built-in plural function for a language.
+// If no function is found, the English plural function is automatically used.
+// The second return value indicates whether a suitable function was found or whether the fallback is used.
 func ForLanguage(lang language.Tag) (PluralFunc, bool) {
 	form, found := pluralRuleForLanguage(lang)
 	return form.Evaluate, found
 }
 
-func pluralRuleForLanguage(lang language.Tag) (*Form, bool) {
+func pluralRuleForLanguage(lang language.Tag) (*Rule, bool) {
 	n := lang
 	for !n.IsRoot() {
-		if form, hasForm := langToBuiltIn[n.String()]; hasForm {
-			return form, true
+		if rule := getBuiltInForLanguage(n.String()); rule != nil {
+			return rule, true
 		}
 
 		base, confidence := n.Base()
 		if confidence >= language.High {
-			if form, hasForm := langToBuiltIn[base.String()]; hasForm {
-				return form, true
+			if rule := getBuiltInForLanguage(base.String()); rule != nil {
+				return rule, true
 			}
 		}
 
 		n = n.Parent()
 	}
 
-	return rawToBuiltIn[fallbackRule], false
-}
-
-func registerLanguageForm(langs []string, rawRule string, form *Form) {
-	rawToBuiltIn[rawRule] = form
-
-	for _, lang := range langs {
-		tag := language.MustParse(lang)
-		langToBuiltIn[tag.String()] = form
-	}
-}
-
-func registerRawForm(rawRule string, form *Form) {
-	rawToBuiltIn[rawRule] = form
+	return getBuiltInForLanguage(fallbackLanguage), false
 }

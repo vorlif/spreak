@@ -350,3 +350,81 @@ func TestEncoder_SetWrapWidth(t *testing.T) {
 `
 	assert.Equal(t, want, buff.String())
 }
+
+func TestDefaultSortFunction(t *testing.T) {
+	t.Run("sort_by_id", func(t *testing.T) {
+		a := NewMessage()
+		a.ID = "Alpha"
+		b := NewMessage()
+		b.ID = "Alpha"
+
+		assert.Zero(t, DefaultSortFunction(a, b))
+
+		b.ID = "Beta"
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+
+		a.ID = "Charlie"
+		assert.Equal(t, 1, DefaultSortFunction(a, b))
+	})
+
+	t.Run("sort_by_context", func(t *testing.T) {
+		a := NewMessage()
+
+		a.ID = "Alpha"
+		a.Context = "ctx"
+		b := NewMessage()
+		b.ID = "Alpha"
+		b.Context = "ctx"
+
+		assert.Zero(t, DefaultSortFunction(a, b))
+		a.Context = ""
+
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+
+		a.Context = "actx"
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+
+		a.Context = "dctx"
+		assert.Equal(t, 1, DefaultSortFunction(a, b))
+	})
+
+	t.Run("sort_by_references", func(t *testing.T) {
+		a := NewMessage()
+		a.ID = "Alpha"
+		aRef := &Reference{Path: "a.go"}
+		a.AddReference(aRef)
+		b := NewMessage()
+		b.ID = "Alpha"
+		bRef := &Reference{Path: "a.go"}
+		b.AddReference(bRef)
+
+		assert.Zero(t, DefaultSortFunction(a, b))
+
+		bRef.Path = "b.go"
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+
+		aRef.Path = "c.go"
+		assert.Equal(t, 1, DefaultSortFunction(a, b))
+
+		aRef.Path = "a.go"
+		aRef.Line = 1
+		bRef.Path = "a.go"
+		bRef.Line = 2
+
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+		aRef.Line = 3
+		assert.Equal(t, 1, DefaultSortFunction(a, b))
+		bRef.Line = 3
+
+		aRef.Column = 30
+		bRef.Column = 20
+		assert.Equal(t, 1, DefaultSortFunction(a, b))
+		aRef.Column = 10
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+
+		a.AddReference(&Reference{Path: "z.go"})
+		b.AddReference(&Reference{Path: "d.go"})
+
+		assert.Equal(t, -1, DefaultSortFunction(a, b))
+	})
+}
