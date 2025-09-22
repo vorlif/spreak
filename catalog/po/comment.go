@@ -48,26 +48,6 @@ func (c *Comment) AddReference(ref *Reference) {
 	c.sort()
 }
 
-// Deprecated: Will be removed in a future release.
-func (c *Comment) Less(q *Comment) bool {
-	c.sort()
-	for i := 0; i < len(c.References); i++ {
-		if i >= len(q.References) {
-			break
-		}
-		if c := strings.Compare(c.References[i].Path, q.References[i].Path); c != 0 {
-			return c == 1
-		}
-		if a, b := c.References[i].Line, q.References[i].Line; a != b {
-			return a > b
-		}
-		if a, b := c.References[i].Column, q.References[i].Column; a != b {
-			return a > b
-		}
-	}
-	return false
-}
-
 func (c *Comment) HasFlag(flag string) bool {
 	for _, s := range c.Flags {
 		if s == flag {

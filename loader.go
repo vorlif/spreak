@@ -14,21 +14,6 @@ import (
 	"github.com/vorlif/spreak/internal/util"
 )
 
-const (
-	// PoFile is the file extension of Po files.
-	// Deprecated: Will be removed in a future version.
-	// The string should be kept in your own program code.
-	PoFile = ".po"
-	// MoFile is the file extension of Mo files.
-	// Deprecated: Will be removed in a future version.
-	// The string should be kept in your own program code.
-	MoFile = ".mo"
-	// JSONFile is the file extension of JSON files.
-	// Deprecated: Will be removed in a future version.
-	// The string should be kept in your own program code.
-	JSONFile = ".json"
-)
-
 // Loader is responsible for loading Catalogs for a language and a domain.
 // A bundle loads each domain through its own loader.
 //

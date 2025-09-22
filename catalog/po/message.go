@@ -30,20 +30,6 @@ func (m *Message) AddReference(ref *Reference) {
 	m.Comment.AddReference(ref)
 }
 
-// Deprecated: Will be removed in a future release.
-// Use the DefaultSortFunction.
-func (m *Message) Less(q *Message) bool {
-	if m.Comment != nil && q.Comment != nil {
-		return m.Comment.Less(q.Comment)
-	}
-
-	if a, b := m.ID, q.ID; a != b {
-		return a > b
-	}
-
-	return false
-}
-
 func (m *Message) Merge(other *Message) {
 	if other == nil {
 		return

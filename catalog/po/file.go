@@ -105,9 +105,6 @@ type Header struct {
 	UnknownFields           map[string]string
 }
 
-// Deprecated: Use Set.
-func (h *Header) SetField(key, val string) { h.Set(key, val) }
-
 // Set tores the key and value in the header.
 // If a key is already stored, the value is overwritten.
 func (h *Header) Set(key, val string) {
