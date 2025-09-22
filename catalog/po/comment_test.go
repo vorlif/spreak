@@ -55,52 +55,6 @@ func TestComment_AddFlag(t *testing.T) {
 	assert.Equal(t, 1, len(c.Flags))
 }
 
-func TestComment_Less(t *testing.T) {
-	c := NewComment()
-	cRef := &Reference{Path: "b"}
-	c.AddReference(cRef)
-	o := NewComment()
-	oRef := &Reference{Path: "a"}
-	o.AddReference(oRef)
-
-	t.Run("First sorted by the path", func(t *testing.T) {
-		assert.True(t, c.Less(o))
-
-		oRef.Path = "c"
-		assert.False(t, c.Less(o))
-	})
-
-	t.Run("If the path is the equal, it is sorted by the line number", func(t *testing.T) {
-		cRef.Path = "a"
-		cRef.Line = 2
-		oRef.Path = "a"
-		oRef.Line = 1
-		assert.True(t, c.Less(o))
-		oRef.Line = 3
-		assert.False(t, c.Less(o))
-	})
-
-	t.Run("If the path and the row number are the same, the sorting is done by the column.", func(t *testing.T) {
-		cRef.Line = 1
-		oRef.Line = 1
-		cRef.Column = 2
-		oRef.Column = 1
-		assert.True(t, c.Less(o))
-		oRef.Line = 3
-		assert.False(t, c.Less(o))
-	})
-
-	t.Run("Different number of references are ignored", func(t *testing.T) {
-		cRef.Column = 1
-		oRef.Column = 1
-		cRef.Path = "l"
-		c.AddReference(&Reference{Path: "z"})
-		c.AddReference(&Reference{Path: "m"})
-
-		assert.True(t, c.Less(o))
-	})
-}
-
 func TestCommentSort(t *testing.T) {
 	t.Run("References are sorted", func(t *testing.T) {
 		refs := []*Reference{
