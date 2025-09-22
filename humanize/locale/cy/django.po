@@ -128,14 +128,6 @@ msgstr "Affricaneg"
 msgid "Albanian"
 msgstr "Albaneg"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "Ebrill"
-
-msgid "April"
-msgstr "Ebrill"
-
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "Ebrill"
 
@@ -150,14 +142,6 @@ msgstr ""
 
 msgid "Asturian"
 msgstr "Astwrieg"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Awst"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Awst"
 
 msgid "August"
 msgstr "Awst"
@@ -210,14 +194,6 @@ msgstr "Tsieceg"
 msgid "Danish"
 msgstr "Daneg"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Rhag."
-
-msgid "December"
-msgstr "Rhagfyr"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "Rhagfyr"
 
@@ -233,14 +209,6 @@ msgstr "Esperanto"
 msgid "Estonian"
 msgstr "Estoneg"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Chwe."
-
-msgid "February"
-msgstr "Chwefror"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "Chwefror"
 
@@ -298,39 +266,15 @@ msgstr "Gwyddeleg"
 msgid "Italian"
 msgstr "Eidaleg"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Ion."
-
-msgid "January"
-msgstr "Ionawr"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "Ionawr"
 
 msgid "Japanese"
 msgstr "Siapanëeg"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "Gorffenaf"
 
-msgid "July"
-msgstr "Gorffenaf"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Gorff."
-
-msgid "June"
-msgstr "Mehefin"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Meh."
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "Mehefin"
 
@@ -370,25 +314,9 @@ msgstr "Malaialam"
 msgid "Marathi"
 msgstr "Marathi"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "Mawrth"
 
-msgid "March"
-msgstr "Mawrth"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Mawrth"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Mai"
-
-msgid "May"
-msgstr "Mai"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "Mai"
 
@@ -416,24 +344,8 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "Ninorsk Norwyeg"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Tach."
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "Tachwedd"
-
-msgid "November"
-msgstr "Tachwedd"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Hydr."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Hydref"
 
 msgid "October"
 msgstr "Hydref"
@@ -470,14 +382,6 @@ msgstr "Dydd Sadwrn"
 
 msgid "Scottish Gaelic"
 msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Medi"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Medi"
 
 msgid "September"
 msgstr "Medi"
@@ -701,3 +605,98 @@ msgstr "dau"
 msgid "yesterday"
 msgstr "ddoe"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Ebrill"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Awst"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Rhag."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Chwe."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ion."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Gorff."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Meh."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mawrth"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Tach."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Hydr."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Medi"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Ebrill"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Awst"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Rhagfyr"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Chwefror"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ionawr"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Gorffenaf"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Mehefin"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mawrth"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Tachwedd"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Hydref"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Medi"

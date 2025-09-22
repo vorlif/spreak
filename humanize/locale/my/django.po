@@ -103,14 +103,6 @@ msgstr "အာဖရိကန်"
 msgid "Albanian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
 msgid "April"
 msgstr ""
 
@@ -124,14 +116,6 @@ msgid "Armenian"
 msgstr ""
 
 msgid "Asturian"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "August"
 msgstr ""
 
 msgid "August"
@@ -185,14 +169,6 @@ msgstr "ချက်"
 msgid "Danish"
 msgstr "ဒိန်းမတ်"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
-
 msgid "December"
 msgstr ""
 
@@ -208,14 +184,6 @@ msgstr ""
 msgid "Estonian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-msgid "February"
-msgstr ""
-
-msgctxt "alt. month"
 msgid "February"
 msgstr ""
 
@@ -273,14 +241,6 @@ msgstr ""
 msgid "Italian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-msgid "January"
-msgstr ""
-
-msgctxt "alt. month"
 msgid "January"
 msgstr ""
 
@@ -290,22 +250,6 @@ msgstr ""
 msgid "July"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-msgid "June"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-msgctxt "alt. month"
 msgid "June"
 msgstr ""
 
@@ -345,25 +289,9 @@ msgstr ""
 msgid "Marathi"
 msgstr ""
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr ""
 
-msgid "March"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-msgid "May"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr ""
 
@@ -391,25 +319,9 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
 msgid "November"
 msgstr ""
 
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-msgid "October"
-msgstr ""
-
-msgctxt "alt. month"
 msgid "October"
 msgstr ""
 
@@ -446,14 +358,6 @@ msgstr ""
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-msgid "September"
-msgstr ""
-
-msgctxt "alt. month"
 msgid "September"
 msgstr ""
 
@@ -664,3 +568,98 @@ msgstr "နှစ်"
 msgid "yesterday"
 msgstr "မနေ့"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+msgctxt "alt. month"
+msgid "September"
+msgstr ""

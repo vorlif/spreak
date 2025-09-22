@@ -105,16 +105,8 @@ msgstr ""
 msgid "Albanian"
 msgstr "ಅಲ್ಬೆನಿಯನ್ "
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "ಏಪ್ರಿಲ್"
-
 msgid "April"
 msgstr "ಎಪ್ರಿಲ್"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "ಏಪ್ರಿಲ್"
 
 msgid "Arabic"
 msgstr "ಅರೇಬಿಕ್"
@@ -128,16 +120,8 @@ msgstr ""
 msgid "Asturian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "ಆಗ."
-
 msgid "August"
 msgstr "ಆಗಸ್ಟ್"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "ಆಗಸ್ಟ್‍"
 
 msgid "Australian English"
 msgstr ""
@@ -187,14 +171,6 @@ msgstr "ಝೆಕ್"
 msgid "Danish"
 msgstr "ಡ್ಯಾನಿಷ್"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "ಡಿಸೆಂ."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "ಡಿಸೆಂಬರ್"
-
 msgid "December"
 msgstr "ಡಿಸೆಂಬರ್"
 
@@ -209,14 +185,6 @@ msgstr ""
 
 msgid "Estonian"
 msgstr "ಎಷ್ಟೋನಿಯನ್"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "ಫೆಬ್ರ."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "ಫೆಬ್ರವರಿ"
 
 msgid "February"
 msgstr "ಫೆಬ್ರುವರಿ"
@@ -275,14 +243,6 @@ msgstr "ಐರಿಶ್"
 msgid "Italian"
 msgstr "ಇಟಾಲಿಯನ್"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "ಜನ."
-
-msgid "January"
-msgstr "ಜನವರಿ"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "ಜನವರಿ"
 
@@ -292,22 +252,6 @@ msgstr "ಜಾಪನೀಸ್"
 msgid "July"
 msgstr "ಜುಲೈ"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "ಜುಲೈ"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "ಜುಲೈ"
-
-msgid "June"
-msgstr "ಜೂನ್"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "ಜೂನ್"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "ಜೂನ್"
 
@@ -350,22 +294,6 @@ msgstr ""
 msgid "March"
 msgstr "ಮಾರ್ಚ್"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "ಮಾರ್ಚ್"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "ಮಾರ್ಚ್"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "ಮೇ"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "ಮೇ"
-
 msgid "May"
 msgstr "ಮೇ"
 
@@ -393,25 +321,9 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "ನಾರ್ವೇಜಿಯನ್ ನಿನೋರ್ಕ್"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "ನವೆಂ."
-
 msgid "November"
 msgstr "ನವೆಂಬರ್"
 
-msgctxt "alt. month"
-msgid "November"
-msgstr "ನವೆಂಬರ್"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "ಅಕ್ಟೋ."
-
-msgid "October"
-msgstr "ಅಕ್ಟೋಬರ್"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "ಅಕ್ಟೋಬರ್"
 
@@ -448,16 +360,8 @@ msgstr "ಶನಿವಾರ"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "ಸೆಪ್ಟೆ."
-
 msgid "September"
 msgstr "ಸೆಪ್ಟೆಂಬರ್"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "ಸಪ್ಟೆಂಬರ್"
 
 msgid "Serbian"
 msgstr "ಸರ್ಬಿಯನ್"
@@ -666,3 +570,98 @@ msgstr ""
 msgid "yesterday"
 msgstr ""
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "ಏಪ್ರಿಲ್"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "ಆಗ."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "ಡಿಸೆಂ."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "ಫೆಬ್ರ."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "ಜನ."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ಜುಲೈ"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "ಜೂನ್"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "ಮಾರ್ಚ್"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "ಮೇ"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "ನವೆಂ."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ಅಕ್ಟೋ."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ಸೆಪ್ಟೆ."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "ಏಪ್ರಿಲ್"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "ಆಗಸ್ಟ್‍"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "ಡಿಸೆಂಬರ್"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "ಫೆಬ್ರವರಿ"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "ಜನವರಿ"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "ಜುಲೈ"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "ಜೂನ್"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "ಮಾರ್ಚ್"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "ಮೇ"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "ನವೆಂಬರ್"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ಅಕ್ಟೋಬರ್"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "ಸಪ್ಟೆಂಬರ್"

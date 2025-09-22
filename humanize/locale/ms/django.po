@@ -80,18 +80,6 @@ msgstr[1] ""
 msgid "%[1]v ago"
 msgstr "%[1]v yang lalu"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v hari"
-msgstr[1] ""
-
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v hari"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v hari"
@@ -100,18 +88,6 @@ msgstr[1] ""
 msgid "%[1]v from now"
 msgstr "%[1]v dari sekarang"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v jam"
-msgstr[1] ""
-
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v jam"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v jam"
@@ -120,30 +96,6 @@ msgstr[1] ""
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v minit"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minit"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minit"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v bulan"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v bulan"
 msgstr[1] ""
 
 msgid "%[1]v month"
@@ -156,30 +108,6 @@ msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v minggu "
 msgstr[1] ""
 
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v minggu"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v minggu"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v tahun"
-msgstr[1] ""
-
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v tahun"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v tahun"
@@ -200,50 +128,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "ke%v"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "ke%v"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "ke%v"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "ke%v"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "ke%v"
-
 msgid ", "
 msgstr ","
 
@@ -262,14 +146,6 @@ msgstr "Bahasa Arab Algeria"
 msgid "April"
 msgstr "April"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "April"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "April"
-
 msgid "Arabic"
 msgstr "Bahasa Arab"
 
@@ -282,14 +158,6 @@ msgstr "Bahasa Armenia"
 msgid "Asturian"
 msgstr "Bahasa Asturia"
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Ogo."
-
-msgid "August"
-msgstr "Ogos"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "Ogos"
 
@@ -341,14 +209,6 @@ msgstr "Bahasa Czech"
 msgid "Danish"
 msgstr "Bahasa Denmark"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Dis."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Disember"
-
 msgid "December"
 msgstr "Disember"
 
@@ -363,14 +223,6 @@ msgstr "Bahasa Esperanto"
 
 msgid "Estonian"
 msgstr "Bahasa Estonia"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Feb"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Februari"
 
 msgid "February"
 msgstr "Februari"
@@ -432,39 +284,15 @@ msgstr "Bahasa Ireland"
 msgid "Italian"
 msgstr "Bahasa Itali"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Jan."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Januari"
-
 msgid "January"
 msgstr "Januari"
 
 msgid "Japanese"
 msgstr "Bahasa Jepun"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Julai"
 
-msgid "July"
-msgstr "Julai"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Julai"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Jun"
-
-msgid "June"
-msgstr "Jun"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "Jun"
 
@@ -510,25 +338,9 @@ msgstr "Malayalam"
 msgid "Marathi"
 msgstr "Marathi"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "Mac"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Mac"
-
-msgid "March"
-msgstr "Mac"
-
-msgid "May"
-msgstr "Mei"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mei"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Mei"
 
@@ -556,25 +368,9 @@ msgstr "Bahasa Bokmal Norway"
 msgid "Norwegian Nynorsk"
 msgstr "Bahasa Nynorsk Norway"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Nov."
-
 msgid "November"
 msgstr "November"
 
-msgctxt "alt. month"
-msgid "November"
-msgstr "November"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Okt."
-
-msgid "October"
-msgstr "Oktober"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "Oktober"
 
@@ -611,14 +407,6 @@ msgstr "Sabtu"
 msgid "Scottish Gaelic"
 msgstr "Bahasa Gael Scotland"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Sept."
-
-msgid "September"
-msgstr "September"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "September"
 
@@ -835,3 +623,214 @@ msgstr "dua"
 msgid "yesterday"
 msgstr "semalam"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "April"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Ogo."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dis."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Jan."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Julai"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Jun"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mac"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mei"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Nov."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Okt."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sept."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "April"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Ogos"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Disember"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Februari"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Januari"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Julai"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Jun"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mac"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mei"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "November"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Oktober"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "September"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v hari"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v jam"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minit"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v bulan"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v minggu"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v tahun"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v hari"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v jam"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minit"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v bulan"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v minggu"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v tahun"
+msgstr[1] ""
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "ke%v"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "ke%v"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "ke%v"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "ke%v"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "ke%v"

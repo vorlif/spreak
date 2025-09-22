@@ -1,8 +1,9 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
+# Edgars Andersons, 2025
 # edgars <edgars.jekabsons@gmail.com>, 2011
-# Edgars Voroboks <edgars.voroboks@gmail.com>, 2023
+# Edgars Voroboks <edgars.voroboks@gmail.com>, 2023-2025
 # Edgars Voroboks <edgars.voroboks@gmail.com>, 2017,2022
 # Edgars Voroboks <edgars.voroboks@gmail.com>, 2017-2018
 # Jannis Leidel <jannis@leidel.info>, 2011
@@ -17,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
-"Last-Translator: Edgars Voroboks <edgars.voroboks@gmail.com>, 2023\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Edgars Andersons, 2025\n"
 "Language-Team: Latvian (http://app.transifex.com/django/django/language/lv/)\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -29,199 +30,115 @@ msgstr ""
 
 msgid "%[1]d byte"
 msgid_plural "%[1]d bytes"
-msgstr[0] "%[1]d baits"
-msgstr[1] "%[1]d baiti"
-msgstr[2] "%[1]d baitu"
+msgstr[0] "%[1]d baitu"
+msgstr[1] "%[1]d baits"
+msgstr[2] "%[1]d baiti"
 
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
 msgstr[0] "%[1]s miljardu"
 msgstr[1] "%[1]s miljards"
-msgstr[2] "%[1]s miljardu"
+msgstr[2] "%[1]s miljardi"
 
 msgid "%[1]s decillion"
 msgid_plural "%[1]s decillion"
 msgstr[0] "%[1]s dekaljonu"
 msgstr[1] "%[1]s dekaljons"
-msgstr[2] "%[1]s dekaljonu"
+msgstr[2] "%[1]s dekaljoni"
 
 msgid "%[1]s googol"
 msgid_plural "%[1]s googol"
 msgstr[0] "%[1]s gugolu"
 msgstr[1] "%[1]s gugols"
-msgstr[2] "%[1]s gugolu"
+msgstr[2] "%[1]s gugoli"
 
 msgid "%[1]s million"
 msgid_plural "%[1]s million"
 msgstr[0] "%[1]s miljonu"
 msgstr[1] "%[1]s miljons"
-msgstr[2] "%[1]s miljonu"
+msgstr[2] "%[1]s miljoni"
 
 msgid "%[1]s nonillion"
 msgid_plural "%[1]s nonillion"
 msgstr[0] "%[1]s noniljonu"
 msgstr[1] "%[1]s noniljons"
-msgstr[2] "%[1]s noniljonu"
+msgstr[2] "%[1]s noniljoni"
 
 msgid "%[1]s octillion"
 msgid_plural "%[1]s octillion"
 msgstr[0] "%[1]s oktiljonu"
 msgstr[1] "%[1]s oktiljons"
-msgstr[2] "%[1]s oktiljonu"
+msgstr[2] "%[1]s oktiljoni"
 
 msgid "%[1]s quadrillion"
 msgid_plural "%[1]s quadrillion"
 msgstr[0] "%[1]s kvadriljonu"
 msgstr[1] "%[1]s kvadriljons"
-msgstr[2] "%[1]s kvadriljonu"
+msgstr[2] "%[1]s kvadriljoni"
 
 msgid "%[1]s quintillion"
 msgid_plural "%[1]s quintillion"
 msgstr[0] "%[1]s kvintiljonu"
 msgstr[1] "%[1]s kvintiljons"
-msgstr[2] "%[1]s kvintiljonu"
+msgstr[2] "%[1]s kvintiljoni"
 
 msgid "%[1]s septillion"
 msgid_plural "%[1]s septillion"
 msgstr[0] "%[1]s septiljonu"
 msgstr[1] "%[1]s septiljons"
-msgstr[2] "%[1]s septiljonu"
+msgstr[2] "%[1]s septiljoni"
 
 msgid "%[1]s sextillion"
 msgid_plural "%[1]s sextillion"
 msgstr[0] "%[1]s sekstiljonu"
 msgstr[1] "%[1]s sekstiljons"
-msgstr[2] "%[1]s sekstiljonu"
+msgstr[2] "%[1]s sekstiljoni"
 
 msgid "%[1]s trillion"
 msgid_plural "%[1]s trillion"
 msgstr[0] "%[1]s triljonu"
 msgstr[1] "%[1]s triljons"
-msgstr[2] "%[1]s triljonu"
+msgstr[2] "%[1]s triljoni"
 
 msgid "%[1]v ago"
 msgstr "pirms %[1]v"
 
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dienas"
-msgstr[1] "%[1]v diena"
-msgstr[2] "%[1]v dienas"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dienas"
-msgstr[1] "%[1]v diena"
-msgstr[2] "%[1]v dienas"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v dienas"
+msgstr[0] "%[1]v dienu"
 msgstr[1] "%[1]v diena"
 msgstr[2] "%[1]v dienas"
 
 msgid "%[1]v from now"
 msgstr "pēc %[1]v"
 
-msgctxt "naturaltime-future"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v stundas"
+msgstr[0] "%[1]v stundu"
 msgstr[1] "%[1]v stunda"
 msgstr[2] "%[1]v stundas"
 
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v stundas"
-msgstr[1] "%[1]v stunda"
-msgstr[2] "%[1]v stubdas"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v stundas"
-msgstr[1] "%[1]v stunda"
-msgstr[2] "%[1]v stundas"
-
-msgctxt "naturaltime-future"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minūtes"
+msgstr[0] "%[1]v minūšu"
 msgstr[1] "%[1]v minūte"
 msgstr[2] "%[1]v minūtes"
 
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minūtes"
-msgstr[1] "%[1]v minūte"
-msgstr[2] "%[1]v minūtes"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v minūtes"
-msgstr[1] "%[1]v minūte"
-msgstr[2] "%[1]v minūtes"
-
-msgctxt "naturaltime-future"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
-msgstr[0] "%[1]v mēneši"
+msgstr[0] "%[1]v mēnešu"
 msgstr[1] "%[1]v mēnesis"
 msgstr[2] "%[1]v mēneši"
 
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v mēneši"
-msgstr[1] "%[1]v mēnesis"
-msgstr[2] "%[1]v mēneši"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v mēneši"
-msgstr[1] "%[1]v mēnesis"
-msgstr[2] "%[1]v mēneši"
-
-msgctxt "naturaltime-future"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v nedēļas"
-msgstr[1] "%[1]v nedēļa"
-msgstr[2] "%[1]v nedēļas"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v nedēļas"
-msgstr[1] "%[1]v nedēļa"
-msgstr[2] "%[1]v nedēļas"
-
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v nedēļas"
+msgstr[0] "%[1]v nedēļu"
 msgstr[1] "%[1]v nedēļa"
 msgstr[2] "%[1]v nedēļas"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
-msgstr[0] "%[1]v gadi"
-msgstr[1] "%[1]v gads"
-msgstr[2] "%[1]v gadi"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v gadi"
-msgstr[1] "%[1]v gads"
-msgstr[2] "%[1]v gadi"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v gadi"
+msgstr[0] "%[1]v gadu"
 msgstr[1] "%[1]v gads"
 msgstr[2] "%[1]v gadi"
 
@@ -240,55 +157,11 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v"
-
 msgid ", "
 msgstr ", "
 
 msgid "AM"
-msgstr "AM"
+msgstr "priekšpusdienā"
 
 msgid "Afrikaans"
 msgstr "afrikāņu"
@@ -299,14 +172,6 @@ msgstr "albāņu"
 msgid "Algerian Arabic"
 msgstr "Alžīrijas arābu"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "aprīlis"
-
-msgid "April"
-msgstr "aprīlis"
-
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "aprīlis"
 
@@ -321,14 +186,6 @@ msgstr "armēņu"
 
 msgid "Asturian"
 msgstr "asturiešu"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "aug."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "augusts"
 
 msgid "August"
 msgstr "augusts"
@@ -384,14 +241,6 @@ msgstr "čehu"
 msgid "Danish"
 msgstr "dāņu"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "dec."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "decembris"
-
 msgid "December"
 msgstr "decembris"
 
@@ -406,14 +255,6 @@ msgstr "esperanto"
 
 msgid "Estonian"
 msgstr "igauņu"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "feb."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "februāris"
 
 msgid "February"
 msgstr "februāris"
@@ -475,39 +316,15 @@ msgstr "īru"
 msgid "Italian"
 msgstr "itāļu"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "jan."
-
-msgid "January"
-msgstr "janvāris"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "janvāris"
 
 msgid "Japanese"
 msgstr "japāņu"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "jūlijs"
 
-msgid "July"
-msgstr "jūlijs"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "jūlijs"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "jūnijs"
-
-msgid "June"
-msgstr "jūnijs"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "jūnijs"
 
@@ -553,25 +370,9 @@ msgstr "malajalu"
 msgid "Marathi"
 msgstr "maratiešu"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "marts"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "marts"
-
-msgid "March"
-msgstr "marts"
-
-msgid "May"
-msgstr "maijs"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "maijs"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "maijs"
 
@@ -599,24 +400,8 @@ msgstr "norvēģu bokmål"
 msgid "Norwegian Nynorsk"
 msgstr "norvēģu nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "nov."
-
 msgid "November"
 msgstr "novembris"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "novembris"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "okt."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "oktobris"
 
 msgid "October"
 msgstr "oktobris"
@@ -625,7 +410,7 @@ msgid "Ossetic"
 msgstr "osetiešu"
 
 msgid "PM"
-msgstr "PM"
+msgstr "pēcpusdienā"
 
 msgid "Persian"
 msgstr "persiešu"
@@ -654,14 +439,6 @@ msgstr "sestdiena"
 msgid "Scottish Gaelic"
 msgstr "skotu gēlu"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "sept."
-
-msgid "September"
-msgstr "septembris"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "septembris"
 
@@ -747,7 +524,7 @@ msgid "Uyghur"
 msgstr "uiguru"
 
 msgid "Uzbek"
-msgstr "Uzbeku"
+msgstr "uzbeku"
 
 msgid "Venezuelan Spanish"
 msgstr "Venecuēlas spāņu"
@@ -789,7 +566,7 @@ msgstr[1] "pēc %[1]v sekundēm"
 msgstr[2] "pēc %[1]v sekundēm"
 
 msgid "a.m."
-msgstr "a.m."
+msgstr "priekšpusdienā"
 
 msgid "an hour ago"
 msgid_plural "%[1]v hours ago"
@@ -861,7 +638,7 @@ msgid "one"
 msgstr "viens"
 
 msgid "p.m."
-msgstr "p.m."
+msgstr "pēcpusdienā"
 
 msgid "sep"
 msgstr "sep"
@@ -887,3 +664,226 @@ msgstr "divi"
 msgid "yesterday"
 msgstr "vakar"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "aprīlis"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "aug."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "dec."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "feb."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "jan."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "jūlijs"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "jūnijs"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "marts"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "maijs"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "nov."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "okt."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "sept."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "aprīlis"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "augusts"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "decembris"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "februāris"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "janvāris"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "jūlijs"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "jūnijs"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "marts"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "maijs"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "novembris"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "oktobris"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "septembris"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dienu"
+msgstr[1] "%[1]v diena"
+msgstr[2] "%[1]v dienas"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v stundas"
+msgstr[1] "%[1]v stunda"
+msgstr[2] "%[1]v stundas"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minūšu"
+msgstr[1] "%[1]v minūte"
+msgstr[2] "%[1]v minūtes"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mēnešu"
+msgstr[1] "%[1]v mēnesis"
+msgstr[2] "%[1]v mēneši"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v nedēļu"
+msgstr[1] "%[1]v nedēļa"
+msgstr[2] "%[1]v nedēļas"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v gadu"
+msgstr[1] "%[1]v gads"
+msgstr[2] "%[1]v gadi"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v dienu"
+msgstr[1] "%[1]v diena"
+msgstr[2] "%[1]v dienas"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v stundu"
+msgstr[1] "%[1]v stunda"
+msgstr[2] "%[1]v stundas"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v minūtes"
+msgstr[1] "%[1]v minūte"
+msgstr[2] "%[1]v minūtes"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mēnešu"
+msgstr[1] "%[1]v mēnesis"
+msgstr[2] "%[1]v mēneši"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v nedēļu"
+msgstr[1] "%[1]v nedēļa"
+msgstr[2] "%[1]v nedēļas"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v gadu"
+msgstr[1] "%[1]v gads"
+msgstr[2] "%[1]v gadi"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v."
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v."
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v."
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."

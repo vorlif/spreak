@@ -104,50 +104,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
 msgid ", "
 msgstr ", "
 
@@ -159,14 +115,6 @@ msgstr "อาฟฟริกัน"
 
 msgid "Albanian"
 msgstr "อัลแบเนีย"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "เม.ย."
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "เมษายน"
 
 msgid "April"
 msgstr "เมษายน"
@@ -182,14 +130,6 @@ msgstr "อาร์เมเนียน"
 
 msgid "Asturian"
 msgstr "อัสตูเรียน"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "ส.ค."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "สิงหาคม"
 
 msgid "August"
 msgstr "สิงหาคม"
@@ -242,14 +182,6 @@ msgstr "เช็ก"
 msgid "Danish"
 msgstr "เดนมาร์ก"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "ธ.ค."
-
-msgid "December"
-msgstr "ธันวาคม"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "ธันวาคม"
 
@@ -265,14 +197,6 @@ msgstr "เอสเปรันโต"
 msgid "Estonian"
 msgstr "เอสโตเนีย"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "ก.พ."
-
-msgid "February"
-msgstr "กุมภาพันธ์"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "กุมภาพันธ์"
 
@@ -330,38 +254,14 @@ msgstr "ไอริช"
 msgid "Italian"
 msgstr "อิตาลี"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "ม.ค."
-
-msgid "January"
-msgstr "มกราคม"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "มกราคม"
 
 msgid "Japanese"
 msgstr "ญี่ปุ่น"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "ก.ค."
-
-msgctxt "alt. month"
 msgid "July"
 msgstr "กรกฎาคม"
-
-msgid "July"
-msgstr "กรกฎาคม"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "มิ.ย."
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "มิถุนายน"
 
 msgid "June"
 msgstr "มิถุนายน"
@@ -402,25 +302,9 @@ msgstr "มลายู"
 msgid "Marathi"
 msgstr ""
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "มีนาคม"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "มี.ค."
-
-msgid "March"
-msgstr "มีนาคม"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "พ.ค."
-
-msgid "May"
-msgstr "พฤษภาคม"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "พฤษภาคม"
 
@@ -448,24 +332,8 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "นอร์เวย์ - Nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "พ.ย."
-
 msgid "November"
 msgstr "พฤศจิกายน"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "พฤศจิกายน"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "ต.ค."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "ตุลาคม"
 
 msgid "October"
 msgstr "ตุลาคม"
@@ -502,14 +370,6 @@ msgstr "เสาร์"
 
 msgid "Scottish Gaelic"
 msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "ก.ย."
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "กันยายน"
 
 msgid "September"
 msgstr "กันยายน"
@@ -721,3 +581,142 @@ msgstr "สอง"
 msgid "yesterday"
 msgstr "เมื่อวานนี้"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "เม.ย."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "ส.ค."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "ธ.ค."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "ก.พ."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "ม.ค."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ก.ค."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "มิ.ย."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "มี.ค."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "พ.ค."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "พ.ย."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ต.ค."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ก.ย."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "เมษายน"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "สิงหาคม"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "ธันวาคม"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "กุมภาพันธ์"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "มกราคม"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "กรกฎาคม"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "มิถุนายน"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "มีนาคม"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "พฤษภาคม"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "พฤศจิกายน"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ตุลาคม"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "กันยายน"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""

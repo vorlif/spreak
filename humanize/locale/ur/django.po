@@ -1,15 +1,16 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
-# Mansoorulhaq Mansoor <mnsrknp@gmail.com>, 2011
+# Mansoor Ul Haq <mnsrknp@gmail.com>, 2011
+# Natalia, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-27 22:40+0200\n"
-"PO-Revision-Date: 2019-11-05 00:38+0000\n"
-"Last-Translator: Ramiro Morales\n"
-"Language-Team: Urdu (http://www.transifex.com/django/django/language/ur/)\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Natalia, 2025\n"
+"Language-Team: Urdu (http://app.transifex.com/django/django/language/ur/)\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,6 +77,36 @@ msgid_plural "%[1]s trillion"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "%s GB"
 msgstr "%s ج ۔ ب"
 
@@ -103,14 +134,9 @@ msgstr ""
 msgid "Albanian"
 msgstr "البانوی"
 
-msgid "April"
-msgstr "اپریل"
+msgid "Algerian Arabic"
+msgstr ""
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "اپریل"
-
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "اپریل"
 
@@ -126,14 +152,6 @@ msgstr ""
 msgid "Asturian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "اگست"
-
-msgid "August"
-msgstr "اگست"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "اگست"
 
@@ -173,6 +191,9 @@ msgstr ""
 msgid "Catalan"
 msgstr "کیٹالانی"
 
+msgid "Central Kurdish (Sorani)"
+msgstr ""
+
 msgid "Colombian Spanish"
 msgstr ""
 
@@ -184,14 +205,6 @@ msgstr "زیچ"
 
 msgid "Danish"
 msgstr "ڈینش"
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "دسمبر"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "دسمبر"
 
 msgid "December"
 msgstr "دسمبر"
@@ -207,14 +220,6 @@ msgstr ""
 
 msgid "Estonian"
 msgstr "اسٹانین"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "فروری"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "فروری"
 
 msgid "February"
 msgstr "فروری"
@@ -261,6 +266,9 @@ msgstr "آئس لینڈک"
 msgid "Ido"
 msgstr ""
 
+msgid "Igbo"
+msgstr ""
+
 msgid "Indonesian"
 msgstr "انڈونیشین"
 
@@ -273,39 +281,15 @@ msgstr "آئرش"
 msgid "Italian"
 msgstr "اطالوی"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "جنوری"
-
-msgid "January"
-msgstr "جنوری"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "جنوری"
 
 msgid "Japanese"
 msgstr "جاپانی"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "جولائی"
 
-msgid "July"
-msgstr "جولائی"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "جولائی"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "جون"
-
-msgid "June"
-msgstr "جون"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "جون"
 
@@ -324,6 +308,9 @@ msgstr "خمر"
 msgid "Korean"
 msgstr "کوریائی"
 
+msgid "Kyrgyz"
+msgstr ""
+
 msgid "Latvian"
 msgstr "لتوینی"
 
@@ -339,31 +326,18 @@ msgstr ""
 msgid "Macedonian"
 msgstr "میسیڈونین"
 
+msgid "Malay"
+msgstr ""
+
 msgid "Malayalam"
 msgstr "ملایالم"
 
 msgid "Marathi"
 msgstr ""
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "مارچ"
 
-msgid "March"
-msgstr "مارچ"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "مارچ"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "مئی"
-
-msgid "May"
-msgstr "مئی"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "مئی"
 
@@ -391,25 +365,9 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "نارویائی نینورسک"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "نومبر"
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "نومبر"
 
-msgid "November"
-msgstr "نومبر"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "اکتوبر"
-
-msgid "October"
-msgstr "اکتوبر"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "اکتوبر"
 
@@ -446,14 +404,6 @@ msgstr "ھفتہ"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "ستمبر"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "ستمبر"
-
 msgid "September"
 msgstr "ستمبر"
 
@@ -487,6 +437,9 @@ msgstr ""
 msgid "Swedish"
 msgstr "سویڈش"
 
+msgid "Tajik"
+msgstr ""
+
 msgid "Tamil"
 msgstr "تاملی"
 
@@ -517,6 +470,9 @@ msgstr "منگل"
 msgid "Turkish"
 msgstr "ترکش"
 
+msgid "Turkmen"
+msgstr ""
+
 msgid "Udmurt"
 msgstr ""
 
@@ -527,6 +483,9 @@ msgid "Upper Sorbian"
 msgstr ""
 
 msgid "Urdu"
+msgstr ""
+
+msgid "Uyghur"
 msgstr ""
 
 msgid "Uzbek"
@@ -664,3 +623,98 @@ msgstr "دو"
 msgid "yesterday"
 msgstr "گزستہ کل"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "اپریل"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "اگست"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "دسمبر"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "فروری"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "جنوری"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "جولائی"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "جون"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "مارچ"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "مئی"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "نومبر"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "اکتوبر"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ستمبر"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "اپریل"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "اگست"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "دسمبر"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "فروری"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "جنوری"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "جولائی"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "جون"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "مارچ"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "مئی"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "نومبر"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "اکتوبر"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "ستمبر"

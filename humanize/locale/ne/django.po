@@ -101,50 +101,6 @@ msgstr "%s पिटाबाइट"
 msgid "%s TB"
 msgstr "%s टेराबाइट"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
 msgid ", "
 msgstr ","
 
@@ -160,14 +116,6 @@ msgstr "अल्बानियाली"
 msgid "Algerian Arabic"
 msgstr ""
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "अप्रिल"
-
-msgid "April"
-msgstr "अप्रिल"
-
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "अप्रिल"
 
@@ -182,14 +130,6 @@ msgstr "अर्मेनियन"
 
 msgid "Asturian"
 msgstr "अस्टुरियन"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "अगस्त"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "अगस्त"
 
 msgid "August"
 msgstr "अगस्त"
@@ -242,14 +182,6 @@ msgstr "चेक"
 msgid "Danish"
 msgstr "डेनिस"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "डिसम्वर"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "डिसम्वर"
-
 msgid "December"
 msgstr "डिसम्वर"
 
@@ -265,14 +197,6 @@ msgstr "इस्परा्न्तो"
 msgid "Estonian"
 msgstr "इस्टोनियन"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "फेब्रुअरी"
-
-msgid "February"
-msgstr "फेब्रुअरी"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "फेब्रुअरी"
 
@@ -333,38 +257,14 @@ msgstr "आयरिस"
 msgid "Italian"
 msgstr "ईटालियन"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "जनवरी"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "जनवरी"
-
 msgid "January"
 msgstr "जनवरी"
 
 msgid "Japanese"
 msgstr "जापनिज"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "जुलै"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "जुलै"
-
-msgid "July"
-msgstr "जुलै"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "जुन"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "जुन"
 
 msgid "June"
 msgstr "जुन"
@@ -408,24 +308,8 @@ msgstr "मलायलम"
 msgid "Marathi"
 msgstr "मराठी"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "मार्च"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "मार्च"
-
-msgid "March"
-msgstr "मार्च"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "मई"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "मई"
 
 msgid "May"
 msgstr "मई"
@@ -454,24 +338,8 @@ msgstr "नर्वे बक्मल"
 msgid "Norwegian Nynorsk"
 msgstr "नर्वेली न्योर्स्क"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "नभम्वर"
-
 msgid "November"
 msgstr "नभम्वर"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "नभम्वर"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "अक्टुवर"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "अक्टुवर"
 
 msgid "October"
 msgstr "अक्टुवर"
@@ -508,14 +376,6 @@ msgstr "शनिवार"
 
 msgid "Scottish Gaelic"
 msgstr "स्कटीस गैलिक"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "सेप्तेम्बर"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "सेप्टेम्बर"
 
 msgid "September"
 msgstr "सेप्टेम्बर"
@@ -733,3 +593,142 @@ msgstr "दुई "
 msgid "yesterday"
 msgstr "हिजो"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "अप्रिल"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "अगस्त"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "डिसम्वर"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "फेब्रुअरी"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "जनवरी"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "जुलै"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "जुन"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "मई"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "नभम्वर"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "अक्टुवर"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "सेप्तेम्बर"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "अप्रिल"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "अगस्त"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "डिसम्वर"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "फेब्रुअरी"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "जनवरी"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "जुलै"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "जुन"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "मई"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "नभम्वर"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "अक्टुवर"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "सेप्टेम्बर"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""

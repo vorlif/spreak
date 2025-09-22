@@ -2,17 +2,18 @@
 # 
 # Translators:
 # abdl erkin <84247764@qq.com>, 2018
+# Abduqadir Abliz <sahranbay@gmail.com>, 2023-2024
 # Abduqadir Abliz <sahranbay@gmail.com>, 2023
-# Abduqadir Abliz <sahranbay@gmail.com>, 2023
-# Azat, 2023
+# Azat, 2023,2025
 # Murat Orhun <oku.orhun@gmail.com>, 2023
+# Natalia, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
-"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>, 2023\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Natalia, 2025\n"
 "Language-Team: Uyghur (http://app.transifex.com/django/django/language/ug/)\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
@@ -83,18 +84,6 @@ msgstr[1] "%[1]s تىرىليون"
 msgid "%[1]v ago"
 msgstr "%[1]v ئىلگىرى"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v كۈن"
-msgstr[1] "%[1]v كۈن"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v كۈن"
-msgstr[1] "%[1]v كۈن"
-
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v كۈن"
@@ -108,80 +97,20 @@ msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v سائەت"
 msgstr[1] "%[1]v سائەت"
 
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v سائەت"
-msgstr[1] "%[1]v سائەت"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v سائەت"
-msgstr[1] "%[1]v سائەت"
-
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v مىنۇت"
 msgstr[1] "%[1]v مىنۇت"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v مىنۇت"
-msgstr[1] "%[1]v مىنۇت"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v مىنۇت"
-msgstr[1] "%[1]v مىنۇت"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v ئاي"
-msgstr[1] "%[1]v ئاي"
 
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "%[1]v ئاي"
 msgstr[1] "%[1]v ئاي"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v ئاي"
-msgstr[1] "%[1]v ئاي"
-
-msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v ھەپتە"
 msgstr[1] "%[1]v ھەپتە"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v ھەپتە"
-msgstr[1] "%[1]v ھەپتە"
-
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v ھەپتە"
-msgstr[1] "%[1]v ھەپتە"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v يىل"
-msgstr[1] "%[1]v يىل"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v يىل"
-msgstr[1] "%[1]v يىل"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
@@ -203,50 +132,6 @@ msgstr "%s پېتا بايىت"
 msgid "%s TB"
 msgstr "%s تېرا بايت"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%vجى"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%vجى"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%vجى"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vجى"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%vجى"
-
 msgid ", "
 msgstr "،"
 
@@ -265,14 +150,6 @@ msgstr "ئالجىرىيە ئەرەپچىسى"
 msgid "April"
 msgstr "ئاپرىل"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "ئاپرىل"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "ئاپرىل"
-
 msgid "Arabic"
 msgstr "ئەرەبچە"
 
@@ -285,14 +162,6 @@ msgstr "ئارمىنىيەچە"
 msgid "Asturian"
 msgstr "ئاستۇرىچە"
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "ئاۋغۇست"
-
-msgid "August"
-msgstr "ئاۋغۇست"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "ئاۋغۇست"
 
@@ -349,14 +218,6 @@ msgstr "چېخچە"
 msgid "Danish"
 msgstr "دانىشچە"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "دىكابىر"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "دىكابىر"
-
 msgid "December"
 msgstr "دىكابىر"
 
@@ -372,14 +233,6 @@ msgstr "دۇنيا تىلى"
 msgid "Estonian"
 msgstr "ئېستونىيەچە"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "فېۋرال"
-
-msgid "February"
-msgstr "فېۋرال"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "فېۋرال"
 
@@ -440,39 +293,15 @@ msgstr "ئىرېلاندىيەچە"
 msgid "Italian"
 msgstr "ئىتالىيەچە"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "يانۋار"
-
-msgid "January"
-msgstr "يانۋار"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "يانۋار"
 
 msgid "Japanese"
 msgstr "ياپونچە"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "ئىيۇل"
 
-msgid "July"
-msgstr "ئىيۇل"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "ئىيۇل"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "ئىيۇن"
-
-msgid "June"
-msgstr "ئىيۇن"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "ئىيۇن"
 
@@ -521,22 +350,6 @@ msgstr "ماراتىچە"
 msgid "March"
 msgstr "مارت"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "مارت"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "مارت"
-
-msgid "May"
-msgstr "ماي"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "ماي"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "ماي"
 
@@ -564,24 +377,8 @@ msgstr "نورۋېگىيە بوكمىلچىسى"
 msgid "Norwegian Nynorsk"
 msgstr "نورۋېگىيە نىنورسكچىسى"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "نويابىر"
-
 msgid "November"
 msgstr "نويابىر"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "نويابىر"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "ئۆكتەبىر"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "ئۆكتەبىر"
 
 msgid "October"
 msgstr "ئۆكتەبىر"
@@ -618,14 +415,6 @@ msgstr "شەنبە"
 
 msgid "Scottish Gaelic"
 msgstr "شوتلاندىيەچە"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "سېنتەبىر"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "سىنتەبىر"
 
 msgid "September"
 msgstr "سىنتەبىر"
@@ -846,3 +635,214 @@ msgstr "ئىككى"
 msgid "yesterday"
 msgstr "تۈنۈگۈن"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "ئاپرىل"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "ئاۋغۇست"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "دىكابىر"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "فېۋرال"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "يانۋار"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ئىيۇل"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "ئىيۇن"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "مارت"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "ماي"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "نويابىر"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ئۆكتەبىر"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "سېنتەبىر"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "ئاپرىل"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "ئاۋغۇست"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "دىكابىر"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "فېۋرال"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "يانۋار"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "ئىيۇل"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "ئىيۇن"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "مارت"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "ماي"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "نويابىر"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ئۆكتەبىر"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "سىنتەبىر"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v كۈن"
+msgstr[1] "%[1]v كۈن"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v سائەت"
+msgstr[1] "%[1]v سائەت"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v مىنۇت"
+msgstr[1] "%[1]v مىنۇت"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v ئاي"
+msgstr[1] "%[1]v ئاي"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v ھەپتە"
+msgstr[1] "%[1]v ھەپتە"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v يىل"
+msgstr[1] "%[1]v يىل"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v كۈن"
+msgstr[1] "%[1]v كۈن"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v سائەت"
+msgstr[1] "%[1]v سائەت"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v مىنۇت"
+msgstr[1] "%[1]v مىنۇت"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v ئاي"
+msgstr[1] "%[1]v ئاي"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v ھەپتە"
+msgstr[1] "%[1]v ھەپتە"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v يىل"
+msgstr[1] "%[1]v يىل"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%vجى"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%vجى"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%vجى"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vجى"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%vجى"

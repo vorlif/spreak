@@ -7,6 +7,7 @@
 # Jannis Leidel <jannis@leidel.info>, 2011
 # jargalan <jargalanch@gmail.com>, 2011
 # Tsolmon <mnts26@gmail.com>, 2011
+# Turmunkh Batkhuyag, 2023
 # Zorig, 2013-2014,2016,2018
 # Zorig, 2019
 # Анхбаяр Анхаа <l.ankhbayar@gmail.com>, 2013-2016,2018-2019
@@ -16,10 +17,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-27 22:40+0200\n"
-"PO-Revision-Date: 2019-11-05 07:28+0000\n"
-"Last-Translator: Анхбаяр Анхаа <l.ankhbayar@gmail.com>\n"
-"Language-Team: Mongolian (http://www.transifex.com/django/django/language/mn/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2023-12-25 06:49+0000\n"
+"Last-Translator: Turmunkh Batkhuyag, 2023\n"
+"Language-Team: Mongolian (http://app.transifex.com/django/django/language/mn/)\n"
 "Language: mn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,13 +85,43 @@ msgstr[1] "%[1]s ялгаруулагч"
 msgid "%[1]s trillion"
 msgid_plural "%[1]s trillion"
 msgstr[0] "%[1]s наяд"
-msgstr[1] "%[1]s наяд"
+msgstr[1] "%[1]s их наяд"
 
 msgid "%[1]v ago"
 msgstr "%[1]v ѳмнѳ"
 
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v өдөр"
+msgstr[1] "%[1]v өдөр"
+
 msgid "%[1]v from now"
 msgstr "одооноос %[1]v "
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v цаг"
+msgstr[1] "%[1]v цаг"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v минут"
+msgstr[1] "%[1]v минут"
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v сар"
+msgstr[1] "%[1]v сар"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v долоо хоног"
+msgstr[1] "%[1]v долоо хоног"
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v жил"
+msgstr[1] "%[1]v жил"
 
 msgid "%s GB"
 msgstr "%s GB"
@@ -107,50 +138,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v дахь"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v дахь"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v дахь"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v дэхь"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v дэхь"
-
 msgid ", "
 msgstr ", "
 
@@ -163,13 +150,8 @@ msgstr "Африк"
 msgid "Albanian"
 msgstr "Альбани"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "4-р сар."
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Туулай"
+msgid "Algerian Arabic"
+msgstr "Алжир Араб"
 
 msgid "April"
 msgstr "4-р сар"
@@ -185,14 +167,6 @@ msgstr "Армен"
 
 msgid "Asturian"
 msgstr "Астури"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "8-р сар."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Хонь"
 
 msgid "August"
 msgstr "8-р сар"
@@ -233,6 +207,9 @@ msgstr "Бирм"
 msgid "Catalan"
 msgstr "Каталан"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Төв Курд (Сорани)"
+
 msgid "Colombian Spanish"
 msgstr "Колумбийн Испаниар"
 
@@ -244,14 +221,6 @@ msgstr "Чех"
 
 msgid "Danish"
 msgstr "Дани"
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "12-р сар."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Гахай"
 
 msgid "December"
 msgstr "12-р сар"
@@ -267,14 +236,6 @@ msgstr "Эсперанто"
 
 msgid "Estonian"
 msgstr "Эстони"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "2-р сар."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Үхэр"
 
 msgid "February"
 msgstr "2-р сар"
@@ -321,6 +282,9 @@ msgstr "Исланд"
 msgid "Ido"
 msgstr "Идо"
 
+msgid "Igbo"
+msgstr "Игбо"
+
 msgid "Indonesian"
 msgstr "Индонези"
 
@@ -333,41 +297,17 @@ msgstr "Ирланд"
 msgid "Italian"
 msgstr "Итали"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "1-р сар."
-
 msgid "January"
 msgstr "1-р сар"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Хулгана"
 
 msgid "Japanese"
 msgstr "Япон"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Морь"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "7-р сар."
-
 msgid "July"
 msgstr "7-р сар"
 
-msgctxt "alt. month"
-msgid "June"
-msgstr "Могой"
-
 msgid "June"
 msgstr "6-р сар"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "6-р сар."
 
 msgid "Kabyle"
 msgstr "Кабилэ"
@@ -384,6 +324,9 @@ msgstr "Кхмер"
 msgid "Korean"
 msgstr "Солонгос"
 
+msgid "Kyrgyz"
+msgstr "Киргиз"
+
 msgid "Latvian"
 msgstr "Латви"
 
@@ -399,33 +342,20 @@ msgstr "Лүксенбүргиш"
 msgid "Macedonian"
 msgstr "Македон"
 
+msgid "Malay"
+msgstr "Малай"
+
 msgid "Malayalam"
 msgstr "Малайз"
 
 msgid "Marathi"
 msgstr "маратхи"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "3-р сар."
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Бар"
-
 msgid "March"
 msgstr "3-р сар"
 
 msgid "May"
 msgstr "5-р сар"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "5-р сар."
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Луу"
 
 msgid "Mexican Spanish"
 msgstr "Мексикийн Испани"
@@ -451,27 +381,11 @@ msgstr "Норвеги Бокмал"
 msgid "Norwegian Nynorsk"
 msgstr "Норвегийн нюнорск"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "11-р сар."
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Нохой"
-
 msgid "November"
 msgstr "11-р сар"
 
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "10-р сар."
-
 msgid "October"
 msgstr "10-р сар"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Тахиа"
 
 msgid "Ossetic"
 msgstr "Оссетик"
@@ -506,14 +420,6 @@ msgstr "Бямба гариг"
 msgid "Scottish Gaelic"
 msgstr "Шотландийн Гаелик"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "9-р сар."
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Бич"
-
 msgid "September"
 msgstr "9-р сар"
 
@@ -547,6 +453,9 @@ msgstr "Савахил"
 msgid "Swedish"
 msgstr "Щвед"
 
+msgid "Tajik"
+msgstr "Тажик"
+
 msgid "Tamil"
 msgstr "Тамил"
 
@@ -577,6 +486,9 @@ msgstr "Мягмар гариг"
 msgid "Turkish"
 msgstr "Турк"
 
+msgid "Turkmen"
+msgstr "Турк хүн"
+
 msgid "Udmurt"
 msgstr "Удмурт"
 
@@ -588,6 +500,9 @@ msgstr "Дээд Сорбин"
 
 msgid "Urdu"
 msgstr "Урду"
+
+msgid "Uyghur"
+msgstr "Уйгур"
 
 msgid "Uzbek"
 msgstr "Узбек"
@@ -724,3 +639,214 @@ msgstr "хоёр"
 msgid "yesterday"
 msgstr "өчигдөр"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "4-р сар."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "8-р сар."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "12-р сар."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "2-р сар."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "1-р сар."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "7-р сар."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "6-р сар."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "3-р сар."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "5-р сар."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "11-р сар."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "10-р сар."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "9-р сар."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Туулай"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Хонь"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Гахай"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Үхэр"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Хулгана"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Морь"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Могой"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Бар"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Луу"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Нохой"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Тахиа"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Бич"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v өдөр"
+msgstr[1] "%[1]v өдөр"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v цаг"
+msgstr[1] "%[1]v цаг"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v минут"
+msgstr[1] "%[1]v минут"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v сар"
+msgstr[1] "%[1]v сар"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v долоо хоног"
+msgstr[1] "%[1]v долоо хоног"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v жил"
+msgstr[1] "%[1]v жил"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v өдөр"
+msgstr[1] "%[1]v өдөр"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v цаг"
+msgstr[1] "%[1]v цаг"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v минут"
+msgstr[1] "%[1]v минут"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v сар"
+msgstr[1] "%[1]v сар"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v долоо хоног"
+msgstr[1] "%[1]v долоо хоног"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v жил"
+msgstr[1] "%[1]v жил"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v дэх"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v дэх"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v дэх"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v дахь"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v дахь"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v дэх"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v дахь"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v дахь"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v дахь"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v дахь"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v дэх"

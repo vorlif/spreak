@@ -113,14 +113,6 @@ msgstr ""
 msgid "April"
 msgstr "ఎప్రిల్"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "ఏప్రి."
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "ఏప్రిల్"
-
 msgid "Arabic"
 msgstr "ఆరబిక్"
 
@@ -133,16 +125,8 @@ msgstr ""
 msgid "Asturian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "ఆగ."
-
 msgid "August"
 msgstr "ఆగష్టు"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "ఆగస్ట్"
 
 msgid "Australian English"
 msgstr ""
@@ -192,14 +176,6 @@ msgstr "ఛెక్"
 msgid "Danish"
 msgstr "డానిష్"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "డిసెం."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "డిసెంబర్"
-
 msgid "December"
 msgstr "డిసెంబర్"
 
@@ -214,14 +190,6 @@ msgstr "ఎస్పరాంటో"
 
 msgid "Estonian"
 msgstr "ఎస్టొనియన్"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "ఫిబ్ర."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "ఫిబ్రవరి"
 
 msgid "February"
 msgstr "ఫిబ్రవరి"
@@ -283,14 +251,6 @@ msgstr "ఐరిష్"
 msgid "Italian"
 msgstr "ఇటాలియవ్"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "జన."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "జనవరి"
-
 msgid "January"
 msgstr "జనవరి"
 
@@ -300,22 +260,6 @@ msgstr "జపనీ"
 msgid "July"
 msgstr "జులై"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "జూలై"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "జూలై"
-
-msgid "June"
-msgstr "జూన్"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "జూన్"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "జూన్"
 
@@ -358,25 +302,9 @@ msgstr "మలయాళం"
 msgid "Marathi"
 msgstr ""
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "మార్చి"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "మార్చి"
-
-msgid "March"
-msgstr "మార్చి"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "మే"
-
-msgid "May"
-msgstr "మే"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "మే"
 
@@ -404,24 +332,8 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "నోర్వేగియన్ న్య్నోర్స్క్ "
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "నవం."
-
 msgid "November"
 msgstr "నవంబర్"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "నవంబర్"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "అక్టో."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "అక్టోబర్"
 
 msgid "October"
 msgstr "అక్టోబర్"
@@ -459,14 +371,6 @@ msgstr "శనివారం"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "సెప్టెం."
-
-msgid "September"
-msgstr "సెప్టెంబర్"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "సెప్టెంబర్"
 
@@ -683,3 +587,98 @@ msgstr "రెండు"
 msgid "yesterday"
 msgstr "నిన్న"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "ఏప్రి."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "ఆగ."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "డిసెం."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "ఫిబ్ర."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "జన."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "జూలై"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "జూన్"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "మార్చి"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "మే"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "నవం."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "అక్టో."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "సెప్టెం."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "ఏప్రిల్"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "ఆగస్ట్"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "డిసెంబర్"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "ఫిబ్రవరి"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "జనవరి"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "జూలై"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "జూన్"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "మార్చి"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "మే"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "నవంబర్"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "అక్టోబర్"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "సెప్టెంబర్"

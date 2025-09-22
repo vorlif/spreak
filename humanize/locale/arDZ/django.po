@@ -201,50 +201,6 @@ msgstr "%s ب.ب"
 msgid "%s TB"
 msgstr "%s ت.ب"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
 msgid ", "
 msgstr "، "
 
@@ -263,14 +219,6 @@ msgstr "العربية الجزائرية"
 msgid "April"
 msgstr "أفريل"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "أفريل"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "أفريل"
-
 msgid "Arabic"
 msgstr "العربية"
 
@@ -282,14 +230,6 @@ msgstr "الأرمنية"
 
 msgid "Asturian"
 msgstr "الأسترية"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "أوت"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "أوت"
 
 msgid "August"
 msgstr "أوت"
@@ -342,14 +282,6 @@ msgstr "التشيكية"
 msgid "Danish"
 msgstr "الدنماركية"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "ديسمبر"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "ديسمبر"
-
 msgid "December"
 msgstr "ديسمبر"
 
@@ -364,14 +296,6 @@ msgstr "الاسبرانتو"
 
 msgid "Estonian"
 msgstr "الإستونية"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "فيفري"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "فيفري"
 
 msgid "February"
 msgstr "فيفري"
@@ -433,39 +357,15 @@ msgstr "الإيرلندية"
 msgid "Italian"
 msgstr "الإيطالية"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "جانفي"
-
-msgid "January"
-msgstr "جانفي"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "جانفي"
 
 msgid "Japanese"
 msgstr "اليابانية"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "جويليه"
 
-msgid "July"
-msgstr "جويليه"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "جويليه"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "جوان"
-
-msgid "June"
-msgstr "جوان"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "جوان"
 
@@ -511,25 +411,9 @@ msgstr "المايالام"
 msgid "Marathi"
 msgstr "المهاراتية"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "مارس"
 
-msgid "March"
-msgstr "مارس"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "مارس"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "ماي"
-
-msgid "May"
-msgstr "ماي"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "ماي"
 
@@ -557,24 +441,8 @@ msgstr "النرويجية"
 msgid "Norwegian Nynorsk"
 msgstr "النينورسك نرويجية"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "نوفمبر"
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "نوفمبر"
-
-msgid "November"
-msgstr "نوفمبر"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "أكتوبر"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "أكتوبر"
 
 msgid "October"
 msgstr "أكتوبر"
@@ -611,14 +479,6 @@ msgstr "السبت"
 
 msgid "Scottish Gaelic"
 msgstr "الغيلية الأسكتلندية"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "سبتمبر"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "سبتمبر"
 
 msgid "September"
 msgstr "سبتمبر"
@@ -860,3 +720,142 @@ msgstr "إثنان"
 msgid "yesterday"
 msgstr "أمس"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "أفريل"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "أوت"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "ديسمبر"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "فيفري"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "جانفي"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "جويليه"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "جوان"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "مارس"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "ماي"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "نوفمبر"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "أكتوبر"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "سبتمبر"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "أفريل"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "أوت"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "ديسمبر"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "فيفري"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "جانفي"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "جويليه"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "جوان"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "مارس"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "ماي"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "نوفمبر"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "أكتوبر"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "سبتمبر"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""

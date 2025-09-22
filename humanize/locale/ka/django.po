@@ -101,50 +101,6 @@ msgstr "%s პბ"
 msgid "%s TB"
 msgstr "%s ტბ"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
 msgid ", "
 msgstr ", "
 
@@ -156,14 +112,6 @@ msgstr "აფრიკაანსი"
 
 msgid "Albanian"
 msgstr "ალბანური"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "აპრილი"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "აპრ."
 
 msgid "April"
 msgstr "აპრილი"
@@ -179,14 +127,6 @@ msgstr "სომხური"
 
 msgid "Asturian"
 msgstr "ასტურიული"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "აგვ."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "აგვისტო"
 
 msgid "August"
 msgstr "აგვისტო"
@@ -239,14 +179,6 @@ msgstr "ჩეხური"
 msgid "Danish"
 msgstr "დანიური"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "დეკ."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "დეკემბერი"
-
 msgid "December"
 msgstr "დეკემბერი"
 
@@ -261,14 +193,6 @@ msgstr "ესპერანტო"
 
 msgid "Estonian"
 msgstr "ესტონური"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "თებ."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "თებერვალი"
 
 msgid "February"
 msgstr "თებერვალი"
@@ -327,38 +251,14 @@ msgstr "ირლანდიური"
 msgid "Italian"
 msgstr "იტალიური"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "იან."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "იანვარი"
-
 msgid "January"
 msgstr "იანვარი"
 
 msgid "Japanese"
 msgstr "იაპონური"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "ივლ."
-
 msgid "July"
 msgstr "ივლისი"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "ივლისი"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "ივნ."
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "ივნისი"
 
 msgid "June"
 msgstr "ივნისი"
@@ -399,24 +299,8 @@ msgstr "მალაიზიური"
 msgid "Marathi"
 msgstr "მარათული"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "მარტი"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "მარ."
-
-msgid "March"
-msgstr "მარტი"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "მაი"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "მაისი"
 
 msgid "May"
 msgstr "მაისი"
@@ -445,25 +329,9 @@ msgstr "ნორვეგიული Bokmål"
 msgid "Norwegian Nynorsk"
 msgstr "ნორვეგიული-ნინორსკი"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "ნოემ."
-
 msgid "November"
 msgstr "ნოემბერი"
 
-msgctxt "alt. month"
-msgid "November"
-msgstr "ნოემბერი"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "ოქტ."
-
-msgid "October"
-msgstr "ოქტომბერი"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "ოქტომბერი"
 
@@ -499,14 +367,6 @@ msgstr "შაბათი"
 
 msgid "Scottish Gaelic"
 msgstr "შოტლანდიური-გელური"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "სექტ."
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "სექტემბერი"
 
 msgid "September"
 msgstr "სექტემბერი"
@@ -718,3 +578,142 @@ msgstr "ორი"
 msgid "yesterday"
 msgstr "გუშინ"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "აპრ."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "აგვ."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "დეკ."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "თებ."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "იან."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ივლ."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "ივნ."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "მარ."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "მაი"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "ნოემ."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ოქტ."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "სექტ."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "აპრილი"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "აგვისტო"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "დეკემბერი"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "თებერვალი"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "იანვარი"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "ივლისი"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "ივნისი"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "მარტი"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "მაისი"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "ნოემბერი"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ოქტომბერი"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "სექტემბერი"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""

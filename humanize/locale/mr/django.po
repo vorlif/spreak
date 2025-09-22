@@ -1,15 +1,16 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
+# Omkar Parab, 2024
 # Suraj Kawade, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-27 22:40+0200\n"
-"PO-Revision-Date: 2019-11-05 00:38+0000\n"
-"Last-Translator: Ramiro Morales\n"
-"Language-Team: Marathi (http://www.transifex.com/django/django/language/mr/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2024-01-20 06:49+0000\n"
+"Last-Translator: Omkar Parab, 2024\n"
+"Language-Team: Marathi (http://app.transifex.com/django/django/language/mr/)\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,43 +77,74 @@ msgid_plural "%[1]s trillion"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "%s GB"
+msgid "%[1]v ago"
+msgstr "%[1]v पूर्वी"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v from now"
 msgstr ""
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%s GB"
+msgstr "%s जीबी"
 
 msgid "%s KB"
-msgstr ""
+msgstr "%s केबी"
 
 msgid "%s MB"
-msgstr ""
+msgstr "%s एमबी"
 
 msgid "%s PB"
-msgstr ""
+msgstr "%s पीबी"
 
 msgid "%s TB"
-msgstr ""
+msgstr "%s टिबी"
 
 msgid ", "
-msgstr ""
+msgstr ","
 
 msgid "AM"
-msgstr ""
+msgstr "मपू"
 
 msgid "Afrikaans"
 msgstr "अफ्रिकान्स"
 
 msgid "Albanian"
-msgstr ""
+msgstr "अल्बेनियन"
+
+msgid "Algerian Arabic"
+msgstr "अल्जेरियन अरेबिक"
 
 msgid "April"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
+msgstr "एप्रिल"
 
 msgid "Arabic"
 msgstr "अरेबिक"
@@ -121,33 +153,25 @@ msgid "Argentinian Spanish"
 msgstr "अर्जेन्टिनाची स्पॅनिश"
 
 msgid "Armenian"
-msgstr ""
+msgstr "अर्मेनियन"
 
 msgid "Asturian"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
+msgstr "अस्टूरियन"
 
 msgid "August"
-msgstr ""
+msgstr "ऑगस्ट"
 
 msgid "Australian English"
-msgstr ""
+msgstr "ऑस्ट्रेलियन इंग्रजी"
 
 msgid "Azerbaijani"
 msgstr "अझरबैजानी"
 
 msgid "Basque"
-msgstr ""
+msgstr "बास्क"
 
 msgid "Belarusian"
-msgstr "बेलारूसी"
+msgstr "बेलारशियन"
 
 msgid "Bengali"
 msgstr "बंगाली"
@@ -156,7 +180,7 @@ msgid "Bosnian"
 msgstr "बोस्नियन"
 
 msgid "Brazilian Portuguese"
-msgstr ""
+msgstr "ब्रझिलियन पोर्तुगीज"
 
 msgid "Breton"
 msgstr "ब्रेटन"
@@ -168,16 +192,19 @@ msgid "Bulgarian"
 msgstr "बल्गेरियन"
 
 msgid "Burmese"
-msgstr ""
+msgstr "बर्मीस"
 
 msgid "Catalan"
 msgstr "कॅटलान"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "मध्य कुर्दिश (सोरानी)"
+
 msgid "Colombian Spanish"
-msgstr ""
+msgstr "कोलंबियन स्पॅनिश"
 
 msgid "Croatian"
-msgstr ""
+msgstr "क्रोएशियन"
 
 msgid "Czech"
 msgstr "झेक"
@@ -185,19 +212,11 @@ msgstr "झेक"
 msgid "Danish"
 msgstr "डॅनिश"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
 msgid "December"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
+msgstr "डिसेंबर"
 
 msgid "Dutch"
-msgstr ""
+msgstr "डच"
 
 msgid "English"
 msgstr "इंग्रजी"
@@ -206,39 +225,31 @@ msgid "Esperanto"
 msgstr "एस्पेरॅन्टो"
 
 msgid "Estonian"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
+msgstr "एस्टोनियन"
 
 msgid "February"
-msgstr ""
+msgstr "फेब्रुवारी"
 
 msgid "Finnish"
-msgstr ""
+msgstr "फिनिश"
 
 msgid "French"
-msgstr ""
+msgstr "फ्रेंच"
 
 msgid "Fri"
-msgstr ""
+msgstr "शुक्र"
 
 msgid "Friday"
-msgstr ""
+msgstr "शुक्रवार"
 
 msgid "Frisian"
-msgstr ""
+msgstr "फ्रिसियन"
 
 msgid "Galician"
-msgstr ""
+msgstr "गॅलिशियन"
 
 msgid "Georgian"
-msgstr ""
+msgstr "जॉर्जियन"
 
 msgid "German"
 msgstr "जर्मन"
@@ -247,302 +258,256 @@ msgid "Greek"
 msgstr "ग्रीक"
 
 msgid "Hebrew"
-msgstr ""
+msgstr "हिब्रू"
 
 msgid "Hindi"
-msgstr ""
+msgstr "हिंदी"
 
 msgid "Hungarian"
-msgstr ""
+msgstr "हंगेरियन"
 
 msgid "Icelandic"
-msgstr ""
+msgstr "आयलँडिक"
 
 msgid "Ido"
-msgstr ""
+msgstr "इदो"
+
+msgid "Igbo"
+msgstr "इग्बो"
 
 msgid "Indonesian"
-msgstr ""
+msgstr "इंडोनेशियन"
 
 msgid "Interlingua"
-msgstr ""
+msgstr "इंटरलिंगुआ"
 
 msgid "Irish"
-msgstr ""
+msgstr "आयरिश"
 
 msgid "Italian"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
+msgstr "इटालियन"
 
 msgid "January"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
+msgstr "जानेवारी"
 
 msgid "Japanese"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
+msgstr "जपानी"
 
 msgid "July"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
+msgstr "जुलै"
 
 msgid "June"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
+msgstr "जून"
 
 msgid "Kabyle"
-msgstr ""
+msgstr "कबायल"
 
 msgid "Kannada"
-msgstr ""
+msgstr "कन्नड"
 
 msgid "Kazakh"
-msgstr ""
+msgstr "कझाक"
 
 msgid "Khmer"
-msgstr ""
+msgstr "ख्मेर"
 
 msgid "Korean"
-msgstr ""
+msgstr "कोरियन"
+
+msgid "Kyrgyz"
+msgstr "किर्गिझ"
 
 msgid "Latvian"
-msgstr ""
+msgstr "लाटव्हिअन"
 
 msgid "Lithuanian"
-msgstr ""
+msgstr "लिथुआनियन"
 
 msgid "Lower Sorbian"
-msgstr ""
+msgstr "लोअर सोर्बियन"
 
 msgid "Luxembourgish"
-msgstr ""
+msgstr "लक्झेंबर्गिश"
 
 msgid "Macedonian"
-msgstr ""
+msgstr "मॅसेडोनिअन"
+
+msgid "Malay"
+msgstr "मलय"
 
 msgid "Malayalam"
-msgstr ""
+msgstr "मल्याळम"
 
 msgid "Marathi"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
+msgstr "मराठी"
 
 msgid "March"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
+msgstr "मार्च"
 
 msgid "May"
-msgstr ""
+msgstr "मे"
 
 msgid "Mexican Spanish"
 msgstr "मेक्सिकन स्पॅनिश"
 
 msgid "Mon"
-msgstr ""
+msgstr "सोम"
 
 msgid "Monday"
-msgstr ""
+msgstr "सोमवार"
 
 msgid "Mongolian"
-msgstr ""
+msgstr "मंगोलियन"
 
 msgid "Nepali"
-msgstr ""
+msgstr "नेपाळी"
 
 msgid "Nicaraguan Spanish"
-msgstr ""
+msgstr "निकारागुआन स्पॅनिश"
 
 msgid "Norwegian Bokmål"
-msgstr ""
+msgstr "नॉर्वेजियन बोकमाल"
 
 msgid "Norwegian Nynorsk"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
+msgstr "नॉर्वेजिअन निनॉर्स्क "
 
 msgid "November"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
+msgstr "नोव्हेंबर"
 
 msgid "October"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
+msgstr "ऑक्टोबर"
 
 msgid "Ossetic"
-msgstr ""
+msgstr "ओस्सेटिक"
 
 msgid "PM"
-msgstr ""
+msgstr "मउ"
 
 msgid "Persian"
-msgstr ""
+msgstr "पर्शियन"
 
 msgid "Polish"
-msgstr ""
+msgstr "पॉलिश"
 
 msgid "Portuguese"
-msgstr ""
+msgstr "पोर्तुगीज"
 
 msgid "Punjabi"
-msgstr ""
+msgstr "पंजाबी"
 
 msgid "Romanian"
-msgstr ""
+msgstr "रोमेनियन"
 
 msgid "Russian"
-msgstr ""
+msgstr "रशियन"
 
 msgid "Sat"
-msgstr ""
+msgstr "शनि"
 
 msgid "Saturday"
-msgstr ""
+msgstr "शनिवार"
 
 msgid "Scottish Gaelic"
-msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "September"
-msgstr ""
+msgstr "स्कॉटिश गेलिक"
 
 msgid "September"
-msgstr ""
+msgstr "सप्टेंबर"
 
 msgid "Serbian"
-msgstr ""
+msgstr "सर्बियन"
 
 msgid "Serbian Latin"
-msgstr ""
+msgstr "सर्बियन लॅटिन"
 
 msgid "Simplified Chinese"
-msgstr ""
+msgstr "सोपी चायनिज"
 
 msgid "Slovak"
-msgstr ""
+msgstr "स्लोवाक"
 
 msgid "Slovenian"
-msgstr ""
+msgstr "स्लोवेनियन"
 
 msgid "Spanish"
 msgstr "स्पॅनिश "
 
 msgid "Sun"
-msgstr ""
+msgstr "रवि"
 
 msgid "Sunday"
-msgstr ""
+msgstr "रविवार"
 
 msgid "Swahili"
-msgstr ""
+msgstr "स्वाहिली"
 
 msgid "Swedish"
-msgstr ""
+msgstr "स्वीडिश"
+
+msgid "Tajik"
+msgstr "ताजिक"
 
 msgid "Tamil"
-msgstr ""
+msgstr "तमिळ"
 
 msgid "Tatar"
-msgstr ""
+msgstr "टाटर"
 
 msgid "Telugu"
-msgstr ""
+msgstr "तेलुगु"
 
 msgid "Thai"
-msgstr ""
+msgstr "थाई"
 
 msgid "Thu"
-msgstr ""
+msgstr "गुरु"
 
 msgid "Thursday"
-msgstr ""
+msgstr "गुरुवार"
 
 msgid "Traditional Chinese"
-msgstr ""
+msgstr "पारंपारिक चायनिज"
 
 msgid "Tue"
-msgstr ""
+msgstr "मंगळ"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "मंगळवार"
 
 msgid "Turkish"
-msgstr ""
+msgstr "तुर्की"
+
+msgid "Turkmen"
+msgstr "तुर्कमेन"
 
 msgid "Udmurt"
-msgstr ""
+msgstr "उदमर्त"
 
 msgid "Ukrainian"
-msgstr ""
+msgstr "युक्रेनियन"
 
 msgid "Upper Sorbian"
-msgstr ""
+msgstr "अप्पर सोर्बियन"
 
 msgid "Urdu"
-msgstr ""
+msgstr "उर्दू"
+
+msgid "Uyghur"
+msgstr "उईघुर"
 
 msgid "Uzbek"
-msgstr ""
+msgstr "उझबेक"
 
 msgid "Venezuelan Spanish"
-msgstr ""
+msgstr "व्हेनेझुएलन स्पॅनिश"
 
 msgid "Vietnamese"
-msgstr ""
+msgstr "व्हिएतनामी"
 
 msgid "Wed"
-msgstr ""
+msgstr "बुध"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "बुधवार"
 
 msgid "Welsh"
 msgstr "वेल्श"
@@ -568,7 +533,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "a.m."
-msgstr ""
+msgstr "म.पू."
 
 msgid "an hour ago"
 msgid_plural "%[1]v hours ago"
@@ -581,86 +546,297 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "apr"
-msgstr ""
+msgstr "एप्रि"
 
 msgid "aug"
-msgstr ""
+msgstr "ऑग"
 
 msgid "dec"
-msgstr ""
+msgstr "डिस"
 
 msgid "eight"
-msgstr ""
+msgstr "आठ"
 
 msgid "feb"
-msgstr ""
+msgstr "फेब"
 
 msgid "five"
-msgstr ""
+msgstr "पाच"
 
 msgid "four"
-msgstr ""
+msgstr "चार"
 
 msgid "jan"
-msgstr ""
+msgstr "जान"
 
 msgid "jul"
-msgstr ""
+msgstr "जुल"
 
 msgid "jun"
-msgstr ""
+msgstr "जून"
 
 msgid "mar"
-msgstr ""
+msgstr "मार"
 
 msgid "may"
-msgstr ""
+msgstr "मे"
 
 msgid "midnight"
-msgstr ""
+msgstr "मध्यरात्री"
 
 msgid "nine"
-msgstr ""
+msgstr "नऊ"
 
 msgid "noon"
-msgstr ""
+msgstr "दुपारी"
 
 msgid "nov"
-msgstr ""
+msgstr "नोव्ह"
 
 msgid "now"
-msgstr ""
+msgstr "आता"
 
 msgid "oct"
-msgstr ""
+msgstr "ऑक्ट"
 
 msgid "one"
-msgstr ""
+msgstr "एक"
 
 msgid "p.m."
-msgstr ""
+msgstr "म.उ."
 
 msgid "sep"
-msgstr ""
+msgstr "सप"
 
 msgid "seven"
-msgstr ""
+msgstr "सात"
 
 msgid "six"
-msgstr ""
+msgstr "सहा"
 
 msgid "three"
-msgstr ""
+msgstr "तीन"
 
 msgid "today"
-msgstr ""
+msgstr "आज"
 
 msgid "tomorrow"
-msgstr ""
+msgstr "उद्या"
 
 msgid "two"
-msgstr ""
+msgstr "दोन"
 
 msgid "yesterday"
-msgstr ""
+msgstr "काल"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "एप्रिल"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "ऑग."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "डिस."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "फेब."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "जान."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "जुलै"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "जून"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "मे"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "नोव्ह."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "ऑक्ट."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "सप्ट."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "एप्रिल"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "ऑगस्ट"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "डिसेंबर"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "फेब्रुवारी"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "जानेवारी"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "जुलै"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "जून"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "मार्च"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "मे"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "नोव्हेंबर"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "ऑक्टोबर"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "सप्टेंबर"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%vवा"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%vवा"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%vवा"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vवा"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "{वा}"

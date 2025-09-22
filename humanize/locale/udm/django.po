@@ -102,14 +102,6 @@ msgstr "Африкаанс"
 msgid "Albanian"
 msgstr "Албан"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "ошт"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "оштолэзе"
-
 msgid "April"
 msgstr "оштолэзь"
 
@@ -124,14 +116,6 @@ msgstr ""
 
 msgid "Asturian"
 msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "гкт"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "гудырикошконэ"
 
 msgid "August"
 msgstr "гудырикошкон"
@@ -184,16 +168,8 @@ msgstr "Чех"
 msgid "Danish"
 msgstr "Датчан"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "тст"
-
 msgid "December"
 msgstr "толсур"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "толсуре"
 
 msgid "Dutch"
 msgstr "Голланд"
@@ -206,14 +182,6 @@ msgstr "Эсперанто"
 
 msgid "Estonian"
 msgstr "Эстон"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "тпт"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "тулыспалэ"
 
 msgid "February"
 msgstr "тулыспал"
@@ -272,41 +240,17 @@ msgstr "Ирланд"
 msgid "Italian"
 msgstr "Итальян"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "тшт"
-
 msgid "January"
 msgstr "толшор"
 
-msgctxt "alt. month"
-msgid "January"
-msgstr "толшоре"
-
 msgid "Japanese"
 msgstr "Япон"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "пӧсьтолэзе"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "пст"
 
 msgid "July"
 msgstr "пӧсьтолэзь"
 
 msgid "June"
 msgstr "инвожо"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "ивт"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "инвожое"
 
 msgid "Kabyle"
 msgstr ""
@@ -344,24 +288,8 @@ msgstr "Малаялам"
 msgid "Marathi"
 msgstr ""
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "южтолэзе"
-
 msgid "March"
 msgstr "южтолэзь"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "южт"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "крт"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "куартолэзе"
 
 msgid "May"
 msgstr "куартолэзь"
@@ -390,27 +318,11 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "Норвег (нюнорск)"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "шкт"
-
 msgid "November"
 msgstr "шуркынмон"
 
-msgctxt "alt. month"
-msgid "November"
-msgstr "шуркынмонэ"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "квт"
-
 msgid "October"
 msgstr "коньывуон"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "коньывуонэ"
 
 msgid "Ossetic"
 msgstr ""
@@ -445,16 +357,8 @@ msgstr "Кӧснунал"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "кут"
-
 msgid "September"
 msgstr "куарусён"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "куарусёнэ"
 
 msgid "Serbian"
 msgstr "Серб"
@@ -663,3 +567,98 @@ msgstr ""
 msgid "yesterday"
 msgstr ""
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "ошт"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "гкт"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "тст"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "тпт"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "тшт"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "пст"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "ивт"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "южт"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "крт"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "шкт"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "квт"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "кут"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "оштолэзе"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "гудырикошконэ"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "толсуре"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "тулыспалэ"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "толшоре"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "пӧсьтолэзе"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "инвожое"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "южтолэзе"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "куартолэзе"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "шуркынмонэ"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "коньывуонэ"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "куарусёнэ"

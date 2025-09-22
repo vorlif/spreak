@@ -112,14 +112,6 @@ msgstr "Албански"
 msgid "Algerian Arabic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Април"
-
-msgid "April"
-msgstr "Април"
-
-msgctxt "alt. month"
 msgid "April"
 msgstr "Април"
 
@@ -134,14 +126,6 @@ msgstr "Ерменски"
 
 msgid "Asturian"
 msgstr "Астуриски"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Авг."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Август"
 
 msgid "August"
 msgstr "август"
@@ -194,14 +178,6 @@ msgstr "Чешки"
 msgid "Danish"
 msgstr "Дански"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Дек."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Декември"
-
 msgid "December"
 msgstr "Декември"
 
@@ -217,14 +193,6 @@ msgstr "Есперанто"
 msgid "Estonian"
 msgstr "Естонски"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Фев."
-
-msgid "February"
-msgstr "Февруари"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "Февруари"
 
@@ -285,38 +253,14 @@ msgstr "Ирски"
 msgid "Italian"
 msgstr "Италијански"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Јан."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Јануари"
-
 msgid "January"
 msgstr "Јануари"
 
 msgid "Japanese"
 msgstr "Јапонски"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Јули"
-
-msgid "July"
-msgstr "Јули"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Јули"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Јуни"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Јуни"
 
 msgid "June"
 msgstr "Јуни"
@@ -360,25 +304,9 @@ msgstr "Малајалам"
 msgid "Marathi"
 msgstr "Марати"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "Март"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Март"
-
-msgid "March"
-msgstr "Март"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Мај"
-
-msgid "May"
-msgstr "Мај"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Мај"
 
@@ -406,25 +334,9 @@ msgstr "Норвешки Бокмел"
 msgid "Norwegian Nynorsk"
 msgstr "Нинорск норвешки"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Ное."
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "Ноември"
 
-msgid "November"
-msgstr "Ноември"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Окт."
-
-msgid "October"
-msgstr "Октомври"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "Октомври"
 
@@ -461,14 +373,6 @@ msgstr "Сабота"
 msgid "Scottish Gaelic"
 msgstr "Шкотски Галски"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Септ."
-
-msgid "September"
-msgstr "Септември"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "Септември"
 
@@ -685,3 +589,98 @@ msgstr "две"
 msgid "yesterday"
 msgstr "вчера"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Април"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Авг."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Дек."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Фев."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Јан."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Јули"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Јуни"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Март"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Мај"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Ное."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Окт."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Септ."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Април"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Август"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Декември"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Февруари"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Јануари"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Јули"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Јуни"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Март"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Мај"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Ноември"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Октомври"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Септември"

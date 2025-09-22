@@ -153,50 +153,6 @@ msgstr "%s PO"
 msgid "%s TB"
 msgstr "%s TO"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "al %v-lea"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "al %v-lea"
-
 msgid ", "
 msgstr ", "
 
@@ -215,14 +171,6 @@ msgstr ""
 msgid "April"
 msgstr "Aprilie"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Aprilie"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Aprilie"
-
 msgid "Arabic"
 msgstr "Arabă"
 
@@ -235,14 +183,6 @@ msgstr "Armeană"
 msgid "Asturian"
 msgstr "Asturiană"
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Aug."
-
-msgid "August"
-msgstr "August"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "August"
 
@@ -297,14 +237,6 @@ msgstr "Cehă"
 msgid "Danish"
 msgstr "Daneză"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Dec."
-
-msgid "December"
-msgstr "Decembrie"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "Decembrie"
 
@@ -319,14 +251,6 @@ msgstr "Esperanto"
 
 msgid "Estonian"
 msgstr "Estonă"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Feb."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Februarie"
 
 msgid "February"
 msgstr "Februarie"
@@ -388,39 +312,15 @@ msgstr "Irlandeză"
 msgid "Italian"
 msgstr "Italiană"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Ian."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Ianuarie"
-
 msgid "January"
 msgstr "Ianuarie"
 
 msgid "Japanese"
 msgstr "Japoneză"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Iulie"
 
-msgid "July"
-msgstr "Iulie"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Iulie"
-
-msgid "June"
-msgstr "Iunie"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Iunie"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "Iunie"
 
@@ -466,25 +366,9 @@ msgstr "Malayalam"
 msgid "Marathi"
 msgstr "Marathi"
 
-msgctxt "alt. month"
 msgid "March"
 msgstr "Martie"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Martie"
-
-msgid "March"
-msgstr "Martie"
-
-msgid "May"
-msgstr "Mai"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Mai"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "Mai"
 
@@ -512,25 +396,9 @@ msgstr "Norvegiana modernă"
 msgid "Norwegian Nynorsk"
 msgstr "Norvegiană Nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Noie."
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "Noiembrie"
 
-msgid "November"
-msgstr "Noiembrie"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Oct."
-
-msgid "October"
-msgstr "Octombrie"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "Octombrie"
 
@@ -567,14 +435,6 @@ msgstr "Sâmbătă"
 msgid "Scottish Gaelic"
 msgstr "Galeză Scoțiană"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Sept."
-
-msgid "September"
-msgstr "Septembrie"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "Septembrie"
 
@@ -797,3 +657,142 @@ msgstr "doi"
 msgid "yesterday"
 msgstr "ieri"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aprilie"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Aug."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dec."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ian."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Iulie"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Iunie"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Martie"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Noie."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Oct."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sept."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprilie"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "August"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Decembrie"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Februarie"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ianuarie"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Iulie"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Iunie"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Martie"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Noiembrie"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Octombrie"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Septembrie"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "al %v-lea"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "al %v-lea"

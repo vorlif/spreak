@@ -2,15 +2,15 @@
 # 
 # Translators:
 # Viktar Palstsiuk <vipals@gmail.com>, 2014-2015
-# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023
+# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023-2025
 # Bobsans <mr.bobsans@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
-"Last-Translator: znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023-2025\n"
 "Language-Team: Belarusian (http://app.transifex.com/django/django/language/be/)\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
@@ -105,22 +105,6 @@ msgstr[3] "%[1]s трыльёнаў"
 msgid "%[1]v ago"
 msgstr "%[1]v таму"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v дзень"
-msgstr[1] "%[1]v дзён"
-msgstr[2] "%[1]v дзён"
-msgstr[3] "%[1]v дзён"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v дзень"
-msgstr[1] "%[1]v дзён"
-msgstr[2] "%[1]v дзён"
-msgstr[3] "%[1]v дзён"
-
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v дзень"
@@ -131,44 +115,12 @@ msgstr[3] "%[1]v дзён"
 msgid "%[1]v from now"
 msgstr "праз %[1]v"
 
-msgctxt "naturaltime-future"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v гадзіна"
 msgstr[1] "%[1]v гадзін"
 msgstr[2] "%[1]v гадзін"
 msgstr[3] "%[1]v гадзін"
-
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v гадзіна"
-msgstr[1] "%[1]v гадзін"
-msgstr[2] "%[1]v гадзін"
-msgstr[3] "%[1]v гадзін"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v гадзіна"
-msgstr[1] "%[1]v гадзін"
-msgstr[2] "%[1]v гадзін"
-msgstr[3] "%[1]v гадзін"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v хвіліна"
-msgstr[1] "%[1]v хвілін"
-msgstr[2] "%[1]v хвілін"
-msgstr[3] "%[1]v хвілін"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v хвіліна"
-msgstr[1] "%[1]v хвілін"
-msgstr[2] "%[1]v хвілін"
-msgstr[3] "%[1]v хвілін"
 
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
@@ -184,23 +136,6 @@ msgstr[1] "%[1]v месяцаў"
 msgstr[2] "%[1]v месяцаў"
 msgstr[3] "%[1]v месяцаў"
 
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v месяц"
-msgstr[1] "%[1]v месяцаў"
-msgstr[2] "%[1]v месяцаў"
-msgstr[3] "%[1]v месяцаў"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v месяц"
-msgstr[1] "%[1]v месяцаў"
-msgstr[2] "%[1]v месяцаў"
-msgstr[3] "%[1]v месяцаў"
-
-msgctxt "naturaltime-future"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v тыдзень"
@@ -208,37 +143,6 @@ msgstr[1] "%[1]v тыдняў"
 msgstr[2] "%[1]v тыдняў"
 msgstr[3] "%[1]v тыдняў"
 
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v тыдзень"
-msgstr[1] "%[1]v тыдняў"
-msgstr[2] "%[1]v тыдняў"
-msgstr[3] "%[1]v тыдняў"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v тыдзень"
-msgstr[1] "%[1]v тыдняў"
-msgstr[2] "%[1]v тыдняў"
-msgstr[3] "%[1]v тыдняў"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v год"
-msgstr[1] "%[1]v гадоў"
-msgstr[2] "%[1]v гадоў"
-msgstr[3] "%[1]v гадоў"
-
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v год"
-msgstr[1] "%[1]v гадоў"
-msgstr[2] "%[1]v гадоў"
-msgstr[3] "%[1]v гадоў"
-
-msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v год"
@@ -261,50 +165,6 @@ msgstr "%s ПБ"
 msgid "%s TB"
 msgstr "%s ТБ"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%vі"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%vі"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%vы"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%vы"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%vы"
-
 msgid ", "
 msgstr ", "
 
@@ -319,14 +179,6 @@ msgstr "Альбанская"
 
 msgid "Algerian Arabic"
 msgstr "Алжырская арабская"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "красавіка"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "красавіка"
 
 msgid "April"
 msgstr "красавіка"
@@ -343,14 +195,6 @@ msgstr "Армянскі"
 msgid "Asturian"
 msgstr "Астурыйская"
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Жні."
-
-msgid "August"
-msgstr "жніўня"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "жніўня"
 
@@ -405,14 +249,6 @@ msgstr "Чэская"
 msgid "Danish"
 msgstr "Дацкая"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Сьн."
-
-msgid "December"
-msgstr "сьнежня"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "сьнежня"
 
@@ -427,14 +263,6 @@ msgstr "Эспэранта"
 
 msgid "Estonian"
 msgstr "Эстонская"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Люты"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "лютага"
 
 msgid "February"
 msgstr "лютага"
@@ -496,39 +324,15 @@ msgstr "Ірляндзкая"
 msgid "Italian"
 msgstr "Італьянская"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Сту."
-
-msgid "January"
-msgstr "студзеня"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "студзеня"
 
 msgid "Japanese"
 msgstr "Японская"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "ліпеня"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "ліпеня"
-
-msgid "July"
-msgstr "ліпеня"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "чэрвеня"
-
-msgid "June"
-msgstr "чэрвеня"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "чэрвеня"
 
@@ -577,22 +381,6 @@ msgstr "Маратхі"
 msgid "March"
 msgstr "сакавік"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "сакавік"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "сакавік"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "траўня"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "траўня"
-
 msgid "May"
 msgstr "траўня"
 
@@ -620,24 +408,8 @@ msgstr "Нарвэская букмал"
 msgid "Norwegian Nynorsk"
 msgstr "Нарвэская нюнорск"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Ліс."
-
 msgid "November"
 msgstr "лістапада"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "лістапада"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Кас."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "кастрычніка"
 
 msgid "October"
 msgstr "кастрычніка"
@@ -675,14 +447,6 @@ msgstr "Субота"
 msgid "Scottish Gaelic"
 msgstr "Гэльская шатляндзкая"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Вер."
-
-msgid "September"
-msgstr "верасьня"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "верасьня"
 
@@ -914,3 +678,238 @@ msgstr "два"
 msgid "yesterday"
 msgstr "ўчора"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "красавіка"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Жні."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Сьн."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Люты"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Сту."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "ліпеня"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "чэрвеня"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "сакавік"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "траўня"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Ліс."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Кас."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Вер."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "красавіка"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "жніўня"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "сьнежня"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "лютага"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "студзеня"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "ліпеня"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "чэрвеня"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "сакавік"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "траўня"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "лістапада"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "кастрычніка"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "верасьня"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v дзень"
+msgstr[1] "%[1]v дзён"
+msgstr[2] "%[1]v дзён"
+msgstr[3] "%[1]v дзён"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v гадзіна"
+msgstr[1] "%[1]v гадзін"
+msgstr[2] "%[1]v гадзін"
+msgstr[3] "%[1]v гадзін"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v хвіліна"
+msgstr[1] "%[1]v хвілін"
+msgstr[2] "%[1]v хвілін"
+msgstr[3] "%[1]v хвілін"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v месяц"
+msgstr[1] "%[1]v месяцаў"
+msgstr[2] "%[1]v месяцаў"
+msgstr[3] "%[1]v месяцаў"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v тыдзень"
+msgstr[1] "%[1]v тыдняў"
+msgstr[2] "%[1]v тыдняў"
+msgstr[3] "%[1]v тыдняў"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v год"
+msgstr[1] "%[1]v гадоў"
+msgstr[2] "%[1]v гадоў"
+msgstr[3] "%[1]v гадоў"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v дзень"
+msgstr[1] "%[1]v дзён"
+msgstr[2] "%[1]v дзён"
+msgstr[3] "%[1]v дзён"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v гадзіна"
+msgstr[1] "%[1]v гадзін"
+msgstr[2] "%[1]v гадзін"
+msgstr[3] "%[1]v гадзін"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v хвіліна"
+msgstr[1] "%[1]v хвілін"
+msgstr[2] "%[1]v хвілін"
+msgstr[3] "%[1]v хвілін"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v месяц"
+msgstr[1] "%[1]v месяцаў"
+msgstr[2] "%[1]v месяцаў"
+msgstr[3] "%[1]v месяцаў"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v тыдзень"
+msgstr[1] "%[1]v тыдняў"
+msgstr[2] "%[1]v тыдняў"
+msgstr[3] "%[1]v тыдняў"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v год"
+msgstr[1] "%[1]v гадоў"
+msgstr[2] "%[1]v гадоў"
+msgstr[3] "%[1]v гадоў"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%vы"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%vі"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%vі"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vы"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%vы"

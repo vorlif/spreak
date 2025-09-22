@@ -7,6 +7,7 @@
 # Fan Xu <xlivevil@aliyun.com>, 2022
 # Ford Guo <agile.guo@gmail.com>, 2022
 # Huanqun Yang, 2022
+# sunfkny, 2023
 # jamin M <lxxmbyx@163.com>, 2019
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Kevin Sze <leiarix@gmail.com>, 2012
@@ -14,7 +15,9 @@
 # Le Yang <youngleocn@qq.com>, 2018
 # li beite <lbt012345@gmail.com>, 2020
 # Liping Wang <lynn.config@gmail.com>, 2016-2017
+# L., 2024
 # matthew Yip <yymmatthew@gmail.com>, 2020
+# Natalia, 2025
 # mozillazg <opensource.mozillazg@gmail.com>, 2016
 # Ronald White <tkliuxing@me.com>, 2014
 # Lemon Li <leeway1985@gmail.com>, 2013
@@ -32,17 +35,18 @@
 # ced773123cfad7b4e8b79ca80f736af9, 2011-2012
 # Ziya Tang <tcztzy@gmail.com>, 2018
 # 付峥 <fuzheng1998@outlook.com>, 2018
-# Fangjiaqi77 <370358679@qq.com>, 2020
+# L., 2024
+# LatteFang <370358679@qq.com>, 2020
 # Kevin Sze <leiarix@gmail.com>, 2012
 # 高乐喆 <gaolezhe@outlook.com>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 02:13-0600\n"
-"PO-Revision-Date: 2023-04-25 06:49+0000\n"
-"Last-Translator: 高乐喆 <gaolezhe@outlook.com>, 2023\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/django/django/language/zh_CN/)\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Natalia, 2025\n"
+"Language-Team: Chinese (China) (http://app.transifex.com/django/django/language/zh_CN/)\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,18 +116,6 @@ msgstr[1] ""
 msgid "%[1]v ago"
 msgstr "%[1]v前"
 
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v 日"
-msgstr[1] ""
-
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v 日"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "%[1]v 日"
@@ -137,30 +129,6 @@ msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v 小时"
 msgstr[1] ""
 
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v 小时"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v 小时"
-msgstr[1] ""
-
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v 分钟"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v 分钟"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v 分钟"
@@ -171,47 +139,11 @@ msgid_plural "%[1]v months"
 msgstr[0] "%[1]v 月"
 msgstr[1] ""
 
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v 月"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v 月"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v 周"
 msgstr[1] ""
 
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v 周"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v 周"
-msgstr[1] ""
-
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v 年"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v 年"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v 年"
@@ -232,50 +164,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "第%v"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "第%v"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "第%v"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "第%v"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "第%v"
-
 msgid ", "
 msgstr "，"
 
@@ -290,14 +178,6 @@ msgstr "阿尔巴尼亚语"
 
 msgid "Algerian Arabic"
 msgstr "阿尔及利亚的阿拉伯语"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "四月"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "四月"
 
 msgid "April"
 msgstr "四月"
@@ -314,14 +194,6 @@ msgstr "亚美尼亚语"
 msgid "Asturian"
 msgstr "阿斯图里亚斯"
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "八月"
-
-msgid "August"
-msgstr "八月"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "八月"
 
@@ -376,14 +248,6 @@ msgstr "捷克语"
 msgid "Danish"
 msgstr "丹麦语"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "十二月"
-
-msgid "December"
-msgstr "十二月"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "十二月"
 
@@ -398,14 +262,6 @@ msgstr "世界语"
 
 msgid "Estonian"
 msgstr "爱沙尼亚语"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "二月"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "二月"
 
 msgid "February"
 msgstr "二月"
@@ -467,14 +323,6 @@ msgstr "爱尔兰语"
 msgid "Italian"
 msgstr "意大利语"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "一月"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "一月"
-
 msgid "January"
 msgstr "一月"
 
@@ -484,22 +332,6 @@ msgstr "日语"
 msgid "July"
 msgstr "七月"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "七月"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "七月"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "六月"
-
-msgid "June"
-msgstr "六月"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "六月"
 
@@ -545,25 +377,9 @@ msgstr "马来亚拉姆语"
 msgid "Marathi"
 msgstr "马拉地语"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "三月"
 
-msgid "March"
-msgstr "三月"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "三月"
-
-msgid "May"
-msgstr "五月"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "五月"
-
-msgctxt "alt. month"
 msgid "May"
 msgstr "五月"
 
@@ -591,24 +407,8 @@ msgstr "挪威博克马尔"
 msgid "Norwegian Nynorsk"
 msgstr "新挪威语"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "十一月"
-
 msgid "November"
 msgstr "十一月"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "十一月"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "十月"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "十月"
 
 msgid "October"
 msgstr "十月"
@@ -646,14 +446,6 @@ msgstr "星期六"
 msgid "Scottish Gaelic"
 msgstr "苏格兰盖尔语"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "九月"
-
-msgid "September"
-msgstr "九月"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "九月"
 
@@ -734,6 +526,9 @@ msgstr "上索布"
 
 msgid "Urdu"
 msgstr "乌尔都语"
+
+msgid "Uyghur"
+msgstr "维吾尔语"
 
 msgid "Uzbek"
 msgstr "乌兹别克语"
@@ -870,3 +665,214 @@ msgstr "二"
 msgid "yesterday"
 msgstr "昨天"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "四月"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "八月"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "十二月"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "二月"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "一月"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "七月"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "六月"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "三月"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "五月"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "十一月"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "十月"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "九月"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "四月"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "八月"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "十二月"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "二月"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "一月"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "七月"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "六月"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "三月"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "五月"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "十一月"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "十月"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "九月"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v 日"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v 小时"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v 分钟"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v 月"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v 周"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v 年"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v 日"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v 小时"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v 分钟"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v 月"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v 周"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v 年"
+msgstr[1] ""
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "第%v"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "第%v"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "第%v"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "第%v"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "第%v"

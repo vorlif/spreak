@@ -1,6 +1,7 @@
 # This file is distributed under the same license as the Django package.
 # 
 # Translators:
+# Aindriú Mac Giolla Eoin, 2024
 # Claude Paroz <claude@2xlibre.net>, 2020
 # Jannis Leidel <jannis@leidel.info>, 2011
 # John Moylan <john@8t8.eu>, 2013
@@ -13,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-19 20:23+0200\n"
-"PO-Revision-Date: 2020-07-14 21:42+0000\n"
-"Last-Translator: Transifex Bot <>\n"
-"Language-Team: Irish (http://www.transifex.com/django/django/language/ga/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2024-10-07 06:49+0000\n"
+"Last-Translator: Aindriú Mac Giolla Eoin, 2024\n"
+"Language-Team: Irish (http://app.transifex.com/django/django/language/ga/)\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,10 +121,58 @@ msgstr[3] " %[1]s  trilliún"
 msgstr[4] " %[1]s  trilliún"
 
 msgid "%[1]v ago"
-msgstr ""
+msgstr "%[1]v ó shin"
+
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v lá"
+msgstr[1] "%[1]v laethanta"
+msgstr[2] "%[1]v laethanta"
+msgstr[3] "%[1]v laethanta"
+msgstr[4] "%[1]v laethanta"
 
 msgid "%[1]v from now"
-msgstr ""
+msgstr "%[1]v as seo amach"
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uair"
+msgstr[1] "%[1]v huaireanta"
+msgstr[2] "%[1]v huaireanta"
+msgstr[3] "%[1]v huaireanta"
+msgstr[4] "%[1]v huaireanta"
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v nóiméad"
+msgstr[1] "%[1]v nóiméad"
+msgstr[2] "%[1]v nóiméad"
+msgstr[3] "%[1]v nóiméad"
+msgstr[4] "%[1]v nóiméad"
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mí"
+msgstr[1] "%[1]v míonna"
+msgstr[2] "%[1]v míonna"
+msgstr[3] "%[1]v míonna"
+msgstr[4] "%[1]v míonna"
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v seachtain"
+msgstr[1] "%[1]v seachtainí"
+msgstr[2] "%[1]v seachtainí"
+msgstr[3] "%[1]v seachtainí"
+msgstr[4] "%[1]v seachtainí"
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v bhliain"
+msgstr[1] "%[1]v bliain"
+msgstr[2] "%[1]v bliain"
+msgstr[3] "%[1]v bliain"
+msgstr[4] "%[1]v bliain"
 
 msgid "%s GB"
 msgstr "%s GB"
@@ -140,50 +189,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%vú"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%vú"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%vú"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%vú"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%vú"
-
 msgid ", "
 msgstr ", "
 
@@ -197,18 +202,10 @@ msgid "Albanian"
 msgstr "Albáinis"
 
 msgid "Algerian Arabic"
-msgstr ""
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Mí Aibreáin"
+msgstr "Araibis na hAilgéire"
 
 msgid "April"
 msgstr "Aibreán"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Aib."
 
 msgid "Arabic"
 msgstr "Araibis"
@@ -217,18 +214,10 @@ msgid "Argentinian Spanish"
 msgstr "Spáinnis na hAirgintíne"
 
 msgid "Armenian"
-msgstr ""
+msgstr "Airméinis"
 
 msgid "Asturian"
 msgstr "Astúiris"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Lún."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Mí Lúnasa"
 
 msgid "August"
 msgstr "Lúnasa"
@@ -269,8 +258,11 @@ msgstr "Burmais"
 msgid "Catalan"
 msgstr "Catalóinis"
 
+msgid "Central Kurdish (Sorani)"
+msgstr "Coirdis Láir (Sorani)"
+
 msgid "Colombian Spanish"
-msgstr ""
+msgstr "Spáinnis na Colóime"
 
 msgid "Croatian"
 msgstr "Cróitis"
@@ -280,14 +272,6 @@ msgstr "Seicis"
 
 msgid "Danish"
 msgstr "Danmhairgis "
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Noll."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Mí na Nollag"
 
 msgid "December"
 msgstr "Nollaig"
@@ -304,16 +288,8 @@ msgstr "Esperanto"
 msgid "Estonian"
 msgstr "Eastóinis"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "Feabh."
-
 msgid "February"
 msgstr "Feabhra"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Mí Feabhra"
 
 msgid "Finnish"
 msgstr "Fionlainnis"
@@ -358,7 +334,7 @@ msgid "Ido"
 msgstr "Ido"
 
 msgid "Igbo"
-msgstr ""
+msgstr "Igbo"
 
 msgid "Indonesian"
 msgstr "Indinéisis"
@@ -372,44 +348,20 @@ msgstr "Gaeilge"
 msgid "Italian"
 msgstr "Iodáilis"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Ean."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Mí Eanáir"
-
 msgid "January"
 msgstr "Eanáir"
 
 msgid "Japanese"
 msgstr "Seapáinis"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "Iúil"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Mí Iúil"
-
-msgid "July"
-msgstr "Iúil"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Mí an Mheithimh"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Meith."
 
 msgid "June"
 msgstr "Meitheamh"
 
 msgid "Kabyle"
-msgstr ""
+msgstr "Cabaill"
 
 msgid "Kannada"
 msgstr "Cannadais"
@@ -424,7 +376,7 @@ msgid "Korean"
 msgstr "Cóiréis"
 
 msgid "Kyrgyz"
-msgstr ""
+msgstr "Chirgeastáin"
 
 msgid "Latvian"
 msgstr "Laitvis"
@@ -433,7 +385,7 @@ msgid "Lithuanian"
 msgstr "Liotuáinis"
 
 msgid "Lower Sorbian"
-msgstr ""
+msgstr "Sorbais Íochtarach"
 
 msgid "Luxembourgish"
 msgstr "Lucsamburgach"
@@ -441,33 +393,20 @@ msgstr "Lucsamburgach"
 msgid "Macedonian"
 msgstr "Macadóinis"
 
+msgid "Malay"
+msgstr "Malaeis"
+
 msgid "Malayalam"
 msgstr "Mailéalaimis"
 
 msgid "Marathi"
 msgstr "Maraitis"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "Mí na Márta"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Márta"
-
 msgid "March"
 msgstr "Márta"
 
 msgid "May"
 msgstr "Bealtaine"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "Beal."
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mí na Bealtaine"
 
 msgid "Mexican Spanish"
 msgstr "Spáinnis Mheicsiceo "
@@ -488,29 +427,13 @@ msgid "Nicaraguan Spanish"
 msgstr "Spáinnis Nicearagua"
 
 msgid "Norwegian Bokmål"
-msgstr ""
+msgstr "Ioruais Bokmål"
 
 msgid "Norwegian Nynorsk"
 msgstr "Ioruais Nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Samh."
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Mí na Samhna"
-
 msgid "November"
 msgstr "Samhain"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "DFómh."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Mí Dheireadh Fómhair"
 
 msgid "October"
 msgstr "Deireadh Fómhair"
@@ -548,16 +471,8 @@ msgstr "Dé Sathairn"
 msgid "Scottish Gaelic"
 msgstr "Gaeilge na hAlban"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "MFómh."
-
 msgid "September"
 msgstr "Meán Fómhair"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Mí Mheán Fómhair"
 
 msgid "Serbian"
 msgstr "Seirbis"
@@ -584,19 +499,19 @@ msgid "Sunday"
 msgstr "Dé Domhnaigh"
 
 msgid "Swahili"
-msgstr ""
+msgstr "Svahaílis"
 
 msgid "Swedish"
 msgstr "Sualainnis"
 
 msgid "Tajik"
-msgstr ""
+msgstr "Táidsíc"
 
 msgid "Tamil"
 msgstr "Tamailis"
 
 msgid "Tatar"
-msgstr ""
+msgstr "Tatairis"
 
 msgid "Telugu"
 msgstr "Teileagúis"
@@ -623,22 +538,25 @@ msgid "Turkish"
 msgstr "Tuircis"
 
 msgid "Turkmen"
-msgstr ""
+msgstr "Tuircméinis"
 
 msgid "Udmurt"
-msgstr ""
+msgstr "Udmurt"
 
 msgid "Ukrainian"
 msgstr "Úcráinis"
 
 msgid "Upper Sorbian"
-msgstr ""
+msgstr "Sorbian Uachtarach"
 
 msgid "Urdu"
 msgstr "Urdais"
 
+msgid "Uyghur"
+msgstr "Uighur"
+
 msgid "Uzbek"
-msgstr ""
+msgstr "Úisbéicis"
 
 msgid "Venezuelan Spanish"
 msgstr "Spáinnis Veiniséalach"
@@ -657,54 +575,54 @@ msgstr "Breatnais"
 
 msgid "a minute ago"
 msgid_plural "%[1]v minutes ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "nóiméad ó shin"
+msgstr[1] "%[1]v nóiméad ó shin"
+msgstr[2] "%[1]v nóiméad ó shin"
+msgstr[3] "%[1]v nóiméad ó shin"
+msgstr[4] "%[1]v nóiméad ó shin"
 
 msgid "a minute from now"
 msgid_plural "%[1]v minutes from now"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "nóiméad ó anois"
+msgstr[1] "%[1]v nóiméad as seo"
+msgstr[2] "%[1]v nóiméad as seo"
+msgstr[3] "%[1]v nóiméad as seo"
+msgstr[4] "%[1]v nóiméad as seo"
 
 msgid "a second ago"
 msgid_plural "%[1]v seconds ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "soicind ó shin"
+msgstr[1] "%[1]v soicindí ó shin"
+msgstr[2] "%[1]v soicindí ó shin"
+msgstr[3] "%[1]v soicindí ó shin"
+msgstr[4] "%[1]v soicindí ó shin"
 
 msgid "a second from now"
 msgid_plural "%[1]v seconds from now"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "soicind as seo amach"
+msgstr[1] "%[1]v soicind as seo amach"
+msgstr[2] "%[1]v soicind as seo amach"
+msgstr[3] "%[1]v soicind as seo amach"
+msgstr[4] "%[1]v soicind as seo amach"
 
 msgid "a.m."
 msgstr "r.n."
 
 msgid "an hour ago"
 msgid_plural "%[1]v hours ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "uair an chloig ó shin"
+msgstr[1] "%[1]v uair an chloig ó shin"
+msgstr[2] "%[1]v uair an chloig ó shin"
+msgstr[3] "%[1]v uair an chloig ó shin"
+msgstr[4] "%[1]v uair an chloig ó shin"
 
 msgid "an hour from now"
 msgid_plural "%[1]v hours from now"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "uair an chloig ó anois"
+msgstr[1] "%[1]v uair an chloig as seo amach"
+msgstr[2] "%[1]v uair an chloig as seo amach"
+msgstr[3] "%[1]v uair an chloig as seo amach"
+msgstr[4] "%[1]v uair an chloig as seo amach"
 
 msgid "apr"
 msgstr "aib"
@@ -790,3 +708,250 @@ msgstr "dó"
 msgid "yesterday"
 msgstr "inné"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aib."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Lún."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Noll."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feabh."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ean."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Iúil"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Meith."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Márta"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Beal."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Samh."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "DFómh."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "MFómh."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Mí Aibreáin"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Mí Lúnasa"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Mí na Nollag"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Mí Feabhra"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Mí Eanáir"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Mí Iúil"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Mí an Mheithimh"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mí na Márta"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mí na Bealtaine"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Mí na Samhna"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Mí Dheireadh Fómhair"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Mí Mheán Fómhair"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v lá"
+msgstr[1] "%[1]v lá"
+msgstr[2] "%[1]v lá"
+msgstr[3] "%[1]v lá"
+msgstr[4] "%[1]v lá"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uair"
+msgstr[1] "%[1]v uair an chloig"
+msgstr[2] "%[1]v uair an chloig"
+msgstr[3] "%[1]v uair an chloig"
+msgstr[4] "%[1]v uair an chloig"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v nóiméad"
+msgstr[1] "%[1]v nóiméad"
+msgstr[2] "%[1]v nóiméad"
+msgstr[3] "%[1]v nóiméad"
+msgstr[4] "%[1]v nóiméad"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mí"
+msgstr[1] "%[1]v mí"
+msgstr[2] "%[1]v mí"
+msgstr[3] "%[1]v mí"
+msgstr[4] "%[1]v mí"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v seachtain"
+msgstr[1] "%[1]v seachtain"
+msgstr[2] "%[1]v seachtain"
+msgstr[3] "%[1]v seachtain"
+msgstr[4] "%[1]v seachtain"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v bhliain"
+msgstr[1] "%[1]v bliain"
+msgstr[2] "%[1]v bliain"
+msgstr[3] "%[1]v bliain"
+msgstr[4] "%[1]v bliain"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v lá"
+msgstr[1] "%[1]v lá"
+msgstr[2] "%[1]v lá"
+msgstr[3] "%[1]v lá"
+msgstr[4] "%[1]v lá"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v uair"
+msgstr[1] "%[1]v uair an chloig"
+msgstr[2] "%[1]v uair an chloig"
+msgstr[3] "%[1]v uair an chloig"
+msgstr[4] "%[1]v uair an chloig"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v nóiméad"
+msgstr[1] "%[1]v nóiméad"
+msgstr[2] "%[1]v nóiméad"
+msgstr[3] "%[1]v nóiméad"
+msgstr[4] "%[1]v nóiméad"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v mí"
+msgstr[1] "%[1]v mí"
+msgstr[2] "%[1]v mí"
+msgstr[3] "%[1]v mí"
+msgstr[4] "%[1]v mí"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v seachtain"
+msgstr[1] "%[1]v seachtain"
+msgstr[2] "%[1]v seachtain"
+msgstr[3] "%[1]v seachtain"
+msgstr[4] "%[1]v seachtain"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v bhliain"
+msgstr[1] "%[1]v bliain"
+msgstr[2] "%[1]v bliain"
+msgstr[3] "%[1]v bliain"
+msgstr[4] "%[1]v bliain"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%vú"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%vú"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%vú"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%vú"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%vú"

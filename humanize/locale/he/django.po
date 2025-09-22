@@ -3,7 +3,7 @@
 # Translators:
 # 534b44a19bf18d20b71ecc4eb77c572f_db336e9 <f8268c65f822ec11a3a2e5d482cd7ead_175>, 2011-2012
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Meir Kriheli <mkriheli@gmail.com>, 2011-2015,2017,2019-2020,2023
+# Meir Kriheli <mkriheli@gmail.com>, 2011-2015,2017,2019-2020,2023,2025
 # Menachem G., 2021
 # Menachem G., 2021
 # אורי רודברג <uri@speedy.net>, 2021
@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
-"Last-Translator: Meir Kriheli <mkriheli@gmail.com>, 2011-2015,2017,2019-2020,2023\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-04-01 15:04-0500\n"
+"Last-Translator: Meir Kriheli <mkriheli@gmail.com>, 2011-2015,2017,2019-2020,2023,2025\n"
 "Language-Team: Hebrew (http://app.transifex.com/django/django/language/he/)\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,6 @@ msgid_plural "%[1]d bytes"
 msgstr[0] "בית %[1]d "
 msgstr[1] "%[1]d בתים"
 msgstr[2] "%[1]d בתים"
-msgstr[3] "%[1]d בתים"
 
 msgid "%[1]s billion"
 msgid_plural "%[1]s billion"
@@ -115,141 +114,39 @@ msgid_plural "%[1]v days"
 msgstr[0] "יום"
 msgstr[1] "יומיים"
 msgstr[2] "%[1]v ימים"
-msgstr[3] "%[1]v ימים"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "יום"
-msgstr[1] "יומיים"
-msgstr[2] "%[1]v ימים"
-msgstr[3] "%[1]v ימים"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "יום"
-msgstr[1] "יומיים"
-msgstr[2] "%[1]v ימים"
-msgstr[3] "%[1]v ימים"
 
 msgid "%[1]v from now"
 msgstr "בעוד %[1]v"
 
-msgctxt "naturaltime-future"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "שעה"
 msgstr[1] "שעתיים"
 msgstr[2] "%[1]v שעות"
-msgstr[3] "%[1]v שעות"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "שעה"
-msgstr[1] "שעתיים"
-msgstr[2] "%[1]v שעות"
-msgstr[3] "%[1]v שעות"
-
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "שעה"
-msgstr[1] "שעתיים"
-msgstr[2] "%[1]v שעות"
-msgstr[3] "%[1]v שעות"
 
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "דקה"
 msgstr[1] "%[1]v דקות"
 msgstr[2] "%[1]v דקות"
-msgstr[3] "%[1]v דקות"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "דקה"
-msgstr[1] "%[1]v דקות"
-msgstr[2] "%[1]v דקות"
-msgstr[3] "%[1]v דקות"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "דקה"
-msgstr[1] "%[1]v דקות"
-msgstr[2] "%[1]v דקות"
-msgstr[3] "%[1]v דקות"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "חודש"
-msgstr[1] "חודשיים"
-msgstr[2] "%[1]v חודשים"
-msgstr[3] "%[1]v חודשים"
 
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "חודש"
 msgstr[1] "חודשיים"
 msgstr[2] "%[1]v חודשים"
-msgstr[3] "%[1]v חודשים"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "חודש"
-msgstr[1] "חודשיים"
-msgstr[2] "%[1]v חודשים"
-msgstr[3] "%[1]v חודשים"
 
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "שבוע"
 msgstr[1] "שבועיים"
 msgstr[2] "%[1]v שבועות"
-msgstr[3] "%[1]v שבועות"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "שבוע"
-msgstr[1] "שבועיים"
-msgstr[2] "%[1]v שבועות"
-msgstr[3] "%[1]v שבועות"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "שבוע"
-msgstr[1] "שבועיים"
-msgstr[2] "%[1]v שבועות"
-msgstr[3] "%[1]v שבועות"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "שנה"
-msgstr[1] "שנתיים"
-msgstr[2] "%[1]v שנים"
-msgstr[3] "%[1]v שנים"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "שנה"
-msgstr[1] "שנתיים"
-msgstr[2] "%[1]v שנים"
-msgstr[3] "%[1]v שנים"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "שנה"
 msgstr[1] "שנתיים"
 msgstr[2] "%[1]v שנים"
-msgstr[3] "%[1]v שנים"
 
 msgid "%s GB"
 msgstr "%s ג\"ב"
@@ -265,50 +162,6 @@ msgstr "%s פ\"ב"
 
 msgid "%s TB"
 msgstr "%s ט\"ב"
-
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "ה־%v"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "ה־%v"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "ה־%v"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "ה־%v"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "ה־%v"
 
 msgid ", "
 msgstr ", "
@@ -328,14 +181,6 @@ msgstr "ערבית אלג'ירית"
 msgid "April"
 msgstr "אפריל"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "אפריל"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "אפריל"
-
 msgid "Arabic"
 msgstr "ערבית"
 
@@ -347,14 +192,6 @@ msgstr "ארמנית"
 
 msgid "Asturian"
 msgstr "אסטורית"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "אוג'"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "אוגוסט"
 
 msgid "August"
 msgstr "אוגוסט"
@@ -410,14 +247,6 @@ msgstr "צ'כית"
 msgid "Danish"
 msgstr "דנית"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "דצמ'"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "דצמבר"
-
 msgid "December"
 msgstr "דצמבר"
 
@@ -432,14 +261,6 @@ msgstr "אספרנטו"
 
 msgid "Estonian"
 msgstr "אסטונית"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "פבר'"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "פברואר"
 
 msgid "February"
 msgstr "פברואר"
@@ -501,38 +322,14 @@ msgstr "אירית"
 msgid "Italian"
 msgstr "איטלקית"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "יאנ'"
-
-msgid "January"
-msgstr "ינואר"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "ינואר"
 
 msgid "Japanese"
 msgstr "יפנית"
 
-msgctxt "abbrev. month"
 msgid "July"
 msgstr "יולי"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "יולי"
-
-msgid "July"
-msgstr "יולי"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "יוני"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "יוני"
 
 msgid "June"
 msgstr "יוני"
@@ -582,22 +379,6 @@ msgstr "מראטהי"
 msgid "March"
 msgstr "מרץ"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "מרץ"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "מרץ"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "מאי"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "מאי"
-
 msgid "May"
 msgstr "מאי"
 
@@ -625,24 +406,8 @@ msgstr "נורבגית ספרותית"
 msgid "Norwegian Nynorsk"
 msgstr "נורבגית חדשה"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "נוב'"
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "נובמבר"
-
-msgid "November"
-msgstr "נובמבר"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "אוק'"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "אוקטובר"
 
 msgid "October"
 msgstr "אוקטובר"
@@ -679,14 +444,6 @@ msgstr "שבת"
 
 msgid "Scottish Gaelic"
 msgstr "גאלית סקוטית"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "ספט'"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "ספטמבר"
 
 msgid "September"
 msgstr "ספטמבר"
@@ -919,3 +676,238 @@ msgstr "שניים"
 msgid "yesterday"
 msgstr "אתמול"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "אפריל"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "אוג'"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "דצמ'"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "פבר'"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "יאנ'"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "יולי"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "יוני"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "מרץ"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "מאי"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "נוב'"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "אוק'"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ספט'"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "אפריל"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "אוגוסט"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "דצמבר"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "פברואר"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "ינואר"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "יולי"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "יוני"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "מרץ"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "מאי"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "נובמבר"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "אוקטובר"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "ספטמבר"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "יום"
+msgstr[1] "יומיים"
+msgstr[2] "%[1]v ימים"
+msgstr[3] "%[1]v ימים"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "שעה"
+msgstr[1] "שעתיים"
+msgstr[2] "%[1]v שעות"
+msgstr[3] "%[1]v שעות"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "דקה"
+msgstr[1] "%[1]v דקות"
+msgstr[2] "%[1]v דקות"
+msgstr[3] "%[1]v דקות"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "חודש"
+msgstr[1] "חודשיים"
+msgstr[2] "%[1]v חודשים"
+msgstr[3] "%[1]v חודשים"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "שבוע"
+msgstr[1] "שבועיים"
+msgstr[2] "%[1]v שבועות"
+msgstr[3] "%[1]v שבועות"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "שנה"
+msgstr[1] "שנתיים"
+msgstr[2] "%[1]v שנים"
+msgstr[3] "%[1]v שנים"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "יום"
+msgstr[1] "יומיים"
+msgstr[2] "%[1]v ימים"
+msgstr[3] "%[1]v ימים"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "שעה"
+msgstr[1] "שעתיים"
+msgstr[2] "%[1]v שעות"
+msgstr[3] "%[1]v שעות"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "דקה"
+msgstr[1] "%[1]v דקות"
+msgstr[2] "%[1]v דקות"
+msgstr[3] "%[1]v דקות"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "חודש"
+msgstr[1] "חודשיים"
+msgstr[2] "%[1]v חודשים"
+msgstr[3] "%[1]v חודשים"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "שבוע"
+msgstr[1] "שבועיים"
+msgstr[2] "%[1]v שבועות"
+msgstr[3] "%[1]v שבועות"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "שנה"
+msgstr[1] "שנתיים"
+msgstr[2] "%[1]v שנים"
+msgstr[3] "%[1]v שנים"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "ה־%v"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "ה־%v"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "ה־%v"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "ה־%v"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "ה־%v"

@@ -183,50 +183,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr ""
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr ""
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr ""
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr ""
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr ""
-
 msgid ", "
 msgstr ","
 
@@ -242,14 +198,6 @@ msgstr "Albaneg"
 msgid "Algerian Arabic"
 msgstr ""
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "Ebrel"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "Ebr."
-
 msgid "April"
 msgstr "Ebrel"
 
@@ -264,14 +212,6 @@ msgstr ""
 
 msgid "Asturian"
 msgstr "Astureg"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "Eos."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Eost"
 
 msgid "August"
 msgstr "Eost"
@@ -324,14 +264,6 @@ msgstr "Tchekeg"
 msgid "Danish"
 msgstr "Daneg"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "Kzu"
-
-msgid "December"
-msgstr "Kerzu"
-
-msgctxt "alt. month"
 msgid "December"
 msgstr "Kerzu"
 
@@ -347,14 +279,6 @@ msgstr "Esperanteg"
 msgid "Estonian"
 msgstr "Estoneg"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "C'hwe."
-
-msgid "February"
-msgstr "C'hwevrer"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "C'hwevrer"
 
@@ -415,14 +339,6 @@ msgstr "Iwerzhoneg"
 msgid "Italian"
 msgstr "Italianeg"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "Gen."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Genver"
-
 msgid "January"
 msgstr "Genver"
 
@@ -432,24 +348,8 @@ msgstr "Japaneg"
 msgid "July"
 msgstr "Gouere"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "Gouere"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "Gou."
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "Mezheven"
-
-msgid "June"
-msgstr "Mezheven"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "Mez."
 
 msgid "Kabyle"
 msgstr ""
@@ -493,25 +393,9 @@ msgstr "Malayalam"
 msgid "Marathi"
 msgstr "Marathi"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "Meu."
-
-msgctxt "alt. month"
 msgid "March"
 msgstr "Meurzh"
 
-msgid "March"
-msgstr "Meurzh"
-
-msgid "May"
-msgstr "Mae"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mae"
-
-msgctxt "abbrev. month"
 msgid "May"
 msgstr "Mae"
 
@@ -539,24 +423,8 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr "Norvegeg Nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "Du"
-
 msgid "November"
 msgstr "Du"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Du"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "Her."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Here"
 
 msgid "October"
 msgstr "Here"
@@ -594,14 +462,6 @@ msgstr "Sadorn"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "Gwe."
-
-msgid "September"
-msgstr "Gwengolo"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "Gwengolo"
 
@@ -836,3 +696,142 @@ msgstr "daou"
 msgid "yesterday"
 msgstr "dec'h"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Ebr."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Eos."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Kzu"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "C'hwe."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Gen."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Gou."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Mez."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Meu."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mae"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Du"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Her."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Gwe."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Ebrel"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Eost"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Kerzu"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "C'hwevrer"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Genver"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Gouere"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Mezheven"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Meurzh"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mae"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Du"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Here"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Gwengolo"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr ""
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr ""
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr ""
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr ""
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr ""

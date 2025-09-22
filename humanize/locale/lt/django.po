@@ -172,50 +172,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v-as"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v-as"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v-as"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v-as"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v-as"
-
 msgid ", "
 msgstr ","
 
@@ -231,14 +187,6 @@ msgstr "Albanų"
 msgid "Algerian Arabic"
 msgstr ""
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "balandžio"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "bal."
-
 msgid "April"
 msgstr "balandis"
 
@@ -253,14 +201,6 @@ msgstr "Armėnų"
 
 msgid "Asturian"
 msgstr "Austrų"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "rugpj."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "rugpjūčio"
 
 msgid "August"
 msgstr "rugpjūtis"
@@ -313,14 +253,6 @@ msgstr "Čekų"
 msgid "Danish"
 msgstr "Danų"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "gruod."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "gruodžio"
-
 msgid "December"
 msgstr "gruodis"
 
@@ -336,16 +268,8 @@ msgstr "Esperanto"
 msgid "Estonian"
 msgstr "Estų"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "vas."
-
 msgid "February"
 msgstr "vasaris"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "vasario"
 
 msgid "Finnish"
 msgstr "Suomių"
@@ -404,16 +328,8 @@ msgstr "Airių"
 msgid "Italian"
 msgstr "Italų"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "saus."
-
 msgid "January"
 msgstr "sausis"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "sausio"
 
 msgid "Japanese"
 msgstr "Japonų"
@@ -421,24 +337,8 @@ msgstr "Japonų"
 msgid "July"
 msgstr "liepa"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "liepos"
-
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "liep."
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "birželio"
-
 msgid "June"
 msgstr "birželis"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "birž."
 
 msgid "Kabyle"
 msgstr "Kabilų"
@@ -485,24 +385,8 @@ msgstr "Marati"
 msgid "March"
 msgstr "kovas"
 
-msgctxt "alt. month"
-msgid "March"
-msgstr "kovo"
-
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "kov."
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "gegužės"
-
 msgid "May"
 msgstr "gegužė"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "geg."
 
 msgid "Mexican Spanish"
 msgstr "Meksikiečių Ispanų"
@@ -528,27 +412,11 @@ msgstr "Norvegų Bokmal"
 msgid "Norwegian Nynorsk"
 msgstr "Norvegų Nynorsk"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "lapkr."
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "lapkričio"
-
 msgid "November"
 msgstr "lapkritis"
 
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "spal."
-
 msgid "October"
 msgstr "spalis"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "spalio"
 
 msgid "Ossetic"
 msgstr "Osetinų"
@@ -583,16 +451,8 @@ msgstr "Šeštadienis"
 msgid "Scottish Gaelic"
 msgstr "Škotų Gėlų"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "rugs."
-
 msgid "September"
 msgstr "rugsėjis"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "rugsėjo"
 
 msgid "Serbian"
 msgstr "Serbų"
@@ -819,3 +679,142 @@ msgstr "du"
 msgid "yesterday"
 msgstr "vakar"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "bal."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "rugpj."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "gruod."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "vas."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "saus."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "liep."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "birž."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "kov."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "geg."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "lapkr."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "spal."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "rugs."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "balandžio"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "rugpjūčio"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "gruodžio"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "vasario"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "sausio"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "liepos"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "birželio"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "kovo"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "gegužės"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "lapkričio"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "spalio"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "rugsėjo"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v-as"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v-as"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v-as"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v-as"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v-as"

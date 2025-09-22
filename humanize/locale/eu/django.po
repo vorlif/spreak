@@ -3,7 +3,7 @@
 # Translators:
 # Aitzol Naberan <anaberan@codesyntax.com>, 2013,2016
 # Ander Martinez <ander.basaundi@gmail.com>, 2013-2014
-# Eneko Illarramendi <eneko@illarra.com>, 2017-2019,2021-2022
+# Eneko Illarramendi <eneko@illarra.com>, 2017-2019,2021-2022,2024
 # Jannis Leidel <jannis@leidel.info>, 2011
 # jazpillaga <jazpillaga@codesyntax.com>, 2011
 # julen, 2011-2012
@@ -16,10 +16,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:23-0500\n"
-"PO-Revision-Date: 2022-07-25 06:49+0000\n"
-"Last-Translator: Eneko Illarramendi <eneko@illarra.com>\n"
-"Language-Team: Basque (http://www.transifex.com/django/django/language/eu/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2024-08-07 06:49+0000\n"
+"Last-Translator: Eneko Illarramendi <eneko@illarra.com>, 2017-2019,2021-2022,2024\n"
+"Language-Team: Basque (http://app.transifex.com/django/django/language/eu/)\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,18 +89,6 @@ msgstr[1] "%[1]s trilioi"
 msgid "%[1]v ago"
 msgstr "duela %[1]v"
 
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "egun %[1]v"
-msgstr[1] "%[1]v egun"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "egun %[1]v"
-msgstr[1] "%[1]v egun"
-
 msgid "%[1]v day"
 msgid_plural "%[1]v days"
 msgstr[0] "egun %[1]v"
@@ -109,85 +97,25 @@ msgstr[1] "%[1]v egun"
 msgid "%[1]v from now"
 msgstr "%[1]v barru"
 
-msgctxt "naturaltime-future"
 msgid "%[1]v hour"
 msgid_plural "%[1]v hours"
 msgstr[0] "ordu %[1]v"
 msgstr[1] "%[1]v ordu"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "ordu %[1]v"
-msgstr[1] "%[1]v ordu"
-
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "ordu %[1]v"
-msgstr[1] "%[1]v ordu"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "minutu %[1]v"
-msgstr[1] "%[1]v minutu"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "minutu %[1]v"
-msgstr[1] "%[1]v minutu"
 
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "minutu %[1]v"
 msgstr[1] "%[1]v minutu"
 
-msgctxt "naturaltime-past"
 msgid "%[1]v month"
 msgid_plural "%[1]v months"
 msgstr[0] "hilabete %[1]v"
 msgstr[1] "%[1]v hilabete"
 
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "hilabete %[1]v"
-msgstr[1] "%[1]v hilabete"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "hilabete %[1]v"
-msgstr[1] "%[1]v hilabete"
-
-msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "aste %[1]v"
 msgstr[1] "%[1]v aste"
-
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "aste %[1]v"
-msgstr[1] "%[1]v aste"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "aste %[1]v"
-msgstr[1] "%[1]v aste"
-
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] " urte %[1]v"
-msgstr[1] "%[1]v urte"
-
-msgctxt "naturaltime-future"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "urte %[1]v"
-msgstr[1] "%[1]v urte"
 
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
@@ -209,50 +137,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v."
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v."
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v."
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v."
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v."
-
 msgid ", "
 msgstr ", "
 
@@ -268,14 +152,6 @@ msgstr "Albaniera"
 msgid "Algerian Arabic"
 msgstr "Algeriar Arabiera"
 
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "api."
-
-msgid "April"
-msgstr "apirila"
-
-msgctxt "alt. month"
 msgid "April"
 msgstr "apirila"
 
@@ -290,14 +166,6 @@ msgstr "Armeniera"
 
 msgid "Asturian"
 msgstr "Asturiera"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "abu."
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "abuztua"
 
 msgid "August"
 msgstr "abuztua"
@@ -338,6 +206,9 @@ msgstr "Birmaniera"
 msgid "Catalan"
 msgstr "Katalana"
 
+msgid "Central Kurdish (Sorani)"
+msgstr ""
+
 msgid "Colombian Spanish"
 msgstr "Gaztelania (Kolonbia)"
 
@@ -349,14 +220,6 @@ msgstr "Txekiera"
 
 msgid "Danish"
 msgstr "Daniera"
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "abe."
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "abendua"
 
 msgid "December"
 msgstr "abendua"
@@ -372,14 +235,6 @@ msgstr "Esperantoa"
 
 msgid "Estonian"
 msgstr "Estoniera"
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "ots."
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "otsaila"
 
 msgid "February"
 msgstr "otsaila"
@@ -427,7 +282,7 @@ msgid "Ido"
 msgstr "Ido"
 
 msgid "Igbo"
-msgstr ""
+msgstr "Igboera"
 
 msgid "Indonesian"
 msgstr "Indonesiera"
@@ -441,39 +296,15 @@ msgstr "Irlandako gaelikoa"
 msgid "Italian"
 msgstr "Italiera"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "urt."
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "urtarrila"
-
 msgid "January"
 msgstr "urtarrila"
 
 msgid "Japanese"
 msgstr "Japoniera"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "uzt."
-
 msgid "July"
 msgstr "uztaila"
 
-msgctxt "alt. month"
-msgid "July"
-msgstr "uztaila"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "eka."
-
-msgid "June"
-msgstr "ekaina"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "ekaina"
 
@@ -519,24 +350,8 @@ msgstr "Malabarera"
 msgid "Marathi"
 msgstr "Marathera"
 
-msgctxt "abbrev. month"
-msgid "March"
-msgstr "mar."
-
-msgctxt "alt. month"
 msgid "March"
 msgstr "martxoa"
-
-msgid "March"
-msgstr "martxoa"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "maiatza"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "mai."
 
 msgid "May"
 msgstr "maiatza"
@@ -565,24 +380,8 @@ msgstr "Bokmåla (Norvegia)"
 msgid "Norwegian Nynorsk"
 msgstr "Nynorsk (Norvegia)"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "aza."
-
 msgid "November"
 msgstr "azaroa"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "azaroa"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "urr."
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "urria"
 
 msgid "October"
 msgstr "urria"
@@ -620,14 +419,6 @@ msgstr "larunbata"
 msgid "Scottish Gaelic"
 msgstr "Eskoziako gaelikoa"
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "ira."
-
-msgid "September"
-msgstr "iraila"
-
-msgctxt "alt. month"
 msgid "September"
 msgstr "iraila"
 
@@ -709,6 +500,9 @@ msgstr "Goi-sorbiera"
 msgid "Urdu"
 msgstr "Urdua"
 
+msgid "Uyghur"
+msgstr ""
+
 msgid "Uzbek"
 msgstr ""
 
@@ -740,12 +534,12 @@ msgstr[1] "%[1]v minutu barru"
 msgid "a second ago"
 msgid_plural "%[1]v seconds ago"
 msgstr[0] "duela segundu bat"
-msgstr[1] "duela %[1]v segundu"
+msgstr[1] "duela %[1]v segundo"
 
 msgid "a second from now"
 msgid_plural "%[1]v seconds from now"
 msgstr[0] "segundu bat barru"
-msgstr[1] "%[1]v segundu barru"
+msgstr[1] "%[1]v segundo barru"
 
 msgid "a.m."
 msgstr "a.m."
@@ -844,3 +638,214 @@ msgstr "bi"
 msgid "yesterday"
 msgstr "atzo"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "api."
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "abu."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "abe."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "ots."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "urt."
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "uzt."
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "eka."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "mar."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "mai."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "aza."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "urr."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "ira."
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "apirila"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "abuztua"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "abendua"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "otsaila"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "urtarrila"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "uztaila"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "ekaina"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "martxoa"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "maiatza"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "azaroa"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "urria"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "iraila"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "egun %[1]v"
+msgstr[1] "%[1]v egun"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "ordu %[1]v"
+msgstr[1] "%[1]v ordu"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "minutu %[1]v"
+msgstr[1] "%[1]v minutu"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "hilabete %[1]v"
+msgstr[1] "%[1]v hilabete"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "aste %[1]v"
+msgstr[1] "%[1]v aste"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "urte %[1]v"
+msgstr[1] "%[1]v urte"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "egun %[1]v"
+msgstr[1] "%[1]v egun"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "ordu %[1]v"
+msgstr[1] "%[1]v ordu"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "minutu %[1]v"
+msgstr[1] "%[1]v minutu"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "hilabete %[1]v"
+msgstr[1] "%[1]v hilabete"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "aste %[1]v"
+msgstr[1] "%[1]v aste"
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] " urte %[1]v"
+msgstr[1] "%[1]v urte"
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v."
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v."
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v."
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v."
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v."

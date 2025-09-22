@@ -2,14 +2,15 @@
 # 
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
+# Natalia, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-27 22:40+0200\n"
-"PO-Revision-Date: 2019-11-05 00:38+0000\n"
-"Last-Translator: Ramiro Morales\n"
-"Language-Team: Khmer (http://www.transifex.com/django/django/language/km/)\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Natalia, 2025\n"
+"Language-Team: Khmer (http://app.transifex.com/django/django/language/km/)\n"
 "Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,6 +77,36 @@ msgid_plural "%[1]s trillion"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "%s GB"
 msgstr ""
 
@@ -103,14 +134,9 @@ msgstr ""
 msgid "Albanian"
 msgstr ""
 
-msgid "April"
-msgstr "មេសា"
+msgid "Algerian Arabic"
+msgstr ""
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "មេសា"
-
-msgctxt "abbrev. month"
 msgid "April"
 msgstr "មេសា"
 
@@ -126,14 +152,6 @@ msgstr ""
 msgid "Asturian"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-msgid "August"
-msgstr "សីហា"
-
-msgctxt "alt. month"
 msgid "August"
 msgstr "សីហា"
 
@@ -173,6 +191,9 @@ msgstr ""
 msgid "Catalan"
 msgstr ""
 
+msgid "Central Kurdish (Sorani)"
+msgstr ""
+
 msgid "Colombian Spanish"
 msgstr ""
 
@@ -184,14 +205,6 @@ msgstr "ភាសាឆេក"
 
 msgid "Danish"
 msgstr "ភាសាដាណឺម៉ាក"
-
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "ធ្នូ"
 
 msgid "December"
 msgstr "ធ្នូ"
@@ -207,14 +220,6 @@ msgstr ""
 
 msgid "Estonian"
 msgstr ""
-
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "កុម្ភៈ"
 
 msgid "February"
 msgstr "កុម្ភៈ"
@@ -261,6 +266,9 @@ msgstr "ភាសាអ៉ីស្លង់"
 msgid "Ido"
 msgstr ""
 
+msgid "Igbo"
+msgstr ""
+
 msgid "Indonesian"
 msgstr ""
 
@@ -273,14 +281,6 @@ msgstr ""
 msgid "Italian"
 msgstr "ភាសាអ៊ីតាលី"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "មករា"
-
 msgid "January"
 msgstr "មករា"
 
@@ -290,22 +290,6 @@ msgstr "ភាសាជប៉ុន"
 msgid "July"
 msgstr "កក្កដា"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "កក្កដា"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "កក្កដា"
-
-msgid "June"
-msgstr "មិថុនា"
-
-msgctxt "abbrev. month"
-msgid "June"
-msgstr "មិថុនា"
-
-msgctxt "alt. month"
 msgid "June"
 msgstr "មិថុនា"
 
@@ -324,6 +308,9 @@ msgstr ""
 msgid "Korean"
 msgstr ""
 
+msgid "Kyrgyz"
+msgstr ""
+
 msgid "Latvian"
 msgstr ""
 
@@ -339,30 +326,17 @@ msgstr ""
 msgid "Macedonian"
 msgstr ""
 
+msgid "Malay"
+msgstr ""
+
 msgid "Malayalam"
 msgstr ""
 
 msgid "Marathi"
 msgstr ""
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "មិនា"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "មិនា"
-
-msgid "March"
-msgstr "មិនា"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "ឧសភា"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "ឧសភា"
 
 msgid "May"
 msgstr "ឧសភា"
@@ -391,25 +365,9 @@ msgstr ""
 msgid "Norwegian Nynorsk"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
-msgctxt "alt. month"
 msgid "November"
 msgstr "វិច្ឆិកា"
 
-msgid "November"
-msgstr "វិច្ឆិកា"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-msgid "October"
-msgstr "តុលា"
-
-msgctxt "alt. month"
 msgid "October"
 msgstr "តុលា"
 
@@ -446,14 +404,6 @@ msgstr "សៅរ៍"
 msgid "Scottish Gaelic"
 msgstr ""
 
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "កញ្ញា"
-
 msgid "September"
 msgstr "កញ្ញា"
 
@@ -487,6 +437,9 @@ msgstr ""
 msgid "Swedish"
 msgstr "ភាសាស៊ុយអែដ"
 
+msgid "Tajik"
+msgstr ""
+
 msgid "Tamil"
 msgstr "ភាសាតាមីល"
 
@@ -517,6 +470,9 @@ msgstr "អង្គារ"
 msgid "Turkish"
 msgstr "ភាសាទួរគី"
 
+msgid "Turkmen"
+msgstr ""
+
 msgid "Udmurt"
 msgstr ""
 
@@ -527,6 +483,9 @@ msgid "Upper Sorbian"
 msgstr ""
 
 msgid "Urdu"
+msgstr ""
+
+msgid "Uyghur"
 msgstr ""
 
 msgid "Uzbek"
@@ -664,3 +623,98 @@ msgstr ""
 msgid "yesterday"
 msgstr ""
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "មេសា"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "កក្កដា"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "មិថុនា"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "មិនា"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "ឧសភា"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "មេសា"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "សីហា"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "ធ្នូ"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "កុម្ភៈ"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "មករា"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "កក្កដា"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "មិថុនា"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "មិនា"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "ឧសភា"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "វិច្ឆិកា"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "តុលា"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "កញ្ញា"

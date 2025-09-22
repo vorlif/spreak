@@ -4,12 +4,14 @@
 # BJ Jang <qgis.tr.kr@gmail.com>, 2014
 # JunGu Kang <chr0m3.kr@gmail.com>, 2017
 # Jiyoon, Ha <cryptography@konkuk.ac.kr>, 2016
+# KwonHan <darjeeling@gmail.com>, 2024
 # DONGHO JEONG <nearermg@gmail.com>, 2020
 # Park Hyunwoo <ez.amiryo@gmail.com>, 2017
 # Geonho Kim / Leo Kim <gh.leokim@gmail.com>, 2019
 # hoseung2 <ghyutjik123@gmail.com>, 2017
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2015
 # Jaehong Kim <mixe@korea.com>, 2011
+# Jamie Seol, 2025
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Jay Oh <theanswer.jay@gmail.com>, 2020
 # Le Tartuffe <magno79@gmail.com>, 2014,2016
@@ -22,16 +24,18 @@
 # Mariusz Felisiak <felisiak.mariusz@gmail.com>, 2021
 # Seho Noh <iam@sehonoh.kr>, 2018
 # Seoeun(Sun☀️) Hong, 2023
+# 최소영, 2024
 # Subin Choi <os1742@gmail.com>, 2016
 # Taesik Yoon <xotlr43@gmail.com>, 2015
 # 정훈 이, 2021
+# 김영빈, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
-"Last-Translator: Seoeun(Sun☀️) Hong, 2023\n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-09-17 06:49+0000\n"
+"Last-Translator: Jamie Seol, 2025\n"
 "Language-Team: Korean (http://app.transifex.com/django/django/language/ko/)\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -107,18 +111,6 @@ msgid_plural "%[1]v days"
 msgstr[0] "%[1]v일"
 msgstr[1] ""
 
-msgctxt "naturaltime-past"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v일"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v day"
-msgid_plural "%[1]v days"
-msgstr[0] "%[1]v일"
-msgstr[1] ""
-
 msgid "%[1]v from now"
 msgstr "지금부터 %[1]v"
 
@@ -127,39 +119,9 @@ msgid_plural "%[1]v hours"
 msgstr[0] "%[1]v시간"
 msgstr[1] ""
 
-msgctxt "naturaltime-future"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v시간"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v hour"
-msgid_plural "%[1]v hours"
-msgstr[0] "%[1]v시간"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
 msgid "%[1]v minute"
 msgid_plural "%[1]v minutes"
 msgstr[0] "%[1]v분"
-msgstr[1] ""
-
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v분"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v minute"
-msgid_plural "%[1]v minutes"
-msgstr[0] "%[1]v분"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v개월"
 msgstr[1] ""
 
 msgid "%[1]v month"
@@ -167,41 +129,11 @@ msgid_plural "%[1]v months"
 msgstr[0] "%[1]v개월"
 msgstr[1] ""
 
-msgctxt "naturaltime-past"
-msgid "%[1]v month"
-msgid_plural "%[1]v months"
-msgstr[0] "%[1]v개월"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
 msgid "%[1]v week"
 msgid_plural "%[1]v weeks"
 msgstr[0] "%[1]v주"
 msgstr[1] ""
 
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v주"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
-msgid "%[1]v week"
-msgid_plural "%[1]v weeks"
-msgstr[0] "%[1]v주"
-msgstr[1] ""
-
-msgctxt "naturaltime-past"
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v년"
-msgstr[1] ""
-
-msgid "%[1]v year"
-msgid_plural "%[1]v years"
-msgstr[0] "%[1]v년"
-msgstr[1] ""
-
-msgctxt "naturaltime-future"
 msgid "%[1]v year"
 msgid_plural "%[1]v years"
 msgstr[0] "%[1]v년"
@@ -222,50 +154,6 @@ msgstr "%s PB"
 msgid "%s TB"
 msgstr "%s TB"
 
-msgctxt "ordinal 2"
-msgid "%vnd"
-msgstr "%v번째"
-
-msgctxt "ordinal 3"
-msgid "%vrd"
-msgstr "%v번째"
-
-msgctxt "ordinal 1"
-msgid "%vst"
-msgstr "%v번째"
-
-msgctxt "ordinal 9"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 8"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 0"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 11, 12, 13"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 6"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 7"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 5"
-msgid "%vth"
-msgstr "%v번째"
-
-msgctxt "ordinal 4"
-msgid "%vth"
-msgstr "%v번째"
-
 msgid ", "
 msgstr ", "
 
@@ -284,14 +172,6 @@ msgstr "알제리 아랍어"
 msgid "April"
 msgstr "4월"
 
-msgctxt "alt. month"
-msgid "April"
-msgstr "4월"
-
-msgctxt "abbrev. month"
-msgid "April"
-msgstr "4월"
-
 msgid "Arabic"
 msgstr "아랍어"
 
@@ -303,14 +183,6 @@ msgstr "아르메니아어"
 
 msgid "Asturian"
 msgstr "호주어"
-
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr "8월"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "8월"
 
 msgid "August"
 msgstr "8월"
@@ -346,7 +218,7 @@ msgid "Bulgarian"
 msgstr "불가리어"
 
 msgid "Burmese"
-msgstr "룩셈부르크어"
+msgstr "미얀마어"
 
 msgid "Catalan"
 msgstr "카탈로니아어"
@@ -366,14 +238,6 @@ msgstr "체코어"
 msgid "Danish"
 msgstr "덴마크어"
 
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr "12월"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "12월"
-
 msgid "December"
 msgstr "12월"
 
@@ -389,14 +253,6 @@ msgstr "에스페란토어"
 msgid "Estonian"
 msgstr "에스토니아어"
 
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr "2월"
-
-msgid "February"
-msgstr "2월"
-
-msgctxt "alt. month"
 msgid "February"
 msgstr "2월"
 
@@ -457,39 +313,15 @@ msgstr "아일랜드어"
 msgid "Italian"
 msgstr "이탈리아어"
 
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr "1월"
-
-msgid "January"
-msgstr "1월"
-
-msgctxt "alt. month"
 msgid "January"
 msgstr "1월"
 
 msgid "Japanese"
 msgstr "일본어"
 
-msgctxt "alt. month"
 msgid "July"
 msgstr "7월"
 
-msgctxt "abbrev. month"
-msgid "July"
-msgstr "7월"
-
-msgid "July"
-msgstr "7월"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "6월"
-
-msgid "June"
-msgstr "6월"
-
-msgctxt "abbrev. month"
 msgid "June"
 msgstr "6월"
 
@@ -535,24 +367,8 @@ msgstr "말라얄람어"
 msgid "Marathi"
 msgstr "마라티어"
 
-msgctxt "abbrev. month"
 msgid "March"
 msgstr "3월"
-
-msgid "March"
-msgstr "3월"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "3월"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "5월"
-
-msgctxt "abbrev. month"
-msgid "May"
-msgstr "5월"
 
 msgid "May"
 msgstr "5월"
@@ -581,24 +397,8 @@ msgstr "노르웨이어(보크몰)"
 msgid "Norwegian Nynorsk"
 msgstr "노르웨이어 (뉘노르스크)"
 
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr "11월"
-
 msgid "November"
 msgstr "11월"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "11월"
-
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr "10월"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "10월"
 
 msgid "October"
 msgstr "10월"
@@ -635,14 +435,6 @@ msgstr "토요일"
 
 msgid "Scottish Gaelic"
 msgstr "스코틀랜드 게일어"
-
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr "9월"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "9월"
 
 msgid "September"
 msgstr "9월"
@@ -726,7 +518,7 @@ msgid "Urdu"
 msgstr "우르드어"
 
 msgid "Uyghur"
-msgstr ""
+msgstr "위구르"
 
 msgid "Uzbek"
 msgstr "우즈베크어"
@@ -863,3 +655,214 @@ msgstr "2"
 msgid "yesterday"
 msgstr "어제"
 
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "4월"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "8월"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "12월"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "2월"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "1월"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "7월"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "6월"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "3월"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "5월"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "11월"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "10월"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "9월"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "4월"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "8월"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "12월"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "2월"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "1월"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "7월"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "6월"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "3월"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "5월"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "11월"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "10월"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "9월"
+
+msgctxt "naturaltime-future"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v일"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v시간"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v분"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v개월"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v주"
+msgstr[1] ""
+
+msgctxt "naturaltime-future"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v년"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v day"
+msgid_plural "%[1]v days"
+msgstr[0] "%[1]v일"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v hour"
+msgid_plural "%[1]v hours"
+msgstr[0] "%[1]v시간"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v minute"
+msgid_plural "%[1]v minutes"
+msgstr[0] "%[1]v분"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v month"
+msgid_plural "%[1]v months"
+msgstr[0] "%[1]v개월"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v week"
+msgid_plural "%[1]v weeks"
+msgstr[0] "%[1]v주"
+msgstr[1] ""
+
+msgctxt "naturaltime-past"
+msgid "%[1]v year"
+msgid_plural "%[1]v years"
+msgstr[0] "%[1]v년"
+msgstr[1] ""
+
+msgctxt "ordinal 0"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 1"
+msgid "%vst"
+msgstr "%v번째"
+
+msgctxt "ordinal 11, 12, 13"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 2"
+msgid "%vnd"
+msgstr "%v번째"
+
+msgctxt "ordinal 3"
+msgid "%vrd"
+msgstr "%v번째"
+
+msgctxt "ordinal 4"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 5"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 6"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 7"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 8"
+msgid "%vth"
+msgstr "%v번째"
+
+msgctxt "ordinal 9"
+msgid "%vth"
+msgstr "%v번째"
