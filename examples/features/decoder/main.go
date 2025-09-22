@@ -55,11 +55,11 @@ type jsonDecoder struct{}
 var _ catalog.Decoder = (*jsonDecoder)(nil)
 
 func (jsonDecoder) Decode(lang language.Tag, domain string, data []byte) (catalog.Catalog, error) {
-	catl := NewJsonCatalog(lang, domain)
-	if err := json.Unmarshal(data, &catl.translations); err != nil {
+	cat := NewJsonCatalog(lang, domain)
+	if err := json.Unmarshal(data, &cat.translations); err != nil {
 		return nil, err
 	}
-	return catl, nil
+	return cat, nil
 }
 
 // We create a catalog for our JSON files.
@@ -79,11 +79,11 @@ func NewJsonCatalog(lang language.Tag, domain string) *jsonCatalog {
 
 var _ catalog.Catalog = (*jsonCatalog)(nil)
 
-func (c *jsonCatalog) GetTranslation(ctx, msgID string) (string, error) {
-	return c.GetPluralTranslation(ctx, msgID, 1)
-}
+func (c *jsonCatalog) Language() language.Tag { return c.language }
 
-func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, error) {
+func (c *jsonCatalog) Lookup(ctx, msgID string) (string, error) { return c.LookupPlural(ctx, msgID, 1) }
+
+func (c *jsonCatalog) LookupPlural(ctx, msgID string, n any) (string, error) {
 	if ctx != "" {
 		err := &catalog.ErrMissingContext{
 			Language: c.language,
@@ -124,8 +124,4 @@ func (c *jsonCatalog) GetPluralTranslation(ctx, msgID string, n any) (string, er
 	}
 
 	return translation, nil
-}
-
-func (c *jsonCatalog) Language() language.Tag {
-	return c.language
 }

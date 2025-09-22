@@ -105,7 +105,7 @@ func (l *Localizer) HasDomain(domain string) bool {
 	return hasDomain
 }
 
-// Domains returns a list of all domains for which a catalog was found.
+// Domains return a list of all domains for which a catalog was found.
 func (l *Localizer) Domains() []string { return util.Keys(l.locale.domainCatalogs) }
 
 // HasLocale returns whether a matching locale has been found and message translation can take place.
@@ -120,7 +120,7 @@ func (l *Localizer) DefaultDomain() string { return l.defaultDomain }
 // If no language is present, language.Und is returned.
 func (l *Localizer) Language() language.Tag { return l.locale.language }
 
-// The Get function return the localized translation of message, based on the used locale
+// The Get function returns the localized translation of a message, based on the used locale
 // current default domain and language of the locale.
 // The message argument identifies the message to be translated.
 // If no suitable translation exists and a fallback language has been provided, the text of this language will be returned.
@@ -150,7 +150,7 @@ func (l *Localizer) DGetf(domain localize.Domain, message localize.Singular, var
 }
 
 // NGet acts like Get, but consider plural forms.
-// The plural formula is applied to n and return the resulting message (some languages have more than two plurals).
+// The plural formula is applied to n and returns the resulting message (some languages have more than two plurals).
 // If n is a floating-point number and the CLDR rules are used, the floating-point number should be represented and passed as a string for the best result.
 func (l *Localizer) NGet(singular localize.Singular, plural localize.Plural, n any) string {
 	t, _ := l.lookupPluralTranslation(l.defaultDomain, NoCtx, singular, plural, n)

@@ -35,10 +35,10 @@ func (loader *localeLoader) Load(lang language.Tag, domain string) (catalog.Cata
 	}
 
 	dec := catalog.NewPoDecoder()
-	catl, err := dec.Decode(lang, domain, content)
+	cat, err := dec.Decode(lang, domain, content)
 	if err != nil {
 		return nil, err
 	}
 
-	return catl, nil
+	return cat, nil
 }

@@ -15,10 +15,10 @@ var _ Decoder = (*JSONDecoder)(nil)
 func NewJSONDecoder() *JSONDecoder { return &JSONDecoder{} }
 
 func (JSONDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	catl := NewJSONCatalog(lang, domain)
-	if err := json.Unmarshal(data, &catl); err != nil {
+	cat := NewJSONCatalog(lang, domain)
+	if err := json.Unmarshal(data, &cat); err != nil {
 		return nil, err
 	}
 
-	return catl, nil
+	return cat, nil
 }

@@ -39,37 +39,37 @@ func TestPoDecoder(t *testing.T) {
 	lang := language.German
 
 	dec := NewPoDecoder()
-	catl, err := dec.Decode(lang, domain, []byte{})
+	cat, err := dec.Decode(lang, domain, []byte{})
 	assert.Error(t, err)
-	assert.Nil(t, catl)
+	assert.Nil(t, cat)
 
-	catl, err = dec.Decode(lang, domain, []byte(decodeTestData))
+	cat, err = dec.Decode(lang, domain, []byte(decodeTestData))
 	assert.NoError(t, err)
-	assert.NotNil(t, catl)
-	assert.Equal(t, lang, catl.Language())
+	assert.NotNil(t, cat)
+	assert.Equal(t, lang, cat.Language())
 
-	translation, err := catl.Lookup("", "id")
+	translation, err := cat.Lookup("", "id")
 	assert.NoError(t, err)
 	assert.Equal(t, "ID", translation)
 
-	translation, err = catl.Lookup("", "xyz")
+	translation, err = cat.Lookup("", "xyz")
 	assert.Error(t, err)
 	assert.Equal(t, "xyz", translation)
 
-	translation, err = catl.Lookup("", "Unknown")
+	translation, err = cat.Lookup("", "Unknown")
 	assert.Error(t, err)
 	assert.Equal(t, "Unknown", translation)
 
-	catl, err = dec.Decode(lang, domain, []byte(decodePoInvalidPluralForm+decodeTestData))
+	cat, err = dec.Decode(lang, domain, []byte(decodePoInvalidPluralForm+decodeTestData))
 	assert.Error(t, err)
-	assert.Nil(t, catl)
+	assert.Nil(t, cat)
 
 	t.Run("test special chars", func(t *testing.T) {
-		catl, err = dec.Decode(lang, domain, []byte(decodeTestData))
+		cat, err = dec.Decode(lang, domain, []byte(decodeTestData))
 		assert.NoError(t, err)
-		require.NotNil(t, catl)
+		require.NotNil(t, cat)
 
-		tr, err := catl.Lookup("", "Special		\"chars\"")
+		tr, err := cat.Lookup("", "Special		\"chars\"")
 		assert.NoError(t, err)
 		assert.Equal(t, "Sonder\t\t\"zeichen\"", tr)
 	})
@@ -85,11 +85,11 @@ func TestMoDecoder(t *testing.T) {
 func TestNewPoCLDRDecoder(t *testing.T) {
 	dec := NewPoCLDRDecoder()
 
-	catl, err := dec.Decode(language.German, "", []byte(decodeTestData))
+	cat, err := dec.Decode(language.German, "", []byte(decodeTestData))
 	assert.NoError(t, err)
-	require.NotNil(t, catl)
+	require.NotNil(t, cat)
 
-	translation, errT := catl.LookupPlural("", "%d day", "1.2")
+	translation, errT := cat.LookupPlural("", "%d day", "1.2")
 	assert.NoError(t, errT)
 	assert.Equal(t, "%d Tage", translation)
 }
@@ -103,10 +103,10 @@ msgstr ""
 `
 
 	dec := NewPoDecoder()
-	catl, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
+	cat, err := dec.Decode(language.German, "", []byte(header+decodeTestData))
 	assert.NoError(t, err)
-	require.NotNil(t, catl)
-	translation, errT := catl.LookupPlural("", "%d day", "1.2")
+	require.NotNil(t, cat)
+	translation, errT := cat.LookupPlural("", "%d day", "1.2")
 	assert.NoError(t, errT)
 	assert.Equal(t, "%d Tage", translation)
 }

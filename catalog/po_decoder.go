@@ -103,20 +103,20 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 		}
 	}
 
-	catl := &GettextCatalog{
+	cat := &GettextCatalog{
 		language:  lang,
 		lookupMap: lookupMap,
 	}
 
 	if useCLDRPlural {
-		catl.pluralFunc = getCLDRPluralFunction(lang)
-		return catl, nil
+		cat.pluralFunc = getCLDRPluralFunction(lang)
+		return cat, nil
 	}
 
 	if file.Header != nil {
 		if val := file.Header.Get(poCLDRHeader); strings.ToLower(val) == "true" {
-			catl.pluralFunc = getCLDRPluralFunction(lang)
-			return catl, nil
+			cat.pluralFunc = getCLDRPluralFunction(lang)
+			return cat, nil
 		}
 
 		if file.Header.PluralForms != "" {
@@ -124,13 +124,13 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 			if err != nil {
 				return nil, fmt.Errorf("spreak.Decoder: plural rule for po file %v#%v could not be parsed: %w", lang, domain, err)
 			}
-			catl.pluralFunc = rule.Evaluate
-			return catl, nil
+			cat.pluralFunc = rule.Evaluate
+			return cat, nil
 		}
 	}
 
-	catl.pluralFunc = getCLDRPluralFunction(lang)
-	return catl, nil
+	cat.pluralFunc = getCLDRPluralFunction(lang)
+	return cat, nil
 }
 
 func getCLDRPluralFunction(lang language.Tag) func(a any) (int, error) {

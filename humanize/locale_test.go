@@ -14,34 +14,34 @@ func TestLoader(t *testing.T) {
 		l := newLoader([]*LocaleData{})
 		assert.Empty(t, l.locales)
 
-		catl, err := l.Load(language.German, djangoDomain)
+		cat, err := l.Load(language.German, djangoDomain)
 		assert.Error(t, err)
-		assert.Nil(t, catl)
+		assert.Nil(t, cat)
 	})
 
 	t.Run("languages registered", func(t *testing.T) {
 		l := newLoader([]*LocaleData{testGermanLocaleData})
 		assert.Len(t, l.locales, 1)
 
-		catl, err := l.Load(language.German, djangoDomain)
+		cat, err := l.Load(language.German, djangoDomain)
 		assert.NoError(t, err)
-		assert.NotNil(t, catl)
+		assert.NotNil(t, cat)
 	})
 
 	t.Run("invalid filesystem", func(t *testing.T) {
 		path := filepath.Join(testdataDir, "en")
 
 		l := newLoader([]*LocaleData{{Lang: language.German, Fs: os.DirFS(path), Format: nil}})
-		catl, err := l.Load(language.German, djangoDomain)
+		cat, err := l.Load(language.German, djangoDomain)
 		assert.Error(t, err)
-		assert.Nil(t, catl)
+		assert.Nil(t, cat)
 	})
 
 	t.Run("invalid file", func(t *testing.T) {
 		path := filepath.Join(testdataDir, "es")
 		l := newLoader([]*LocaleData{{Lang: language.Spanish, Fs: os.DirFS(path), Format: nil}})
-		catl, err := l.Load(language.Spanish, djangoDomain)
+		cat, err := l.Load(language.Spanish, djangoDomain)
 		assert.Error(t, err)
-		assert.Nil(t, catl)
+		assert.Nil(t, cat)
 	})
 }

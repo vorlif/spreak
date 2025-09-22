@@ -55,13 +55,13 @@ var _ JSONCatalog = (*jsonCatalog)(nil)
 func NewJSONCatalog(lang language.Tag, domain string) JSONCatalog {
 	pluralSet, _ := cldrplural.ForLanguage(lang)
 
-	catl := &jsonCatalog{
+	cat := &jsonCatalog{
 		lookupMap: make(jsonLookupMap),
 		domain:    domain,
 		language:  lang,
 		pluralSet: pluralSet,
 	}
-	return catl
+	return cat
 }
 
 // NewJSONCatalogWithMessages creates a new JSONCatalog for the defined language and messages.
@@ -72,7 +72,7 @@ func NewJSONCatalog(lang language.Tag, domain string) JSONCatalog {
 func NewJSONCatalogWithMessages(lang language.Tag, domain string, messages JSONMessages) (JSONCatalog, error) {
 	pluralSet, _ := cldrplural.ForLanguage(lang)
 
-	catl := &jsonCatalog{
+	cat := &jsonCatalog{
 		lookupMap: make(jsonLookupMap),
 		domain:    domain,
 		language:  lang,
@@ -80,12 +80,12 @@ func NewJSONCatalogWithMessages(lang language.Tag, domain string, messages JSONM
 	}
 
 	for key, msg := range messages {
-		if err := catl.setMessage(key, msg); err != nil {
+		if err := cat.setMessage(key, msg); err != nil {
 			return nil, err
 		}
 	}
 
-	return catl, nil
+	return cat, nil
 }
 
 func (c *jsonCatalog) Lookup(ctx, msgID string) (string, error) {

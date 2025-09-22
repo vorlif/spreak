@@ -24,15 +24,15 @@ func TestJsonEncoder_Encode(t *testing.T) {
 	})
 
 	t.Run("msgId is reused", func(t *testing.T) {
-		catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		catl.mustSetMessage("car_ctx", &JSONMessage{
+		cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		cat.mustSetMessage("car_ctx", &JSONMessage{
 			Context: "ctx",
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Other: "Cars",
 			},
 		})
-		catl.mustSetMessage("car", &JSONMessage{
+		cat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Other: "Cars",
@@ -54,7 +54,7 @@ func TestJsonEncoder_Encode(t *testing.T) {
 `
 
 		buf := &bytes.Buffer{}
-		err := NewJSONEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(cat)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})

@@ -39,7 +39,7 @@ import (
 //		  The translator parses the expression on instanciation into an attribute
 //		  called `ast`.
 //
-// See: http://unicode.org/reports/tr35/tr35-numbers.html#51-plural-rules-syntax
+// See: http://unicode.org/reports/tr35/tr35-numbers.html#Plural_rules_syntax
 type parser struct {
 	s *scanner
 	// lastToken is the last read token

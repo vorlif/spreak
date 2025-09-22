@@ -10,7 +10,7 @@ import (
 )
 
 func ExampleNewJSONCatalog() {
-	catl := NewJSONCatalog(language.German, "domain")
+	cat := NewJSONCatalog(language.German, "domain")
 	data := []byte(`{
 	"help": "Hilfe",
 	"car": {
@@ -19,11 +19,11 @@ func ExampleNewJSONCatalog() {
 	}
 }`)
 
-	if err := json.Unmarshal(data, catl); err != nil {
+	if err := json.Unmarshal(data, cat); err != nil {
 		panic(err)
 	}
 
-	tr, err := catl.Lookup("", "help")
+	tr, err := cat.Lookup("", "help")
 	if err != nil {
 		panic(err)
 	}
@@ -47,13 +47,13 @@ func ExampleNewJSONCatalogWithMessages() {
 		},
 	}
 
-	catl, err := NewJSONCatalogWithMessages(language.English, "", messages)
+	cat, err := NewJSONCatalogWithMessages(language.English, "", messages)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(catl.Lookup("", "car"))
+	fmt.Println(cat.Lookup("", "car"))
 
-	res, err := json.Marshal(catl)
+	res, err := json.Marshal(cat)
 	if err != nil {
 		panic(err)
 	}

@@ -21,7 +21,7 @@ type GettextCatalog struct {
 	language language.Tag
 	// Domain to which this catalog belongs.
 	domain string
-	// pluralFunc is function for determining the plural form for any number.
+	// pluralFunc is a function for determining the plural form for any number.
 	pluralFunc poplural.PluralFunc
 	// Map for quick access to the translations.
 	lookupMap PoLookupMap
@@ -91,7 +91,7 @@ func (c *GettextCatalog) getMessage(ctx, msgID string, idx int) (*GettextMessage
 	return msg, nil
 }
 
-// GettextMessage is representation of a message from a Mo or Po file.
+// GettextMessage is a representation of a message from a Mo or a Po file.
 // The message only contains the fields that are required for the lookup function.
 // Other information such as comments or flags are discarded.
 type GettextMessage struct {

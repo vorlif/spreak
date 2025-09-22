@@ -15,9 +15,6 @@ import (
 )
 
 const (
-	// Deprecated: Will be removed in a future version.
-	// Has only been used for tests so far.
-	UnknownFile = "unknown"
 	// PoFile is the file extension of Po files.
 	// Deprecated: Will be removed in a future version.
 	// The string should be kept in your own program code.
@@ -134,11 +131,11 @@ func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catal
 			return nil, errD
 		}
 
-		catl, errC := l.decoder[i].Decode(lang, domain, data)
+		cat, errC := l.decoder[i].Decode(lang, domain, data)
 		if errC != nil {
 			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, errC)
 		}
-		return catl, nil
+		return cat, nil
 	}
 
 	return nil, NewErrNotFound(lang, "file", "domain=%q", domain)

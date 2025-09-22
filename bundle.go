@@ -199,7 +199,7 @@ func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) error {
 	catalogs := make(map[string]catalog.Catalog, len(b.domainLoaders))
 
 	for domain, domainLoader := range b.domainLoaders {
-		catl, errD := domainLoader.Load(lang, domain)
+		cat, errD := domainLoader.Load(lang, domain)
 		if errD != nil {
 			var notFoundErr *ErrNotFound
 			if errors.As(errD, &notFoundErr) {
@@ -214,7 +214,7 @@ func (b *bundleBuilder) createLocale(optional bool, lang language.Tag) error {
 			return errD
 		}
 
-		catalogs[domain] = catl
+		catalogs[domain] = cat
 		if !slices.Contains(b.domains, domain) {
 			b.domains = append(b.domains, domain)
 		}
@@ -337,7 +337,7 @@ func WithDomainFs(domain string, fsys fs.FS) BundleOption {
 // The passed languages must be of type string or language.Tag,
 // all other values will abort the initialization of the bundle with an error.
 // If a catalog file for a domain is not found for a language, it will be ignored.
-// If a catlaog file for a domain is found but cannot be loaded, the bundle creation will fail and return errors.
+// If a catalog file for a domain is found but cannot be loaded, the bundle creation will fail and return errors.
 //
 // If you want to use a Localizer, you should pay attention to the order in which the languages are specified,
 // otherwise unexpected behavior may occur.

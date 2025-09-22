@@ -19,7 +19,7 @@ var (
 	errMissingLocale = errors.New("spreak: locale missing")
 )
 
-// PrintFunc formats according to a format specifier and returns the resulting string.
+// PrintFunc formats, according to a format specifier, and returns the resulting string.
 // Like fmt.Sprintf(...)
 type PrintFunc func(str string, vars ...any) string
 

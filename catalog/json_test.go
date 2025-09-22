@@ -217,8 +217,8 @@ func TestJSONCatalog(t *testing.T) {
 
 func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 	t.Run("Marshals singular as singel string", func(t *testing.T) {
-		catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		catl.mustSetMessage("car", &JSONMessage{
+		cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		cat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.Other: "Car",
 			},
@@ -227,14 +227,14 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 		res := `{"car": "Car"}`
 
 		buf := &bytes.Buffer{}
-		err := NewJSONEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(cat)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
 
 	t.Run("Marshals context as object", func(t *testing.T) {
-		catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		catl.mustSetMessage("car_ctx", &JSONMessage{
+		cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		cat.mustSetMessage("car_ctx", &JSONMessage{
 			Context: "ctx",
 			Translations: map[cldrplural.Category]string{
 				cldrplural.Other: "Car",
@@ -243,14 +243,14 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 
 		res := `{"car_ctx": {"context": "ctx","other": "Car"}}`
 		buf := &bytes.Buffer{}
-		err := NewJSONEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(cat)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
 
 	t.Run("Marshals plural as object", func(t *testing.T) {
-		catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		catl.mustSetMessage("car", &JSONMessage{
+		cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		cat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Other: "Cars",
@@ -259,7 +259,7 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 
 		res := `{"car": {"one": "Car","other": "Cars"}}`
 		buf := &bytes.Buffer{}
-		err := NewJSONEncoder(buf).Encode(catl)
+		err := NewJSONEncoder(buf).Encode(cat)
 		assert.NoError(t, err)
 		assert.JSONEq(t, res, buf.String())
 	})
@@ -268,15 +268,15 @@ func Test_jsonCatalog_MarshalJSON(t *testing.T) {
 func Test_jsonCatalog_UnmarshalJSON(t *testing.T) {
 
 	t.Run("Unmarshal adds missing plural categories", func(t *testing.T) {
-		catl := NewJSONCatalog(language.Polish, "").(*jsonCatalog)
-		catl.mustSetMessage("car", &JSONMessage{
+		cat := NewJSONCatalog(language.Polish, "").(*jsonCatalog)
+		cat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Other: "Cars",
 			},
 		})
 
-		translations := catl.lookupMap[""]["car"].Translations
+		translations := cat.lookupMap[""]["car"].Translations
 		assert.Contains(t, translations, cldrplural.One)
 		assert.Contains(t, translations, cldrplural.Few)
 		assert.Contains(t, translations, cldrplural.Many)
@@ -284,8 +284,8 @@ func Test_jsonCatalog_UnmarshalJSON(t *testing.T) {
 	})
 
 	t.Run("Unmarshal removes missing plural categries", func(t *testing.T) {
-		catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		catl.mustSetMessage("car", &JSONMessage{
+		cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		cat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Few:   "Few cars",
@@ -293,7 +293,7 @@ func Test_jsonCatalog_UnmarshalJSON(t *testing.T) {
 			},
 		})
 
-		translations := catl.lookupMap[""]["car"].Translations
+		translations := cat.lookupMap[""]["car"].Translations
 		assert.Contains(t, translations, cldrplural.One)
 		assert.NotContains(t, translations, cldrplural.Few)
 		assert.NotContains(t, translations, cldrplural.Many)
@@ -303,17 +303,17 @@ func Test_jsonCatalog_UnmarshalJSON(t *testing.T) {
 
 func TestNewJsonCatalogWithTranslations(t *testing.T) {
 	t.Run("returns correct value", func(t *testing.T) {
-		catl, err := NewJSONCatalogWithMessages(language.Polish, "", nil)
+		cat, err := NewJSONCatalogWithMessages(language.Polish, "", nil)
 		assert.NoError(t, err)
-		assert.NotNil(t, catl)
+		assert.NotNil(t, cat)
 
-		assert.Equal(t, language.Polish, catl.Language())
-		assert.Equal(t, "", catl.Domain())
+		assert.Equal(t, language.Polish, cat.Language())
+		assert.Equal(t, "", cat.Domain())
 
-		catl, err = NewJSONCatalogWithMessages(language.Polish, "domain", nil)
+		cat, err = NewJSONCatalogWithMessages(language.Polish, "domain", nil)
 		assert.NoError(t, err)
-		assert.NotNil(t, catl)
-		assert.Equal(t, "domain", catl.Domain())
+		assert.NotNil(t, cat)
+		assert.Equal(t, "domain", cat.Domain())
 	})
 
 	t.Run("empty map is valid", func(t *testing.T) {
@@ -325,20 +325,20 @@ func TestNewJsonCatalogWithTranslations(t *testing.T) {
 	})
 
 	t.Run("Updates plural rules", func(t *testing.T) {
-		srcCatl := NewJSONCatalog(language.English, "").(*jsonCatalog)
-		srcCatl.mustSetMessage("car", &JSONMessage{
+		srcCat := NewJSONCatalog(language.English, "").(*jsonCatalog)
+		srcCat.mustSetMessage("car", &JSONMessage{
 			Translations: map[cldrplural.Category]string{
 				cldrplural.One:   "Car",
 				cldrplural.Other: "Cars",
 			},
 		})
 
-		cpy, err := NewJSONCatalogWithMessages(language.Polish, "", srcCatl.Messages())
+		cpy, err := NewJSONCatalogWithMessages(language.Polish, "", srcCat.Messages())
 		require.NoError(t, err)
-		catl := cpy.(*jsonCatalog)
+		cat := cpy.(*jsonCatalog)
 
-		srcTranslations := srcCatl.lookupMap[""]["car"].Translations
-		translations := catl.lookupMap[""]["car"].Translations
+		srcTranslations := srcCat.lookupMap[""]["car"].Translations
+		translations := cat.lookupMap[""]["car"].Translations
 
 		assert.Contains(t, srcTranslations, cldrplural.One)
 		assert.NotContains(t, srcTranslations, cldrplural.Few)
@@ -350,11 +350,11 @@ func TestNewJsonCatalogWithTranslations(t *testing.T) {
 		assert.Contains(t, translations, cldrplural.Many)
 		assert.Contains(t, translations, cldrplural.Other)
 
-		cpy, err = NewJSONCatalogWithMessages(language.English, "", catl.Messages())
+		cpy, err = NewJSONCatalogWithMessages(language.English, "", cat.Messages())
 		require.NoError(t, err)
-		catl = cpy.(*jsonCatalog)
+		cat = cpy.(*jsonCatalog)
 
-		translations = catl.lookupMap[""]["car"].Translations
+		translations = cat.lookupMap[""]["car"].Translations
 		assert.Contains(t, translations, cldrplural.One)
 		assert.Contains(t, translations, cldrplural.Other)
 	})
@@ -374,7 +374,7 @@ func TestNewJsonCatalogWithTranslations(t *testing.T) {
 }
 
 func Test_jsonCatalog_setMessage(t *testing.T) {
-	catl := NewJSONCatalog(language.English, "").(*jsonCatalog)
+	cat := NewJSONCatalog(language.English, "").(*jsonCatalog)
 	validMsg := &JSONMessage{
 		Translations: map[cldrplural.Category]string{
 			cldrplural.One:   "Car",
@@ -383,11 +383,11 @@ func Test_jsonCatalog_setMessage(t *testing.T) {
 	}
 
 	t.Run("empty message id", func(t *testing.T) {
-		assert.Error(t, catl.setMessage("", validMsg))
+		assert.Error(t, cat.setMessage("", validMsg))
 	})
 
 	t.Run("nil message", func(t *testing.T) {
-		assert.Error(t, catl.setMessage("", nil))
+		assert.Error(t, cat.setMessage("", nil))
 	})
 
 	t.Run("missiong plural rule other", func(t *testing.T) {
@@ -396,7 +396,7 @@ func Test_jsonCatalog_setMessage(t *testing.T) {
 				cldrplural.One: "Car",
 			},
 		}
-		assert.Error(t, catl.setMessage("valid_key", msg))
+		assert.Error(t, cat.setMessage("valid_key", msg))
 	})
 
 	t.Run("invalid context", func(t *testing.T) {
@@ -408,8 +408,8 @@ func Test_jsonCatalog_setMessage(t *testing.T) {
 			},
 		}
 
-		assert.Error(t, catl.setMessage("valid_key", msg))
-		assert.NoError(t, catl.setMessage("valid_ctx", msg))
+		assert.Error(t, cat.setMessage("valid_key", msg))
+		assert.NoError(t, cat.setMessage("valid_ctx", msg))
 	})
 
 	t.Run("dont edit message", func(t *testing.T) {
@@ -418,10 +418,10 @@ func Test_jsonCatalog_setMessage(t *testing.T) {
 				cldrplural.Other: "Car",
 			},
 		}
-		assert.NoError(t, catl.setMessage("car", msg))
+		assert.NoError(t, cat.setMessage("car", msg))
 
 		msg.Translations[cldrplural.One] = "One car"
-		catMsg := catl.lookupMap[""]["car"]
+		catMsg := cat.lookupMap[""]["car"]
 		assert.NotContains(t, catMsg.Translations, cldrplural.One)
 
 		catMsg.Translations[cldrplural.Few] = "Few cars"
