@@ -92,38 +92,48 @@ func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 }
 
 func (l *FilesystemLoader) Load(lang language.Tag, domain string) (catalog.Catalog, error) {
-
 	for i, extension := range l.extensions {
-		resolvedPath, errP := l.resolver.Resolve(l.fsys, extension, lang, domain)
-		if errP != nil {
-			if errors.Is(errP, os.ErrNotExist) {
+		cat, err := l.loadFromFile(lang, domain, extension, i)
+		if err != nil {
+			if errors.Is(err, os.ErrNotExist) {
 				continue
 			}
-			return nil, errP
+			return nil, err
 		}
 
-		f, errF := l.fsys.Open(resolvedPath)
-		if errF != nil {
-			if f != nil {
-				_ = f.Close()
-			}
-			return nil, errF
-		}
-		defer f.Close()
-
-		data, errD := io.ReadAll(f)
-		if errD != nil {
-			return nil, errD
-		}
-
-		cat, errC := l.decoder[i].Decode(lang, domain, data)
-		if errC != nil {
-			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, errC)
-		}
 		return cat, nil
 	}
 
 	return nil, NewErrNotFound(lang, "file", "domain=%q", domain)
+}
+
+func (l *FilesystemLoader) loadFromFile(lang language.Tag, domain, extension string, decoderIndex int) (cat catalog.Catalog, err error) {
+	resolvedPath, err := l.resolver.Resolve(l.fsys, extension, lang, domain)
+	if err != nil {
+		return nil, err
+	}
+
+	file, err := l.fsys.Open(resolvedPath)
+	if err != nil {
+		return nil, err
+	}
+	defer func() {
+		if closeErr := file.Close(); closeErr != nil {
+			err = errors.Join(err, closeErr)
+		}
+	}()
+
+	data, err := io.ReadAll(file)
+	if err != nil {
+		return nil, err
+	}
+
+	cat, err = l.decoder[decoderIndex].Decode(lang, domain, data)
+	if err != nil {
+		return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, err)
+	}
+
+	return cat, nil
 }
 
 func (l *FilesystemLoader) addDecoder(ext string, decoder catalog.Decoder) {
@@ -252,55 +262,58 @@ func (r *defaultResolver) Resolve(fsys fs.FS, extension string, tag language.Tag
 }
 
 func (r *defaultResolver) searchFileForLanguageName(fsys fs.FS, locale, domain, ext string) (string, error) {
-	if domain != "" {
-		// .../locale/category/domain.mo
-		searchPath := path.Join(locale, r.category, domain+ext)
+	// Helper function to try a path and return it if it exists
+	tryPath := func(pathElements ...string) (string, bool) {
+		searchPath := path.Join(pathElements...)
 		if _, err := fs.Stat(fsys, searchPath); err == nil {
+			return searchPath, true
+		}
+		return "", false
+	}
+
+	// .../locale/category/domain.mo
+	if domain != "" {
+		if searchPath, found := tryPath(locale, r.category, domain+ext); found {
 			return searchPath, nil
 		}
 	}
 
-	if r.search {
-		if domain != "" {
-			// .../locale/LC_MESSAGES/domain.mo
-			searchPath := path.Join(locale, "LC_MESSAGES", domain+ext)
-			if _, err := fs.Stat(fsys, searchPath); err == nil {
-				return searchPath, nil
-			}
+	if !r.search {
+		return "", os.ErrNotExist
+	}
 
-			// .../locale/domain.mo
-			searchPath = path.Join(locale, domain+ext)
-			if _, err := fs.Stat(fsys, searchPath); err == nil {
-				return searchPath, nil
-			}
-
-			// .../domain/locale.mo
-			searchPath = path.Join(domain, locale+ext)
-			if _, err := fs.Stat(fsys, searchPath); err == nil {
-				return searchPath, nil
-			}
-		}
-
-		// .../locale.mo
-		searchPath := path.Join(locale + ext)
-		if _, err := fs.Stat(fsys, searchPath); err == nil {
+	// Extended search patterns when search is enabled
+	if domain != "" {
+		// .../locale/LC_MESSAGES/domain.mo
+		if searchPath, found := tryPath(locale, "LC_MESSAGES", domain+ext); found {
 			return searchPath, nil
 		}
-
-		if r.category != "" {
-			// .../category/locale.mo
-			searchPath = path.Join(r.category, locale+ext)
-			if _, err := fs.Stat(fsys, searchPath); err == nil {
-				return searchPath, nil
-			}
+		// .../locale/domain.mo
+		if searchPath, found := tryPath(locale, domain+ext); found {
+			return searchPath, nil
 		}
+		// .../domain/locale.mo
+		if searchPath, found := tryPath(domain, locale+ext); found {
+			return searchPath, nil
+		}
+	}
 
-		if r.category != "LC_MESSAGES" {
-			// .../LC_MESSAGES/locale.mo
-			searchPath = path.Join("LC_MESSAGES", locale+ext)
-			if _, err := fs.Stat(fsys, searchPath); err == nil {
-				return searchPath, nil
-			}
+	// .../locale.mo
+	if searchPath, found := tryPath(locale + ext); found {
+		return searchPath, nil
+	}
+
+	// .../category/locale.mo
+	if r.category != "" {
+		if searchPath, found := tryPath(r.category, locale+ext); found {
+			return searchPath, nil
+		}
+	}
+
+	// .../LC_MESSAGES/locale.mo
+	if r.category != "LC_MESSAGES" {
+		if searchPath, found := tryPath("LC_MESSAGES", locale+ext); found {
+			return searchPath, nil
 		}
 	}
 
