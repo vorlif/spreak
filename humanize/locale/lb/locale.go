@@ -1,4 +1,4 @@
-package da
+package lb
 
 import (
 	"embed"
@@ -13,7 +13,7 @@ var fsys embed.FS
 
 func New() *humanize.LocaleData {
 	return &humanize.LocaleData{
-		Lang: language.MustParse("da"),
+		Lang: language.MustParse("lb"),
 		Fs:   fsys,
 	}
 }
