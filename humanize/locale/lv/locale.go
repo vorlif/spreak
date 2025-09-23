@@ -1,4 +1,4 @@
-package da
+package lv
 
 import (
 	"embed"
@@ -13,7 +13,7 @@ var fsys embed.FS
 
 func New() *humanize.LocaleData {
 	return &humanize.LocaleData{
-		Lang: language.MustParse("da"),
+		Lang: language.MustParse("lv"),
 		Fs:   fsys,
 		Format: &humanize.FormatData{
 			DateFormat:          "j. F Y",
