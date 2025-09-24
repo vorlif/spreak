@@ -2,6 +2,7 @@ package humanize
 
 import (
 	"math"
+	"strconv"
 
 	"golang.org/x/text/number"
 
@@ -140,13 +141,17 @@ var ordinalTemplates = []struct {
 }
 
 // Ordinal converts an integer to its ordinal as a string. 1 is '1st', 2 is '2nd',
-// 3 is '3rd', etc. Works for any integer.
+// 3 is '3rd', etc. Works for any non-negative integer.
 //
 // Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Ordinal(i any) string {
 	floatValue, err := util.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
+	}
+
+	if floatValue < 0 {
+		return strconv.FormatInt(int64(floatValue), 10)
 	}
 
 	value := int64(floatValue)

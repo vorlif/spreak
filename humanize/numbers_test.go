@@ -249,6 +249,9 @@ func TestHumanizer_Ordinal(t *testing.T) {
 			{"102", "102nd"},
 			{"103", "103rd"},
 			{"111", "111th"},
+			{"-0", "0th"},
+			{"-1", "-1"},
+			{"-105", "-105"},
 			{"something else", "%!(string=something else)"},
 			{nil, "<nil>"},
 		}
