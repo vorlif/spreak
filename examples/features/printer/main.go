@@ -6,8 +6,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2"
 )
 
 const (
@@ -28,17 +27,14 @@ func main() {
 
 	t := spreak.NewLocalizer(bundle, language.German)
 
-	var msg localize.MsgID
-
-	// TRANSLATORS: %{name}s is the name of a person
-	msg = "My name is %{name}s and I am %{age}d years old"
+	var msg = "My name is %{name}s and I am %{age}d years old"
 
 	fmt.Println(t.Getf(msg, "name", "Bob", "age", 8))
 	// Output: Mein Name ist Bob und ich bin 8 Jahre alt
 }
 
 // A printer creates a function for each language, which is responsible for embedding the variables in the string.
-// Like fmt.Sprintf(string, ...variables)
+// Like fmt.Sprintf(string, ...variables).
 type myPrinter struct{}
 
 var _ spreak.Printer = (*myPrinter)(nil)

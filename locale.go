@@ -3,9 +3,9 @@ package spreak
 import (
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/catalog/poplural"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2/catalog"
+	"github.com/vorlif/spreak/v2/catalog/poplural"
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 type locale struct {

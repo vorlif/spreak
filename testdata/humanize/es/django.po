@@ -1,2 +1,0 @@
-this file is an invalid po file
-for tests only

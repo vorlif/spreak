@@ -5,8 +5,9 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2"
+
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 func ExampleNewBundle() {

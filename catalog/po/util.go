@@ -7,7 +7,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 const nbsp = 0xA0

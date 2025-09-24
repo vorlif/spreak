@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2/catalog"
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 func TestParseLanguageName(t *testing.T) {

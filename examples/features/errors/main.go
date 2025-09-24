@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/v2"
 )
 
 // When xspreak is run with the -e option, the strings for errors.New are also extracted.

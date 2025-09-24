@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/v2/catalog"
 )
 
 func getLocale(t *testing.T) *locale {

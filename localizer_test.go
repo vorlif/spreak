@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 func getLocalizerForTest(t *testing.T) *Localizer {

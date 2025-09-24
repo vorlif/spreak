@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // Marshal serializes a Go File as a .po document.

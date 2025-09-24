@@ -3,8 +3,8 @@ package poplural
 import (
 	"math"
 
-	"github.com/vorlif/spreak/catalog/poplural/ast"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/catalog/poplural/ast"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // Rule represents a rule as specified in the header of the po file under `Plural-Forms`.

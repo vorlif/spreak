@@ -9,7 +9,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak"
+	"github.com/vorlif/spreak/v2"
 )
 
 const CookieName = "lang"
@@ -42,7 +42,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", h))
 }
 
-// A simple handler which holds the bundle with the translations and the templates
+// A simple handler which holds the bundle with the translations and the templates.
 type handler struct {
 	bundle    *spreak.Bundle
 	templates *template.Template
@@ -62,7 +62,7 @@ func (h *handler) createLocalizer(r *http.Request) *spreak.KeyLocalizer {
 	return spreak.NewKeyLocalizer(h.bundle, clientLanguages...)
 }
 
-// Routing of the requests
+// Routing of the requests.
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case "/":

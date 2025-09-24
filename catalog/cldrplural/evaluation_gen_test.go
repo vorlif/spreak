@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vorlif/spreak/catalog/cldrplural/ast"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural/ast"
 )
 
 func TestEvaluateBmBoDzHnjIdIgIiJaJboJvJwKdeKeaKmKoLktLoMsMyNqoOsaSahSesSgSuThToTpiUndViWoYoYueZh(t *testing.T) {

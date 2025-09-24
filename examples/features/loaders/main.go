@@ -5,8 +5,9 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak"
-	"github.com/vorlif/spreak/catalog"
+	"github.com/vorlif/spreak/v2/catalog"
+
+	"github.com/vorlif/spreak/v2"
 )
 
 const (

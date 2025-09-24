@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/catalog/poplural/ast"
+	"github.com/vorlif/spreak/v2/catalog/poplural/ast"
 )
 
 func newRuleData(rawRule string) *ruleData {

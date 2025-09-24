@@ -5,8 +5,8 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/util"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2/internal/util"
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 // A Localizer holds the catalogs of all domains for a language and provides an interface for their use.

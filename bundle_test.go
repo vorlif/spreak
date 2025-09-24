@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/catalog"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 func TestNewBundle(t *testing.T) {

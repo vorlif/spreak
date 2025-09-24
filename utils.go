@@ -10,7 +10,7 @@ import (
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 var (

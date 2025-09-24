@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/catalog"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // NoDomain is the domain which is used if no default domain is stored.

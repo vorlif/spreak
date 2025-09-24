@@ -14,8 +14,8 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/cldrplural/ast"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural/ast"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))
@@ -198,7 +198,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vorlif/spreak/catalog/cldrplural/ast"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural/ast"
 )
 
 {{range $key, $data := .}}

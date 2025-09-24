@@ -9,8 +9,8 @@ import (
 
 	"github.com/Xuanwo/go-locale"
 
-	"github.com/vorlif/spreak"
-	"github.com/vorlif/spreak/localize"
+	"github.com/vorlif/spreak/v2"
+	"github.com/vorlif/spreak/v2/localize"
 )
 
 const (
@@ -20,7 +20,7 @@ const (
 
 var (
 	// The texts of Errors can be extracted by xspreak.
-	// For this append the -e optiona
+	// For this append the -e optiona.
 	ErrInvalidHolidayName = errors.New("the name of the holiday has an invalid format")
 )
 

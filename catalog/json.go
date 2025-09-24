@@ -12,8 +12,8 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/cldrplural"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // A JSONCatalog represents a collection of translations in JSON format.

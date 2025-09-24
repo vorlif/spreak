@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/cldrplural"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural"
 )
 
 var enJSONTestFile = filepath.FromSlash("../testdata/translation-test/json/en.json")

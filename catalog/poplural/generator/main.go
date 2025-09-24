@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 func main() {

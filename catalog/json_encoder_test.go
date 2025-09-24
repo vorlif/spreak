@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/cldrplural"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural"
 )
 
 func TestJsonEncoder_Encode(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/vorlif/spreak/catalog/cldrplural"
+	"github.com/vorlif/spreak/v2/catalog/cldrplural"
 )
 
 type dataSet struct {

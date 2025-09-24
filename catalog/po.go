@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/catalog/poplural"
+	"github.com/vorlif/spreak/v2/catalog/poplural"
 )
 
 // PoLookupMap is a map for a quick lookup of messages.

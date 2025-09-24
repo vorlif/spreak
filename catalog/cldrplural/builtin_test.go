@@ -13,10 +13,10 @@ import (
 
 // Returns the name of a function for a function type.
 func getFuncName(i any) string {
-	// github.com/vorlif/spreak/catalog/poplural.forLanguage.newFormCsSk.func28
+	// github.com/vorlif/spreak/v2/catalog/poplural.forLanguage.newFormCsSk.func28
 	funcName := runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()
 	if idx := strings.LastIndex(funcName, "."); idx >= 0 {
-		// github.com/vorlif/spreak/catalog/poplural.forLanguage.newFormCsSk
+		// github.com/vorlif/spreak/v2/catalog/poplural.forLanguage.newFormCsSk
 		return funcName[:idx]
 	}
 	return funcName
