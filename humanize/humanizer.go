@@ -13,6 +13,8 @@ const (
 )
 
 // Collection data structure which collects the translations and can create humanizers.
+// Deprecated: The Humanize package has been moved to a separate library and will be removed with v2.
+// See: https://github.com/vorlif/humanize?tab=readme-ov-file#migrate-from-spreak
 type Collection struct {
 	bundle  *spreak.Bundle
 	locales map[language.Tag]*FormatData
@@ -24,6 +26,8 @@ type options struct {
 }
 
 // A Humanizer represents a collection of functions for humanizing data structures for a chosen language.
+// Deprecated: The Humanize package has been moved to a separate library and will be removed with v2.
+// See: https://github.com/vorlif/humanize?tab=readme-ov-file#migrate-from-spreak
 type Humanizer struct {
 	loc    *spreak.Localizer
 	format *FormatData
@@ -96,6 +100,8 @@ func WithBundleOption(opt spreak.BundleOption) Option {
 }
 
 // New creates a new Collection which holds the humanizers for the selected locales.
+// Deprecated: The Humanize package has been moved to a separate library and will be removed with v2.
+// See: https://github.com/vorlif/humanize?tab=readme-ov-file#migrate-from-spreak
 func New(opts ...Option) (*Collection, error) {
 	o := &options{
 		bundleOptions: nil,
@@ -145,6 +151,8 @@ func New(opts ...Option) (*Collection, error) {
 }
 
 // MustNew is similar to New except it panics if an error happens.
+// Deprecated: The Humanize package has been moved to a separate library and will be removed with v2.
+// See: https://github.com/vorlif/humanize?tab=readme-ov-file#migrate-from-spreak
 func MustNew(opts ...Option) *Collection {
 	collection, err := New(opts...)
 	if err != nil {

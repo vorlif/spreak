@@ -14,7 +14,6 @@ I wanted to solve these problems for myself, and so spreak was born.
 ### Features
 
 * Built-in support for `po`, `mo` and [`json`](./examples/features/jhttptempl) files
-* [Direct support for humanization](#package-humanize-)  of Go data structures
 * Support for `fs.FS` (e.g. `embed`)
 * Goroutine-safe and lock free through immutability
 * [Powerful extractor](https://github.com/vorlif/xspreak#xspreak) for strings to simplify the localization process
@@ -212,65 +211,15 @@ t := spreak.NewLocalizer(bundle, language.English)
 * Take a look in the [examples folder](./examples) for more examples of using spreak.
 * Use it!
 
-## Package humanize [![PkgGoDev](https://pkg.go.dev/badge/github.com/vorlif/spreak/humanize)](https://pkg.go.dev/github.com/vorlif/spreak/humanize)
+## Package humanize
 
-The `humanize` package provides a collection of functions to convert Go data structures into a human-readable format.
-It was widely adapted from the [Django project](https://github.com/django/django) and also uses the Django translations.
-It should therefore be noted that the translations are under
-the [Django's 3-clause BSD license](https://raw.githubusercontent.com/django/django/main/LICENSE).
+**Attention**: For a clean separation and easier maintenance, the `humanize` package has been separated
+into a separate library and can now be found under https://github.com/vorlif/humanize.
 
-To use the `humanize` package, you first need to load the languages you want to use.
-You can find a list of all supported languages under [humanize/locale/](humanize/locale)
+The package in this repository is marked as deprecated and will be removed with the release of v2.
 
-```go
-package main
-
-import (
-	"fmt"
-	"time"
-
-	"golang.org/x/text/language"
-
-	"github.com/vorlif/spreak/humanize"
-	"github.com/vorlif/spreak/humanize/locale/ar"
-	"github.com/vorlif/spreak/humanize/locale/es"
-	"github.com/vorlif/spreak/humanize/locale/zhHans"
-)
-
-func main() {
-	// Load the translations for the desired languages
-	collection := humanize.MustNew(
-		humanize.WithLocale(es.New(), ar.New(), zhHans.New()),
-	)
-
-	// Create a humanizer.
-	// A humanizer features a collection of humanize functions for a language.
-	h := collection.CreateHumanizer(language.English)
-
-	// Uses the functions...
-	fmt.Println(h.Intword(1_000_000_000))
-	// Output: 1.0 billion
-
-	fmt.Println(h.NaturalDay(time.Now()))
-	// Output: today
-
-	t := time.Now().Add(5 * time.Minute)
-	fmt.Println(h.NaturalTime(t))
-	// Output: 5 minutes from now
-
-	d := -80 * time.Hour
-	fmt.Println(h.TimeSince(d))
-	// Output: 3 days, 8 hours
-
-	// ... for different languages
-	h = collection.CreateHumanizer(language.Spanish)
-	fmt.Println(h.TimeSince(d))
-	// Output: 3 días, 8 horas
-}
-```
-
-A collection of all functions and further examples can be found in
-the [documentation](https://pkg.go.dev/github.com/vorlif/spreak/humanize).
+To change the library, simply
+follow [the migration guide](https://github.com/vorlif/humanize?tab=readme-ov-file#migrate-from-spreak).
 
 ### Add translations
 
