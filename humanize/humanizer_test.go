@@ -1,6 +1,7 @@
 package humanize
 
 import (
+	"os"
 	"path/filepath"
 	"testing"
 
@@ -8,7 +9,6 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak"
-	"github.com/vorlif/spreak/internal/util"
 )
 
 var testdataDir = filepath.FromSlash("../testdata/humanize")
@@ -17,7 +17,7 @@ var esLocaleDir = filepath.FromSlash("./locale/es")
 
 var testGermanLocaleData = &LocaleData{
 	Lang: language.German,
-	Fs:   util.DirFS(deLocaleDir),
+	Fs:   os.DirFS(deLocaleDir),
 	Format: &FormatData{
 		DateFormat:          "j. F Y",
 		TimeFormat:          "H:i",
@@ -31,7 +31,7 @@ var testGermanLocaleData = &LocaleData{
 }
 
 func createNewParcel(_ *testing.T) *Collection {
-	es := &LocaleData{Lang: language.Spanish, Fs: util.DirFS(esLocaleDir)}
+	es := &LocaleData{Lang: language.Spanish, Fs: os.DirFS(esLocaleDir)}
 
 	return MustNew(WithLocale(testGermanLocaleData, es))
 }

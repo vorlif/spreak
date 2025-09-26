@@ -2,6 +2,7 @@ package spreak
 
 import (
 	"errors"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,7 +10,6 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/internal/util"
 )
 
 func TestNewBundle(t *testing.T) {
@@ -258,7 +258,7 @@ func TestWithDomainFs1(t *testing.T) {
 	})
 
 	t.Run("The passed filesystem is set", func(t *testing.T) {
-		fsys := util.DirFS(testdataStructureDir)
+		fsys := os.DirFS(testdataStructureDir)
 		bundle, err := NewBundle(WithDomainFs(NoDomain, fsys))
 		require.NoError(t, err)
 		require.NotNil(t, bundle)
