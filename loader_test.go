@@ -14,7 +14,6 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog"
-	"github.com/vorlif/spreak/internal/util"
 )
 
 //go:embed testdata/structure/*
@@ -73,7 +72,7 @@ func TestWithCategory(t *testing.T) {
 		require.NoError(t, errResolver)
 
 		fsLoader, err := NewFilesystemLoader(
-			WithFs(util.DirFS(testdataStructureDir)),
+			WithFs(os.DirFS(testdataStructureDir)),
 			WithResolver(reducer),
 		)
 		require.NoError(t, err)
@@ -90,7 +89,7 @@ func TestWithCategory(t *testing.T) {
 }
 
 func TestLoadPo(t *testing.T) {
-	fsys := util.DirFS(testdataStructureDir)
+	fsys := os.DirFS(testdataStructureDir)
 	tests := []struct {
 		lang      language.Tag
 		domain    string
@@ -144,7 +143,7 @@ func TestReduceMoFiles(t *testing.T) {
 	require.NoError(t, errR)
 	require.NotNil(t, reducer)
 
-	fsys := util.DirFS(testdataStructureDir)
+	fsys := os.DirFS(testdataStructureDir)
 	tests := []struct {
 		lang      language.Tag
 		domain    string
@@ -181,7 +180,7 @@ func TestReduceMoFiles(t *testing.T) {
 }
 
 func TestDisableSearch(t *testing.T) {
-	fsys := util.DirFS(testdataStructureDir)
+	fsys := os.DirFS(testdataStructureDir)
 	tests := []struct {
 		lang      language.Tag
 		domain    string
