@@ -42,11 +42,13 @@ func NewComment() *Comment {
 }
 
 func (c *Comment) AddReference(ref *Reference) {
-	if c.References == nil {
-		c.References = make([]*Reference, 0)
+	if len(c.References) == 0 {
+		c.References = []*Reference{ref}
+		return
 	}
+
 	c.References = append(c.References, ref)
-	c.sort()
+	c.sortReferences()
 }
 
 func (c *Comment) HasFlag(flag string) bool {
@@ -86,20 +88,15 @@ func (c *Comment) Merge(other *Comment) {
 }
 
 func (c *Comment) mergeReferences(other *Comment) {
-	newReferences := make([]*Reference, 0)
+	newReferences := make([]*Reference, 0, len(c.References)+len(other.References))
+	copy(newReferences, c.References)
 
 	for _, otherRef := range other.References {
-		hasRef := false
-		for _, ref := range c.References {
-			if ref.Equal(otherRef) {
-				hasRef = true
-				break
-			}
+		if slices.ContainsFunc(c.References, func(ref *Reference) bool { return ref.Equal(otherRef) }) {
+			continue
 		}
 
-		if !hasRef {
-			newReferences = append(newReferences, otherRef)
-		}
+		newReferences = append(newReferences, otherRef)
 	}
 
 	c.References = append(c.References, newReferences...)
@@ -107,7 +104,10 @@ func (c *Comment) mergeReferences(other *Comment) {
 
 func (c *Comment) sort() {
 	sort.Strings(c.Flags)
+	c.sortReferences()
+}
 
+func (c *Comment) sortReferences() {
 	sort.Slice(c.References, func(i, j int) bool {
 		if c.References[i].Path != c.References[j].Path {
 			return c.References[i].Path < c.References[j].Path
@@ -122,22 +122,22 @@ func (c *Comment) sort() {
 }
 
 func mergeStringArrays(left, right []string) []string {
-	dst := make([]string, len(left), len(left)+len(right))
-	copy(dst, left)
+	seen := make(map[string]bool)
+	result := make([]string, 0, len(left)+len(right))
 
-	for _, a := range right {
-		hasA := false
-		for _, b := range left {
-			if b == a {
-				hasA = true
-				break
-			}
-		}
-
-		if !hasA {
-			dst = append(dst, a)
+	for _, item := range left {
+		if !seen[item] {
+			seen[item] = true
+			result = append(result, item)
 		}
 	}
 
-	return dst
+	for _, item := range right {
+		if !seen[item] {
+			seen[item] = true
+			result = append(result, item)
+		}
+	}
+
+	return result
 }
