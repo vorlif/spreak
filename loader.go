@@ -7,11 +7,11 @@ import (
 	"io/fs"
 	"os"
 	"path"
+	"path/filepath"
 
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/v2/catalog"
-	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // Loader is responsible for loading Catalogs for a language and a domain.
@@ -162,7 +162,7 @@ func WithPath(path string) FsOption {
 		if l.fsys != nil {
 			return errors.New("spreak.Loader: filesystem for FilesystemLoader already set")
 		}
-		l.fsys = util.DirFS(path)
+		l.fsys = os.DirFS(filepath.FromSlash(path))
 		return nil
 	}
 }
