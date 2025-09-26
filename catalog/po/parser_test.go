@@ -91,7 +91,7 @@ msgid_plural "id_plural"
 msgstr[0] "ID"
 msgstr[a] "ID"`
 
-		f, err := Parse([]byte(content))
+		f, err := ParseString(content)
 		assert.Error(t, err)
 		assert.Nil(t, f)
 	})
@@ -296,6 +296,19 @@ func TestParse_PoeditFile(t *testing.T) {
 
 }
 
+func TestParse_PoeditPotFile(t *testing.T) {
+	content, errRead := os.ReadFile("../../testdata/parser/poedit.pot")
+	require.NoError(t, errRead)
+
+	p := NewParser()
+	p.SetIgnoreComments(true)
+	file, err := p.Parse(string(content))
+	require.NoError(t, err)
+	require.NotNil(t, file)
+	require.NotNil(t, file.Header)
+	require.NotNil(t, file.Messages)
+}
+
 func TestParseComment(t *testing.T) {
 	t.Run("parse flags", func(t *testing.T) {
 		content := `#, python-format
@@ -416,4 +429,31 @@ msgstr "ID"`
 		f := MustParse([]byte(content))
 		assert.NotNil(t, f)
 	})
+}
+
+func BenchmarkParser(b *testing.B) {
+	content, errRead := os.ReadFile("../../testdata/parser/poedit.pot")
+	require.NoError(b, errRead)
+
+	p := NewParser()
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_, err := p.Parse(string(content))
+		require.NoError(b, err)
+	}
+}
+
+func BenchmarkParser_SetIgnoreComments(b *testing.B) {
+	content, errRead := os.ReadFile("../../testdata/parser/poedit.pot")
+	require.NoError(b, errRead)
+
+	p := NewParser()
+	p.SetIgnoreComments(true)
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_, err := p.Parse(string(content))
+		require.NoError(b, err)
+	}
 }

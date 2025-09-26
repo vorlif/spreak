@@ -8,7 +8,6 @@ import (
 )
 
 var (
-	reComment                = regexp.MustCompile(`^#`)              // #
 	rePrevMsgContextComments = regexp.MustCompile(`^#\|\s+msgctxt`)  // #| msgctxt
 	rePrevMsgIDComments      = regexp.MustCompile(`^#\|\s+msgid`)    // #| msgid
 	rePrevStringLineComments = regexp.MustCompile(`^#\|\s+".*"\s*$`) // #| "message"
@@ -20,13 +19,22 @@ var (
 	reMsgStrPlural = regexp.MustCompile(`^msgstr\s*(\[\d+])\s*".*"\s*$`) // msgstr[0]
 	reMsgLine      = regexp.MustCompile(`^\s*".*"\s*$`)                  // "message"
 	reBlankLine    = regexp.MustCompile(`^\s*$`)                         //
+
+	msgCtxPrefix      = "msgctxt "
+	msgIDPrefix       = "msgid "
+	msgIDPluralPrefix = "msgid_plural "
+	msgStrPrefix      = "msgstr"
+	emptyMessageStr   = `msgstr ""`
 )
 
 type scanner struct {
 	lines []string
 	pos   int
 
-	lastToken token
+	lastToken        token
+	whitespaceBuffer bytes.Buffer
+
+	ignoreComments bool
 }
 
 func newScanner(content string) *scanner {
@@ -47,24 +55,106 @@ func (s *scanner) scan() (tok token, lit string) {
 		return eof, ""
 	}
 
-	if tokk, l := s.scanRegex(line); tokk != none {
+	// Short path for better performance
+	if len(line) == 0 {
+		s.unread()
+		return s.scanWhitespace()
+	}
+
+	if line[0] == '#' {
+		return s.scanComment(line)
+	}
+
+	if tokk, l := s.scanMessage(line); tokk != none {
 		return tokk, l
 	}
 
-	if !reComment.MatchString(line) {
-		return failure, line
+	if len(strings.TrimSpace(line)) == 0 {
+		s.unread()
+		return s.scanWhitespace()
+	}
+
+	return failure, line
+}
+
+func (s *scanner) scanMessage(line string) (token, string) {
+
+	trimmedLine := strings.TrimSpace(line)
+
+	// We additionally use the functions of the strings package,
+	// as these are more performant than just the regular expressions.
+
+	if strings.HasPrefix(line, msgIDPrefix) && reMsgID.MatchString(line) {
+		return msgID, line
+	}
+
+	if strings.HasPrefix(line, msgStrPrefix) {
+		if trimmedLine == emptyMessageStr || reMsgStr.MatchString(line) {
+			return msgStr, line
+		} else if reMsgStrPlural.MatchString(line) {
+			return msgStrPlural, line
+		} else {
+			return failure, line
+		}
+	}
+
+	if strings.HasPrefix(line, msgIDPluralPrefix) && reMsgIDPlural.MatchString(line) {
+		return msgIDPlural, line
+	}
+
+	if strings.HasPrefix(line, msgCtxPrefix) && reMsgContext.MatchString(line) {
+		return msgContext, line
+	}
+
+	if strings.HasPrefix(line, `"`) && strings.HasSuffix(line, `"`) && reMsgLine.MatchString(line) {
+		// "..."
+		switch s.lastToken {
+		case msgID, msgIDLine:
+			return msgIDLine, line
+		case msgIDPlural, msgIDPluralLine:
+			return msgIDPluralLine, line
+		case msgStr, msgStrLine:
+			return msgStrLine, line
+		case msgStrPlural, msgStrPluralLine:
+			return msgStrPluralLine, line
+		case msgContext, msgContextLine:
+			return msgContextLine, line
+		}
+	}
+
+	return none, line
+}
+
+func (s *scanner) scanComment(line string) (token, string) {
+	if len(line) == 0 || line[0] != '#' {
+		return s.scan()
 	}
 
 	line = strings.TrimSpace(line)
-	if len(line) == 1 {
-		// comment without content
+	lineLen := len(line)
+
+	// comment without content
+	if lineLen == 1 {
+		if s.ignoreComments {
+			return s.scan()
+		}
 		return commentTranslator, line
 	}
 
-	if len(line) == 2 {
-		// special comment without content
+	// special comment without content
+	if lineLen == 2 {
 		switch line[1] {
 		case '.', ':', ',', '|':
+			return s.scan()
+		}
+	}
+
+	if s.ignoreComments {
+		switch line[1] {
+		case ',':
+			// Flag comments will always be read
+			break
+		default:
 			return s.scan()
 		}
 	}
@@ -99,58 +189,28 @@ func (s *scanner) scan() (tok token, lit string) {
 	}
 }
 
-func (s *scanner) scanRegex(line string) (token, string) {
-	if reBlankLine.MatchString(line) {
-		s.unread()
-		return s.scanWhitespace()
-	} else if reMsgID.MatchString(line) {
-		return msgID, line
-	} else if reMsgStr.MatchString(line) {
-		return msgStr, line
-	} else if reMsgIDPlural.MatchString(line) {
-		return msgIDPlural, line
-	} else if reMsgStrPlural.MatchString(line) {
-		return msgStrPlural, line
-	} else if reMsgContext.MatchString(line) {
-		return msgContext, line
-	} else if reMsgLine.MatchString(line) {
-		// "..."
-		switch s.lastToken {
-		case msgID, msgIDLine:
-			return msgIDLine, line
-		case msgIDPlural, msgIDPluralLine:
-			return msgIDPluralLine, line
-		case msgStr, msgStrLine:
-			return msgStrLine, line
-		case msgStrPlural, msgStrPluralLine:
-			return msgStrPluralLine, line
-		case msgContext, msgContextLine:
-			return msgContextLine, line
-		}
-	}
-
-	return none, line
-}
-
 // scanWhitespace consumes the current rune and all contiguous whitespace.
 func (s *scanner) scanWhitespace() (tok token, lit string) {
-	var buf bytes.Buffer
+	s.whitespaceBuffer.Reset()
 	currentLine, _ := s.read()
-	buf.WriteString(currentLine)
+	s.whitespaceBuffer.WriteString(currentLine)
 
 	for {
 		line, err := s.read()
 		if err == io.EOF {
 			break
-		} else if !reBlankLine.MatchString(line) {
-			s.unread()
-			break
 		}
 
-		buf.WriteString(line)
+		if len(line) == 0 || strings.TrimSpace(line) == "" || reBlankLine.MatchString(line) {
+			s.whitespaceBuffer.WriteString(line)
+			continue
+		}
+
+		s.unread()
+		break
 	}
 
-	return whitespace, buf.String()
+	return whitespace, s.whitespaceBuffer.String()
 }
 
 func (s *scanner) read() (string, error) {
@@ -164,11 +224,11 @@ func (s *scanner) read() (string, error) {
 }
 
 func (s *scanner) currentLine() string {
-	if s.pos >= len(s.lines) {
+	if s.pos > len(s.lines) {
 		return ""
 	}
 
-	return s.lines[s.pos]
+	return s.lines[s.pos-1]
 }
 
 func (s *scanner) unread() {
