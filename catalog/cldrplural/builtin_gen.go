@@ -168,7 +168,7 @@ func newRuleSetCebFilTl() *RuleSet {
 		Categories: []Category{One, Other},
 		FormFunc: func(ops *Operands) Category {
 			// v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9
-			if ops.V == 0 && slices.Contains([]int64{1, 2, 3}, ops.I) || ops.V == 0 && !slices.Contains([]int64{4, 6, 9}, ops.I%10) || ops.V != 0 && !slices.Contains([]int64{4, 6, 9}, ops.F%10) {
+			if ops.V == 0 && (ops.I == 1 || ops.I == 2 || ops.I == 3) || ops.V == 0 && !slices.Contains([]int64{4, 6, 9}, ops.I%10) || ops.V != 0 && !slices.Contains([]int64{4, 6, 9}, ops.F%10) {
 				return One
 			}
 
@@ -183,7 +183,7 @@ func newRuleSetDa() *RuleSet {
 		Categories: []Category{One, Other},
 		FormFunc: func(ops *Operands) Category {
 			// n = 1 or t != 0 and i = 0,1
-			if ops.N == 1 || ops.T != 0 && slices.Contains([]int64{0, 1}, ops.I) {
+			if ops.N == 1 || ops.T != 0 && (ops.I == 0 || ops.I == 1) {
 				return One
 			}
 
@@ -198,7 +198,7 @@ func newRuleSetFfHyKab() *RuleSet {
 		Categories: []Category{One, Other},
 		FormFunc: func(ops *Operands) Category {
 			// i = 0,1
-			if slices.Contains([]int64{0, 1}, ops.I) {
+			if ops.I == 0 || ops.I == 1 {
 				return One
 			}
 
@@ -353,7 +353,7 @@ func newRuleSetFr() *RuleSet {
 		Categories: []Category{One, Many, Other},
 		FormFunc: func(ops *Operands) Category {
 			// i = 0,1
-			if slices.Contains([]int64{0, 1}, ops.I) {
+			if ops.I == 0 || ops.I == 1 {
 				return One
 			}
 
@@ -418,7 +418,7 @@ func newRuleSetLag() *RuleSet {
 			}
 
 			// i = 0,1 and n != 0
-			if slices.Contains([]int64{0, 1}, ops.I) && ops.N != 0 {
+			if (ops.I == 0 || ops.I == 1) && ops.N != 0 {
 				return One
 			}
 
