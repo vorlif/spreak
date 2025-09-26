@@ -51,7 +51,9 @@ func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
 func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
 
 func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	poFile, errParse := po.Parse(data)
+	parser := po.NewParser()
+	parser.SetIgnoreComments(true)
+	poFile, errParse := parser.Parse(string(data))
 	if errParse != nil {
 		return nil, errParse
 	}
@@ -83,7 +85,7 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 		}
 
 		if _, hasContext := lookupMap[ctx]; !hasContext {
-			lookupMap[ctx] = make(map[string]*GettextMessage)
+			lookupMap[ctx] = make(map[string]*GettextMessage, len(file.Messages[ctx]))
 		}
 
 		for msgID, poMsg := range file.Messages[ctx] {
@@ -108,28 +110,22 @@ func buildGettextCatalog(file *po.File, lang language.Tag, domain string, useCLD
 		lookupMap: lookupMap,
 	}
 
-	if useCLDRPlural {
+	hasPluralFormHeader := file.Header != nil && file.Header.PluralForms != ""
+	if useCLDRPlural || !hasPluralFormHeader {
 		cat.pluralFunc = getCLDRPluralFunction(lang)
 		return cat, nil
 	}
 
-	if file.Header != nil {
-		if val := file.Header.Get(poCLDRHeader); strings.ToLower(val) == "true" {
-			cat.pluralFunc = getCLDRPluralFunction(lang)
-			return cat, nil
-		}
-
-		if file.Header.PluralForms != "" {
-			rule, err := poplural.Parse(file.Header.PluralForms)
-			if err != nil {
-				return nil, fmt.Errorf("spreak.Decoder: plural rule for po file %v#%v could not be parsed: %w", lang, domain, err)
-			}
-			cat.pluralFunc = rule.Evaluate
-			return cat, nil
-		}
+	if val := file.Header.Get(poCLDRHeader); strings.EqualFold(val, "true") {
+		cat.pluralFunc = getCLDRPluralFunction(lang)
+		return cat, nil
 	}
 
-	cat.pluralFunc = getCLDRPluralFunction(lang)
+	rule, err := poplural.Parse(file.Header.PluralForms)
+	if err != nil {
+		return nil, fmt.Errorf("spreak.Decoder: plural rule for po file %v#%v could not be parsed: %w", lang, domain, err)
+	}
+	cat.pluralFunc = rule.Evaluate
 	return cat, nil
 }
 

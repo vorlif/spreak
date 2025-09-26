@@ -2,6 +2,7 @@ package po
 
 import (
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
 )
@@ -49,12 +50,7 @@ func (c *Comment) AddReference(ref *Reference) {
 }
 
 func (c *Comment) HasFlag(flag string) bool {
-	for _, s := range c.Flags {
-		if s == flag {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(c.Flags, flag)
 }
 
 func (c *Comment) AddFlag(flag string) {

@@ -9,7 +9,7 @@ import (
 	"unicode"
 )
 
-type parser struct {
+type Parser struct {
 	s           *scanner
 	lastToken   token  // last read token
 	lastLiteral string // last read literal
@@ -17,6 +17,14 @@ type parser struct {
 
 	header   *Header
 	messages map[string]map[string]*Message // ctx -> msgID -> Message
+
+	ignoreComments bool
+}
+
+func NewParser() *Parser {
+	p := &Parser{}
+
+	return p
 }
 
 func MustParse(content []byte) *File {
@@ -33,20 +41,35 @@ func Parse(content []byte) (*File, error) {
 }
 
 func ParseString(content string) (*File, error) {
-	p := &parser{
-		s:        newScanner(content),
-		messages: make(map[string]map[string]*Message),
-	}
-	return p.Parse()
+	p := NewParser()
+	return p.Parse(content)
 }
 
-func (p *parser) Parse() (*File, error) {
+// SetIgnoreComments instructs the Parser to skip comments when reading.
+// This can lead to better performance when reading Po files if they contain many comments.
+// Flags are also read when ignore is activated. Is deactivated by default.
+func (p *Parser) SetIgnoreComments(ignore bool) { p.ignoreComments = ignore }
+
+func (p *Parser) reset() {
+	p.messages = make(map[string]map[string]*Message, 1)
+	p.header = nil
+}
+
+func (p *Parser) Parse(content string) (*File, error) {
+	p.reset()
+	p.s = newScanner(content)
+	p.s.ignoreComments = p.ignoreComments
+
 	// special case, empty file
 	if tok, _ := p.scan(); tok == eof {
 		return nil, errors.New("po file cannot be empty")
 	}
-
 	p.unscan()
+
+	return p.parseFile()
+}
+
+func (p *Parser) parseFile() (*File, error) {
 
 	for {
 		msg, errMsg := p.parseMessage()
@@ -64,7 +87,7 @@ func (p *parser) Parse() (*File, error) {
 			}
 
 			if p.header != nil {
-				return nil, errors.New("po file can have only one message with 'msgid \"\"'")
+				return nil, fmt.Errorf("po file can have only one message with 'msgid \"\"': line %d %q", p.s.pos, p.s.currentLine())
 			}
 
 			if header, err := p.parseHeader(msg); err == nil {
@@ -102,7 +125,7 @@ func (p *parser) Parse() (*File, error) {
 	return file, nil
 }
 
-func (p *parser) parseMessage() (*Message, error) {
+func (p *Parser) parseMessage() (*Message, error) {
 	if tok, _ := p.scan(); tok == eof {
 		return nil, io.EOF
 	}
@@ -136,6 +159,7 @@ loop:
 			return nil, p.buildPosError()
 		case eof, whitespace, commentTranslator, commentExtracted, commentReference, commentFlags,
 			commentPrevContext, commentPrevMsgID, commentPrevMsgIDLine, commentPrevContextLine:
+			// Message completed
 			return msg, nil
 		case msgContext, msgContextLine:
 			msg.Context += DecodePoString(lit)
@@ -151,7 +175,7 @@ loop:
 			// We do not need to check if there is a negative index, because the scanner already checks it.
 			idx, err := strconv.Atoi(lit[left+1 : right])
 			if err != nil {
-				return nil, fmt.Errorf("po file contains an invalid entry for a plural translation (line %d)", p.s.pos)
+				return nil, fmt.Errorf("po file contains an invalid index for a plural translation (line %d)", p.s.pos)
 			}
 
 			msg.Str[idx] = DecodePoString(lit)
@@ -167,7 +191,7 @@ loop:
 	}
 }
 
-func (p *parser) parseComment() (*Comment, error) {
+func (p *Parser) parseComment() (*Comment, error) {
 	comment := NewComment()
 	for {
 		tok, line := p.scan()
@@ -245,7 +269,7 @@ func (p *parser) parseComment() (*Comment, error) {
 	}
 }
 
-func (p *parser) parseHeader(msg *Message) (*Header, error) {
+func (p *Parser) parseHeader(msg *Message) (*Header, error) {
 	header := &Header{}
 	lines := strings.Split(msg.Str[0], "\n")
 	for _, line := range lines {
@@ -267,11 +291,11 @@ func (p *parser) parseHeader(msg *Message) (*Header, error) {
 	return header, nil
 }
 
-func (p *parser) buildPosError() error {
+func (p *Parser) buildPosError() error {
 	return fmt.Errorf("po file could not be parsed: line %d %q", p.s.pos, p.s.currentLine())
 }
 
-func (p *parser) scan() (tok token, lit string) {
+func (p *Parser) scan() (tok token, lit string) {
 	if p.n == 1 {
 		p.n = 0
 		return p.lastToken, p.lastLiteral
@@ -284,4 +308,4 @@ func (p *parser) scan() (tok token, lit string) {
 	return
 }
 
-func (p *parser) unscan() { p.n = 1 }
+func (p *Parser) unscan() { p.n = 1 }

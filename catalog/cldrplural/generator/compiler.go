@@ -89,6 +89,16 @@ func compileNode(node ast.Node) string {
 				if isFloatOperand {
 					b.WriteString(fmt.Sprintf("isFloatOneOf(%s, ", compiledExpr))
 					b.WriteString(strings.Join(singleValues, ","))
+				} else if len(singleValues) <= 3 && compiledExpr == "ops.I" {
+					b.WriteString("(")
+
+					for i, val := range singleValues {
+						b.WriteString("ops.I == ")
+						b.WriteString(val)
+						if i < len(singleValues)-1 {
+							b.WriteString(" || ")
+						}
+					}
 				} else {
 					b.WriteString("slices.Contains([]int64{")
 					b.WriteString(strings.Join(singleValues, ","))
