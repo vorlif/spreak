@@ -142,12 +142,8 @@ func stringMapKeys(m map[string]bool) []string {
 
 	slices.SortStableFunc(keys, func(a, b string) int {
 		// Longest first
-		if x, y := len(a), len(b); x != y {
-			if x < y {
-				return 1
-			}
-
-			return -1
+		if x := cmp.Compare(len(b), len(a)); x != 0 {
+			return x
 		}
 
 		return cmp.Compare(a, b)
