@@ -5,6 +5,7 @@ import (
 	"io"
 	"regexp"
 	"strings"
+	"unicode"
 )
 
 var (
@@ -18,7 +19,6 @@ var (
 	reMsgStr       = regexp.MustCompile(`^msgstr\s*".*"\s*$`)            // msgstr
 	reMsgStrPlural = regexp.MustCompile(`^msgstr\s*(\[\d+])\s*".*"\s*$`) // msgstr[0]
 	reMsgLine      = regexp.MustCompile(`^\s*".*"\s*$`)                  // "message"
-	reBlankLine    = regexp.MustCompile(`^\s*$`)                         //
 
 	msgCtxPrefix      = "msgctxt "
 	msgIDPrefix       = "msgid "
@@ -61,6 +61,7 @@ func (s *scanner) scan() (tok token, lit string) {
 		return s.scanWhitespace()
 	}
 
+	line = strings.TrimRightFunc(line, unicode.IsSpace)
 	if line[0] == '#' {
 		return s.scanComment(line)
 	}
@@ -79,8 +80,6 @@ func (s *scanner) scan() (tok token, lit string) {
 
 func (s *scanner) scanMessage(line string) (token, string) {
 
-	trimmedLine := strings.TrimSpace(line)
-
 	// We additionally use the functions of the strings package,
 	// as these are more performant than just the regular expressions.
 
@@ -89,7 +88,7 @@ func (s *scanner) scanMessage(line string) (token, string) {
 	}
 
 	if strings.HasPrefix(line, msgStrPrefix) {
-		if trimmedLine == emptyMessageStr || reMsgStr.MatchString(line) {
+		if line == emptyMessageStr || reMsgStr.MatchString(line) {
 			return msgStr, line
 		} else if reMsgStrPlural.MatchString(line) {
 			return msgStrPlural, line
@@ -126,11 +125,6 @@ func (s *scanner) scanMessage(line string) (token, string) {
 }
 
 func (s *scanner) scanComment(line string) (token, string) {
-	if len(line) == 0 || line[0] != '#' {
-		return s.scan()
-	}
-
-	line = strings.TrimSpace(line)
 	lineLen := len(line)
 
 	// comment without content
@@ -201,7 +195,7 @@ func (s *scanner) scanWhitespace() (tok token, lit string) {
 			break
 		}
 
-		if len(line) == 0 || strings.TrimSpace(line) == "" || reBlankLine.MatchString(line) {
+		if len(line) == 0 || strings.TrimSpace(line) == "" {
 			s.whitespaceBuffer.WriteString(line)
 			continue
 		}

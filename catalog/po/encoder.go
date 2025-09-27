@@ -8,8 +8,6 @@ import (
 	"slices"
 	"strconv"
 	"strings"
-
-	"github.com/vorlif/spreak/internal/util"
 )
 
 // Marshal serializes a Go File as a .po document.
@@ -96,7 +94,7 @@ func (enc *Encoder) encode(f *File) []byte {
 	}
 
 	if f.Messages != nil {
-		var messages []*Message
+		messages := make([]*Message, 0, len(f.Messages))
 		for ctx := range f.Messages {
 			for _, msg := range f.Messages[ctx] {
 				messages = append(messages, msg)
@@ -179,7 +177,7 @@ func (enc *Encoder) encodeComment(buff *bytes.Buffer, c *Comment) {
 	}
 
 	if c.Translator != "" {
-		for _, comment := range util.WrapString(c.Translator, enc.wrapWidth) {
+		for _, comment := range wrapString(c.Translator, enc.wrapWidth) {
 			buff.WriteString("# ")
 			buff.WriteString(comment)
 			buff.WriteString("\n")
@@ -187,7 +185,7 @@ func (enc *Encoder) encodeComment(buff *bytes.Buffer, c *Comment) {
 	}
 
 	if c.Extracted != "" {
-		for _, comment := range util.WrapString(c.Extracted, enc.wrapWidth) {
+		for _, comment := range wrapString(c.Extracted, enc.wrapWidth) {
 			buff.WriteString("#. ")
 			buff.WriteString(comment)
 			buff.WriteString("\n")
@@ -209,7 +207,7 @@ func (enc *Encoder) encodeComment(buff *bytes.Buffer, c *Comment) {
 			}
 		}
 
-		for _, comment := range util.WrapString(builder.String(), enc.wrapWidth) {
+		for _, comment := range wrapString(builder.String(), enc.wrapWidth) {
 			buff.WriteString("#: ")
 			buff.WriteString(comment)
 			buff.WriteString("\n")

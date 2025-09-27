@@ -72,6 +72,22 @@ msgstr "ID"`
 		}
 	})
 
+	t.Run("test parse whitespace", func(t *testing.T) {
+		content := `
+
+msgid "id"
+msgstr "ID"
+
+`
+		file, err := Parse([]byte(content))
+		assert.NoError(t, err)
+		assert.NotNil(t, file)
+		assert.Equal(t, len(file.Messages), 1)
+		assert.Equal(t, 1, len(file.Messages[""]))
+		assert.Contains(t, file.Messages[""], "id")
+		assert.Equal(t, "ID", file.Messages[""]["id"].Str[0])
+	})
+
 	t.Run("test duplicated message id", func(t *testing.T) {
 		content := `
 msgid "id"
@@ -156,6 +172,7 @@ msgstr "Αυτό είναι ένα μεταφραζόμενο κείμενο"`
 		assert.Equal(t, "1.0", f.Header.ProjectIDVersion)
 		assert.Equal(t, "Χέρε Κόσμε", f.GetMessage("", "Hello world").Str[0])
 		assert.Equal(t, "Αυτό είναι ένα μεταφραζόμενο κείμενο", f.GetMessage("", "This is a translatable string").Str[0])
+		assert.Equal(t, len(f.Messages[""]), 2)
 	})
 }
 
