@@ -2,10 +2,11 @@ package spreak
 
 import (
 	"errors"
+	"maps"
+	"slices"
 
 	"golang.org/x/text/language"
 
-	"github.com/vorlif/spreak/v2/internal/util"
 	"github.com/vorlif/spreak/v2/localize"
 )
 
@@ -106,7 +107,10 @@ func (l *Localizer) HasDomain(domain string) bool {
 }
 
 // Domains return a list of all domains for which a catalog was found.
-func (l *Localizer) Domains() []string { return util.Keys(l.locale.domainCatalogs) }
+func (l *Localizer) Domains() []string {
+	keys := maps.Keys(l.locale.domainCatalogs)
+	return slices.AppendSeq(make([]string, 0, len(l.locale.domainCatalogs)), keys)
+}
 
 // HasLocale returns whether a matching locale has been found and message translation can take place.
 func (l *Localizer) HasLocale() bool { return l.localeFound }

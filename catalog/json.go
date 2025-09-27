@@ -7,13 +7,11 @@ import (
 	"fmt"
 	"maps"
 	"slices"
-	"sort"
 	"strings"
 
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/v2/catalog/cldrplural"
-	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // A JSONCatalog represents a collection of translations in JSON format.
@@ -223,8 +221,7 @@ func (c jsonCatalog) MarshalJSON() ([]byte, error) {
 		}
 	}
 
-	keys := util.Keys(messages)
-	sort.Strings(keys)
+	keys := slices.Sorted(maps.Keys(messages))
 
 	var buf bytes.Buffer
 	buf.WriteRune('{')

@@ -4,12 +4,12 @@ import (
 	"errors"
 	"fmt"
 	"io/fs"
+	"maps"
 	"slices"
 
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/v2/catalog"
-	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 // NoDomain is the domain which is used if no default domain is stored.
@@ -138,7 +138,9 @@ func (b *Bundle) Domains() []string { return slices.Clone(b.domains) }
 func (b *Bundle) CanLocalize() bool { return len(b.locales) > 0 && len(b.domains) > 0 }
 
 // SupportedLanguages returns all languages for which a catalog was found for at least one domain.
-func (b *Bundle) SupportedLanguages() []language.Tag { return util.Keys(b.locales) }
+func (b *Bundle) SupportedLanguages() []language.Tag {
+	return slices.AppendSeq(make([]language.Tag, 0, len(b.locales)), maps.Keys(b.locales))
+}
 
 // IsLanguageSupported indicates whether a language can be translated.
 // The check is done by the bundle's matcher and therefore languages that are not returned by

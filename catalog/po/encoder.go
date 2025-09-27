@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"maps"
 	"slices"
-	"sort"
 	"strconv"
 	"strings"
 
@@ -263,9 +263,7 @@ func (enc *Encoder) encodeTranslations(buff *bytes.Buffer, plural bool, orig map
 			m[1] = `""`
 		}
 
-		keys := util.Keys(m)
-		sort.Ints(keys)
-
+		keys := slices.Sorted(maps.Keys(m))
 		for _, k := range keys {
 			_, _ = fmt.Fprintf(buff, "msgstr[%d] %s\n", k, m[k])
 		}
