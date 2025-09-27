@@ -67,5 +67,5 @@ func ExampleExpandLanguage() {
 	expanded := spreak.ExpandLanguage(language.MustParse("zh-Hans"))
 	fmt.Println(expanded)
 	// Output:
-	// [zh-Hans zh_Hans zh-CN zh_CN zho zh]
+	// [zh_Hans zh-Hans zh-CN zh_CN zho zh]
 }

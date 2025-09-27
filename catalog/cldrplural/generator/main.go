@@ -6,8 +6,10 @@ import (
 	"fmt"
 	"go/format"
 	"log"
+	"maps"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 	"text/template"
@@ -15,7 +17,6 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/vorlif/spreak/catalog/cldrplural/ast"
-	"github.com/vorlif/spreak/internal/util"
 )
 
 var pluralsFilePath = filepath.FromSlash(filepath.Join("./plurals.json"))
@@ -113,8 +114,7 @@ var templateFuncs template.FuncMap = map[string]any{
 			}
 		}
 
-		languageStrings := util.Keys(result)
-		sort.Strings(languageStrings)
+		languageStrings := slices.Sorted(maps.Keys(result))
 		return strings.Join(languageStrings, ",")
 	},
 }

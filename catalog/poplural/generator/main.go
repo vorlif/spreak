@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"go/format"
 	"log"
+	"maps"
 	"os"
 	"slices"
 	"sort"
@@ -12,8 +13,6 @@ import (
 	"text/template"
 
 	"golang.org/x/text/language"
-
-	"github.com/vorlif/spreak/internal/util"
 )
 
 func main() {
@@ -81,8 +80,7 @@ var templateFuncs template.FuncMap = map[string]any{
 			}
 		}
 
-		languageStrings := util.Keys(result)
-		sort.Strings(languageStrings)
+		languageStrings := slices.Sorted(maps.Keys(result))
 		return strings.Join(languageStrings, ",")
 	},
 }

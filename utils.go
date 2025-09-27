@@ -9,8 +9,6 @@ import (
 
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
-
-	"github.com/vorlif/spreak/internal/util"
 )
 
 var (
@@ -77,35 +75,47 @@ func (p *printFunctionWrapper) Init(_ []language.Tag)                 {}
 func (p *printFunctionWrapper) GetPrintFunc(_ language.Tag) PrintFunc { return p.f }
 
 // ExpandLanguage returns possible filenames for a language tag without extension.
+// The slice is sorted so that the longest strings are at the beginning.
+// This is necessary so that regional language tags such as FR-CA come before the base tag FR.
 func ExpandLanguage(lang language.Tag) []string {
-	expansions := make(map[string]bool, 4)
-	expansions[lang.String()] = true
+	expansions := make([]string, 0, 4)
+	seen := make(map[string]bool, 4)
+
+	addEntry := func(s string) {
+		if seen[s] {
+			return
+		}
+		seen[s] = true
+		expansions = insertLongestFirst(expansions, s)
+	}
+
+	addEntry(lang.String())
 
 	base, baseConf := lang.Base()
 	if baseConf > language.No {
-		expansions[base.ISO3()] = true
-		expansions[base.String()] = true
+		addEntry(base.ISO3())
+		addEntry(base.String())
 	}
 
 	region, regionConf := lang.Region()
 	if regionConf > language.No && baseConf > language.No {
 		key := fmt.Sprintf("%s_%s", base.String(), region.String())
-		expansions[key] = true
+		addEntry(key)
 
 		key = fmt.Sprintf("%s-%s", base.String(), region.String())
-		expansions[key] = true
+		addEntry(key)
 	}
 
 	script, scriptConf := lang.Script()
 	if scriptConf > language.No && baseConf > language.No {
 		key := fmt.Sprintf("%s_%s", base.String(), script.String())
-		expansions[key] = true
+		addEntry(key)
 
 		key = fmt.Sprintf("%s-%s", base.String(), script.String())
-		expansions[key] = true
+		addEntry(key)
 	}
 
-	return stringMapKeys(expansions)
+	return expansions
 }
 
 func parseLanguageName(lang string) (language.Tag, error) {
@@ -137,18 +147,16 @@ func languageInterfaceToTag(i any) (language.Tag, error) {
 	}
 }
 
-func stringMapKeys(m map[string]bool) []string {
-	keys := util.Keys(m)
-
-	slices.SortStableFunc(keys, func(a, b string) int {
-		// Longest first
-		if x := cmp.Compare(len(b), len(a)); x != 0 {
-			return x
-		}
-
-		return cmp.Compare(a, b)
+// insertLongestFirst inserts a string into a slice of strings,
+// ensuring the slice remains sorted longest to shortest.
+// If the new string length matches an existing string, it is inserted before it.
+// Returning the modified slice.
+func insertLongestFirst(arr []string, str string) []string {
+	insertPos, _ := slices.BinarySearchFunc(arr, str, func(a, b string) int {
+		return cmp.Compare(len(b), len(a))
 	})
-	return keys
+
+	return slices.Insert(arr, insertPos, str)
 }
 
 // ErrNotFound is the error returned by a loader if no matching context was found.
