@@ -21,6 +21,19 @@ const (
 	HeaderXGenerator              = "X-Generator"
 )
 
+const (
+	avgContextsPerFile        = 2
+	avgMessagesPerContext     = 5
+	avgMessagesWithoutContext = 20
+)
+
+func exceptedMessagesForContext(context string) int {
+	if context == "" {
+		return avgMessagesWithoutContext
+	}
+	return avgMessagesPerContext
+}
+
 // File is Go data structure for a PO file.
 type File struct {
 	Header   *Header
@@ -35,7 +48,8 @@ type Messages map[string]map[string]*Message
 // If there is already a message with the same ID, the comments are merged.
 func (m Messages) Add(msg *Message) {
 	if _, ok := m[msg.Context]; !ok {
-		m[msg.Context] = make(map[string]*Message)
+		exceptedMessages := exceptedMessagesForContext(msg.Context)
+		m[msg.Context] = make(map[string]*Message, exceptedMessages)
 	}
 
 	if _, ok := m[msg.Context][msg.ID]; ok {
@@ -48,7 +62,7 @@ func (m Messages) Add(msg *Message) {
 func NewFile() *File {
 	return &File{
 		Header:   &Header{},
-		Messages: make(Messages),
+		Messages: make(Messages, avgContextsPerFile),
 	}
 }
 
@@ -56,7 +70,7 @@ func NewFile() *File {
 // If there is already a message with the same ID, the comments are merged.
 func (f *File) AddMessage(msg *Message) {
 	if f.Messages == nil {
-		f.Messages = make(Messages)
+		f.Messages = make(Messages, avgMessagesPerContext)
 	}
 
 	if msg.ID == "" {
@@ -135,7 +149,7 @@ func (h *Header) Set(key, val string) {
 		h.XGenerator = val
 	default:
 		if h.UnknownFields == nil {
-			h.UnknownFields = make(map[string]string)
+			h.UnknownFields = make(map[string]string, 1)
 		}
 		h.UnknownFields[key] = val
 	}
@@ -171,13 +185,12 @@ func (h *Header) Get(key string) string {
 		return h.XGenerator
 	}
 
-	if h.UnknownFields == nil {
+	if len(h.UnknownFields) == 0 {
 		return ""
 	}
 
-	key = strings.ToUpper(key)
 	for unknownHeader, val := range h.UnknownFields {
-		if strings.ToUpper(unknownHeader) == key {
+		if strings.EqualFold(unknownHeader, key) {
 			return val
 		}
 	}

@@ -13,6 +13,10 @@ import (
 const nbsp = 0xA0
 
 func DecodePoString(text string) string {
+	if text == `""` {
+		return ""
+	}
+
 	lines := strings.Split(text, "\n")
 	for idx := 0; idx < len(lines); idx++ {
 		left := strings.Index(lines[idx], `"`)

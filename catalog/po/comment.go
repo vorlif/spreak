@@ -60,6 +60,7 @@ func (c *Comment) AddFlag(flag string) {
 		return
 	}
 	c.Flags = append(c.Flags, flag)
+	c.sortFlags()
 }
 
 func (c *Comment) Merge(other *Comment) {
@@ -88,23 +89,22 @@ func (c *Comment) Merge(other *Comment) {
 }
 
 func (c *Comment) mergeReferences(other *Comment) {
-	newReferences := make([]*Reference, 0, len(c.References)+len(other.References))
-	copy(newReferences, c.References)
-
 	for _, otherRef := range other.References {
 		if slices.ContainsFunc(c.References, func(ref *Reference) bool { return ref.Equal(otherRef) }) {
 			continue
 		}
 
-		newReferences = append(newReferences, otherRef)
+		c.References = append(c.References, otherRef)
 	}
-
-	c.References = append(c.References, newReferences...)
 }
 
 func (c *Comment) sort() {
-	sort.Strings(c.Flags)
+	c.sortFlags()
 	c.sortReferences()
+}
+
+func (c *Comment) sortFlags() {
+	slices.Sort(c.Flags)
 }
 
 func (c *Comment) sortReferences() {
