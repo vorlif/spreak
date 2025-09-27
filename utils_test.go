@@ -78,6 +78,12 @@ func TestExpandLanguage(t *testing.T) {
 	assert.Equal(t, want, got)
 }
 
+func BenchmarkExpandLanguage(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ExpandLanguage(language.Chinese)
+	}
+}
+
 func TestErrMissingDomain(t *testing.T) {
 	err := &ErrMissingDomain{}
 	assert.Error(t, err)
