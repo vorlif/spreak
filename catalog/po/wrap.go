@@ -1,22 +1,22 @@
-package util
+package po
 
 import (
 	"strings"
 	"unicode"
+
+	"github.com/vorlif/spreak/internal/util"
 )
 
-const nbsp = 0xA0
-
-func WrapString(s string, pageWidth int) []string {
+func wrapString(s string, pageWidth int) []string {
 	if pageWidth <= 0 {
 		return strings.Split(s, "\n")
 	}
 
 	lines := make([]string, 0, 10)
 
-	currentLine := &StringBuffer{}
-	var currentWordBuf StringBuffer
-	var lastSpaceBuf StringBuffer
+	currentLine := &util.StringBuffer{}
+	var currentWordBuf util.StringBuffer
+	var lastSpaceBuf util.StringBuffer
 
 	for _, char := range s {
 		if char == '\n' {

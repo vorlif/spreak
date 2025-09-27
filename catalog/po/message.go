@@ -18,7 +18,7 @@ func NewMessage() *Message {
 		Context:  "",
 		ID:       "",
 		IDPlural: "",
-		Str:      make(map[int]string),
+		Str:      make(map[int]string, 1),
 	}
 }
 

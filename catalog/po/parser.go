@@ -16,7 +16,7 @@ type Parser struct {
 	n           int
 
 	header   *Header
-	messages map[string]map[string]*Message // ctx -> msgID -> Message
+	messages Messages // ctx -> msgID -> Message
 
 	ignoreComments bool
 }
@@ -51,7 +51,7 @@ func ParseString(content string) (*File, error) {
 func (p *Parser) SetIgnoreComments(ignore bool) { p.ignoreComments = ignore }
 
 func (p *Parser) reset() {
-	p.messages = make(map[string]map[string]*Message, 1)
+	p.messages = make(Messages, avgContextsPerFile)
 	p.header = nil
 }
 
@@ -100,7 +100,8 @@ func (p *Parser) parseFile() (*File, error) {
 
 		// save message
 		if _, ok := p.messages[msg.Context]; !ok {
-			p.messages[msg.Context] = make(map[string]*Message)
+			exceptedMessages := exceptedMessagesForContext(msg.Context)
+			p.messages[msg.Context] = make(map[string]*Message, exceptedMessages)
 		}
 
 		if _, ok := p.messages[msg.Context][msg.ID]; ok {
@@ -161,13 +162,25 @@ loop:
 			commentPrevContext, commentPrevMsgID, commentPrevMsgIDLine, commentPrevContextLine:
 			// Message completed
 			return msg, nil
-		case msgContext, msgContextLine:
+		case msgContext:
+			line := lit[8:] // msgctxt
+			msg.Context = DecodePoString(line)
+		case msgContextLine:
 			msg.Context += DecodePoString(lit)
-		case msgID, msgIDLine:
+		case msgID:
+			line := lit[6:] // msgid
+			msg.ID = DecodePoString(line)
+		case msgIDLine:
 			msg.ID += DecodePoString(lit)
-		case msgIDPlural, msgIDPluralLine:
+		case msgIDPlural:
+			line := lit[13:] // msgid_plural
+			msg.IDPlural = DecodePoString(line)
+		case msgIDPluralLine:
 			msg.IDPlural += DecodePoString(lit)
-		case msgStr, msgStrLine:
+		case msgStr:
+			line := lit[7:] // msgstr
+			msg.Str[0] = DecodePoString(line)
+		case msgStrLine:
 			msg.Str[0] += DecodePoString(lit)
 		case msgStrPlural:
 			left := strings.Index(lit, "[")
@@ -178,7 +191,8 @@ loop:
 				return nil, fmt.Errorf("po file contains an invalid index for a plural translation (line %d)", p.s.pos)
 			}
 
-			msg.Str[idx] = DecodePoString(lit)
+			line := lit[10:] // msgstr[x]
+			msg.Str[idx] = DecodePoString(line)
 		case msgStrPluralLine:
 			lastIdx := len(msg.Str) - 1
 			if lastIdx < 0 {

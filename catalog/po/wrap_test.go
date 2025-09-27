@@ -3,7 +3,7 @@
 //
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
-package util
+package po
 
 import (
 	"strings"
@@ -97,7 +97,7 @@ func TestWrapString(t *testing.T) {
 	}
 
 	for _, tc := range cases {
-		actual := strings.Join(WrapString(tc.Input, tc.Lim), "\n")
+		actual := strings.Join(wrapString(tc.Input, tc.Lim), "\n")
 		assert.Equal(t, tc.Output, actual)
 	}
 }
