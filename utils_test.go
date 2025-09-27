@@ -50,7 +50,7 @@ func TestDefaultPrintFuncGenerator(t *testing.T) {
 
 func TestExpandLanguage(t *testing.T) {
 	got := ExpandLanguage(language.MustParse("de-AT"))
-	want := []string{"de-Latn", "de_Latn", "de_AT", "de-AT", "deu", "de"}
+	want := []string{"de-Latn", "de_Latn", "de-AT", "de_AT", "deu", "de"}
 	assert.Equal(t, want, got)
 
 	got = ExpandLanguage(language.Chinese)
@@ -58,15 +58,15 @@ func TestExpandLanguage(t *testing.T) {
 	assert.Equal(t, want, got)
 
 	got = ExpandLanguage(language.TraditionalChinese)
-	want = []string{"zh_Hant", "zh-Hant", "zh-TW", "zh_TW", "zho", "zh"}
+	want = []string{"zh-Hant", "zh_Hant", "zh-TW", "zh_TW", "zho", "zh"}
 	assert.Equal(t, want, got)
 
 	got = ExpandLanguage(language.SimplifiedChinese)
-	want = []string{"zh_Hans", "zh-Hans", "zh-CN", "zh_CN", "zho", "zh"}
+	want = []string{"zh-Hans", "zh_Hans", "zh-CN", "zh_CN", "zho", "zh"}
 	assert.Equal(t, want, got)
 
 	got = ExpandLanguage(language.MustParse("sr_LATN"))
-	want = []string{"sr_Latn", "sr-Latn", "sr-RS", "sr_RS", "srp", "sr"}
+	want = []string{"sr-Latn", "sr_Latn", "sr-RS", "sr_RS", "srp", "sr"}
 	assert.Equal(t, want, got)
 
 	got = ExpandLanguage(language.MustParse("art-x-a2"))
@@ -76,6 +76,12 @@ func TestExpandLanguage(t *testing.T) {
 	got = ExpandLanguage(language.MustParse("en-US-x-twain"))
 	want = []string{"en-US-x-twain", "en-Latn", "en_Latn", "en-US", "en_US", "eng", "en"}
 	assert.Equal(t, want, got)
+}
+
+func BenchmarkExpandLanguage(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ExpandLanguage(language.Chinese)
+	}
 }
 
 func TestErrMissingDomain(t *testing.T) {

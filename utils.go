@@ -86,7 +86,7 @@ func ExpandLanguage(lang language.Tag) []string {
 			return
 		}
 		seen[s] = true
-		expansions = insertLongestFirst(expansions, s)
+		expansions = append(expansions, s)
 	}
 
 	addEntry(lang.String())
@@ -115,6 +115,7 @@ func ExpandLanguage(lang language.Tag) []string {
 		addEntry(key)
 	}
 
+	sortLongestFirst(expansions)
 	return expansions
 }
 
@@ -147,16 +148,15 @@ func languageInterfaceToTag(i any) (language.Tag, error) {
 	}
 }
 
-// insertLongestFirst inserts a string into a slice of strings,
-// ensuring the slice remains sorted longest to shortest.
-// If the new string length matches an existing string, it is inserted before it.
-// Returning the modified slice.
-func insertLongestFirst(arr []string, str string) []string {
-	insertPos, _ := slices.BinarySearchFunc(arr, str, func(a, b string) int {
-		return cmp.Compare(len(b), len(a))
-	})
+func sortLongestFirst(arr []string) {
+	slices.SortStableFunc(arr, func(a, b string) int {
+		// Longest first
+		if x := cmp.Compare(len(b), len(a)); x != 0 {
+			return x
+		}
 
-	return slices.Insert(arr, insertPos, str)
+		return cmp.Compare(a, b)
+	})
 }
 
 // ErrNotFound is the error returned by a loader if no matching context was found.
