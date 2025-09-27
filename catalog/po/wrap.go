@@ -4,7 +4,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/v2/internal/util"
 )
 
 func wrapString(s string, pageWidth int) []string {
