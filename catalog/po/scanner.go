@@ -1,11 +1,10 @@
 package po
 
 import (
-	"bytes"
+	"bufio"
 	"io"
 	"regexp"
 	"strings"
-	"unicode"
 )
 
 var (
@@ -28,20 +27,20 @@ var (
 )
 
 type scanner struct {
-	lines []string
-	pos   int
-
-	lastToken        token
-	whitespaceBuffer bytes.Buffer
+	lineScanner *bufio.Scanner
+	// lastToken is the last token read
+	lastToken token
+	// pos is the current line number
+	pos int
+	n   int
 
 	ignoreComments bool
 }
 
-func newScanner(content string) *scanner {
-	content = strings.ReplaceAll(content, "\r", "")
+func newScanner(r io.Reader) *scanner {
+	// content = bytes.ReplaceAll(content, []byte("\r"), []byte(""))
 	return &scanner{
-		lines: strings.Split(content, "\n"),
-		pos:   0,
+		lineScanner: bufio.NewScanner(r),
 	}
 }
 
@@ -57,22 +56,20 @@ func (s *scanner) scan() (tok token, lit string) {
 
 	// Short path for better performance
 	if len(line) == 0 {
-		s.unread()
 		return s.scanWhitespace()
 	}
 
-	line = strings.TrimRightFunc(line, unicode.IsSpace)
+	line = strings.TrimSpace(line)
+	if len(line) == 0 {
+		return s.scanWhitespace()
+	}
+
 	if line[0] == '#' {
 		return s.scanComment(line)
 	}
 
 	if tokk, l := s.scanMessage(line); tokk != none {
 		return tokk, l
-	}
-
-	if len(strings.TrimSpace(line)) == 0 {
-		s.unread()
-		return s.scanWhitespace()
 	}
 
 	return failure, line
@@ -185,10 +182,6 @@ func (s *scanner) scanComment(line string) (token, string) {
 
 // scanWhitespace consumes the current rune and all contiguous whitespace.
 func (s *scanner) scanWhitespace() (tok token, lit string) {
-	s.whitespaceBuffer.Reset()
-	currentLine, _ := s.read()
-	s.whitespaceBuffer.WriteString(currentLine)
-
 	for {
 		line, err := s.read()
 		if err == io.EOF {
@@ -196,7 +189,6 @@ func (s *scanner) scanWhitespace() (tok token, lit string) {
 		}
 
 		if len(line) == 0 || strings.TrimSpace(line) == "" {
-			s.whitespaceBuffer.WriteString(line)
 			continue
 		}
 
@@ -204,29 +196,25 @@ func (s *scanner) scanWhitespace() (tok token, lit string) {
 		break
 	}
 
-	return whitespace, s.whitespaceBuffer.String()
+	return whitespace, ""
 }
 
 func (s *scanner) read() (string, error) {
-	if s.pos >= len(s.lines) {
+	if s.n == 1 {
+		s.n = 0
+		return s.lineScanner.Text(), nil
+	}
+
+	if !s.lineScanner.Scan() {
 		return "", io.EOF
 	}
+	if s.lineScanner.Err() != nil {
+		return "", s.lineScanner.Err()
+	}
 
-	line := s.lines[s.pos]
 	s.pos++
-	return line, nil
+	return s.lineScanner.Text(), nil
 }
 
-func (s *scanner) currentLine() string {
-	if s.pos > len(s.lines) {
-		return ""
-	}
-
-	return s.lines[s.pos-1]
-}
-
-func (s *scanner) unread() {
-	if s.pos > 0 {
-		s.pos--
-	}
-}
+func (s *scanner) currentLine() string { return s.lineScanner.Text() }
+func (s *scanner) unread()             { s.n = 1 }

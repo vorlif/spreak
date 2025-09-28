@@ -78,13 +78,13 @@ func TestWithCategory(t *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, fsLoader)
 
-		data, errLoad := fsLoader.Load(language.German, "domain_test")
+		cat, errLoad := fsLoader.Load(language.German, "domain_test")
 		assert.Error(t, errLoad)
-		assert.Nil(t, data)
+		assert.Nil(t, cat)
 
-		data, errLoad = fsLoader.Load(language.German, "b")
+		cat, errLoad = fsLoader.Load(language.German, "b")
 		assert.NoError(t, errLoad)
-		assert.NotNil(t, data)
+		assert.NotNil(t, cat)
 	})
 }
 

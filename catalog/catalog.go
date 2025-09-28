@@ -2,6 +2,7 @@ package catalog
 
 import (
 	"fmt"
+	"io"
 	"strings"
 
 	"golang.org/x/text/language"
@@ -21,9 +22,18 @@ type Catalog interface {
 	Language() language.Tag
 }
 
-// A Decoder reads and decodes catalogs for a language and a domain from a byte array.
+// A Decoder reads and decodes catalogs
+// for a language and a domain from a byte array.
 type Decoder interface {
-	Decode(lang language.Tag, domain string, data []byte) (Catalog, error)
+	Decode(language language.Tag, domain string, data []byte) (Catalog, error)
+}
+
+// A DecoderV2 reads and decodes catalogs
+// for a language and a domain from an io.ReadSeeker r.
+// Can already be implemented in addition to Decoder
+// and will replace the Decoder implementation with the v2 release.
+type DecoderV2 interface {
+	DecodeReader(language language.Tag, domain string, r io.Reader) (Catalog, error)
 }
 
 func NewErrMissingContext(lang language.Tag, domain, context string) *ErrMissingContext {

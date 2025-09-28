@@ -1,6 +1,7 @@
 package po
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io"
@@ -37,12 +38,11 @@ func MustParse(content []byte) *File {
 }
 
 func Parse(content []byte) (*File, error) {
-	return ParseString(string(content))
+	return NewParser().Parse(bytes.NewReader(content))
 }
 
 func ParseString(content string) (*File, error) {
-	p := NewParser()
-	return p.Parse(content)
+	return NewParser().Parse(strings.NewReader(content))
 }
 
 // SetIgnoreComments instructs the Parser to skip comments when reading.
@@ -55,9 +55,9 @@ func (p *Parser) reset() {
 	p.header = nil
 }
 
-func (p *Parser) Parse(content string) (*File, error) {
+func (p *Parser) Parse(r io.Reader) (*File, error) {
 	p.reset()
-	p.s = newScanner(content)
+	p.s = newScanner(r)
 	p.s.ignoreComments = p.ignoreComments
 
 	// special case, empty file

@@ -130,7 +130,7 @@ func (p *parser) parseHeader() error {
 func (p *parser) parseMessageData() error {
 	p.messageData = make([]*msgData, p.msgIDCount)
 
-	if _, err := p.r.Seek(int64(p.msgIDOffset), 0); err != nil {
+	if _, err := p.r.Seek(int64(p.msgIDOffset), io.SeekStart); err != nil {
 		return err
 	}
 
@@ -148,7 +148,7 @@ func (p *parser) parseMessageData() error {
 		}
 	}
 
-	if _, err := p.r.Seek(int64(p.msgStrOffset), 0); err != nil {
+	if _, err := p.r.Seek(int64(p.msgStrOffset), io.SeekStart); err != nil {
 		return err
 	}
 

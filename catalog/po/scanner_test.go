@@ -1,6 +1,7 @@
 package po
 
 import (
+	"bytes"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -15,7 +16,7 @@ func TestScanner_ScanComment(t *testing.T) {
 # Stephen Cox <stephencoxmail@gmail.com>, 2011-2012   
 # unklphil <villiers.strauss@gmail.com>, 2014,2019`
 
-		s := newScanner(comment)
+		s := newScanner(bytes.NewReader([]byte(comment)))
 		assert.NotNil(t, s)
 
 		tests := []string{

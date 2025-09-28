@@ -1,6 +1,7 @@
 package po
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"testing"
@@ -16,7 +17,8 @@ msgstr "Hallo"
 `
 	f, err := ParseString(doc)
 	if err != nil {
-		panic(err)
+		fmt.Println("ERROR = ", err)
+		return
 	}
 	msg := f.GetMessage("", "Hello")
 	fmt.Println(msg.ID)
@@ -244,7 +246,10 @@ func TestParse_PoeditFile(t *testing.T) {
 	content, errRead := os.ReadFile("../../testdata/parser/poedit_en_GB.po")
 	require.NoError(t, errRead)
 
-	file, err := Parse(content)
+	parser := NewParser()
+	parser.SetIgnoreComments(true)
+
+	file, err := parser.Parse(bytes.NewReader(content))
 	require.NoError(t, err)
 	require.NotNil(t, file)
 	require.NotNil(t, file.Header)
@@ -319,7 +324,7 @@ func TestParse_PoeditPotFile(t *testing.T) {
 
 	p := NewParser()
 	p.SetIgnoreComments(true)
-	file, err := p.Parse(string(content))
+	file, err := p.Parse(bytes.NewReader(content))
 	require.NoError(t, err)
 	require.NotNil(t, file)
 	require.NotNil(t, file.Header)
@@ -456,7 +461,7 @@ func BenchmarkParser(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err := p.Parse(string(content))
+		_, err := p.Parse(bytes.NewReader(content))
 		require.NoError(b, err)
 	}
 }
@@ -467,10 +472,12 @@ func BenchmarkParser_SetIgnoreComments(b *testing.B) {
 
 	p := NewParser()
 	p.SetIgnoreComments(true)
+	r := bytes.NewReader(content)
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err := p.Parse(string(content))
+		_, _ = r.Seek(0, 0)
+		_, err := p.Parse(r)
 		require.NoError(b, err)
 	}
 }

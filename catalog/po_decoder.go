@@ -1,7 +1,9 @@
 package catalog
 
 import (
+	"bytes"
 	"fmt"
+	"io"
 	"strings"
 
 	"golang.org/x/text/language"
@@ -21,6 +23,11 @@ type poDecoder struct {
 type moDecoder struct {
 	useCLDRPlural bool
 }
+
+var _ Decoder = (*poDecoder)(nil)
+var _ Decoder = (*moDecoder)(nil)
+var _ DecoderV2 = (*poDecoder)(nil)
+var _ DecoderV2 = (*moDecoder)(nil)
 
 // NewPoDecoder returns a new Decoder for reading po files.
 // If a plural forms header is set, it will be used.
@@ -51,9 +58,13 @@ func NewMoDecoder() Decoder { return &moDecoder{useCLDRPlural: false} }
 func NewMoCLDRDecoder() Decoder { return &moDecoder{useCLDRPlural: true} }
 
 func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
+	return d.DecodeReader(lang, domain, bytes.NewReader(data))
+}
+
+func (d poDecoder) DecodeReader(lang language.Tag, domain string, r io.Reader) (Catalog, error) {
 	parser := po.NewParser()
 	parser.SetIgnoreComments(true)
-	poFile, errParse := parser.Parse(string(data))
+	poFile, errParse := parser.Parse(r)
 	if errParse != nil {
 		return nil, errParse
 	}
@@ -65,7 +76,16 @@ func (d poDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalo
 }
 
 func (d moDecoder) Decode(lang language.Tag, domain string, data []byte) (Catalog, error) {
-	moFile, errParse := mo.ParseBytes(data)
+	return d.DecodeReader(lang, domain, bytes.NewReader(data))
+}
+
+func (d moDecoder) DecodeReader(lang language.Tag, domain string, r io.Reader) (Catalog, error) {
+	readSeeker, err := readerToReadSeeker(r)
+	if err != nil {
+		return nil, err
+	}
+
+	moFile, errParse := mo.ParseReader(readSeeker)
 	if errParse != nil {
 		return nil, errParse
 	}
@@ -149,4 +169,17 @@ func getCLDRPluralFunction(lang language.Tag) func(a any) (int, error) {
 
 		return 0, nil
 	}
+}
+
+func readerToReadSeeker(r io.Reader) (io.ReadSeeker, error) {
+	if seeker, ok := r.(io.ReadSeeker); ok {
+		return seeker, nil
+	}
+
+	data, err := io.ReadAll(r)
+	if err != nil {
+		return nil, err
+	}
+
+	return bytes.NewReader(data), nil
 }

@@ -57,8 +57,8 @@ var _ Loader = (*FilesystemLoader)(nil)
 // Otherwise, only the stored decoders are used.
 func NewFilesystemLoader(opts ...FsOption) (*FilesystemLoader, error) {
 	l := &FilesystemLoader{
-		decoder:    make([]catalog.Decoder, 0),
-		extensions: make([]string, 0),
+		decoder:    make([]catalog.Decoder, 0, 3),
+		extensions: make([]string, 0, 3),
 	}
 
 	for _, opt := range opts {
@@ -123,14 +123,24 @@ func (l *FilesystemLoader) loadFromFile(lang language.Tag, domain, extension str
 		}
 	}()
 
-	data, err := io.ReadAll(file)
-	if err != nil {
-		return nil, err
-	}
+	decoder := l.decoder[decoderIndex]
 
-	cat, err = l.decoder[decoderIndex].Decode(lang, domain, data)
-	if err != nil {
-		return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, err)
+	switch x := decoder.(type) {
+	case catalog.DecoderV2:
+		cat, err = x.DecodeReader(lang, domain, file)
+		if err != nil {
+			return nil, err
+		}
+	default:
+		data, errR := io.ReadAll(file)
+		if errR != nil {
+			return nil, errR
+		}
+
+		cat, err = decoder.Decode(lang, domain, data)
+		if err != nil {
+			return nil, fmt.Errorf("spreak: file %s could not be decoded: %w", resolvedPath, err)
+		}
 	}
 
 	return cat, nil

@@ -22,7 +22,7 @@ const NoCtx = ""
 // Can be changed when creating a bundle with WithErrorContext.
 const ErrorsCtx = "errors"
 
-// MissingTranslationCallback is a callback which can be stored with WithMissingTranslationCallback for a bundle.
+// MissingTranslationCallback is a callback that can be stored with WithMissingTranslationCallback for a bundle.
 // Called when translations, domains, or other are missing.
 // The call is not goroutine safe.
 type MissingTranslationCallback func(err error)
@@ -33,7 +33,7 @@ type MissingTranslationCallback func(err error)
 // The matcher is used, for example, when a new Localizer is created to determine the best matching language.
 type LanguageMatcherBuilder func(t []language.Tag, options ...language.MatchOption) language.Matcher
 
-// BundleOption is an option which can be passed when creating a bundle to customize its configuration.
+// BundleOption is an option that can be passed when creating a bundle to customize its configuration.
 type BundleOption func(opts *bundleBuilder) error
 
 type setupAction func(options *bundleBuilder) error
