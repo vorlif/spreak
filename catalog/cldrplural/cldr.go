@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/internal/cast"
 )
 
 type Category int
@@ -89,7 +89,7 @@ func MustNewOperands(a any) *Operands {
 
 // NewOperands converts the representation of a float value into the appropriate Operands.
 func NewOperands(a any) (*Operands, error) {
-	a = util.Indirect(a)
+	a = cast.Indirect(a)
 	if a == nil {
 		return nil, errors.New("operands value is nil")
 	}
@@ -106,7 +106,7 @@ func NewOperands(a any) (*Operands, error) {
 	case float64:
 		return newOperandsString(fmt.Sprintf("%v", v))
 	default:
-		num, err := util.ToNumber(v)
+		num, err := cast.ToNumber(v)
 		if err != nil {
 			return nil, err
 		}

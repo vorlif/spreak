@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/vorlif/spreak/internal/calendar"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/internal/cast"
 )
 
 // Keywords for selecting a predefined formatting for a language when using FormatTime.
@@ -48,7 +48,7 @@ type gettextEntry struct {
 // Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
 // For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) NaturalDay(i any) string {
-	t, err := util.ToTime(i)
+	t, err := cast.ToTime(i)
 	if err != nil {
 		return formatErrorMessage(i)
 	}
@@ -123,7 +123,7 @@ var naturalFutureSubstrings = map[string]gettextEntry{
 // For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) NaturalTime(i any) string {
 	now := time.Now()
-	t, err := util.ToTime(i)
+	t, err := cast.ToTime(i)
 	if err != nil {
 		return formatErrorMessage(i)
 	}
@@ -287,7 +287,7 @@ func WithNow(now time.Time) TimeOption {
 // Valid inputs are time.Time, time.Duration or any numeric value which is interpreted as seconds since the Unix epoch.
 // For all other inputs, a string is returned with an error message in fmt style.
 func (h *Humanizer) TimeSince(inputTime any, opts ...TimeOption) string {
-	d, err := util.ToTime(inputTime)
+	d, err := cast.ToTime(inputTime)
 	if err != nil {
 		return formatErrorMessage(inputTime)
 	}
@@ -369,7 +369,7 @@ func (h *Humanizer) TimeSinceFrom(d any, now time.Time, opts ...TimeOption) stri
 // For example, if today is 1 June 2006 and conferenceDate is a date instance holding 29 June 2006,
 // then TimeUntil(conferenceDate) will return “4 weeks”.
 func (h *Humanizer) TimeUntil(d any, opts ...TimeOption) string {
-	parsedTime, err := util.ToTime(d)
+	parsedTime, err := cast.ToTime(d)
 	if err != nil {
 		return formatErrorMessage(d)
 	}

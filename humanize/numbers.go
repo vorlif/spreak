@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/text/number"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/internal/cast"
 )
 
 var apnumbers = []string{
@@ -34,7 +34,7 @@ var apnumbers = []string{
 //
 // - 10 becomes 10.
 func (h *Humanizer) Apnumber(val any) string {
-	fl, err := util.ToNumber(val)
+	fl, err := cast.ToNumber(val)
 	if err != nil {
 		return formatErrorMessage(val)
 	}
@@ -76,7 +76,7 @@ var intwordConverters = []struct {
 //
 // Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Intword(i any) string {
-	value, err := util.ToNumber(i)
+	value, err := cast.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
 	}
@@ -106,7 +106,7 @@ func (h *Humanizer) Intword(i any) string {
 //
 // Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Intcomma(i any) string {
-	value, err := util.ToNumber(i)
+	value, err := cast.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
 	}
@@ -145,7 +145,7 @@ var ordinalTemplates = []struct {
 //
 // Valid inputs are all values that can be interpreted as a number.
 func (h *Humanizer) Ordinal(i any) string {
-	floatValue, err := util.ToNumber(i)
+	floatValue, err := cast.ToNumber(i)
 	if err != nil {
 		return formatErrorMessage(i)
 	}

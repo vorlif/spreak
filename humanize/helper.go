@@ -8,7 +8,7 @@ import (
 	"golang.org/x/text/language"
 	"golang.org/x/text/number"
 
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/internal/cast"
 )
 
 // LanguageName returns the name of the spoken language as called by the languages used.
@@ -57,7 +57,7 @@ func (h *Humanizer) FilesizeFormat(v any) string {
 	case []byte:
 		count = int64(len(val))
 	default:
-		value, err := util.ToNumber(v)
+		value, err := cast.ToNumber(v)
 		if err != nil {
 			return formatErrorMessage(v)
 		}

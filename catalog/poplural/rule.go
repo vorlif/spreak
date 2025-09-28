@@ -4,7 +4,7 @@ import (
 	"math"
 
 	"github.com/vorlif/spreak/catalog/poplural/ast"
-	"github.com/vorlif/spreak/internal/util"
+	"github.com/vorlif/spreak/internal/cast"
 )
 
 // Rule represents a rule as specified in the header of the po file under `Plural-Forms`.
@@ -21,7 +21,7 @@ type Rule struct {
 // If the value is not an integer, it is formatted accordingly.
 // If formatting is not possible, an error is returned.
 func (f *Rule) Evaluate(a any) (int, error) {
-	num, err := util.ToNumber(a)
+	num, err := cast.ToNumber(a)
 	if err != nil {
 		return 0, err
 	}
